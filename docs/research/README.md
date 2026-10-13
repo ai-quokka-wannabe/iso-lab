@@ -13,7 +13,7 @@ down here says how we know, and is where a reader goes when they want to check t
 
 | Document | Supports |
 |----------|----------|
-| *(none yet)* | The first note, on how worm behaviour is measured, is item 2 of [STATE.md](../../STATE.md)'s *Next* list |
+| [behaviour-measures.md](behaviour-measures.md) | How worm behaviour is measured: posture, the feature database, motifs, locomotion states, roaming and dwelling (a draft) |
 
 ## The rule these follow
 
