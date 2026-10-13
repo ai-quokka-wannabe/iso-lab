@@ -5,7 +5,7 @@ the creatures will have, starting with a worm. What follows is the vision the wh
 [ai-quokka-wannabe](https://github.com/ai-quokka-wannabe) organisation shares, mirrored word for word in every
 one of its repositories and on its landing page, and after it this lab's own part in that vision.
 
-<!-- The Long Arc: mirrored verbatim in every ai-quokka-wannabe repository (profile/README.md in .github and each docs/VISION.md). Change all five together. -->
+<!-- The Long Arc: mirrored verbatim in every ai-quokka-wannabe repository (profile/README.md in .github and each docs/VISION.md). Change all six together. -->
 
 ## The Long Arc
 
