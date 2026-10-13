@@ -66,7 +66,8 @@ towards. Classical Hopfield networks store memories this way
 ([Hopfield 1982](https://doi.org/10.1073/pnas.79.8.2554)); modern continuous Hopfield networks store far more
 and turn out to share their update rule with transformer attention
 ([Ramsauer et al. 2020](https://arxiv.org/abs/2008.02217)); continuous-time formulations treat the settling as
-an ordinary differential equation ([Chen et al. 2018](https://arxiv.org/abs/1806.07366)).
+an ordinary differential equation ([Chen et al. 2018](https://arxiv.org/abs/1806.07366)). How such memories
+are written - Hebbian learning, Boltzmann machines, dense associative memory - is H9.
 *Predicts*: behaviour that persists and switches the way an attractor landscape would - more relevant for
 later rungs than for the worm, and tested only when a measured behaviour asks for it.
 
@@ -118,6 +119,28 @@ feel.
 *Predicts*: the slowing responses, the long-lived roaming and dwelling regimes, escape coordination, and
 quiescence bouts in the proportions real worms show - and, under ablation, the deficits that worms lacking
 each signalling pathway show.
+
+### H9. Associative Memory, Written by Hebb's Rule
+
+A family to explore together, as candidates for how a creature remembers. Memories as attractors of a
+recurrent network (H5), written into its connections by Hebbian learning: connections between cells that are
+active together grow stronger ([Hebb 1949](https://doi.org/10.4324/9781410612403), cited in its modern
+reprint), kept bounded and stable by normalisation, as in Oja's rule
+([Oja 1982](https://doi.org/10.1007/BF00275687)). Boltzmann machines make such a network stochastic: it learns
+a probability distribution and samples from it rather than settling on one answer
+([Ackley, Hinton and Sejnowski 1985](https://doi.org/10.1207/s15516709cog0901_7)) - a candidate for behaviour
+that varies rather than repeats. Dense associative memories sharpen the network's energy function so that the
+same number of neurons stores far more patterns ([Krotov and Hopfield 2016](https://arxiv.org/abs/1606.01164)),
+the line that leads to the modern Hopfield networks of H5.
+
+The worm does learn by association: it learns to avoid the smell of bacteria that made it ill
+([Zhang et al. 2005](https://doi.org/10.1038/nature04216)). Which of its learned behaviours the Grid can
+measure - it has no smell yet - is for the literature to say. For a brain on the worm's scale the questions
+are concrete: which behaviour such a memory would carry, how few neurons it needs, what it costs to run,
+sampled or settled, and whether its state can still be read.
+
+*Predicts*: behaviour that changes with experience the way the worm's does, with the change traceable to
+learned connections that can be read; tested once the benchmark has a measure of learning.
 
 ## Adding a Hypothesis
 
