@@ -33,6 +33,11 @@ Top first. Each item is sized for one run; split it here before starting if it i
    undulates gently, shaped after [rc-worm](https://github.com/ai-quokka-wannabe/rc-worm) as the example of
    a Program - live one short headless life on a flat arena, keep its Disk, and extract the same features
    from it.
+6. **Survey associative memory for a worm-sized brain**, as `docs/research/associative-memory.md`: Hebbian
+   learning and Oja's rule, Hopfield networks classical and modern, Boltzmann machines, dense associative
+   memory - what each is, what it would cost a brain on the worm's scale to run, which of the worm's
+   behaviours it could carry, and how each would be ablated and tested ([H5, H6 and H9](docs/hypotheses/README.md)).
+   A notebook that tries them on toy problems is welcome.
 
 ## Blocked
 

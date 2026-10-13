@@ -115,7 +115,7 @@ lab makes.
 
 ## What Exists Today
 
-The lab opened on 2026-10-13: its rules ([.claude/CLAUDE.md](../.claude/CLAUDE.md)), the plan, eight
+The lab opened on 2026-10-13: its rules ([.claude/CLAUDE.md](../.claude/CLAUDE.md)), the plan, nine
 hypotheses, the journal, the dataset registry, and the world pinned under `external/`. No dataset is chosen, no
 feature defined, no brain built and no creature scored yet. Where the work stands tonight is always in
 [STATE.md](../STATE.md), and what each night tried in [the journal](journal/).
