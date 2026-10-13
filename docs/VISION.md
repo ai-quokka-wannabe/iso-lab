@@ -97,9 +97,10 @@ those minds is built in the open, starting on the bottom rung, *Caenorhabditis e
   against it ([PLAN.md](PLAN.md)). The worm's mind counts as reached when a classifier cannot tell the Grid's
   worm from a real one on those measures, timing included: its speed of thought must be the real worm's too.
 - **The senses stay honest.** A Program here perceives only through the senses its host renders and acts
-  only through its body, like every Program on the Grid. The lab cannot change the world: what it needs from
-  the Grid or from Master Control is written down in [STATE.md](../STATE.md) and carried over by the
-  maintainer, and the world is pinned under `external/`, so every score names the world it was earned in.
+  only through its body, like every Program on the Grid. The lab does not change the world on its own: what
+  it needs from the Grid or from Master Control goes to that repository as an issue, under its own
+  contribution rules, and its maintainers decide; and the world is pinned under `external/`, so every score
+  names the world it was earned in.
 - **No house style for brains.** The working hypotheses are modular and heterogeneous, from a reflex arc to
   modelled brain chemistry ([the hypotheses](hypotheses/README.md)); wild ideas are welcome, as long as they
   stay honest to the senses, run lean, and earn their place on the benchmark.

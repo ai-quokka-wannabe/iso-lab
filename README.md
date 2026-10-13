@@ -54,7 +54,7 @@ told in [the organisation's vision](docs/VISION.md#the-long-arc), and the lab's 
 | [docs/VISION.md](docs/VISION.md) | The organisation's vision, and the lab's part in it |
 | [docs/DEV_ENV_SETUP.md](docs/DEV_ENV_SETUP.md) | The tools, and the checks exactly as CI runs them |
 | [data/README.md](data/README.md) | Every dataset the lab uses: source, licence, size, checksum |
-| `external/` | The world's repositories as submodules pinned by commit: tron-grid-lite, master-control, and link for reading |
+| `external/` | The world's repositories as submodules pinned by commit - tron-grid-lite, master-control and link - where the lab also makes its contributions to them |
 | [.claude/CLAUDE.md](.claude/CLAUDE.md) | The agents' working rules |
 
 ## Joining In

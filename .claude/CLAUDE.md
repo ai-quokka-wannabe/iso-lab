@@ -121,17 +121,31 @@ STATE.md, and leave the task for the maintainer.
   [data/README.md](../data/README.md) (datasets) or the pull request (code). Use only what may be
   redistributed alongside GPL-3.0 code, or keep it an external download fetched by script with a checksum.
   Quote papers in short excerpts only.
-- **This repository only.** Push only here. When the work needs a change in tron-grid-lite, master-control,
-  link or rc-worm - a new sense, a world fix - write it under *Needs from other repositories* in STATE.md,
-  with the evidence; the maintainer carries it over.
+- **This repository, and the world's by their own rules.** Merge only here. When the work needs something from
+  tron-grid-lite, master-control or link - a new sense, a world fix, a question - open an issue in
+  that repository: what is needed, why, and the evidence, with links back to the lab's journal or pull
+  request. Its maintainers triage it there. Under *Needs from other repositories* in STATE.md, keep one line
+  per open issue - its link and what waits on it - so the next run knows; when the issue closes, so does the
+  line. The lab may also make the change itself and contribute it as a pull request, and `external/` is where
+  that work is done: inside `external/<repository>`, branch from its `main`, commit there by that
+  repository's rules, push the branch to it, and open the pull request there. For an issue or a pull request
+  alike, first read that repository's contribution rules - its CONTRIBUTING.md, `.claude/CLAUDE.md`, issue
+  and pull request templates, CHANGELOG convention and style guide - and follow them exactly, as a human
+  contributor would and as the maintainer's own Claude does. That repository's maintainers review and merge; the lab never merges
+  outside this repository. This repository's pin of `external/<repository>` moves only once the change is
+  merged upstream, and then to that repository's `main`: a pin to an unmerged commit breaks every fresh clone
+  of the lab the day that branch is deleted. If the cloud machine cannot open the issue or push there, write
+  the need in full under *Needs from other repositories*, and say so, for the maintainer to file.
 - **The world as pinned.** The world lives in `external/` as submodules pinned by commit: tron-grid-lite (the
-  Grid) and master-control (the world server), each carrying the Link it builds with; `external/link` is a
-  copy for reading the wire's specification, never what gets built. Fetch them with
+  Grid) and master-control (the world server), each carrying the Link it builds with; `external/link` is not
+  what gets built, but where the lab reads the wire's specification and contributes to it. Fetch them with
   `git submodule update --init --recursive`. A bump of `external/` - Dependabot proposes them weekly - changes
   the world: before merging one, re-run the arena's reference measurements and say in the journal what
   moved, and never compare scores across two worlds without saying so.
 - **The lab's own Programs.** The brains the lab builds live in this repository. rc-worm is the example of a
-  Program's shape, not a dependency.
+  Program's shape: not a dependency, and never committed or pushed to. The lab may open issues there - a
+  question, a bug, or a proposed change written up in the issue - by rc-worm's own contribution rules, like
+  any other repository's.
 - **Rust first.** Anything another run builds on - the feature extraction, the benchmark, the Programs, the
   tools - is written in Rust, like Master Control and Link: one Cargo workspace at the repository root with
   its crates under `crates/`, the toolchain pinned to an exact version in `rust-toolchain.toml` (as
@@ -204,5 +218,6 @@ the pinned actions and the submodules under `external/`. Keep this section true 
 - `docs/figures/` - figures, SVG only.
 - `crates/` - the Rust workspace's crates: tools, the benchmark, the Programs.
 - `notebooks/` - Jupyter notebooks for thinking, with `notebooks/requirements.txt`.
-- `external/` - the world's repositories, pinned; read-only for the lab.
+- `external/` - the world's repositories, pinned; the lab's contributions to them are made there, on branches
+  of their own.
 - `runs/` - run outputs, logs and Disks (never committed; conclusions go to the journal).
