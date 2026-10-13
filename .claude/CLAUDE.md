@@ -143,8 +143,9 @@ STATE.md, and leave the task for the maintainer.
   the world: before merging one, re-run the arena's reference measurements and say in the journal what
   moved, and never compare scores across two worlds without saying so.
 - **The lab's own Programs.** The brains the lab builds live in this repository. rc-worm is the example of a
-  Program's shape and nothing more: not a dependency, and not a repository the lab commits to, files to or
-  proposes changes to.
+  Program's shape: not a dependency, and never committed or pushed to. The lab may open issues there - a
+  question, a bug, or a proposed change written up in the issue - by rc-worm's own contribution rules, like
+  any other repository's.
 - **Rust first.** Anything another run builds on - the feature extraction, the benchmark, the Programs, the
   tools - is written in Rust, like Master Control and Link: one Cargo workspace at the repository root with
   its crates under `crates/`, the toolchain pinned to an exact version in `rust-toolchain.toml` (as
