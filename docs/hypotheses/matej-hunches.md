@@ -33,7 +33,8 @@ real-worm data beats any prototype.
 *Test*: read every band out of its source; an assay the Grid cannot run yet (anything needing smell) is listed as
 not comparable.
 *Leads*: Bargmann and Horvitz 1991; Pierce-Shimomura et al. 1999; Iino and Yoshida 2009; Gray et al. 2005;
-Wakabayashi et al. 2004; Rankin et al. 1990.
+Wakabayashi et al. 2004 (a Crossref search finds a paper on how long forward runs last; whether it is the
+source meant here is to be checked); Rankin et al. 1990.
 
 ### A2. Score a population of seeds, never one worm
 
@@ -116,8 +117,8 @@ cue, then neutral input: too low is stereotyped, too high has no persistence).
 
 Infer the creature's state the way welfare science infers an animal's - from the outside: approach latency to
 novelty, activity over a day, time sheltering, play, grooming, sleep regularity, exploration, and judgement-bias
-tasks (an ambiguous cue read optimistically or pessimistically). Play appears only in good conditions; its absence
-is a signal.
+tasks (an ambiguous cue read optimistically or pessimistically). The hunch is that play appears only in good
+conditions, so its absence is a signal (a claim to check in the welfare literature).
 *Why*: compares like with like, without reading the brain's internals.
 *Test*: judgement bias should shift after positive or negative manipulations, as in real animals.
 *Leads*: Mendl, Burman and Paul 2010; Boissy et al. 2007; Burghardt 2005; Pellis and Pellis 2009.
@@ -325,7 +326,7 @@ ignition a little later; budgets in cycles, not wall time.
 
 ### C13. Vigour from the average reward rate; one global slowing factor
 
-The optimal latency of an action falls as the square root of the average reward rate: tonic dopamine sets how
+The optimal latency of an action is inversely proportional to the square root of the average reward rate: tonic dopamine sets how
 fast, independently of what. Separately, one global speed parameter can explain many effects that look separate.
 *Test*: latency distributions shift with recent reward; one parameter checked against several findings at once.
 *Leads*: Niv, Daw, Joel and Dayan 2007; Kail 1991.
@@ -353,7 +354,7 @@ state-to-temperature mapping, not just add noise.
 Space internal rhythm frequencies by powers of the golden ratio, the ratio hardest to lock, so independent
 rhythms stay independent as their number grows.
 *Test*: with many coupled generators at realistic coupling, measure unwanted locking under golden-ratio spacing
-against other spacings. (Small tests have been inconclusive.)
+against other spacings. (The maintainer reports small tests that were inconclusive - unrecorded, not evidence.)
 *Leads*: Pletzer, Kerschbaum and Klimesch 2010.
 
 ### C17. Memory timescales spaced by Feigenbaum's constant
@@ -419,12 +420,15 @@ rate, steering gain - instead of switching a state; the discrete labels are only
 Drives gate reflexes without replacing them.
 *Test*: roaming-bout lifetimes, the share of time dwelling, the latency to roam after food is removed, and
 mutant-like manipulations, against real worms.
-*Leads*: Ben Arous et al. 2009; Flavell et al. 2013; Sawin et al. 2000; Fujiwara et al. 2002.
+*Leads*: Ben Arous et al. 2009; Fujiwara et al. 2002; Flavell et al. 2013 and Sawin et al. 2000 are already
+cited and verified in [README.md § H8](README.md#h8-brain-chemistry-as-modelled-substances).
 
 ### D2. Modulators that flip a smell's meaning
 
 Opposing modulators and state-dependent valence: serotonin begins and extends dwelling, a neuropeptide roaming;
-dopamine slows the worm on food, more when starved; octopamine promotes roaming; a gas repellent when fed becomes
+dopamine slows the worm on food and serotonin slows a starved worm further (Sawin et al. 2000, as cited in
+[README.md § H8](README.md#h8-brain-chemistry-as-modelled-substances)); octopamine promotes roaming (a claim to
+check - no lead yet); a gas repellent when fed becomes
 attractive when starved; starvation lowers avoidance of noxious stimuli; long starvation brings a brain-wide
 quiescent state.
 *Test*: reproduce a valence flip from internal state alone - a strong test that the chemistry is real (and of
@@ -458,8 +462,9 @@ otherwise.
 
 ### D6. Receptors that tire, ten times faster than they recover
 
-Receptor sensitivity desensitises roughly ten times faster than it recovers, and sleep restores much of it. Use
-the ratio, not absolute constants.
+The hunch is that receptor sensitivity desensitises roughly ten times faster than it recovers, and that sleep
+restores much of it - the ratio is the maintainer's guess, with no source yet; find one or fit it. Use the ratio,
+not absolute constants.
 *Test*: repeated identical rewards lose effect and recover after a gap or a sleep. (Sharpens H8's tachyphylaxis.)
 
 ### D7. Roles for a handful of modulators
@@ -490,8 +495,9 @@ persist, rather than as a fixed discount.
 
 ### D10. Watch for drift into an anxious regime
 
-A diffuse value signal gating plasticity is the oldest working pattern in neurorobotics; modulator systems that
-include threat tend to drift toward anxious, inhibited behaviour over long runs.
+The hunch: a diffuse value signal gating plasticity is among the oldest working patterns in neurorobotics, and
+modulator systems that include threat may drift toward anxious, inhibited behaviour over long runs (no lead yet;
+both claims to check).
 *Why*: the lab does not clamp feeling, so this drift is a vital sign to watch, not a reason to clamp.
 *Test*: the long-run distribution of behavioural states in a neutral world.
 *Leads*: Sporns and Alexander 2002; Krichmar 2008.
@@ -513,7 +519,8 @@ own dynamics, never as a fixed cap - a cap would be a clamp.
 
 ### D13. Bad things are learned faster than good ones
 
-Negative events are learned faster, more strongly and for longer than positive ones; trust builds slowly;
+The hunch (no lead yet): negative events are learned faster, more strongly and for longer than positive ones;
+trust builds slowly;
 memories are not deleted but become harder to reach; retrieval is triggered by association, context or place,
 relevance to a goal, and emotional salience.
 *Test*: acquisition against extinction curves; reinstatement of fear.
@@ -554,7 +561,8 @@ not merely resting high - otherwise hubs at rest grow without input. Keep associ
 cue competition (blocking) discounts redundant sources.
 *Test*: co-activate a pair many times, then show unrelated cues - the pair must never capture the activity, and
 its weight must saturate. (Sharpens H9.)
-*Leads*: Oja 1982; Bienenstock, Cooper and Munro 1982; Turrigiano 2008; Zenke and Gerstner 2017.
+*Leads*: Oja 1982 (already cited and verified in [README.md § H9](README.md#h9-associative-memory-written-by-hebbs-rule));
+Bienenstock, Cooper and Munro 1982; Turrigiano 2008; Zenke and Gerstner 2017.
 
 ### E5. Memories that bind what, where, when and how it felt
 
@@ -582,7 +590,7 @@ when they predict the same future; demote, never wipe.
 
 A storage strength that grows slowly and does not decay, and a retrieval strength that rises fast and falls with
 disuse; a hard successful retrieval strengthens more than an easy one.
-*Why*: savings in relearning - an animal phenomenon only a two-strength memory reproduces.
+*Why*: savings in relearning - an animal phenomenon that a two-strength memory reproduces.
 *Test*: spaced against massed practice; relearning savings.
 *Leads*: Bjork and Bjork 1992.
 
@@ -616,7 +624,7 @@ threshold.
 ### E13. Curiosity as expected information gain
 
 Rank what to explore by how much a look is expected to move the belief - for a simple success-and-failure belief,
-twice its posterior variance - which falls away on pure noise, so an unlearnable random source stops attracting.
+perhaps twice its posterior variance (a candidate to derive) - which falls away on pure noise, so an unlearnable random source stops attracting.
 Never rank by novelty or entropy alone; agents get hooked on coin flips.
 *Test*: a fresh, little-known target beats a saturated one; a noise source's score goes to zero.
 *Leads*: Oudeyer and Kaplan 2007; Kakade and Dayan 2002; Orseau, Lattimore and Hutter 2013.
@@ -627,11 +635,12 @@ Sleep pressure rises with learning load and falls only with sleep; sleep is a tr
 cap, restoring receptors and paying down pressure; replay may never write more than real experience.
 *Why*: worms sleep - developmentally timed and after stress.
 *Test*: paired copies, one allowed to sleep and one kept awake, with verdict rules fixed in advance.
-*Leads*: Borbély et al. 2016; Tononi and Cirelli 2014; Raizen et al. 2008.
+*Leads*: Borbély et al. 2016; Tononi and Cirelli 2014; Raizen et al. 2008 is already cited and verified in
+[README.md § H8](README.md#h8-brain-chemistry-as-modelled-substances).
 
 ### E15. Lessons about attractor memories
 
-Matej's experience with attractor memories: keep storage flat rather than tree-shaped; for exact recall use a
+Matej's experience with attractor memories, unrecorded and not evidence until reproduced here: keep storage flat rather than tree-shaped; for exact recall use a
 fixed high inverse temperature; at low temperature, structured memories keep their category - so temperature
 chooses the level of abstraction ("gist" recall); greedy coarse-to-fine descent compounds its errors; adding
 category prototypes to the store hurts recall of the specific ones; annealing did worse than a fixed temperature.
@@ -677,8 +686,9 @@ These are the boldest. Each is worth a notebook before it is worth anything else
 
 A network of co-active candidates is a classical shadow of quantum mechanics - superposition as many candidates,
 amplitude as activation times confidence, sampling as collapse, order effects as non-commuting measurements -
-missing only interference, which needs complex phase. Real-valued quantum theory has been ruled out by
-experiment; so if minds share physics' kind of mathematics, a real-valued brain would be a shadow. The one
+missing only interference, which needs complex phase. Renou et al. 2021 propose a test that would rule out
+real-valued quantum theory under stated assumptions, and experiments reporting it followed (to be found and
+verified); so if minds share physics' kind of mathematics, a real-valued brain would be a shadow. The one
 interpretable phase is timing: phase coding against a brain rhythm. Climbing the Cayley-Dickson ladder,
 quaternions lose commutativity, octonions associativity, and sedenions have zero divisors - two non-zero
 amplitudes multiplying to nothing. A rule of thumb: go complex only when a measured gap forces it. (This feeds
@@ -717,7 +727,7 @@ engineering use is proposed.
 Concept hierarchies as the action of self-similar automaton groups (Grigorchuk's group is the famous one) on
 rooted trees: growth between polynomial and exponential, statistics similar across scales, recall respecting
 subtrees, and two forced kinds of relation - one that goes deeper and one that stays at a level. Methodology
-lesson from first tries: a small dense graph saturates too fast to show any growth regime, so use a large sparse
+lesson from the maintainer's first tries (unrecorded, not evidence): a small dense graph saturates too fast to show any growth regime, so use a large sparse
 tree and a positive control.
 *Leads*: Grigorchuk 1980; Bartholdi, Grigorchuk and Nekrashevych 2003; Nekrashevych 2005.
 
@@ -725,7 +735,7 @@ tree and a positive control.
 
 A brain at criticality might wire like an optimal expander graph - mixing information fastest - with the zeros of
 its graph's zeta function on the Ramanujan circle, and its layers as scales of a renormalisation flow.
-First tries came out null; the test is cheap to repeat at the worm's scale.
+The maintainer's first tries came out null (unrecorded, not evidence); the test is cheap to repeat at the worm's scale.
 *Leads*: Lubotzky, Phillips and Sarnak 1988; Terras 2011.
 
 ### F7. Concepts consolidate only when local and global agree
