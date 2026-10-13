@@ -15,11 +15,17 @@ Nothing like that exists yet. Where the work stands tonight is always in [STATE.
 
 - **Autonomously.** Through the night a Claude agent works in the cloud, task after task. It reads
   [STATE.md](STATE.md), takes the next step of [the plan](docs/PLAN.md) - reading the literature, building
-  tools, running experiments - and lands each piece of work through the same cycle as any contributor:
-  commit, pull request, review, green CI, merge. How a night starts is written down in
+  tools, running experiments - and lands each piece of work through a contributor's cycle: commit, pull
+  request, green CI, verification by a second agent that did not write it, merge. How a night starts is written down in
   [docs/NIGHT_SHIFT.md](docs/NIGHT_SHIFT.md), and the agents' working rules in [.claude/CLAUDE.md](.claude/CLAUDE.md).
 - **In the open.** Every step is a public commit and pull request, and every night leaves an entry in
   [the journal](docs/journal/). Anyone can watch it happen.
+- **Boldly.** Wild ideas and hunches are welcome - any architecture, any mathematics - as long as the
+  creature stays honest to its senses, runs lean, and ends up indistinguishable from the real animal.
+- **Stubbornly.** Nothing is declared impossible. Every detail is checked twice, a dead end is a result, and
+  a problem that resists comes back the next night from another side.
+- **Scientifically.** A question before every experiment, baselines and controls, uncertainty stated,
+  conclusions no stronger than the evidence - and a repository kept as tidy as a good lab bench.
 - **Honestly.** Negative results are results. Every number comes from a run anyone can repeat, with its
   command and seed written down. Every claim about biology cites a public source.
 
@@ -50,7 +56,13 @@ told in [the organisation's vision](https://github.com/ai-quokka-wannabe/tron-gr
 ## Joining In
 
 People are welcome too. Open an issue, start a discussion, or send a pull request; the same review and CI
-gates apply to everyone. The good places to start are the organisation's
+gates apply to everyone.
+
+**Ideas for the night staff.** Anyone can suggest something for the lab's agents to read, try or think
+about: a paper, a hunch about the brain, an experiment, a measure for the benchmark. Open an
+[idea issue](https://github.com/ai-quokka-wannabe/iso-lab/issues/new/choose). The night staff read every new
+idea, answer it on the issue, and when one is worth trying, put it on the plan and credit its author under
+[Contributors](#contributors). The good places to start are the organisation's
 [good first issues](https://github.com/search?q=org%3Aai-quokka-wannabe+label%3A%22good+first+issue%22+state%3Aopen&type=issues)
 and this lab's [plan](docs/PLAN.md). The rest of the organisation lives in
 [tron-grid-lite](https://github.com/ai-quokka-wannabe/tron-grid-lite) (the Grid),

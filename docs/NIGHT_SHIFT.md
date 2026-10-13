@@ -22,9 +22,10 @@ toward a creature on the Grid whose behaviour cannot be told apart from a real C
 Follow .claude/CLAUDE.md exactly. Work through the night one task at a time: start from main; read STATE.md,
 docs/PLAN.md and the newest journal entry; take one bounded task from the top of STATE.md's Next list; land it
 through the full cycle - branch, work, self-review, local checks, STATE.md and journal updates, pull request
-through the REST API, green CI and CodeQL, merge - or park it honestly under Blocked. Then begin again from
-main with the next task. Start no new task after 05:00 Ljubljana time (TZ=Europe/Ljubljana date); finish or
-park the one in hand, then stop. Stop sooner if nothing unblocked is left on the Next list.
+through the REST API, green CI, verification by a second agent, merge - or park it honestly under Blocked.
+Then begin again from main with the next task. Start no new task after 05:00 Ljubljana time
+(TZ=Europe/Ljubljana date); finish or park the one in hand, then stop. Stop sooner only when nothing is left
+that you can move forward - and not before trying every Blocked item again from a new angle.
 
 Nobody is awake to answer questions. Never wait for one. When a decision belongs to the maintainer, write it
 under Blocked in STATE.md with your evidence and move on to the next unblocked task, or stop.
