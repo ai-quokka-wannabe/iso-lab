@@ -66,7 +66,7 @@ Yemini et al. 2013 define the motion states by thresholds in units of the worm's
 - **Backward** (a reversal): the same, with the midbody speed negative.
 - **Paused**: a period of more than half a second in which the forward and backward speeds "do not exceed 2.5%
   of its length, per second, in each frame".
-- **Omega and upsilon turns**: computed from the bends of the skeleton; an omega turn's body angle must
+- **Omega and upsilon turns**: computed from the bends of the skeleton; an omega turn's body angle
   "must initially exceed 30° at the first but not the last third of the body".
 
 Because the thresholds are fractions of body length per second and durations in seconds, they carry over to a
