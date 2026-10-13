@@ -45,6 +45,10 @@ Top first. Each item is sized for one run; split it here before starting if it i
    fixed first - among them, a complex or hypercomplex module that scores no better than a real-valued one of
    the same compute and memory. The undulation phase of Stephens et al. 2008 is already one complex number;
    start there. Read the literature on complex- and quaternion-valued networks at the source before citing it.
+7. **Triage Matej's ideas and hunches**, in [docs/hypotheses/matej-hunches.md](docs/hypotheses/matej-hunches.md):
+   93, from the benchmark to wild mathematics. Verify the leads of the ones that look most useful
+   first, promote those that survive into numbered hypotheses or tasks here, and record the triage in the
+   journal. Any part of it is a fine task for a night; the benchmark items (section A) come first.
 
 ## Blocked
 

@@ -144,6 +144,9 @@ learned connections that can be read; tested once the benchmark has a measure of
 
 ## Adding a Hypothesis
 
+A pool of candidates waits in [Matej's ideas and hunches](matej-hunches.md): unverified, to be triaged and
+promoted here one by one.
+
 Add a section with the same four parts: the idea, the evidence (public sources, linked), the behaviour it
 predicts, and how the benchmark would show it. Record in the journal why it was added.
 
