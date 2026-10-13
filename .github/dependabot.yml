@@ -1,0 +1,29 @@
+version: 2
+
+updates:
+    - package-ecosystem: "github-actions"
+      directory: "/"
+      schedule:
+        interval: weekly
+        day: saturday
+        time: "00:00"
+        timezone: "Europe/Ljubljana"
+
+    # The markdown linter pinned in package-lock.json: a bump is a pull request, never a surprise.
+    - package-ecosystem: "npm"
+      directory: "/"
+      schedule:
+        interval: weekly
+        day: saturday
+        time: "00:00"
+        timezone: "Europe/Ljubljana"
+
+    # The world's repositories under external/, pinned by commit: a bump is a change to the world the lab measures
+    # against, proposed as a pull request rather than drifting in unseen.
+    - package-ecosystem: "gitsubmodule"
+      directory: "/"
+      schedule:
+        interval: weekly
+        day: saturday
+        time: "00:00"
+        timezone: "Europe/Ljubljana"

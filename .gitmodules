@@ -1,0 +1,9 @@
+[submodule "external/tron-grid-lite"]
+	path = external/tron-grid-lite
+	url = https://github.com/ai-quokka-wannabe/tron-grid-lite.git
+[submodule "external/master-control"]
+	path = external/master-control
+	url = https://github.com/ai-quokka-wannabe/master-control.git
+[submodule "external/link"]
+	path = external/link
+	url = https://github.com/ai-quokka-wannabe/link.git
