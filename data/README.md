@@ -70,3 +70,10 @@ checksum for every file, the skeletons and published features in files of about 
 to hold real worms out against real worms when the test is checked (Phase 0 step 5 of
 [the plan](../docs/PLAN.md)). The first subset to fetch, and how it is drawn, is the feature-extraction task's
 to fix before it computes anything; nothing above 2 GB has been downloaded.
+
+## Adding a Dataset
+
+Add a row with every column filled: where it comes from (a stable link and the paper describing it), its
+licence (and whether it may be redistributed alongside GPL-3.0 code - if not, it stays an external download),
+its size, the checksum of what was downloaded, and what the lab uses it for. A dataset whose licence cannot be
+found is not used.
