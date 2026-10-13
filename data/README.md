@@ -55,7 +55,10 @@ remain to be surveyed.
   al. 2017, [doi:10.1534/genetics.117.300406](https://doi.org/10.1534/genetics.117.300406)). Only the
   record's metadata was read; no archive was opened.
 - **Licence**: CC-BY-4.0, but the record asks: "Some of these data are unpublished at present, please contact
-  us if you would like to use them so we can avoid any overlaps". The lab does not use it until the maintainer decides.
+  us if you would like to use them so we can avoid any overlaps". The maintainer's decision (2026-10-13): not
+  now - the N2 records are enough for Phase 0. If a later measure needs many worms to a plate or a panel of
+  strains, the maintainer contacts the authors first; the agents neither use these data nor contact anyone
+  about them.
 - **Size**: four archives, 0.55 GB (founders), 1.86 GB (populations), 4.42 GB (mutation accumulation) and
   41.5 GB (recombinant inbred lines), each with an MD5.
 - **Why not first**: the authors ask to be contacted before their data are used, and N2 is one founder among many
