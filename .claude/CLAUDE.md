@@ -165,6 +165,13 @@ STATE.md, and leave the task for the maintainer.
   only what the current task needs; delete raw data you no longer need before the night ends. Never start a
   job that cannot finish within the night.
 - **No secrets.** Nothing that looks like a key, token or password goes into a file, a commit or a log.
+- **Say who wrote it.** The cloud session posts to GitHub through the maintainer's account, so every pull
+  request, review, comment and issue the lab writes opens with one line saying so - for a review, *Second-agent
+  verification by the lab's night staff; not written by the maintainer.*, and for anything else, *Written by
+  iso-lab's night staff, an AI agent; not by the maintainer.* - so nobody mistakes an agent's words for a
+  person's.
+- **Branches of your own.** The cloud session may name a branch of its own; lab work never goes on it. Each
+  task gets its own `claude/<short-name>` branch, cut from `main`, merged and deleted through the cycle above.
 
 ## Writing
 
