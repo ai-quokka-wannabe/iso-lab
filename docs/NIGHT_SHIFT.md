@@ -39,7 +39,8 @@ of disk, no GPU - in an environment set up as follows.
 - **Network**: the default trusted list (package registries, GitHub) plus the research sources the work needs:
   `arxiv.org`, `export.arxiv.org`, `doi.org`, `api.crossref.org`, `zenodo.org`, `www.ncbi.nlm.nih.gov`,
   `www.biorxiv.org`, `openworm.org`, `wormbase.org`, `www.wormatlas.org`, and `sdk.lunarg.com` for the
-  Vulkan SDK.
+  Vulkan SDK; and, for papers' full texts, `pmc.ncbi.nlm.nih.gov`, `eutils.ncbi.nlm.nih.gov`, `europepmc.org`,
+  `www.ebi.ac.uk` and `journals.plos.org`.
 - **Setup script**, run as root before each session:
 
     ```bash

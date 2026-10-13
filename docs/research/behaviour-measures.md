@@ -1,9 +1,5 @@
 # How Worm Behaviour Is Measured
 
-> **Draft, unfinished.** Started on 2026-10-13 in a short shift. Every section was written from the papers' own
-> texts; the sections marked *partly read* say what is still missing. Item 1 of [STATE.md](../../STATE.md)'s *Next*
-> list finishes it.
-
 The measures the benchmark will be built from, and where each comes from. Every claim below was read from the
 paper's text in PubMed Central on 2026-10-13, through NCBI's E-utilities or the article's PMC page; where a
 section has not been read in full, it says so.
@@ -61,14 +57,25 @@ gives a fingerprint that compares mutants with wild type and with each other.
 
 ## Locomotion States
 
-*Partly read.* Forward runs, reversals, omega turns and pauses are the feature database's events (above).
+Yemini et al. 2013 define the motion states by thresholds in units of the worm's own length:
+
+- **Forward**: a period of more than half a second in which the worm "travels at least 5% of its mean length
+  over the entire period" and its speed "is at least 5% of its length, per second, in each frame".
+- **Backward** (a reversal): the same, with the midbody speed negative.
+- **Paused**: a period of more than half a second in which the forward and backward speeds "do not exceed 2.5%
+  of its length, per second, in each frame".
+- **Omega and upsilon turns**: computed from the bends of the skeleton; an omega turn's body angle must
+  initially exceed 30° at the first but not the last third of the body.
+
+Because the thresholds are fractions of body length per second and durations in seconds, they carry over to a
+body of any size, which is what the comparison space needs.
+
 [Pierce-Shimomura et al. 1999](https://doi.org/10.1523/JNEUROSCI.19-21-09557.1999), read on its PMC page
 (PMC6782915), divide each track "into periods of smooth swimming (runs) and periods of frequent turning
 (pirouettes)"; in a chemical gradient, "the initiation of pirouettes was correlated with the rate of change of
 concentration (dC/dt) but not with absolute concentration", and the average heading after a pirouette was up
 the gradient. Chemotaxis itself is not comparable on the Grid yet, which has no chemical sense
-([STATE.md](../../STATE.md)); the run and pirouette structure of the track is, and still has to be read in
-detail.
+([STATE.md](../../STATE.md)); the run and pirouette structure of a track is.
 
 ## Roaming and Dwelling
 
@@ -81,8 +88,8 @@ large (600 cm²) homogeneous bacterial lawns.
 - **For the lab**: the 15-minute recordings of the feature database are short against states lasting several
   minutes, so roaming and dwelling may need longer recordings than the chosen dataset holds. Still to check.
 
-## Still to Do
+## What This Note Does Not Cover Yet
 
-- Read Brown et al. 2013 and Pierce-Shimomura et al. 1999 for their methods and numbers, not only their claims.
-- Add the reaction latencies and state time constants the pace rule asks for, each from a cited source.
-- Say, for each measure, how sure the lab is that it carries over to the Grid's body.
+- The reaction latencies and the time constants of internal states that the pace rule asks for, each from a
+  cited source: the next literature task in [STATE.md](../../STATE.md).
+- How sure the lab is that each measure carries over to the Grid's body: the comparison space's job.
