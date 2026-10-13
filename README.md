@@ -38,7 +38,8 @@ brain is a Program behind the Grid's plain C interface, and whatever approach it
 on those honest senses.
 
 The ceiling is the animal's own: animal-level minds, never human-level ones. The long arc this lab serves is
-told in [the organisation's vision](https://github.com/ai-quokka-wannabe/tron-grid-lite/blob/main/docs/VISION.md#the-long-arc).
+told in [the organisation's vision](docs/VISION.md#the-long-arc), and the lab's part in it
+[right after](docs/VISION.md#the-labs-part-in-the-arc).
 
 ## Where Things Are
 
@@ -48,7 +49,10 @@ told in [the organisation's vision](https://github.com/ai-quokka-wannabe/tron-gr
 | [docs/PLAN.md](docs/PLAN.md) | The research plan, phase by phase |
 | [docs/hypotheses/](docs/hypotheses/) | Ideas about the brain, each with the behaviour that would confirm or refute it |
 | [docs/journal/](docs/journal/) | One entry per night: what was tried, what came out, what failed |
-| [docs/NIGHT_SHIFT.md](docs/NIGHT_SHIFT.md) | The scheduled routine the agents run, word for word |
+| [docs/research/](docs/research/) | Literature notes: how we know what the plan rests on |
+| [docs/NIGHT_SHIFT.md](docs/NIGHT_SHIFT.md) | How a night starts, and the agents' prompt, word for word |
+| [docs/VISION.md](docs/VISION.md) | The organisation's vision, and the lab's part in it |
+| [docs/DEV_ENV_SETUP.md](docs/DEV_ENV_SETUP.md) | The tools, and the checks exactly as CI runs them |
 | [data/README.md](data/README.md) | Every dataset the lab uses: source, licence, size, checksum |
 | `external/` | The world's repositories as submodules pinned by commit: tron-grid-lite, master-control, and link for reading |
 | [.claude/CLAUDE.md](.claude/CLAUDE.md) | The agents' working rules |
@@ -56,7 +60,9 @@ told in [the organisation's vision](https://github.com/ai-quokka-wannabe/tron-gr
 ## Joining In
 
 People are welcome too. Open an issue, start a discussion, or send a pull request; the same review and CI
-gates apply to everyone.
+gates apply to everyone. How, and the credit you get, is in [CONTRIBUTING.md](CONTRIBUTING.md); everyone
+follows the [Code of Conduct](CODE_OF_CONDUCT.md), and security issues go privately, as
+[SECURITY.md](SECURITY.md) says.
 
 **Ideas for the night staff.** Anyone can suggest something for the lab's agents to read, try or think
 about: a paper, a hunch about the brain, an experiment, a measure for the benchmark. Open an

@@ -99,9 +99,13 @@ STATE.md, and leave the task for the maintainer.
   conclusions no stronger than the evidence. Write as for a reviewer: precise, sober, cited, no hype.
 - **A tidy repository.** Keep the repository clean, orderly and well maintained: everything in its place
   (see *Where things are* below), no stray scratch files, dead code, stale TODOs or committed outputs, every
-  document in step with the code, STATE.md short and current. Once a night, look the repository over; if
-  anything needs tidying - unused files, outdated documents, lint debt, an open tool-update issue - that is
-  a task, landed through the same cycle as any other. Housekeeping is work, not a distraction.
+  document in step with the code, STATE.md short and current. A fact lives in one place; other documents
+  point to it (`FILE § Section`) rather than copy it. Once a night, look the repository over by the audits in
+  [.claude/commands/](commands/) - `check-coherence`, `check-spelling`, `check-style`; if anything needs
+  tidying - unused files, outdated documents, lint debt, an open tool-update issue - that is a task, landed
+  through the same cycle as any other. Housekeeping is work, not a distraction.
+- **Red-first tests.** Every new test and every new check is seen failing once, deliberately, before it is
+  trusted. A test that has never failed has not yet shown that it can.
 - **Pre-register and ablate.** Before running a change to a brain, write in the journal the outcomes that
   would refute it. Give every module and modulator a switch that pins it at baseline, and attribute an
   improvement by switching each off in turn - never by assumption.
@@ -132,6 +136,11 @@ STATE.md, and leave the task for the maintainer.
   tools - is written in Rust, like Master Control and Link: one Cargo workspace at the repository root with
   its crates under `crates/`, the toolchain pinned to an exact version in `rust-toolchain.toml` (as
   master-control does), `cargo fmt` clean, `cargo clippy --all-targets -- --deny warnings` clean, and tested.
+  Deterministic given a seed: no iteration over unordered containers, no wall clock, no hidden state in
+  anything a score depends on. When the workspace is created, take its furniture from the organisation rather
+  than inventing it: `rust-toolchain.toml`, `rustfmt.toml` and `clippy.toml` from link and master-control,
+  `.github/scripts/check-toolchain-pin.sh` and the cargo-flavoured CI job from master-control's workflows,
+  and a Rust entry in `.github/workflows/tool-updates.yml` like master-control's.
 - **Notebooks for thinking.** Python in Jupyter notebooks, under `notebooks/`, is welcome for numerics and
   mathematics, for brainstorming a hypothesis, and for quick rough calculations. Pin a notebook's
   dependencies in `notebooks/requirements.txt`; it must run top to bottom from a fresh kernel
@@ -139,8 +148,8 @@ STATE.md, and leave the task for the maintainer.
   A notebook explores, it does not decide: nothing the benchmark or a score depends on lives only in a
   notebook - once a calculation matters, it moves into tested Rust.
 - **Budget.** The cloud machine has about 4 CPUs, 16 GB of memory and 30 GB of disk, and no GPU. Download
-  only what the current task needs; delete raw data you no longer need before the run ends. Never start a
-  loop that cannot finish within the run.
+  only what the current task needs; delete raw data you no longer need before the night ends. Never start a
+  job that cannot finish within the night.
 - **No secrets.** Nothing that looks like a key, token or password goes into a file, a commit or a log.
 
 ## Writing
@@ -153,12 +162,28 @@ STATE.md, and leave the task for the maintainer.
 - Commit messages: conventional commits (`docs: ...`, `feat: ...`, `test: ...`, `fix: ...`), a body that
   says what and why, and the trailer `Co-Authored-By: Claude <noreply@anthropic.com>`.
 - A new source file starts with the licence header naming *The AiQuokkaWannabe Authors*, like every file in
-  the organisation; in a notebook, the first cell carries it.
+  the organisation; in a notebook, the first cell carries it. `LICENCE` and `CODE_OF_CONDUCT.md` are never
+  edited.
+- **Figures are SVG** - graphs, plots and diagrams alike, never PNG or JPEG: text diffs and stays small in
+  Git. Every figure is made by a script or notebook in the repository, so it can be regenerated, and made
+  deterministically, so regenerating an unchanged figure changes nothing (with matplotlib, set
+  `rcParams["svg.hashsalt"]` and save with `metadata={"Date": None}`). Figures live in `docs/figures/`, and
+  each caption names what made it.
+- Pull request bodies follow [.github/PULL_REQUEST_TEMPLATE.md](../.github/PULL_REQUEST_TEMPLATE.md).
 - Code you add gets a CI job, and that job joins the `needs` of `CI Success` in both workflows, so the gate
   covers it. Notebooks are exempt; the Rust they lead to is not. Workflows may use only GitHub-owned actions,
-  pinned by full commit SHA - the repository refuses any other - so install toolchains in a `run` step
-  (`rustup` reads `rust-toolchain.toml`). When you add the Cargo workspace or `notebooks/requirements.txt`,
-  add the matching ecosystem to [.github/dependabot.yml](../.github/dependabot.yml).
+  pinned by full commit SHA - a single other action makes the workflow die with `startup_failure` and no
+  jobs - so install toolchains in a `run` step (`rustup` reads `rust-toolchain.toml`). When you add the Cargo
+  workspace or `notebooks/requirements.txt`, add the matching ecosystem to
+  [.github/dependabot.yml](../.github/dependabot.yml).
+
+## CI today
+
+`Quick Checks (markdown)` - markdownlint, stray carriage returns, and lychee offline over every markdown file
+(internal links and anchors) - feeds the `CI Success` gate, the one check the ruleset requires, by that exact
+name. CodeQL (actions) scans every pull request beside it without gating. On schedules: the external links
+weekly (`links.yml`), the tool-update watcher (`tool-updates.yml`), the cache clean-up, and Dependabot for npm,
+the pinned actions and the submodules under `external/`. Keep this section true when CI changes.
 
 ## Where things are
 
@@ -170,6 +195,13 @@ STATE.md, and leave the task for the maintainer.
 - [data/README.md](../data/README.md) - the dataset registry; raw downloads go to `data/raw/` (never
   committed).
 - [docs/NIGHT_SHIFT.md](../docs/NIGHT_SHIFT.md) - how a night starts, and its prompt.
+- [docs/research/](../docs/research/) - literature notes, and the citations the plan rests on.
+- [docs/VISION.md](../docs/VISION.md) - the organisation's vision (the Long Arc, mirrored word for word
+  across the organisation - never edit it here alone) and the lab's part in it.
+- [docs/DEV_ENV_SETUP.md](../docs/DEV_ENV_SETUP.md) - the tools, and the checks exactly as CI runs them.
+- [CONTRIBUTING.md](../CONTRIBUTING.md) - how people take part, and the credit they get.
+- [.claude/commands/](commands/) - the audits: coherence, spelling, style.
+- `docs/figures/` - figures, SVG only.
 - `crates/` - the Rust workspace's crates: tools, the benchmark, the Programs.
 - `notebooks/` - Jupyter notebooks for thinking, with `notebooks/requirements.txt`.
 - `external/` - the world's repositories, pinned; read-only for the lab.

@@ -17,7 +17,8 @@ Top first. Each item is sized for one run; split it here before starting if it i
    [doi:10.1038/s41592-018-0112-1](https://doi.org/10.1038/s41592-018-0112-1)). For each candidate record what
    it contains, its file format, its size, its licence and how to download it reproducibly, in
    [data/README.md](data/README.md). Recommend the first dataset to use. Download nothing above 2 GB yet.
-2. **Write the literature note on how worm behaviour is measured**, as `docs/literature/behaviour-measures.md`:
+2. **Write the literature note on how worm behaviour is measured**, as `docs/research/behaviour-measures.md`
+   (the conventions are in [docs/research/README.md](docs/research/README.md)):
    posture as a few eigen-shapes (Stephens et al. 2008), the feature database of Yemini et al. 2013, the
    behavioural motifs of Brown et al. 2013, locomotion states (forward runs, reversals, omega turns, pauses),
    roaming and dwelling. Cite each claim.

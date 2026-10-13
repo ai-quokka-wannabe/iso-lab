@@ -1,3 +1,6 @@
 {
-    "ignores": ["node_modules/**", "external/**"]
+    // Files owned by repository owner - do not modify
+    // GitHub issue templates have their own format requirements
+    // The world's repositories under external/ are linted in their own repositories
+    "ignores": ["node_modules/**", "target/**", "external/**", "CODE_OF_CONDUCT.md", ".github/ISSUE_TEMPLATE/**"]
 }
