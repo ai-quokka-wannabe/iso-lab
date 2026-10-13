@@ -50,8 +50,8 @@ Top first. Each item is sized for one run; split it here before starting if it i
    journal records the triage, and hunches that survive are promoted into numbered hypotheses or tasks here.
 8. **Audit H10's first test by A12's plan**
    ([docs/hypotheses/experiments/A9-A15.md § A12](docs/hypotheses/experiments/A9-A15.md#a12-experiment-hygiene)):
-   planted copies prepared by an agent that has not read that test's review, audited blind against the hunch's
-   list.
+   planted copies prepared by one agent and audited, blind, by another that has read neither that test's review nor
+   the preparation.
 
 ## To Revisit
 
