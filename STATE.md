@@ -1,6 +1,6 @@
 # State of the Lab
 
-**Last updated:** 2026-10-13, late: H10's first test landed, and the experiment plans for hunches A1-A8.
+**Last updated:** 2026-10-13, late: H10's first test landed, and the experiment plans for all of section A.
 
 ## Where We Are
 
@@ -45,7 +45,7 @@ Top first. Each item is sized for one run; split it here before starting if it i
    a keep-the-state rule for ties.
 7. **Plan an experiment for every one of Matej's 93 ideas and hunches** - the maintainer's request - in the format
    of [docs/hypotheses/experiments/README.md](docs/hypotheses/experiments/README.md), whose index shows which are
-   planned. A1-A8 are done; the rest, one task each, in this order: **A9-A15**, **B** (9), **C1-C12**, **C13-C24**,
+   planned. A1-A15 are done; the rest, one task each, in this order: **B** (9), **C1-C12**, **C13-C24**,
    **D** (13), **E1-E10**, **E11-E20**, **F** (12). The journal records the triage, and hunches that survive are
    promoted into numbered hypotheses or tasks here.
 
@@ -77,6 +77,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-13: experiment plans for hunches A9-A15, completing section A
+  ([docs/hypotheses/experiments/A9-A15.md](docs/hypotheses/experiments/A9-A15.md)).
 - 2026-10-13: experiment plans for hunches A1-A8, with the plan format and an index of all 93
   ([docs/hypotheses/experiments/](docs/hypotheses/experiments/README.md)).
 - 2026-10-13: H10, the maintainer's quantum-like brain, written as a hunch; its first test (phasor against real
