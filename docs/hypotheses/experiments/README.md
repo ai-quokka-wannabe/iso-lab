@@ -14,13 +14,14 @@ Every plan has the same parts:
 - **Baselines and controls**: what it is compared with, and the control that would expose a broken harness.
 - **Refuted if**: the outcomes that would refute the hunch, fixed before the run.
 - **Statistics**: the test or interval, chosen before the data is seen.
-- **Seeds and repetitions**: how many, and why that many. The default is 20 seeds per condition: by a Monte Carlo
-  of the one-sided two-sample t test at alpha 0.05 (100 000 draws, numpy generator seed 20261013), 20 per arm gives
-  about 80% power to see a difference of 0.8 standard deviations (the command is in the 2026-10-13 journal). A plan that needs more, or fewer, says why.
+- **Seeds and repetitions**: how many, and why that many. The default is 20 seeds per condition: by a Monte Carlo of
+  the one-sided two-sample t test at alpha 0.05 (100 000 draws, numpy generator seed 20261013), 20 per arm gives about
+  80% power to see a difference of 0.8 standard deviations (the command is in the 2026-10-13 journal). A plan that
+  needs more, or fewer, says why.
 - **Cost**: compute and memory, in the terms of the rule *Lean brains*.
 - **Waits on**: what must exist first - the benchmark, the feature tool, the arena, a sense the Grid lacks.
-- **Leads**: each lead's status - found in Crossref by title and DOI, or read at the source (and for which
-  number). A lead that cannot be found is dropped and says so.
+- **Leads**: each lead's status - found in Crossref by title and DOI, or read at the source (and for which number). A
+  lead that cannot be found is dropped and says so.
 
 A plan says what it cannot settle yet. Numbers it needs from the literature are named, not guessed; they are read
 out of their sources when the experiment is prepared.
@@ -44,15 +45,15 @@ out of their sources when the experiment is prepared.
 | A13 | A stored quantity is not what its name says until a known case has been read | [planned](A9-A15.md#a13-a-stored-quantity-is-not-what-its-name-says-until-a-known-case-has-been-read) |
 | A14 | Mine the field's failures first | [planned](A9-A15.md#a14-mine-the-fields-failures-first) |
 | A15 | Computational psychiatry on a frozen copy | [planned](A9-A15.md#a15-computational-psychiatry-on-a-frozen-copy) |
-| B1 | A nervous system, not a game client | to plan |
-| B2 | Smell as an unlabelled fingerprint | to plan |
-| B3 | Senses switched on by rung | to plan |
-| B4 | How a reversal ends decides whether chemotaxis works | to plan |
-| B5 | A fast agar-plate world for iterating | to plan |
-| B6 | Behaviour must not depend on the tick rate | to plan |
-| B7 | Do not count your own echo | to plan |
-| B8 | A simulated body can be rolled back | to plan |
-| B9 | The insect bet, and the bridge it owes | to plan |
+| B1 | A nervous system, not a game client | [planned](B.md#b1-a-nervous-system-not-a-game-client) |
+| B2 | Smell as an unlabelled fingerprint | [planned](B.md#b2-smell-as-an-unlabelled-fingerprint) |
+| B3 | Senses switched on by rung | [planned](B.md#b3-senses-switched-on-by-rung) |
+| B4 | How a reversal ends decides whether chemotaxis works | [planned](B.md#b4-how-a-reversal-ends-decides-whether-chemotaxis-works) |
+| B5 | A fast agar-plate world for iterating | [planned](B.md#b5-a-fast-agar-plate-world-for-iterating) |
+| B6 | Behaviour must not depend on the tick rate | [planned](B.md#b6-behaviour-must-not-depend-on-the-tick-rate) |
+| B7 | Do not count your own echo | [planned](B.md#b7-do-not-count-your-own-echo) |
+| B8 | A simulated body can be rolled back | [planned](B.md#b8-a-simulated-body-can-be-rolled-back) |
+| B9 | The insect bet, and the bridge it owes | [planned](B.md#b9-the-insect-bet-and-the-bridge-it-owes) |
 | C1 | Two chemotaxis mechanisms at once | to plan |
 | C2 | A bistable forward-backward switch | to plan |
 | C3 | Graded neurons and gap junctions | to plan |

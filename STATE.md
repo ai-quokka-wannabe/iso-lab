@@ -1,6 +1,6 @@
 # State of the Lab
 
-**Last updated:** 2026-10-13, late: H10's first test landed, and the experiment plans for all of section A.
+**Last updated:** 2026-10-13, late: H10's first test landed, and the experiment plans for sections A and B.
 
 ## Where We Are
 
@@ -45,13 +45,17 @@ Top first. Each item is sized for one run; split it here before starting if it i
    a keep-the-state rule for ties.
 7. **Plan an experiment for every one of Matej's 93 ideas and hunches** - the maintainer's request - in the format
    of [docs/hypotheses/experiments/README.md](docs/hypotheses/experiments/README.md), whose index shows which are
-   planned. A1-A15 are done; the rest, one task each, in this order: **B** (9), **C1-C12**, **C13-C24**, **D** (13,
-   and answer A10's question whether nematodes show anything like play), **E1-E10**, **E11-E20**, **F** (12). The
-   journal records the triage, and hunches that survive are promoted into numbered hypotheses or tasks here.
+   planned. A and B are done; the rest, one task each, in this order: **C1-C12**, **C13-C24**, **D** (13, and answer
+   A10's question whether nematodes show anything like play), **E1-E10**, **E11-E20**, **F** (12). The journal
+   records the triage, and hunches that survive are promoted into numbered hypotheses or tasks here.
 8. **Audit H10's first test by A12's plan**
    ([docs/hypotheses/experiments/A9-A15.md § A12](docs/hypotheses/experiments/A9-A15.md#a12-experiment-hygiene)):
    planted copies prepared by one agent and audited, blind, by another that has read neither that test's review nor
    the preparation.
+9. **Audit the Program interface field by field**, by
+   [docs/hypotheses/experiments/B.md § B1](docs/hypotheses/experiments/B.md#b1-a-nervous-system-not-a-game-client):
+   every sense and action against what a worm can transduce and produce, with a blind planted-field control; the
+   delay grades wait on item 2.
 
 ## To Revisit
 
@@ -74,13 +78,17 @@ points to the open ones and says what waits on each.
 
 - **A sense of smell** (tron-grid-lite, master-control; the maintainer takes it up once the lab is set up -
   file nothing). The Grid has no chemical sense, and chemotaxis is the worm's best-studied behaviour. Until
-  the world provides one, chemotaxis is listed as not comparable - never quietly dropped.
+  the world provides one, chemotaxis is listed as not comparable - never quietly dropped. B2 of
+  [the B plans](docs/hypotheses/experiments/B.md#b2-smell-as-an-unlabelled-fingerprint) lists the properties a
+  hunch asks of it (intensity, its change over time, a left-right difference, blending mixtures, blurring traces).
 - **Terrace edges** (master-control; the maintainer takes it up once the lab is set up - file nothing). A
   chain can be thrown when a segment crosses a terrace edge; a fix is in progress. Until it lands, every life
   in this lab is lived on a flat arena.
 
 ## Done
 
+- 2026-10-13: experiment plans for hunches B1-B9
+  ([docs/hypotheses/experiments/B.md](docs/hypotheses/experiments/B.md)).
 - 2026-10-13: experiment plans for hunches A9-A15, completing section A
   ([docs/hypotheses/experiments/A9-A15.md](docs/hypotheses/experiments/A9-A15.md)).
 - 2026-10-13: experiment plans for hunches A1-A8, with the plan format and an index of all 93
