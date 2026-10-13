@@ -140,10 +140,11 @@ proven (STATE.md item 4), so no plan gives absolute figures yet; each will when 
   Grid (STATE.md *Needs From Other Repositories*), or B5's dish sooner - and a chemotaxis Program.
 - **Leads**: none named for the hunch. The measures' sources: Pierce-Shimomura, Morse and Lockery 1999, "The
   fundamental role of pirouettes in *Caenorhabditis elegans* chemotaxis" (*The Journal of Neuroscience*,
-  [doi:10.1523/JNEUROSCI.19-21-09557.1999](https://doi.org/10.1523/JNEUROSCI.19-21-09557.1999)); Bargmann, Hartwieg
+  [doi:10.1523/JNEUROSCI.19-21-09557.1999](https://doi.org/10.1523/JNEUROSCI.19-21-09557.1999)) - cited elsewhere,
+  read on its PMC page for [the behaviour-measures note](../../research/behaviour-measures.md); Bargmann, Hartwieg
   and Horvitz 1993, "Odorant-selective genes and neurons mediate olfaction in *C. elegans*" (*Cell*,
-  [doi:10.1016/0092-8674(93)80053-H](https://doi.org/10.1016/0092-8674(93)80053-H)). Both found in Crossref by DOI;
-  neither read in full.
+  [doi:10.1016/0092-8674(93)80053-H](https://doi.org/10.1016/0092-8674(93)80053-H)) - found in Crossref by DOI, only
+  its abstract read.
 
 ## B5. A fast agar-plate world for iterating
 
