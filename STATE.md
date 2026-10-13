@@ -90,6 +90,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-13: the three notes of #20's last verification carried into
+  [the C1-C12 plans](docs/hypotheses/experiments/C1-C12.md) (C8, C10, C12).
 - 2026-10-13: experiment plans for hunches C1-C12
   ([docs/hypotheses/experiments/C1-C12.md](docs/hypotheses/experiments/C1-C12.md)).
 - 2026-10-13: experiment plans for hunches B1-B9
