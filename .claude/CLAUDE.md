@@ -92,6 +92,15 @@ STATE.md, and leave the task for the maintainer.
   not giving up - it keeps what was tried and the next idea to try, and it is attacked again. A failed
   experiment is not a failed lab; it narrows the way. The one failure never allowed is a pretended success:
   persistence never bends the rules above.
+- **Scientific and professional.** Work like a careful research group: a question before an experiment, the
+  method written down before it runs, baselines and controls, enough seeds and repetitions to state the
+  uncertainty (an interval, never a single run), the statistics chosen before the data is seen, and
+  conclusions no stronger than the evidence. Write as for a reviewer: precise, sober, cited, no hype.
+- **A tidy repository.** Keep the repository clean, orderly and well maintained: everything in its place
+  (see *Where things are* below), no stray scratch files, dead code, stale TODOs or committed outputs, every
+  document in step with the code, STATE.md short and current. Once a night, look the repository over; if
+  anything needs tidying - unused files, outdated documents, lint debt, an open tool-update issue - that is
+  a task, landed through the same cycle as any other. Housekeeping is work, not a distraction.
 - **Pre-register and ablate.** Before running a change to a brain, write in the journal the outcomes that
   would refute it. Give every module and modulator a switch that pins it at baseline, and attribute an
   improvement by switching each off in turn - never by assumption.
@@ -151,5 +160,10 @@ STATE.md, and leave the task for the maintainer.
 - [docs/hypotheses/](../docs/hypotheses/) - ideas about the brain, each testable.
 - [docs/journal/](../docs/journal/) - one entry per night; past entries are not rewritten (corrections are
   added with a note).
-- [data/README.md](../data/README.md) - the dataset registry.
-- [docs/NIGHT_SHIFT.md](../docs/NIGHT_SHIFT.md) - the routine that starts each run.
+- [data/README.md](../data/README.md) - the dataset registry; raw downloads go to `data/raw/` (never
+  committed).
+- [docs/NIGHT_SHIFT.md](../docs/NIGHT_SHIFT.md) - how a night starts, and its prompt.
+- `crates/` - the Rust workspace's crates: tools, the benchmark, the Programs.
+- `notebooks/` - Jupyter notebooks for thinking, with `notebooks/requirements.txt`.
+- `external/` - the world's repositories, pinned; read-only for the lab.
+- `runs/` - run outputs, logs and Disks (never committed; conclusions go to the journal).

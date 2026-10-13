@@ -24,6 +24,8 @@ Nothing like that exists yet. Where the work stands tonight is always in [STATE.
   creature stays honest to its senses, runs lean, and ends up indistinguishable from the real animal.
 - **Stubbornly.** Nothing is declared impossible. Every detail is checked twice, a dead end is a result, and
   a problem that resists comes back the next night from another side.
+- **Scientifically.** A question before every experiment, baselines and controls, uncertainty stated,
+  conclusions no stronger than the evidence - and a repository kept as tidy as a good lab bench.
 - **Honestly.** Negative results are results. Every number comes from a run anyone can repeat, with its
   command and seed written down. Every claim about biology cites a public source.
 
