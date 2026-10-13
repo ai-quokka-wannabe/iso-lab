@@ -156,8 +156,10 @@ is already one phase. Related ideas wait in [Matej's ideas and hunches](matej-hu
 stores more, or produces a measured behaviour the real one cannot.
 *Refuted, module by module*: when it scores no better than a real-valued module of the same compute and memory,
 judged by a statistic fixed before the run; and, under ablation, when its gain survives being made real-valued.
-*Tested so far*: the first toy test, phasor against real associative memory, in
-[notebooks/h10_phasor_memory.ipynb](../../notebooks/h10_phasor_memory.ipynb); the journal has the result.
+*Tested so far*: the first toy test, phasor against real associative memory at the same memory budget, in
+[notebooks/h10_phasor_memory.ipynb](../../notebooks/h10_phasor_memory.ipynb): **refuted at that level** - the
+phasor network was no better (its interval included zero) at twice the multiply-adds. The 2026-10-13 journal has
+the numbers; the test is kept, to return to.
 
 ## Adding a Hypothesis
 

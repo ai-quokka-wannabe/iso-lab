@@ -39,7 +39,8 @@ Top first. Each item is sized for one run; split it here before starting if it i
    A notebook that tries them on toy problems is welcome. The maintainer points out that the 2024 Nobel Prize
    in Physics went to this line of work (Hopfield and Hinton); cite the Nobel committee's own text, read at the
    source.
-6. **Try the maintainer's hunch of a quantum-like Program**: weights and states that are complex numbers, or
+6. **Try the maintainer's hunch of a quantum-like Program** (H10 is written; its first test is under *To
+   Revisit*): weights and states that are complex numbers, or
    numbers further up the hypercomplex tower (quaternions and beyond). Write it into
    [the hypotheses](docs/hypotheses/README.md) as H10, marked *a hunch*, with the outcomes that would refute it
    fixed first - among them, a complex or hypercomplex module that scores no better than a real-valued one of
@@ -57,6 +58,15 @@ Top first. Each item is sized for one run; split it here before starting if it i
    writes the format and an index of all 93 in `docs/hypotheses/experiments/README.md`, and this item then points
    there instead of repeating the format; the journal records the
    triage, and hunches that survive are promoted into numbered hypotheses or tasks here.
+
+## To Revisit
+
+Experiments that failed or came out inconclusive, kept rather than discarded (the maintainer's ruling); each with
+the idea for the next attempt.
+
+- **H10, phasor against real memory** ([the notebook](notebooks/h10_phasor_memory.ipynb), 2026-10-13): no better
+  at the same memory budget, at twice the compute. Next: test phase where the hunch says it matters - the
+  undulation phase of a rhythm generator, interference between two paths (F1), or more phase states.
 
 ## Blocked
 
