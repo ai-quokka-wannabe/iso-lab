@@ -1,6 +1,6 @@
 # State of the Lab
 
-**Last updated:** 2026-10-13, the first (short) shift: the dataset survey and the behaviour-measures note.
+**Last updated:** 2026-10-13, after the maintainer's rulings, the hunches (#12) and H10's first test.
 
 ## Where We Are
 
@@ -48,13 +48,14 @@ Top first. Each item is sized for one run; split it here before starting if it i
 7. **Plan an experiment for every one of Matej's 93 ideas and hunches**, in
    [docs/hypotheses/matej-hunches.md](docs/hypotheses/matej-hunches.md) - the maintainer's request. Split into
    eight tasks of a night's size, one group each, section A first:
-   - **A** (15), **B** (9), **C1-C12**, **C13-C24**, **D** (13), **E1-E10**, **E11-E20**, **F** (12).
+   - **A** (15; split into A1-A8 and A9-A15 first if it does not fit a night), **B** (9), **C1-C12**, **C13-C24**, **D** (13), **E1-E10**, **E11-E20**, **F** (12).
 
    Each writes `docs/hypotheses/experiments/<group>.md`: for every hunch, the question, the method, baselines and
    controls, the outcomes that would refute it (fixed first), the statistics, seeds and repetitions, the cost in
    compute and memory, what it waits on (the benchmark, the arena, a sense the Grid lacks), and its leads checked
    at the source. A hunch that cannot be tested yet keeps its plan and says what it waits on. The first task also
-   writes the format and an index of all 93 in `docs/hypotheses/experiments/README.md`; the journal records the
+   writes the format and an index of all 93 in `docs/hypotheses/experiments/README.md`, and this item then points
+   there instead of repeating the format; the journal records the
    triage, and hunches that survive are promoted into numbered hypotheses or tasks here.
 
 ## Blocked
