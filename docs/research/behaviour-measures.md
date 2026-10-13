@@ -1,8 +1,9 @@
 # How Worm Behaviour Is Measured
 
 The measures the benchmark will be built from, and where each comes from. Every claim below was read from the
-paper's text in PubMed Central on 2026-10-13, through NCBI's E-utilities or the article's PMC page; where a
-section has not been read in full, it says so.
+paper's text in PubMed Central on 2026-10-13, through NCBI's E-utilities or the article's PMC page; all five
+papers were read in full. How sure the lab is: high for the quoted definitions and numbers, which are the
+papers' own; lower for the paragraphs headed *For the lab*, which are the lab's reasoning and untested.
 
 ## Posture: a Few Eigen-Shapes
 
@@ -20,26 +21,27 @@ shapes are the *eigenworms*.
   response, where the distribution of shapes is very different.
 - **For the lab**: posture and the rhythm of undulation become comparable between a real worm and a body of
   seven joint angles by fitting eigen-shapes to each and comparing in phase and in periods of the wave rather
-  than in millimetres. How many modes seven joints can carry is for the comparison space (item 2) to work out.
+  than in millimetres. How many modes seven joints can carry is for the comparison space to work out.
 
 ## The Feature Database
 
-[Yemini et al. 2013](https://doi.org/10.1038/nmeth.2560) is the database the Open Worm Movement Database grew
-from ([data/README.md § The Phase 0 Survey](../../data/README.md#the-phase-0-survey)).
+[Yemini et al. 2013](https://doi.org/10.1038/nmeth.2560). The Open Worm Movement Database record read in the
+survey names its protocol as this paper's method
+([data/README.md § The Phase 0 Survey](../../data/README.md#the-phase-0-survey)).
 
 - **What was recorded**: 1218 N2 young-adult hermaphrodites over three years, 2009 to 2012, and at least 20
-  worms of each mutant strain, each "spontaneously behaving on food", given 30 minutes to habituate and then
-  tracked for 15 minutes. Videos entered the comparisons only if they ran at least 20 frames per second for 14
-  to 15 minutes with at least 20% of frames segmented.
+  worms of each mutant strain filmed, each "spontaneously behaving on food", given 30 minutes to habituate and
+  then tracked for 15 minutes. Videos entered the comparisons only if they ran at least 20 frames per second for
+  14 to 15 minutes with at least 20% of frames segmented, which left "a mean of 24 worms per strain with a
+  minimum of 12".
 - **What was measured**: "measures of morphology, posture, locomotion, and path dynamics", with behavioural
   events such as reversals and omega turns generating secondary measures such as event frequency, time spent
   and distance covered. "Altogether, the permutation of these measures yielded 702 distinct feature
   measurements."
 - **How strains were compared**: each feature against wild type by a Wilcoxon rank-sum test, with Fisher's
   exact test for measurements found only in one group.
-- **Event definitions are thresholds**: an omega turn, for example, needs a body angle that "must initially
-  exceed 30° at the first but not the last third of the body". The benchmark has to fix such thresholds in
-  units both bodies share before any comparison.
+- **Event definitions are thresholds** (see *Locomotion States* below). The benchmark has to fix such
+  thresholds in units both bodies share before any comparison.
 - **A difference worth noting**: the paper counts 1218 N2 worms recorded 2009 to 2012; the survey counted
   1792 N2 records on Zenodo, recorded 2009 to 2016. The two are not the same set, and which records the
   paper used is not yet traced.
@@ -65,7 +67,7 @@ Yemini et al. 2013 define the motion states by thresholds in units of the worm's
 - **Paused**: a period of more than half a second in which the forward and backward speeds "do not exceed 2.5%
   of its length, per second, in each frame".
 - **Omega and upsilon turns**: computed from the bends of the skeleton; an omega turn's body angle must
-  initially exceed 30° at the first but not the last third of the body.
+  "must initially exceed 30° at the first but not the last third of the body".
 
 Because the thresholds are fractions of body length per second and durations in seconds, they carry over to a
 body of any size, which is what the comparison space needs.
