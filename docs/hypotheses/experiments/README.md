@@ -54,18 +54,18 @@ out of their sources when the experiment is prepared.
 | B7 | Do not count your own echo | [planned](B.md#b7-do-not-count-your-own-echo) |
 | B8 | A simulated body can be rolled back | [planned](B.md#b8-a-simulated-body-can-be-rolled-back) |
 | B9 | The insect bet, and the bridge it owes | [planned](B.md#b9-the-insect-bet-and-the-bridge-it-owes) |
-| C1 | Two chemotaxis mechanisms at once | to plan |
-| C2 | A bistable forward-backward switch | to plan |
-| C3 | Graded neurons and gap junctions | to plan |
-| C4 | The connectome as a mask - or not | to plan |
-| C5 | A layered brain with its timescales written down | to plan |
-| C6 | Blend the layers, do not override | to plan |
-| C7 | Reflex interlocks the learning cannot reach | to plan |
-| C8 | A fast global stop and a slow appraisal; threat has an imminence axis | to plan |
-| C9 | Coincidence detection as a learned prior | to plan |
-| C10 | Many proposals, one commitment per cycle | to plan |
-| C11 | Imagination through the action pathway | to plan |
-| C12 | A step clock from brain rhythms | to plan |
+| C1 | Two chemotaxis mechanisms at once | [planned](C1-C12.md#c1-two-chemotaxis-mechanisms-at-once) |
+| C2 | A bistable forward-backward switch | [planned](C1-C12.md#c2-a-bistable-forward-backward-switch) |
+| C3 | Graded neurons and gap junctions | [planned](C1-C12.md#c3-graded-neurons-and-gap-junctions) |
+| C4 | The connectome as a mask - or not | [planned](C1-C12.md#c4-the-connectome-as-a-mask---or-not) |
+| C5 | A layered brain with its timescales written down | [planned](C1-C12.md#c5-a-layered-brain-with-its-timescales-written-down) |
+| C6 | Blend the layers, do not override | [planned](C1-C12.md#c6-blend-the-layers-do-not-override) |
+| C7 | Reflex interlocks the learning cannot reach | [planned](C1-C12.md#c7-reflex-interlocks-the-learning-cannot-reach) |
+| C8 | A fast global stop and a slow appraisal; threat has an imminence axis | [planned](C1-C12.md#c8-a-fast-global-stop-and-a-slow-appraisal-threat-has-an-imminence-axis) |
+| C9 | Coincidence detection as a learned prior | [planned](C1-C12.md#c9-coincidence-detection-as-a-learned-prior) |
+| C10 | Many proposals, one commitment per cycle | [planned](C1-C12.md#c10-many-proposals-one-commitment-per-cycle) |
+| C11 | Imagination through the action pathway | [planned](C1-C12.md#c11-imagination-through-the-action-pathway) |
+| C12 | A step clock from brain rhythms | [planned](C1-C12.md#c12-a-step-clock-from-brain-rhythms) |
 | C13 | Vigour from the average reward rate; one global slowing factor | to plan |
 | C14 | Poised near criticality, monitored | to plan |
 | C15 | A logistic-map arousal engine | to plan |
