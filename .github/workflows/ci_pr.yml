@@ -1,0 +1,103 @@
+name: CI - Pull Request
+
+permissions:
+    contents: read
+
+on:
+    pull_request:
+        branches: ["**"]
+
+# A new push to a pull request makes the previous run's result irrelevant, so stop paying for it.
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    quick-checks:
+        name: Quick Checks (markdown)
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+            - name: Setup Node.js
+              id: setup-node
+              uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+              with:
+                node-version: "lts/*"
+
+            # Restore cache from main branch (read-only)
+            - name: Restore npm cache
+              uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+              with:
+                path: ~/.npm
+                key: npm-${{ runner.os }}-node-${{ steps.setup-node.outputs.node-version }}-lock-${{ hashFiles('package-lock.json') }}
+
+            # The linter is pinned by package-lock.json - the same bytes on every run and on every
+            # desk - so a lint run is reproducible and a linter bump is a reviewable change rather
+            # than a surprise red build. Dependabot proposes those bumps.
+            - name: Install the pinned markdownlint-cli2
+              run: npm ci --ignore-scripts
+
+            - name: Lint markdown
+              run: npx markdownlint-cli2 "**/*.md"
+
+            # A carriage return sitting inside a line is invisible in every editor, survives
+            # markdownlint, and reads as ordinary text in review. Three reached the flagship's
+            # main before this step existed there, each one a Doxygen \return written through a
+            # tool chain that collapsed the escape, leaving a control character and a word
+            # reading "eturn" where the tag should be.
+            #
+            # .gitattributes normalises to LF and this runner is Linux, so the checkout contains
+            # no legitimate carriage return at all and any match is a stray. -I skips binary
+            # files, and taking the file list from git keeps build outputs and untracked scratch
+            # out of it.
+            - name: Check for stray carriage returns
+              run: |
+                if git ls-files -z | xargs -0 grep -lIP '\r'; then
+                    echo "::error::The files above contain a carriage return. Line endings here are LF, so it is a stray one inside a line - look for a text written through a tool that ate an escape."
+                    exit 1
+                fi
+
+            # lychee is installed from its pinned release archive with a checksum check rather
+            # than through lycheeverse/lychee-action: the organisation runs GitHub-owned actions
+            # only, and a verified download keeps that policy - and the trust it means - intact.
+            - name: Install lychee
+              shell: bash
+              env:
+                LYCHEE_VERSION: v0.24.2
+                LYCHEE_SHA256: 1f4e0ef7f6554a6ed33dd7ac144fb2e1bbed98598e7af973042fc5cd43951c9a
+              run: |
+                curl -sSfL -o lychee.tar.gz "https://github.com/lycheeverse/lychee/releases/download/lychee-${LYCHEE_VERSION}/lychee-x86_64-unknown-linux-gnu.tar.gz"
+                echo "${LYCHEE_SHA256}  lychee.tar.gz" | sha256sum --check --strict
+                tar -xzf lychee.tar.gz
+                sudo install -m 755 lychee-x86_64-unknown-linux-gnu/lychee /usr/local/bin/lychee
+                rm -rf lychee.tar.gz lychee-x86_64-unknown-linux-gnu
+                lychee --version
+
+            # Every internal link and anchor in the documentation resolves - offline, so the
+            # answer is deterministic and a third-party site cannot redden a pull request. The
+            # external links have their own scheduled workflow.
+            - name: Check internal links and anchors
+              run: lychee --offline --include-fragments --no-progress --root-dir "$(pwd)" --exclude-path node_modules --exclude-path external "./**/*.md"
+
+    # The flagship's quick-checks also gate clang-format and the Program ABI version, and it runs
+    # build, sanitiser and software-Vulkan verification jobs besides. None of them transfers: this
+    # repository is documentation and workflows, with nothing to format, fingerprint or compile.
+    ci-success:
+        name: CI Success
+        needs: [quick-checks]
+        runs-on: ubuntu-latest
+        timeout-minutes: 5
+        if: always()
+
+        steps:
+            - name: Check if all jobs succeeded
+              run: |
+                if [[ "${{ needs.quick-checks.result }}" != "success" ]]; then
+                    echo "One or more jobs failed"
+                    exit 1
+                fi
+                echo "All jobs completed successfully"

@@ -1,0 +1,25 @@
+/build
+/.qtcreator
+/.vs
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
+
+# The pinned markdown linter, installed by `npm ci`; the lock file is tracked, the modules are not.
+/node_modules/
+
+# Cargo's build output for the lab's Rust workspace; Cargo.lock is tracked.
+/target/
+
+# Python environments, bytecode and Jupyter's autosaves, which appear as soon as a notebook runs.
+/.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Raw datasets are downloaded, never committed: data/README.md records where each comes from, its licence
+# and its checksum, so anyone can fetch the same bytes. Derived summaries small enough to review are tracked.
+/data/raw/
+
+# Run outputs - logs, Disks, intermediate files. A run's conclusions are written up in docs/journal/ and
+# results/, with the command and seed that reproduce them; the bulky by-products stay out of git.
+/runs/
