@@ -55,7 +55,7 @@ points to the open ones and says what waits on each.
 
 ## Done
 
-- 2026-10-13: the dataset survey - the Open Worm Movement Database's 1792 N2 records (CC-BY-4.0, MD5 per file)
-  chosen for Phase 0; the CeMEE Multi-Worm Tracker data set aside, its authors asking to be contacted first.
+- 2026-10-13: the dataset survey - the Open Worm Movement Database's N2 records chosen for Phase 0, selected by
+  their metadata; the CeMEE data set aside ([data/README.md § The Phase 0 Survey](data/README.md#the-phase-0-survey)).
 - 2026-10-13: the lab opened - repository, rules ([.claude/CLAUDE.md](.claude/CLAUDE.md)), plan, hypotheses,
   journal and dataset registry.
