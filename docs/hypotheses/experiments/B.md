@@ -7,7 +7,11 @@ world's own repositories can make - those go to them as issues when the time com
 and the world's by their own rules*.
 
 The leads were looked up in Crossref by title on 2026-10-13. Found means the work exists as named, with the DOI
-given; none was read in full. A lead that could not be found says so.
+given; none was read in full, and where only the abstract was read, the plan says so. A lead that could not be found
+says so.
+
+Where a plan has more than one refutation test, each is run at alpha 0.05 divided by their number (Bonferroni), as
+[A9-A15.md § A10](A9-A15.md#a10-welfare-and-affect-read-from-behaviour-alone) did, and its intervals are widened to match.
 
 Costs are counted in simulated lives. What one life costs in compute and memory is not known until the arena is
 proven (STATE.md item 4), so no plan gives absolute figures yet; each will when it is prepared. Seed counts follow
@@ -15,39 +19,59 @@ proven (STATE.md item 4), so no plan gives absolute figures yet; each will when 
 
 ## B1. A nervous system, not a game client
 
-- **Question**: does every field a Program receives correspond to something a worm's sensory biology can transduce, at
-  a comparable resolution - and does a field-by-field audit catch one that does not?
-- **Method**: list every field of the senses structure in the Program interface at the pinned world
-  ([PROGRAM_INTERFACE.md](https://github.com/ai-quokka-wannabe/tron-grid-lite/blob/main/docs/PROGRAM_INTERFACE.md) and
-  its header), and for each, name the worm's organ or neuron class that could transduce it, with a source read at the
-  source, or mark it as having none. Grade each field: carried by the animal; carried at a resolution the animal
-  lacks; not carried at all.
-- **Baselines and controls**: a planted field - a copy of the field list with one ground-truth entry added (the body's
-  position) - must be flagged by the audit; a field the lab already knows the worm has (touch along the body) must
-  pass.
-- **Refuted if**: the audit passes the planted field, or fails the known one. A field graded *not carried at all* is
-  not a refutation of the hunch but a finding: it goes to the comparison space as a sense the Program must not rely
-  on, or to the world's repository as an issue.
-- **Statistics**: none; a graded list, each grade with its source.
-- **Seeds and repetitions**: not applicable.
-- **Cost**: reading.
-- **Waits on**: nothing; it can be done now, and is the cheapest plan in section B.
-- **Leads**: none named; the sources are the worm's sensory biology, to be found and read field by field.
+- **Question**: does every field a Program receives, and every action it sends, correspond to something a worm's
+  sensory and motor biology can transduce or produce - at a comparable resolution and with a comparable delay - and
+  does a blind field-by-field audit catch one that does not?
+- **Method**: list every field of the senses (`TglSenses`) and of the actions (`TglActions`: the speed and turn
+  intents, `joint_targets`, the call) in the Program interface at the pinned world
+  ([PROGRAM_INTERFACE.md at c083262](https://github.com/ai-quokka-wannabe/tron-grid-lite/blob/c083262e473884cb60e83e95cddb851e4c7a8962/docs/PROGRAM_INTERFACE.md),
+  also in `external/tron-grid-lite`, and its header). For each sense, name the worm's organ or neuron class that could
+  transduce it; for each action, the worm's motor output that could produce it; each with a source read at the source,
+  or marked as having none. Grade each field: carried by the animal; carried at a resolution the animal lacks; carried
+  with a delay shorter than the animal's; not carried at all. The delay grades are read against the latencies of the
+  pace note (STATE.md item 2); until it exists they are marked *pending*, not passed.
+- **Baselines and controls**: a blind planted field. One agent prepares three copies of the field list, into which it
+  plants none, one or two ground-truth fields (for example the body's position, or the distance to the nearest
+  wall) at random places, and keeps the key; a second agent that has seen neither the key nor the preparation audits
+  all three. A field the worm is known to have must pass: touch along the body, which six touch receptor neurons
+  carry, with separate pathways for anterior and posterior touch ([Chalfie et al.
+  1985](https://doi.org/10.1523/JNEUROSCI.05-04-00956.1985); the abstract was read, not the paper).
+- **Refuted if**: the blind audit passes any planted field, or fails the known one. A field graded anything but *carried by the animal* is not a
+  refutation of the hunch but a finding: it goes to the comparison space as a sense the Program must not rely on as
+  given, and to the world's repository as an issue. Whether a Program may itself coarsen or delay a field the world
+  gives too finely or too fast is a question for the maintainer, written in STATE.md, not decided by the audit.
+- **Statistics**: none; a graded list, each grade with its source, and the planted-field key against the audit.
+- **Seeds and repetitions**: not applicable; the three planted copies are the repetitions.
+- **Cost**: reading, by two agents.
+- **Waits on**: nothing for the senses, actions and resolution; the delay grades wait on the pace note (STATE.md item 2).
+- **Leads**: found - Chalfie et al. 1985, "The neural circuit for touch sensitivity in *Caenorhabditis elegans*"
+  (*The Journal of Neuroscience*, [doi:10.1523/JNEUROSCI.05-04-00956.1985](https://doi.org/10.1523/JNEUROSCI.05-04-00956.1985)).
+  The other sources are the worm's sensory and motor biology, to be found and read field by field.
 
 ## B2. Smell as an unlabelled fingerprint
 
 - **Question**: if each odour source carries a fixed multi-dimensional pattern, does a learning Program's recognition
   generalise to similar patterns and get confused by blends, as the hunch says real recognition should?
 - **Method**: train the Program to approach a source with pattern P; then test it with patterns at increasing
-  distances from P, and with blends of P and an untrained pattern Q in proportions from 0 to 1.
-- **Baselines and controls**: an untrained Program (no gradient expected); a Program trained on Q, tested the same way
-  (the gradient must centre on Q, not P).
+  distances from P, and with blends of P and an untrained pattern Q in proportions from 0 to 1. Distance in pattern
+  space is the Euclidean distance between the two patterns after each is scaled to unit length; the patterns'
+  dimension is fixed when the Grid's chemical sense is specified, and if that sense makes another distance more
+  natural, the change is written in the journal before any run. The hunch's world-side properties - intensity, its
+  change over time, a left-right difference, blending mixtures, blurring old traces - are properties of the sense,
+  not of a brain: they are added to the smell request in STATE.md *Needs From Other Repositories*, which the
+  maintainer takes up, and this plan tests only the brain's side.
+- **Baselines and controls**: an untrained Program tested on the same patterns - it fails, and the run is void, if
+  its distance curve's rho interval lies wholly below zero (a gradient without training comes from the patterns or the
+  harness). A Program trained on Q, tested on the same P-centred patterns - it fails, and the run is void, if its rho
+  interval also lies wholly below zero (the P-trained gradient would then not be P's).
 - **Refuted if**: the approach response does not fall with distance from P - Spearman's rank correlation between
-  distance and response has a 95% interval that does not lie below zero; or the response to blends does not change
-  monotonically with the proportion of P, by the same test.
-- **Statistics**: Spearman's rho with a bootstrap 95% interval, per curve.
+  distance and response has a 97.5% interval that does not lie wholly below zero; or the response to blends does not
+  rise with the proportion of P - its rho, between the proportion of P and the response, has a 97.5% interval that does
+  not lie wholly above zero. Two tests, so each interval is at 1 - 0.05/2 (Bonferroni).
+- **Statistics**: Spearman's rho with a bootstrap 97.5% interval, per curve.
 - **Seeds and repetitions**: 20 seeds per test pattern; at least 8 distances and 8 blend proportions.
-- **Cost**: 20 lives per test point, about 320 lives per curve pair.
+- **Cost**: 20 lives per test point, 16 points - about 320 test lives for each of the three Programs (P-trained,
+  Q-trained, untrained), 960 in all, plus the training lives of the two trained Programs, whose number H9 will fix.
 - **Waits on**: a chemical sense on the Grid (STATE.md *Needs From Other Repositories*, which the maintainer takes
   up), and a Program that learns (H9).
 - **Leads**: none named.
@@ -55,118 +79,178 @@ proven (STATE.md item 4), so no plan gives absolute figures yet; each will when 
 ## B3. Senses switched on by rung
 
 - **Question**: when the next rung of the ladder only adds sense channels, do all of the previous rung's tests still
-  pass?
-- **Method**: run the worm's frozen benchmark on a worm Program that receives the next rung's extra channels but
-  ignores them, and on one that uses them.
-- **Baselines and controls**: the worm Program on the worm rung (its own score); the extra channels fed with noise (an
-  added channel must not break the worm by its mere presence).
-- **Refuted if**: the Program that ignores the new channels, or the one fed noise on them, differs from its own rung
-  on any benchmark measure by the per-feature comparisons the frozen benchmark will fix, with its correction for
-  multiple comparisons - then the rungs do not only add, and earlier tests do not stay valid.
+  pass, and can they all still be run?
+- **Method**: run the worm's frozen benchmark under four conditions: (a) the worm Program on the worm rung (its own
+  score); (b) the same Program on the next rung's interface, receiving the extra channels with the arena's real
+  readings but reading none of them; (c) as (b), with the extra channels fed noise; (d) a Program that uses the extra
+  channels. Because the Program in (b) and (c) reads none of them, these two arms test the interface and the harness,
+  not a brain: they can fail only if the added channels disturb the others (a framing, ordering or timing fault),
+  which is what "only adds" forbids. Arm (d) is a different animal and may rightly score differently, so its score is
+  reported, not compared; its role is to show that every worm measure can still be computed on the next rung.
+- **Baselines and controls**: arm (a) is the baseline. Arm (c)'s noise goes to the Program of arm (b), so (b) against
+  (c) checks that the content of the extra channels cannot reach a Program that ignores them.
+- **Refuted if**: arm (b) or (c) differs from arm (a) on any benchmark measure by the per-feature comparisons the
+  frozen benchmark will fix, with its correction for multiple comparisons; or any benchmark measure cannot be
+  computed for arm (d).
 - **Statistics**: the frozen benchmark's per-feature comparisons.
 - **Seeds and repetitions**: 20 seeds per condition.
-- **Cost**: three sets of 20 lives.
+- **Cost**: four sets of 20 lives, 80 in all.
 - **Waits on**: the frozen benchmark, a worm Program, and a second rung's senses on the Grid (the ladder of
-  [PERCEPTION.md](https://github.com/ai-quokka-wannabe/tron-grid-lite/blob/main/docs/PERCEPTION.md)).
+  [PERCEPTION.md](https://github.com/ai-quokka-wannabe/tron-grid-lite/blob/c083262e473884cb60e83e95cddb851e4c7a8962/docs/PERCEPTION.md)).
 - **Leads**: none named.
 
 ## B4. How a reversal ends decides whether chemotaxis works
 
 - **Question**: does chemotaxis depend on whether backing up reorients the body - so that with reversals that do not
-  reorient, reversals not followed by an omega turn stop helping?
-- **Method**: two parts, because how a reversal moves the body is the world's physics, not the Program's choice, and
-  the lab never changes the world to suit a brain (*Realism over speed*). On the Grid, measure what a reversal does:
-  the change of heading from just before a reversal to just after it, for a Program that reverses, against the real
-  worm's (read from the recordings). In B5's dish world, where both semantics can be built, run the same chemotaxis
-  Program under reversals that end with a change of heading and reversals that end on the old heading, and measure the
-  chemotaxis index and the share of reversals followed by an omega turn under each.
-- **Baselines and controls**: in the dish, a Program whose reversals are random in time (no taxis expected under
-  either semantics); the real worm's reversal-to-omega share and heading change after a reversal.
-- **Refuted if**: in the dish, the chemotaxis index under the non-reorienting semantics is not lower than under the
-  reorienting one - a one-sided two-sample t test across seeds at alpha 0.05 does not find it lower. The Grid
-  measurement is not a refutation but a finding: if the Grid's reversals reorient differently from the worm's, it is
-  written up as an issue for tron-grid-lite or master-control.
-- **Statistics**: the chemotaxis index per seed and the test above; the heading change per reversal against the real
-  worm's, compared by the frozen benchmark's per-feature comparisons; the omega share with a Wilson interval.
-- **Seeds and repetitions**: 20 seeds per semantics in the dish, the format's default; on the Grid, every reversal of
-  20 lives.
-- **Cost**: 40 dish lives, 40 for the control, and 20 Grid lives.
-- **Waits on**: B5's dish with a chemical gradient, a chemotaxis Program, and for the Grid part a Program that
-  reverses. Chemotaxis on the Grid itself waits on a chemical sense.
-- **Leads**: none named; the omega-turn definition is in [the behaviour-measures
+  reorient, reversals not followed by an omega turn stop helping, and chemotaxis fails on some seeds?
+- **Method**: on the Grid's chain body the Program sends `joint_targets[7]`, and the interface says the gait - which
+  joint bends when - is the Program's own (PROGRAM_INTERFACE.md § Actions, at the pinned commit). The two motor
+  semantics of the hunch can therefore be two gait layers of the Program on the unchanged Grid: one whose reversal
+  ends by bending the body onto a new heading, one that backs straight and resumes the old heading. Nothing in the
+  world changes (*Realism over speed*). Step 1, before any brain: send each reversal as a scripted joint pattern, with
+  no Program deciding, and measure the change of heading from the last tick before the reversal to 2 s after forward
+  motion resumes. If no scripted pattern tried gives a reorienting reversal, the Grid's physics may be what prevents
+  it, and only then is it written up as an issue for tron-grid-lite or master-control, with the patterns tried. Step
+  2: a chemotaxis Program that steers by reversals alone (the pirouette strategy of [Pierce-Shimomura et al.
+  1999](https://doi.org/10.1523/JNEUROSCI.19-21-09557.1999), with any other steering switched off, so reversals are its
+  only lever), run with each gait layer in a chemical gradient. Per life, the score is +1 if it ends in the
+  attractant zone, -1 in the control zone and 0 elsewhere; the chemotaxis index is the mean over lives, the form of
+  [Bargmann et al. 1993](https://doi.org/10.1016/0092-8674(93)80053-H) - whether its denominator counts animals that end
+  elsewhere is to be checked against the paper (only its abstract was read), and is fixed before any run. Measure
+  under each semantics: the index; the heading change towards the gradient after each reversal not followed by an
+  omega turn, over the same window as step 1; the share of lives that fail (a score of 0 or below); and the share of
+  reversals followed by an omega turn, by the definition in [the behaviour-measures
   note](../../research/behaviour-measures.md).
+- **Baselines and controls**: a Program with the same gait layers whose reversals are random in time, at the same rate:
+  it fails, and the run is void, if its chemotaxis index's 95% interval lies wholly above zero under either
+  semantics (taxis that does not come from informed reversals). The real worm, read from the recordings: the
+  reorienting semantics must match the worm's heading change after a reversal and its reversal-to-omega share, by the
+  frozen benchmark's per-feature comparisons; if it does not, the comparison is between two gaits neither of which is
+  the worm's, and the run is void for this hunch until the gait matches.
+- **Refuted if**: any of three one-sided tests, each at alpha 0.05/3 (Bonferroni), fails to find what the hunch claims,
+  non-reorienting against reorienting: (1) the chemotaxis index is lower (a permutation test on the per-life scores);
+  (2) the mean heading change towards the gradient after reversals not followed by an omega turn is lower (a
+  permutation test on the per-reversal changes, permuting whole lives); (3) the share of failing lives is higher
+  (Fisher's exact test).
+- **Statistics**: the three tests above; the omega share with a Wilson interval; the controls' rules as stated.
+- **Seeds and repetitions**: step 1, 20 lives per scripted pattern; step 2, 20 lives per semantics, the format's
+  default, and as many for the control.
+- **Cost**: step 1, 40 Grid lives; step 2, 80 lives in whichever world has the gradient.
+- **Waits on**: step 1, the arena only (STATE.md item 4). Step 2 waits on a chemical gradient - a chemical sense on the
+  Grid (STATE.md *Needs From Other Repositories*), or B5's dish sooner - and a chemotaxis Program.
+- **Leads**: none named for the hunch. The measures' sources: Pierce-Shimomura, Morse and Lockery 1999, "The
+  fundamental role of pirouettes in *Caenorhabditis elegans* chemotaxis" (*The Journal of Neuroscience*,
+  [doi:10.1523/JNEUROSCI.19-21-09557.1999](https://doi.org/10.1523/JNEUROSCI.19-21-09557.1999)); Bargmann, Hartwieg
+  and Horvitz 1993, "Odorant-selective genes and neurons mediate olfaction in *C. elegans*" (*Cell*,
+  [doi:10.1016/0092-8674(93)80053-H](https://doi.org/10.1016/0092-8674(93)80053-H)). Both found in Crossref by DOI;
+  neither read in full.
 
 ## B5. A fast agar-plate world for iterating
 
 - **Question**: can a small two-dimensional dish world, with the Grid's sensory and motor interface, reproduce the
   published assays fast enough to iterate on - and does a brain that passes there and fails on the Grid show what the
   dish leaves out?
-- **Method**: build the dish as the hunch describes, behind the same interface as a Program on the Grid; run A1's
-  assays there; move a brain from dish to Grid unchanged and run the same assays on the Grid.
+- **Method**: build the dish's world as the hunch describes it - point sources with diffusing gradients that deplete
+  and drift, a temperature gradient, food eaten only when moving forward near it, head-only sensing - but with two of
+  the hunch's features moved to where they belong. Walls give touch, as the Grid's do, and the reversal at a wall is
+  the Program's response to that touch; the cultivation set point is the animal's memory of where it was raised, so
+  it lives in the Program, not in the dish. The dish speaks the Grid's interface, plus the chemical and temperature
+  senses the Grid lacks, in a provisional form replaced by the world maintainers' own when they add them. Run A1's
+  assays in the dish; move three brains from dish to Grid unchanged - the undulating control, B4's chemotaxis
+  Program, and the best Program the lab has then - and run the same assays on the Grid. Before the comparison, write
+  down and freeze the list of known differences between the two worlds.
 - **Baselines and controls**: the same assays on real worms (A1's bands); a Program that only undulates (it must fail
-  the assays that need steering, in both worlds).
-- **Refuted if**: a simulated second in the dish is not at least ten times cheaper in compute than on the Grid (it is
-  not fast enough to iterate on); or more than one of A1's comparable assays cannot be run in the dish with its
-  published protocol (geometry, timings, stimulus); or a brain's pass or fail differs between dish and Grid on more
-  than one assay in five, where a difference does not count only if it is traced to a difference between the two
-  worlds written down before the comparison.
+  the assays that need steering, in both worlds; if it passes one, that assay is void in the world where it passed).
+- **Refuted if**: a simulated second in the dish is not at least ten times cheaper in compute than on the Grid (not
+  fast enough to iterate on); or more than one of A1's comparable assays cannot be run in the dish with its published
+  protocol (geometry, timings, stimulus); or a brain's pass or fail differs between dish and Grid on more than one
+  assay in five, every difference counted; or any difference is not explained by an entry of the frozen list (then a
+  divergence does not show what the dish leaves out). Explained differences are the hunch's second half: they are
+  reported as what the dish leaves out, but they still count towards the one in five.
 - **Statistics**: compute per simulated second measured in both worlds; per assay, A1's rule in each world.
-- **Seeds and repetitions**: 20 seeds per assay per world.
-- **Cost**: the dish's own build, and one Grid life per seed per assay.
-- **Waits on**: A1's bands and the arena. The dish is a tool, so it is written in Rust (the rule *Rust first*); it
-  never scores a brain - scoring stays on the Grid.
+- **Seeds and repetitions**: 20 seeds per assay per world per brain.
+- **Cost**: the dish's own build; 20 dish lives and 20 Grid lives per assay per brain, three brains.
+- **Waits on**: A1's bands and the arena. The assays of chemotaxis and thermotaxis can be compared on the Grid only
+  once the Grid has the chemical and temperature senses it lacks (STATE.md *Needs From Other Repositories*); until
+  then they run in the dish alone and the dish-to-Grid comparison covers the rest. The dish is a tool, so it is
+  written in Rust (the rule *Rust first*); it never scores a brain - scoring stays on the Grid.
 - **Leads**: none named.
 
 ## B6. Behaviour must not depend on the tick rate
 
-- **Question**: are a Program's behavioural statistics the same at two tick rates?
+- **Question**: are a Program's behavioural statistics the same at two tick rates, and under fast-forward?
 - **Method**: the Grid's tick is fixed: Master Control steps the world at 0.031 25 s, a constant in its source
   (`TICK_SECONDS` in `external/master-control/src/physics.rs` at the pinned commit), so the Grid itself cannot run at
-  two rates. The test is therefore made where the rate can change - in B5's dish world at 32 Hz and 64 Hz, and in a
-  Program's own internal integration step, at two steps per tick against one.
-- **Baselines and controls**: the same rate twice with different seeds (the run-to-run spread the comparison is judged
-  against).
-- **Refuted if**: any benchmark measure differs between the two rates by the per-feature comparisons the frozen
-  benchmark will fix, with its correction for multiple comparisons.
-- **Statistics**: as above.
-- **Seeds and repetitions**: 20 seeds per rate.
-- **Cost**: 40 lives in the dish per comparison; the internal-step comparison, 40 Grid lives.
+  two rates. The rate test is therefore made where the rate can change - in B5's dish world at 32 Hz and 64 Hz, and
+  in a Program's own internal integration step, at two steps per tick against one. Fast-forward: Master Control's
+  heartbeat paces the ticks to the wall clock (`run` in `external/master-control/src/heartbeat.rs`), so the Grid has no
+  fast-forward; in the dish, run the same seed paced to the wall clock and unpaced. A fast-forward on the Grid is a
+  change for master-control, asked for there by issue if this experiment needs it when it is prepared.
+- **Baselines and controls**: a scripted motor pattern with no Program, at 32 Hz and 64 Hz in the dish - its locomotion
+  measures must agree by the same comparisons, or the dish's own physics depends on the rate and the run is void until
+  the dish is fixed. An A/A control: the same rate twice with different seeds - if it shows a difference by the same
+  comparisons, the run is void.
+- **Refuted if**: any benchmark measure differs between the two rates, or between the two internal steps, by the
+  per-feature comparisons the frozen benchmark will fix, with its correction for multiple comparisons; or a paced and an
+  unpaced dish run from the same seed differ at any tick.
+- **Statistics**: as above; exact equality for fast-forward.
+- **Seeds and repetitions**: 20 seeds per rate, per internal step and per control arm; 20 paced-unpaced pairs.
+- **Cost**: in the dish, 40 Program lives, 40 scripted lives, 20 A/A lives and 40 fast-forward lives; on the Grid, 40
+  lives for the internal steps and 20 for their A/A control.
 - **Waits on**: B5's dish, a Program, the frozen benchmark.
 - **Leads**: none named; the rule *The animal's pace* is why it matters.
 
 ## B7. Do not count your own echo
 
-- **Question**: does a Program discount sensory change it caused itself, and avoid counting one piece of evidence
-  twice when it arrives by two paths?
-- **Method**: two probes. Reafference: let the Program move in a world that does not change, and measure the change in
-  whatever internal belief the senses update; an efference copy should cancel it. Reconvergence: deliver the same
-  evidence by two sensory paths at once, and by each alone, and compare the belief update.
-- **Baselines and controls**: the same Program with its efference copy switched off (the rule *Pre-register and
-  ablate*): the self-motion probe must then show a change.
-- **Refuted if**: with the efference copy on, self-motion in a still world moves the belief by an amount whose 95%
-  interval excludes zero; or the update from both paths at once exceeds the larger single-path update by an amount
-  whose 95% interval excludes zero (double counting).
-- **Statistics**: bootstrap 95% intervals over seeds.
-- **Seeds and repetitions**: 20 seeds per probe.
-- **Cost**: short probe runs on a frozen copy, not lives.
-- **Waits on**: a Program with an efference copy and a belief to update - none planned yet; this plan says what one
-  would have to show.
+- **Question**: does a Program discount sensory change it caused itself, keep a learned association when the stimulus
+  is merely absent, and neither count one piece of evidence twice when it arrives by two paths nor discard it?
+- **Method**: three probes. Reafference: let the Program move in a world that does not change, and measure the change
+  in whatever internal belief the senses update; an efference copy should cancel it. Absence: after the Program has
+  learned an association (a stimulus with food), give it a stretch with no stimulus at all, and measure the
+  association's strength (its response to the stimulus) before and after. Reconvergence: deliver the same evidence by
+  two sensory paths at once, and by each alone, and compare the belief update with the larger single-path update. For
+  each probe, the margin delta is a tenth of its control's effect (below), a choice made here, before any data: an
+  effect a tenth the size of the one the mechanism exists to prevent.
+- **Baselines and controls**: reafference - the same Program with its efference copy switched off (the rule
+  *Pre-register and ablate*); absence - the same stretch filled with unrewarded presentations of the stimulus
+  (extinction); reconvergence - the larger single-path update itself. Each control must show its effect: its 95%
+  interval lies wholly above zero, or the probe is void (it cannot see what it tests).
+- **Refuted if**, for any probe, the difference is not shown to lie within plus or minus delta - with the efference copy
+  on, the belief's change under self-motion; the loss of association over the blank stretch; the both-paths update
+  minus the larger single-path update (above delta is double counting, below minus delta is discarding). Equivalence
+  is tested by two one-sided tests at alpha 0.05/3 (Bonferroni over three probes), that is, the difference's bootstrap
+  interval at 1 - 2 x 0.05/3 (about 96.7%) must lie within plus or minus delta.
+- **Statistics**: bootstrap intervals over seeds, as above.
+- **Seeds and repetitions**: 20 seeds per probe and per control.
+- **Cost**: short probe runs on a frozen copy, not lives; the absence probe needs one learning life per seed first.
+- **Waits on**: a Program with an efference copy, a belief to update and an association it learns - none planned yet;
+  this plan says what one would have to show.
 - **Leads**: none named.
 
 ## B8. A simulated body can be rolled back
 
 - **Question**: can a Program's state be snapshotted, restored and diffed so exactly that a resumed run is
-  indistinguishable from an uninterrupted one?
-- **Method**: run a life, snapshot the Program at a pause, continue; restore the snapshot into a fresh process and
-  continue from it with the same inputs; compare the two continuations.
-- **Baselines and controls**: two uninterrupted runs from the same seed (the A/A control of A5).
-- **Refuted if**: the restored continuation differs from the uninterrupted one at any tick, given that the A/A control
-  does not.
+  indistinguishable from an uninterrupted one - and can the same be done for the simulated body?
+- **Method**: the hunch has two halves, and this plan runs the Program's now and scopes out the world's. The world's
+  half waits: Master Control has no save and restore of world state at the pinned commit (none found in its `src/`;
+  its "snapshot" is the per-tick world state it sends on the wire, not a restore point), so rolling back the body is a
+  change for master-control, asked for there by issue when this half is prepared. The Program's half, by replay, as
+  the interface's *Determinism and Replay* section describes: record the senses of a life; replay them into the
+  Program uninterrupted; replay again, snapshotting the Program's state at three pauses; restore each snapshot into a
+  fresh process and replay the remaining senses; compare the action sequences tick by tick. Time-travel debugging is
+  the same comparison from any snapshot, stepped one tick at a time. Diffs: a field-by-field diff of two snapshots,
+  which must be empty for a snapshot and its restored copy.
+- **Baselines and controls**: an A/A control, two uninterrupted replays of the same recording - if they differ at any
+  tick, the run is void. A corrupted-snapshot control: before a restore, set one state variable to a value other than
+  the one it holds, for each of five variables chosen at random by seed - the diff must name that variable every time, or the run is
+  void (the snapshot does not reach the state); whether the continuation then diverges is reported per variable.
+- **Refuted if**: a restored continuation differs from the uninterrupted one at any tick, or the diff of a snapshot and
+  its restored copy is not empty, given that both controls pass.
 - **Statistics**: exact equality.
 - **Seeds and repetitions**: 20 seeds, a snapshot at three points in each life.
-- **Cost**: two lives per seed.
-- **Waits on**: a Program, and A5's lock-step condition for fresh lives; replaying recorded senses into a Program, as
-  the Program interface describes, can test the Program's half sooner.
+- **Cost**: 20 recorded Grid lives; per seed, replays rather than lives: the A/A pair, three restored continuations and
+  five corrupted ones.
+- **Waits on**: a Program; the world's half, a save and restore in Master Control.
 - **Leads**: none named.
 
 ## B9. The insect bet, and the bridge it owes
@@ -174,21 +258,28 @@ proven (STATE.md item 4), so no plan gives absolute figures yet; each will when 
 - **Question**: does a body-first Program adapt to a perturbed body - a weakened joint, a lost segment - within a time
   like the animal's?
 - **Method**: perturb the body in mid-life and measure how long the Program takes to recover its locomotion measures
-  to their band. The animal-like time is read from a source on worms with an impaired body, to be found; without one,
-  the comparison waits.
-- **Baselines and controls**: the same Program unperturbed; the same Program with its learning switched off (it should
-  not recover, or recover more slowly).
-- **Refuted if**: the Program does not return to band within the animal's recovery time, read from its source; or it
-  recovers as fast with learning switched off (the recovery is not adaptation).
-- **Statistics**: recovery time per seed, its median with a bootstrap 95% interval, against the animal's figure.
-- **Seeds and repetitions**: 20 seeds per perturbation.
-- **Cost**: three sets of 20 lives per perturbation.
-- **Waits on**: a way to perturb a body in mid-life, which the world does not have: the body is authored by the
-  Program at rez and its limits are the Grid's, so a mid-life weakened joint or lost segment is a change for
-  tron-grid-lite and master-control, asked for there by issue when this experiment is prepared - never made by the lab
-  alone (*Realism over speed*).
+  to their bands - A1's bands, each measured over the window A1 fixes for it; recovered at the first window in which all
+  of them are inside their bands, and a life that never recovers is given its remaining length. The animal-like time is
+  read from a source on worms with an impaired body, to be found; without one, that comparison waits. World-free
+  stand-ins can run sooner: a lesion of the Program's own motor output - one joint's target scaled down after the brain has
+  set it, which the brain is not told, like a motor-neuron ablation; and, if the Grid lets a Program rez a shorter
+  chain (not yet checked), a lost segment between lives rather than within one. They are reported as stand-ins, not as
+  the hunch's test.
+- **Baselines and controls**: the same Program unperturbed (it must stay within its bands in at least 19 lives in 20,
+  or the bands do not fit it and the run is void); the same Program with its learning switched off.
+- **Refuted if**, by two tests each at alpha 0.05/2 (Bonferroni): the lower bound of the 97.5% bootstrap interval of the
+  median recovery time lies above the animal's figure; or a one-sided Mann-Whitney test does not find recovery slower
+  with learning switched off (the recovery is then not adaptation).
+- **Statistics**: recovery time per seed, its median with a bootstrap 97.5% interval; the Mann-Whitney test above.
+- **Seeds and repetitions**: 20 seeds per perturbation and condition.
+- **Cost**: three sets of 20 lives per perturbation, stand-ins included.
+- **Waits on**: for the hunch's own test, a way to perturb a body in mid-life, which the world does not have: the body
+  is authored by the Program at rez and its limits are the Grid's, so a mid-life weakened joint or lost segment is a
+  change for tron-grid-lite and master-control, asked for there by issue when this experiment is prepared - never made
+  by the lab alone (*Realism over speed*). The motor-output stand-in waits only on a Program.
 - **Leads**: found - Brooks 1991, "Intelligence without representation" (*Artificial Intelligence*,
   [doi:10.1016/0004-3702(91)90053-M](https://doi.org/10.1016/0004-3702(91)90053-M)); Pfeifer and Bongard 2006, *How
   the Body Shapes the Way We Think* (MIT Press,
   [doi:10.7551/mitpress/3585.001.0001](https://doi.org/10.7551/mitpress/3585.001.0001)). Not found as a work -
-  Braitenberg 1984, *Vehicles*: Crossref has a review of it (Dennett 1986), not the book.
+  Braitenberg 1984, *Vehicles*: Crossref has reviews of it (Stefik 1985, Dennett 1986), not the book; it stays an
+  unverified lead.
