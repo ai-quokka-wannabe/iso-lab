@@ -1,6 +1,6 @@
 # State of the Lab
 
-**Last updated:** 2026-10-13, late: H10's first test landed, and the experiment plans for sections A and B.
+**Last updated:** 2026-10-13, late: H10's first test landed, and the experiment plans for sections A, B and C1-C12.
 
 ## Where We Are
 
@@ -45,7 +45,7 @@ Top first. Each item is sized for one run; split it here before starting if it i
    a keep-the-state rule for ties.
 7. **Plan an experiment for every one of Matej's 93 ideas and hunches** - the maintainer's request - in the format
    of [docs/hypotheses/experiments/README.md](docs/hypotheses/experiments/README.md), whose index shows which are
-   planned. A and B are done; the rest, one task each, in this order: **C1-C12**, **C13-C24**, **D** (13, and answer
+   planned. A, B and C1-C12 are done; the rest, one task each, in this order: **C13-C24**, **D** (13, and answer
    A10's question whether nematodes show anything like play), **E1-E10**, **E11-E20**, **F** (12). The journal
    records the triage, and hunches that survive are promoted into numbered hypotheses or tasks here.
 8. **Audit H10's first test by A12's plan**
@@ -69,7 +69,10 @@ the idea for the next attempt.
 
 ## Blocked
 
-Nothing.
+- **Three Dependabot alerts on `main`** (one high, one moderate, one low, as GitHub reported on a push on
+  2026-10-13). The night staff cannot read them - the alerts API answers 403 to this session - so they wait on the
+  maintainer to read and triage; `npm audit` locally lists advisories in markdownlint-cli2's dependency tree
+  ([the journal, 2026-10-13](docs/journal/2026-10-13.md)).
 
 ## Needs From Other Repositories
 
@@ -87,6 +90,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-13: experiment plans for hunches C1-C12
+  ([docs/hypotheses/experiments/C1-C12.md](docs/hypotheses/experiments/C1-C12.md)).
 - 2026-10-13: experiment plans for hunches B1-B9
   ([docs/hypotheses/experiments/B.md](docs/hypotheses/experiments/B.md)).
 - 2026-10-13: experiment plans for hunches A9-A15, completing section A

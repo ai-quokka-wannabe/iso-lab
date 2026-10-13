@@ -28,7 +28,12 @@ true hunch passes, and the chance a hunch whose effects are null is refuted - an
 low. At the format's 20 seeds per arm a one-sided test has about 80% power at a standardised difference of 0.8
 ([README.md § The Format](README.md#the-format)); a margin-based refutation can be weaker still, and at 20 lives some
 cannot fire at all against a true null (the third verification of
-[#19](https://github.com/ai-quokka-wannabe/iso-lab/pull/19) showed this for B4's third clause).
+[#19](https://github.com/ai-quokka-wannabe/iso-lab/pull/19) showed this for B4's third clause, and noted it for B2).
+
+Invariance clauses - B3's and B6's - compare by the frozen benchmark's per-feature comparisons, and pass by that
+benchmark's own rule, which must then be an equivalence rule with a stated power, not a mere failure to find a
+difference; if the frozen benchmark's rule is not, the clause says so when it is prepared, as the fourth verification
+of #19 noted.
 
 Costs are counted in simulated lives. What one life costs in compute and memory is not known until the arena is
 proven (STATE.md item 4), so no plan gives absolute figures yet; each will when it is prepared. Seed counts follow
@@ -128,32 +133,32 @@ proven (STATE.md item 4), so no plan gives absolute figures yet; each will when 
   semantics of the hunch can therefore be two gait layers of the Program on the unchanged Grid: one whose reversal
   ends by bending the body onto a new heading, one that backs straight and resumes the old heading. Nothing in the
   world changes (*Realism over speed*). Step 1, before any brain: send each reversal as a scripted joint pattern, with
-  no Program deciding, and measure the change of heading across it. Heading is the direction of the body's centroid travel
-  over one whole undulation period, so the undulation itself does not enter it; the change is the angle between the
-  heading over the last period before the reversal and over the first period after forward motion resumes. Its
+  no Program deciding, and measure the change of heading across it. Heading is the direction of the body's centroid
+  travel over one whole undulation period, so the undulation itself does not enter it; the change is the angle between
+  the heading over the last period before the reversal and over the first period after forward motion resumes. Its
   absolute value is used, because a reorienting reversal may turn either way; measurement noise biases an absolute
   value upward, so the same measure is first taken across forward runs with no reversal (the noise floor, 20 lives),
-  and the floor's mean is subtracted before the thresholds are applied. Up to five patterns per semantics are
+  comparing two undulation periods as far apart as a typical reversal lasts, so that heading drift is counted in the
+  floor, and the floor's mean is subtracted before the thresholds are applied. Up to five patterns per semantics are
   written down before step 1 and tried in that order, stopping at the first that qualifies; the search is a finding,
   so each try is at alpha 0.05/5. A pattern reorients if the one-sided 99% interval of its mean change lies wholly
   above 30 degrees, and keeps the heading if it lies wholly below 10 degrees. Both thresholds are fixed here, and are
-  checked against the real worm's heading change after a reversal once the recordings are read and before step 1
-  runs: if the worm's reversals do not fall on the reorienting side of 30 degrees, the thresholds are revised in the
-  journal, with the worm's figure, before any scripted life. If no pattern reorients, the Grid's physics may be what prevents it, and it is written up as an issue for
-  tron-grid-lite or master-control, with the patterns tried. If no pattern keeps the heading, the non-reorienting
-  semantics does not exist on the Grid's body; that is a finding too, step 2 runs in the dish alone, and its result is
-  reported as the dish's, not the Grid's. Step
-  2: a chemotaxis Program that steers by reversals alone (the pirouette strategy of [Pierce-Shimomura et al.
-  1999](https://doi.org/10.1523/JNEUROSCI.19-21-09557.1999), with any other steering switched off, so reversals are its
-  only lever), run with each gait layer in a chemical gradient. Per life, the score is +1 if it ends in the
+  checked against the real worm's heading change after a reversal once the recordings are read and before step 1 runs:
+  if the worm's reversals do not fall on the reorienting side of 30 degrees, the thresholds are revised in the
+  journal, with the worm's figure, before any scripted life. If no pattern reorients, the Grid's physics may be what
+  prevents it, and it is written up as an issue for tron-grid-lite or master-control, with the patterns tried. If no
+  pattern keeps the heading, the non-reorienting semantics does not exist on the Grid's body; that is a finding too,
+  step 2 runs in the dish alone, and its result is reported as the dish's, not the Grid's. Step 2: a chemotaxis
+  Program that steers by reversals alone (the pirouette strategy of [Pierce-Shimomura et al.
+  1999](https://doi.org/10.1523/JNEUROSCI.19-21-09557.1999), with any other steering switched off, so reversals are
+  its only lever), run with each gait layer in a chemical gradient. Per life, the score is +1 if it ends in the
   attractant zone, -1 in the control zone and 0 elsewhere; the chemotaxis index is the mean over lives. This form is
   written from memory of the population index in assays like those of [Bargmann et al.
   1993](https://doi.org/10.1016/0092-8674(93)80053-H), whose abstract, the only part read, does not give it; the whole
-  form, zones and denominator included, is checked against the paper and fixed before any run. Measure
-  under each semantics: the index; the heading change towards the gradient after each reversal not followed by an
-  omega turn, over the same window as step 1; the share of lives that fail (a score of 0 or below); and the share of
-  reversals followed by an omega turn, by the definition in [the behaviour-measures
-  note](../../research/behaviour-measures.md).
+  form, zones and denominator included, is checked against the paper and fixed before any run. Measure under each
+  semantics: the index; the heading change towards the gradient after each reversal not followed by an omega turn,
+  over the same window as step 1; the share of lives that fail (a score of 0 or below); and the share of reversals
+  followed by an omega turn, by the definition in [the behaviour-measures note](../../research/behaviour-measures.md).
 - **Baselines and controls**: a Program with the same gait layers whose reversals are random in time, at the same rate:
   it fails, and the run is void, if its chemotaxis index's 95% interval lies wholly above zero under either
   semantics (taxis that does not come from informed reversals). The real worm, read from the recordings: the
