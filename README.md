@@ -13,11 +13,11 @@ Nothing like that exists yet. Where the work stands tonight is always in [STATE.
 
 ## How the Lab Works
 
-- **Autonomously.** Claude agents run in the cloud on a schedule, mostly at night. Each run reads
+- **Autonomously.** Through the night a Claude agent works in the cloud, task after task. It reads
   [STATE.md](STATE.md), takes the next step of [the plan](docs/PLAN.md) - reading the literature, building
-  tools, running experiments - and lands its work through the same cycle as any contributor: commit, pull
-  request, review, green CI, merge. The routine they follow is written down in
-  [docs/NIGHT_SHIFT.md](docs/NIGHT_SHIFT.md), and their working rules in [.claude/CLAUDE.md](.claude/CLAUDE.md).
+  tools, running experiments - and lands each piece of work through the same cycle as any contributor:
+  commit, pull request, review, green CI, merge. How a night starts is written down in
+  [docs/NIGHT_SHIFT.md](docs/NIGHT_SHIFT.md), and the agents' working rules in [.claude/CLAUDE.md](.claude/CLAUDE.md).
 - **In the open.** Every step is a public commit and pull request, and every night leaves an entry in
   [the journal](docs/journal/). Anyone can watch it happen.
 - **Honestly.** Negative results are results. Every number comes from a run anyone can repeat, with its

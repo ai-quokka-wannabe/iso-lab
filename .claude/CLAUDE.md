@@ -18,8 +18,8 @@ STATE.md, and leave the task for the maintainer.
 2. **Read** [STATE.md](../STATE.md), [docs/PLAN.md](../docs/PLAN.md) and the newest entry in
    [docs/journal/](../docs/journal/).
 3. **Pick one bounded task**: the top of STATE.md's *Next* list, unless it is blocked; then the next one.
-   It must fit in this run - about forty-five minutes of work. A bigger task is split, and the split written
-   into STATE.md, before you start.
+   It must be about forty-five minutes of work. A bigger task is split, and the split written into STATE.md,
+   before you start.
 4. **Branch** `claude/<short-name>` from `main`.
 5. **Do the work.** For anything long - a build, a download, an experiment - run it in the background
    (`nohup ... &`) and poll it; foreground commands time out. Record every experiment's exact command, seed,
@@ -44,7 +44,9 @@ STATE.md, and leave the task for the maintainer.
 12. **If a gate stays red**, try at most three fixes. Then leave the pull request open, record it under
     *Blocked* in STATE.md with what you tried, and stop. Never leave `main` red, and never weaken a check
     to make it pass.
-13. **Stop.** One task per run, landed or honestly parked.
+13. **Next task, or stop.** One task per branch and pull request, landed or honestly parked. Then go back to
+    step 1 for the next task, as long as the prompt that started the session allows it - a night session
+    works until the hour its prompt names, or until nothing unblocked is left on the *Next* list.
 
 ## The rules
 
