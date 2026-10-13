@@ -81,7 +81,7 @@ The Grid and Master Control are built from the commits `external/` pins, each by
   and [RUNNING_THE_GRID.md](https://github.com/ai-quokka-wannabe/tron-grid-lite/blob/main/docs/RUNNING_THE_GRID.md) to
   run a world with a creature in it
 
-Each carries the Link it builds with; `external/link` is here for reading the wire's specification. On a
+Each carries the Link it builds with; `external/link` is here for reading the wire's specification. The lab's own contributions to these repositories are made inside `external/`, as [.claude/CLAUDE.md](../.claude/CLAUDE.md) describes. On a
 machine without a GPU, the Grid renders the senses through Mesa's software Vulkan, lavapipe
 (`mesa-vulkan-drivers` on Ubuntu).
 

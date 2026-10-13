@@ -126,16 +126,20 @@ STATE.md, and leave the task for the maintainer.
   that repository: what is needed, why, and the evidence, with links back to the lab's journal or pull
   request. Its maintainers triage it there. Under *Needs from other repositories* in STATE.md, keep one line
   per open issue - its link and what waits on it - so the next run knows; when the issue closes, so does the
-  line. The lab may also propose a change itself, as a pull request to that repository - never as a commit
-  made inside `external/`, whose pins move only to commits already merged upstream. For an issue or a pull
-  request alike, first read that repository's contribution rules - its CONTRIBUTING.md, `.claude/CLAUDE.md`,
-  issue and pull request templates, CHANGELOG convention and style guide - and follow them exactly, as a
-  human contributor would and as the maintainer's own Claude does. That repository's maintainers review and
-  merge; the lab never merges outside this repository. If the cloud machine cannot open the issue or push
-  there, write the need in full under *Needs from other repositories*, and say so, for the maintainer to file.
+  line. The lab may also make the change itself and contribute it as a pull request, and `external/` is where
+  that work is done: inside `external/<repository>`, branch from its `main`, commit there by that
+  repository's rules, push the branch to it, and open the pull request there (rc-worm, not under `external/`,
+  is cloned beside this repository for the purpose). For an issue or a pull request alike, first read that
+  repository's contribution rules - its CONTRIBUTING.md, `.claude/CLAUDE.md`, issue and pull request
+  templates, CHANGELOG convention and style guide - and follow them exactly, as a human contributor would and
+  as the maintainer's own Claude does. That repository's maintainers review and merge; the lab never merges
+  outside this repository. This repository's pin of `external/<repository>` moves only once the change is
+  merged upstream, and then to that repository's `main`: a pin to an unmerged commit breaks every fresh clone
+  of the lab the day that branch is deleted. If the cloud machine cannot open the issue or push there, write
+  the need in full under *Needs from other repositories*, and say so, for the maintainer to file.
 - **The world as pinned.** The world lives in `external/` as submodules pinned by commit: tron-grid-lite (the
-  Grid) and master-control (the world server), each carrying the Link it builds with; `external/link` is a
-  copy for reading the wire's specification, never what gets built. Fetch them with
+  Grid) and master-control (the world server), each carrying the Link it builds with; `external/link` is not
+  what gets built, but where the lab reads the wire's specification and contributes to it. Fetch them with
   `git submodule update --init --recursive`. A bump of `external/` - Dependabot proposes them weekly - changes
   the world: before merging one, re-run the arena's reference measurements and say in the journal what
   moved, and never compare scores across two worlds without saying so.
@@ -213,5 +217,6 @@ the pinned actions and the submodules under `external/`. Keep this section true 
 - `docs/figures/` - figures, SVG only.
 - `crates/` - the Rust workspace's crates: tools, the benchmark, the Programs.
 - `notebooks/` - Jupyter notebooks for thinking, with `notebooks/requirements.txt`.
-- `external/` - the world's repositories, pinned; read-only for the lab.
+- `external/` - the world's repositories, pinned; the lab's contributions to them are made there, on branches
+  of their own.
 - `runs/` - run outputs, logs and Disks (never committed; conclusions go to the journal).

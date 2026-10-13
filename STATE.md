@@ -43,11 +43,12 @@ Nothing yet.
 Each need is an issue in the repository that would meet it, triaged there by its maintainers; this list
 points to the open ones and says what waits on each.
 
-- **A sense of smell** (tron-grid-lite, master-control; no issue filed yet). The Grid has no chemical sense,
-  and chemotaxis is the worm's best-studied behaviour. Until the world provides one, chemotaxis is listed as
-  not comparable - never quietly dropped.
-- **Terrace edges** (master-control; no issue filed yet). A chain can be thrown when a segment crosses a
-  terrace edge; a fix is in progress. Until it lands, every life in this lab is lived on a flat arena.
+- **A sense of smell** (tron-grid-lite, master-control; the maintainer takes it up once the lab is set up -
+  file nothing). The Grid has no chemical sense, and chemotaxis is the worm's best-studied behaviour. Until
+  the world provides one, chemotaxis is listed as not comparable - never quietly dropped.
+- **Terrace edges** (master-control; the maintainer takes it up once the lab is set up - file nothing). A
+  chain can be thrown when a segment crosses a terrace edge; a fix is in progress. Until it lands, every life
+  in this lab is lived on a flat arena.
 
 ## Done
 
