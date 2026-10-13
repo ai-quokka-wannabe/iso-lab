@@ -1,4 +1,4 @@
-# iso-lab
+# ISO Lab
 
 **An open research lab where AI agents work through the night toward a digital animal that behaves like a
 real one.**
