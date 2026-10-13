@@ -142,6 +142,26 @@ sampled or settled, and whether its state can still be read.
 *Predicts*: behaviour that changes with experience the way the worm's does, with the change traceable to
 learned connections that can be read; tested once the benchmark has a measure of learning.
 
+### H10. A Quantum-Like Brain
+
+*A hunch*, the maintainer's: the states and connection strengths of a brain are complex numbers rather than real
+ones - phases as well as magnitudes - and perhaps numbers further up the hypercomplex tower (quaternions and
+beyond). Complex-valued associative memories exist: units that take one of several phases, as in the phasor
+networks of [Noest 1988](https://doi.org/10.1103/PhysRevA.38.2196) and the multistate memory of
+[Jankowski, Lozowski and Zurada 1996](https://doi.org/10.1109/72.548176), with quaternion-valued Hopfield networks
+after them ([Kobayashi 2017](https://doi.org/10.1016/j.neucom.2017.02.044)); these are cited for what they
+propose, not read in full - and the first test's notebook says its update rule follows the first two, an
+attribution unchecked until they are read. In the worm, the undulation of [Stephens et al. 2008](https://doi.org/10.1371/journal.pcbi.1000028)
+is already one phase. Related ideas wait in [Matej's ideas and hunches](matej-hunches.md), F1 among them.
+*Predicts*: a complex or hypercomplex module that does more than a real-valued one of the same compute and memory -
+stores more, or produces a measured behaviour the real one cannot.
+*Refuted, module by module*: when it scores no better than a real-valued module of the same compute and memory,
+judged by a statistic fixed before the run; and, under ablation, when its gain survives being made real-valued.
+*Tested so far*: the first toy test, phasor against real associative memory at the same memory budget, in
+[notebooks/h10_phasor_memory.ipynb](../../notebooks/h10_phasor_memory.ipynb): **refuted at that level** - the
+phasor network was no better (its interval included zero) at twice the multiply-adds. The 2026-10-13 journal has
+the numbers; the test is kept, to return to.
+
 ## Adding a Hypothesis
 
 A pool of candidates waits in [Matej's ideas and hunches](matej-hunches.md): unverified, to be triaged and

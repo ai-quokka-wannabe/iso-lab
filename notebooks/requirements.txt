@@ -1,0 +1,5 @@
+# Pinned for the notebooks under notebooks/; Dependabot proposes bumps.
+numpy==2.5.4
+nbconvert==7.17.2
+nbformat==5.11.1
+ipykernel==7.4.0

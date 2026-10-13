@@ -27,3 +27,12 @@ updates:
         day: saturday
         time: "00:00"
         timezone: "Europe/Ljubljana"
+
+    # The notebooks' Python dependencies, pinned in notebooks/requirements.txt.
+    - package-ecosystem: "pip"
+      directory: "/notebooks"
+      schedule:
+        interval: weekly
+        day: saturday
+        time: "00:00"
+        timezone: "Europe/Ljubljana"
