@@ -48,12 +48,15 @@ STATE.md, and leave the task for the maintainer.
 12. **Merge** when CI is green and the verdict is *verified*:
     `gh api -X PUT repos/ai-quokka-wannabe/iso-lab/pulls/<n>/merge -f merge_method=merge`. The branch is
     deleted on merge.
-13. **If CI stays red or the verifier still says *changes needed***, try at most three rounds of fixes. Then
-    leave the pull request open, record it under *Blocked* in STATE.md with what you tried, and move on. Never
-    leave `main` red, and never weaken a check to make it pass.
+13. **If CI stays red or the verifier still says *changes needed*** after three rounds of fixes, stop pushing
+    on that path, not on the problem: leave the pull request open, record it under *Blocked* in STATE.md with
+    what you tried and the next idea to try, and move on. Never leave `main` red, and never weaken a check
+    to make it pass.
 14. **Next task, or stop.** One task per branch and pull request, landed or honestly parked. Then go back to
     step 1 for the next task, as long as the prompt that started the session allows it - a night session
-    works until the hour its prompt names, or until nothing unblocked is left on the *Next* list.
+    works until the hour its prompt names, or until nothing is left that you can move forward. Before you
+    stop for that reason, go back to every *Blocked* item and try it again from a new angle; only those
+    waiting on a maintainer's decision stay put.
 
 ## The rules
 
@@ -78,6 +81,17 @@ STATE.md, and leave the task for the maintainer.
 - **Honesty.** Never invent data, results, quotations or references. Every factual claim about biology or
   prior work cites a public source with a link; say how sure you are. A failed experiment is written up as
   carefully as a successful one. If you are unsure whether something is true, say so in the text.
+- **Be bold.** This is a science-fiction lab, and it is not afraid of wild ideas: strange architectures,
+  mathematics borrowed from far-off fields, hunches nobody has tried on a worm. Anything goes, inside three
+  walls: no cheating, as lean as the machine and the mathematics allow, and indistinguishable from the real
+  animal. Write a hunch down as a hypothesis marked *a hunch*, with the outcomes that would refute it, and
+  test it. Boldness is in the ideas tried; what stays in a brain still earns its place on the benchmark.
+- **Be pedantic, and never give up.** Check every number, unit, citation and edge case; read the source
+  rather than trusting memory; re-run what you report. When something seems impossible, it is a puzzle, not a
+  verdict: split it, read further, come at it from another side, borrow from another field. Parking a task is
+  not giving up - it keeps what was tried and the next idea to try, and it is attacked again. A failed
+  experiment is not a failed lab; it narrows the way. The one failure never allowed is a pretended success:
+  persistence never bends the rules above.
 - **Pre-register and ablate.** Before running a change to a brain, write in the journal the outcomes that
   would refute it. Give every module and modulator a switch that pins it at baseline, and attribute an
   improvement by switching each off in turn - never by assumption.

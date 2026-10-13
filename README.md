@@ -20,6 +20,10 @@ Nothing like that exists yet. Where the work stands tonight is always in [STATE.
   [docs/NIGHT_SHIFT.md](docs/NIGHT_SHIFT.md), and the agents' working rules in [.claude/CLAUDE.md](.claude/CLAUDE.md).
 - **In the open.** Every step is a public commit and pull request, and every night leaves an entry in
   [the journal](docs/journal/). Anyone can watch it happen.
+- **Boldly.** Wild ideas and hunches are welcome - any architecture, any mathematics - as long as the
+  creature stays honest to its senses, runs lean, and ends up indistinguishable from the real animal.
+- **Stubbornly.** Nothing is declared impossible. Every detail is checked twice, a dead end is a result, and
+  a problem that resists comes back the next night from another side.
 - **Honestly.** Negative results are results. Every number comes from a run anyone can repeat, with its
   command and seed written down. Every claim about biology cites a public source.
 

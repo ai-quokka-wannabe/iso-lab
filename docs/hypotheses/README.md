@@ -123,3 +123,7 @@ each signalling pathway show.
 
 Add a section with the same four parts: the idea, the evidence (public sources, linked), the behaviour it
 predicts, and how the benchmark would show it. Record in the journal why it was added.
+
+Bold ideas are welcome here - strange architectures, mathematics borrowed from far away, hunches no one has
+tried on a worm. A hunch with little evidence yet is marked *a hunch* and says what would refute it; it is
+tested like any other, and if it fails, that is written up as carefully as a success.
