@@ -45,16 +45,21 @@ Top first. Each item is sized for one run; split it here before starting if it i
    fixed first - among them, a complex or hypercomplex module that scores no better than a real-valued one of
    the same compute and memory. The undulation phase of Stephens et al. 2008 is already one complex number;
    start there. Read the literature on complex- and quaternion-valued networks at the source before citing it.
-7. **Triage Matej's ideas and hunches**, in [docs/hypotheses/matej-hunches.md](docs/hypotheses/matej-hunches.md):
-   93, from the benchmark to wild mathematics. Verify the leads of the ones that look most useful
-   first, promote those that survive into numbered hypotheses or tasks here, and record the triage in the
-   journal. Any part of it is a fine task for a night; the benchmark items (section A) come first.
+7. **Plan an experiment for every one of Matej's 93 ideas and hunches**, in
+   [docs/hypotheses/matej-hunches.md](docs/hypotheses/matej-hunches.md) - the maintainer's request. Split into
+   eight tasks of a night's size, one group each, section A first:
+   - **A** (15), **B** (9), **C1-C12**, **C13-C24**, **D** (13), **E1-E10**, **E11-E20**, **F** (12).
+
+   Each writes `docs/hypotheses/experiments/<group>.md`: for every hunch, the question, the method, baselines and
+   controls, the outcomes that would refute it (fixed first), the statistics, seeds and repetitions, the cost in
+   compute and memory, what it waits on (the benchmark, the arena, a sense the Grid lacks), and its leads checked
+   at the source. A hunch that cannot be tested yet keeps its plan and says what it waits on. The first task also
+   writes the format and an index of all 93 in `docs/hypotheses/experiments/README.md`; the journal records the
+   triage, and hunches that survive are promoted into numbered hypotheses or tasks here.
 
 ## Blocked
 
-- **Whether to write to the CeMEE authors** (the maintainer's decision): their Multi-Worm Tracker data is
-  CC-BY-4.0, but the record asks to be contacted before use
-  ([data/README.md § The Phase 0 Survey](data/README.md#the-phase-0-survey)). Not needed for Phase 0.
+Nothing.
 
 ## Needs From Other Repositories
 
