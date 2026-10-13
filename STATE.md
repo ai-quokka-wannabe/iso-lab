@@ -1,6 +1,6 @@
 # State of the Lab
 
-**Last updated:** 2026-10-13, late: H10's first test landed, and the experiment plans for sections A, B and C1-C12.
+**Last updated:** 2026-10-13, late: H10's first test landed, and the experiment plans for sections A, B and C1-C12, and the notes of their reviews.
 
 ## Where We Are
 
@@ -90,6 +90,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-13: the five notes of #21's last verification written into C8 and C12 of
+  [the C1-C12 plans](docs/hypotheses/experiments/C1-C12.md).
 - 2026-10-13: the three notes of #20's last verification carried into
   [the C1-C12 plans](docs/hypotheses/experiments/C1-C12.md) (C8, C10, C12).
 - 2026-10-13: experiment plans for hunches C1-C12
