@@ -45,9 +45,13 @@ Top first. Each item is sized for one run; split it here before starting if it i
    a keep-the-state rule for ties.
 7. **Plan an experiment for every one of Matej's 93 ideas and hunches** - the maintainer's request - in the format
    of [docs/hypotheses/experiments/README.md](docs/hypotheses/experiments/README.md), whose index shows which are
-   planned. A1-A15 are done; the rest, one task each, in this order: **B** (9), **C1-C12**, **C13-C24**,
-   **D** (13), **E1-E10**, **E11-E20**, **F** (12). The journal records the triage, and hunches that survive are
-   promoted into numbered hypotheses or tasks here.
+   planned. A1-A15 are done; the rest, one task each, in this order: **B** (9), **C1-C12**, **C13-C24**, **D** (13,
+   and answer A10's question whether nematodes show anything like play), **E1-E10**, **E11-E20**, **F** (12). The
+   journal records the triage, and hunches that survive are promoted into numbered hypotheses or tasks here.
+8. **Audit H10's first test by A12's plan**
+   ([docs/hypotheses/experiments/A9-A15.md § A12](docs/hypotheses/experiments/A9-A15.md#a12-experiment-hygiene)):
+   planted copies prepared by an agent that has not read that test's review, audited blind against the hunch's
+   list.
 
 ## To Revisit
 

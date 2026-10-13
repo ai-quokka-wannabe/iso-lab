@@ -14,7 +14,9 @@ Every plan has the same parts:
 - **Baselines and controls**: what it is compared with, and the control that would expose a broken harness.
 - **Refuted if**: the outcomes that would refute the hunch, fixed before the run.
 - **Statistics**: the test or interval, chosen before the data is seen.
-- **Seeds and repetitions**: how many, and why that many.
+- **Seeds and repetitions**: how many, and why that many. The default is 20 seeds per condition: by a Monte Carlo
+  of the one-sided two-sample t test at alpha 0.05 (100 000 draws, numpy generator seed 20261013), 20 per arm gives
+  80% power to see a difference of 0.8 standard deviations. A plan that needs more, or fewer, says why.
 - **Cost**: compute and memory, in the terms of the rule *Lean brains*.
 - **Waits on**: what must exist first - the benchmark, the feature tool, the arena, a sense the Grid lacks.
 - **Leads**: each lead's status - found in Crossref by title and DOI, or read at the source (and for which
