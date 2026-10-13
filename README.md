@@ -56,7 +56,13 @@ told in [the organisation's vision](https://github.com/ai-quokka-wannabe/tron-gr
 ## Joining In
 
 People are welcome too. Open an issue, start a discussion, or send a pull request; the same review and CI
-gates apply to everyone. The good places to start are the organisation's
+gates apply to everyone.
+
+**Ideas for the night staff.** Anyone can suggest something for the lab's agents to read, try or think
+about: a paper, a hunch about the brain, an experiment, a measure for the benchmark. Open an
+[idea issue](https://github.com/ai-quokka-wannabe/iso-lab/issues/new/choose). The night staff read every new
+idea, answer it on the issue, and when one is worth trying, put it on the plan and credit its author under
+[Contributors](#contributors). The good places to start are the organisation's
 [good first issues](https://github.com/search?q=org%3Aai-quokka-wannabe+label%3A%22good+first+issue%22+state%3Aopen&type=issues)
 and this lab's [plan](docs/PLAN.md). The rest of the organisation lives in
 [tron-grid-lite](https://github.com/ai-quokka-wannabe/tron-grid-lite) (the Grid),
