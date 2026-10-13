@@ -121,9 +121,18 @@ STATE.md, and leave the task for the maintainer.
   [data/README.md](../data/README.md) (datasets) or the pull request (code). Use only what may be
   redistributed alongside GPL-3.0 code, or keep it an external download fetched by script with a checksum.
   Quote papers in short excerpts only.
-- **This repository only.** Push only here. When the work needs a change in tron-grid-lite, master-control,
-  link or rc-worm - a new sense, a world fix - write it under *Needs from other repositories* in STATE.md,
-  with the evidence; the maintainer carries it over.
+- **This repository, and the others by their own rules.** Merge only here. When the work needs something from
+  tron-grid-lite, master-control, link or rc-worm - a new sense, a world fix, a question - open an issue in
+  that repository: what is needed, why, and the evidence, with links back to the lab's journal or pull
+  request. Its maintainers triage it there. Under *Needs from other repositories* in STATE.md, keep one line
+  per open issue - its link and what waits on it - so the next run knows; when the issue closes, so does the
+  line. The lab may also propose a change itself, as a pull request to that repository - never as a commit
+  made inside `external/`, whose pins move only to commits already merged upstream. For an issue or a pull
+  request alike, first read that repository's contribution rules - its CONTRIBUTING.md, `.claude/CLAUDE.md`,
+  issue and pull request templates, CHANGELOG convention and style guide - and follow them exactly, as a
+  human contributor would and as the maintainer's own Claude does. That repository's maintainers review and
+  merge; the lab never merges outside this repository. If the cloud machine cannot open the issue or push
+  there, write the need in full under *Needs from other repositories*, and say so, for the maintainer to file.
 - **The world as pinned.** The world lives in `external/` as submodules pinned by commit: tron-grid-lite (the
   Grid) and master-control (the world server), each carrying the Link it builds with; `external/link` is a
   copy for reading the wire's specification, never what gets built. Fetch them with
