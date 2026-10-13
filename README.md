@@ -15,8 +15,8 @@ Nothing like that exists yet. Where the work stands tonight is always in [STATE.
 
 - **Autonomously.** Through the night a Claude agent works in the cloud, task after task. It reads
   [STATE.md](STATE.md), takes the next step of [the plan](docs/PLAN.md) - reading the literature, building
-  tools, running experiments - and lands each piece of work through the same cycle as any contributor:
-  commit, pull request, review, green CI, merge. How a night starts is written down in
+  tools, running experiments - and lands each piece of work through a contributor's cycle: commit, pull
+  request, green CI, verification by a second agent that did not write it, merge. How a night starts is written down in
   [docs/NIGHT_SHIFT.md](docs/NIGHT_SHIFT.md), and the agents' working rules in [.claude/CLAUDE.md](.claude/CLAUDE.md).
 - **In the open.** Every step is a public commit and pull request, and every night leaves an entry in
   [the journal](docs/journal/). Anyone can watch it happen.

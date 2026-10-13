@@ -17,7 +17,8 @@ Posture alone is captured remarkably well by a handful of basic shapes, the "eig
 The working definition, to be refined in Phase 0 and then frozen:
 
 - **The measures**: a fixed set of behavioural features, computed the same way from real worm recordings and
-  from the Grid creature's recordings.
+  from the Grid creature's recordings. They include the timing of behaviour - how long a response takes,
+  how long a state lasts - so that the creature's speed of thought is held to the real worm's too.
 - **The test**: a classifier two-sample test ([Lopez-Paz and Oquab 2017](https://arxiv.org/abs/1610.06545)).
   Train a classifier to tell real worms from Grid worms using only those features; if it cannot beat chance
   by more than its confidence interval allows, the two are indistinguishable *on those measures*. Per-feature

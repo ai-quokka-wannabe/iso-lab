@@ -8,7 +8,7 @@ better ones, with the reasons written in the journal.
 
 The working assumption is that the brain is **modular and heterogeneous**: a few compartments with different
 jobs, each built the way its job needs rather than all of one architecture - as in animals, where a reflex
-arc, a rhythm generator and the circuits that set behavioural state work in very different ways. Three
+arc, a rhythm generator and the circuits that set behavioural state work in very different ways. Five
 principles go with it:
 
 - **Every module's state can be read.** Its numbers mean something a person can inspect, so a behaviour can
@@ -16,6 +16,11 @@ principles go with it:
 - **Senses only.** Every module sees the world through the creature's senses and nothing else.
 - **Earned complexity.** A module is added, or made richer, only when a behaviour the benchmark measures
   demands it.
+- **Lean.** The real worm manages with 302 neurons ([White et al. 1986](https://doi.org/10.1098/rstb.1986.0056));
+  a module earns its cost in compute and memory as well as in behaviour.
+- **At the animal's pace.** The brain's speed of thought is indistinguishable from the real animal's. Every
+  module works on the time scales measured in the real worm - its reaction latencies, the time constants of
+  its states - counted in simulated time, neither faster nor slower.
 
 ## The Hypotheses
 
@@ -27,7 +32,7 @@ show it. All are untested.
 Direct, weighted pathways from senses to motor commands - touch at the head drives reversal, touch at the tail
 drives forward acceleration - running before and alongside every slower module, and able to override them.
 The worm's touch circuit is the classic example ([Chalfie et al. 1985](https://doi.org/10.1523/JNEUROSCI.05-04-00956.1985)).
-*Predicts*: touch-evoked reversals with short latency and the probabilities real worms show.
+*Predicts*: touch-evoked reversals with the latencies and probabilities real worms show.
 
 ### H2. Behaviour as a Small Set of States
 

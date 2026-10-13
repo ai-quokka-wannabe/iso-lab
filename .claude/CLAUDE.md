@@ -35,16 +35,23 @@ STATE.md, and leave the task for the maintainer.
 9. **Commit, push, open a pull request.** In the cloud the GitHub CLI's `gh pr` commands fail (GraphQL is
    blocked); use the REST API through `gh api`, for example
    `gh api -X POST repos/ai-quokka-wannabe/iso-lab/pulls -f title=... -f head=claude/<name> -f base=main -f body=...`.
-10. **Wait for the gates**: the `CI Success` check and CodeQL. Read any Copilot review comments
-    (`gh api repos/ai-quokka-wannabe/iso-lab/pulls/<n>/comments` and `.../reviews`) and act on the ones that
-    are right; say in a comment why you set any aside.
-11. **Merge** when every gate is green:
+10. **Wait for CI**: the `CI Success` check is the one gate the repository enforces.
+11. **Have another agent verify it.** Never merge your own work unverified. Start a fresh agent that did not
+    write the change - a subagent that shares none of your context - and give it only the pull request's
+    number and these rules. It reads the diff as a sceptic: is every claim backed by a cited source or a run
+    in the pull request, does every number come with its command and seed, is a negative result hidden or
+    softened, does anything break a rule here? It posts what it finds as a review comment,
+    `gh api -X POST repos/ai-quokka-wannabe/iso-lab/pulls/<n>/reviews -f event=COMMENT -f body=...`, ending
+    with a verdict: *verified* or *changes needed*. Fix what it finds, or answer in the pull request why not;
+    after a substantial fix, it looks again. CodeQL still scans every pull request - treat an alert on your
+    change as one of its findings.
+12. **Merge** when CI is green and the verdict is *verified*:
     `gh api -X PUT repos/ai-quokka-wannabe/iso-lab/pulls/<n>/merge -f merge_method=merge`. The branch is
     deleted on merge.
-12. **If a gate stays red**, try at most three fixes. Then leave the pull request open, record it under
-    *Blocked* in STATE.md with what you tried, and stop. Never leave `main` red, and never weaken a check
-    to make it pass.
-13. **Next task, or stop.** One task per branch and pull request, landed or honestly parked. Then go back to
+13. **If CI stays red or the verifier still says *changes needed***, try at most three rounds of fixes. Then
+    leave the pull request open, record it under *Blocked* in STATE.md with what you tried, and move on. Never
+    leave `main` red, and never weaken a check to make it pass.
+14. **Next task, or stop.** One task per branch and pull request, landed or honestly parked. Then go back to
     step 1 for the next task, as long as the prompt that started the session allows it - a night session
     works until the hour its prompt names, or until nothing unblocked is left on the *Next* list.
 
@@ -58,6 +65,16 @@ STATE.md, and leave the task for the maintainer.
   benchmark is defined and frozen *before* a brain is scored against it; any change to it needs a written
   justification in the journal, and earlier scores are re-run under the new definition, not compared across
   it.
+- **Lean brains.** Resource efficiency is paramount. The real worm runs its whole life on 302 neurons
+  ([White et al. 1986](https://doi.org/10.1098/rstb.1986.0056)); a brain for it must be small and cheap to
+  run. Report every brain's size, and its compute and memory per simulated second, beside its score; when two
+  brains score alike, the leaner one wins. A worm that needs a GPU or a large model is not yet the answer.
+- **The animal's pace.** A brain's speed of thought is indistinguishable from the real animal's - for the
+  worm, *C. elegans* - neither faster nor slower: its reaction latencies, the time constants of its internal
+  states and the rhythm of its decisions match those measured in the animal, each from a cited source, and
+  the benchmark measures them like any other behaviour. A reflex quicker than the animal's is a shortcut no
+  real animal has. Pace is counted in simulated time; how fast the computer runs a life is a matter of
+  efficiency, not pace.
 - **Honesty.** Never invent data, results, quotations or references. Every factual claim about biology or
   prior work cites a public source with a link; say how sure you are. A failed experiment is written up as
   carefully as a successful one. If you are unsure whether something is true, say so in the text.
