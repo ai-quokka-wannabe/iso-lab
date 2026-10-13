@@ -121,18 +121,17 @@ STATE.md, and leave the task for the maintainer.
   [data/README.md](../data/README.md) (datasets) or the pull request (code). Use only what may be
   redistributed alongside GPL-3.0 code, or keep it an external download fetched by script with a checksum.
   Quote papers in short excerpts only.
-- **This repository, and the others by their own rules.** Merge only here. When the work needs something from
-  tron-grid-lite, master-control, link or rc-worm - a new sense, a world fix, a question - open an issue in
+- **This repository, and the world's by their own rules.** Merge only here. When the work needs something from
+  tron-grid-lite, master-control or link - a new sense, a world fix, a question - open an issue in
   that repository: what is needed, why, and the evidence, with links back to the lab's journal or pull
   request. Its maintainers triage it there. Under *Needs from other repositories* in STATE.md, keep one line
   per open issue - its link and what waits on it - so the next run knows; when the issue closes, so does the
   line. The lab may also make the change itself and contribute it as a pull request, and `external/` is where
   that work is done: inside `external/<repository>`, branch from its `main`, commit there by that
-  repository's rules, push the branch to it, and open the pull request there (rc-worm, not under `external/`,
-  is cloned beside this repository for the purpose). For an issue or a pull request alike, first read that
-  repository's contribution rules - its CONTRIBUTING.md, `.claude/CLAUDE.md`, issue and pull request
-  templates, CHANGELOG convention and style guide - and follow them exactly, as a human contributor would and
-  as the maintainer's own Claude does. That repository's maintainers review and merge; the lab never merges
+  repository's rules, push the branch to it, and open the pull request there. For an issue or a pull request
+  alike, first read that repository's contribution rules - its CONTRIBUTING.md, `.claude/CLAUDE.md`, issue
+  and pull request templates, CHANGELOG convention and style guide - and follow them exactly, as a human
+  contributor would and as the maintainer's own Claude does. That repository's maintainers review and merge; the lab never merges
   outside this repository. This repository's pin of `external/<repository>` moves only once the change is
   merged upstream, and then to that repository's `main`: a pin to an unmerged commit breaks every fresh clone
   of the lab the day that branch is deleted. If the cloud machine cannot open the issue or push there, write
@@ -144,7 +143,8 @@ STATE.md, and leave the task for the maintainer.
   the world: before merging one, re-run the arena's reference measurements and say in the journal what
   moved, and never compare scores across two worlds without saying so.
 - **The lab's own Programs.** The brains the lab builds live in this repository. rc-worm is the example of a
-  Program's shape, not a dependency.
+  Program's shape and nothing more: not a dependency, and not a repository the lab commits to, files to or
+  proposes changes to.
 - **Rust first.** Anything another run builds on - the feature extraction, the benchmark, the Programs, the
   tools - is written in Rust, like Master Control and Link: one Cargo workspace at the repository root with
   its crates under `crates/`, the toolchain pinned to an exact version in `rust-toolchain.toml` (as
