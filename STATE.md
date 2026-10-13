@@ -54,10 +54,10 @@ Top first. Each item is sized for one run; split it here before starting if it i
 Experiments that failed or came out inconclusive, kept rather than discarded (the maintainer's ruling); each with
 the idea for the next attempt.
 
-- **H10, phasor against real memory** ([the notebook](notebooks/h10_phasor_memory.ipynb), 2026-10-13): no better
-  at the same memory budget, at twice the compute. Next, after item 6's re-run of this test with fairer rules: test phase where the hunch
-  says it matters - the
-  undulation phase of a rhythm generator, interference between two paths (F1), or more phase states.
+- **H10, phasor against real memory** ([the notebook](notebooks/h10_phasor_memory.ipynb), 2026-10-13): no better at
+  the same memory budget, at twice the compute. Next, after item 6's re-run of this test with fairer rules: test
+  phase where the hunch says it matters - the undulation phase of a rhythm generator, interference between two paths
+  (F1), or more phase states.
 
 ## Blocked
 
