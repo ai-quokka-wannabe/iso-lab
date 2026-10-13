@@ -1,6 +1,6 @@
 # State of the Lab
 
-**Last updated:** 2026-10-13, after the maintainer's rulings, the hunches (#12) and H10's first test.
+**Last updated:** 2026-10-13, late: H10's first test landed, and the experiment plans for hunches A1-A8.
 
 ## Where We Are
 
@@ -43,19 +43,11 @@ Top first. Each item is sized for one run; split it here before starting if it i
    Zurada 1996 and Kobayashi 2017 at the source (H10 cites them unread), check the first test's attribution of its
    update rule, then run the next test under *To Revisit* with a finer grid, more cues, a symmetric success rule and
    a keep-the-state rule for ties.
-7. **Plan an experiment for every one of Matej's 93 ideas and hunches**, in
-   [docs/hypotheses/matej-hunches.md](docs/hypotheses/matej-hunches.md) - the maintainer's request. Split into eight
-   tasks of a night's size, one group each, section A first:
-   - **A** (15; split into A1-A8 and A9-A15 first if it does not fit a night), **B** (9), **C1-C12**, **C13-C24**,
-     **D** (13), **E1-E10**, **E11-E20**, **F** (12).
-
-   Each writes `docs/hypotheses/experiments/<group>.md`: for every hunch, the question, the method, baselines and
-   controls, the outcomes that would refute it (fixed first), the statistics, seeds and repetitions, the cost in
-   compute and memory, what it waits on (the benchmark, the arena, a sense the Grid lacks), and its leads checked at
-   the source. A hunch that cannot be tested yet keeps its plan and says what it waits on. The first task also
-   writes the format and an index of all 93 in `docs/hypotheses/experiments/README.md`, and this item then points
-   there instead of repeating the format; the journal records the triage, and hunches that survive are promoted into
-   numbered hypotheses or tasks here.
+7. **Plan an experiment for every one of Matej's 93 ideas and hunches** - the maintainer's request - in the format
+   of [docs/hypotheses/experiments/README.md](docs/hypotheses/experiments/README.md), whose index shows which are
+   planned. A1-A8 are done; the rest, one task each, in this order: **A9-A15**, **B** (9), **C1-C12**, **C13-C24**,
+   **D** (13), **E1-E10**, **E11-E20**, **F** (12). The journal records the triage, and hunches that survive are
+   promoted into numbered hypotheses or tasks here.
 
 ## To Revisit
 
@@ -63,7 +55,8 @@ Experiments that failed or came out inconclusive, kept rather than discarded (th
 the idea for the next attempt.
 
 - **H10, phasor against real memory** ([the notebook](notebooks/h10_phasor_memory.ipynb), 2026-10-13): no better
-  at the same memory budget, at twice the compute. Next: test phase where the hunch says it matters - the
+  at the same memory budget, at twice the compute. Next, after item 6's re-run of this test with fairer rules: test phase where the hunch
+  says it matters - the
   undulation phase of a rhythm generator, interference between two paths (F1), or more phase states.
 
 ## Blocked
@@ -84,6 +77,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-13: experiment plans for hunches A1-A8, with the plan format and an index of all 93
+  ([docs/hypotheses/experiments/](docs/hypotheses/experiments/README.md)).
 - 2026-10-13: H10, the maintainer's quantum-like brain, written as a hunch; its first test (phasor against real
   memory) refuted it at that level, and the test is kept under *To Revisit*.
 - 2026-10-13: the literature note on how worm behaviour is measured,
