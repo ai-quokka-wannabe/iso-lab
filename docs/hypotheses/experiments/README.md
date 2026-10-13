@@ -14,7 +14,9 @@ Every plan has the same parts:
 - **Baselines and controls**: what it is compared with, and the control that would expose a broken harness.
 - **Refuted if**: the outcomes that would refute the hunch, fixed before the run.
 - **Statistics**: the test or interval, chosen before the data is seen.
-- **Seeds and repetitions**: how many, and why that many.
+- **Seeds and repetitions**: how many, and why that many. The default is 20 seeds per condition: by a Monte Carlo
+  of the one-sided two-sample t test at alpha 0.05 (100 000 draws, numpy generator seed 20261013), 20 per arm gives
+  about 80% power to see a difference of 0.8 standard deviations (the command is in the 2026-10-13 journal). A plan that needs more, or fewer, says why.
 - **Cost**: compute and memory, in the terms of the rule *Lean brains*.
 - **Waits on**: what must exist first - the benchmark, the feature tool, the arena, a sense the Grid lacks.
 - **Leads**: each lead's status - found in Crossref by title and DOI, or read at the source (and for which
@@ -35,13 +37,13 @@ out of their sources when the experiment is prepared.
 | A6 | Tune by titration, not maximisation | [planned](A1-A8.md#a6-tune-by-titration-not-maximisation) |
 | A7 | Three axes, the third being how much is grown rather than wired | [planned](A1-A8.md#a7-three-axes-the-third-being-how-much-is-grown-rather-than-wired) |
 | A8 | A neurological examination below behaviour | [planned](A1-A8.md#a8-a-neurological-examination-below-behaviour) |
-| A9 | Vital signs for a long-lived brain | to plan |
-| A10 | Welfare and affect read from behaviour alone | to plan |
-| A11 | A sentience-indicator checklist, read with care | to plan |
-| A12 | Experiment hygiene | to plan |
-| A13 | A stored quantity is not what its name says until a known case has been read | to plan |
-| A14 | Mine the field's failures first | to plan |
-| A15 | Computational psychiatry on a frozen copy | to plan |
+| A9 | Vital signs for a long-lived brain | [planned](A9-A15.md#a9-vital-signs-for-a-long-lived-brain) |
+| A10 | Welfare and affect read from behaviour alone | [planned](A9-A15.md#a10-welfare-and-affect-read-from-behaviour-alone) |
+| A11 | A sentience-indicator checklist, read with care | [planned](A9-A15.md#a11-a-sentience-indicator-checklist-read-with-care) |
+| A12 | Experiment hygiene | [planned](A9-A15.md#a12-experiment-hygiene) |
+| A13 | A stored quantity is not what its name says until a known case has been read | [planned](A9-A15.md#a13-a-stored-quantity-is-not-what-its-name-says-until-a-known-case-has-been-read) |
+| A14 | Mine the field's failures first | [planned](A9-A15.md#a14-mine-the-fields-failures-first) |
+| A15 | Computational psychiatry on a frozen copy | [planned](A9-A15.md#a15-computational-psychiatry-on-a-frozen-copy) |
 | B1 | A nervous system, not a game client | to plan |
 | B2 | Smell as an unlabelled fingerprint | to plan |
 | B3 | Senses switched on by rung | to plan |
