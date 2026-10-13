@@ -10,8 +10,21 @@ The leads were looked up in Crossref by title on 2026-10-13. Found means the wor
 given; none was read in full, and where only the abstract was read, the plan says so. A lead that could not be found
 says so.
 
-Where a plan has more than one refutation test, each is run at alpha 0.05 divided by their number (Bonferroni), as
-[A9-A15.md § A10](A9-A15.md#a10-welfare-and-affect-read-from-behaviour-alone) did, and its intervals are widened to match.
+Refutation tests come in two kinds, and multiple tests are handled differently for each.
+
+- **A clause that fires on finding something** - a difference where the hunch says there is none, a value outside a
+  band - wrongly refutes a true hunch when it finds by chance. Where a plan has several, each is run at alpha 0.05
+  divided by their number (Bonferroni), as [A9-A15.md § A10](A9-A15.md#a10-welfare-and-affect-read-from-behaviour-alone)
+  did, so the chance of any wrongful refutation stays at 0.05.
+- **A clause that fires on failing to find what the hunch predicts** is not corrected: the hunch survives only if every
+  such test finds its effect, which already bounds a wrongful survival at 0.05 (an intersection-union test), and
+  dividing alpha would only make a wrongful refutation likelier. A failure to find is also not evidence of absence: each
+  such clause names a smallest effect of interest, fixed here before any data, and refutes only when the effect's
+  one-sided 95% interval lies wholly below it. When the test neither finds the effect nor rules it out, the clause is
+  *inconclusive*: reported so, never as a pass or a refutation, and kept under *To Revisit* with its power, to be run
+  again with more seeds. At the format's 20 seeds per arm a one-sided test has about 80% power at a standardised
+  difference of 0.8 ([README.md § The Format](README.md#the-format)), so a plan with several such clauses is
+  inconclusive more often than one with a single clause, and says so when it is prepared.
 
 Costs are counted in simulated lives. What one life costs in compute and memory is not known until the arena is
 proven (STATE.md item 4), so no plan gives absolute figures yet; each will when it is prepared. Seed counts follow
@@ -61,14 +74,16 @@ proven (STATE.md item 4), so no plan gives absolute figures yet; each will when 
   not of a brain: they are added to the smell request in STATE.md *Needs From Other Repositories*, which the
   maintainer takes up, and this plan tests only the brain's side.
 - **Baselines and controls**: an untrained Program tested on the same patterns - it fails, and the run is void, if
-  its distance curve's rho interval lies wholly below zero (a gradient without training comes from the patterns or the
-  harness). A Program trained on Q, tested on the same P-centred patterns - it fails, and the run is void, if its rho
+  its distance curve's 95% rho interval lies wholly below zero (a gradient without training comes from the patterns or the
+  harness). A Program trained on Q, tested on the same P-centred patterns - it fails, and the run is void, if its 95% rho
   interval also lies wholly below zero (the P-trained gradient would then not be P's).
-- **Refuted if**: the approach response does not fall with distance from P - Spearman's rank correlation between
-  distance and response has a 97.5% interval that does not lie wholly below zero; or the response to blends does not
-  rise with the proportion of P - its rho, between the proportion of P and the response, has a 97.5% interval that does
-  not lie wholly above zero. Two tests, so each interval is at 1 - 0.05/2 (Bonferroni).
-- **Statistics**: Spearman's rho with a bootstrap 97.5% interval, per curve.
+- **Refuted if**: the approach response is shown not to fall with distance from P - the bootstrap 95% interval of
+  Spearman's rank correlation between distance and response lies wholly above -0.3; or the response to blends is shown
+  not to rise with the proportion of P - the interval of its rho, between the proportion of P and the response, lies
+  wholly below 0.3. Both clauses fire on failing to find, so neither is corrected, and the smallest effect of interest
+  is a rank correlation of 0.3 in size, fixed here. A clause whose interval excludes zero on the predicted side
+  passes; any other outcome is inconclusive.
+- **Statistics**: Spearman's rho with a bootstrap 95% interval, per curve.
 - **Seeds and repetitions**: 20 seeds per test pattern; at least 8 distances and 8 blend proportions.
 - **Cost**: 20 lives per test point, 16 points - about 320 test lives for each of the three Programs (P-trained,
   Q-trained, untrained), 960 in all, plus the training lives of the two trained Programs, whose number H9 will fix.
@@ -90,8 +105,8 @@ proven (STATE.md item 4), so no plan gives absolute figures yet; each will when 
 - **Baselines and controls**: arm (a) is the baseline. Arm (c)'s noise goes to the Program of arm (b), so (b) against
   (c) checks that the content of the extra channels cannot reach a Program that ignores them.
 - **Refuted if**: arm (b) or (c) differs from arm (a) on any benchmark measure by the per-feature comparisons the
-  frozen benchmark will fix, with its correction for multiple comparisons; or any benchmark measure cannot be
-  computed for arm (d).
+  frozen benchmark will fix, with its correction for multiple comparisons, each of the two arms at a family-wise alpha
+  of 0.05/2 (both clauses fire on finding); or any benchmark measure cannot be computed for arm (d) (exact).
 - **Statistics**: the frozen benchmark's per-feature comparisons.
 - **Seeds and repetitions**: 20 seeds per condition.
 - **Cost**: four sets of 20 lives, 80 in all.
@@ -108,15 +123,22 @@ proven (STATE.md item 4), so no plan gives absolute figures yet; each will when 
   semantics of the hunch can therefore be two gait layers of the Program on the unchanged Grid: one whose reversal
   ends by bending the body onto a new heading, one that backs straight and resumes the old heading. Nothing in the
   world changes (*Realism over speed*). Step 1, before any brain: send each reversal as a scripted joint pattern, with
-  no Program deciding, and measure the change of heading from the last tick before the reversal to 2 s after forward
-  motion resumes. If no scripted pattern tried gives a reorienting reversal, the Grid's physics may be what prevents
-  it, and only then is it written up as an issue for tron-grid-lite or master-control, with the patterns tried. Step
+  no Program deciding, and measure the absolute change of heading from the last tick before the reversal to 2 s after
+  forward motion resumes. Up to five patterns per semantics are written down before step 1 and tried in that order,
+  stopping at the first that qualifies. A pattern reorients if the 95% interval of its mean absolute heading change
+  lies wholly above 30 degrees, and keeps the heading if it lies wholly below 10 degrees; both thresholds are fixed
+  here, before any data, and are checked against the real worm's heading change after a reversal when the recordings
+  are read. If no pattern reorients, the Grid's physics may be what prevents it, and it is written up as an issue for
+  tron-grid-lite or master-control, with the patterns tried. If no pattern keeps the heading, the non-reorienting
+  semantics does not exist on the Grid's body; that is a finding too, step 2 runs in the dish alone, and its result is
+  reported as the dish's, not the Grid's. Step
   2: a chemotaxis Program that steers by reversals alone (the pirouette strategy of [Pierce-Shimomura et al.
   1999](https://doi.org/10.1523/JNEUROSCI.19-21-09557.1999), with any other steering switched off, so reversals are its
   only lever), run with each gait layer in a chemical gradient. Per life, the score is +1 if it ends in the
-  attractant zone, -1 in the control zone and 0 elsewhere; the chemotaxis index is the mean over lives, the form of
-  [Bargmann et al. 1993](https://doi.org/10.1016/0092-8674(93)80053-H) - whether its denominator counts animals that end
-  elsewhere is to be checked against the paper (only its abstract was read), and is fixed before any run. Measure
+  attractant zone, -1 in the control zone and 0 elsewhere; the chemotaxis index is the mean over lives. This form is
+  written from memory of the population index in assays like those of [Bargmann et al.
+  1993](https://doi.org/10.1016/0092-8674(93)80053-H), whose abstract, the only part read, does not give it; the whole
+  form, zones and denominator included, is checked against the paper and fixed before any run. Measure
   under each semantics: the index; the heading change towards the gradient after each reversal not followed by an
   omega turn, over the same window as step 1; the share of lives that fail (a score of 0 or below); and the share of
   reversals followed by an omega turn, by the definition in [the behaviour-measures
@@ -127,15 +149,21 @@ proven (STATE.md item 4), so no plan gives absolute figures yet; each will when 
   reorienting semantics must match the worm's heading change after a reversal and its reversal-to-omega share, by the
   frozen benchmark's per-feature comparisons; if it does not, the comparison is between two gaits neither of which is
   the worm's, and the run is void for this hunch until the gait matches.
-- **Refuted if**: any of three one-sided tests, each at alpha 0.05/3 (Bonferroni), fails to find what the hunch claims,
-  non-reorienting against reorienting: (1) the chemotaxis index is lower (a permutation test on the per-life scores);
-  (2) the mean heading change towards the gradient after reversals not followed by an omega turn is lower (a
-  permutation test on the per-reversal changes, permuting whole lives); (3) the share of failing lives is higher
-  (Fisher's exact test).
-- **Statistics**: the three tests above; the omega share with a Wilson interval; the controls' rules as stated.
+- **Refuted if**: any of three effects the hunch claims, non-reorienting against reorienting, is shown smaller than
+  its smallest effect of interest - its one-sided 95% interval lies wholly below it: (1) the chemotaxis index is lower,
+  by at least 0.1; (2) the mean heading change towards the gradient after reversals not followed by an omega turn is
+  lower, by at least 10 degrees; (3) the share of failing lives is higher, by at least 10 percentage points. All three
+  fire on failing to find, so none is corrected; the three margins are fixed here, before any data. Each passes if its
+  one-sided test at alpha 0.05 finds the effect (a permutation test on per-life scores for 1, on per-reversal changes
+  permuting whole lives for 2, Fisher's exact test for 3), and is inconclusive otherwise. With three such clauses and
+  20 lives per arm, a true hunch is often inconclusive on at least one; the power is computed and stated when the plan
+  is prepared, and the seeds raised if it is low.
+- **Statistics**: the three tests above, with bootstrap intervals for 1 and 2 and a Newcombe interval for the
+  difference of shares in 3; the omega share with a Wilson interval; the controls' rules as stated.
 - **Seeds and repetitions**: step 1, 20 lives per scripted pattern; step 2, 20 lives per semantics, the format's
   default, and as many for the control.
-- **Cost**: step 1, 40 Grid lives; step 2, 80 lives in whichever world has the gradient.
+- **Cost**: step 1, 40 to 200 Grid lives (20 per pattern tried, two to ten patterns); step 2, 80 lives in whichever
+  world has the gradient.
 - **Waits on**: step 1, the arena only (STATE.md item 4). Step 2 waits on a chemical gradient - a chemical sense on the
   Grid (STATE.md *Needs From Other Repositories*), or B5's dish sooner - and a chemotaxis Program.
 - **Leads**: none named for the hunch. The measures' sources: Pierce-Shimomura, Morse and Lockery 1999, "The
@@ -155,8 +183,10 @@ proven (STATE.md item 4), so no plan gives absolute figures yet; each will when 
   and drift, a temperature gradient, food eaten only when moving forward near it, head-only sensing - but with two of
   the hunch's features moved to where they belong. Walls give touch, as the Grid's do, and the reversal at a wall is
   the Program's response to that touch; the cultivation set point is the animal's memory of where it was raised, so
-  it lives in the Program, not in the dish. The dish speaks the Grid's interface, plus the chemical and temperature
-  senses the Grid lacks, in a provisional form replaced by the world maintainers' own when they add them. Run A1's
+  it lives in the Program, not in the dish. The dish speaks the Grid's interface, plus the senses an agar plate
+  needs that the Grid lacks - a chemical sense, and a sense of the substrate's temperature (the Grid's thermal sense,
+  `irradiance`, is radiant heat, not the temperature of what the body lies on) - in a provisional form, replaced by the
+  world maintainers' own if they add them. Run A1's
   assays in the dish; move three brains from dish to Grid unchanged - the undulating control, B4's chemotaxis
   Program, and the best Program the lab has then - and run the same assays on the Grid. Before the comparison, write
   down and freeze the list of known differences between the two worlds.
@@ -172,7 +202,7 @@ proven (STATE.md item 4), so no plan gives absolute figures yet; each will when 
 - **Seeds and repetitions**: 20 seeds per assay per world per brain.
 - **Cost**: the dish's own build; 20 dish lives and 20 Grid lives per assay per brain, three brains.
 - **Waits on**: A1's bands and the arena. The assays of chemotaxis and thermotaxis can be compared on the Grid only
-  once the Grid has the chemical and temperature senses it lacks (STATE.md *Needs From Other Repositories*); until
+  once the Grid has a chemical sense and a sense of the substrate's temperature (STATE.md *Needs From Other Repositories*); until
   then they run in the dish alone and the dish-to-Grid comparison covers the rest. The dish is a tool, so it is
   written in Rust (the rule *Rust first*); it never scores a brain - scoring stays on the Grid.
 - **Leads**: none named.
@@ -192,8 +222,9 @@ proven (STATE.md item 4), so no plan gives absolute figures yet; each will when 
   the dish is fixed. An A/A control: the same rate twice with different seeds - if it shows a difference by the same
   comparisons, the run is void.
 - **Refuted if**: any benchmark measure differs between the two rates, or between the two internal steps, by the
-  per-feature comparisons the frozen benchmark will fix, with its correction for multiple comparisons; or a paced and an
-  unpaced dish run from the same seed differ at any tick.
+  per-feature comparisons the frozen benchmark will fix, with its correction for multiple comparisons, each of the two
+  comparisons at a family-wise alpha of 0.05/2 (both fire on finding); or a paced and an unpaced dish run from the same
+  seed differ at any tick (exact).
 - **Statistics**: as above; exact equality for fast-forward.
 - **Seeds and repetitions**: 20 seeds per rate, per internal step and per control arm; 20 paced-unpaced pairs.
 - **Cost**: in the dish, 40 Program lives, 40 scripted lives, 20 A/A lives and 40 fast-forward lives; on the Grid, 40
@@ -216,11 +247,12 @@ proven (STATE.md item 4), so no plan gives absolute figures yet; each will when 
   *Pre-register and ablate*); absence - the same stretch filled with unrewarded presentations of the stimulus
   (extinction); reconvergence - the larger single-path update itself. Each control must show its effect: its 95%
   interval lies wholly above zero, or the probe is void (it cannot see what it tests).
-- **Refuted if**, for any probe, the difference is not shown to lie within plus or minus delta - with the efference copy
-  on, the belief's change under self-motion; the loss of association over the blank stretch; the both-paths update
-  minus the larger single-path update (above delta is double counting, below minus delta is discarding). Equivalence
-  is tested by two one-sided tests at alpha 0.05/3 (Bonferroni over three probes), that is, the difference's bootstrap
-  interval at 1 - 2 x 0.05/3 (about 96.7%) must lie within plus or minus delta.
+- **Refuted if**, for any probe, the difference lies outside plus or minus delta - with the efference copy on, the
+  belief's change under self-motion; the loss of association over the blank stretch; the both-paths update minus the
+  larger single-path update (above delta is double counting, below minus delta is discarding) - judged by its
+  bootstrap 90% interval: wholly outside the band refutes; wholly inside passes (equivalence by two one-sided tests at
+  alpha 0.05); anything else is inconclusive. Each probe must show equivalence for the hunch to survive, so the three
+  are not corrected (an intersection-union test).
 - **Statistics**: bootstrap intervals over seeds, as above.
 - **Seeds and repetitions**: 20 seeds per probe and per control.
 - **Cost**: short probe runs on a frozen copy, not lives; the absence probe needs one learning life per seed first.
@@ -243,15 +275,17 @@ proven (STATE.md item 4), so no plan gives absolute figures yet; each will when 
   which must be empty for a snapshot and its restored copy.
 - **Baselines and controls**: an A/A control, two uninterrupted replays of the same recording - if they differ at any
   tick, the run is void. A corrupted-snapshot control: before a restore, set one state variable to a value other than
-  the one it holds, for each of five variables chosen at random by seed - the diff must name that variable every time, or the run is
-  void (the snapshot does not reach the state); whether the continuation then diverges is reported per variable.
+  the one it holds, for each of five variables chosen at random by seed - the diff must name that variable every time, and at least one
+  of the five must make the continuation diverge, or the run is void (the snapshot does not reach the state, or the
+  comparison cannot see a difference); whether each continuation diverges is reported per variable.
 - **Refuted if**: a restored continuation differs from the uninterrupted one at any tick, or the diff of a snapshot and
   its restored copy is not empty, given that both controls pass.
 - **Statistics**: exact equality.
 - **Seeds and repetitions**: 20 seeds, a snapshot at three points in each life.
 - **Cost**: 20 recorded Grid lives; per seed, replays rather than lives: the A/A pair, three restored continuations and
   five corrupted ones.
-- **Waits on**: a Program; the world's half, a save and restore in Master Control.
+- **Waits on**: a Program and the arena (STATE.md item 4), for the recorded lives; the world's half, a save and
+  restore in Master Control.
 - **Leads**: none named.
 
 ## B9. The insect bet, and the bridge it owes
@@ -263,15 +297,19 @@ proven (STATE.md item 4), so no plan gives absolute figures yet; each will when 
   of them are inside their bands, and a life that never recovers is given its remaining length. The animal-like time is
   read from a source on worms with an impaired body, to be found; without one, that comparison waits. World-free
   stand-ins can run sooner: a lesion of the Program's own motor output - one joint's target scaled down after the brain has
-  set it, which the brain is not told, like a motor-neuron ablation; and, if the Grid lets a Program rez a shorter
-  chain (not yet checked), a lost segment between lives rather than within one. They are reported as stand-ins, not as
+  set it, which the brain is not told, like a motor-neuron ablation; and a lost segment between lives rather than within
+  one, by rezzing a shorter chain - the Program's model declares its `segment_count`, from one to `TGL_SEGMENTS_MAX`
+  (PROGRAM_INTERFACE.md § The Body's Own Shape, at the pinned commit). They are reported as stand-ins, not as
   the hunch's test.
 - **Baselines and controls**: the same Program unperturbed (it must stay within its bands in at least 19 lives in 20,
   or the bands do not fit it and the run is void); the same Program with its learning switched off.
-- **Refuted if**, by two tests each at alpha 0.05/2 (Bonferroni): the lower bound of the 97.5% bootstrap interval of the
-  median recovery time lies above the animal's figure; or a one-sided Mann-Whitney test does not find recovery slower
-  with learning switched off (the recovery is then not adaptation).
-- **Statistics**: recovery time per seed, its median with a bootstrap 97.5% interval; the Mann-Whitney test above.
+- **Refuted if**: the lower bound of the 95% bootstrap interval of the median recovery time lies above the animal's
+  figure (it fires on finding, and is the plan's only such clause); or recovery with learning switched off is shown not
+  to be slower - the one-sided 95% bootstrap interval of the ratio of median recovery times, learning off over on, lies
+  wholly below 1.2, the smallest slowing of interest, fixed here (the recovery is then not adaptation). That clause
+  passes if a one-sided Mann-Whitney test at alpha 0.05 finds learning-off slower, and is inconclusive otherwise.
+- **Statistics**: recovery time per seed, its median with a bootstrap 95% interval; the ratio of medians with a
+  bootstrap interval; the Mann-Whitney test above.
 - **Seeds and repetitions**: 20 seeds per perturbation and condition.
 - **Cost**: three sets of 20 lives per perturbation, stand-ins included.
 - **Waits on**: for the hunch's own test, a way to perturb a body in mid-life, which the world does not have: the body
