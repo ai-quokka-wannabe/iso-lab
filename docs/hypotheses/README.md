@@ -150,7 +150,8 @@ beyond). Complex-valued associative memories exist: units that take one of sever
 networks of [Noest 1988](https://doi.org/10.1103/PhysRevA.38.2196) and the multistate memory of
 [Jankowski, Lozowski and Zurada 1996](https://doi.org/10.1109/72.548176), with quaternion-valued Hopfield networks
 after them ([Kobayashi 2017](https://doi.org/10.1016/j.neucom.2017.02.044)); these are cited for what they
-propose, not read in full. In the worm, the undulation of [Stephens et al. 2008](https://doi.org/10.1371/journal.pcbi.1000028)
+propose, not read in full - and the first test's notebook says its update rule follows the first two, an
+attribution unchecked until they are read. In the worm, the undulation of [Stephens et al. 2008](https://doi.org/10.1371/journal.pcbi.1000028)
 is already one phase. Related ideas wait in [Matej's ideas and hunches](matej-hunches.md), F1 among them.
 *Predicts*: a complex or hypercomplex module that does more than a real-valued one of the same compute and memory -
 stores more, or produces a measured behaviour the real one cannot.
