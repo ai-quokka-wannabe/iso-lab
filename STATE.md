@@ -1,6 +1,7 @@
 # State of the Lab
 
-**Last updated:** 2026-10-14: the comparison space drafted, the pace note filled in part, the Rust workspace begun, and H11 tried and refuted.
+**Last updated:** 2026-10-14: the comparison space drafted, the pace note filled in part, H11 tried and refuted, the reference worms' bends
+measured against the Grid's joint limit, and Master Control built and tested in place.
 
 ## Where We Are
 
