@@ -103,7 +103,10 @@ fn fetch_one(agent: &ureq::Agent, wanted: &Wanted) -> Result<(), String> {
             if have == wanted.size && is_good(&partial, &wanted.checksum) {
                 return std::fs::rename(&partial, &path).map_err(|error| error.to_string());
             }
-            eprintln!("record {}: {have} bytes that do not match the MD5; starting again", wanted.record);
+            eprintln!(
+                "record {}: {have} bytes, not the {} expected or not matching the MD5; starting again",
+                wanted.record, wanted.size
+            );
             let _ = std::fs::remove_file(&partial);
             failures += 1;
             continue;

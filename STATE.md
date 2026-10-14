@@ -109,7 +109,7 @@ points to the open ones and says what waits on each.
 ## Done
 
 - 2026-10-14: `fetch-block`, which downloads a block of the reference draw and accepts each file only by its MD5,
-  resuming where it stopped; resuming by byte; a run fetched part of block 1, every file checked.
+  resuming by byte; a run fetched part of block 1, every file checked.
 - 2026-10-14: the reference draw: the 1646 eligible records in one order fixed by seed 20261014 (pre-registered and
   pushed first), in blocks of 200; block 1, 4.87 GB, is the development reference.
 - 2026-10-14: the eligible manifest of the N2 reference records, written by a Rust tool (`list-n2`): 1792 records
