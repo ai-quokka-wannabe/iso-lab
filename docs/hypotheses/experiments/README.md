@@ -66,12 +66,12 @@ out of their sources when the experiment is prepared.
 | C10 | Many proposals, one commitment per cycle | [planned](C1-C12.md#c10-many-proposals-one-commitment-per-cycle) |
 | C11 | Imagination through the action pathway | [planned](C1-C12.md#c11-imagination-through-the-action-pathway) |
 | C12 | A step clock from brain rhythms | [planned](C1-C12.md#c12-a-step-clock-from-brain-rhythms) |
-| C13 | Vigour from the average reward rate; one global slowing factor | to plan |
-| C14 | Poised near criticality, monitored | to plan |
-| C15 | A logistic-map arousal engine | to plan |
-| C16 | Golden-ratio spacing of rhythms | to plan |
-| C17 | Memory timescales spaced by Feigenbaum's constant | to plan |
-| C18 | Spreading activation has a cliff | to plan |
+| C13 | Vigour from the average reward rate; one global slowing factor | [planned](C13-C24.md#c13-vigour-from-the-average-reward-rate-one-global-slowing-factor) |
+| C14 | Poised near criticality, monitored | [planned](C13-C24.md#c14-poised-near-criticality-monitored) |
+| C15 | A logistic-map arousal engine | [planned](C13-C24.md#c15-a-logistic-map-arousal-engine) |
+| C16 | Golden-ratio spacing of rhythms | [planned](C13-C24.md#c16-golden-ratio-spacing-of-rhythms) |
+| C17 | Memory timescales spaced by Feigenbaum's constant | [planned](C13-C24.md#c17-memory-timescales-spaced-by-feigenbaums-constant) |
+| C18 | Spreading activation has a cliff | [planned](C13-C24.md#c18-spreading-activation-has-a-cliff) |
 | C19 | Windowed tallies, not lifetime counts | to plan |
 | C20 | Bounded loops for rhythmic behaviour | to plan |
 | C21 | A noisy, log-compressed sense of elapsed time | to plan |
