@@ -77,7 +77,7 @@ large lawns, averaged speed and angular speed over 10-second intervals, and segm
 Markov model. Dwelling durations fit a single exponential with τ = 482 s; roaming durations fit two, τ = 75 s and
 520 s, and "85% of roaming states have a mean lifetime of 75 sec".
 
-A reference recording lasts 15 minutes, 900 s. So:
+A reference recording lasts 15 minutes, 900 s, by the protocol (most do; see *Unequal lengths and frame rates* below). So:
 
 - **The share of time in each state** can be estimated from 15 minutes, with the same 10-second bins and a two-state
   model, but each recording holds few states: a dwelling state averages 482 s and a roaming state about 142 s (0.85 ×
@@ -131,7 +131,9 @@ A reference recording lasts 15 minutes, 900 s. So:
   statistic is computed: block 1 of the seeded draw ([data/README.md § The Reference
   Draw](../../data/README.md#the-reference-draw)).
 - **Unequal lengths and frame rates.** The recordings are not all 15 minutes long, nor filmed at one frame rate: 5 and
-  120 minutes and 25.4 to 32.6 frames per second are among those read so far ([the journal of 2026-10-14 § How Long
-  the Reference Recordings Are](../journal/2026-10-14.md#how-long-the-reference-recordings-are)). Measures are taken
-  in seconds, and the benchmark must say how recordings of unequal length enter it, for example by a fixed window of
-  each, before any statistic is computed.
+  120 minutes are among those read so far ([the journal of 2026-10-14 § How Long the Reference Recordings
+  Are](../journal/2026-10-14.md#how-long-the-reference-recordings-are)), and frame rates from 25.4 ([§ Reading the
+  Features Files](../journal/2026-10-14.md#reading-the-features-files)) to 32.57 frames per second ([data/README.md §
+  The Phase 0 Survey](../../data/README.md#the-phase-0-survey)). Measures are taken in seconds, and the benchmark
+  must say how recordings of unequal length enter it, by a fixed window of each, by excluding those far from 15
+  minutes, or otherwise, before any statistic is computed.
