@@ -802,3 +802,16 @@ rhythms together braid - invariants that could become benchmark measures of rhyt
 not already: the decomposition of a trained brain predicts no behaviour better than its state count; a braid invariant
 of the worm's posture separates no strains or conditions that phase alone does not.
 *Leads*: Krohn and Rhodes 1965; White et al. 1986; Stephens et al. 2008; Birman 1974.
+
+### F15. Rhythm and direction as a Hopf fibration
+
+The Hopf fibration splits the three-sphere - the unit quaternions, or pairs of complex numbers of unit length - into
+circles, one over each point of the ordinary sphere: every state is a direction on the sphere plus a phase around its
+circle. The hunch: a creature's state held this way keeps what it does (a direction - a heading, a choice among
+behaviours) and the rhythm it does it with (the phase of the body wave) in one object, the two separable by
+construction yet moving together, as steering and undulation do in the worm. The same geometry is the Bloch sphere of a
+two-level quantum state, which ties it to H10's complex-valued brain.
+*Test*: a module whose state lives on the three-sphere, read out through the fibration, against one holding a plain
+angle and a separate phase, at the same compute and memory, on a task that couples steering to the body's rhythm;
+refuted if the fibred state does no better.
+*Leads*: Hopf 1931; Urbantke 2003.
