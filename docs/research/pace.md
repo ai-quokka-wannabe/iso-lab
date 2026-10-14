@@ -117,7 +117,7 @@ PMC10770330): a scoring window, like Liu et al.'s, not a measured latency. Three
   warm worms", so the lab reads the time scales as hours: about 83 and 45 minutes for avoidance, and 23 and 18 minutes
   for habituation. The habituation times are weak: combining the two upper-bound uncertainties in quadrature gives
   about 65% and 90%, so the cold-worm value is known only to within a factor of about two and the warm-worm value is
-  barely bounded from below (the tables' lower-bound uncertainties are a few per cent, so the truth lies between).
+  barely bounded from below (the tables' lower-bound uncertainties are a few per cent, so the real uncertainty lies between).
   These are a model's parameters, fitted to swimming worms in droplets, not time constants measured directly in
   crawling ones; the time scales at the rearing temperature in the same tables are left out here.
 
