@@ -13,8 +13,11 @@
     If not, see <https://www.gnu.org/licenses/>.
 */
 
-//! `list-n2 <manifest.tsv>` - lists the Open Worm Movement Database's N2 records on Zenodo,
-//! keeps the eligible ones by the survey's rule (`fetch::zenodo`), and writes their manifest.
+//! `list-n2` - lists the Open Worm Movement Database's N2 records on Zenodo,
+//! keeps the eligible ones by the survey's rule (`fetch::zenodo`), and writes their manifest to
+//! [`MANIFEST`], relative to the directory it is run from (the repository's root). The path is
+//! fixed rather than taken from the command line, so every run writes the one file the lab
+//! tracks.
 //!
 //! The listing is the survey's: the community's records answering `title:"N2 Schafer Lab N2"`,
 //! 25 a page, sorted oldest first (unsorted pages repeat some records and miss others), each
@@ -28,6 +31,7 @@ use std::time::Duration;
 const LISTING: &str = "https://zenodo.org/api/communities/open-worm-movement-database/records";
 const QUERY: &str = "title:\"N2 Schafer Lab N2\"";
 const ATTEMPTS: u32 = 8;
+const MANIFEST: &str = "data/manifests/owmd-n2-eligible.tsv";
 
 fn page(agent: &ureq::Agent, number: u32) -> Result<String, String> {
     let mut last = String::new();
@@ -53,10 +57,10 @@ fn page(agent: &ureq::Agent, number: u32) -> Result<String, String> {
 }
 
 fn main() -> ExitCode {
-    let Some(path) = std::env::args().nth(1) else {
-        eprintln!("usage: list-n2 <manifest.tsv>");
+    if std::env::args().len() > 1 {
+        eprintln!("usage: list-n2 (no arguments; it writes {MANIFEST})");
         return ExitCode::FAILURE;
-    };
+    }
     let agent: ureq::Agent = ureq::Agent::config_builder()
         .proxy(ureq::Proxy::try_from_env())
         .timeout_connect(Some(Duration::from_secs(30)))
@@ -80,10 +84,10 @@ fn main() -> ExitCode {
     }
     let manifest = listing.manifest();
     let eligible = manifest.lines().count() - 1;
-    if let Err(error) = std::fs::write(&path, manifest) {
-        eprintln!("writing {path}: {error}");
+    if let Err(error) = std::fs::write(MANIFEST, manifest) {
+        eprintln!("writing {MANIFEST}: {error}");
         return ExitCode::FAILURE;
     }
-    eprintln!("{} records listed, {eligible} eligible, written to {path}", listing.len());
+    eprintln!("{} records listed, {eligible} eligible, written to {MANIFEST}", listing.len());
     ExitCode::SUCCESS
 }
