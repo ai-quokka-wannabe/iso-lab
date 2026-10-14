@@ -61,8 +61,10 @@ pulse of 133 ms.
 - At the head the typical response is "a reversal, followed by an omega turn, then a recommencement of forward
   motion".
 - **Not found yet**: the reaction times in seconds, which are in their Figure 2c and not in the text. The figure was
-  not read (PubMed Central's page asks for a CAPTCHA, which the lab does not get round, and Europe PMC did not serve
-  the image).
+  not read (PubMed Central's page asks for a CAPTCHA, which the lab does not get round). Europe PMC's article
+  service did not serve the image, but its supplementary-files service
+  (`https://www.ebi.ac.uk/europepmc/webservices/rest/<PMCID>/supplementaryFiles`) does, as a zip holding the
+  paper's figure files: a way to a figure read, not yet taken.
 
 [Wittenburg and Baumeister 1999](https://doi.org/10.1073/pnas.96.18.10477) (PMC17914), only the abstract read: "[t]he
 escape reflex can be observed in 98% of the adult animals". The full text could not be fetched as text; it is to be
@@ -86,7 +88,7 @@ light on worms.
 Thermotaxis, the response to temperatures the worm prefers, is a different behaviour from heat avoidance (Wittenburg
 and Baumeister 1999); its reaction latency is still to be read. One study of rapid cooling scores a reversal as a
 response if it starts "within 5 s of stimulation initiation" ([Lin et al. 2024](https://doi.org/10.1038/s41467-023-44638-5),
-PMC10770330): a scoring window, like Liu et al.'s, not a measured latency. Two slower timescales are stated in text:
+PMC10770330): a scoring window, like Liu et al.'s, not a measured latency. Three slower timescales are on record:
 
 - **Hours, for a remembered temperature without food.** Worms placed on a thermal gradient without food for one hour
   "accumulated at the temperature of previous cultivation"; "when left longer on the thermal gradient, animals started
@@ -102,6 +104,17 @@ PMC10770330): a scoring window, like Liu et al.'s, not a measured latency. Two s
   neurons shift after a like hold is the lab's reading of this contrast and of their Figure 6, not read; the wild-type
   hold time is not stated. "At least 15 min" is the protocol's minimum hold: a shift seen after it says nothing of
   how fast the threshold moves, and it is not a time constant.
+- **Fitted time scales, of a model of thermal preference.** [Roman et al. 2023](https://doi.org/10.1073/pnas.2215191120)
+  (PMC10068832) tracked single worms for 4 hours in microfluidic droplets with a gradient across each droplet, after
+  starvation of different lengths, and fitted a model with "four time scales"; in their words, "the avoidance time
+  scale is slower than the habituation one". The fitted values are in their supplementary Tables S3 and S4 (read in
+  the supplementary PDF): the avoidance time scale τa is 1.39 for worms reared at 15°C and 0.75 for worms reared at
+  25°C, with upper-bound uncertainties of 0.58 and 0.39; the habituation time scale is a fitted fraction of it,
+  τh/τa = 0.28 and 0.41, so τh is about 0.39 and 0.31. The tables give no unit; the supplement says "t represents
+  the time in hours since the beginning of assaying in the droplet", so the lab reads them as hours, that is about
+  83 and 45 minutes for avoidance and 23 and 19 minutes for habituation. These are a model's parameters, fitted to
+  starved worms confined in droplets, not time constants measured directly in free-crawling ones; the time scales at the
+  rearing temperature in the same tables are left out here.
 
 ### Smell
 
@@ -154,11 +167,10 @@ show, so it is weak. The Grid has no chemical sense yet in any case.
   al. 2017, "Habituation as an adaptive shift in response strategy mediated by neuropeptides"
   ([doi:10.1038/s41539-017-0011-8](https://doi.org/10.1038/s41539-017-0011-8), PMC6161508), for "reversal latency";
   read in full, it measures latency to light-activation of ASH, with values in figures only.
-- The heat-avoidance reaction times of Mohammadi et al. 2013, Figure 2c, and Wittenburg and Baumeister 1999 in full.
+- The heat-avoidance reaction times of Mohammadi et al. 2013, Figure 2c (its image is served by Europe PMC's
+  supplementary-files service), and Wittenburg and Baumeister 1999 in full.
 - A thermotaxis reaction latency (the slower timescales above are orders of magnitude only), and the primary source
-  for lethargus (Singh and Sulston 1978). [Roman et al. 2023](https://doi.org/10.1073/pnas.2215191120) (PMC10068832)
-  fit a model of thermal preference after starvation with "four time scales", the avoidance slower than the
-  habituation; the fitted values are in their supplementary tables, not read.
+  for lethargus (Singh and Sulston 1978).
 - Fitted time constants for tap habituation and its recovery: the primary papers (Rankin et al. 1990 and later) were
   not open in full text; only a review's summary is read.
 - The timing of sleep-like quiescence outside lethargus.
