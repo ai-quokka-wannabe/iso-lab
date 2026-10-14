@@ -60,11 +60,16 @@ pulse of 133 ms.
   proportional to the logarithm of the stimuli strength".
 - At the head the typical response is "a reversal, followed by an omega turn, then a recommencement of forward
   motion".
-- **Not found yet**: the reaction times in seconds, which are in their Figure 2c and not in the text. The figure was
-  not read (PubMed Central's page asks for a CAPTCHA, which the lab does not get round). Europe PMC's article
-  service did not serve the image, but its supplementary-files service
-  (`https://www.ebi.ac.uk/europepmc/webservices/rest/<PMCID>/supplementaryFiles`) does, as a zip holding the
-  paper's figure files: a way to a figure read, not yet taken.
+- **Read from their Figure 2c**: the reaction times are not in the text, only in the figure, "[t]he reaction time of
+  the worm in response to a head-applied laser stimulus as a function of laser power". Its image came from Europe
+  PMC's supplementary-files service (`https://www.ebi.ac.uk/europepmc/webservices/rest/<PMCID>/supplementaryFiles`, a
+  zip of the paper's figure files; PubMed Central's page asks for a CAPTCHA, which the lab does not get round). Read
+  by pixel, with the method in the journal of 2026-10-14, the four mean reaction times are about 0.33, 0.29, 0.27 and
+  0.25 s, falling as the laser current rises from about 30 to about 150 mA (the currents read by eye from a
+  logarithmic axis). Each value is read to within about 0.005 s; the figure's own error bars are wider, up to about
+  ±0.03 s for the weakest stimulus. The text does not say from which moment the reaction time is counted, nor how the
+  reaction is detected; the videos were recorded "at 30 fps", so the times rest on frames 33 ms apart. How sure:
+  moderate for the values as plotted, low for what exactly they measure.
 
 [Wittenburg and Baumeister 1999](https://doi.org/10.1073/pnas.96.18.10477) (PMC17914), only the abstract read: "[t]he
 escape reflex can be observed in 98% of the adult animals". The full text could not be fetched as text; it is to be
@@ -152,7 +157,7 @@ show, so it is weak. The Grid has no chemical sense yet in any case.
 ## For the Lab
 
 - **The Grid's tick is 31.25 ms** ([the comparison space](../benchmark/FEATURES.md#the-two-bodies) gives its source).
-  The behavioural timings above, 330 ms and longer, span ten ticks or more and are resolvable; the receptors'
+  The behavioural timings above, 250 ms and longer, span eight ticks or more and are resolvable; the receptors'
   adaptation over "a few tens of milliseconds" is a timescale, not a latency, and lasts about one tick, below what a
   tick can resolve. A Program's reflexes must not be faster than the worm's merely because the tick allows it.
 - **What the benchmark measures.** The latencies above come from stimuli the reference recordings do not contain: they
@@ -172,8 +177,8 @@ show, so it is weak. The Grid has no chemical sense yet in any case.
   al. 2017, "Habituation as an adaptive shift in response strategy mediated by neuropeptides"
   ([doi:10.1038/s41539-017-0011-8](https://doi.org/10.1038/s41539-017-0011-8), PMC6161508), for "reversal latency";
   read in full, it measures latency to light-activation of ASH, with values in figures only.
-- The heat-avoidance reaction times of Mohammadi et al. 2013, Figure 2c (its image is served by Europe PMC's
-  supplementary-files service), and Wittenburg and Baumeister 1999 in full.
+- The definition behind Mohammadi et al. 2013's reaction times (from which moment, to which event), and Wittenburg and
+  Baumeister 1999 in full.
 - A thermotaxis reaction latency (the slower timescales above are orders of magnitude only), and the primary source
   for lethargus (Singh and Sulston 1978).
 - Fitted time constants for tap habituation and its recovery: the primary papers (Rankin et al. 1990 and later) were
