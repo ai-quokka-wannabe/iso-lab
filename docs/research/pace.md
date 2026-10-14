@@ -211,4 +211,7 @@ show, so it is weak. The Grid has no chemical sense yet in any case.
 - Fitted time constants for tap habituation and its recovery: the primary papers (Rankin et al. 1990 and later) were
   not open in full text; only a review's summary is read.
 - The timing of sleep-like quiescence outside lethargus: stress-induced quiescence now has timings from Hill et al.
-  2014's text (above); satiety quiescence, and the figures' time courses, are still to read.
+  2014's text (above); satiety quiescence, and the figures' time courses, are still to read. For satiety the
+  source is You et al. 2008 ([doi:10.1016/j.cmet.2008.01.005](https://doi.org/10.1016/j.cmet.2008.01.005), PMC3786678):
+  its abstract, read through Europe PMC, states no timing; Europe PMC did not serve its full text (an HTTP 500), and PMC
+  answered with a CAPTCHA, which the lab does not get around.
