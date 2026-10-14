@@ -21,8 +21,12 @@
 //! One line a recording: record, frame rate, frames, skeletonised frames, frames with eight
 //! arcs, median length in micrometres, share beyond 0.9 rad, share beyond pi/2, and then the share
 //! beyond 0.9 rad at each of the seven joints, head first.
+//!
+//! An optional argument, a half-width in skeleton points, first smooths every skeleton along its
+//! length by `posture::smoothed_along`: `cargo run --release --bin posture-limits -- 2`. Without it,
+//! or with 0, the skeletons are used as recorded.
 
-use features::posture::{ARCS, COS_GRID_JOINT_LIMIT, eight_arcs};
+use features::posture::{ARCS, COS_GRID_JOINT_LIMIT, eight_arcs, smoothed_along};
 use features::read_skeletons;
 use std::path::Path;
 use std::process::ExitCode;
@@ -31,6 +35,14 @@ const DIRECTORY: &str = "data/raw/owmd-n2";
 const SUFFIX: &str = "_features.hdf5";
 
 fn main() -> ExitCode {
+    let half_width = match std::env::args().nth(1).map(|argument| argument.parse::<usize>()) {
+        None => 0,
+        Some(Ok(half_width)) => half_width,
+        Some(Err(error)) => {
+            eprintln!("the argument is a half-width in skeleton points: {error}");
+            return ExitCode::FAILURE;
+        }
+    };
     let entries = match std::fs::read_dir(DIRECTORY) {
         Ok(entries) => entries,
         Err(error) => {
@@ -59,7 +71,7 @@ fn main() -> ExitCode {
         let mut lengths = Vec::new();
         for frame in (0..skeletons.frames()).filter_map(|index| skeletons.frame(index)) {
             skeletonised += 1;
-            let Some(arcs) = eight_arcs(frame) else { continue };
+            let Some(arcs) = eight_arcs(&smoothed_along(frame, half_width)) else { continue };
             lengths.push(arcs.length);
             beyond_limit += usize::from(arcs.bends_beyond(COS_GRID_JOINT_LIMIT));
             beyond_ceiling += usize::from(arcs.bends_beyond(0.0));

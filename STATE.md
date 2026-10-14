@@ -126,8 +126,10 @@ points to the open ones and says what waits on each.
 - **The worm's bends against the Grid's joint limit** (tron-grid-lite; not yet an issue). In twelve reference
   recordings 31 to 46% (median 38%) of the skeletonised frames bend beyond the Grid's 0.9 rad at some eight-arc joint
   (journal of 2026-10-14). Per joint the excess is greatest at the head (median 13% of frames at the first
-  joint) and falls along the body (medians 3.2 to 4.5% at joints 4 to 6), though the tail joint varies most. Before asking for a higher limit, the lab checks how much of
-  the head's excess survives smoothing the skeletons; then an issue, with the evidence.
+  joint) and falls along the body (medians 3.2 to 4.5% at joints 4 to 6), though the tail joint varies most.
+  Smoothing the skeletons along their length lowers the joints by similar proportions (a five-point mean keeps about
+  0.8 of each share), the tail most, so the gradient survives it - but the smoothing leaves the tips, the noisiest
+  points, untouched; a temporal check, or the dataset's own account of its tracking error, comes before an issue.
 - **Terrace edges** (master-control; the maintainer takes it up once the lab is set up - file nothing). A
   chain can be thrown when a segment crosses a terrace edge; a fix is in progress. Until it lands, every life
   in this lab is lived on a flat arena.
@@ -136,6 +138,8 @@ points to the open ones and says what waits on each.
 
 - 2026-10-14: a midbody speed at the eight-arc resolution; its check against the dataset's own speed fails in one record
   of sixteen (correlation 0.947 against the 0.95 required), where the 49-point version agrees; not yet trusted.
+- 2026-10-14: smoothing the skeletons along their length lowers the head's share beyond 0.9 rad no more than the body's,
+  the tail's most; the tips stay unsmoothed; 31% of frames (median) still bend beyond it at some joint.
 - 2026-10-14: experiment plans for hunches C19-C24 ([C13-C24.md](docs/hypotheses/experiments/C13-C24.md)); D next.
 - 2026-10-14: experiment plans for hunches C13-C17 ([C13-C24.md](docs/hypotheses/experiments/C13-C24.md)), after four
   reviews of its pull request; C18 parked, C19-C24 next.
