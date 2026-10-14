@@ -1,0 +1,16 @@
+[package]
+name = "features"
+description = "Behavioural features of a worm, read the same way from the reference recordings and from the Grid's Disks."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+publish = false
+
+[dependencies]
+# A pure-Rust HDF5 reader, MIT OR Apache-2.0; it reads the reference skeletons exactly as
+# h5py and libhdf5 do (docs/journal of 2026-10-14, *Reading the Features Files*).
+hdf5-pure = "=0.47.0"
+
+[lints]
+workspace = true

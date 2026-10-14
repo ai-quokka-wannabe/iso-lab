@@ -38,10 +38,12 @@ remain to be surveyed.
     | `<name>.wcon.zip` | The track in WCON, a JSON format for worm tracks: metadata, units, times and skeleton points | 48.37 GB | 43.07 GB | 18.55 MB |
     | `<name>.hdf5` | The record's largest file; its contents were not opened in this survey | 894.64 GB | 819.37 GB | 264.56 MB |
 
-- **What one record looks like**, read from record [1011832](https://doi.org/10.5281/zenodo.1011832): 29256
-  frames at 32.57 frames per second (about 15 minutes), positions in micrometres, times in seconds. Only
-  15815 frames (54.1%) carry a skeleton of 49 points; the rest are NaN, and the benchmark has to say how it
-  treats them. The HDF5 is written by PyTables; any HDF5 reader opens it.
+- **What one record looks like**, read from record [1011832](https://doi.org/10.5281/zenodo.1011832): 29256 frames
+  at 32.57 frames per second (about 15 minutes), positions in micrometres, times in seconds. Only 15815 frames
+  (54.1%) carry a skeleton of 49 points; the rest are NaN, and the benchmark has to say how it treats them. The
+  HDF5 is written by PyTables. libhdf5 (and so h5py) reads all of it; the pure-Rust readers tried read the
+  skeletons at best ([the journal of 2026-10-14 § Reading the Features
+  Files](../docs/journal/2026-10-14.md#reading-the-features-files)).
 - **Download**: `https://zenodo.org/api/records/<id>/files/<file name, URL-encoded>/content`, checked against
   the MD5 in `https://zenodo.org/api/records/<id>`. The connection to Zenodo drops now and then, so a fetch
   retries; and a listing must be sorted (`sort=oldest`), because unsorted pages repeat some records and miss
