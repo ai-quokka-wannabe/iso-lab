@@ -17,11 +17,11 @@ scored.
 Top first. Each item is sized for one run; split it here before starting if it is bigger.
 
 1. **Fill the gaps in the pace note** ([docs/research/pace.md § Gaps, to Be
-   Read](docs/research/pace.md#gaps-to-be-read)): a touch-to-reversal latency, which none of the 45 open papers
-   scanned states in text (read it from a figure by a stated method, or from the reference recordings if they hold
-   taps); what Mohammadi et al. 2013's heat reaction times count from; a thermotaxis latency; fitted time constants
-   for tap habituation from primary papers; and the primary sources for lethargus and sleep-like quiescence. Figures
-   are within reach: Europe PMC's supplementary-files service serves a paper's figure images (pace.md § Noxious Heat).
+   Read](docs/research/pace.md#gaps-to-be-read)): a touch-to-reversal latency with frame-level timing (none of the 45
+   open papers scanned states one in text, and Liu et al. 2018's figure bounds it only to about a second); what
+   Mohammadi et al. 2013's heat reaction times count from; a thermotaxis latency; fitted time constants for tap
+   habituation from primary papers; and the primary sources for lethargus and sleep-like quiescence. Figures are
+   within reach: Europe PMC's supplementary-files service serves a paper's figure images (pace.md § Noxious Heat).
 2. **Build the feature-extraction tool** for the chosen dataset (Rust, with tests and a CI job joined to
    `CI Success`), and compute the wild-type reference statistics. Explore the data in a notebook first if it
    helps; the tool itself is Rust. It fetches its subset of the N2 records itself, by record id, and checks each
@@ -97,6 +97,9 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-14: Liu et al. 2018's touch responses read from a figure: reversals peak about 0.2 s after a tap and 0.6 s
+  after light to the touch neurons, but their classifier's timing is uncertain by up to 2.7 s, so the touch latency
+  stays a gap.
 - 2026-10-14: Ghosh et al. 2012, cited by Mohammadi et al. for the response time, read in full: it does not define a
   response latency either; the heat reaction times' reference moment stays a gap.
 - 2026-10-14: heat reaction times read from Mohammadi et al. 2013, Figure 2c, by pixel: about 0.33 to 0.25 s for a
