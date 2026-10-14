@@ -1,0 +1,15 @@
+[package]
+name = "fetch"
+description = "Fetches the lab's reference recordings and checks every byte against its published checksum."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+publish = false
+
+[dependencies]
+# RustCrypto's MD5, MIT OR Apache-2.0: Zenodo publishes an MD5 for every file (data/README.md).
+md-5 = "0.11.0"
+
+[lints]
+workspace = true

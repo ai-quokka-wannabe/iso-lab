@@ -1,0 +1,15 @@
+# The hidden-state rule, enforced by the linter rather than by review (.claude/CLAUDE.md, *Rust first*): a score
+# must replay from its seed, so nothing it depends on may hang on an iteration order the language does not
+# promise or on a clock the replay does not have. Taken from master-control's clippy.toml; its entries for the
+# world's own trigonometry are left out, because the lab has no trigonometry of its own yet. A module that must
+# break a rule says so with an allow and a comment, the visible, greppable exception the rule wants.
+disallowed-types = [
+    { path = "std::collections::HashMap", reason = "iteration order is not a promise; a BTreeMap orders by key and replays" },
+    { path = "std::collections::HashSet", reason = "iteration order is not a promise; a BTreeSet orders by key and replays" },
+    { path = "std::time::Instant", reason = "no wall clock in anything a score depends on" },
+    { path = "std::time::SystemTime", reason = "no wall clock in anything a score depends on" },
+]
+disallowed-methods = [
+    { path = "std::time::Instant::now", reason = "no wall clock in anything a score depends on" },
+    { path = "std::time::SystemTime::now", reason = "no wall clock in anything a score depends on" },
+]

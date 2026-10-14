@@ -1,6 +1,6 @@
 # State of the Lab
 
-**Last updated:** 2026-10-14: the Dependabot alerts triaged, the comparison space drafted and the pace note begun.
+**Last updated:** 2026-10-14: the comparison space drafted, the pace note filled in part, and the Rust workspace begun.
 
 ## Where We Are
 
@@ -8,8 +8,8 @@ Phase 0, the benchmark, is under way. The reference data is chosen - the Open Wo
 recordings ([data/README.md § The Phase 0 Survey](data/README.md#the-phase-0-survey)) - and the first
 literature note says how worm behaviour is measured. The comparison space is drafted
 ([docs/benchmark/FEATURES.md](docs/benchmark/FEATURES.md)): which measures carry over to the Grid's body, and what
-must be settled before the benchmark is frozen, food first. No feature is computed yet and no creature has been
-scored.
+must be settled before the benchmark is frozen, food first. The Rust workspace exists, with one crate that checks downloads; no feature is computed yet and no
+creature has been scored.
 [docs/PLAN.md](docs/PLAN.md) says what the phases are and why the benchmark comes before any brain.
 
 ## Next
@@ -23,11 +23,13 @@ Top first. Each item is sized for one run; split it here before starting if it i
    latency; fitted time constants for tap habituation from primary papers; and the primary sources for lethargus and
    sleep-like quiescence. Figures are within reach: Europe PMC's supplementary-files service serves a paper's figure
    images (pace.md § Noxious Heat).
-2. **Build the feature-extraction tool** for the chosen dataset (Rust, with tests and a CI job joined to
-   `CI Success`), and compute the wild-type reference statistics. Explore the data in a notebook first if it
-   helps; the tool itself is Rust. It fetches its subset of the N2 records itself, by record id, and checks each
-   file's MD5 ([data/README.md § The Phase 0 Survey](data/README.md#the-phase-0-survey)); fix the subset and how
-   it is drawn before computing anything.
+2. **Build the feature-extraction tool** for the chosen dataset, in the lab's Rust workspace (`crates/`), and compute
+   the wild-type reference statistics. Explore the data in a notebook first if it helps; the tool itself is Rust.
+   Split into runs: (a) the workspace and the MD5 check, done; (b) fix the subset and how it is drawn (seeded, from
+   the records' metadata, [data/README.md § The Phase 0 Survey](data/README.md#the-phase-0-survey)), then fetch it by
+   record id with retries and check every file with `fetch::verify_md5`; (c) read the features file, by a pure-Rust
+   HDF5 reader if one reads it (`hdf5-pure`, `hdf5-reader` and `rust-hdf5` exist; none tried yet), or else from the
+   WCON JSON, and compute the comparison space's measures; (d) the reference statistics.
 3. **Prove the arena**: in the cloud machine, on Linux alone (the maintainer's ruling), build Master Control and the
    Grid (software Vulkan through Mesa's lavapipe) from `external/`, write the lab's own minimal Program - a
    placeholder brain that only undulates gently, shaped after
@@ -98,6 +100,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-14: the lab's Rust workspace (toolchain 1.98.0 and its furniture taken from master-control and link, a Rust
+  job in CI under `CI Success`) and its first crate, `fetch`, which checks a file against its record's MD5.
 - 2026-10-14: Liu et al. 2018's touch responses read from a figure: classified reversals peak about 0.25 s after a
   tap, but their classifier's timing is uncertain by up to 2.7 s and onsets are not resolved, so the touch latency
   stays a gap.

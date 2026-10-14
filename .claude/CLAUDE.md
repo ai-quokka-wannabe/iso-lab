@@ -200,11 +200,13 @@ STATE.md, and leave the task for the maintainer.
 
 ## CI today
 
-`Quick Checks (markdown)` - markdownlint, stray carriage returns, and lychee offline over every markdown file
-(internal links and anchors) - feeds the `CI Success` gate, the one check the ruleset requires, by that exact
-name. CodeQL (actions) scans every pull request beside it without gating. On schedules: the external links
-weekly (`links.yml`), the tool-update watcher (`tool-updates.yml`), the cache clean-up, and Dependabot for npm,
-the pinned actions and the submodules under `external/`. Keep this section true when CI changes.
+`Quick Checks (markdown)` - markdownlint, stray carriage returns, lychee offline over every markdown file
+(internal links and anchors) and the toolchain-pin check - and `Rust` - `cargo fmt --check`, `cargo doc` with
+warnings denied, clippy with warnings denied, and the tests in debug and under `release-check`, on Linux - feed
+the `CI Success` gate, the one check the ruleset requires, by that exact name. CodeQL (actions) scans every pull
+request beside them without gating. On schedules: the external links weekly (`links.yml`), the tool-update
+watcher (`tool-updates.yml`, for lychee and the Rust toolchain), the cache clean-up, and Dependabot for npm,
+pip, Cargo, the pinned actions and the submodules under `external/`. Keep this section true when CI changes.
 
 ## Where things are
 

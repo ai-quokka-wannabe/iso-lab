@@ -97,7 +97,7 @@ When submitting:
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/) - for the pinned markdown linter (`npm ci`)
-- [rustup](https://rustup.rs/) - for the lab's Rust, once the workspace exists; its toolchain will be pinned by `rust-toolchain.toml`
+- [rustup](https://rustup.rs/) - for the lab's Rust workspace; it installs the exact toolchain `rust-toolchain.toml` pins
 - [Python](https://www.python.org/downloads/) with Jupyter - only for notebooks
 
 ### Setup
