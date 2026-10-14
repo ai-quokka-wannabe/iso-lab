@@ -175,10 +175,13 @@ sequence, where a transformer's grows with every token; it reads by letting the 
 noisy (during training), temperature-controlled Hopfield dynamics, the mean-field form of a Boltzmann machine's
 sampling ([Ackley, Hinton and Sejnowski 1985](https://doi.org/10.1207/s15516709cog0901_7)); and backpropagation
 trains everything slow - the projections, the temperature, the decay, the rest of the block - through the
-unrolled settling. For a worm-sized brain the draw is the fixed memory: H9's associative memory with H5's
+unrolled settling. It is pretrained, then learns on its own: once backpropagation has shaped the slow weights they
+are frozen, and what is new in each life - which key goes with which value - is written by the Hebbian rule alone,
+with no gradient and no teacher. For a worm-sized brain the draw is the fixed memory: H9's associative memory with H5's
 attractors, at a cost that does not grow with time.
 *Predicts*: on a recall task, better recall than a one-step Hebbian memory (linear attention) given the same
-memory, with the gain carried by the settling.
+memory, with the gain carried by the settling, and holding up better when the frozen model must learn on its own
+more than it was pretrained for.
 *Refuted*: when it recalls no better than linear attention with the same number of memory cells, judged by the
 statistic fixed before the run; and, under ablation, when its gain survives removing the settling.
 *Tested so far*: nothing yet; the first toy test is pre-registered in the 2026-10-14 journal.
