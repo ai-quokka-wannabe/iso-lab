@@ -114,9 +114,12 @@ the idea for the next attempt.
   simulated it and found a clear cliff whose sharpness the 20-step horizon sets, not the network's size, so the
   size-scaling margin fires anyway. Of the cures as written, the "conserved budget" grows with degree and so is not
   conserved, lateral inhibition only shifts the cliff, and the fan-out penalty pushes it beyond the range of degree
-  swept. Next: pilot the model in a notebook - run it to a steady state, judge the cliff by the transition's width
-  against a smooth control, conserve the budget truly, fix the range of degree and the operating point's size - and
-  only then write the margins. C13-C17 went up on another path,
+  swept. The pilot is done (journal of 2026-10-14, *C18's Model, Piloted*;
+  `notebooks/c18_spreading_pilot.ipynb`): run to a steady state, the pure network's mean curve does not narrow
+  steadily with size, likely because draws that die out early mix with draws that fill the network, and no cure
+  removed the transition. Next: rewrite the plan with a statistic conditioned on the seed's out-component being
+  non-empty, more draws, a degree range of 0.5 to 6 with a finer step near each transition, an operating point per
+  variant, a smooth control and the plan's harness controls, and only then write the margins. C13-C17 went up on another path,
   [#47](https://github.com/ai-quokka-wannabe/iso-lab/pull/47), merged.
 
 ## Needs From Other Repositories
@@ -149,6 +152,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-14: C18's model piloted: no cure removed the transition, and the plan's statistic would measure early
+  die-out as much as sharpness; the plan is to be rewritten from it.
 - 2026-10-14: satiety quiescence's source found (You et al. 2008), but its abstract gives no timing and its full text
   could not be reached (Europe PMC's HTTP 500, PMC's CAPTCHA, not got around); the gap stays, now with its source.
 - 2026-10-14: averaged over neighbouring frames, the bends beyond 0.9 rad barely fall (0.6 to 1.8% per joint at a
