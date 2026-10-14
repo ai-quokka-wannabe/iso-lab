@@ -118,6 +118,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-14: the findings kept for the ladder: [docs/research/findings.md](docs/research/findings.md), a ledger of what
+  the lab has tested (failures beside successes) and the lessons of method; H12, a plain worm brain, as a hunch.
 - 2026-10-14: H11 v5, a pilot of binary keys for sharp basins: the settling still no help (-0.22 [-1.07, +0.64] against
   its ablation, 3 seeds, one collapsed).
 - 2026-10-14: H11 v4, a DeltaNet that settles its cue, derived from v3: 0.75 against DeltaNet's 0.94 at the trained
