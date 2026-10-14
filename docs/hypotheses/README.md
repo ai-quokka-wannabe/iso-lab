@@ -192,7 +192,9 @@ journal has the numbers and a hunch about why (the settling falls into the mixtu
 v2, written by the delta rule ([its notebook](../../notebooks/h11v2_delta_pilot.ipynb)), recalled 0.89 and its
 settling did no harm that the pilot could detect, but it did not beat a DeltaNet memory of the same size. A third test,
 recall from a noisy cue ([its notebook](../../notebooks/h11v3_noisy_cue.ipynb)), refuted v2's design there too: 0.59
-against DeltaNet's 0.94, the settling harmful.
+against DeltaNet's 0.94, the settling harmful. A fourth, v4, a DeltaNet whose cue settles in a Hopfield memory of
+its keys ([its notebook](../../notebooks/h11v4_keyclean.ipynb)), recalled 0.75 against 0.94 and its settling helped at
+no noise level. In none of the four did the hybrid beat its matched control, or the settling its own ablation.
 
 ## Adding a Hypothesis
 
