@@ -31,7 +31,9 @@ Top first. Each item is sized for one run; split it here before starting if it i
    block and checks every MD5, done; block 1 itself is not yet fetched (see *Blocked*); (c) the skeletons are read
    (crate `features`, by `hdf5-pure`; the published feature table cannot be read by the pure-Rust readers tried, and
    the lab computes its own measures anyway), next the comparison space's measures from them, in seconds and body
-   lengths, as the frame rate varies between recordings (25.4 to 32.6 fps seen); (d) the reference statistics.
+   lengths, as the frame rate varies between recordings (25.4 to 32.6 fps seen), and with a rule for recordings of
+   other lengths than 15 minutes (5 and 120 minutes seen; journal of 2026-10-14, *How Long the Reference Recordings
+   Are*); (d) the reference statistics.
 3. **Prove the arena**: in the cloud machine, on Linux alone (the maintainer's ruling), build Master Control and the
    Grid (software Vulkan through Mesa's lavapipe) from `external/`, write the lab's own minimal Program - a
    placeholder brain that only undulates gently, shaped after
@@ -108,6 +110,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-14: the lengths of 15 reference recordings: 13 last 15 minutes, one 5 and one 120; the benchmark needs a
+  rule for unequal lengths.
 - 2026-10-14: the reference skeletons read in Rust (crate `features`), identical to h5py's on 13 files; the published
   feature table is not readable by the pure-Rust readers tried, and the lab will compute its own measures.
 - 2026-10-14: `fetch-block`, which downloads a block of the reference draw and accepts each file only by its MD5,
