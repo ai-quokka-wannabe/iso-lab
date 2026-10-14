@@ -185,10 +185,13 @@ show, so it is weak. The Grid has no chemical sense yet in any case.
   read in full, it measures latency to light-activation of ASH, with values in figures only.
 - The definition behind Mohammadi et al. 2013's reaction times (from which moment, to which event), and their spread;
   the paper cites its group's earlier work for the response time, [Ghosh et al.
-  2012](https://doi.org/10.1186/1741-7007-10-85) (PMC3520762), but its text does not define a response latency either:
-  its nearest measures are a "time to respond with an increase in speed" and TMAX, the "mean time to reach MAXS" (the
-  maximum speed after the laser pulse), with no reference moment stated. Their code or the authors would settle it.
-  And Wittenburg and Baumeister 1999 in full.
+  2012](https://doi.org/10.1186/1741-7007-10-85) (PMC3520762), but its text does not define a response latency either.
+  Its nearest measure is TMAX, the "mean time to reach MAXS" (the maximum speed after the laser pulse), which its
+  results most likely call the "time to respond with an increase in speed" (Figure 3F; the identification is the lab's
+  reading). That its times count from the stimulus is implied, by its methods ("It is assumed that the worm is going
+  FORWARD at the moment the thermal stimulus is applied"), but not stated. It heats the whole worm with a 0.5 s pulse,
+  where Mohammadi et al. heat a spot for 133 ms, so even a definition would not carry over directly. Their code or the
+  authors would settle it. And Wittenburg and Baumeister 1999 in full.
 - A thermotaxis reaction latency (the slower timescales above are orders of magnitude only), and the primary source
   for lethargus (Singh and Sulston 1978).
 - Fitted time constants for tap habituation and its recovery: the primary papers (Rankin et al. 1990 and later) were
