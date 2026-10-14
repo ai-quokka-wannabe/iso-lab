@@ -88,7 +88,8 @@ transitions". The states were scored from the speed and angular speed of each an
 large (600 cm²) homogeneous bacterial lawns.
 
 - **For the lab**: the 15-minute recordings of the feature database are short against states lasting several
-  minutes, so roaming and dwelling may need longer recordings than the chosen dataset holds. Still to check.
+  minutes. Checked in [the comparison space](../benchmark/FEATURES.md#roaming-and-dwelling-in-fifteen-minutes):
+  the share of time in each state can be estimated from 15 minutes, the states' durations cannot.
 
 ## What This Note Does Not Cover Yet
 

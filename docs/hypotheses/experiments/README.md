@@ -1,7 +1,7 @@
 # Experiment Plans for the Hunches
 
 A pre-registered plan for every one of [Matej's ideas and hunches](../matej-hunches.md), so each can be tried and
-none is quietly dropped - the maintainer's request, item 7 of [STATE.md](../../../STATE.md). A plan is written
+none is quietly dropped - the maintainer's request, item 6 of [STATE.md](../../../STATE.md). A plan is written
 before anything runs; when an experiment runs, its result goes to the journal, and a failed or inconclusive one is
 kept and listed under STATE.md's *To Revisit*.
 

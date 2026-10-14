@@ -2,7 +2,7 @@
 
 Which measures of a real worm's behaviour can be compared with the Grid's worm, in which units, and which cannot be
 compared yet and why. This is Phase 0's third step ([docs/PLAN.md § Phase 0](../PLAN.md#phase-0-the-benchmark)): a
-**draft**, not frozen. It fixes nothing a score depends on; the feature-extraction tool (STATE.md item 3) will test
+**draft**, not frozen. It fixes nothing a score depends on; the feature-extraction tool (STATE.md item 2) will test
 every *comparable* below against the data, and the benchmark is frozen only after that, as the plan says.
 
 The sources were read in full on PubMed Central on 2026-10-14, unless a line says otherwise: Yemini et al. 2013
@@ -89,9 +89,10 @@ A reference recording lasts 15 minutes, 900 s. So:
 ## Open Questions Before Freezing
 
 - **Food.** The reference worms are on food after a 30-minute wait (Yemini et al. 2013), and the Grid's arena has
-  none. Speed, reversals and the roaming and dwelling states all depend on food in the worm, so a Grid worm compared
-  with on-food worms is compared with an animal in another condition. Three ways forward, none chosen: compare with
-  the reference's N2 recordings made without food (28 records by their metadata, [data/README.md § The Phase 0
+  none. Roaming and dwelling are defined as foraging states on food (Flavell et al. 2013), and whether the worm's
+  speed and reversals also differ off food is still to be read from a source; until then a Grid worm compared with
+  on-food worms may be compared with an animal in another condition. Three ways forward, none chosen: compare with the
+  reference's N2 recordings made without food (28 records by their metadata, [data/README.md § The Phase 0
   Survey](../../data/README.md#the-phase-0-survey); their protocol not yet read); ask the world for food and a feeding
   signal, which hunch B1's "am I taking in energy now?" also needs; or restrict the benchmark to measures shown not to
   differ between on and off food in the worm, from a source still to be found. This is for the maintainer to decide,
@@ -100,7 +101,7 @@ A reference recording lasts 15 minutes, 900 s. So:
   speed decaying with τ = 19 minutes, midbody amplitude with τ = 48 minutes and crawling frequency with τ = 19
   minutes. The reference recordings start 30 minutes after the worm is moved, so a Grid life must be compared over the
   matching window, or the creature's own settling must be shown to follow the worm's; which, is to be fixed with the
-  pace note (STATE.md item 2).
+  pace note (STATE.md item 1).
 - **Missing frames.** The worm's gaps fall where the body coils, so every measure that depends on large bends is
   biased in the reference and not in the Grid's recordings. The tool must report, per measure, how much it depends on
   frames that segmentation tends to lose, and the benchmark must say whether the Grid's frames are masked to match.
@@ -110,5 +111,5 @@ A reference recording lasts 15 minutes, 900 s. So:
   benchmark.
 - **The arena.** Path measures depend on the arena's size in body lengths; a plate and the Grid's arena must be
   matched, or path measures restricted to those that do not reach the edge.
-- **Which recordings.** The N2 subset and how it is drawn are fixed by the tool's task (STATE.md item 3), before any
+- **Which recordings.** The N2 subset and how it is drawn are fixed by the tool's task (STATE.md item 2), before any
   statistic is computed.
