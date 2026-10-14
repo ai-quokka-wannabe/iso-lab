@@ -115,10 +115,11 @@ PMC10770330): a scoring window, like Liu et al.'s, not a measured latency. Three
   0.29. The tables give no unit; the supplement says "t represents the time in hours since the beginning of assaying
   in the droplet", and the main text has the preference "changing the sign in about 3 h for cold worms and 2 h for
   warm worms", so the lab reads the time scales as hours: about 83 and 45 minutes for avoidance, and 23 and 18 minutes
-  for habituation. The habituation times are weak: combining the two upper-bound uncertainties naively gives about 65%
-  and 90%, so they are known only to within a factor of about two. These are a model's parameters, fitted to swimming
-  worms in droplets, not time constants measured directly in crawling ones; the time scales at the rearing temperature
-  in the same tables are left out here.
+  for habituation. The habituation times are weak: combining the two upper-bound uncertainties in quadrature gives
+  about 65% and 90%, so the cold-worm value is known only to within a factor of about two and the warm-worm value is
+  barely bounded from below (the tables' lower-bound uncertainties are a few per cent, so the truth lies between).
+  These are a model's parameters, fitted to swimming worms in droplets, not time constants measured directly in
+  crawling ones; the time scales at the rearing temperature in the same tables are left out here.
 
 ### Smell
 
