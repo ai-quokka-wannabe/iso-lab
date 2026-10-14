@@ -36,7 +36,7 @@ difference; if the frozen benchmark's rule is not, the clause says so when it is
 of #19 noted.
 
 Costs are counted in simulated lives. What one life costs in compute and memory is not known until the arena is
-proven (STATE.md item 4), so no plan gives absolute figures yet; each will when it is prepared. Seed counts follow
+proven (STATE.md item 3), so no plan gives absolute figures yet; each will when it is prepared. Seed counts follow
 [README.md § The Format](README.md#the-format) unless a plan says why it differs.
 
 ## B1. A nervous system, not a game client
@@ -51,7 +51,7 @@ proven (STATE.md item 4), so no plan gives absolute figures yet; each will when 
   transduce it; for each action, the worm's motor output that could produce it; each with a source read at the source,
   or marked as having none. Grade each field: carried by the animal; carried at a resolution the animal lacks; carried
   with a delay shorter than the animal's; not carried at all. The delay grades are read against the latencies of the
-  pace note (STATE.md item 2); until it exists they are marked *pending*, not passed.
+  pace note (STATE.md item 1); until it exists they are marked *pending*, not passed.
 - **Baselines and controls**: a blind planted field. One agent prepares three copies of the field list, into which it
   plants none, one or two ground-truth fields (for example the body's position, or the distance to the nearest
   wall) at random places, and keeps the key; a second agent that has seen neither the key nor the preparation audits
@@ -65,7 +65,7 @@ proven (STATE.md item 4), so no plan gives absolute figures yet; each will when 
 - **Statistics**: none; a graded list, each grade with its source, and the planted-field key against the audit.
 - **Seeds and repetitions**: not applicable; the three planted copies are the repetitions.
 - **Cost**: reading, by two agents.
-- **Waits on**: nothing for the senses, actions and resolution; the delay grades wait on the pace note (STATE.md item 2).
+- **Waits on**: nothing for the senses, actions and resolution; the delay grades wait on the pace note (STATE.md item 1).
 - **Leads**: found - Chalfie et al. 1985, "The neural circuit for touch sensitivity in *Caenorhabditis elegans*"
   (*The Journal of Neuroscience*, [doi:10.1523/JNEUROSCI.05-04-00956.1985](https://doi.org/10.1523/JNEUROSCI.05-04-00956.1985)).
   The other sources are the worm's sensory and motor biology, to be found and read field by field.
@@ -182,7 +182,7 @@ proven (STATE.md item 4), so no plan gives absolute figures yet; each will when 
   default, and as many for the control.
 - **Cost**: step 1, 20 lives for the noise floor and 40 to 200 Grid lives (20 per pattern tried, two to ten
   patterns); step 2, at least 80 lives in whichever world has the gradient, more if the power calculation asks.
-- **Waits on**: step 1, the arena only (STATE.md item 4). Step 2 waits on a chemical gradient - a chemical sense on the
+- **Waits on**: step 1, the arena only (STATE.md item 3). Step 2 waits on a chemical gradient - a chemical sense on the
   Grid (STATE.md *Needs From Other Repositories*), or B5's dish sooner - and a chemotaxis Program.
 - **Leads**: none named for the hunch. The measures' sources: Pierce-Shimomura, Morse and Lockery 1999, "The
   fundamental role of pirouettes in *Caenorhabditis elegans* chemotaxis" (*The Journal of Neuroscience*,
@@ -304,7 +304,7 @@ proven (STATE.md item 4), so no plan gives absolute figures yet; each will when 
 - **Seeds and repetitions**: 20 seeds, a snapshot at three points in each life.
 - **Cost**: 20 recorded Grid lives; per seed, replays rather than lives: the A/A pair, three restored continuations and
   five corrupted ones.
-- **Waits on**: a Program and the arena (STATE.md item 4), for the recorded lives; the world's half, a save and
+- **Waits on**: a Program and the arena (STATE.md item 3), for the recorded lives; the world's half, a save and
   restore in Master Control.
 - **Leads**: none named.
 
