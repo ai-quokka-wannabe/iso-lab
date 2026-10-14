@@ -26,8 +26,17 @@ worms to plate taps and to optogenetic stimulation of the six gentle-touch neuro
   determining to reverse"; this is their interpretation, worded as a suggestion.
 - On the receptors themselves, summarising earlier work, they write that the currents evoked by a force "adapt with a
   timescale of a few tens of milliseconds".
-- **Not found yet**: the latency from a touch to the start of a reversal, as a number in a paper's text. Liu et al.
-  show it in figures, which were not read.
+- **At the receptor**: in the nose's OLL neurons, exposed by micro-dissection of the nose tip, a touch-evoked receptor
+  current "had a very short latency (1.5 ± 0.3 ms, 12 μm displacement, n = 4)", and at 15 μm "the MRC latency
+  approached 1 ms (0.8 ± 0.2 ms, n = 6)" ([Fan et al. 2021](https://doi.org/10.1007/s12264-021-00629-4), PMC8099987).
+  This is a receptor's latency in a dissected preparation, not a behaviour's.
+- **Not found**: the latency from a touch to the start of a reversal, as a number in a paper's text. A scan of the
+  open-access full texts on Europe PMC that its search returns for five queries on touch, tap and latency (45 papers,
+  the queries in the journal) found none; Liu et al. and others show it in figures, which were not read.
+- **Habituation lengthens the latency, for a nociceptor.** Ardiel et al. stimulated the polymodal nociceptor ASH with
+  light, repeatedly: "the ∼1 sec increase in response latency by the end of 30 stimuli" ([Ardiel et al.
+  2016](https://doi.org/10.1101/lm.041830.116), PMC5026203). Their 2017 paper (under *Gaps, to Be Read*) reports the same direction,
+  "longer response latency", with values in figures only. These are latencies to stimulating a neuron, not to touch.
 
 ### Noxious Heat
 
@@ -61,8 +70,17 @@ light on worms.
 
 ### Temperature in the Physiological Range
 
-Not covered yet. Thermotaxis, the response to temperatures the worm prefers, is a different behaviour from heat
-avoidance (Wittenburg and Baumeister 1999); its time course is to be read from a thermotaxis source.
+Thermotaxis, the response to temperatures the worm prefers, is a different behaviour from heat avoidance (Wittenburg
+and Baumeister 1999); its time course is still to be read. One study of rapid cooling scores a reversal as a response
+if it starts "within 5 s of stimulation initiation" ([Lin et al. 2024](https://doi.org/10.1038/s41467-023-44638-5),
+PMC10770330): a scoring window, like Liu et al.'s, not a measured latency.
+
+### Smell
+
+[Sanders et al. 2013](https://doi.org/10.1186/1471-2202-14-156) (PMC3878553) held a hair dipped in 30% octanol before
+the worm's nose and "observed reversals characteristic of the avoidance response ... with latencies of 4 sec in both
+genetic backgrounds, both on and off food (data not shown)". A number stated in text, but for data the paper does not
+show, so it is weak. The Grid has no chemical sense yet in any case.
 
 ## Rhythms
 
@@ -82,6 +100,8 @@ avoidance (Wittenburg and Baumeister 1999); its time course is to be read from a
 | Roaming, on food | Durations fit two exponentials, τ = 75 s and 520 s; "85% of roaming states have a mean lifetime of 75 sec" | Flavell et al. 2013 |
 | Settling after transfer to a new plate | Speed and crawling frequency decay with τ = 19 minutes, midbody amplitude with τ = 48 minutes; the fit is good for speed (R² = 0.96) and weaker for frequency (0.71) and amplitude (0.59) | [Yemini et al. 2013](https://doi.org/10.1038/nmeth.2560) |
 | After-effect of light | Locomotion returns to its basal rate over about 140 s, a duration, not a fitted τ | Edwards et al. 2008 |
+| Feeding, on meeting food | Pumping "rose slowly, on the time scale of 100 s of seconds", in a microfluidic chip | [Katzen et al. 2023](https://doi.org/10.7554/eLife.69779) (PMC10231927) |
+| Lethargus, the quiescence between larval stages | "typically last 1-2 h", as Faerberg et al. 2024 cite Singh and Sulston 1978; the primary source is not read | [Faerberg et al. 2024](https://doi.org/10.1242/dev.202961) (PMC11266794) |
 
 ## For the Lab
 
@@ -101,13 +121,13 @@ avoidance (Wittenburg and Baumeister 1999); its time course is to be read from a
 
 ## Gaps, to Be Read
 
-- A touch-to-reversal latency stated in a paper's text, or a figure read with a stated method. A first lead: Liu et
-  al. 2018 cite earlier work for "reversal latency" after a tap; Ardiel et al. 2017, "Habituation as an adaptive shift
-  in response strategy mediated by neuropeptides"
-  ([doi:10.1038/s41539-017-0011-8](https://doi.org/10.1038/s41539-017-0011-8), PMC6161508), found in Europe PMC and
-  open, not yet read.
+- A touch-to-reversal latency: none is stated in the text of 45 open papers searched; the next step is a figure read
+  with a stated method, or the reference recordings themselves, if they include taps. Liu et al. 2018 cite Ardiel et
+  al. 2017, "Habituation as an adaptive shift in response strategy mediated by neuropeptides"
+  ([doi:10.1038/s41539-017-0011-8](https://doi.org/10.1038/s41539-017-0011-8), PMC6161508), for "reversal latency";
+  read in full, it measures latency to light-activation of ASH, with values in figures only.
 - The heat-avoidance reaction times of Mohammadi et al. 2013, Figure 2c, and Wittenburg and Baumeister 1999 in full.
-- A thermotaxis time course.
+- A thermotaxis time course, and the primary source for lethargus (Singh and Sulston 1978).
 - Habituation to repeated taps, and its time constants (the Rankin laboratory's papers are the classic source; none
   was open in full text in this search).
-- The timing of quiescence and sleep-like states, and of feeding.
+- The timing of sleep-like quiescence outside lethargus.

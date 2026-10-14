@@ -17,8 +17,9 @@ scored.
 Top first. Each item is sized for one run; split it here before starting if it is bigger.
 
 1. **Fill the gaps in the pace note** ([docs/research/pace.md § Gaps, to Be Read](docs/research/pace.md#gaps-to-be-read)):
-   a touch-to-reversal latency stated in text, the heat-avoidance reaction times, a thermotaxis time course, tap
-   habituation, and the timing of quiescence and feeding, each read from its source.
+   a touch-to-reversal latency, which no open paper's text states (read it from a figure by a stated method, or from
+   the reference recordings if they hold taps); the heat-avoidance reaction times; a thermotaxis time course; tap
+   habituation; and the primary sources for lethargus and sleep-like quiescence.
 2. **Build the feature-extraction tool** for the chosen dataset (Rust, with tests and a CI job joined to
    `CI Success`), and compute the wild-type reference statistics. Explore the data in a notebook first if it
    helps; the tool itself is Rust. It fetches its subset of the N2 records itself, by record id, and checks each
@@ -94,6 +95,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-14: the pace note's gaps, a second pass: receptor latency to nose touch, a smell avoidance latency, the
+  feeding and lethargus time scales; no open paper's text gives a touch-to-reversal latency.
 - 2026-10-14: the pace note, a first pass ([docs/research/pace.md](docs/research/pace.md)): latencies to touch,
   heat and light, the body's rhythm and the time constants of four states, from text only; the gaps are item 1.
 - 2026-10-14: the comparison space drafted ([docs/benchmark/FEATURES.md](docs/benchmark/FEATURES.md)): which
