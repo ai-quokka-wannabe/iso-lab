@@ -184,7 +184,12 @@ memory, with the gain carried by the settling, and holding up better when the fr
 more than it was pretrained for.
 *Refuted*: when it recalls no better than linear attention with the same number of memory cells, judged by the
 statistic fixed before the run; and, under ablation, when its gain survives removing the settling.
-*Tested so far*: nothing yet; the first toy test is pre-registered in the 2026-10-14 journal.
+*Tested so far*: two toy tests of associative recall, in
+[notebooks/h11_hebbian_hopfield_transformer.ipynb](../../notebooks/h11_hebbian_hopfield_transformer.ipynb): **refuted
+at that level** - the hybrid recalled 18% against 99.8% for linear attention of the same memory, its settling cost 66
+points against one step of the same read, and it did no better when frozen and given longer streams. The 2026-10-14
+journal has the numbers and a hunch about why (the settling falls into the mixture states of Hebb's rule); the next
+version writes by the delta rule.
 
 ## Adding a Hypothesis
 
