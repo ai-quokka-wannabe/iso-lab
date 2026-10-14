@@ -1,6 +1,6 @@
 # State of the Lab
 
-**Last updated:** 2026-10-13, late: H10's first test landed, and the experiment plans for sections A, B and C1-C12, and the notes of their reviews.
+**Last updated:** 2026-10-14: the Dependabot alerts triaged, after a night of experiment plans for sections A, B and C1-C12.
 
 ## Where We Are
 
@@ -69,10 +69,11 @@ the idea for the next attempt.
 
 ## Blocked
 
-- **Three Dependabot alerts on `main`** (one high, one moderate, one low, as GitHub reported on a push on
-  2026-10-13). The night staff cannot read them - the alerts API answers 403 to this session - so they wait on the
-  maintainer to read and triage; `npm audit` locally lists advisories in markdownlint-cli2's dependency tree
-  ([the journal, 2026-10-13](docs/journal/2026-10-13.md)).
+- **Three Dependabot alerts on `main`**, triaged on 2026-10-14
+  ([the journal](docs/journal/2026-10-14.md#dependabot-alerts-triaged)): all three sit in markdownlint-cli2's
+  dependencies, none is reachable by the lab's use of the linter, and none can be fixed cleanly yet. They wait on
+  the maintainer to dismiss them - this session's GitHub access cannot write to the alerts - and Dependabot will
+  propose the fix when upstream releases one.
 
 ## Needs From Other Repositories
 
