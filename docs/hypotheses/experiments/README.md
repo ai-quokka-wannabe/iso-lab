@@ -66,18 +66,18 @@ out of their sources when the experiment is prepared.
 | C10 | Many proposals, one commitment per cycle | [planned](C1-C12.md#c10-many-proposals-one-commitment-per-cycle) |
 | C11 | Imagination through the action pathway | [planned](C1-C12.md#c11-imagination-through-the-action-pathway) |
 | C12 | A step clock from brain rhythms | [planned](C1-C12.md#c12-a-step-clock-from-brain-rhythms) |
-| C13 | Vigour from the average reward rate; one global slowing factor | to plan |
-| C14 | Poised near criticality, monitored | to plan |
-| C15 | A logistic-map arousal engine | to plan |
-| C16 | Golden-ratio spacing of rhythms | to plan |
-| C17 | Memory timescales spaced by Feigenbaum's constant | to plan |
+| C13 | Vigour from the average reward rate; one global slowing factor | [planned](C13-C24.md#c13-vigour-from-the-average-reward-rate-one-global-slowing-factor) |
+| C14 | Poised near criticality, monitored | [planned](C13-C24.md#c14-poised-near-criticality-monitored) |
+| C15 | A logistic-map arousal engine | [planned](C13-C24.md#c15-a-logistic-map-arousal-engine) |
+| C16 | Golden-ratio spacing of rhythms | [planned](C13-C24.md#c16-golden-ratio-spacing-of-rhythms) |
+| C17 | Memory timescales spaced by Feigenbaum's constant | [planned](C13-C24.md#c17-memory-timescales-spaced-by-feigenbaums-constant) |
 | C18 | Spreading activation has a cliff | to plan |
-| C19 | Windowed tallies, not lifetime counts | to plan |
-| C20 | Bounded loops for rhythmic behaviour | to plan |
-| C21 | A noisy, log-compressed sense of elapsed time | to plan |
-| C22 | Inhibition of return and foraging in memory | to plan |
-| C23 | A stated, measured bound on what is held at once | to plan |
-| C24 | Instrument the state of attention | to plan |
+| C19 | Windowed tallies, not lifetime counts | [planned](C13-C24.md#c19-windowed-tallies-not-lifetime-counts) |
+| C20 | Bounded loops for rhythmic behaviour | [planned](C13-C24.md#c20-bounded-loops-for-rhythmic-behaviour) |
+| C21 | A noisy, log-compressed sense of elapsed time | [planned](C13-C24.md#c21-a-noisy-log-compressed-sense-of-elapsed-time) |
+| C22 | Inhibition of return and foraging in memory | [planned](C13-C24.md#c22-inhibition-of-return-and-foraging-in-memory) |
+| C23 | A stated, measured bound on what is held at once | [planned](C13-C24.md#c23-a-stated-measured-bound-on-what-is-held-at-once) |
+| C24 | Instrument the state of attention | [planned](C13-C24.md#c24-instrument-the-state-of-attention) |
 | D1 | Roaming and dwelling from continuous drives | to plan |
 | D2 | Modulators that flip a smell's meaning | to plan |
 | D3 | One modulator state, three effects | to plan |
