@@ -41,8 +41,9 @@ Top first. Each item is sized for one run; split it here before starting if it i
    [rc-worm](https://github.com/ai-quokka-wannabe/rc-worm) as the example of a Program - live one short headless
    life on a flat arena, keep its Disk, and extract the same features from it. Split into runs: (a) Master Control
    builds from `external/` and passes its own cheap suite, done; (b) the Grid built with lavapipe, done; (c) the
-   placeholder Program, done (`crates/placeholder-worm`); (d) split in two: (d1) one life, its Disk and input log kept and replayed; (d2) the same features extracted from
-   the Disk, which needs a Disk reader in `features`.
+   placeholder Program, done (`crates/placeholder-worm`); (d) split in two: (d1) one life, its Disk and input log
+   kept and replayed, done; (d2) the same features extracted from the Disk, which needs a Disk reader in `features`,
+   and the share of refused intents measured (journal of 2026-10-14, *The Arena, Fourth Step*).
 4. **Survey associative memory for a worm-sized brain**, as `docs/research/associative-memory.md`: Hebbian
    learning and Oja's rule, Hopfield networks classical and modern, Boltzmann machines, dense associative
    memory - what each is, what it would cost a brain on the worm's scale to run, which of the worm's
@@ -139,6 +140,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-14: the arena's first life: the placeholder lived all 28 800 ticks of a fifteen-minute life on lavapipe,
+  and Clu replayed its log with all 902 hashes agreeing; 9 intents (0.03%) arrived a tick late and were refused.
 - 2026-10-14: the placeholder Program, `crates/placeholder-worm`: an eight-segment chain undulating at 0.18 Hz and 0.3 rad,
   its C interface checked against the Grid's published layout; the Grid's loader lists it as usable.
 - 2026-10-14: the Grid builds from `external/` with the Vulkan SDK and runs on lavapipe alone: its three verifications and
