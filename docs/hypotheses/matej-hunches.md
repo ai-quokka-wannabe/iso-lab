@@ -815,3 +815,36 @@ two-level quantum state, which ties it to H10's complex-valued brain.
 angle and a separate phase, at the same compute and memory, on a task that couples steering to the body's rhythm;
 refuted if the fibred state does no better.
 *Leads*: Hopf 1931; Urbantke 2003.
+
+### F16. Harmonic analysis, and the Kakeya needle in a worm's turn
+
+Harmonic analysis breaks a signal into waves, and the worm's posture already breaks well that way: a few shapes
+account for most of its bending (F14's lead, Stephens et al. 2008). Two of its results could bind a brain. The
+uncertainty principle limits how fast any system can tell one rhythm's frequency from another's - a floor on the pace
+of rhythm-based decisions to set beside the pace the rules require. And Kakeya's needle problem asks for the least
+area in which a segment can turn to face every direction: a worm turning round in a narrow space - an omega turn - is
+a needle with a body, and how close its turns come to the least area is a measurable question. The Kakeya conjecture
+on how large such sets must be lies at the centre of modern harmonic analysis.
+*Test*: the times worms take to switch rhythm sit near the uncertainty floor for their frequencies, or they do not; the
+area an omega turn sweeps, measured on the reference recordings, against the least area for a body of its length and
+width.
+*Leads*: Kakeya 1917; Besicovitch 1928; Wang and Zahl 2025; Stephens et al. 2008.
+
+### F17. Metaphysics, kept for its testable parts
+
+Ideas from philosophy, however strange, each kept only for a part that a run can refute:
+
+- *Mind as process* (Whitehead): no stored state, only becoming - a brain with no persistent memory beyond its ongoing
+  dynamics, against one with explicit memory, at the same cost.
+- *Striving to persist* (Spinoza's conatus): one drive under all behaviour, to keep being - a single homeostatic
+  objective against a set of separate drives, judged by how much of the worm's behaviour each reproduces.
+- *Each creature mirrors the world from where it stands* (Leibniz's monads): an egocentric representation against an
+  allocentric one, on the worm's navigation.
+- *Lived time is not clock time* (Bergson's duration): internal time constants that stretch with arousal, against fixed
+  ones, judged by the worm's measured pace in different states.
+- *Consciousness as integrated information* (Tononi): a measure of integration computed on brains that score alike,
+  to see whether it tracks anything behaviour shows.
+
+*Test*: each item as written; refuted item by item where the metaphysical version reproduces no more of the worm than
+its plain alternative.
+*Leads*: Whitehead 1929; Spinoza 1677; Leibniz 1714; Bergson 1889; Tononi 2004.

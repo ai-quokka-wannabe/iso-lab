@@ -126,3 +126,5 @@ out of their sources when the experiment is prepared.
 | F13 | A memory that renormalises time, shaped like MERA | to plan |
 | F14 | Thinking in loops: automata, their groups, graphs and knots | to plan |
 | F15 | Rhythm and direction as a Hopf fibration | to plan |
+| F16 | Harmonic analysis, and the Kakeya needle in a worm's turn | to plan |
+| F17 | Metaphysics, kept for its testable parts | to plan |
