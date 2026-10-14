@@ -67,14 +67,15 @@ pulse of 133 ms.
   zip of the paper's figure files; PubMed Central's page asks for a CAPTCHA, which the lab does not get round). Read
   by pixel, with the method in the journal of 2026-10-14, the four mean reaction times are about 0.33, 0.29, 0.27 and
   0.25 s, falling as the laser current rises from about 30 to about 150 mA (read from the figure's logarithmic axis as
-  about 31, 64, 102 and 154 mA; the text names currents of 30, 60, 100 and 150 mA). Each mean is read to within about
-  0.005 s. The panel draws two error marks, grey boxes labelled "SEM" and whiskers labelled "VAR", and the text
-  defines neither VAR nor the panel's number of worms; the marks do not behave as a standard deviation beside its
-  standard error (for the strongest stimulus the whisker, about ±4 ms, lies inside the box, about ±7 ms), so they are
-  not read here as the spread among worms. For the two weakest stimuli the whiskers are about ±0.027 s and the boxes
-  about ±0.025 and ±0.016 s. The text does not say from which moment the reaction time is counted, nor how the
-  reaction is detected; the videos were recorded "at 30 fps", so the times rest on frames 33 ms apart. How sure:
-  moderate for the means as plotted, low for what exactly they measure and for their spread.
+  about 31, 64, 102 and 154 mA; the paper names 60, 100 and 150 mA in its Figure 1d caption and 30 and 150 mA in its
+  discussion, without tying them to this panel). Each mean is read to within about 0.005 s. The panel draws two error
+  marks, grey boxes labelled "SEM" and whiskers labelled "VAR", and the text defines neither VAR nor the panel's
+  number of worms; the marks do not behave as a standard deviation beside its standard error (for the strongest
+  stimulus the whisker, about ±4 ms, lies inside the box, about ±7 ms), so they are not read here as the spread among
+  worms. For the two weakest stimuli the whiskers are about ±0.027 s and the boxes about ±0.025 and ±0.016 s. The text
+  does not say from which moment the reaction time is counted, nor how the reaction is detected; the videos were
+  recorded "at 30 fps", so the times rest on frames 33 ms apart. How sure: moderate for the means as plotted, low for
+  what exactly they measure and for their spread.
 
 [Wittenburg and Baumeister 1999](https://doi.org/10.1073/pnas.96.18.10477) (PMC17914), only the abstract read: "[t]he
 escape reflex can be observed in 98% of the adult animals". The full text could not be fetched as text; it is to be
@@ -184,7 +185,13 @@ show, so it is weak. The Grid has no chemical sense yet in any case.
   read in full, it measures latency to light-activation of ASH, with values in figures only.
 - The definition behind Mohammadi et al. 2013's reaction times (from which moment, to which event), and their spread;
   the paper cites its group's earlier work for the response time, [Ghosh et al.
-  2012](https://doi.org/10.1186/1741-7007-10-85), which may define it. And Wittenburg and Baumeister 1999 in full.
+  2012](https://doi.org/10.1186/1741-7007-10-85) (PMC3520762), but its text does not define a response latency either.
+  Its nearest measure is TMAX, the "mean time to reach MAXS" (the maximum speed after the laser pulse), which its
+  results most likely call the "time to respond with an increase in speed" (Figure 3F; the identification is the lab's
+  reading). That its times count from the stimulus is implied, by its methods ("It is assumed that the worm is going
+  FORWARD at the moment the thermal stimulus is applied"), but not stated. It heats the whole worm with a 0.5 s pulse,
+  where Mohammadi et al. heat a spot for 133 ms, so even a definition would not carry over directly. Their code or the
+  authors would settle it. And Wittenburg and Baumeister 1999 in full.
 - A thermotaxis reaction latency (the slower timescales above are orders of magnitude only), and the primary source
   for lethargus (Singh and Sulston 1978).
 - Fitted time constants for tap habituation and its recovery: the primary papers (Rankin et al. 1990 and later) were

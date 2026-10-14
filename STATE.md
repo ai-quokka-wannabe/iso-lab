@@ -97,6 +97,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-14: Ghosh et al. 2012, cited by Mohammadi et al. for the response time, read in full: it does not define a
+  response latency either; the heat reaction times' reference moment stays a gap.
 - 2026-10-14: heat reaction times read from Mohammadi et al. 2013, Figure 2c, by pixel: about 0.33 to 0.25 s for a
   head stimulus, falling with laser current; what they count from is not stated.
 - 2026-10-14: Roman et al. 2023's fitted thermal-preference time scales added to the pace note (avoidance about 45-83
