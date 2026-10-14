@@ -76,7 +76,7 @@ the idea for the next attempt.
 - **H11, a Hebbian Hopfield transformer** ([v1](notebooks/h11_hebbian_hopfield_transformer.ipynb),
   [v2](notebooks/h11v2_delta_pilot.ipynb), [v3](notebooks/h11v3_noisy_cue.ipynb) and
   [v4](notebooks/h11v4_keyclean.ipynb), 2026-10-14): four tests, none beating its matched control (linear attention in
-  v1, DeltaNet after), and in none did the settling earn its place. Next, a hunch: an attractor with
+  v1, DeltaNet after), and in none did the settling beat its own ablation. Next, a hunch: an attractor with
   sharp basins - near-binary keys (a straight-through sign) or Krotov and Hopfield 2016's dense energies - on v3's
   noisy cues against DeltaNet, after fixing the narrow keys' unstable training. Kanter and Sompolinsky 1987 was not
   found in open access (Crossref lists no abstract; Semantic Scholar's API marks it closed and the abstract elided by
