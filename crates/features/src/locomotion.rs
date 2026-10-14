@@ -38,12 +38,17 @@ pub fn half_span_frames(fps: f64) -> usize {
 }
 
 /// The midbody's speed along the body at the frame `now`, from the frames `before` and `after`,
-/// `seconds` apart: positive towards the head, in the skeletons' units per second.
-pub fn midbody_speed(before: &EightArcs, now: &EightArcs, after: &EightArcs, seconds: f64) -> f64 {
+/// `seconds` apart: positive towards the head, in the skeletons' units per second. `None` when the
+/// body has no direction at the midbody, folded so that the ends three and five eighths along meet.
+pub fn midbody_speed(before: &EightArcs, now: &EightArcs, after: &EightArcs, seconds: f64) -> Option<f64> {
     let middle = crate::posture::ARCS / 2;
     let (dx, dy) = (after.ends[middle].0 - before.ends[middle].0, after.ends[middle].1 - before.ends[middle].1);
     let (hx, hy) = (now.ends[middle - 1].0 - now.ends[middle + 1].0, now.ends[middle - 1].1 - now.ends[middle + 1].1);
-    (dx * hx + dy * hy) / (hx * hx + hy * hy).sqrt() / seconds
+    let length = (hx * hx + hy * hy).sqrt();
+    if length == 0.0 {
+        return None;
+    }
+    Some((dx * hx + dy * hy) / length / seconds)
 }
 
 /// The midbody speed at every frame of a recording, given each frame's eight arcs (`None` where
@@ -56,7 +61,7 @@ pub fn midbody_speeds(frames: &[Option<EightArcs>], fps: f64) -> Vec<Option<f64>
         .map(|t| {
             let before = frames.get(t.checked_sub(half)?)?.as_ref()?;
             let after = frames.get(t + half)?.as_ref()?;
-            Some(midbody_speed(before, frames[t].as_ref()?, after, seconds))
+            midbody_speed(before, frames[t].as_ref()?, after, seconds)
         })
         .collect()
 }
@@ -75,15 +80,15 @@ mod tests {
     #[test]
     fn crawling_towards_the_head_is_positive_and_away_negative() {
         // The head is at the low-x end, so moving to lower x is moving forwards.
-        let forward = midbody_speed(&straight(0.0, 0.0), &straight(-1.0, 0.0), &straight(-2.0, 0.0), 0.5);
+        let forward = midbody_speed(&straight(0.0, 0.0), &straight(-1.0, 0.0), &straight(-2.0, 0.0), 0.5).unwrap();
         assert!((forward - 4.0).abs() < 1e-9, "2 units in 0.5 s forwards: {forward}");
-        let backward = midbody_speed(&straight(0.0, 0.0), &straight(1.0, 0.0), &straight(2.0, 0.0), 0.5);
+        let backward = midbody_speed(&straight(0.0, 0.0), &straight(1.0, 0.0), &straight(2.0, 0.0), 0.5).unwrap();
         assert!((backward + 4.0).abs() < 1e-9, "2 units in 0.5 s backwards: {backward}");
     }
 
     #[test]
     fn sliding_sideways_is_no_speed_along_the_body() {
-        let sideways = midbody_speed(&straight(0.0, 0.0), &straight(0.0, 1.0), &straight(0.0, 2.0), 0.5);
+        let sideways = midbody_speed(&straight(0.0, 0.0), &straight(0.0, 1.0), &straight(0.0, 2.0), 0.5).unwrap();
         assert!(sideways.abs() < 1e-9, "{sideways}");
     }
 
@@ -104,5 +109,22 @@ mod tests {
         assert_eq!(speeds[0], None, "no frame before the first");
         assert!((speeds[1].unwrap() - 4.0).abs() < 1e-9 && (speeds[2].unwrap() - 4.0).abs() < 1e-9);
         assert_eq!((speeds[3], speeds[4], speeds[5]), (None, None, None), "frame 4 missing, and the last has no after");
+    }
+
+    #[test]
+    fn a_missing_frame_before_is_no_speed_in_the_middle_too() {
+        let mut frames: Vec<Option<EightArcs>> = (0..8).map(|t| Some(straight(-(t as f32), 0.0))).collect();
+        frames[3] = None;
+        let speeds = midbody_speeds(&frames, 4.0);
+        assert_eq!((speeds[2], speeds[4]), (None, None), "frame 3 is the after of 2 and the before of 4");
+        assert!((speeds[5].unwrap() - 4.0).abs() < 1e-9);
+    }
+
+    #[test]
+    fn a_body_with_no_direction_at_the_midbody_has_no_speed() {
+        // A fold that brings the ends three and five eighths along together.
+        let mut folded = straight(0.0, 0.0);
+        folded.ends[5] = folded.ends[3];
+        assert_eq!(midbody_speed(&straight(0.0, 0.0), &folded, &straight(-2.0, 0.0), 0.5), None);
     }
 }

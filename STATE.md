@@ -139,6 +139,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-14: the midbody speed's review taken: no speed where the body has no direction, the notebook pinned to its
+  records and numpy in step; the check's result unchanged.
 - 2026-10-14: a midbody speed at the eight-arc resolution; its check against the dataset's own speed fails in one record
   of sixteen (correlation 0.947 against the 0.95 required), where the 49-point version agrees; not yet trusted.
 - 2026-10-14: the placeholder Program, `crates/placeholder-worm`: an eight-segment chain undulating at 0.18 Hz and 0.3 rad,
