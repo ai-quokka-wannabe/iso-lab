@@ -71,9 +71,12 @@ Notebooks live under `notebooks/`, with their dependencies pinned in `notebooks/
 
 ```text
 python -m venv .venv
-.venv/bin/pip install -r notebooks/requirements.txt        (Windows: .venv\Scripts\pip ...)
-.venv/bin/jupyter lab
+.venv/bin/pip install -r notebooks/requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
+.venv/bin/jupyter lab                                       (Windows: .venv\Scripts\pip ..., .venv\Scripts\jupyter ...)
 ```
+
+The extra index gives PyTorch's CPU build on Linux, where PyPI's build brings the CUDA libraries with it; no notebook
+needs a GPU.
 
 Before committing one, check that it runs top to bottom from a fresh kernel:
 
