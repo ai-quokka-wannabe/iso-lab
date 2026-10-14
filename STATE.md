@@ -76,8 +76,11 @@ the idea for the next attempt.
 - **H11, a Hebbian Hopfield transformer** ([v1](notebooks/h11_hebbian_hopfield_transformer.ipynb) and the
   [v2 pilot](notebooks/h11v2_delta_pilot.ipynb), 2026-10-14): v1 refuted, its Hebbian settling harmful; v2, written by
   the delta rule with four heads, recalls 0.89 with no harm detected from the settling, but it does not beat a DeltaNet
-  memory of the same size. Next: recall from a noisy cue (v3), then read Kanter and Sompolinsky 1987 and
-  Krotov and Hopfield 2016 and try a dense (sharper) energy.
+  memory of the same size. v3, recall from a noisy cue, refuted
+  it again (0.59 against DeltaNet's 0.94 at the trained noise). Next: v4, a DeltaNet that settles its cue (pre-registered,
+  running); then Krotov and Hopfield 2016's dense energies. Kanter and Sompolinsky 1987 was not found in open access (Crossref
+  lists no abstract; Semantic Scholar's API marks it closed and the abstract elided by the publisher, checked
+  2026-10-14); it stays unread and nothing leans on it.
 
 ## Blocked
 
@@ -115,6 +118,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-14: H11 v3, recall from a noisy cue: v2's hybrid recalls 0.59 against DeltaNet's 0.94 and softmax's 0.98 at
+  the trained noise, and its settling harms; v4 aims at softmax's lead over DeltaNet (0.98 against 0.94), whose cause is untested.
 - 2026-10-14: H11 v2, a pilot: written by the delta rule in four heads, the hybrid recalls 0.89 (v1: 0.18, another
   protocol), but it does not beat a DeltaNet memory of the same size (-0.11 [-0.25, +0.03] at 3 seeds).
 - 2026-10-14: H11, a Hebbian Hopfield transformer (the maintainer's hunch), refuted at the toy level: 18% recall
