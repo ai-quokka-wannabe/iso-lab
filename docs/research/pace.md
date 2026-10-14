@@ -29,14 +29,21 @@ worms to plate taps and to optogenetic stimulation of the six gentle-touch neuro
 - **At the receptor**: in the nose's OLL neurons, exposed by micro-dissection of the nose tip, a touch-evoked receptor
   current "had a very short latency (1.5 ± 0.3 ms, 12 μm displacement, n = 4)", and at 15 μm "the MRC latency
   approached 1 ms (0.8 ± 0.2 ms, n = 6)" ([Fan et al. 2021](https://doi.org/10.1007/s12264-021-00629-4), PMC8099987).
-  This is a receptor's latency in a dissected preparation, not a behaviour's.
+  This is a receptor's latency in a dissected preparation, not a behaviour's, and one of several of its kind: in the
+  same kind of recording, nose touch evoked currents in the ASJ neurons "with a very short latency (3.35 ± 0.26 ms
+  with a 15 μm displacement of the touch probe towards the worm's nose tip)" ([Zou et al.
+  2025](https://doi.org/10.1038/s41467-025-56938-z), PMC11830769), and with a 15 μm displacement "the latency was 4.3±
+  0.9 ms (n = 6) in the AMsh cell and 4.1± 1.1 ms (n = 6) in the ASH neuron" ([Ding et al.
+  2015](https://doi.org/10.1371/journal.pone.0117114), PMC4325002). Touch reaches the receptors within a few
+  milliseconds.
 - **Not found**: the latency from a touch to the start of a reversal, as a number in a paper's text. A scan of the
-  open-access full texts on Europe PMC that its search returns for five queries on touch, tap and latency (45 papers,
-  the queries in the journal) found none; Liu et al. and others show it in figures, which were not read.
+  first 15 open-access results of each of five Europe PMC queries on touch, tap and latency (45 papers; the queries
+  are in the journal) found none; Liu et al. show such latencies in figures, which were not read.
 - **Habituation lengthens the latency, for a nociceptor.** Ardiel et al. stimulated the polymodal nociceptor ASH with
   light, repeatedly: "the ∼1 sec increase in response latency by the end of 30 stimuli" ([Ardiel et al.
-  2016](https://doi.org/10.1101/lm.041830.116), PMC5026203). Their 2017 paper (under *Gaps, to Be Read*) reports the same direction,
-  "longer response latency", with values in figures only. These are latencies to stimulating a neuron, not to touch.
+  2016](https://doi.org/10.1101/lm.041830.116), PMC5026203). Their 2017 paper (under *Gaps, to Be Read*) restates that
+  result, "longer response latency", and its own controls show it in figures only. These are latencies to stimulating
+  a neuron, not to touch.
 
 ### Noxious Heat
 
@@ -100,7 +107,7 @@ show, so it is weak. The Grid has no chemical sense yet in any case.
 | Roaming, on food | Durations fit two exponentials, τ = 75 s and 520 s; "85% of roaming states have a mean lifetime of 75 sec" | Flavell et al. 2013 |
 | Settling after transfer to a new plate | Speed and crawling frequency decay with τ = 19 minutes, midbody amplitude with τ = 48 minutes; the fit is good for speed (R² = 0.96) and weaker for frequency (0.71) and amplitude (0.59) | [Yemini et al. 2013](https://doi.org/10.1038/nmeth.2560) |
 | After-effect of light | Locomotion returns to its basal rate over about 140 s, a duration, not a fitted τ | Edwards et al. 2008 |
-| Feeding, on meeting food | Pumping "rose slowly, on the time scale of 100 s of seconds", in a microfluidic chip | [Katzen et al. 2023](https://doi.org/10.7554/eLife.69779) (PMC10231927) |
+| Feeding, on meeting food | Pumping "rose slowly, on the time scale of 100 s of seconds", in worms food-deprived for 1-2 h and then offered food in a microfluidic chip that holds the worm at its midsection by a vacuum clamp, "leaving the head ... and tail free to move" | [Katzen et al. 2023](https://doi.org/10.7554/eLife.69779) (PMC10231927) |
 | Lethargus, the quiescence between larval stages | "typically last 1-2 h", as Faerberg et al. 2024 cite Singh and Sulston 1978; the primary source is not read | [Faerberg et al. 2024](https://doi.org/10.1242/dev.202961) (PMC11266794) |
 
 ## For the Lab
