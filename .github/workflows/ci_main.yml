@@ -99,9 +99,6 @@ jobs:
                 path: ~/.npm
                 key: npm-${{ runner.os }}-node-${{ steps.setup-node.outputs.node-version }}-lock-${{ hashFiles('package-lock.json') }}
 
-    # The flagship's quick-checks also gate clang-format and the Program ABI version, and it runs
-    # build, sanitiser and software-Vulkan verification jobs besides. None of them transfers: this
-    # repository is documentation and workflows, with nothing to format, fingerprint or compile.
     # The lab's Rust workspace, checked as master-control checks its own: on Linux alone, the lab's platform
     # (the maintainer's ruling), without the submodules, which no crate builds against yet.
     rust:

@@ -94,7 +94,7 @@ pub fn verify_md5(reader: impl Read, expected: &str) -> Result<(), VerifyError> 
 mod tests {
     use super::*;
 
-    // The test vectors are RFC 1321's own, appendix A.5 (https://www.rfc-editor.org/rfc/rfc1321).
+    // The test vectors are RFC 1321's own, all seven of appendix A.5 (https://www.rfc-editor.org/rfc/rfc1321).
     #[test]
     fn md5_matches_the_rfc_1321_test_suite() {
         let suite = [
@@ -103,6 +103,11 @@ mod tests {
             ("abc", "900150983cd24fb0d6963f7d28e17f72"),
             ("message digest", "f96b697d7cb7938d525a2f31aaf161d0"),
             ("abcdefghijklmnopqrstuvwxyz", "c3fcd3d76192e4007dfb496cca67e13b"),
+            ("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", "d174ab98d277d9f5a5611c2c9f419d9f"),
+            (
+                "12345678901234567890123456789012345678901234567890123456789012345678901234567890",
+                "57edf4a22be3c955ac49da2e2107b67a",
+            ),
         ];
         for (input, digest) in suite {
             assert_eq!(md5_hex(input.as_bytes()).unwrap(), digest, "input {input:?}");
