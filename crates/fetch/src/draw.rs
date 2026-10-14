@@ -104,6 +104,26 @@ mod tests {
         assert!(seen.iter().all(|&count| count > 800), "{seen:?}");
     }
 
+    // With a bound just above 2^63, about half of all draws fall below 2^64 mod bound and must
+    // be rejected; a plain remainder would keep the first draw. Seed 20261014's first output
+    // (0x39a6...) is below the threshold, so at least one rejection is exercised.
+    #[test]
+    fn below_rejects_the_biased_zone() {
+        let bound = (1_u64 << 63) + 1;
+        let threshold = bound.wrapping_neg() % bound;
+        let mut raw = SplitMix64::new(20_261_014);
+        let mut rejected = 0;
+        let expected = loop {
+            let draw = raw.next_u64();
+            if draw >= threshold {
+                break draw % bound;
+            }
+            rejected += 1;
+        };
+        assert!(rejected > 0, "the seed must exercise a rejection");
+        assert_eq!(SplitMix64::new(20_261_014).below(bound), expected);
+    }
+
     #[test]
     fn a_permutation_keeps_every_item_and_depends_on_the_seed_alone() {
         let items: Vec<u32> = (0..100).collect();
