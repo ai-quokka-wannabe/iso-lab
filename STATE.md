@@ -31,7 +31,7 @@ Top first. Each item is sized for one run; split it here before starting if it i
    block and checks every MD5, done; block 1 itself is not yet fetched (see *Blocked*); (c) the skeletons are read
    (crate `features`, by `hdf5-pure`; the published feature table cannot be read by the pure-Rust readers tried, and
    the lab computes its own measures anyway), next the comparison space's measures from them, in seconds and body
-   lengths, as the frame rate varies between recordings; (d) the reference statistics.
+   lengths, as the frame rate varies between recordings (25.4 to 32.6 fps seen); (d) the reference statistics.
 3. **Prove the arena**: in the cloud machine, on Linux alone (the maintainer's ruling), build Master Control and the
    Grid (software Vulkan through Mesa's lavapipe) from `external/`, write the lab's own minimal Program - a
    placeholder brain that only undulates gently, shaped after

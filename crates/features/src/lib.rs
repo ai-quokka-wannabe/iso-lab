@@ -19,7 +19,8 @@
 //! This first part reads a reference recording's skeletons: the Open Worm Movement Database's
 //! features files hold them as `/coordinates/skeletons`, frames × 49 points × (x, y) in
 //! micrometres, with frames that could not be skeletonised filled with NaN, and the frame rate
-//! as the `fps` attribute of `/features_timeseries` (data/README.md, *The Phase 0 Survey*).
+//! as the `fps` attribute of `/features_timeseries` (docs/journal of 2026-10-14, *Reading the
+//! Features Files*).
 //! The published per-frame feature table itself is not read: the lab computes its own measures
 //! from the skeletons (docs/journal of 2026-10-14, *Reading the Features Files*).
 
@@ -92,12 +93,16 @@ fn read_file(file: &hdf5_pure::File) -> Result<Skeletons, ReadError> {
     let [frames, points, 2] = shape[..] else {
         return Err(ReadError::Format(format!("{SKELETONS} has shape {shape:?}, not [frames, points, 2]")));
     };
-    let raw = dataset.read_raw().map_err(hdf5)?;
-    let expected = frames * points * 2 * 4;
-    if raw.len() as u64 != expected {
-        return Err(ReadError::Format(format!("{SKELETONS} holds {} bytes, not {expected} of 32-bit floats", raw.len())));
+    match dataset.dtype().map_err(hdf5)? {
+        hdf5_pure::DType::F32 => {}
+        other => return Err(ReadError::Format(format!("{SKELETONS} holds {other:?}, not 32-bit floats"))),
     }
-    let xy = raw.as_chunks::<4>().0.iter().map(|bytes| f32::from_le_bytes(*bytes)).collect();
+    // read_f32 decodes the stored byte order; the type was checked above, so nothing is converted.
+    let xy = dataset.read_f32().map_err(hdf5)?;
+    let expected = frames * points * 2;
+    if xy.len() as u64 != expected {
+        return Err(ReadError::Format(format!("{SKELETONS} holds {} values, not {expected}", xy.len())));
+    }
     let fps = match file.dataset(TIMESERIES).map_err(hdf5)?.attrs().map_err(hdf5)?.get("fps") {
         Some(hdf5_pure::AttrValue::F64(fps)) => *fps,
         Some(hdf5_pure::AttrValue::F32(fps)) => f64::from(*fps),
@@ -121,6 +126,17 @@ mod tests {
     /// A features file in miniature, written with the filters the real ones use (Fletcher-32,
     /// shuffle, deflate) on a chunked layout: three frames of three points, the middle one NaN.
     fn fixture(fps: Option<AttrValue>, shape: &[u64]) -> File {
+        fixture_as(fps, shape, Stored::F32)
+    }
+
+    /// How the fixture stores its coordinates.
+    enum Stored {
+        F32,
+        F64,
+        I32,
+    }
+
+    fn fixture_as(fps: Option<AttrValue>, shape: &[u64], stored: Stored) -> File {
         let mut xy = vec![0.0_f32, 0.0, 1.0, 0.0, 2.0, 0.0];
         xy.extend([f32::NAN; 6]);
         xy.extend([5.0_f32, 5.0, 5.0, 6.0, 5.0, 7.0]);
@@ -128,14 +144,17 @@ mod tests {
         chunks[0] = 1;
         let mut builder = FileBuilder::new();
         let mut coordinates = builder.create_group("coordinates");
-        coordinates
-            .create_dataset("skeletons")
-            .with_f32_data(&xy)
-            .with_shape(shape)
-            .with_chunks(&chunks)
-            .with_fletcher32()
-            .with_shuffle()
-            .with_deflate(4);
+        let skeletons = coordinates.create_dataset("skeletons");
+        match stored {
+            Stored::F32 => skeletons.with_f32_data(&xy),
+            Stored::F64 => skeletons.with_f64_data(&xy.iter().map(|&value| f64::from(value)).collect::<Vec<_>>()),
+            Stored::I32 => skeletons.with_i32_data(&xy.iter().map(|&value| if value.is_finite() { value as i32 } else { 0 }).collect::<Vec<_>>()),
+        }
+        .with_shape(shape)
+        .with_chunks(&chunks)
+        .with_fletcher32()
+        .with_shuffle()
+        .with_deflate(4);
         builder.add_group(coordinates.finish());
         let timeseries = builder.create_dataset("features_timeseries");
         timeseries.with_f32_data(&[0.0, 1.0, 2.0]);
@@ -161,5 +180,18 @@ mod tests {
         assert!(matches!(read_file(&fixture(None, &[3, 3, 2])), Err(ReadError::Format(_))));
         assert!(matches!(read_file(&fixture(Some(AttrValue::F64(0.0)), &[3, 3, 2])), Err(ReadError::Format(_))));
         assert!(matches!(read_file(&fixture(Some(AttrValue::F64(30.0)), &[3, 6])), Err(ReadError::Format(_))));
+        assert!(matches!(read_file(&fixture(Some(AttrValue::F64(30.0)), &[2, 3, 3])), Err(ReadError::Format(_))));
+    }
+
+    // Values of another stored type would be read as garbage if their bytes were taken as
+    // 32-bit floats; the reader must refuse them instead.
+    #[test]
+    fn refuses_coordinates_that_are_not_32_bit_floats() {
+        for stored in [Stored::F64, Stored::I32] {
+            assert!(matches!(
+                read_file(&fixture_as(Some(AttrValue::F64(30.0)), &[3, 3, 2], stored)),
+                Err(ReadError::Format(_))
+            ));
+        }
     }
 }
