@@ -19,9 +19,10 @@
 //! beyond the world's ceiling of pi/2 (docs/benchmark/FEATURES.md, *The Measures*, the caveat on
 //! bend angles). Run from the repository's root: `cargo run --release --bin posture-limits`.
 //! One line a recording: record, frame rate, frames, skeletonised frames, frames with eight
-//! arcs, median length in micrometres, share beyond 0.9 rad, share beyond pi/2.
+//! arcs, median length in micrometres, share beyond 0.9 rad, share beyond pi/2, and then the share
+//! beyond 0.9 rad at each of the seven joints, head first.
 
-use features::posture::{COS_GRID_JOINT_LIMIT, eight_arcs};
+use features::posture::{ARCS, COS_GRID_JOINT_LIMIT, eight_arcs};
 use features::read_skeletons;
 use std::path::Path;
 use std::process::ExitCode;
@@ -42,7 +43,8 @@ fn main() -> ExitCode {
         .filter(|name| name.ends_with(SUFFIX))
         .collect();
     names.sort();
-    println!("record\tfps\tframes\tskeletonised\teight_arcs\tmedian_length_um\tbeyond_0.9rad\tbeyond_pi/2");
+    let joints: String = (1..ARCS).map(|joint| format!("\tjoint{joint}_beyond_0.9rad")).collect();
+    println!("record\tfps\tframes\tskeletonised\teight_arcs\tmedian_length_um\tbeyond_0.9rad\tbeyond_pi/2{joints}");
     for name in names {
         let record = name.trim_end_matches(SUFFIX);
         let skeletons = match read_skeletons(&Path::new(DIRECTORY).join(&name)) {
@@ -53,6 +55,7 @@ fn main() -> ExitCode {
             }
         };
         let (mut skeletonised, mut beyond_limit, mut beyond_ceiling) = (0_usize, 0_usize, 0_usize);
+        let mut per_joint = [0_usize; ARCS - 1];
         let mut lengths = Vec::new();
         for frame in (0..skeletons.frames()).filter_map(|index| skeletons.frame(index)) {
             skeletonised += 1;
@@ -60,6 +63,9 @@ fn main() -> ExitCode {
             lengths.push(arcs.length);
             beyond_limit += usize::from(arcs.bends_beyond(COS_GRID_JOINT_LIMIT));
             beyond_ceiling += usize::from(arcs.bends_beyond(0.0));
+            for (count, cosine) in per_joint.iter_mut().zip(arcs.joint_cosines()) {
+                *count += usize::from(cosine < COS_GRID_JOINT_LIMIT);
+            }
         }
         lengths.sort_by(f64::total_cmp);
         let median = match lengths.len() {
@@ -68,8 +74,9 @@ fn main() -> ExitCode {
             n => (lengths[n / 2 - 1] + lengths[n / 2]) / 2.0,
         };
         let share = |count: usize| if lengths.is_empty() { f64::NAN } else { count as f64 / lengths.len() as f64 };
+        let joints: String = per_joint.iter().map(|&count| format!("\t{:.5}", share(count))).collect();
         println!(
-            "{record}\t{:.2}\t{}\t{skeletonised}\t{}\t{median:.1}\t{:.5}\t{:.5}",
+            "{record}\t{:.2}\t{}\t{skeletonised}\t{}\t{median:.1}\t{:.5}\t{:.5}{joints}",
             skeletons.fps,
             skeletons.frames(),
             lengths.len(),
