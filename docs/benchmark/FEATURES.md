@@ -32,7 +32,9 @@ are read from the world's sources at the commits `external/` pins (tron-grid-lit
   in undulation periods where a measure is about the rhythm.
 - **Posture at a common resolution.** The Grid's worm reports eight tangent directions (one yaw per segment) and seven
   joint angles; the worm's 49-point skeleton is finer. So posture is compared at the coarser one: the worm's skeleton
-  is resampled to eight equal arcs, its tangent angle taken at each arc's midpoint, and the mean angle removed, as
+  is resampled to eight arcs of equal length, each arc's direction taken as that of its chord - what a rigid segment
+  reports as its yaw, and steadier than the local tangent at one point of a 49-point skeleton - and the mean angle
+  removed, as
   Stephens et al. 2008 remove it from their 100 angles ("an overall rotation mode was removed"); the Grid's worm gives
   the same eight angles directly. Eigen-shapes are fitted on the real worms' eight angles and both bodies are
   projected on them. How much of the worm's posture survives at eight samples is itself a measure the tool reports:
