@@ -71,9 +71,10 @@ the idea for the next attempt.
 
 - **Three Dependabot alerts on `main`**, triaged on 2026-10-14
   ([the journal](docs/journal/2026-10-14.md#dependabot-alerts-triaged)): all three sit in markdownlint-cli2's
-  dependencies, none is reachable by the lab's use of the linter, and none can be fixed cleanly yet. They wait on
-  the maintainer to dismiss them - this session's GitHub access cannot write to the alerts - and Dependabot will
-  propose the fix when upstream releases one.
+  dependencies and none can be fixed cleanly yet. Only `smol-toml` is reachable, through any Markdown file's
+  configuration comment, and its worst case is a slow CI job. They wait on the maintainer to dismiss them as a
+  tolerable risk - this session's GitHub access cannot write to the alerts - and Dependabot will propose the fix
+  when upstream releases one.
 
 ## Needs From Other Repositories
 
