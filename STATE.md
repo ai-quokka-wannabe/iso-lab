@@ -132,13 +132,16 @@ points to the open ones and says what waits on each.
   joint) and falls along the body (medians 3.2 to 4.5% at joints 4 to 6), though the tail joint varies most.
   Smoothing the skeletons along their length lowers the joints by similar proportions (a five-point mean keeps about
   0.8 of each share), the tail most, so the gradient survives it - but the smoothing leaves the tips, the noisiest
-  points, untouched; a temporal check, or the dataset's own account of its tracking error, comes before an issue.
+  points, untouched; averaging over a tenth of a second removes about 1.5% of it at any joint, so it is not mainly
+  frame-to-frame noise. Next: read the dataset's own account of its tracking error, then draft the issue.
 - **Terrace edges** (master-control; the maintainer takes it up once the lab is set up - file nothing). A
   chain can be thrown when a segment crosses a terrace edge; a fix is in progress. Until it lands, every life
   in this lab is lived on a flat arena.
 
 ## Done
 
+- 2026-10-14: averaged over neighbouring frames, the bends beyond 0.9 rad barely fall (about 1.5% at a tenth of a
+  second, at every joint), on 34 recordings; the head no more fragile than the body by any margin.
 - 2026-10-14: the midbody speed's review taken: no speed where the body has no direction, the notebook pinned to its
   records and numpy in step; the check's result unchanged.
 - 2026-10-14: a midbody speed at the eight-arc resolution; its check against the dataset's own speed fails in one record
