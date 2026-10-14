@@ -98,8 +98,8 @@ points to the open ones and says what waits on each.
 ## Done
 
 - 2026-10-14: Roman et al. 2023's fitted thermal-preference time scales added to the pace note (avoidance about 45-83
-  min, habituation about 20 min, read as hours from a unitless table); Europe PMC's supplementary-files service found
-  to serve figure images.
+  min, habituation about 20 min and known only to a factor of about two, read as hours from a unitless table); Europe
+  PMC's supplementary-files service found to serve figure images.
 - 2026-10-14: the pace note's gaps, a third pass: thermotaxis memory and dispersal over hours without food, AFD's
   threshold following a hold of at least 15 min, tap habituation's protocol timescales (a review); no fitted τ yet.
 - 2026-10-14: the pace note's gaps, a second pass: receptor latency to nose touch, a smell avoidance latency, the

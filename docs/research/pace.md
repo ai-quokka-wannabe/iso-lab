@@ -104,17 +104,21 @@ PMC10770330): a scoring window, like Liu et al.'s, not a measured latency. Three
   neurons shift after a like hold is the lab's reading of this contrast and of their Figure 6, not read; the wild-type
   hold time is not stated. "At least 15 min" is the protocol's minimum hold: a shift seen after it says nothing of
   how fast the threshold moves, and it is not a time constant.
-- **Fitted time scales, of a model of thermal preference.** [Roman et al. 2023](https://doi.org/10.1073/pnas.2215191120)
-  (PMC10068832) tracked single worms for 4 hours in microfluidic droplets with a gradient across each droplet, after
-  starvation of different lengths, and fitted a model with "four time scales"; in their words, "the avoidance time
-  scale is slower than the habituation one". The fitted values are in their supplementary Tables S3 and S4 (read in
-  the supplementary PDF): the avoidance time scale τa is 1.39 for worms reared at 15°C and 0.75 for worms reared at
-  25°C, with upper-bound uncertainties of 0.58 and 0.39; the habituation time scale is a fitted fraction of it,
-  τh/τa = 0.28 and 0.41, so τh is about 0.39 and 0.31. The tables give no unit; the supplement says "t represents
-  the time in hours since the beginning of assaying in the droplet", so the lab reads them as hours, that is about
-  83 and 45 minutes for avoidance and 23 and 19 minutes for habituation. These are a model's parameters, fitted to
-  starved worms confined in droplets, not time constants measured directly in free-crawling ones; the time scales at the
-  rearing temperature in the same tables are left out here.
+- **Fitted time scales, of a model of thermal preference.** [Roman et al.
+  2023](https://doi.org/10.1073/pnas.2215191120) (PMC10068832) confined single worms in millimetre-sized droplets
+  without food, where they swim, and "monitor[ed] their swimming behavior" for up to 4 hours with a gradient across
+  each droplet; some worms had been starved beforehand, for different lengths of time. They fitted a model with "four
+  time scales"; in their words, "the avoidance time scale is slower than the habituation one". The fitted values are
+  in their supplementary Tables S3 and S4 (read in the supplementary PDF): the avoidance time scale τa is 1.39 for
+  worms reared at 15°C and 0.75 for worms reared at 25°C, with upper-bound uncertainties of 0.58 and 0.39; the
+  habituation time scale is a fitted fraction of it, τh/τa = 0.28 and 0.41, with upper-bound uncertainties of 0.14 and
+  0.29. The tables give no unit; the supplement says "t represents the time in hours since the beginning of assaying
+  in the droplet", and the main text has the preference "changing the sign in about 3 h for cold worms and 2 h for
+  warm worms", so the lab reads the time scales as hours: about 83 and 45 minutes for avoidance, and 23 and 18 minutes
+  for habituation. The habituation times are weak: combining the two upper-bound uncertainties naively gives about 65%
+  and 90%, so they are known only to within a factor of about two. These are a model's parameters, fitted to swimming
+  worms in droplets, not time constants measured directly in crawling ones; the time scales at the rearing temperature
+  in the same tables are left out here.
 
 ### Smell
 
