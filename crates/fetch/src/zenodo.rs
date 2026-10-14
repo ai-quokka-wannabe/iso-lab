@@ -16,7 +16,9 @@
 //! The Open Worm Movement Database's N2 records, as Zenodo lists them, and the rule that
 //! picks the lab's reference set out of them (data/README.md, *The Phase 0 Survey*).
 //!
-//! The rule is the survey's, unchanged: a record is eligible when its description says
+//! The rule is the survey's, with one difference of form: the survey read a record's name from
+//! its first file, and this reads it from the features file. Both pick the same 1646 records
+//! (checked on 2026-10-14). A record is eligible when its description says
 //! *hermaphrodite*, *adult*, *OP50* and *30m wait*, and its file names begin with `N2 `
 //! (31 records named after mutants, or oddly, are left out until traced).
 
