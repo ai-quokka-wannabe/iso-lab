@@ -15,8 +15,8 @@ npm ci
 npx markdownlint-cli2 "**/*.md"
 ```
 
-That needs Git and Node.js, nothing else, until the lab has Rust or notebooks to run. Everything below is the
-long version.
+That needs Git and Node.js; the Rust workspace needs rustup as well, and the notebooks Python. Everything below
+is the long version.
 
 ---
 
@@ -27,7 +27,7 @@ long version.
 | Git | any recent | <https://git-scm.com/downloads> |
 | Node.js | an LTS release, only for the markdown linter (`npm ci`) | <https://nodejs.org/> |
 | lychee | v0.24.2, the version CI pins, for the link check | <https://github.com/lycheeverse/lychee/releases> |
-| rustup | any recent; the toolchain will be pinned by `rust-toolchain.toml` once the Cargo workspace exists, and rustup installs exactly that on first use | <https://rustup.rs/> |
+| rustup | any recent; the toolchain is pinned to an exact version by `rust-toolchain.toml`, and rustup installs exactly that on first use | <https://rustup.rs/> |
 | Python | 3.10 or newer, with Jupyter, only for notebooks | <https://www.python.org/downloads/> |
 
 The world's repositories are submodules under `external/`. Clone with `--recurse-submodules`, or initialise
@@ -37,20 +37,31 @@ them afterwards with `git submodule update --init --recursive`.
 
 ## Checking, exactly as CI does
 
-CI runs one job, *Quick Checks*, behind the `CI Success` gate. At home:
+CI runs two jobs, *Quick Checks* and *Rust*, behind the `CI Success` gate. At home, the quick checks:
 
 ```text
 npm ci --ignore-scripts
 npx markdownlint-cli2 "**/*.md"
-lychee --offline --include-fragments --no-progress --root-dir "$(pwd)" --exclude-path node_modules --exclude-path external "./**/*.md"
+lychee --offline --include-fragments --no-progress --root-dir "$(pwd)" --exclude-path node_modules --exclude-path external --exclude-path target "./**/*.md"
+bash .github/scripts/check-toolchain-pin.sh
 ```
+
+The last line checks that `rust-toolchain.toml` pins an exact version and that no workflow installs a toolchain
+of its own.
 
 CI also refuses any file with a carriage return: line endings in the repository are LF, and `.gitattributes`
 lets Git convert them for your working copy. The external links are checked weekly, on a schedule, by
 `.github/workflows/links.yml`.
 
-When the lab has Rust, its CI job runs `cargo fmt --check`, `cargo clippy --all-targets -- --deny warnings`
-and `cargo test --locked`; run the same three before pushing.
+The Rust job, on Linux, runs these over the workspace; run the same before pushing:
+
+```text
+cargo fmt --check
+RUSTDOCFLAGS="-D warnings" cargo doc --locked --no-deps --document-private-items
+cargo clippy --locked --all-targets -- --deny warnings
+cargo test --locked
+cargo test --locked --profile release-check
+```
 
 ---
 

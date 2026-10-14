@@ -27,8 +27,8 @@ jobs:
             contents: read
             issues: write
 
-        # lychee is the one pin here outside Dependabot's reach: the flagship's Vulkan SDK and
-        # clang-format entries watch pins this repository does not carry.
+        # lychee and the Rust toolchain are the pins here outside Dependabot's reach: the flagship's
+        # Vulkan SDK and clang-format entries watch pins this repository does not carry.
         strategy:
             fail-fast: false
             matrix:
@@ -39,6 +39,12 @@ jobs:
                       current: 'grep -ohP ''LYCHEE_VERSION: v\K[0-9.]+'' .github/workflows/ci_pr.yml | head -1'
                       latest: 'gh api repos/lycheeverse/lychee/releases/latest --jq .tag_name | sed ''s/^lychee-v//'''
                       notes: https://github.com/lycheeverse/lychee/releases
+                    - key: rust
+                      name: Rust toolchain
+                      where: '`channel` in `rust-toolchain.toml`'
+                      current: 'grep -oP ''channel = "\K[0-9.]+'' rust-toolchain.toml'
+                      latest: 'gh api repos/rust-lang/rust/releases/latest --jq .tag_name'
+                      notes: https://github.com/rust-lang/rust/releases
 
         steps:
             - name: Checkout repository

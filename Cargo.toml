@@ -1,0 +1,25 @@
+# The lab's one Cargo workspace (.claude/CLAUDE.md, *Rust first*): the tools, the benchmark and the Programs,
+# each a crate under crates/.
+[workspace]
+resolver = "3"
+members = ["crates/*"]
+
+[workspace.package]
+version = "0.0.0"
+edition = "2024"
+license = "GPL-3.0-or-later"
+repository = "https://github.com/ai-quokka-wannabe/iso-lab"
+
+[workspace.lints.rust]
+warnings = "deny"
+unsafe_code = "deny"
+
+[workspace.lints.clippy]
+all = { level = "deny", priority = -1 }
+
+# The same suite at release speed with the arithmetic still watched, as master-control runs it: a wrap that
+# only happens in an optimised build is a difference the debug run cannot see.
+[profile.release-check]
+inherits = "release"
+overflow-checks = true
+debug-assertions = true

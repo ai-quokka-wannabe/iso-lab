@@ -84,7 +84,13 @@ jobs:
             # answer is deterministic and a third-party site cannot redden a pull request. The
             # external links have their own scheduled workflow.
             - name: Check internal links and anchors
-              run: lychee --offline --include-fragments --no-progress --root-dir "$(pwd)" --exclude-path node_modules --exclude-path external "./**/*.md"
+              run: lychee --offline --include-fragments --no-progress --root-dir "$(pwd)" --exclude-path node_modules --exclude-path external --exclude-path target "./**/*.md"
+
+            # rust-toolchain.toml is the one place a compiler version lives. The day a workflow
+            # installs a toolchain of its own, CI has a second source of truth and the pin's
+            # guarantee is gone silently - everything still builds. Taken from master-control.
+            - name: The toolchain is pinned in one place
+              run: bash .github/scripts/check-toolchain-pin.sh
 
             - name: Save npm cache
               if: steps.npm-cache-restore.outputs.cache-hit != 'true'
@@ -96,9 +102,62 @@ jobs:
     # The flagship's quick-checks also gate clang-format and the Program ABI version, and it runs
     # build, sanitiser and software-Vulkan verification jobs besides. None of them transfers: this
     # repository is documentation and workflows, with nothing to format, fingerprint or compile.
+    # The lab's Rust workspace, checked as master-control checks its own: on Linux alone, the lab's platform
+    # (the maintainer's ruling), without the submodules, which no crate builds against yet.
+    rust:
+        name: Rust
+        needs: quick-checks
+        runs-on: ubuntu-latest
+        timeout-minutes: 20
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+            # The runners ship a Rust toolchain, but the build is pinned to one exact version in
+            # rust-toolchain.toml, locally and here alike, so a new rustc or clippy never turns a
+            # green build red on its own timetable.
+            - name: Install the pinned toolchain
+              run: |
+                # rust-toolchain.toml pins the exact version; rustup installs it on first use.
+                rustup show active-toolchain
+                cargo --version
+                rustc --version
+
+            # Main saves the build directory the pull requests restore, keyed by the toolchain
+            # and the manifest.
+            - name: Restore and save the cargo cache
+              uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+              with:
+                path: |
+                    ~/.cargo/registry/index/
+                    ~/.cargo/registry/cache/
+                    target/
+                key: cargo-${{ runner.os }}-${{ hashFiles('rust-toolchain.toml', 'Cargo.lock', 'Cargo.toml') }}
+
+            - name: Formatting must be canonical
+              run: cargo fmt --check
+
+            # A broken intra-doc link or a missing code-block language is a lie waiting for a reader.
+            - name: Documentation builds without a warning
+              env:
+                RUSTDOCFLAGS: -D warnings
+              run: cargo doc --locked --no-deps --document-private-items
+
+            - name: Clippy, warnings as errors
+              run: cargo clippy --locked --all-targets -- --deny warnings
+
+            - name: Test
+              run: cargo test --locked
+
+            # The same suite at release speed with the arithmetic still watched: a wrap that only
+            # happens in an optimised build is a difference the debug run cannot see.
+            - name: Test again under release-check (optimised, overflow checks on)
+              run: cargo test --locked --profile release-check
+
     ci-success:
         name: CI Success
-        needs: [quick-checks]
+        needs: [quick-checks, rust]
         runs-on: ubuntu-latest
         timeout-minutes: 5
         if: always()
@@ -112,7 +171,8 @@ jobs:
             - name: Check if all jobs succeeded
               id: check-results
               run: |
-                if [[ "${{ needs.quick-checks.result }}" != "success" ]]; then
+                if [[ "${{ needs.quick-checks.result }}" != "success" ]] || \
+                   [[ "${{ needs.rust.result }}" != "success" ]]; then
                     echo "One or more jobs failed"
                     exit 1
                 fi
