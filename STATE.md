@@ -115,10 +115,11 @@ the idea for the next attempt.
   size-scaling margin fires anyway. Of the cures as written, the "conserved budget" grows with degree and so is not
   conserved, lateral inhibition only shifts the cliff, and the fan-out penalty pushes it beyond the range of degree
   swept. The pilot is done (journal of 2026-10-14, *C18's Model, Piloted*;
-  `notebooks/c18_spreading_pilot.ipynb`): run to a steady state, with the budget truly conserved, the mean curve's
-  width does not narrow steadily with size, likely because draws that die out early mix with draws that fill the
-  network. Next: rewrite the plan with a statistic taken where the spread survives, more draws, a degree range of 0.5
-  to 6 and an operating point per variant, and only then write the margins. C13-C17 went up on another path,
+  `notebooks/c18_spreading_pilot.ipynb`): run to a steady state, the pure network's mean curve does not narrow
+  steadily with size, likely because draws that die out early mix with draws that fill the network, and no cure
+  removed the transition. Next: rewrite the plan with a statistic conditioned on the seed's out-component being
+  non-empty, more draws, a degree range of 0.5 to 6 with a finer step near each transition, an operating point per
+  variant, a smooth control and the plan's harness controls, and only then write the margins. C13-C17 went up on another path,
   [#47](https://github.com/ai-quokka-wannabe/iso-lab/pull/47), merged.
 
 ## Needs From Other Repositories
