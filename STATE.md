@@ -25,8 +25,8 @@ Top first. Each item is sized for one run; split it here before starting if it i
    open papers scanned states one in text, and Liu et al. 2018's figure shows reversals clustering within about a
    second without resolving their onset); what Mohammadi et al. 2013's heat reaction times count from; a thermotaxis
    latency; fitted time constants for tap habituation from primary papers; and the primary sources for lethargus and
-   sleep-like quiescence (for satiety, You et al. 2008 is identified, its full text not yet reached). Figures are within reach: Europe PMC's supplementary-files service serves a paper's figure
-   images (pace.md § Noxious Heat).
+   sleep-like quiescence (for satiety, You et al. 2008 is identified, its full text not yet reached). Figures are
+   within reach: Europe PMC's supplementary-files service serves a paper's figure images (pace.md § Noxious Heat).
 2. **Build the feature-extraction tool** for the chosen dataset, in the lab's Rust workspace (`crates/`), and compute
    the wild-type reference statistics. Explore the data in a notebook first if it helps; the tool itself is Rust.
    Split into runs: (a) the workspace and the MD5 check, done; (b) the eligible manifest, done ([data/README.md § The
