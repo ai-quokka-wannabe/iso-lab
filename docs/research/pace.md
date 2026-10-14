@@ -2,13 +2,14 @@
 
 The rule *The animal's pace* asks that a Program's reaction latencies, the time constants of its internal states
 and the rhythm of its decisions match the worm's, each from a cited source. This note gathers what the lab has read
-so far. It is a first pass: some latencies are given in the sources only as figures, which have not been read, and
-those are listed as gaps rather than guessed.
+so far. Some latencies are given in the sources only as figures; those not yet read are listed as gaps rather than
+guessed.
 
 The papers were read on 2026-10-14 in full on PubMed Central, through NCBI's BioC service and Europe PMC, unless a
 line says otherwise. How sure the lab is: high for the quoted sentences and numbers, which are the papers' own;
-lower for the paragraphs headed *For the lab*, which are the lab's reasoning. Only numbers stated in a paper's text
-are used; none is read off a graph.
+lower for the paragraphs headed *For the lab*, which are the lab's reasoning. Numbers are taken from a paper's text,
+except where a line says they are read off a figure: those carry the uncertainty of the reading, and the method is in
+the journal.
 
 ## Reaction Latencies
 
@@ -65,11 +66,15 @@ pulse of 133 ms.
   PMC's supplementary-files service (`https://www.ebi.ac.uk/europepmc/webservices/rest/<PMCID>/supplementaryFiles`, a
   zip of the paper's figure files; PubMed Central's page asks for a CAPTCHA, which the lab does not get round). Read
   by pixel, with the method in the journal of 2026-10-14, the four mean reaction times are about 0.33, 0.29, 0.27 and
-  0.25 s, falling as the laser current rises from about 30 to about 150 mA (the currents read by eye from a
-  logarithmic axis). Each value is read to within about 0.005 s; the figure's own error bars are wider, up to about
-  ±0.03 s for the weakest stimulus. The text does not say from which moment the reaction time is counted, nor how the
+  0.25 s, falling as the laser current rises from about 30 to about 150 mA (read from the figure's logarithmic axis as
+  about 31, 64, 102 and 154 mA; the text names currents of 30, 60, 100 and 150 mA). Each mean is read to within about
+  0.005 s. The panel draws two error marks, grey boxes labelled "SEM" and whiskers labelled "VAR", and the text
+  defines neither VAR nor the panel's number of worms; the marks do not behave as a standard deviation beside its
+  standard error (for the strongest stimulus the whisker, about ±4 ms, lies inside the box, about ±7 ms), so they are
+  not read here as the spread among worms. For the two weakest stimuli the whiskers are about ±0.027 s and the boxes
+  about ±0.025 and ±0.016 s. The text does not say from which moment the reaction time is counted, nor how the
   reaction is detected; the videos were recorded "at 30 fps", so the times rest on frames 33 ms apart. How sure:
-  moderate for the values as plotted, low for what exactly they measure.
+  moderate for the means as plotted, low for what exactly they measure and for their spread.
 
 [Wittenburg and Baumeister 1999](https://doi.org/10.1073/pnas.96.18.10477) (PMC17914), only the abstract read: "[t]he
 escape reflex can be observed in 98% of the adult animals". The full text could not be fetched as text; it is to be
@@ -177,8 +182,9 @@ show, so it is weak. The Grid has no chemical sense yet in any case.
   al. 2017, "Habituation as an adaptive shift in response strategy mediated by neuropeptides"
   ([doi:10.1038/s41539-017-0011-8](https://doi.org/10.1038/s41539-017-0011-8), PMC6161508), for "reversal latency";
   read in full, it measures latency to light-activation of ASH, with values in figures only.
-- The definition behind Mohammadi et al. 2013's reaction times (from which moment, to which event), and Wittenburg and
-  Baumeister 1999 in full.
+- The definition behind Mohammadi et al. 2013's reaction times (from which moment, to which event), and their spread;
+  the paper cites its group's earlier work for the response time, [Ghosh et al.
+  2012](https://doi.org/10.1186/1741-7007-10-85), which may define it. And Wittenburg and Baumeister 1999 in full.
 - A thermotaxis reaction latency (the slower timescales above are orders of magnitude only), and the primary source
   for lethargus (Singh and Sulston 1978).
 - Fitted time constants for tap habituation and its recovery: the primary papers (Rankin et al. 1990 and later) were
