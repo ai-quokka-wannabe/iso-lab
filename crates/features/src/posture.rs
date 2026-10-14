@@ -104,6 +104,26 @@ pub fn eight_arcs(skeleton: &[f32]) -> Option<EightArcs> {
     Some(EightArcs { length, chords })
 }
 
+/// A skeleton, given as (x, y) pairs, smoothed along its length: each point replaced by the mean of
+/// itself and the `half_width` points on either side. Near the ends the window shrinks to what fits
+/// symmetrically, so the end points stay where they are and the window stays centred. The mean is
+/// taken in `f64` and stored back as `f32`, the skeletons' own precision.
+pub fn smoothed_along(skeleton: &[f32], half_width: usize) -> Vec<f32> {
+    let points = skeleton.as_chunks::<2>().0;
+    let last = points.len().saturating_sub(1);
+    points
+        .iter()
+        .enumerate()
+        .flat_map(|(index, _)| {
+            let reach = half_width.min(index).min(last - index);
+            let window = &points[index - reach..=index + reach];
+            let (x, y) = window.iter().fold((0.0, 0.0), |(x, y), &[px, py]| (x + f64::from(px), y + f64::from(py)));
+            let count = window.len() as f64;
+            [(x / count) as f32, (y / count) as f32]
+        })
+        .collect()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -162,6 +182,32 @@ mod tests {
         // on the machine this was written on, which is why the module never calls it.
         assert_eq!(COS_GRID_JOINT_LIMIT, "0.6216099682706644564847161514071335087220".parse::<f64>().unwrap());
         assert!((COS_GRID_JOINT_LIMIT - GRID_JOINT_LIMIT_RAD.cos()).abs() <= f64::EPSILON);
+    }
+
+    #[test]
+    fn smoothing_a_zigzag_flattens_its_middle_and_keeps_its_ends() {
+        // y alternates 1, -1, 1, ...: a three-point mean leaves a third, with the neighbours' sign,
+        // as two of the three points are neighbours; the end points have no symmetric window and stay.
+        let zigzag: Vec<f32> = (0..9).flat_map(|i| [i as f32, if i % 2 == 0 { 1.0 } else { -1.0 }]).collect();
+        let smooth = smoothed_along(&zigzag, 1);
+        assert_eq!(smooth.len(), zigzag.len());
+        assert_eq!((smooth[0], smooth[1], smooth[16], smooth[17]), (0.0, 1.0, 8.0, 1.0), "the ends stay");
+        for i in 1..8 {
+            let expected = if i % 2 == 0 { -1.0 / 3.0 } else { 1.0 / 3.0 };
+            assert!((smooth[2 * i] - i as f32).abs() < 1e-6, "x of point {i}: {}", smooth[2 * i]);
+            assert!((smooth[2 * i + 1] - expected).abs() < 1e-6, "y of point {i}: {}", smooth[2 * i + 1]);
+        }
+    }
+
+    #[test]
+    fn the_window_shrinks_symmetrically_at_the_ends() {
+        // On a parabola y = x^2 a centred mean of half-width h raises y by h(h+1)/3; the second
+        // point can only take h = 1 however wide the window asked for.
+        let parabola: Vec<f32> = (0..9).flat_map(|i| [i as f32, (i * i) as f32]).collect();
+        let smooth = smoothed_along(&parabola, 3);
+        assert!((smooth[3] - (1.0 + 2.0 / 3.0)).abs() < 1e-6, "point 1, h = 1: {}", smooth[3]);
+        assert!((smooth[9] - 20.0).abs() < 1e-5, "point 4, h = 3: {}", smooth[9]);
+        assert_eq!(smoothed_along(&parabola, 0), parabola, "half-width 0 changes nothing");
     }
 
     #[test]
