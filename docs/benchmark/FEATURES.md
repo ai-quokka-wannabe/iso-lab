@@ -56,7 +56,7 @@ locomotion measure counts as comparable until food is settled.
 |---|---|---|---|
 | Morphology | Length, width, area | Not comparable | The Grid's body is authored by the Program at rez; its shape is a choice, not a behaviour |
 | Posture | Eigen-shape amplitudes (Stephens et al. 2008) | Comparable | On the eight-angle resampling above |
-| Posture | Bend angles at head, midbody and tail | With a caveat | At the eight-arc resolution; a real bend beyond the Grid's 0.9 rad per joint cannot be reproduced, so the share of real frames beyond it is to be measured first |
+| Posture | Bend angles at head, midbody and tail | With a caveat | At the eight-arc resolution; a real bend beyond the Grid's 0.9 rad per joint cannot be reproduced, and in a first measurement on twelve recordings a third or more of the worm's skeletonised frames had such a bend at some joint (journal of 2026-10-14, *How Often the Reference Worms Bend Beyond the Grid's Joint Limit*) |
 | Posture | Amplitude, wavelength, track length, eccentricity | With a caveat | Wavelength from eight samples resolves only waves longer than two segments; the tool reports whether the worm's waves are |
 | Posture | Coils, kinks | With a caveat | Yemini et al. find coils from frames whose segmentation failed ("by scanning the video frame annotations"); the Grid's recordings never fail, so a coil needs a geometric definition, the body touching itself, applied to both. A coil also needs bends the 0.9 rad limit may forbid |
 | Locomotion | Speed and angular speed of head, midbody, tail | Comparable | In L per second and radians per second |
