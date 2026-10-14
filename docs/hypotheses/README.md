@@ -197,6 +197,26 @@ its keys ([its notebook](../../notebooks/h11v4_keyclean.ipynb)), recalled 0.75 a
 no noise level. In none of the four did the hybrid beat its matched control, or the settling its own ablation. A pilot of a fifth,
 v5, with binary keys ([its notebook](../../notebooks/h11v5_binary_keys.ipynb)), did not change that.
 
+### H12. A Plain Worm Brain
+
+*A hunch*, written at the maintainer's request after H11's five tests: the brain that finally passes the worm's
+benchmark will look plain. The worm is born with nearly all its wiring - 302 neurons in a connectome that varies little
+between animals ([White et al. 1986](https://doi.org/10.1098/rstb.1986.0056)) - and most of its behaviour is innate,
+so the "pretraining" is evolution's, and most of the Program will be fixed structure found against the benchmark,
+with a little learning on top. Its parts: a rhythm generator coupled to the body (H4); a handful of behavioural states
+switched at the worm's pace (H2); a few slow state variables standing for neuromodulators (H3, H8); a small memory
+written by a local rule and kept learning after training stops, as H11's tests found a fast-weight memory does
+([docs/research/findings.md § M2](../research/findings.md#m2-a-memory-written-by-the-brain-itself-keeps-learning-after-training-stops---tested));
+and senses at the worm's own resolution. No attractor settling and no transformer, unless one earns its place
+([§ M3](../research/findings.md#m3-hopfield-settling-did-not-earn-its-place-in-five-versions---tested-v1-v3-v4-pilot-v2-v5)):
+of the order of 300 units and tens of thousands of numbers, cheap enough for a microcontroller - an estimate, not yet
+a measurement. Much of what looks like intelligence would come from the loop of brain, body and Grid.
+*Predicts*: a Program built from these parts alone reproduces the reference statistics - turning, reversals, roaming
+and dwelling bouts, habituation - at the worm's pace, once the benchmark exists.
+*Refuted*: when such a Program fails the benchmark where a richer one, at a cost the lean-brains rule allows, passes
+it; the richer parts are then credited by ablation, one by one.
+*Tested so far*: nothing; it needs the benchmark.
+
 ## Adding a Hypothesis
 
 A pool of candidates waits in [Matej's ideas and hunches](matej-hunches.md): unverified, to be triaged and
