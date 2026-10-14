@@ -27,10 +27,11 @@ Top first. Each item is sized for one run; split it here before starting if it i
    the wild-type reference statistics. Explore the data in a notebook first if it helps; the tool itself is Rust.
    Split into runs: (a) the workspace and the MD5 check, done; (b) the eligible manifest, done ([data/README.md § The
    Eligible Manifest](data/README.md#the-eligible-manifest)); and the seeded draw in blocks of 200, done
-   ([data/README.md § The Reference Draw](data/README.md#the-reference-draw)); then fetch block 1 by record id with
-   retries, checking every file with `fetch::verify_md5`; (c) read the features file, by a pure-Rust HDF5 reader if
-   one reads it (`hdf5-pure`, `hdf5-reader` and `rust-hdf5` exist; none tried yet), or else from the WCON JSON, and
-   compute the comparison space's measures; (d) the reference statistics.
+   ([data/README.md § The Reference Draw](data/README.md#the-reference-draw)); and `fetch-block`, which fetches a
+   block and checks every MD5, done; block 1 itself is not yet fetched (see *Blocked*); (c) read the features file,
+   starting on the files already fetched, by a pure-Rust HDF5 reader if one reads it (`hdf5-pure`, `hdf5-reader` and
+   `rust-hdf5` exist; none tried yet), or else from the WCON JSON, and compute the comparison space's measures; (d)
+   the reference statistics.
 3. **Prove the arena**: in the cloud machine, on Linux alone (the maintainer's ruling), build Master Control and the
    Grid (software Vulkan through Mesa's lavapipe) from `external/`, write the lab's own minimal Program - a
    placeholder brain that only undulates gently, shaped after
@@ -73,6 +74,12 @@ the idea for the next attempt.
 
 ## Blocked
 
+- **Fetching block 1 of the reference draw** (4.87 GB, item 2). Zenodo served the features files at 50 to 350 KB/s on
+  2026-10-14 (the journal has the commands), so the block needs from about four hours to more than a day. `fetch-block
+  1` resumes by byte, but only on a machine that keeps `data/raw/`; a fresh cloud machine starts empty, so the block
+  has to come in one long run (started early in a night, in the background) or on a machine that persists; the night
+  of 2026-10-14 ended with part of it fetched, every file MD5-checked. Next: run it again on later nights, and start
+  item 2(c) on the files already fetched.
 - **Three Dependabot alerts on `main`**, triaged on 2026-10-14
   ([the journal](docs/journal/2026-10-14.md#dependabot-alerts-triaged)). All three sit in markdownlint-cli2's
   dependencies, and none can be fixed cleanly yet. Only `smol-toml` is reachable, through any Markdown file's
@@ -101,6 +108,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-14: `fetch-block`, which downloads a block of the reference draw and accepts each file only by its MD5,
+  resuming by byte; a run fetched part of block 1, every file checked.
 - 2026-10-14: the reference draw: the 1646 eligible records in one order fixed by seed 20261014 (pre-registered and
   pushed first), in blocks of 200; block 1, 4.87 GB, is the development reference.
 - 2026-10-14: the eligible manifest of the N2 reference records, written by a Rust tool (`list-n2`): 1792 records
