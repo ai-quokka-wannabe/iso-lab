@@ -19,7 +19,8 @@ Top first. Each item is sized for one run; split it here before starting if it i
 1. **Fill the gaps in the pace note** ([docs/research/pace.md § Gaps, to Be
    Read](docs/research/pace.md#gaps-to-be-read)): a touch-to-reversal latency, which none of the 45 open papers
    scanned states in text (read it from a figure by a stated method, or from the reference recordings if they hold
-   taps); the heat-avoidance reaction times; a thermotaxis time course; tap habituation; and the primary sources for
+   taps); the heat-avoidance reaction times; a thermotaxis latency and fitted time constants (Roman et al. 2023's
+   supplementary tables); fitted time constants for tap habituation from primary papers; and the primary sources for
    lethargus and sleep-like quiescence.
 2. **Build the feature-extraction tool** for the chosen dataset (Rust, with tests and a CI job joined to
    `CI Success`), and compute the wild-type reference statistics. Explore the data in a notebook first if it
@@ -96,6 +97,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-14: the pace note's gaps, a third pass: thermotaxis memory and dispersal over hours without food, AFD's
+  threshold following a hold of at least 15 min, tap habituation's protocol timescales (a review); no fitted τ yet.
 - 2026-10-14: the pace note's gaps, a second pass: receptor latency to nose touch, a smell avoidance latency, the
   feeding and lethargus time scales; none of the 45 open papers scanned gives a touch-to-reversal latency in text.
 - 2026-10-14: the pace note, a first pass ([docs/research/pace.md](docs/research/pace.md)): latencies to touch,

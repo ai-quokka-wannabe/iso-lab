@@ -44,6 +44,12 @@ worms to plate taps and to optogenetic stimulation of the six gentle-touch neuro
   2016](https://doi.org/10.1101/lm.041830.116), PMC5026203). Their 2017 paper (under *Gaps, to Be Read*) restates that
   result, "longer response latency", and its own controls show it in figures only. These are latencies to stimulating
   a neuron, not to touch.
+- **Habituation to taps, at second-scale intervals.** A review from the Rankin laboratory, summarising Rankin et
+  al. 1990, writes that reversal distance "decremented after repeating the stimulus 40 times at interstimulus
+  intervals (ISIs) of 10 s or 60 s. This response decrement recovered to the baseline after a few minutes"
+  ([Bozorgmehr et al. 2013](https://doi.org/10.3389/fphys.2013.00088), PMC3750945). Longer memories follow training:
+  after spaced training, memory was tested "24 h later", and after massed training "intermediate term memory lasts 16 but
+  not 24 h". These are secondary statements and protocol timescales, not fitted time constants.
 
 ### Noxious Heat
 
@@ -78,9 +84,24 @@ light on worms.
 ### Temperature in the Physiological Range
 
 Thermotaxis, the response to temperatures the worm prefers, is a different behaviour from heat avoidance (Wittenburg
-and Baumeister 1999); its time course is still to be read. One study of rapid cooling scores a reversal as a response
-if it starts "within 5 s of stimulation initiation" ([Lin et al. 2024](https://doi.org/10.1038/s41467-023-44638-5),
-PMC10770330): a scoring window, like Liu et al.'s, not a measured latency.
+and Baumeister 1999); its reaction latency is still to be read. One study of rapid cooling scores a reversal as a
+response if it starts "within 5 s of stimulation initiation" ([Lin et al. 2024](https://doi.org/10.1038/s41467-023-44638-5),
+PMC10770330): a scoring window, like Liu et al.'s, not a measured latency. Two slower timescales are stated in text:
+
+- **Hours, for a remembered temperature without food.** Worms placed on a thermal gradient without food for one hour
+  "accumulated at the temperature of previous cultivation"; "when left longer on the thermal gradient, animals started
+  dispersing in several hours and dispersed almost evenly within 24 hours regardless of their previous cultivation
+  temperature" ([Aoki et al. 2022](https://doi.org/10.1371/journal.pgen.1010219), PMC9176836). The authors tie the
+  dispersal to starvation. The time course is in their figures, not read; hours to a day is an order of magnitude, not
+  a time constant.
+- **Minutes, in the thermosensory neuron.** In patch-clamp recordings from AFD in glued animals, the neuron exposed
+  through a slit in the cuticle, AFD's activation threshold depends on the temperature at which the neuron is held
+  during the recording. The paper states the hold for a mutant: "In contrast with wild-type AFD neurons, the
+  application of a holding temperature of 17°C for at least 15 min to pde-2 mutant AFD neurons failed to shift T * to
+  the new temperature" ([Wang et al. 2013](https://doi.org/10.1085/jgp.201310959), PMC3787776). That wild-type
+  neurons shift after a like hold is the lab's reading of this contrast and of their Figure 6, not read; the wild-type
+  hold time is not stated. "At least 15 min" is the protocol's minimum hold: a shift seen after it says nothing of
+  how fast the threshold moves, and it is not a time constant.
 
 ### Smell
 
@@ -134,7 +155,10 @@ show, so it is weak. The Grid has no chemical sense yet in any case.
   ([doi:10.1038/s41539-017-0011-8](https://doi.org/10.1038/s41539-017-0011-8), PMC6161508), for "reversal latency";
   read in full, it measures latency to light-activation of ASH, with values in figures only.
 - The heat-avoidance reaction times of Mohammadi et al. 2013, Figure 2c, and Wittenburg and Baumeister 1999 in full.
-- A thermotaxis time course, and the primary source for lethargus (Singh and Sulston 1978).
-- Habituation to repeated taps, and its time constants (the Rankin laboratory's papers are the classic source; none
-  was open in full text in this search).
+- A thermotaxis reaction latency (the slower timescales above are orders of magnitude only), and the primary source
+  for lethargus (Singh and Sulston 1978). [Roman et al. 2023](https://doi.org/10.1073/pnas.2215191120) (PMC10068832)
+  fit a model of thermal preference after starvation with "four time scales", the avoidance slower than the
+  habituation; the fitted values are in their supplementary tables, not read.
+- Fitted time constants for tap habituation and its recovery: the primary papers (Rankin et al. 1990 and later) were
+  not open in full text; only a review's summary is read.
 - The timing of sleep-like quiescence outside lethargus.
