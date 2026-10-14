@@ -134,13 +134,17 @@ points to the open ones and says what waits on each.
   joint) and falls along the body (medians 3.2 to 4.5% at joints 4 to 6), though the tail joint varies most.
   Smoothing the skeletons along their length lowers the joints by similar proportions (a five-point mean keeps about
   0.8 of each share), the tail most, so the gradient survives it - but the smoothing leaves the tips, the noisiest
-  points, untouched; a temporal check, or the dataset's own account of its tracking error, comes before an issue.
+  points, untouched; averaging over a tenth of a second removes 0.6 to 1.8% of it per joint, so it is not mainly noise
+  independent between frames. Next: read the dataset's own account of its tracking, including any smoothing in time
+  and head-tail swaps, then draft the issue.
 - **Terrace edges** (master-control; the maintainer takes it up once the lab is set up - file nothing). A
   chain can be thrown when a segment crosses a terrace edge; a fix is in progress. Until it lands, every life
   in this lab is lived on a flat arena.
 
 ## Done
 
+- 2026-10-14: averaged over neighbouring frames, the bends beyond 0.9 rad barely fall (0.6 to 1.8% per joint at a
+  tenth of a second), on 34 recordings; the head's ratio within 0.002 of the body's, no evidence either way.
 - 2026-10-14: the arena's first life: the placeholder lived all 28 800 ticks of a fifteen-minute life on lavapipe,
   and Clu replayed its log with all 902 hashes agreeing; 9 intents (0.03%) arrived a tick late and were refused.
 - 2026-10-14: the midbody speed's review taken: no speed where the body has no direction, the notebook pinned to its
