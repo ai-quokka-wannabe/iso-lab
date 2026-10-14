@@ -190,7 +190,12 @@ at that level** - the hybrid recalled 18% against 99.8% for linear attention of 
 points against one step of the same read, and frozen and given streams up to three times as long it stayed 0.79 to 0.84 below. The 2026-10-14
 journal has the numbers and a hunch about why (the settling falls into the mixture states of Hebb's rule). A pilot of
 v2, written by the delta rule ([its notebook](../../notebooks/h11v2_delta_pilot.ipynb)), recalled 0.89 and its
-settling did no harm that the pilot could detect, but it did not beat a DeltaNet memory of the same size.
+settling did no harm that the pilot could detect, but it did not beat a DeltaNet memory of the same size. A third test,
+recall from a noisy cue ([its notebook](../../notebooks/h11v3_noisy_cue.ipynb)), refuted v2's design there too: 0.59
+against DeltaNet's 0.94, the settling harmful. A fourth, v4, a DeltaNet whose cue settles in a Hopfield memory of
+its keys ([its notebook](../../notebooks/h11v4_keyclean.ipynb)), recalled 0.75 against 0.94 and its settling helped at
+no noise level. Across all four, training turned the settling's inverse temperature down: the attractor never earned
+its place.
 
 ## Adding a Hypothesis
 
