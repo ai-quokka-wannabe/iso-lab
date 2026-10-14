@@ -40,7 +40,7 @@ Top first. Each item is sized for one run; split it here before starting if it i
    placeholder brain that only undulates gently, shaped after
    [rc-worm](https://github.com/ai-quokka-wannabe/rc-worm) as the example of a Program - live one short headless
    life on a flat arena, keep its Disk, and extract the same features from it. Split into runs: (a) Master Control
-   builds from `external/` and passes its own cheap suite, done; (b) the Grid built with lavapipe; (c) the
+   builds from `external/` and passes its own cheap suite, done; (b) the Grid built with lavapipe, done; (c) the
    placeholder Program; (d) one life, its Disk, and its features.
 4. **Survey associative memory for a worm-sized brain**, as `docs/research/associative-memory.md`: Hebbian
    learning and Oja's rule, Hopfield networks classical and modern, Boltzmann machines, dense associative
@@ -138,6 +138,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-14: the Grid builds from `external/` with the Vulkan SDK and runs on lavapipe alone: its three verifications and
+  22 tests pass, and its reference render is recorded as the lab's first arena reference (journal).
 - 2026-10-14: Master Control builds in place from `external/` (the lab's Cargo workspace now excludes it) and passes its
   own cheap suite, 92 tests, at the pinned commit; the arena's first step.
 - 2026-10-14: smoothing the skeletons along their length lowers the head's share beyond 0.9 rad no more than the body's,
