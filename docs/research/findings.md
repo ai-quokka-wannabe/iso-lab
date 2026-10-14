@@ -65,7 +65,7 @@ was the strongest fixed-size memory in every test it was in (v2 to v5), but that
 rules. Evidence: the v2 and v3 result sections above.
 *For bigger brains*: the question is open; settle it with the ablation before choosing a write rule.
 
-### M5. A memory that keeps every key copes better with noisy cues - reading
+### M5. Softmax attention coped better with noisy cues than DeltaNet - reading
 
 Softmax attention, which keeps every key, beat DeltaNet more the noisier the cue. One reading is that a linear read
 cannot remove the part of the noise inside the span of the stored keys; no run has isolated that cause, and the two
