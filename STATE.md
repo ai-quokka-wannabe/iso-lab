@@ -114,8 +114,8 @@ points to the open ones and says what waits on each.
   The benchmark is not frozen until food is settled, by these issues or by comparing with foodless worms instead.
 - **The worm's bends against the Grid's joint limit** (tron-grid-lite; not yet an issue). In twelve reference
   recordings 31 to 46% (median 38%) of the skeletonised frames bend beyond the Grid's 0.9 rad at some eight-arc joint
-  (journal of 2026-10-14). Per joint the excess is greatest at the head (13% of frames at the first joint) and
-  falls along the body (about 4% at the middle joints). Before asking for a higher limit, the lab checks how much of
+  (journal of 2026-10-14). Per joint the excess is greatest at the head (median 13% of frames at the first
+  joint) and falls along the body (medians 3.2 to 4.5% at joints 4 to 6), though the tail joint varies most. Before asking for a higher limit, the lab checks how much of
   the head's excess survives smoothing the skeletons; then an issue, with the evidence.
 - **Terrace edges** (master-control; the maintainer takes it up once the lab is set up - file nothing). A
   chain can be thrown when a segment crosses a terrace edge; a fix is in progress. Until it lands, every life
@@ -123,8 +123,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
-- 2026-10-14: per joint, the bends beyond the Grid's limit are greatest at the head (13% of frames) and fall along the
-  body (about 4% mid-body); a smoothing check next.
+- 2026-10-14: per joint, the bends beyond the Grid's limit are greatest at the head (median 13% of frames) and fall along
+  the body (medians 3.2 to 4.5% at joints 4 to 6); a smoothing check next.
 - 2026-10-14: the eight-arc posture in Rust, and a first measurement: in 12 reference recordings, 31 to 46% of
   skeletonised frames bend beyond the Grid's 0.9 rad at some joint; a per-joint breakdown next.
 - 2026-10-14: the pace note gains quiescence after stress (Hill et al. 2014): suppressed up to an hour after a heat shock,
