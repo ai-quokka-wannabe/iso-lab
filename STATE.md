@@ -38,7 +38,9 @@ Top first. Each item is sized for one run; split it here before starting if it i
    Grid (software Vulkan through Mesa's lavapipe) from `external/`, write the lab's own minimal Program - a
    placeholder brain that only undulates gently, shaped after
    [rc-worm](https://github.com/ai-quokka-wannabe/rc-worm) as the example of a Program - live one short headless
-   life on a flat arena, keep its Disk, and extract the same features from it.
+   life on a flat arena, keep its Disk, and extract the same features from it. Split into runs: (a) Master Control
+   builds from `external/` and passes its own cheap suite, done; (b) the Grid built with lavapipe; (c) the
+   placeholder Program; (d) one life, its Disk, and its features.
 4. **Survey associative memory for a worm-sized brain**, as `docs/research/associative-memory.md`: Hebbian
    learning and Oja's rule, Hopfield networks classical and modern, Boltzmann machines, dense associative
    memory - what each is, what it would cost a brain on the worm's scale to run, which of the worm's
@@ -123,6 +125,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-14: Master Control builds in place from `external/` (the lab's Cargo workspace now excludes it) and passes its
+  own cheap suite, 92 tests, at the pinned commit; the arena's first step.
 - 2026-10-14: per joint, the bends beyond the Grid's limit are greatest at the head (median 13% of frames) and fall along
   the body (medians 3.2 to 4.5% at joints 4 to 6); a smoothing check next.
 - 2026-10-14: the eight-arc posture in Rust, and a first measurement: in 12 reference recordings, 31 to 46% of
