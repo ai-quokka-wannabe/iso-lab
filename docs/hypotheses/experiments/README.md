@@ -123,3 +123,8 @@ out of their sources when the experiment is prepared.
 | F10 | Watch for a self-model | to plan |
 | F11 | A scan for latent pathology | to plan |
 | F12 | Predict the consequence, then refine | to plan |
+| F13 | A memory that renormalises time, shaped like MERA | to plan |
+| F14 | Thinking in loops: automata, their groups, graphs and knots | to plan |
+| F15 | Rhythm and direction twisted together, as in the Hopf fibration | to plan |
+| F16 | Harmonic analysis, and the Kakeya needle in a worm's turn | to plan |
+| F17 | Metaphysics, kept for its testable parts | to plan |
