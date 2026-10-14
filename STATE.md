@@ -124,6 +124,8 @@ points to the open ones and says what waits on each.
 
 - 2026-10-14: the eight-arc posture in Rust, and a first measurement: in 12 reference recordings, 31 to 46% of
   skeletonised frames bend beyond the Grid's 0.9 rad at some joint; a per-joint breakdown next.
+- 2026-10-14: the pace note gains quiescence after stress (Hill et al. 2014): suppressed up to an hour after a heat shock,
+  a peak 20 minutes after cold; satiety quiescence still a gap.
 - 2026-10-14: the findings kept for the ladder: [docs/research/findings.md](docs/research/findings.md), a ledger of what
   the lab has tested (failures beside successes) and the lessons of method; H12, a plain worm brain, as a hunch.
 - 2026-10-14: H11 v5, a pilot of binary keys for sharp basins: the settling still no help (-0.22 [-1.07, +0.64] against
