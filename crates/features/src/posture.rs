@@ -42,6 +42,8 @@ pub const COS_GRID_JOINT_LIMIT: f64 = 0.621_609_968_270_664_5;
 pub struct EightArcs {
     /// The skeleton's arc length, in the skeleton's units (micrometres for the reference worms).
     pub length: f64,
+    /// The ends of the arcs, head first: the head's tip, the seven joints, and the tail's tip.
+    pub ends: [(f64, f64); ARCS + 1],
     /// The chord of each arc, head first, as (dx, dy).
     pub chords: [(f64, f64); ARCS],
 }
@@ -101,7 +103,7 @@ pub fn eight_arcs(skeleton: &[f32]) -> Option<EightArcs> {
     if chords.iter().any(|&(dx, dy)| dx * dx + dy * dy == 0.0) {
         return None;
     }
-    Some(EightArcs { length, chords })
+    Some(EightArcs { length, ends, chords })
 }
 
 /// A skeleton, given as (x, y) pairs, smoothed along its length: each point replaced by the mean of

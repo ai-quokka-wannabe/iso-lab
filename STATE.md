@@ -31,7 +31,8 @@ Top first. Each item is sized for one run; split it here before starting if it i
    ([data/README.md § The Reference Draw](data/README.md#the-reference-draw)); and `fetch-block`, which fetches a
    block and checks every MD5, done; block 1 itself is not yet fetched (see *Blocked*); (c) the skeletons are read
    (crate `features`, by `hdf5-pure`; the published feature table cannot be read by the pure-Rust readers tried, and
-   the lab computes its own measures anyway), next the comparison space's measures from them, in seconds and body
+   the lab computes its own measures anyway), next the comparison space's measures from them - a midbody speed is
+   built but fails its check in one record (journal of 2026-10-14, *A Midbody Speed*) - in seconds and body
    lengths, as the frame rate varies between recordings (25.4 to 32.6 fps seen), and with a rule for recordings of
    other lengths than 15 minutes (5 and 120 minutes seen; journal of 2026-10-14, *How Long the Reference Recordings
    Are*); (d) the reference statistics.
@@ -142,6 +143,10 @@ points to the open ones and says what waits on each.
 
 - 2026-10-14: the arena's first life: the placeholder lived all 28 800 ticks of a fifteen-minute life on lavapipe,
   and Clu replayed its log with all 902 hashes agreeing; 9 intents (0.03%) arrived a tick late and were refused.
+- 2026-10-14: the midbody speed's review taken: no speed where the body has no direction, the notebook pinned to its
+  records and numpy in step; the check's result unchanged.
+- 2026-10-14: a midbody speed at the eight-arc resolution; its check against the dataset's own speed fails in one record
+  of sixteen (correlation 0.947 against the 0.95 required), where the 49-point version agrees; not yet trusted.
 - 2026-10-14: the placeholder Program, `crates/placeholder-worm`: an eight-segment chain undulating at 0.18 Hz and 0.3 rad,
   its C interface checked against the Grid's published layout; the Grid's loader lists it as usable.
 - 2026-10-14: the Grid builds from `external/` with the Vulkan SDK and runs on lavapipe alone: its three verifications and
