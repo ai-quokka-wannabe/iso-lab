@@ -113,8 +113,9 @@ A reference recording lasts 15 minutes, 900 s. So:
 - **The habituation window.** Yemini et al. tracked 25 wild-type worms for two hours without the usual wait and found
   speed decaying with τ = 19 minutes, midbody amplitude with τ = 48 minutes and crawling frequency with τ = 19
   minutes. The reference recordings start 30 minutes after the worm is moved, so a Grid life must be compared over the
-  matching window, or the creature's own settling must be shown to follow the worm's; which, is to be fixed with the
-  pace note (STATE.md item 1).
+  matching window, or the creature's own settling must be shown to follow the worm's; which, is fixed here before
+  freezing, with the settling time constants of [the pace
+  note](../research/pace.md#time-constants-of-internal-states).
 - **Missing frames.** Yemini et al. drop frames that were dropped because the processor could not keep up with the
   video, blurred by a stage movement, or whose extraction failed, and note that coiling worms "suffer a large portion
   of segmentation failures". So measures that depend on large bends may be biased in the reference and not in the
