@@ -18,7 +18,7 @@ are read from the world's sources at the commits `external/` pins (tron-grid-lit
 |---|---|---|
 | Body | Soft, continuous; about a millimetre long | A chain of at most eight rigid segments joined by at most seven servos (`SEGMENTS_MAX` in link's `src/protocol.rs`), its length the Program's choice of `segment_count` and `segment_spacing` |
 | What is recorded | A skeleton of 49 points per frame, from video (Yemini et al. 2013) | Every tick, each segment's position, yaw and pitch (`CreatureState` and `SegmentPose` in link's `src/protocol.rs`), on the Disk |
-| Rate | 20 to 30 frames per second, "new videos" 30 (Yemini et al. 2013); 32.57 in record 1011832 ( [data/README.md § The Phase 0 Survey](../../data/README.md#the-phase-0-survey)) | 32 ticks per second (`TICK_SECONDS` = 0.031 25 s in master-control's `src/physics.rs`) |
+| Rate | 20 to 30 frames per second, "new videos" 30 (Yemini et al. 2013); 32.57 in record 1011832 ([data/README.md § The Phase 0 Survey](../../data/README.md#the-phase-0-survey)) | 32 ticks per second (`TICK_SECONDS` = 0.031 25 s in master-control's `src/physics.rs`) |
 | Gaps | 46% of frames without a skeleton in record 1011832. Yemini et al. name three causes - a dropped frame, a stage movement, a failed extraction - and how the 46% splits among them is not yet known | None: every tick has every pose |
 | Bending | Unbounded by the recording; local bends can be large | Each servo bounded: the Grid's limit for the class is 0.9 rad, about 52 degrees (`roster.cpp` in tron-grid-lite), under the world's ceiling of pi/2 (`WORLD_MAX_JOINT_ANGLE` in master-control's `src/roster.rs`) |
 | Plane | Crawling on agar, two-dimensional | Three-dimensional poses; on the flat arena a trailing segment's pitch is zero, while the head "pitches as its own vertices meet the floor" (link's `SegmentPose` and `CreatureState`) |
@@ -97,14 +97,17 @@ A reference recording lasts 15 minutes, 900 s. So:
   quality" and that serotonin and dopamine "promote food-related behaviors such as eating, egg-laying and slow
   locomotion"; so food changes what the benchmark measures, though the size of the change for each measure is still to
   be read from the primary sources. A Grid worm compared with on-food worms is compared with an animal in another
-  condition. One lead the other way: Stephens et al. 2008 filmed worms rinsed of their bacteria, on plates with no
-  lawn mentioned, and found four eigenworms carrying over 95% of the variance, near Yemini et al.'s six for 97% on
-  food, so posture may depend less on food than locomotion does. Three ways forward, none chosen: compare with the
-  reference's N2 recordings made without food (28 records by their metadata, which may overlap the males, larvae and
-  recordings without the wait; [data/README.md § The Phase 0 Survey](../../data/README.md#the-phase-0-survey); their
-  protocol not yet read); ask the world for food and a feeding signal, which hunch B1's "am I taking in energy now?"
-  also needs; or restrict the benchmark to measures shown not to differ between on and off food in the worm, from a
-  source still to be found. At the maintainer's request the world's half is asked for by issue: food on the floor in
+  condition. One pointer for later: Stephens et al. 2008 filmed worms "rinsed of E. coli", on plates with no lawn
+  mentioned, so their eigenworms describe worms off food. Each paper's variance share comes from eigen-shapes fitted
+  to its own data, so the two figures say nothing about whether postures on and off food match. *A hunch*: posture
+  depends on food less than locomotion does. It would be tested by projecting both datasets on one shared basis and
+  comparing the distributions of the amplitudes, and refuted if they differ by the benchmark's own comparison. Three
+  ways forward, none chosen: compare with the reference's N2 recordings made without food (28 records by their
+  metadata, which may overlap the males, larvae and recordings without the wait; [data/README.md § The Phase 0
+  Survey](../../data/README.md#the-phase-0-survey); their protocol not yet read); ask the world for food and a feeding
+  signal, which hunch B1's "am I taking in energy now?" also needs; or restrict the benchmark to measures shown not to
+  differ between on and off food in the worm, from a source still to be found. At the maintainer's request the world's
+  half is asked for by issue: food on the floor in
   [master-control#63](https://github.com/ai-quokka-wannabe/master-control/issues/63), a sense of the body's own intake
   in [tron-grid-lite#153](https://github.com/ai-quokka-wannabe/tron-grid-lite/issues/153).
 - **The habituation window.** Yemini et al. tracked 25 wild-type worms for two hours without the usual wait and found
@@ -112,11 +115,11 @@ A reference recording lasts 15 minutes, 900 s. So:
   minutes. The reference recordings start 30 minutes after the worm is moved, so a Grid life must be compared over the
   matching window, or the creature's own settling must be shown to follow the worm's; which, is to be fixed with the
   pace note (STATE.md item 1).
-- **Missing frames.** Yemini et al. drop frames that were dropped by the camera, blurred by a stage movement, or whose
-  extraction failed, and note that coiling worms "suffer a large portion of segmentation failures". So measures that
-  depend on large bends may be biased in the reference and not in the Grid's recordings. The tool must report how the
-  gaps split by cause and, per measure, how much it depends on frames likely to be lost, and the benchmark must say
-  whether the Grid's frames are masked to match.
+- **Missing frames.** Yemini et al. drop frames that were dropped because the processor could not keep up with the
+  video, blurred by a stage movement, or whose extraction failed, and note that coiling worms "suffer a large portion
+  of segmentation failures". So measures that depend on large bends may be biased in the reference and not in the
+  Grid's recordings. The tool must report how the gaps split by cause and, per measure, how much it depends on frames
+  likely to be lost, and the benchmark must say whether the Grid's frames are masked to match.
 - **The joint limit.** If a real worm's bend over an eighth of its length often exceeds 0.9 rad, the Grid's body
   cannot be indistinguishable on posture whatever its brain does. That would be a finding about the body, for the
   world's maintainers by the rule *This repository, and the world's by their own rules*, never a reason to tune the
