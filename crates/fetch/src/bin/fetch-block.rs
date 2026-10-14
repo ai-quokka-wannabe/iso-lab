@@ -15,14 +15,16 @@
 
 //! `fetch-block <block>` - downloads the features files of one block of the reference draw
 //! ([`ORDER`]) into [`RAW`], each named by its record id, and accepts a file only once its MD5
-//! matches the record's. A file already present and correct is kept; one that fails is fetched
-//! again, up to [`ATTEMPTS`] times. Run from the repository's root; `data/raw/` is never
-//! committed (data/README.md).
+//! matches the record's. A file comes in [`PIECE`]-byte `Range` requests appended to a `.part`
+//! file, each request with its own time limit, so a slow server never cuts a file short and an
+//! interrupted run, or an interrupted file, resumes where it stopped. A file already present
+//! and correct is kept. After [`ATTEMPTS`] failures in a row without progress, the file is
+//! given up. Run from the repository's root; `data/raw/` is never committed (data/README.md).
 
 use fetch::verify_md5;
 use fetch::zenodo::content_url;
-use std::fs::File;
-use std::io::BufReader;
+use std::fs::{File, OpenOptions};
+use std::io::{BufReader, Read};
 use std::process::ExitCode;
 use std::thread::sleep;
 use std::time::Duration;
@@ -30,11 +32,13 @@ use std::time::Duration;
 const ORDER: &str = "data/manifests/owmd-n2-order.tsv";
 const RAW: &str = "data/raw/owmd-n2";
 const ATTEMPTS: u32 = 6;
+const PIECE: u64 = 8 * 1024 * 1024;
 
-/// One file of the block: its record, its name on Zenodo and its published MD5.
+/// One file of the block: its record, its name on Zenodo, its size and its published MD5.
 struct Wanted {
     record: u64,
     key: String,
+    size: u64,
     checksum: String,
 }
 
@@ -43,14 +47,16 @@ fn block_rows(block: u32) -> Result<Vec<Wanted>, String> {
     let mut wanted = Vec::new();
     for (index, line) in text.lines().enumerate().skip(1) {
         let fields: Vec<&str> = line.split('\t').collect();
-        let [_, row_block, record, key, _, checksum] = fields[..] else {
+        let [_, row_block, record, key, size, checksum] = fields[..] else {
             return Err(format!("line {} of {ORDER} does not have six fields", index + 1));
         };
         if row_block.parse::<u32>().ok() == Some(block) {
             let record = record.parse().map_err(|_| format!("line {} of {ORDER} has no record id", index + 1))?;
+            let size = size.parse().map_err(|_| format!("line {} of {ORDER} has no size", index + 1))?;
             wanted.push(Wanted {
                 record,
                 key: key.to_owned(),
+                size,
                 checksum: checksum.to_owned(),
             });
         }
@@ -62,11 +68,25 @@ fn is_good(path: &str, checksum: &str) -> bool {
     File::open(path).map(|file| verify_md5(BufReader::new(file), checksum).is_ok()).unwrap_or(false)
 }
 
-fn download(agent: &ureq::Agent, url: &str, partial: &str) -> Result<(), String> {
-    let mut response = agent.get(url).call().map_err(|error| error.to_string())?;
-    let mut file = File::create(partial).map_err(|error| error.to_string())?;
-    std::io::copy(&mut response.body_mut().as_reader(), &mut file).map_err(|error| error.to_string())?;
-    Ok(())
+/// Appends the next piece of the file at `url` to `partial`, which already holds `have` bytes.
+fn next_piece(agent: &ureq::Agent, url: &str, partial: &str, have: u64, size: u64) -> Result<u64, String> {
+    let last = (have + PIECE).min(size) - 1;
+    let mut response = agent
+        .get(url)
+        .header("Range", format!("bytes={have}-{last}"))
+        .call()
+        .map_err(|error| error.to_string())?;
+    if response.status() != 206 {
+        return Err(format!("asked for a range, got status {}", response.status()));
+    }
+    let mut file = OpenOptions::new().append(true).create(true).open(partial).map_err(|error| error.to_string())?;
+    let expected = last + 1 - have;
+    let copied = std::io::copy(&mut response.body_mut().as_reader().take(expected), &mut file).map_err(|error| error.to_string())?;
+    if copied == expected {
+        Ok(copied)
+    } else {
+        Err(format!("a piece ended after {copied} of {expected} bytes"))
+    }
 }
 
 fn fetch_one(agent: &ureq::Agent, wanted: &Wanted) -> Result<(), String> {
@@ -76,18 +96,30 @@ fn fetch_one(agent: &ureq::Agent, wanted: &Wanted) -> Result<(), String> {
     }
     let partial = format!("{path}.part");
     let url = content_url(wanted.record, &wanted.key);
-    for attempt in 0..ATTEMPTS {
-        match download(agent, &url, &partial) {
-            Ok(()) if is_good(&partial, &wanted.checksum) => {
+    let mut failures = 0;
+    while failures < ATTEMPTS {
+        let have = std::fs::metadata(&partial).map(|meta| meta.len()).unwrap_or(0);
+        if have >= wanted.size {
+            if have == wanted.size && is_good(&partial, &wanted.checksum) {
                 return std::fs::rename(&partial, &path).map_err(|error| error.to_string());
             }
-            Ok(()) => eprintln!("record {}, attempt {}: MD5 mismatch", wanted.record, attempt + 1),
-            Err(error) => eprintln!("record {}, attempt {}: {error}", wanted.record, attempt + 1),
+            eprintln!("record {}: {have} bytes that do not match the MD5; starting again", wanted.record);
+            let _ = std::fs::remove_file(&partial);
+            failures += 1;
+            continue;
         }
-        let _ = std::fs::remove_file(&partial);
-        sleep(Duration::from_secs(2 << attempt));
+        match next_piece(agent, &url, &partial, have, wanted.size) {
+            Ok(_) => failures = 0,
+            Err(error) => {
+                failures += 1;
+                eprintln!("record {}, at byte {have}, failure {failures}: {error}", wanted.record);
+                if failures < ATTEMPTS {
+                    sleep(Duration::from_secs(2 << failures));
+                }
+            }
+        }
     }
-    Err(format!("record {}: gave up after {ATTEMPTS} attempts", wanted.record))
+    Err(format!("record {}: gave up after {ATTEMPTS} failures in a row", wanted.record))
 }
 
 fn main() -> ExitCode {
@@ -118,7 +150,7 @@ fn main() -> ExitCode {
     let agent: ureq::Agent = ureq::Agent::config_builder()
         .proxy(ureq::Proxy::try_from_env())
         .timeout_connect(Some(Duration::from_secs(30)))
-        .timeout_global(Some(Duration::from_secs(900)))
+        .timeout_global(Some(Duration::from_secs(600)))
         .build()
         .into();
     let mut failed = 0;
