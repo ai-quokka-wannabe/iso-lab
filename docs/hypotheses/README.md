@@ -187,7 +187,7 @@ statistic fixed before the run; and, under ablation, when its gain survives remo
 *Tested so far*: two toy tests of associative recall, in
 [notebooks/h11_hebbian_hopfield_transformer.ipynb](../../notebooks/h11_hebbian_hopfield_transformer.ipynb): **refuted
 at that level** - the hybrid recalled 18% against 99.8% for linear attention of the same memory, its settling cost 66
-points against one step of the same read, and it did no better when frozen and given longer streams. The 2026-10-14
+points against one step of the same read, and frozen and given streams up to three times as long it stayed 0.79 to 0.84 below. The 2026-10-14
 journal has the numbers and a hunch about why (the settling falls into the mixture states of Hebb's rule); the next
 version writes by the delta rule.
 

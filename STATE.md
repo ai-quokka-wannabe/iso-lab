@@ -116,8 +116,8 @@ points to the open ones and says what waits on each.
 ## Done
 
 - 2026-10-14: H11, a Hebbian Hopfield transformer (the maintainer's hunch), refuted at the toy level: 18% recall
-  against 99.8% for linear attention of the same memory, the settling itself the harm; frozen Hebbian memories still
-  learned three times the bindings they were trained on.
+  against 99.8% for linear attention of the same memory, the settling itself the harm; frozen, the matched Hebbian memory
+  still recalled 92% in streams three times the trained length.
 - 2026-10-14: the lengths of 15 reference recordings: 13 last 15 minutes, one 5 and one 120; the benchmark needs a
   rule for unequal lengths.
 - 2026-10-14: the reference skeletons read in Rust (crate `features`), identical to h5py's on 13 files; the published
