@@ -52,7 +52,7 @@ Top first. Each item is sized for one run; split it here before starting if it i
    a keep-the-state rule for ties.
 6. **Plan an experiment for every one of Matej's 98 ideas and hunches** - the maintainer's request - in the format
    of [docs/hypotheses/experiments/README.md](docs/hypotheses/experiments/README.md), whose index shows which are
-   planned. A, B and C1-C17 are done (C18 is under *Blocked*); the rest, one task each, in this order: **C19-C24**, **D** (13, and answer
+   planned. A, B, C1-C17 and C19-C24 are done (C18 is under *Blocked*); the rest, one task each, in this order: **D** (13, and answer
    A10's question whether nematodes show anything like play), **E1-E10**, **E11-E20**, **F** (17). The journal
    records the triage, and hunches that survive are promoted into numbered hypotheses or tasks here.
 7. **Audit H10's first test by A12's plan**
@@ -137,8 +137,9 @@ points to the open ones and says what waits on each.
 
 - 2026-10-14: smoothing the skeletons along their length lowers the head's share beyond 0.9 rad no more than the body's,
   the tail's most; the tips stay unsmoothed; 31% of frames (median) still bend beyond it at some joint.
+- 2026-10-14: experiment plans for hunches C19-C24 ([C13-C24.md](docs/hypotheses/experiments/C13-C24.md)); D next.
 - 2026-10-14: experiment plans for hunches C13-C17 ([C13-C24.md](docs/hypotheses/experiments/C13-C24.md)), after four
-  rounds of review; C18 parked, C19-C24 next.
+  reviews of its pull request; C18 parked, C19-C24 next.
 - 2026-10-14: per joint, the bends beyond the Grid's limit are greatest at the head (median 13% of frames) and fall along
   the body (medians 3.2 to 4.5% at joints 4 to 6); a smoothing check next.
 - 2026-10-14: the eight-arc posture in Rust, and a first measurement: in 12 reference recordings, 31 to 46% of
