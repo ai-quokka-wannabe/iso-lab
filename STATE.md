@@ -122,14 +122,23 @@ points to the open ones and says what waits on each.
   for the sense of the body's own intake). The reference worms are filmed on food and the Grid has none
   ([docs/benchmark/FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing)).
   The benchmark is not frozen until food is settled, by these issues or by comparing with foodless worms instead.
+- **The worm's bends against the Grid's joint limit** (tron-grid-lite; not yet an issue). In twelve reference
+  recordings 31 to 46% (median 38%) of the skeletonised frames bend beyond the Grid's 0.9 rad at some eight-arc joint
+  (journal of 2026-10-14). Per joint the excess is greatest at the head (median 13% of frames at the first
+  joint) and falls along the body (medians 3.2 to 4.5% at joints 4 to 6), though the tail joint varies most. Before asking for a higher limit, the lab checks how much of
+  the head's excess survives smoothing the skeletons; then an issue, with the evidence.
 - **Terrace edges** (master-control; the maintainer takes it up once the lab is set up - file nothing). A
   chain can be thrown when a segment crosses a terrace edge; a fix is in progress. Until it lands, every life
   in this lab is lived on a flat arena.
 
 ## Done
 
-- 2026-10-14: experiment plans for hunches C13-C17 ([C13-C24.md](docs/hypotheses/experiments/C13-C24.md)), after three
+- 2026-10-14: experiment plans for hunches C13-C17 ([C13-C24.md](docs/hypotheses/experiments/C13-C24.md)), after four
   rounds of review; C18 parked, C19-C24 next.
+- 2026-10-14: per joint, the bends beyond the Grid's limit are greatest at the head (median 13% of frames) and fall along
+  the body (medians 3.2 to 4.5% at joints 4 to 6); a smoothing check next.
+- 2026-10-14: the eight-arc posture in Rust, and a first measurement: in 12 reference recordings, 31 to 46% of
+  skeletonised frames bend beyond the Grid's 0.9 rad at some joint; a per-joint breakdown next.
 - 2026-10-14: the pace note gains quiescence after stress (Hill et al. 2014): suppressed up to an hour after a heat shock,
   a peak 20 minutes after cold; satiety quiescence still a gap.
 - 2026-10-14: the findings kept for the ladder: [docs/research/findings.md](docs/research/findings.md), a ledger of what
