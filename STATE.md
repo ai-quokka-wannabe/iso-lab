@@ -25,11 +25,12 @@ Top first. Each item is sized for one run; split it here before starting if it i
    images (pace.md § Noxious Heat).
 2. **Build the feature-extraction tool** for the chosen dataset, in the lab's Rust workspace (`crates/`), and compute
    the wild-type reference statistics. Explore the data in a notebook first if it helps; the tool itself is Rust.
-   Split into runs: (a) the workspace and the MD5 check, done; (b) fix the subset and how it is drawn (seeded, from
-   the records' metadata, [data/README.md § The Phase 0 Survey](data/README.md#the-phase-0-survey)), then fetch it by
-   record id with retries and check every file with `fetch::verify_md5`; (c) read the features file, by a pure-Rust
-   HDF5 reader if one reads it (`hdf5-pure`, `hdf5-reader` and `rust-hdf5` exist; none tried yet), or else from the
-   WCON JSON, and compute the comparison space's measures; (d) the reference statistics.
+   Split into runs: (a) the workspace and the MD5 check, done; (b) the eligible manifest, done ([data/README.md § The
+   Eligible Manifest](data/README.md#the-eligible-manifest)); then fix the subset's size and its seeded draw from the
+   manifest, written down before drawing, and fetch it by record id with retries, checking every file with
+   `fetch::verify_md5`; (c) read the features file, by a pure-Rust HDF5 reader if one reads it (`hdf5-pure`,
+   `hdf5-reader` and `rust-hdf5` exist; none tried yet), or else from the WCON JSON, and compute the comparison
+   space's measures; (d) the reference statistics.
 3. **Prove the arena**: in the cloud machine, on Linux alone (the maintainer's ruling), build Master Control and the
    Grid (software Vulkan through Mesa's lavapipe) from `external/`, write the lab's own minimal Program - a
    placeholder brain that only undulates gently, shaped after
@@ -100,6 +101,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-14: the eligible manifest of the N2 reference records, written by a Rust tool (`list-n2`): 1792 records
+  listed and 1646 eligible, the counts predicted from the survey.
 - 2026-10-14: the lab's Rust workspace (toolchain 1.98.0 and its furniture taken from master-control and link, a Rust
   job in CI under `CI Success`) and its first crate, `fetch`, which checks a file against its record's MD5.
 - 2026-10-14: Liu et al. 2018's touch responses read from a figure: classified reversals peak about 0.25 s after a

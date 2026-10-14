@@ -74,6 +74,16 @@ to hold real worms out against real worms when the test is checked (Phase 0 step
 [the plan](../docs/PLAN.md)). The first subset to fetch, and how it is drawn, is the feature-extraction task's
 to fix before it computes anything; nothing above 2 GB has been downloaded.
 
+### The Eligible Manifest
+
+[manifests/owmd-n2-eligible.tsv](manifests/owmd-n2-eligible.tsv) lists the 1646 eligible records, one per line in
+ascending record id: the record id, its features file's name, its size in bytes and its MD5 as Zenodo gives it
+(43.69 GB of features files in all). It is metadata, small enough to review, and fixes the set every draw is made
+from even if Zenodo changes. It was written on 2026-10-14 by `cargo run --release --bin list-n2 --
+data/manifests/owmd-n2-eligible.tsv` (crate `fetch`, toolchain 1.98.0), which applies the survey's rule above
+unchanged; the listing held 1792 records, as on 2026-10-13. Its SHA-256 is
+`cfa9bc5f06748910c604f3593dae2f5fd14fbfb147a661250dfc5362eeb788f7`.
+
 ## Adding a Dataset
 
 Add a row with every column filled: where it comes from (a stable link and the paper describing it), its
