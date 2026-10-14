@@ -76,7 +76,7 @@ the idea for the next attempt.
 - **H11, a Hebbian Hopfield transformer** ([v1](notebooks/h11_hebbian_hopfield_transformer.ipynb) and the
   [v2 pilot](notebooks/h11v2_delta_pilot.ipynb), 2026-10-14): v1 refuted, its Hebbian settling harmful; v2, written by
   the delta rule with four heads, recalls 0.89 with no harm detected from the settling, but it does not beat a DeltaNet
-  memory of the same size. Next: recall from a noisy cue (v3, under way), then read Kanter and Sompolinsky 1987 and
+  memory of the same size. Next: recall from a noisy cue (v3), then read Kanter and Sompolinsky 1987 and
   Krotov and Hopfield 2016 and try a dense (sharper) energy.
 
 ## Blocked
