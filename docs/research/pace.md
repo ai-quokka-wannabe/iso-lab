@@ -171,6 +171,7 @@ show, so it is weak. The Grid has no chemical sense yet in any case.
 | After-effect of light | Locomotion returns to its basal rate over about 140 s, a duration, not a fitted τ | Edwards et al. 2008 |
 | Feeding, on meeting food | Pumping "rose slowly, on the time scale of 100 s of seconds", in worms food-deprived for 1-2 h and then offered food in a microfluidic chip that holds the worm at its midsection by a vacuum clamp, "leaving the head ... and tail free to move" | [Katzen et al. 2023](https://doi.org/10.7554/eLife.69779) (PMC10231927) |
 | Lethargus, the quiescence between larval stages | "typically last 1-2 h", as Faerberg et al. 2024 cite Singh and Sulston 1978; the primary source is not read | [Faerberg et al. 2024](https://doi.org/10.1242/dev.202961) (PMC11266794) |
+| Sleep-like quiescence after stress, in adults | Duration: after a 30 min heat shock at 35 °C, "both pharyngeal pumping and locomotion remain suppressed for up to an hour after exposure". Latency: after cold stress (30 min at −15 °C), "a peak of ALA-dependent locomotor quiescence at 20 minutes" - the time of a peak, not a bout's length. For contrast, not quiescence: after "a brief (<1 min) heat exposure" animals "recover normal activity within minutes", recovery from the acute response, which the paper cites to its Table S1, not read. The time courses themselves are in figures not read | [Hill et al. 2014](https://doi.org/10.1016/j.cub.2014.08.040) (PMC4254280, the author manuscript), the passages quoted read, not the whole paper |
 
 ## For the Lab
 
@@ -209,4 +210,5 @@ show, so it is weak. The Grid has no chemical sense yet in any case.
   for lethargus (Singh and Sulston 1978).
 - Fitted time constants for tap habituation and its recovery: the primary papers (Rankin et al. 1990 and later) were
   not open in full text; only a review's summary is read.
-- The timing of sleep-like quiescence outside lethargus.
+- The timing of sleep-like quiescence outside lethargus: stress-induced quiescence now has timings from Hill et al.
+  2014's text (above); satiety quiescence, and the figures' time courses, are still to read.
