@@ -1,6 +1,7 @@
 # State of the Lab
 
-**Last updated:** 2026-10-14: the comparison space drafted, the pace note filled in part, the Rust workspace begun, and H11 tried and refuted.
+**Last updated:** 2026-10-14: the comparison space drafted, the pace note filled in part, H11 tried and refuted, the reference worms' bends
+measured against the Grid's joint limit, and Master Control built and tested in place.
 
 ## Where We Are
 
@@ -39,7 +40,9 @@ Top first. Each item is sized for one run; split it here before starting if it i
    Grid (software Vulkan through Mesa's lavapipe) from `external/`, write the lab's own minimal Program - a
    placeholder brain that only undulates gently, shaped after
    [rc-worm](https://github.com/ai-quokka-wannabe/rc-worm) as the example of a Program - live one short headless
-   life on a flat arena, keep its Disk, and extract the same features from it.
+   life on a flat arena, keep its Disk, and extract the same features from it. Split into runs: (a) Master Control
+   builds from `external/` and passes its own cheap suite, done; (b) the Grid built with lavapipe, done; (c) the
+   placeholder Program, done (`crates/placeholder-worm`); (d) one life, its Disk, and its features.
 4. **Survey associative memory for a worm-sized brain**, as `docs/research/associative-memory.md`: Hebbian
    learning and Oja's rule, Hopfield networks classical and modern, Boltzmann machines, dense associative
    memory - what each is, what it would cost a brain on the worm's scale to run, which of the worm's
@@ -138,6 +141,12 @@ points to the open ones and says what waits on each.
 
 - 2026-10-14: a midbody speed at the eight-arc resolution; its check against the dataset's own speed fails in one record
   of sixteen (correlation 0.947 against the 0.95 required), where the 49-point version agrees; not yet trusted.
+- 2026-10-14: the placeholder Program, `crates/placeholder-worm`: an eight-segment chain undulating at 0.18 Hz and 0.3 rad,
+  its C interface checked against the Grid's published layout; the Grid's loader lists it as usable.
+- 2026-10-14: the Grid builds from `external/` with the Vulkan SDK and runs on lavapipe alone: its three verifications and
+  22 tests pass, and its reference render is recorded as the lab's first arena reference (journal).
+- 2026-10-14: Master Control builds in place from `external/` (the lab's Cargo workspace now excludes it) and passes its
+  own cheap suite, 92 tests, at the pinned commit; the arena's first step.
 - 2026-10-14: smoothing the skeletons along their length lowers the head's share beyond 0.9 rad no more than the body's,
   the tail's most; the tips stay unsmoothed; 31% of frames (median) still bend beyond it at some joint.
 - 2026-10-14: experiment plans for hunches C19-C24 ([C13-C24.md](docs/hypotheses/experiments/C13-C24.md)); D next.

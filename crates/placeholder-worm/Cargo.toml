@@ -1,0 +1,15 @@
+[package]
+name = "placeholder-worm"
+description = "The lab's placeholder Program: a worm-shaped chain that only undulates gently, to prove the arena."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+publish = false
+
+[lib]
+# A shared library the Grid loads (libplaceholder_worm.so), and an rlib for the tests.
+crate-type = ["cdylib", "rlib"]
+
+[lints]
+workspace = true
