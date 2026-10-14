@@ -210,5 +210,5 @@ show, so it is weak. The Grid has no chemical sense yet in any case.
   for lethargus (Singh and Sulston 1978).
 - Fitted time constants for tap habituation and its recovery: the primary papers (Rankin et al. 1990 and later) were
   not open in full text; only a review's summary is read.
-- The timing of sleep-like quiescence outside lethargus: stress-induced quiescence now has durations from Hill et al.
+- The timing of sleep-like quiescence outside lethargus: stress-induced quiescence now has timings from Hill et al.
   2014's text (above); satiety quiescence, and the figures' time courses, are still to read.
