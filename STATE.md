@@ -28,10 +28,10 @@ Top first. Each item is sized for one run; split it here before starting if it i
    Split into runs: (a) the workspace and the MD5 check, done; (b) the eligible manifest, done ([data/README.md § The
    Eligible Manifest](data/README.md#the-eligible-manifest)); and the seeded draw in blocks of 200, done
    ([data/README.md § The Reference Draw](data/README.md#the-reference-draw)); and `fetch-block`, which fetches a
-   block and checks every MD5, done; block 1 itself is not yet fetched (see *Blocked*); (c) read the features file,
-   starting on the files already fetched, by a pure-Rust HDF5 reader if one reads it (`hdf5-pure`, `hdf5-reader` and
-   `rust-hdf5` exist; none tried yet), or else from the WCON JSON, and compute the comparison space's measures; (d)
-   the reference statistics.
+   block and checks every MD5, done; block 1 itself is not yet fetched (see *Blocked*); (c) the skeletons are read
+   (crate `features`, by `hdf5-pure`; the published feature table cannot be read by the pure-Rust readers tried, and
+   the lab computes its own measures anyway), next the comparison space's measures from them, in seconds and body
+   lengths, as the frame rate varies between recordings; (d) the reference statistics.
 3. **Prove the arena**: in the cloud machine, on Linux alone (the maintainer's ruling), build Master Control and the
    Grid (software Vulkan through Mesa's lavapipe) from `external/`, write the lab's own minimal Program - a
    placeholder brain that only undulates gently, shaped after
@@ -108,6 +108,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-14: the reference skeletons read in Rust (crate `features`), identical to h5py's on 13 files; the published
+  feature table is not readable by the pure-Rust readers tried, and the lab will compute its own measures.
 - 2026-10-14: `fetch-block`, which downloads a block of the reference draw and accepts each file only by its MD5,
   resuming by byte; a run fetched part of block 1, every file checked.
 - 2026-10-14: the reference draw: the 1646 eligible records in one order fixed by seed 20261014 (pre-registered and
