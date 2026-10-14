@@ -28,7 +28,9 @@
 pub const ARCS: usize = 8;
 
 /// The Grid's bend limit for the worm class, 0.9 rad per joint (`roster.cpp` in tron-grid-lite;
-/// docs/benchmark/FEATURES.md, *The Two Bodies*).
+/// docs/benchmark/FEATURES.md, *The Two Bodies*). The Grid stores it as the `f32` 0.9, about 2.4e-8 below this, and the
+/// world's ceiling of pi/2 as an `f32` slightly above pi/2; differences that small cannot move a share reported to five
+/// decimals.
 pub const GRID_JOINT_LIMIT_RAD: f64 = 0.9;
 
 /// cos(0.9), to the nearest double: 0.62160996827066445648... (its Taylor series, summed to 40

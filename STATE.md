@@ -113,7 +113,7 @@ points to the open ones and says what waits on each.
   ([docs/benchmark/FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing)).
   The benchmark is not frozen until food is settled, by these issues or by comparing with foodless worms instead.
 - **The worm's bends against the Grid's joint limit** (tron-grid-lite; not yet an issue). In twelve reference
-  recordings a third or more of the skeletonised frames bend beyond the Grid's 0.9 rad at some eight-arc joint
+  recordings 31 to 46% (median 38%) of the skeletonised frames bend beyond the Grid's 0.9 rad at some eight-arc joint
   (journal of 2026-10-14). Per joint the excess is greatest at the head (13% of frames at the first joint) and
   falls along the body (about 4% at the middle joints). Before asking for a higher limit, the lab checks how much of
   the head's excess survives smoothing the skeletons; then an issue, with the evidence.
