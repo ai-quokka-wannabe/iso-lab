@@ -98,7 +98,7 @@ points to the open ones and says what waits on each.
 ## Done
 
 - 2026-10-14: the pace note's gaps, a third pass: thermotaxis memory and dispersal over hours without food, AFD's
-  threshold moving within 15 min of holding, tap habituation's protocol timescales (a review); no fitted τ yet.
+  threshold following a hold of at least 15 min, tap habituation's protocol timescales (a review); no fitted τ yet.
 - 2026-10-14: the pace note's gaps, a second pass: receptor latency to nose touch, a smell avoidance latency, the
   feeding and lethargus time scales; none of the 45 open papers scanned gives a touch-to-reversal latency in text.
 - 2026-10-14: the pace note, a first pass ([docs/research/pace.md](docs/research/pace.md)): latencies to touch,

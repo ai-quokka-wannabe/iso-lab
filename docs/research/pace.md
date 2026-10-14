@@ -94,13 +94,14 @@ PMC10770330): a scoring window, like Liu et al.'s, not a measured latency. Two s
   temperature" ([Aoki et al. 2022](https://doi.org/10.1371/journal.pgen.1010219), PMC9176836). The authors tie the
   dispersal to starvation. The time course is in their figures, not read; hours to a day is an order of magnitude, not
   a time constant.
-- **Minutes, in the thermosensory neuron.** In dissected preparations, AFD's activation threshold depends on the
-  temperature at which the neuron is held during the recording; a holding temperature of 17°C "for at least 15 min"
-  shifts it in wild-type neurons, as the authors' contrast with a mutant states: "In contrast with wild-type AFD
-  neurons, the application of a holding temperature of 17°C for at least 15 min to pde-2 mutant AFD neurons failed to
-  shift T * to the new temperature" ([Wang et al. 2013](https://doi.org/10.1085/jgp.201310959), PMC3787776). Fifteen
-  minutes is the protocol's holding time, so an upper bound on how fast the threshold can move, not a measured time
-  constant.
+- **Minutes, in the thermosensory neuron.** In patch-clamp recordings from AFD in glued animals, the neuron exposed
+  through a slit in the cuticle, AFD's activation threshold depends on the temperature at which the neuron is held
+  during the recording. The paper states the hold for a mutant: "In contrast with wild-type AFD neurons, the
+  application of a holding temperature of 17°C for at least 15 min to pde-2 mutant AFD neurons failed to shift T * to
+  the new temperature" ([Wang et al. 2013](https://doi.org/10.1085/jgp.201310959), PMC3787776). That wild-type
+  neurons shift after a like hold is the lab's reading of this contrast and of their Figure 6, not read; the wild-type
+  hold time is not stated. "At least 15 min" is the protocol's minimum hold: a shift seen after it says nothing of
+  how fast the threshold moves, and it is not a time constant.
 
 ### Smell
 
