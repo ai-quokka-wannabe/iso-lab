@@ -45,13 +45,14 @@ proven (STATE.md item 3), so no plan gives absolute figures yet; each will when 
   sensory and motor biology can transduce or produce - at a comparable resolution and with a comparable delay - and
   does a blind field-by-field audit catch one that does not?
 - **Method**: list every field of the senses (`TglSenses`) and of the actions (`TglActions`: the speed and turn
-  intents, `joint_targets`, the call) in the Program interface at the pinned world
-  ([PROGRAM_INTERFACE.md at c083262](https://github.com/ai-quokka-wannabe/tron-grid-lite/blob/c083262e473884cb60e83e95cddb851e4c7a8962/docs/PROGRAM_INTERFACE.md),
+  intents, `joint_targets`, the call) in the Program interface at the pinned world ([PROGRAM_INTERFACE.md at
+  c083262](https://github.com/ai-quokka-wannabe/tron-grid-lite/blob/c083262e473884cb60e83e95cddb851e4c7a8962/docs/PROGRAM_INTERFACE.md),
   also in `external/tron-grid-lite`, and its header). For each sense, name the worm's organ or neuron class that could
   transduce it; for each action, the worm's motor output that could produce it; each with a source read at the source,
   or marked as having none. Grade each field: carried by the animal; carried at a resolution the animal lacks; carried
   with a delay shorter than the animal's; not carried at all. The delay grades are read against the latencies of the
-  pace note (STATE.md item 1); until it exists they are marked *pending*, not passed.
+  pace note ([docs/research/pace.md](../../research/pace.md)); until the latencies they need are in it they are marked
+  *pending*, not passed.
 - **Baselines and controls**: a blind planted field. One agent prepares three copies of the field list, into which it
   plants none, one or two ground-truth fields (for example the body's position, or the distance to the nearest
   wall) at random places, and keeps the key; a second agent that has seen neither the key nor the preparation audits
@@ -65,7 +66,8 @@ proven (STATE.md item 3), so no plan gives absolute figures yet; each will when 
 - **Statistics**: none; a graded list, each grade with its source, and the planted-field key against the audit.
 - **Seeds and repetitions**: not applicable; the three planted copies are the repetitions.
 - **Cost**: reading, by two agents.
-- **Waits on**: nothing for the senses, actions and resolution; the delay grades wait on the pace note (STATE.md item 1).
+- **Waits on**: nothing for the senses, actions and resolution; the delay grades wait on the latencies still missing
+  from the pace note (STATE.md item 1).
 - **Leads**: found - Chalfie et al. 1985, "The neural circuit for touch sensitivity in *Caenorhabditis elegans*"
   (*The Journal of Neuroscience*, [doi:10.1523/JNEUROSCI.05-04-00956.1985](https://doi.org/10.1523/JNEUROSCI.05-04-00956.1985)).
   The other sources are the worm's sensory and motor biology, to be found and read field by field.

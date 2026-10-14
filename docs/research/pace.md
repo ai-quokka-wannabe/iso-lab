@@ -17,8 +17,10 @@ are used; none is read off a graph.
 [Liu et al. 2018](https://doi.org/10.7554/eLife.36419) (PMC6054533) recorded the responses of many freely moving
 worms to plate taps and to optogenetic stimulation of the six gentle-touch neurons.
 
-- They counted a behavioural transition as a response if it came "within 2 s after stimulus onset".
-- After a tap or a 1-second stimulation of the touch neurons, "both light and tap also evoked an increase in 'Turn'
+- For one analysis, comparing responses in two contexts against a mock stimulus, they counted the first transition
+  "within 2 s after stimulus onset"; it is a window chosen for that comparison, not their general definition of a
+  response.
+- After a tap or a 1-second stimulation of the touch neurons, "[b]oth light and tap also evoked an increase in 'Turn'
   behavior that peaked 5 s post-stimulus".
 - From their filters for reversals they suggest "the animal may integrate the sensory signal over approximately 3 s in
   determining to reverse"; this is their interpretation, worded as a suggestion.
@@ -32,7 +34,7 @@ worms to plate taps and to optogenetic stimulation of the six gentle-touch neuro
 [Mohammadi et al. 2013](https://doi.org/10.1186/1471-2202-14-66) (PMC3703451) heated a spot on the worm with a laser
 pulse of 133 ms.
 
-- "The animal's reaction time does in fact vary inversely with stimulus amplitude", and "the reaction time is
+- "[t]he animal's reaction time does in fact vary inversely with stimulus amplitude", and "the reaction time is
   proportional to the logarithm of the stimuli strength".
 - At the head the typical response is "a reversal, followed by an omega turn, then a recommencement of forward
   motion".
@@ -40,8 +42,8 @@ pulse of 133 ms.
   not read (PubMed Central's page asks for a CAPTCHA, which the lab does not get round, and Europe PMC did not serve
   the image).
 
-[Wittenburg and Baumeister 1999](https://doi.org/10.1073/pnas.96.18.10477) (PMC17914), only the abstract read: the
-"escape reflex can be observed in 98% of the adult animals". The full text could not be fetched as text; it is to be
+[Wittenburg and Baumeister 1999](https://doi.org/10.1073/pnas.96.18.10477) (PMC17914), only the abstract read: "[t]he
+escape reflex can be observed in 98% of the adult animals". The full text could not be fetched as text; it is to be
 read for a latency.
 
 ### Light
@@ -54,7 +56,7 @@ light on worms.
   the next 140 s".
 - Mutants lacking a neuropeptide-release protein (unc-31) or the G protein Gαq responded after "∼10-s delay", against
   "1–2 s for wild type".
-- "Light exposure induces body contraction within 330 ms", the interval between their images, so 330 ms is an upper
+- "[l]ight exposure induces body contraction within 330 ms", the interval between their images, so 330 ms is an upper
   bound set by the sampling, not a measured latency.
 
 ### Temperature in the Physiological Range
@@ -78,24 +80,32 @@ avoidance (Wittenburg and Baumeister 1999); its time course is to be read from a
 |---|---|---|
 | Dwelling, on food | Durations fit one exponential, τ = 482 s | [Flavell et al. 2013](https://doi.org/10.1016/j.cell.2013.08.001) |
 | Roaming, on food | Durations fit two exponentials, τ = 75 s and 520 s; "85% of roaming states have a mean lifetime of 75 sec" | Flavell et al. 2013 |
-| Settling after transfer to a new plate | Speed and crawling frequency decay with τ = 19 minutes, midbody amplitude with τ = 48 minutes | [Yemini et al. 2013](https://doi.org/10.1038/nmeth.2560) |
-| After-effect of light | Locomotion returns to its basal rate over about 140 s | Edwards et al. 2008 |
+| Settling after transfer to a new plate | Speed and crawling frequency decay with τ = 19 minutes, midbody amplitude with τ = 48 minutes; the fit is good for speed (R² = 0.96) and weaker for frequency (0.71) and amplitude (0.59) | [Yemini et al. 2013](https://doi.org/10.1038/nmeth.2560) |
+| After-effect of light | Locomotion returns to its basal rate over about 140 s, a duration, not a fitted τ | Edwards et al. 2008 |
 
 ## For the Lab
 
-- **The Grid's tick is 31.25 ms**, so every latency above, from tens of milliseconds at the receptors to seconds in
-  behaviour, is resolvable; a Program's reflexes must not be faster than the worm's merely because the tick allows it.
+- **The Grid's tick is 31.25 ms** ([the comparison space](../benchmark/FEATURES.md#the-two-bodies) gives its source).
+  The behavioural timings above, 330 ms and longer, span ten ticks or more and are resolvable; the receptors'
+  adaptation over "a few tens of milliseconds" is a timescale, not a latency, and lasts about one tick, below what a
+  tick can resolve. A Program's reflexes must not be faster than the worm's merely because the tick allows it.
 - **What the benchmark measures.** The latencies above come from stimuli the reference recordings do not contain: they
   are of spontaneous behaviour. So the benchmark can hold a Program to the time constants of its states and its rhythm
   from the recordings themselves, but to its reaction latencies only through stimulus assays, which wait on stimuli
   the experimenter can deliver on the Grid ([the C plans](../hypotheses/experiments/C1-C12.md)).
 - **The habituation window** of the comparison space rests on Yemini et al.'s τ = 19 and 48 minutes: the reference
   recordings start 30 minutes after transfer, when, if the decay starts at transfer, speed has made about 1 -
-  e^(-30/19) = 0.79 of its decline. Which window of a Grid life matches is still to be fixed.
+  e^(-30/19) = 0.79 of its decline. Which window of a Grid life matches is an open question of the comparison space
+  ([FEATURES.md § Open Questions Before Freezing](../benchmark/FEATURES.md#open-questions-before-freezing)), answered
+  when the benchmark is frozen.
 
 ## Gaps, to Be Read
 
-- A touch-to-reversal latency stated in a paper's text, or a figure read with a stated method.
+- A touch-to-reversal latency stated in a paper's text, or a figure read with a stated method. A first lead: Liu et
+  al. 2018 cite earlier work for "reversal latency" after a tap; Ardiel et al. 2017, "Habituation as an adaptive shift
+  in response strategy mediated by neuropeptides"
+  ([doi:10.1038/s41539-017-0011-8](https://doi.org/10.1038/s41539-017-0011-8), PMC6161508), found in Europe PMC and
+  open, not yet read.
 - The heat-avoidance reaction times of Mohammadi et al. 2013, Figure 2c, and Wittenburg and Baumeister 1999 in full.
 - A thermotaxis time course.
 - Habituation to repeated taps, and its time constants (the Rankin laboratory's papers are the classic source; none
