@@ -19,9 +19,9 @@ Top first. Each item is sized for one run; split it here before starting if it i
 1. **Fill the gaps in the pace note** ([docs/research/pace.md § Gaps, to Be
    Read](docs/research/pace.md#gaps-to-be-read)): a touch-to-reversal latency, which none of the 45 open papers
    scanned states in text (read it from a figure by a stated method, or from the reference recordings if they hold
-   taps); the heat-avoidance reaction times; a thermotaxis latency and fitted time constants (Roman et al. 2023's
-   supplementary tables); fitted time constants for tap habituation from primary papers; and the primary sources for
-   lethargus and sleep-like quiescence.
+   taps); the heat-avoidance reaction times; a thermotaxis latency; fitted time constants for tap habituation from
+   primary papers; and the primary sources for lethargus and sleep-like quiescence. Figures are now within reach:
+   Europe PMC's supplementary-files service serves a paper's figure images (pace.md § Noxious Heat).
 2. **Build the feature-extraction tool** for the chosen dataset (Rust, with tests and a CI job joined to
    `CI Success`), and compute the wild-type reference statistics. Explore the data in a notebook first if it
    helps; the tool itself is Rust. It fetches its subset of the N2 records itself, by record id, and checks each
@@ -97,6 +97,9 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-14: Roman et al. 2023's fitted thermal-preference time scales added to the pace note (avoidance about 45-83
+  min, habituation about 20 min and known only to a factor of about two, read as hours from a unitless table); Europe
+  PMC's supplementary-files service found to serve figure images.
 - 2026-10-14: the pace note's gaps, a third pass: thermotaxis memory and dispersal over hours without food, AFD's
   threshold following a hold of at least 15 min, tap habituation's protocol timescales (a review); no fitted τ yet.
 - 2026-10-14: the pace note's gaps, a second pass: receptor latency to nose touch, a smell avoidance latency, the
