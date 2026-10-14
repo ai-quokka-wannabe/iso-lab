@@ -1,6 +1,6 @@
 # State of the Lab
 
-**Last updated:** 2026-10-14: the comparison space drafted, the pace note filled in part, and the Rust workspace begun.
+**Last updated:** 2026-10-14: the comparison space drafted, the pace note filled in part, the Rust workspace begun, and H11 tried and refuted.
 
 ## Where We Are
 
@@ -73,6 +73,11 @@ the idea for the next attempt.
   the same memory budget, at twice the compute. Next, after item 5's re-run of this test with fairer rules: test
   phase where the hunch says it matters - the undulation phase of a rhythm generator, interference between two paths
   (F1), or more phase states.
+- **H11, a Hebbian Hopfield transformer** ([the notebook](notebooks/h11_hebbian_hopfield_transformer.ipynb),
+  2026-10-14): refuted at the toy level, the settling harmful. Next, pre-registered before it runs: H11 v2 - the
+  Hopfield matrix written by the delta (projection) rule, several heads at the same memory, a temperature per settling
+  step - against a DeltaNet control of the same memory, so a gain cannot be the delta rule alone; read Kanter and
+  Sompolinsky 1987 first.
 
 ## Blocked
 
@@ -110,6 +115,9 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-14: H11, a Hebbian Hopfield transformer (the maintainer's hunch), refuted at the toy level: 18% recall
+  against 99.8% for linear attention of the same memory, the settling itself the harm; frozen, the matched Hebbian memory
+  still recalled 92% in streams three times the trained length.
 - 2026-10-14: the lengths of 15 reference recordings: 13 last 15 minutes, one 5 and one 120; the benchmark needs a
   rule for unequal lengths.
 - 2026-10-14: the reference skeletons read in Rust (crate `features`), identical to h5py's on 13 files; the published

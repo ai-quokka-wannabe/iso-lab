@@ -162,6 +162,35 @@ judged by a statistic fixed before the run; and, under ablation, when its gain s
 phasor network was no better (its interval included zero) at twice the multiply-adds. The 2026-10-13 journal has
 the numbers; the test is kept, to return to.
 
+### H11. A Hebbian Hopfield Transformer
+
+*A hunch*, the maintainer's: one module that is at once a Hopfield network, a Boltzmann machine, a Hebbian memory,
+trained by backpropagation, and a transformer block. The bridge exists: the attention of a transformer is one update
+of a modern Hopfield network, a softmax - a Boltzmann distribution - over stored patterns
+([Ramsauer et al. 2020](https://arxiv.org/abs/2008.02217)), and linear attention is a fast-weight memory written by an
+outer-product, Hebbian rule ([Schlag, Irie and Schmidhuber 2021](https://arxiv.org/abs/2102.11174)). The hybrid
+writes each token's pattern into a classical Hopfield weight matrix by Hebb's rule as the sequence arrives
+([Hopfield 1982](https://doi.org/10.1073/pnas.79.8.2554)), so its memory stays a fixed size however long the
+sequence, where a transformer's grows with every token; it reads by letting the query settle for a few steps of
+noisy (during training), temperature-controlled Hopfield dynamics, the mean-field form of a Boltzmann machine's
+sampling ([Ackley, Hinton and Sejnowski 1985](https://doi.org/10.1207/s15516709cog0901_7)); and backpropagation
+trains everything slow - the projections, the temperature, the decay, the rest of the block - through the
+unrolled settling. It is pretrained, then learns on its own: once backpropagation has shaped the slow weights they
+are frozen, and what is new in each life - which key goes with which value - is written by the Hebbian rule alone,
+with no gradient and no teacher. For a worm-sized brain the draw is the fixed memory: H9's associative memory with H5's
+attractors, at a cost that does not grow with time.
+*Predicts*: on a recall task, better recall than a one-step Hebbian memory (linear attention) given the same
+memory, with the gain carried by the settling, and holding up better when the frozen model must learn on its own
+more than it was pretrained for.
+*Refuted*: when it recalls no better than linear attention with the same number of memory cells, judged by the
+statistic fixed before the run; and, under ablation, when its gain survives removing the settling.
+*Tested so far*: two toy tests of associative recall, in
+[notebooks/h11_hebbian_hopfield_transformer.ipynb](../../notebooks/h11_hebbian_hopfield_transformer.ipynb): **refuted
+at that level** - the hybrid recalled 18% against 99.8% for linear attention of the same memory, its settling cost 66
+points against one step of the same read, and frozen and given streams up to three times as long it stayed 0.79 to 0.84 below. The 2026-10-14
+journal has the numbers and a hunch about why (the settling falls into the mixture states of Hebb's rule); the next
+version writes by the delta rule.
+
 ## Adding a Hypothesis
 
 A pool of candidates waits in [Matej's ideas and hunches](matej-hunches.md): unverified, to be triaged and
