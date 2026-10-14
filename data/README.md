@@ -84,6 +84,17 @@ repository's root (crate `fetch`, toolchain 1.98.0), which applies the survey's 
 unchanged; the listing held 1792 records, as on 2026-10-13. Its SHA-256 is
 `cfa9bc5f06748910c604f3593dae2f5fd14fbfb147a661250dfc5362eeb788f7`.
 
+### The Reference Draw
+
+[manifests/owmd-n2-order.tsv](manifests/owmd-n2-order.tsv) puts the 1646 eligible records in one seeded order and
+cuts it into blocks of 200 (the ninth holds the last 46). Later tasks take the blocks in order, beginning with
+block 1, the development reference (200 features files, 4.87 GB), and nothing is ever redrawn. The seed (20261014)
+and the block size were written in the journal and pushed before the draw (2026-10-14, *The Reference Draw,
+Written Down First*), where the reasons are. It was written by `cargo run --release --bin draw-n2`, run from the
+repository's root; the seed and block size are constants in that command, and its generator is SplitMix64 with a
+Fisher-Yates shuffle (`fetch::draw`). Running it again gives the same bytes; the file's SHA-256 is
+`8f647d0aac25e620980725d32454615c69cd3f7c67455e6d045008763c2c9e6d`.
+
 ## Adding a Dataset
 
 Add a row with every column filled: where it comes from (a stable link and the paper describing it), its
