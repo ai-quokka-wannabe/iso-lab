@@ -74,13 +74,13 @@ the idea for the next attempt.
   phase where the hunch says it matters - the undulation phase of a rhythm generator, interference between two paths
   (F1), or more phase states.
 - **H11, a Hebbian Hopfield transformer** ([v1](notebooks/h11_hebbian_hopfield_transformer.ipynb),
-  [v2](notebooks/h11v2_delta_pilot.ipynb), [v3](notebooks/h11v3_noisy_cue.ipynb) and
-  [v4](notebooks/h11v4_keyclean.ipynb), 2026-10-14): four tests, none beating its matched control (linear attention in
-  v1, DeltaNet after), and in none did the settling beat its own ablation. Next, a hunch: an attractor with
-  sharp basins - near-binary keys (a straight-through sign) or Krotov and Hopfield 2016's dense energies - on v3's
-  noisy cues against DeltaNet, after fixing the narrow keys' unstable training. Kanter and Sompolinsky 1987 was not
-  found in open access (Crossref lists no abstract; Semantic Scholar's API marks it closed and the abstract elided by
-  the publisher, checked 2026-10-14); it stays unread and nothing leans on it.
+  [v2](notebooks/h11v2_delta_pilot.ipynb), [v3](notebooks/h11v3_noisy_cue.ipynb),
+  [v4](notebooks/h11v4_keyclean.ipynb) and the [v5 pilot](notebooks/h11v5_binary_keys.ipynb), 2026-10-14): none
+  beating its matched control (linear attention in v1, DeltaNet after), and in none did the settling beat its own
+  ablation; binary keys (v5) did not change that in a pilot of 3 seeds. Next: make the narrow-key models train reliably
+  (v4 and v5 each lost a seed), then a full test of binary keys or Krotov and Hopfield 2016's dense energies against
+  DeltaNet. Kanter and Sompolinsky 1987 was not found in open access (Crossref lists no abstract; Semantic Scholar's
+  API marks it closed and the abstract elided by the publisher, checked 2026-10-14); it stays unread.
 
 ## Blocked
 
@@ -118,6 +118,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-14: H11 v5, a pilot of binary keys for sharp basins: the settling still no help (-0.22 [-1.07, +0.64] against
+  its ablation, 3 seeds, one collapsed).
 - 2026-10-14: H11 v4, a DeltaNet that settles its cue, derived from v3: 0.75 against DeltaNet's 0.94 at the trained
   noise, its settling no help at any level; in none of four tests did the settling earn its place.
 - 2026-10-14: H11 v3, recall from a noisy cue: v2's hybrid recalls 0.59 against DeltaNet's 0.94 and softmax's 0.98 at

@@ -194,7 +194,8 @@ settling did no harm that the pilot could detect, but it did not beat a DeltaNet
 recall from a noisy cue ([its notebook](../../notebooks/h11v3_noisy_cue.ipynb)), refuted v2's design there too: 0.59
 against DeltaNet's 0.94, the settling harmful. A fourth, v4, a DeltaNet whose cue settles in a Hopfield memory of
 its keys ([its notebook](../../notebooks/h11v4_keyclean.ipynb)), recalled 0.75 against 0.94 and its settling helped at
-no noise level. In none of the four did the hybrid beat its matched control, or the settling its own ablation.
+no noise level. In none of the four did the hybrid beat its matched control, or the settling its own ablation. A pilot of a fifth,
+v5, with binary keys ([its notebook](../../notebooks/h11v5_binary_keys.ipynb)), did not change that.
 
 ## Adding a Hypothesis
 
