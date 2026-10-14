@@ -6,7 +6,10 @@
 
 Phase 0, the benchmark, is under way. The reference data is chosen - the Open Worm Movement Database's N2
 recordings ([data/README.md § The Phase 0 Survey](data/README.md#the-phase-0-survey)) - and the first
-literature note says how worm behaviour is measured. No feature is defined and no creature has been scored.
+literature note says how worm behaviour is measured. The comparison space is drafted
+([docs/benchmark/FEATURES.md](docs/benchmark/FEATURES.md)): which measures carry over to the Grid's body, and what
+must be settled before the benchmark is frozen, food first. No feature is computed yet and no creature has been
+scored.
 [docs/PLAN.md](docs/PLAN.md) says what the phases are and why the benchmark comes before any brain.
 
 ## Next
@@ -64,16 +67,11 @@ the idea for the next attempt.
 ## Blocked
 
 - **Three Dependabot alerts on `main`**, triaged on 2026-10-14
-  ([the journal](docs/journal/2026-10-14.md#dependabot-alerts-triaged)): all three sit in markdownlint-cli2's
-  dependencies and none can be fixed cleanly yet. Only `smol-toml` is reachable, through any Markdown file's
-  configuration comment, and its worst case is a slow CI job. They wait on the maintainer to dismiss them - `braces` and
-  `smol-toml` as a tolerable risk, `katex` as not used - this session's GitHub access cannot write to the alerts - and Dependabot will propose the fix
-  when upstream releases one.
-
-- **Food in the comparison** ([docs/benchmark/FEATURES.md § Open Questions Before
-  Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing)): the reference worms are on food and the
-  Grid has none. Compare with the reference's foodless N2 recordings, ask the world for food, or restrict the
-  benchmark to measures food does not change - the maintainer's decision; the benchmark is not frozen before it.
+  ([the journal](docs/journal/2026-10-14.md#dependabot-alerts-triaged)). All three sit in markdownlint-cli2's
+  dependencies, and none can be fixed cleanly yet. Only `smol-toml` is reachable, through any Markdown file's
+  configuration comment, and its worst case is a slow CI job. They wait on the maintainer to dismiss them: `braces`
+  and `smol-toml` as a tolerable risk, `katex` as not used. This session's GitHub access cannot write to the
+  alerts. Dependabot will propose the fix when upstream releases one.
 
 ## Needs From Other Repositories
 
@@ -85,6 +83,11 @@ points to the open ones and says what waits on each.
   the world provides one, chemotaxis is listed as not comparable - never quietly dropped. B2 of
   [the B plans](docs/hypotheses/experiments/B.md#b2-smell-as-an-unlabelled-fingerprint) lists the properties a
   hunch asks of it (intensity, its change over time, a left-right difference, blending mixtures, blurring traces).
+- **Food, and a sense of taking it in** ([master-control#63](https://github.com/ai-quokka-wannabe/master-control/issues/63)
+  for food on the floor and the rule for intake; [tron-grid-lite#153](https://github.com/ai-quokka-wannabe/tron-grid-lite/issues/153)
+  for the sense of the body's own intake). The reference worms are filmed on food and the Grid has none
+  ([docs/benchmark/FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing)).
+  The benchmark is not frozen until food is settled, by these issues or by comparing with foodless worms instead.
 - **Terrace edges** (master-control; the maintainer takes it up once the lab is set up - file nothing). A
   chain can be thrown when a segment crosses a terrace edge; a fix is in progress. Until it lands, every life
   in this lab is lived on a flat arena.
