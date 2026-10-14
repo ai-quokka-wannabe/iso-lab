@@ -52,7 +52,7 @@ Top first. Each item is sized for one run; split it here before starting if it i
    a keep-the-state rule for ties.
 6. **Plan an experiment for every one of Matej's 98 ideas and hunches** - the maintainer's request - in the format
    of [docs/hypotheses/experiments/README.md](docs/hypotheses/experiments/README.md), whose index shows which are
-   planned. A, B and C1-C12 are done; the rest, one task each, in this order: **C13-C24**, **D** (13, and answer
+   planned. A, B and C1-C18 are done; the rest, one task each, in this order: **C19-C24**, **D** (13, and answer
    A10's question whether nematodes show anything like play), **E1-E10**, **E11-E20**, **F** (17). The journal
    records the triage, and hunches that survive are promoted into numbered hypotheses or tasks here.
 7. **Audit H10's first test by A12's plan**
@@ -118,6 +118,7 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-14: experiment plans for hunches C13-C18 ([C13-C24.md](docs/hypotheses/experiments/C13-C24.md)); C19-C24 next.
 - 2026-10-14: the findings kept for the ladder: [docs/research/findings.md](docs/research/findings.md), a ledger of what
   the lab has tested (failures beside successes) and the lessons of method; H12, a plain worm brain, as a hunch.
 - 2026-10-14: H11 v5, a pilot of binary keys for sharp basins: the settling still no help (-0.22 [-1.07, +0.64] against
