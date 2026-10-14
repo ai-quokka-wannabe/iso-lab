@@ -1,6 +1,6 @@
 # State of the Lab
 
-**Last updated:** 2026-10-14: the Dependabot alerts triaged and the comparison space drafted.
+**Last updated:** 2026-10-14: the Dependabot alerts triaged, the comparison space drafted and the pace note begun.
 
 ## Where We Are
 
@@ -16,9 +16,9 @@ scored.
 
 Top first. Each item is sized for one run; split it here before starting if it is bigger.
 
-1. **Write the literature note on the worm's pace**, as `docs/research/pace.md`: the reaction latencies (touch,
-   light, temperature) and the time constants of internal states that the rule *The animal's pace* asks for,
-   each read from its source in PubMed Central.
+1. **Fill the gaps in the pace note** ([docs/research/pace.md § Gaps, to Be Read](docs/research/pace.md#gaps-to-be-read)):
+   a touch-to-reversal latency stated in text, the heat-avoidance reaction times, a thermotaxis time course, tap
+   habituation, and the timing of quiescence and feeding, each read from its source.
 2. **Build the feature-extraction tool** for the chosen dataset (Rust, with tests and a CI job joined to
    `CI Success`), and compute the wild-type reference statistics. Explore the data in a notebook first if it
    helps; the tool itself is Rust. It fetches its subset of the N2 records itself, by record id, and checks each
@@ -94,6 +94,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-14: the pace note, a first pass ([docs/research/pace.md](docs/research/pace.md)): latencies to touch,
+  heat and light, the body's rhythm and the time constants of four states, from text only; the gaps are item 1.
 - 2026-10-14: the comparison space drafted ([docs/benchmark/FEATURES.md](docs/benchmark/FEATURES.md)): which
   measures carry over to the Grid's body and in which units; roaming and dwelling shares fit in 15 minutes, their
   durations do not; five open questions before freezing, food first.
