@@ -107,8 +107,12 @@ pub fn eight_arcs(skeleton: &[f32]) -> Option<EightArcs> {
 /// A skeleton, given as (x, y) pairs, smoothed along its length: each point replaced by the mean of
 /// itself and the `half_width` points on either side. Near the ends the window shrinks to what fits
 /// symmetrically, so the end points stay where they are and the window stays centred. The mean is
-/// taken in `f64` and stored back as `f32`, the skeletons' own precision.
+/// taken in `f64` and stored back as `f32`, the skeletons' own precision. An input of odd length is
+/// not a list of points and comes back unchanged, for `eight_arcs` to refuse.
 pub fn smoothed_along(skeleton: &[f32], half_width: usize) -> Vec<f32> {
+    if !skeleton.len().is_multiple_of(2) {
+        return skeleton.to_vec();
+    }
     let points = skeleton.as_chunks::<2>().0;
     let last = points.len().saturating_sub(1);
     points
@@ -208,6 +212,15 @@ mod tests {
         assert!((smooth[3] - (1.0 + 2.0 / 3.0)).abs() < 1e-6, "point 1, h = 1: {}", smooth[3]);
         assert!((smooth[9] - 20.0).abs() < 1e-5, "point 4, h = 3: {}", smooth[9]);
         assert_eq!(smoothed_along(&parabola, 0), parabola, "half-width 0 changes nothing");
+    }
+
+    #[test]
+    fn an_odd_length_is_left_for_eight_arcs_to_refuse() {
+        // A trailing lone value is not a point; dropping it would turn a malformed frame into a
+        // well-formed one, so the input comes back unchanged and `eight_arcs` refuses it as before.
+        let odd = [0.0_f32, 0.0, 1.0, 1.0, 2.0];
+        assert_eq!(smoothed_along(&odd, 1), odd);
+        assert_eq!(eight_arcs(&smoothed_along(&odd, 1)), None);
     }
 
     #[test]
