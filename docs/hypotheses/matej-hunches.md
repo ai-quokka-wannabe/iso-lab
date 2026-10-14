@@ -843,7 +843,7 @@ where the worm lives; in three dimensions a recent preprint claims it.)
 windowed bound requires for their frequencies, so that the bound explains none of their pace; refuted for turning if
 the area an omega turn sweeps, measured on the reference recordings, is no closer to the least area for a body of the
 worm's length and width than the area of turns the worm makes in open space.
-*Leads*: Kakeya 1917; Pal 1921; Besicovitch 1928; Davies 1971; Wang and Zahl 2025; Stephens et al. 2008.
+*Leads*: Kakeya 1917; Pál 1921; Besicovitch 1928; Davies 1971; Wang and Zahl 2025; Stephens et al. 2008.
 
 ### F17. Metaphysics, kept for its testable parts
 
