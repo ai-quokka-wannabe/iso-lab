@@ -24,6 +24,8 @@
 //! The published per-frame feature table itself is not read: the lab computes its own measures
 //! from the skeletons (docs/journal of 2026-10-14, *Reading the Features Files*).
 
+pub mod posture;
+
 use std::fmt;
 use std::path::Path;
 

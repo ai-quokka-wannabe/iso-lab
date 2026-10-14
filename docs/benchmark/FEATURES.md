@@ -32,7 +32,10 @@ are read from the world's sources at the commits `external/` pins (tron-grid-lit
   in undulation periods where a measure is about the rhythm.
 - **Posture at a common resolution.** The Grid's worm reports eight tangent directions (one yaw per segment) and seven
   joint angles; the worm's 49-point skeleton is finer. So posture is compared at the coarser one: the worm's skeleton
-  is resampled to eight equal arcs, its tangent angle taken at each arc's midpoint, and the mean angle removed, as
+  is resampled to eight arcs of equal length, each arc's direction taken as that of its chord - what a rigid segment
+  reports as its yaw, and expected, not yet shown, to be steadier than the local tangent at one point of a 49-point
+  skeleton - and the mean angle
+  removed, as
   Stephens et al. 2008 remove it from their 100 angles ("an overall rotation mode was removed"); the Grid's worm gives
   the same eight angles directly. Eigen-shapes are fitted on the real worms' eight angles and both bodies are
   projected on them. How much of the worm's posture survives at eight samples is itself a measure the tool reports:
@@ -54,7 +57,7 @@ locomotion measure counts as comparable until food is settled.
 |---|---|---|---|
 | Morphology | Length, width, area | Not comparable | The Grid's body is authored by the Program at rez; its shape is a choice, not a behaviour |
 | Posture | Eigen-shape amplitudes (Stephens et al. 2008) | Comparable | On the eight-angle resampling above |
-| Posture | Bend angles at head, midbody and tail | With a caveat | At the eight-arc resolution; a real bend beyond the Grid's 0.9 rad per joint cannot be reproduced, so the share of real frames beyond it is to be measured first |
+| Posture | Bend angles at head, midbody and tail | With a caveat | At the eight-arc resolution; a real bend beyond the Grid's 0.9 rad per joint cannot be reproduced, and in a first measurement on twelve recordings 31 to 46% (median 38%) of the worm's skeletonised frames had such a bend at some joint (journal of 2026-10-14, *How Often the Reference Worms Bend Beyond the Grid's Joint Limit*) |
 | Posture | Amplitude, wavelength, track length, eccentricity | With a caveat | Wavelength from eight samples resolves only waves longer than two segments; the tool reports whether the worm's waves are |
 | Posture | Coils, kinks | With a caveat | Yemini et al. find coils from frames whose segmentation failed ("by scanning the video frame annotations"); the Grid's recordings never fail, so a coil needs a geometric definition, the body touching itself, applied to both. A coil also needs bends the 0.9 rad limit may forbid |
 | Locomotion | Speed and angular speed of head, midbody, tail | Comparable | In L per second and radians per second |
@@ -124,7 +127,7 @@ A reference recording lasts 15 minutes, 900 s, by the protocol (most do; see *Un
 - **The joint limit.** If a real worm's bend over an eighth of its length often exceeds 0.9 rad, the Grid's body
   cannot be indistinguishable on posture whatever its brain does. That would be a finding about the body, for the
   world's maintainers by the rule *This repository, and the world's by their own rules*, never a reason to tune the
-  benchmark.
+  benchmark. A first measurement is in the bend-angle row of *The Measures* above.
 - **The arena.** Path measures depend on the arena's size in body lengths; a plate and the Grid's arena must be
   matched, or path measures restricted to those that do not reach the edge.
 - **Which recordings.** The N2 subset and how it is drawn are fixed by the tool's task (STATE.md item 2), before any

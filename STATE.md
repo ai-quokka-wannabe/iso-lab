@@ -112,12 +112,18 @@ points to the open ones and says what waits on each.
   for the sense of the body's own intake). The reference worms are filmed on food and the Grid has none
   ([docs/benchmark/FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing)).
   The benchmark is not frozen until food is settled, by these issues or by comparing with foodless worms instead.
+- **The worm's bends against the Grid's joint limit** (tron-grid-lite; not yet an issue). In twelve reference
+  recordings 31 to 46% (median 38%) of the skeletonised frames bend beyond the Grid's 0.9 rad at some eight-arc joint
+  (journal of 2026-10-14). Before asking for a higher limit, the lab measures where along the body the excess lies
+  (tracking noise at the ends would inflate it); then an issue, with the evidence.
 - **Terrace edges** (master-control; the maintainer takes it up once the lab is set up - file nothing). A
   chain can be thrown when a segment crosses a terrace edge; a fix is in progress. Until it lands, every life
   in this lab is lived on a flat arena.
 
 ## Done
 
+- 2026-10-14: the eight-arc posture in Rust, and a first measurement: in 12 reference recordings, 31 to 46% of
+  skeletonised frames bend beyond the Grid's 0.9 rad at some joint; a per-joint breakdown next.
 - 2026-10-14: the pace note gains quiescence after stress (Hill et al. 2014): suppressed up to an hour after a heat shock,
   a peak 20 minutes after cold; satiety quiescence still a gap.
 - 2026-10-14: the findings kept for the ladder: [docs/research/findings.md](docs/research/findings.md), a ledger of what
