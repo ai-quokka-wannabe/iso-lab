@@ -165,6 +165,21 @@ impl Listing {
     }
 }
 
+/// The download address of a record's file, `https://zenodo.org/api/records/<id>/files/<name>/content`,
+/// with the name percent-encoded: every byte but the unreserved ones of RFC 3986 (letters,
+/// digits, `-`, `.`, `_`, `~`) is written as `%XX`.
+pub fn content_url(record: u64, key: &str) -> String {
+    let mut name = String::with_capacity(key.len());
+    for byte in key.bytes() {
+        if byte.is_ascii_alphanumeric() || matches!(byte, b'-' | b'.' | b'_' | b'~') {
+            name.push(char::from(byte));
+        } else {
+            name.push_str(&format!("%{byte:02X}"));
+        }
+    }
+    format!("https://zenodo.org/api/records/{record}/files/{name}/content")
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -228,5 +243,14 @@ mod tests {
     fn a_page_without_hits_is_refused() {
         assert!(parse_page("{\"hits\": {}}").is_err());
         assert!(parse_page("not json").is_err());
+    }
+
+    #[test]
+    fn content_urls_encode_the_name() {
+        assert_eq!(
+            content_url(1024910, "N2 on food R_2010_03_05__09_35_57__1_features.hdf5"),
+            "https://zenodo.org/api/records/1024910/files/N2%20on%20food%20R_2010_03_05__09_35_57__1_features.hdf5/content"
+        );
+        assert_eq!(content_url(1, "a/b+c é"), "https://zenodo.org/api/records/1/files/a%2Fb%2Bc%20%C3%A9/content");
     }
 }

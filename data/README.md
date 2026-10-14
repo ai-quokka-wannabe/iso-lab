@@ -95,6 +95,14 @@ repository's root; the seed and block size are constants in that command, and it
 Fisher-Yates shuffle (`fetch::draw`). Running it again gives the same bytes; the file's SHA-256 is
 `8f647d0aac25e620980725d32454615c69cd3f7c67455e6d045008763c2c9e6d`.
 
+### Fetching a Block
+
+`cargo run --release --bin fetch-block -- <block>`, run from the repository's root, downloads a block's features
+files into `data/raw/owmd-n2/`, each named `<record>_features.hdf5`, and keeps a file only once its MD5 matches the
+record's; a file already there and correct is not fetched again, so an interrupted run resumes. On 2026-10-14
+Zenodo served these files at about 100 KB/s to this machine, so a block of 4.87 GB takes the better part of a
+day; see the journal of that date.
+
 ## Adding a Dataset
 
 Add a row with every column filled: where it comes from (a stable link and the paper describing it), its
