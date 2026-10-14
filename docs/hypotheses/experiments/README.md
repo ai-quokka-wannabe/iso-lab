@@ -123,3 +123,5 @@ out of their sources when the experiment is prepared.
 | F10 | Watch for a self-model | to plan |
 | F11 | A scan for latent pathology | to plan |
 | F12 | Predict the consequence, then refine | to plan |
+| F13 | A memory that renormalises time, shaped like MERA | to plan |
+| F14 | Thinking in loops: automata, their groups, graphs and knots | to plan |

@@ -777,3 +777,28 @@ a kindling-prone pair - before anything fires.
 Before acting, predict the likely consequence and refine the action; meanwhile, tag what to store as short- or
 long-term important, and refine procedures offline. A sketch of prediction and consolidation together, for
 higher rungs.
+
+### F13. A memory that renormalises time, shaped like MERA
+
+The multi-scale entanglement renormalisation ansatz (MERA) is a tensor network from quantum many-body physics: layers
+of small tensors that disentangle neighbours and then coarse-grain them, so that structure at every scale is kept at a
+cost that grows only logarithmically. The hunch: a creature's memory built the same way over *time* - recent moments
+in fine detail, older ones merged layer by layer into fewer, coarser summaries - would hold the worm's many time
+scales at once, from a reversal's seconds to the hours of food search and lethargus, in a small fixed or slowly
+growing memory. The fast-weight memories tried in H11 forget with a single decay rate; this would not.
+*Test*: on a task whose answer depends on events at several time scales, a MERA-shaped temporal memory against a
+stack of fast-weight memories with several decay rates, at the same memory and compute; refuted if it does no better.
+*Leads*: Vidal 2007; Vidal 2008; Swingle 2012.
+
+### F14. Thinking in loops: automata, their groups, graphs and knots
+
+Much of thinking is loops and iterations, so the mathematics of loops may describe it. Four lenses: behaviour as a
+finite automaton (H2's small set of states), and the Krohn-Rhodes theorem's decomposition of any finite automaton into
+a cascade of simple groups and resets - a way to split a learned brain into a reversible, rhythm-like part and a memory
+part (F5 takes the automaton groups another way); the wiring diagram as a graph whose cycles and motifs are where loops
+could live; and knot and braid theory for the closed paths the body traces in its space of shapes, which several
+rhythms together braid - invariants that could become benchmark measures of rhythm, not only a way to build a brain.
+*Test*: each lens is refuted where it explains nothing that a plain count of states, or a plain phase measure, does
+not already: the decomposition of a trained brain predicts no behaviour better than its state count; a braid invariant
+of the worm's posture separates no strains or conditions that phase alone does not.
+*Leads*: Krohn and Rhodes 1965; White et al. 1986; Stephens et al. 2008; Birman 1974.
