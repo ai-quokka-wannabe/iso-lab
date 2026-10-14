@@ -318,7 +318,8 @@ mod tests {
     #[test]
     fn the_vtable_answers_only_its_own_version() {
         assert!(tglGetProgramVTable(ABI_VERSION - 1).is_null());
-        let vtable = unsafe { &*tglGetProgramVTable(ABI_VERSION) };
+        // SAFETY: a non-null result points at the static VTABLE; null is refused by as_ref.
+        let vtable = unsafe { tglGetProgramVTable(ABI_VERSION).as_ref() }.expect("the vtable for its own version");
         assert_eq!((vtable.struct_size, vtable.abi_version), (48, ABI_VERSION));
     }
 
@@ -344,6 +345,7 @@ mod tests {
             max_joint_torque: 1.0,
             padding0: 0,
         };
+        // SAFETY: every member is an integer, a float or a raw pointer, for which zero is valid, as the Grid zeroes it.
         let mut model: RenderModel = unsafe { std::mem::zeroed() };
         let creature = program_rez(&desc, &mut model);
         assert!(!creature.is_null());
