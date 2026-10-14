@@ -781,70 +781,86 @@ higher rungs.
 ### F13. A memory that renormalises time, shaped like MERA
 
 The multi-scale entanglement renormalisation ansatz (MERA) is a tensor network from quantum many-body physics: layers
-of small tensors that disentangle neighbours and then coarse-grain them, so that structure at every scale is kept at a
-cost that grows only logarithmically. The hunch: a creature's memory built the same way over *time* - recent moments
-in fine detail, older ones merged layer by layer into fewer, coarser summaries - would hold the worm's many time
-scales at once, from a reversal's seconds to the hours of food search and lethargus, in a small fixed or slowly
-growing memory. The fast-weight memories tried in H11 forget with a single decay rate; this would not.
+of small tensors that disentangle neighbours and then coarse-grain them, so that its depth grows only as the logarithm
+of the system's size and it keeps structure at every scale (its number of tensors still grows in proportion to the
+size). The hunch: a creature's memory built the same way over *time* - recent moments in fine detail, older ones merged
+layer by layer into fewer, coarser summaries - and keeping only the newest tensor of each layer, so that the memory
+grows as the logarithm of the time lived. It would hold the worm's many time scales at once, from a reversal's seconds
+to the hours of food search and lethargus. The fast-weight memories tried in H11 forget with a single decay rate; this
+would not.
 *Test*: on a task whose answer depends on events at several time scales, a MERA-shaped temporal memory against a
 stack of fast-weight memories with several decay rates, at the same memory and compute; refuted if it does no better.
 *Leads*: Vidal 2007; Vidal 2008; Swingle 2012.
 
 ### F14. Thinking in loops: automata, their groups, graphs and knots
 
-Much of thinking is loops and iterations, so the mathematics of loops may describe it. Four lenses: behaviour as a
-finite automaton (H2's small set of states), and the Krohn-Rhodes theorem's decomposition of any finite automaton into
-a cascade of simple groups and resets - a way to split a learned brain into a reversible, rhythm-like part and a memory
-part (F5 takes the automaton groups another way); the wiring diagram as a graph whose cycles and motifs are where loops
-could live; and knot and braid theory for the closed paths the body traces in its space of shapes, which several
-rhythms together braid - invariants that could become benchmark measures of rhythm, not only a way to build a brain.
-*Test*: each lens is refuted where it explains nothing that a plain count of states, or a plain phase measure, does
-not already: the decomposition of a trained brain predicts no behaviour better than its state count; a braid invariant
-of the worm's posture separates no strains or conditions that phase alone does not.
+Much of thinking is loops and iterations, so the mathematics of loops may describe it. Four lenses:
+
+- *Automata*: behaviour as a finite automaton (H2's small set of states).
+- *Their groups*: the Krohn-Rhodes theorem decomposes any finite automaton into a cascade of simple groups and resets -
+  a way to split a learned brain into a reversible, rhythm-like part and a memory part (F5 takes automaton groups
+  another way).
+- *Graphs*: the wiring diagram's cycles and recurring motifs as the places loops could live.
+- *Knots and braids*: invariants of the closed paths the body traces. A closed curve can be knotted only in three
+  dimensions - in four or more every loop comes undone - so the invariant must be taken in a stated three-dimensional
+  projection of the space of shapes, or as a braid of several rhythms' phases moving on a torus over time.
+
+*Test*, lens by lens: refuted where the Krohn-Rhodes decomposition of a trained brain predicts no behaviour better than
+its count of states; where the connectome's cycle and motif counts predict nothing that a random graph with the same
+degrees does not; and where a braid or knot invariant, in its stated projection, separates no strains or conditions
+that a plain phase measure does not.
 *Leads*: Krohn and Rhodes 1965; White et al. 1986; Stephens et al. 2008; Birman 1974.
 
-### F15. Rhythm and direction as a Hopf fibration
+### F15. Rhythm and direction twisted together, as in the Hopf fibration
 
-The Hopf fibration splits the three-sphere - the unit quaternions, or pairs of complex numbers of unit length - into
-circles, one over each point of the ordinary sphere: every state is a direction on the sphere plus a phase around its
-circle. The hunch: a creature's state held this way keeps what it does (a direction - a heading, a choice among
-behaviours) and the rhythm it does it with (the phase of the body wave) in one object, the two separable by
-construction yet moving together, as steering and undulation do in the worm. The same geometry is the Bloch sphere of a
-two-level quantum state, which ties it to H10's complex-valued brain.
+The three-sphere - the unit quaternions, or the pairs of complex numbers whose squared moduli sum to one - is a bundle
+of circles over the ordinary sphere: locally, every state is a direction on the sphere and a phase around its circle.
+Globally the two are twisted together - the three-sphere is not the sphere times the circle - so carrying the direction
+round a closed loop shifts the phase (a geometric, or Berry, phase). The hunch: a creature's state held this way ties
+what it does (a heading, a choice among behaviours) to the rhythm it does it with (the phase of the body wave), so that
+steering round a loop advances or retards the rhythm by an amount the geometry fixes - as steering and undulation are
+coupled in the worm. The same geometry is the Bloch sphere of a two-level quantum state, which ties it to H10's
+complex-valued brain.
 *Test*: a module whose state lives on the three-sphere, read out through the fibration, against one holding a plain
-angle and a separate phase, at the same compute and memory, on a task that couples steering to the body's rhythm;
-refuted if the fibred state does no better.
-*Leads*: Hopf 1931; Urbantke 2003.
+angle and a separate phase (the untwisted product), at the same compute and memory, on a task that couples steering to
+the body's rhythm; refuted if the twist does no better. And in the worm: refuted if the phase shift of the body wave
+after a closed turn does not follow the area the heading's path encloses.
+*Leads*: Hopf 1931; Urbantke 2003; Berry 1984.
 
 ### F16. Harmonic analysis, and the Kakeya needle in a worm's turn
 
 Harmonic analysis breaks a signal into waves, and the worm's posture already breaks well that way: a few shapes
-account for most of its bending (F14's lead, Stephens et al. 2008). Two of its results could bind a brain. The
-uncertainty principle limits how fast any system can tell one rhythm's frequency from another's - a floor on the pace
-of rhythm-based decisions to set beside the pace the rules require. And Kakeya's needle problem asks for the least
-area in which a segment can turn to face every direction: a worm turning round in a narrow space - an omega turn - is
-a needle with a body, and how close its turns come to the least area is a measurable question. The Kakeya conjecture
-on how large such sets must be lies at the centre of modern harmonic analysis.
-*Test*: the times worms take to switch rhythm sit near the uncertainty floor for their frequencies, or they do not; the
-area an omega turn sweeps, measured on the reference recordings, against the least area for a body of its length and
-width.
-*Leads*: Kakeya 1917; Besicovitch 1928; Wang and Zahl 2025; Stephens et al. 2008.
+account for most of its bending (Stephens et al. 2008). Two of its results could matter. The uncertainty principle
+bounds the frequency resolution of a short window: a system that must tell two rhythms apart from a window of a given
+length cannot do it sharper than that bound allows (parametric estimators at high signal-to-noise can do better, so it
+is a floor for windowed estimates only). And Kakeya's needle problem asks how little area a segment needs to turn
+round. For a needle with no width the answer is none - Besicovitch showed it can turn in as small an area as one likes -
+but for a convex region, or a body of non-zero width, there is a positive least area. A worm turning round in a
+narrow space - an omega turn - is a needle with a body, and how close its turns come to that least area is measurable.
+(The related Kakeya conjecture, on how large sets with a segment in every direction must be, is settled in the plane,
+where the worm lives; in three dimensions a recent preprint claims it.)
+*Test*: refuted for rhythm if worms that switch between undulation frequencies take far longer to do so than the
+windowed bound requires for their frequencies, so that the bound explains none of their pace; refuted for turning if
+the area an omega turn sweeps, measured on the reference recordings, is no closer to the least area for a body of the
+worm's length and width than the area of turns the worm makes in open space.
+*Leads*: Kakeya 1917; Pal 1921; Besicovitch 1928; Davies 1971; Wang and Zahl 2025; Stephens et al. 2008.
 
 ### F17. Metaphysics, kept for its testable parts
 
 Ideas from philosophy, however strange, each kept only for a part that a run can refute:
 
-- *Mind as process* (Whitehead): no stored state, only becoming - a brain with no persistent memory beyond its ongoing
-  dynamics, against one with explicit memory, at the same cost.
+- *Mind as process* (Whitehead, loosely): no memory beyond the ongoing dynamics - a brain with no stored state apart
+  from its activity, against one with explicit memory, at the same cost.
 - *Striving to persist* (Spinoza's conatus): one drive under all behaviour, to keep being - a single homeostatic
-  objective against a set of separate drives, judged by how much of the worm's behaviour each reproduces.
+  objective against a set of separate drives.
 - *Each creature mirrors the world from where it stands* (Leibniz's monads): an egocentric representation against an
   allocentric one, on the worm's navigation.
 - *Lived time is not clock time* (Bergson's duration): internal time constants that stretch with arousal, against fixed
   ones, judged by the worm's measured pace in different states.
-- *Consciousness as integrated information* (Tononi): a measure of integration computed on brains that score alike,
-  to see whether it tracks anything behaviour shows.
+- *Consciousness as integrated information* (Tononi): a measure, not a brain. Exact integrated information grows
+  exponentially with the number of units, so even a brain of 302 needs a named approximation.
 
-*Test*: each item as written; refuted item by item where the metaphysical version reproduces no more of the worm than
-its plain alternative.
+*Test*: the first four, each refuted where the metaphysical version reproduces no more of the worm's measured behaviour
+than its plain alternative; the last refuted if the approximated measure does not separate brains whose behaviour
+differs on the benchmark.
 *Leads*: Whitehead 1929; Spinoza 1677; Leibniz 1714; Bergson 1889; Tononi 2004.
