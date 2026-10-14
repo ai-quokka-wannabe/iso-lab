@@ -34,8 +34,8 @@ worms to plate taps and to optogenetic stimulation of the six gentle-touch neuro
   with a 15 μm displacement of the touch probe towards the worm's nose tip)" ([Zou et al.
   2025](https://doi.org/10.1038/s41467-025-56938-z), PMC11830769), and with a 15 μm displacement "the latency was 4.3±
   0.9 ms (n = 6) in the AMsh cell and 4.1± 1.1 ms (n = 6) in the ASH neuron" ([Ding et al.
-  2015](https://doi.org/10.1371/journal.pone.0117114), PMC4325002). Touch reaches the receptors within a few
-  milliseconds.
+  2015](https://doi.org/10.1371/journal.pone.0117114), PMC4325002). Touch reaches the nose's receptor neurons, and the
+  glia beside them, within a few milliseconds.
 - **Not found**: the latency from a touch to the start of a reversal, as a number in a paper's text. A scan of the
   first 15 open-access results of each of five Europe PMC queries on touch, tap and latency (45 papers; the queries
   are in the journal) found none; Liu et al. show such latencies in figures, which were not read.
