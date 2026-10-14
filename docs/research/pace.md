@@ -34,7 +34,7 @@ worms to plate taps and to optogenetic stimulation of the six gentle-touch neuro
 [Mohammadi et al. 2013](https://doi.org/10.1186/1471-2202-14-66) (PMC3703451) heated a spot on the worm with a laser
 pulse of 133 ms.
 
-- "[t]he animal's reaction time does in fact vary inversely with stimulus amplitude", and "the reaction time is
+- "the animal's reaction time does in fact vary inversely with stimulus amplitude", and "the reaction time is
   proportional to the logarithm of the stimuli strength".
 - At the head the typical response is "a reversal, followed by an omega turn, then a recommencement of forward
   motion".
@@ -56,7 +56,7 @@ light on worms.
   the next 140 s".
 - Mutants lacking a neuropeptide-release protein (unc-31) or the G protein Gαq responded after "∼10-s delay", against
   "1–2 s for wild type".
-- "[l]ight exposure induces body contraction within 330 ms", the interval between their images, so 330 ms is an upper
+- "light exposure induces body contraction within 330 ms", the interval between their images, so 330 ms is an upper
   bound set by the sampling, not a measured latency.
 
 ### Temperature in the Physiological Range
