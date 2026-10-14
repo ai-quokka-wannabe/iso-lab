@@ -10,6 +10,11 @@ publish = false
 [dependencies]
 # RustCrypto's MD5, MIT OR Apache-2.0: Zenodo publishes an MD5 for every file (data/README.md).
 md-5 = "0.11.0"
+# Zenodo's API answers in JSON. MIT OR Apache-2.0.
+serde_json = "1.0.151"
+# An HTTP client in pure Rust. Its TLS is rustls with the platform's certificates, which honour
+# SSL_CERT_FILE, and it takes its proxy from the environment. MIT OR Apache-2.0.
+ureq = { version = "3.4.2", default-features = false, features = ["rustls", "platform-verifier"] }
 
 [lints]
 workspace = true

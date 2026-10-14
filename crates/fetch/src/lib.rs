@@ -19,6 +19,8 @@
 //! (data/README.md, *The Phase 0 Survey*). A file is used only once its bytes hash to that
 //! value; this crate starts with that check, and the download itself comes next.
 
+pub mod zenodo;
+
 use md5::{Digest, Md5};
 use std::fmt;
 use std::io::{self, Read};
