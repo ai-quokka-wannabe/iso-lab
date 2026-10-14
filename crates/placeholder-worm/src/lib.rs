@@ -16,7 +16,8 @@
 //! The lab's placeholder Program (STATE.md item 3): a chain of eight segments that does nothing but
 //! undulate gently, so that the arena can be proven - a life lived, its Disk kept, its features
 //! extracted - before any brain exists. It is not a brain and is never scored. It reads one sense,
-//! the Grid's tick counter, and nothing of the world.
+//! the Grid's tick counter, and two facts the interface hands it, the tick's length and its body's
+//! joint limit; nothing of the world reaches it.
 //!
 //! The gait is a travelling wave of one wavelength along the body, at 0.18 Hz with an amplitude of
 //! 0.3 rad, a third of the Grid's 0.9 rad joint limit. The frequency is the dataset's own published

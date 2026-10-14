@@ -28,6 +28,10 @@ use std::sync::atomic::{AtomicU32, Ordering};
 /// The interface version this Program was written against (`TGL_ABI_VERSION`).
 pub const ABI_VERSION: u32 = 10;
 
+/// The longest chain the interface carries, the head counted (`TGL_SEGMENTS_MAX`): a fact about the
+/// interface, kept apart from this Program's own body length.
+pub const SEGMENTS_MAX: usize = 8;
+
 /// `TglLibraryInfo`.
 #[repr(C)]
 pub struct LibraryInfo {
@@ -96,7 +100,7 @@ pub struct Actions {
     pub desired_forward_speed: f32,
     pub desired_turn_rate: f32,
     pub vocalisation_strength: f32,
-    pub joint_targets: [f32; SEGMENTS - 1],
+    pub joint_targets: [f32; SEGMENTS_MAX - 1],
 }
 
 /// `TglProgramVTable`.
@@ -111,16 +115,43 @@ pub struct ProgramVTable {
     pub library_shutdown: extern "C" fn(),
 }
 
-// The layout of ABI version 10, from tron-grid-lite's libs/program-abi/abi_layout.txt, checked
-// when this crate compiles; the tests compare every member with that file when it is present.
+// The layout of ABI version 10, from tron-grid-lite's libs/program-abi/abi_layout.txt: every struct's
+// size and every member's offset, checked when this crate compiles, so that a broken mirror fails the
+// build even where the submodule is absent; the tests compare the same members with that file when
+// it is present.
 const _: () = {
     use std::mem::{offset_of, size_of};
-    assert!(size_of::<LibraryInfo>() == 8 && offset_of!(LibraryInfo, nominal_dt_seconds) == 4);
-    assert!(size_of::<CreatureDesc>() == 72 && offset_of!(CreatureDesc, max_joint_angle) == 60);
-    assert!(size_of::<RenderMaterial>() == 32 && size_of::<RenderTriangle>() == 16);
-    assert!(size_of::<RenderModel>() == 48 && offset_of!(RenderModel, segment_spacing) == 40);
-    assert!(size_of::<Actions>() == 40 && offset_of!(Actions, joint_targets) == 12);
-    assert!(size_of::<ProgramVTable>() == 48 && offset_of!(ProgramVTable, library_shutdown) == 40);
+    assert!(SEGMENTS <= SEGMENTS_MAX);
+    assert!(size_of::<LibraryInfo>() == 8);
+    assert!(offset_of!(LibraryInfo, creature_count) == 0 && offset_of!(LibraryInfo, nominal_dt_seconds) == 4);
+    assert!(size_of::<CreatureDesc>() == 72);
+    assert!(offset_of!(CreatureDesc, creature_id) == 0 && offset_of!(CreatureDesc, random_seed) == 8);
+    assert!(offset_of!(CreatureDesc, eyes) == 16 && offset_of!(CreatureDesc, ears) == 24);
+    assert!(offset_of!(CreatureDesc, eye_count) == 32 && offset_of!(CreatureDesc, ear_count) == 36);
+    assert!(offset_of!(CreatureDesc, irradiance_sample_count) == 40 && offset_of!(CreatureDesc, max_contact_count) == 44);
+    assert!(offset_of!(CreatureDesc, max_forward_speed) == 48 && offset_of!(CreatureDesc, max_turn_rate) == 52);
+    assert!(offset_of!(CreatureDesc, max_vocalisation_strength) == 56 && offset_of!(CreatureDesc, max_joint_angle) == 60);
+    assert!(offset_of!(CreatureDesc, max_joint_torque) == 64 && offset_of!(CreatureDesc, padding0) == 68);
+    assert!(size_of::<RenderMaterial>() == 32);
+    assert!(offset_of!(RenderMaterial, colour) == 0 && offset_of!(RenderMaterial, index_of_refraction) == 12);
+    assert!(offset_of!(RenderMaterial, emission) == 16 && offset_of!(RenderMaterial, transmission) == 28);
+    assert!(size_of::<RenderTriangle>() == 16);
+    assert!(offset_of!(RenderTriangle, vertices) == 0 && offset_of!(RenderTriangle, material) == 12);
+    assert!(size_of::<RenderModel>() == 48);
+    assert!(offset_of!(RenderModel, vertex_positions) == 0 && offset_of!(RenderModel, triangles) == 8);
+    assert!(offset_of!(RenderModel, materials) == 16 && offset_of!(RenderModel, vertex_count) == 24);
+    assert!(offset_of!(RenderModel, triangle_count) == 28 && offset_of!(RenderModel, material_count) == 32);
+    assert!(offset_of!(RenderModel, segment_count) == 36 && offset_of!(RenderModel, segment_spacing) == 40);
+    assert!(offset_of!(RenderModel, padding0) == 44);
+    assert!(offset_of!(SensesHead, tick) == 0);
+    assert!(size_of::<Actions>() == 40);
+    assert!(offset_of!(Actions, desired_forward_speed) == 0 && offset_of!(Actions, desired_turn_rate) == 4);
+    assert!(offset_of!(Actions, vocalisation_strength) == 8 && offset_of!(Actions, joint_targets) == 12);
+    assert!(size_of::<ProgramVTable>() == 48);
+    assert!(offset_of!(ProgramVTable, struct_size) == 0 && offset_of!(ProgramVTable, abi_version) == 4);
+    assert!(offset_of!(ProgramVTable, library_init) == 8 && offset_of!(ProgramVTable, program_rez) == 16);
+    assert!(offset_of!(ProgramVTable, program_tick) == 24 && offset_of!(ProgramVTable, program_derez) == 32);
+    assert!(offset_of!(ProgramVTable, library_shutdown) == 40);
 };
 
 /// One creature's state: the bound on its joints, from its descriptor.
