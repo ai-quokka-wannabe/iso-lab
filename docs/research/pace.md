@@ -39,7 +39,19 @@ worms to plate taps and to optogenetic stimulation of the six gentle-touch neuro
   glia beside them, within a few milliseconds.
 - **Not found**: the latency from a touch to the start of a reversal, as a number in a paper's text. A scan of the
   first 15 open-access results of each of five Europe PMC queries on touch, tap and latency (45 papers; the queries
-  are in the journal) found none; Liu et al. show such latencies in figures, which were not read.
+  are in the journal) found none.
+- **Read from Liu et al.'s Figure 2—figure supplement 2**, by pixel (method in the journal of 2026-10-14): the
+  population's rate of classified transitions into their "Fast Reverse" state peaks about 0.25 s after a plate tap,
+  and about 0.6 s after the onset of a 1 s light pulse. The light figure is not a touch latency: it comes from a
+  transgenic strain expressing the light-gated channel Chrimson in the touch neurons (AML67), whose tap sensitivity
+  the paper reports as reduced, and it includes the channel's own activation. Both are times of a peak, not of a
+  response's start, and they rest on a behaviour classifier whose timing is coarse: frames came "at 14 frames per
+  second", a transition is stamped at the first frame classified in the new state, and the wavelet spectrogram behind
+  the classification "introduces an inherent uncertainty in the precise timing of a behavior transition", which in
+  their words "causes the animal occasionally to appear to respond (but not actually respond) to a stimulus prior to
+  its delivery", over up to 2.7 s in the worst case; the paper gives no figure for Fast Reverse alone. So the figure
+  shows classified reversals clustering within about a second of a tap, but it does not resolve when a reversal
+  starts; it is not a latency to hold a Program to.
 - **Habituation lengthens the latency, for a nociceptor.** Ardiel et al. stimulated the polymodal nociceptor ASH with
   light, repeatedly: "the ∼1 sec increase in response latency by the end of 30 stimuli" ([Ardiel et al.
   2016](https://doi.org/10.1101/lm.041830.116), PMC5026203). Their 2017 paper (under *Gaps, to Be Read*) restates that
@@ -178,9 +190,10 @@ show, so it is weak. The Grid has no chemical sense yet in any case.
 
 ## Gaps, to Be Read
 
-- A touch-to-reversal latency: none is stated in the text of 45 open papers searched; the next step is a figure read
-  with a stated method, or the reference recordings themselves, if they include taps. Liu et al. 2018 cite Ardiel et
-  al. 2017, "Habituation as an adaptive shift in response strategy mediated by neuropeptides"
+- A touch-to-reversal latency measured with frame-level timing: none is stated in the text of 45 open papers searched,
+  and Liu et al.'s figure, now read, shows reversals clustering within about a second without resolving their onset.
+  The reference recordings contain no stimuli. Liu et al. 2018 cite Ardiel et al. 2017, "Habituation as an adaptive
+  shift in response strategy mediated by neuropeptides"
   ([doi:10.1038/s41539-017-0011-8](https://doi.org/10.1038/s41539-017-0011-8), PMC6161508), for "reversal latency";
   read in full, it measures latency to light-activation of ASH, with values in figures only.
 - The definition behind Mohammadi et al. 2013's reaction times (from which moment, to which event), and their spread;
