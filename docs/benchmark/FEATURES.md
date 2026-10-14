@@ -128,4 +128,10 @@ A reference recording lasts 15 minutes, 900 s. So:
 - **The arena.** Path measures depend on the arena's size in body lengths; a plate and the Grid's arena must be
   matched, or path measures restricted to those that do not reach the edge.
 - **Which recordings.** The N2 subset and how it is drawn are fixed by the tool's task (STATE.md item 2), before any
-  statistic is computed.
+  statistic is computed: block 1 of the seeded draw ([data/README.md § The Reference
+  Draw](../../data/README.md#the-reference-draw)).
+- **Unequal lengths and frame rates.** The recordings are not all 15 minutes long, nor filmed at one frame rate: 5 and
+  120 minutes and 25.4 to 32.6 frames per second are among those read so far ([the journal of 2026-10-14 § How Long
+  the Reference Recordings Are](../journal/2026-10-14.md#how-long-the-reference-recordings-are)). Measures are taken
+  in seconds, and the benchmark must say how recordings of unequal length enter it, for example by a fixed window of
+  each, before any statistic is computed.
