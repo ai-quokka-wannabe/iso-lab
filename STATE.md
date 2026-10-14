@@ -100,9 +100,12 @@ the idea for the next attempt.
   ([#45](https://github.com/ai-quokka-wannabe/iso-lab/pull/45), left open after three rounds of review). Its model
   as written - 20 steps of spreading with fixed weights - would refute the hunch by construction: the verifier
   simulated it and found a clear cliff whose sharpness the 20-step horizon sets, not the network's size, so the
-  size-scaling margin fires anyway; one cure merely shifts the cliff. Next: pilot the model in a notebook - run it to a
-  steady state, judge the cliff by the transition's width against a smooth control, fix the range of degree and the
-  operating point's size - and only then write the margins. C13-C17 landed on another path.
+  size-scaling margin fires anyway. Of the cures as written, the "conserved budget" grows with degree and so is not
+  conserved, lateral inhibition only shifts the cliff, and the fan-out penalty pushes it beyond the range of degree
+  swept. Next: pilot the model in a notebook - run it to a steady state, judge the cliff by the transition's width
+  against a smooth control, conserve the budget truly, fix the range of degree and the operating point's size - and
+  only then write the margins. C13-C17 go up on another path,
+  [#47](https://github.com/ai-quokka-wannabe/iso-lab/pull/47).
 
 ## Needs From Other Repositories
 
