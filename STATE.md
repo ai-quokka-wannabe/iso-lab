@@ -1,7 +1,8 @@
 # State of the Lab
 
-**Last updated:** 2026-10-14: the comparison space drafted, the pace note filled in part, H11 tried and refuted, the reference worms' bends
-measured against the Grid's joint limit, and Master Control built and tested in place.
+**Last updated:** 2026-10-14, night's end: the comparison space drafted, the pace note filled in part, H11 tried and refuted,
+the reference worms' bends measured against the Grid's joint limit, a midbody speed built, and the arena proven to a
+first life that replays exactly.
 
 ## Where We Are
 
@@ -9,8 +10,10 @@ Phase 0, the benchmark, is under way. The reference data is chosen - the Open Wo
 recordings ([data/README.md § The Phase 0 Survey](data/README.md#the-phase-0-survey)) - and the first
 literature note says how worm behaviour is measured. The comparison space is drafted
 ([docs/benchmark/FEATURES.md](docs/benchmark/FEATURES.md)): which measures carry over to the Grid's body, and what
-must be settled before the benchmark is frozen, food first. The Rust workspace exists, with one crate that checks downloads; no feature is computed yet and no
-creature has been scored.
+must be settled before the benchmark is frozen, food first. The Rust workspace reads the reference skeletons and computes
+the first measures - eight-arc posture and a midbody speed, the latter not yet trusted - and the arena is proven to a
+first life: a placeholder Program, which undulates only, lived fifteen minutes on the Grid and its world replays
+exactly. No creature has been scored.
 [docs/PLAN.md](docs/PLAN.md) says what the phases are and why the benchmark comes before any brain.
 
 ## Next
@@ -22,8 +25,8 @@ Top first. Each item is sized for one run; split it here before starting if it i
    open papers scanned states one in text, and Liu et al. 2018's figure shows reversals clustering within about a
    second without resolving their onset); what Mohammadi et al. 2013's heat reaction times count from; a thermotaxis
    latency; fitted time constants for tap habituation from primary papers; and the primary sources for lethargus and
-   sleep-like quiescence. Figures are within reach: Europe PMC's supplementary-files service serves a paper's figure
-   images (pace.md § Noxious Heat).
+   sleep-like quiescence (for satiety, You et al. 2008 is identified, its full text not yet reached). Figures are
+   within reach: Europe PMC's supplementary-files service serves a paper's figure images (pace.md § Noxious Heat).
 2. **Build the feature-extraction tool** for the chosen dataset, in the lab's Rust workspace (`crates/`), and compute
    the wild-type reference statistics. Explore the data in a notebook first if it helps; the tool itself is Rust.
    Split into runs: (a) the workspace and the MD5 check, done; (b) the eligible manifest, done ([data/README.md § The
@@ -31,11 +34,13 @@ Top first. Each item is sized for one run; split it here before starting if it i
    ([data/README.md § The Reference Draw](data/README.md#the-reference-draw)); and `fetch-block`, which fetches a
    block and checks every MD5, done; block 1 itself is not yet fetched (see *Blocked*); (c) the skeletons are read
    (crate `features`, by `hdf5-pure`; the published feature table cannot be read by the pure-Rust readers tried, and
-   the lab computes its own measures anyway), next the comparison space's measures from them - a midbody speed is
-   built but fails its check in one record (journal of 2026-10-14, *A Midbody Speed*) - in seconds and body
+   the lab computes its own measures anyway), next the comparison space's measures from them, in seconds and body
    lengths, as the frame rate varies between recordings (25.4 to 32.6 fps seen), and with a rule for recordings of
    other lengths than 15 minutes (5 and 120 minutes seen; journal of 2026-10-14, *How Long the Reference Recordings
-   Are*); (d) the reference statistics.
+   Are*) - a midbody speed is built but fails its check in one record (journal of 2026-10-14, *A Midbody Speed*), and
+   its next step is one of three: read the published speed's definition (in Tierpsy's code and Javer et al. 2018's
+   methods), set the check's bar from what moves a locomotion state, or take the midbody's direction over a longer
+   stretch of the body; (d) the reference statistics.
 3. **Prove the arena**: in the cloud machine, on Linux alone (the maintainer's ruling), build Master Control and the
    Grid (software Vulkan through Mesa's lavapipe) from `external/`, write the lab's own minimal Program - a
    placeholder brain that only undulates gently, shaped after
@@ -94,8 +99,9 @@ the idea for the next attempt.
   2026-10-14 (the journal has the commands), so the block needs from about four hours to more than a day. `fetch-block
   1` resumes by byte, but only on a machine that keeps `data/raw/`; a fresh cloud machine starts empty, so the block
   has to come in one long run (started early in a night, in the background) or on a machine that persists; the night
-  of 2026-10-14 ended with part of it fetched, every file MD5-checked. Next: run it again on later nights, and start
-  item 2(c) on the files already fetched.
+  of 2026-10-14 fetched 34 of its 200 files, every one MD5-checked, before the fetch was stopped and `data/raw/`
+  deleted at the night's end. Next: run it again early on a later night, in
+  the background; item 2(c)'s work resumes on what it fetches.
 - **Three Dependabot alerts on `main`**, triaged on 2026-10-14
   ([the journal](docs/journal/2026-10-14.md#dependabot-alerts-triaged)). All three sit in markdownlint-cli2's
   dependencies, and none can be fixed cleanly yet. Only `smol-toml` is reachable, through any Markdown file's
@@ -110,8 +116,8 @@ the idea for the next attempt.
   conserved, lateral inhibition only shifts the cliff, and the fan-out penalty pushes it beyond the range of degree
   swept. Next: pilot the model in a notebook - run it to a steady state, judge the cliff by the transition's width
   against a smooth control, conserve the budget truly, fix the range of degree and the operating point's size - and
-  only then write the margins. C13-C17 go up on another path,
-  [#47](https://github.com/ai-quokka-wannabe/iso-lab/pull/47).
+  only then write the margins. C13-C17 went up on another path,
+  [#47](https://github.com/ai-quokka-wannabe/iso-lab/pull/47), merged.
 
 ## Needs From Other Repositories
 
@@ -143,6 +149,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-14: satiety quiescence's source found (You et al. 2008), but its abstract gives no timing and its full text
+  could not be reached (Europe PMC's HTTP 500, PMC's CAPTCHA, not got around); the gap stays, now with its source.
 - 2026-10-14: averaged over neighbouring frames, the bends beyond 0.9 rad barely fall (0.6 to 1.8% per joint at a
   tenth of a second), on 34 recordings; the head's ratio within 0.002 of the body's, no evidence either way.
 - 2026-10-14: the arena's first life: the placeholder lived all 28 800 ticks of a fifteen-minute life on lavapipe,

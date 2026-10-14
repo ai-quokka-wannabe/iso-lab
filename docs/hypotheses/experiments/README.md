@@ -21,7 +21,7 @@ Every plan has the same parts:
 - **Cost**: compute and memory, in the terms of the rule *Lean brains*.
 - **Waits on**: what must exist first - the benchmark, the feature tool, the arena, a sense the Grid lacks.
 - **Leads**: each lead's status - found in Crossref by title and DOI, or read at the source (and for which number). A
-  lead that cannot be found is dropped and says so.
+  lead that cannot be found says so, and stays only as an unverified lead, never as evidence.
 
 A plan says what it cannot settle yet. Numbers it needs from the literature are named, not guessed; they are read
 out of their sources when the experiment is prepared.
