@@ -190,7 +190,7 @@ at that level** - the hybrid recalled 18% against 99.8% for linear attention of 
 points against one step of the same read, and frozen and given streams up to three times as long it stayed 0.79 to 0.84 below. The 2026-10-14
 journal has the numbers and a hunch about why (the settling falls into the mixture states of Hebb's rule). A pilot of
 v2, written by the delta rule ([its notebook](../../notebooks/h11v2_delta_pilot.ipynb)), recalled 0.89 and its
-settling no longer harmed, but it did not beat a DeltaNet memory of the same size and fell behind it on long streams.
+settling did no harm that the pilot could detect, but it did not beat a DeltaNet memory of the same size.
 
 ## Adding a Hypothesis
 

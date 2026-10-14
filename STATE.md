@@ -75,9 +75,9 @@ the idea for the next attempt.
   (F1), or more phase states.
 - **H11, a Hebbian Hopfield transformer** ([v1](notebooks/h11_hebbian_hopfield_transformer.ipynb) and the
   [v2 pilot](notebooks/h11v2_delta_pilot.ipynb), 2026-10-14): v1 refuted, its Hebbian settling harmful; v2, written by
-  the delta rule, recalls 0.89 and the settling no longer harms, but it does not beat a DeltaNet memory of the same size
-  and falls behind it on long streams. Next: read Kanter and Sompolinsky 1987 and Krotov and Hopfield 2016, then try a
-  dense (sharper) energy with the cooling schedule v2 learned built in, against DeltaNet, 5 seeds and 3000 steps.
+  the delta rule with four heads, recalls 0.89 with no harm detected from the settling, but it does not beat a DeltaNet
+  memory of the same size. Next: recall from a noisy cue (v3, under way), then read Kanter and Sompolinsky 1987 and
+  Krotov and Hopfield 2016 and try a dense (sharper) energy.
 
 ## Blocked
 
@@ -115,8 +115,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
-- 2026-10-14: H11 v2, a pilot: delta-rule writing lifts the hybrid to 0.89 recall, but it does not beat a DeltaNet
-  memory of the same size (-0.11 [-0.25, +0.03] at 3 seeds) and falls behind it from 32 pairs on.
+- 2026-10-14: H11 v2, a pilot: written by the delta rule in four heads, the hybrid recalls 0.89 (v1: 0.18, another
+  protocol), but it does not beat a DeltaNet memory of the same size (-0.11 [-0.25, +0.03] at 3 seeds).
 - 2026-10-14: H11, a Hebbian Hopfield transformer (the maintainer's hunch), refuted at the toy level: 18% recall
   against 99.8% for linear attention of the same memory, the settling itself the harm; frozen, the matched Hebbian memory
   still recalled 92% in streams three times the trained length.
