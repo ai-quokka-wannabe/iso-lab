@@ -24,9 +24,12 @@
 //!
 //! An optional argument, a half-width in skeleton points, first smooths every skeleton along its
 //! length by `posture::smoothed_along`: `cargo run --release --bin posture-limits -- 2`. Without it,
-//! or with 0, the skeletons are used as recorded.
+//! or with 0, the skeletons are used as recorded. A second argument, a number of frames, first averages
+//! each skeleton point by point with that many frames on either side (`posture::averaged_over_frames`):
+//! `cargo run --release --bin posture-limits -- 0 1`. A frame whose window runs past either end of the
+//! recording, or holds a frame without a skeleton, then has no eight arcs and is not counted.
 
-use features::posture::{ARCS, COS_GRID_JOINT_LIMIT, eight_arcs, smoothed_along};
+use features::posture::{ARCS, COS_GRID_JOINT_LIMIT, averaged_over_frames, eight_arcs, smoothed_along};
 use features::read_skeletons;
 use std::path::Path;
 use std::process::ExitCode;
@@ -40,6 +43,14 @@ fn main() -> ExitCode {
         Some(Ok(half_width)) => half_width,
         Some(Err(error)) => {
             eprintln!("the argument is a half-width in skeleton points: {error}");
+            return ExitCode::FAILURE;
+        }
+    };
+    let frames_either_side = match std::env::args().nth(2).map(|argument| argument.parse::<usize>()) {
+        None => 0,
+        Some(Ok(frames)) => frames,
+        Some(Err(error)) => {
+            eprintln!("the second argument is a number of frames on either side: {error}");
             return ExitCode::FAILURE;
         }
     };
@@ -69,9 +80,18 @@ fn main() -> ExitCode {
         let (mut skeletonised, mut beyond_limit, mut beyond_ceiling) = (0_usize, 0_usize, 0_usize);
         let mut per_joint = [0_usize; ARCS - 1];
         let mut lengths = Vec::new();
-        for frame in (0..skeletons.frames()).filter_map(|index| skeletons.frame(index)) {
+        for index in (0..skeletons.frames()).filter(|&index| skeletons.frame(index).is_some()) {
             skeletonised += 1;
-            let Some(arcs) = eight_arcs(&smoothed_along(frame, half_width)) else { continue };
+            let window: Option<Vec<&[f32]>> = match index.checked_sub(frames_either_side) {
+                Some(first) => (first..=index + frames_either_side).map(|neighbour| skeletons.frame(neighbour)).collect(),
+                None => None,
+            };
+            let Some(averaged) = window.as_deref().and_then(averaged_over_frames) else {
+                continue;
+            };
+            let Some(arcs) = eight_arcs(&smoothed_along(&averaged, half_width)) else {
+                continue;
+            };
             lengths.push(arcs.length);
             beyond_limit += usize::from(arcs.bends_beyond(COS_GRID_JOINT_LIMIT));
             beyond_ceiling += usize::from(arcs.bends_beyond(0.0));

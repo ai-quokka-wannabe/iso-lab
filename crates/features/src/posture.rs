@@ -130,6 +130,22 @@ pub fn smoothed_along(skeleton: &[f32], half_width: usize) -> Vec<f32> {
         .collect()
 }
 
+/// Skeletons from consecutive frames averaged point by point: the mean of each coordinate over
+/// the frames given, taken in `f64` and stored back as `f32`. `None` when no frame is given or the
+/// frames differ in length, so that a window with a gap or a mismatch is no posture at all.
+pub fn averaged_over_frames(frames: &[&[f32]]) -> Option<Vec<f32>> {
+    let width = frames.first()?.len();
+    if frames.iter().any(|frame| frame.len() != width) {
+        return None;
+    }
+    let count = frames.len() as f64;
+    Some(
+        (0..width)
+            .map(|i| (frames.iter().map(|frame| f64::from(frame[i])).sum::<f64>() / count) as f32)
+            .collect(),
+    )
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -223,6 +239,19 @@ mod tests {
         let odd = [0.0_f32, 0.0, 1.0, 1.0, 2.0];
         assert_eq!(smoothed_along(&odd, 1), odd);
         assert_eq!(eight_arcs(&smoothed_along(&odd, 1)), None);
+    }
+
+    #[test]
+    fn averaging_frames_takes_each_coordinates_mean() {
+        let (a, b, c) = ([0.0_f32, 0.0, 3.0, 6.0], [1.0_f32, 2.0, 3.0, 0.0], [2.0_f32, 4.0, 3.0, 3.0]);
+        assert_eq!(averaged_over_frames(&[&a, &b, &c]), Some(vec![1.0, 2.0, 3.0, 3.0]));
+        assert_eq!(averaged_over_frames(&[&a]), Some(a.to_vec()), "one frame is itself");
+    }
+
+    #[test]
+    fn averaging_refuses_no_frames_and_mismatched_ones() {
+        assert_eq!(averaged_over_frames(&[]), None);
+        assert_eq!(averaged_over_frames(&[&[0.0, 0.0, 1.0, 1.0], &[0.0, 0.0]]), None);
     }
 
     #[test]
