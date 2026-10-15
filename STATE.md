@@ -125,9 +125,12 @@ the idea for the next attempt.
   swept. The pilot is done (journal of 2026-10-14, *C18's Model, Piloted*;
   `notebooks/c18_spreading_pilot.ipynb`): run to a steady state, the pure network's mean curve does not narrow
   steadily with size, likely because draws that die out early mix with draws that fill the network, and no cure
-  removed the transition. Next: rewrite the plan with a statistic conditioned on the seed's out-component being
-  non-empty, more draws, a degree range of 0.5 to 6 with a finer step near each transition, an operating point per
-  variant, a smooth control and the plan's harness controls, and only then write the margins. C13-C17 went up on another path,
+  removed the transition. Tried again on 2026-10-15 (journal, *C18's Plan, Attempted Again*): a width or
+  steepest-slope test cannot tell a continuous transition from a smooth change - the giant component's 10-90% width
+  converges to about 1.49, top taken at d = 6 - and the pilot's own model may jump near d = 2.5 rather than rise.
+  Next: settle what the hunch's "cliff" means (Shrager, Hogg and Huberman 1987, not yet read), then plan a test of the
+  reached fraction below and above the threshold (falling as 1/N below, holding above), with the giant component and a
+  jump-shaped model as controls, the pilot's conditioned statistic and more draws. C13-C17 went up on another path,
   [#47](https://github.com/ai-quokka-wannabe/iso-lab/pull/47), merged.
 
 - **How the lab reads a Disk** (item 3(d2); waits on the maintainer's ruling). A Disk is Link's frames in a file,
