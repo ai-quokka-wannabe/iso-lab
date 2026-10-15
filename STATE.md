@@ -54,8 +54,9 @@ Top first. Each item is sized for one run; split it here before starting if it i
    upward shift of the speed; inside the published paused runs the lab's speed leaves the paused band for a
    quarter-second or more in about one gap in seven, fewer but longer excursions than the published speed's (journal
    of 2026-10-15, *How the In-Band Frames Fall in Time*); next, the two speeds' frame-to-frame variation on
-   nearly-still frames, and how much of the undefined excess those gaps and the run edges account for, then the
-   states' durations and the rate of reversals; (d) the reference statistics.
+   nearly-still frames, and why the lab's paused states start later and end earlier - the edges hold about half its
+   undefined paused frames (journal of 2026-10-15, *Where in the Paused Runs the Lab's Undefined Frames Lie*) - then
+   the states' durations and the rate of reversals; (d) the reference statistics.
 3. **Prove the arena**: in the cloud machine, on Linux alone (the maintainer's ruling), build Master Control and the
    Grid (software Vulkan through Mesa's lavapipe) from `external/`, write the lab's own minimal Program - a
    placeholder brain that only undulates gently, shaped after
@@ -183,6 +184,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-15: where the lab's undefined paused frames lie: 52% at the edges of the published paused runs, 29% in long
+  interior gaps, 19% in short runs the rule dropped.
 - 2026-10-15: how the in-band frames fall in time: inside published paused runs, 14.9% (median) of the gaps between
   the lab's in-band frames are a quarter-second or longer, in every record; the published side is zero by construction.
 - 2026-10-15: the lab's length equals the published (by construction) and its speed matches at the median overall
