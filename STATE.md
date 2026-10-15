@@ -144,10 +144,10 @@ points to the open ones and says what waits on each.
   joint) and falls along the body (medians 3.2 to 4.5% at joints 4 to 6), though the tail joint varies most.
   Smoothing the skeletons along their length lowers the joints by similar proportions (a five-point mean keeps about
   0.8 of each share), the tail most, so the gradient survives it - but the smoothing leaves the tips, the noisiest
-  points, untouched; averaging over a tenth of a second removes 0.6 to 1.8% of it per joint - but by Tierpsy's current
-  code the stored skeletons are already smoothed over 5 frames, so that check was largely blind (journal of
-  2026-10-15). Next: read the smoothing in Tierpsy's commit `cbfc23eb`, the dataset's own, and its handling of
-  head-tail swaps, then draft the issue.
+  points, untouched; averaging over a tenth of a second removes 0.6 to 1.8% of it per joint. The stored skeletons were already
+  smoothed along their length by Tierpsy (Savitzky-Golay, 5 of 49 points, tips included; at the dataset's own commit
+  `cbfc23eb` too), not in time (journal of 2026-10-15). Next: read Tierpsy's handling of head-tail swaps, then draft
+  the issue.
 - **Terrace edges** (master-control; the maintainer takes it up once the lab is set up - file nothing). A
   chain can be thrown when a segment crosses a terrace edge; a fix is in progress. Until it lands, every life
   in this lab is lived on a flat arena.
@@ -155,7 +155,7 @@ points to the open ones and says what waits on each.
 ## Done
 
 - 2026-10-15: the published midbody speed read at its source and reproduced exactly (correlation 1.00000 on two
-  records); by the same code the stored skeletons are smoothed in time, which weakens the averaging-over-frames check.
+  records); the stored skeletons were already smoothed along their length by Tierpsy, not in time.
 - 2026-10-14: C18's model piloted: no cure removed the transition, and the plan's statistic would measure early
   die-out as much as sharpness; the plan is to be rewritten from it.
 - 2026-10-14: satiety quiescence's source found (You et al. 2008), but its abstract gives no timing and its full text
