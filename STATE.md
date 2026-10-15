@@ -3,7 +3,8 @@
 **Last updated:** 2026-10-15, evening session's end (journal of 2026-10-15): the lab's excess of undefined paused
 frames shown, by counts, to follow largely from the stored skeletons' uneven point spacing - the half-way midbody carries all of the lab's
 smoothness, equal spacing carries that, and states from the toolbox's speed on equally spaced skeletons leave a median
-92% as many paused frames undefined as the lab's; replicated on block 1's further 178 records, fetched in full tonight.
+92% as many paused frames undefined as the lab's, counted on block 1's further 178 records (fetched in full
+tonight), on which the smoothness findings also replicated.
 The benchmark's choice of rule for the lab's speed is the next step; the pace note's gaps and C18 are unchanged.
 
 ## Where We Are
