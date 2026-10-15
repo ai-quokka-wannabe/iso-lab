@@ -50,7 +50,8 @@ Top first. Each item is sized for one run; split it here before starting if it i
    builds from `external/` and passes its own cheap suite, done; (b) the Grid built with lavapipe, done; (c) the
    placeholder Program, done (`crates/placeholder-worm`); (d) split in two: (d1) one life, its Disk and input log
    kept and replayed, done; (d2) the same features extracted from the Disk, which needs a Disk reader in `features`,
-   and the share of refused intents measured (journal of 2026-10-14, *The Arena, Fourth Step*).
+   and the share of refused intents measured (journal of 2026-10-14, *The Arena, Fourth Step*); waits on a ruling (see
+   *Blocked*).
 4. **Survey associative memory for a worm-sized brain**, as `docs/research/associative-memory.md`: Hebbian
    learning and Oja's rule, Hopfield networks classical and modern, Boltzmann machines, dense associative
    memory - what each is, what it would cost a brain on the worm's scale to run, which of the worm's
@@ -123,6 +124,18 @@ the idea for the next attempt.
   variant, a smooth control and the plan's harness controls, and only then write the margins. C13-C17 went up on another path,
   [#47](https://github.com/ai-quokka-wannabe/iso-lab/pull/47), merged.
 
+- **How the lab reads a Disk** (item 3(d2); waits on the maintainer's ruling). A Disk is Link's frames in a file,
+  read back through Link's own library (`replay_open` and `poll` in `external/link/include/lnk/lnk_client.h`), and
+  the lab's rules make each route cost something. (1) Depend on `external/master-control` as a crate and reuse its
+  `link_dll` mirror and `replay_open`, as Clu does: one implementation, but every lab build, CI's included, then needs
+  the submodules checked out recursively and builds Link through Master Control's `build.rs`. (2) Copy the parts of
+  that mirror the reader needs into `features` (most of its structs, since the message view's union and the vtable
+  hold every message type and call): CI stays light, and a drifted copy is
+  refused at run time by the vtable's size and ABI version and the Disk's protocol fingerprint, but it is a third
+  copy of the layout. (3) Decode the frames in Rust: a second decoder, against the organisation's "one
+  implementation" doctrine - not recommended. The lab's rule that `external/link` is not what gets built rules out
+  depending on it directly. Recommended: (1), for one implementation; (2) if CI's weight matters more.
+
 ## Needs From Other Repositories
 
 Each need is an issue in the repository that would meet it, triaged there by its maintainers; this list
@@ -146,14 +159,18 @@ points to the open ones and says what waits on each.
   0.8 of each share), the tail most, so the gradient survives it - but the smoothing leaves the tips, the noisiest
   points, untouched; averaging over a tenth of a second removes 0.6 to 1.8% of it per joint. The stored skeletons were already
   smoothed along their length by Tierpsy (Savitzky-Golay, 5 of 49 points, tips included; at the dataset's own commit
-  `cbfc23eb` too), not in time (journal of 2026-10-15). Next: read Tierpsy's handling of head-tail swaps, then draft
-  the issue.
+  `cbfc23eb` too), not in time (journal of 2026-10-15). The head is named by Tierpsy as the end whose angle varies
+  more, block by block, so the gradient is partly built in; no swap shows from one frame to the next (journal of
+  2026-10-15, *Which End Is the Head*). Next: draft the issue in full here, resting on the share at any joint, for the
+  maintainer to file (this session cannot open issues in tron-grid-lite).
 - **Terrace edges** (master-control; the maintainer takes it up once the lab is set up - file nothing). A
   chain can be thrown when a segment crosses a terrace edge; a fix is in progress. Until it lands, every life
   in this lab is lived on a flat arena.
 
 ## Done
 
+- 2026-10-15: which end is the head: Tierpsy names it by movement, so the head's excess of bends is partly built in;
+  no frame-to-frame swap in seventeen records (a planted-swap control catches all 474), 62 candidates across 18,105 gaps.
 - 2026-10-15: the published midbody speed read at its source and reproduced exactly (correlation 1.00000 on two
   records); the stored skeletons were already smoothed along their length by Tierpsy, not in time.
 - 2026-10-14: C18's model piloted: no cure removed the transition, and the plan's statistic would measure early
