@@ -53,10 +53,12 @@ Top first. Each item is sized for one run; split it here before starting if it i
    the lab's length equals the published and its speed is lower at the median on nearly-still frames, so it is not an
    upward shift of the speed; inside the published paused runs the lab's speed leaves the paused band for a
    quarter-second or more in about one gap in seven, fewer but longer excursions than the published speed's (journal
-   of 2026-10-15, *How the In-Band Frames Fall in Time*); next, the two speeds' frame-to-frame variation on
-   nearly-still frames, and why the lab's paused states start later and end earlier - the edges hold about half its
-   undefined paused frames (journal of 2026-10-15, *Where in the Paused Runs the Lab's Undefined Frames Lie*) - then
-   the states' durations and the rate of reversals; (d) the reference statistics.
+   of 2026-10-15, *How the In-Band Frames Fall in Time*); the edges and the middle each hold
+   about half its undefined paused frames (journal of 2026-10-15, *Where in the Paused Runs the Lab's Undefined Frames
+   Lie*); on nearly-still frames the lab's speed varies about a third as much as the published from frame to frame
+   (journal of 2026-10-15, *How Much the Two Speeds Vary From Frame to Frame on Nearly-Still Frames*); next, smooth the
+   published speed to the lab's roughness (or roughen the lab's) and compare the states, and test the resampling to
+   eight arcs as the source of the smoothness - then the states' durations and the rate of reversals; (d) the reference statistics.
 3. **Prove the arena**: in the cloud machine, on Linux alone (the maintainer's ruling), build Master Control and the
    Grid (software Vulkan through Mesa's lavapipe) from `external/`, write the lab's own minimal Program - a
    placeholder brain that only undulates gently, shaped after
@@ -184,6 +186,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-15: frame-to-frame variation on published paused frames: the lab's speed changes 0.33 (median over records)
+  as much as the published over one frame, 0.55 over a quarter-second; the smoothness hunch survives both lags.
 - 2026-10-15: where the lab's undefined paused frames lie: 52% at the edges of the published paused runs, 29% in long
   interior gaps, 19% in short runs the rule dropped.
 - 2026-10-15: how the in-band frames fall in time: inside published paused runs, 14.9% (median) of the gaps between
