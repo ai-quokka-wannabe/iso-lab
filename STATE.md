@@ -61,8 +61,11 @@ Top first. Each item is sized for one run; split it here before starting if it i
    (journal of 2026-10-15, *How Much the Two Speeds Vary From Frame to Frame on Nearly-Still Frames*); the published speed,
    smoothed to at least the lab's smoothness by a five-frame moving mean, leaves a median 83% as many paused frames undefined as
    the lab's states, so smoothness alone is enough to leave most of them undefined, though not all the same frames (journal of
-   2026-10-15, *Does Smoothing the Published Speed Leave as Many Frames Undefined?*); next, test the resampling to eight arcs as the source of the smoothness, then weigh
-   matching the published roughness against judging the states by a rule not tuned to the published speed - then the
+   2026-10-15, *Does Smoothing the Published Speed Leave as Many Frames Undefined?*); of the eight arcs' two
+   changes the midbody alone carries the smoothness, the point half-way by length in place of the centroid of points 21
+   to 29 (journal of 2026-10-15, *Which of the Eight Arcs' Two Changes Smooths the Speed*); next, measure whether that
+   centroid slides along the body from frame to frame, then weigh matching the published roughness against judging the
+   states by thresholds set for the lab's midbody - then the
    states' durations and the rate of reversals; (d) the reference statistics.
 3. **Prove the arena**: in the cloud machine, on Linux alone (the maintainer's ruling), build Master Control and the
    Grid (software Vulkan through Mesa's lavapipe) from `external/`, write the lab's own minimal Program - a
@@ -191,6 +194,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-15: of the eight arcs' two changes, the midbody point alone carries the lab's smoothness: the toolbox's speed with
+  it has 0.325 of the published roughness (median), with the eight-arc direction 1.000; the lab's is 0.326.
 - 2026-10-15: the published speed smoothed to at least the lab's smoothness (moving mean of 5 frames, 3 in two records) leaves
   0.834 (median over records) as many published-paused frames undefined as the lab's states, supporting smoothness as enough on its own.
 - 2026-10-15: frame-to-frame variation on published paused frames: the lab's speed changes 0.33 (median over records)
