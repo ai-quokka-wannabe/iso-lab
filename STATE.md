@@ -1,8 +1,8 @@
 # State of the Lab
 
-**Last updated:** 2026-10-14, night's end: the comparison space drafted, the pace note filled in part, H11 tried and refuted,
-the reference worms' bends measured against the Grid's joint limit, a midbody speed built, and the arena proven to a
-first life that replays exactly.
+**Last updated:** 2026-10-15, session's end: the published locomotion states reproduced exactly and ported to tested
+Rust, and the lab's midbody speed traced through its excess of undefined frames to its smoothness - the published speed,
+smoothed to match, leaves as many paused frames undefined.
 
 ## Where We Are
 
