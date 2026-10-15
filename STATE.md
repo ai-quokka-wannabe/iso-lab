@@ -46,15 +46,16 @@ Top first. Each item is sized for one run; split it here before starting if it i
    Rust*); and judged by the states it gives, the speed with the published choices passes a bar set from the spread
    between worms and the first measure fails, but the lab's states are biased one way - about 6% more frames in no
    state, so lower shares in every record (journal of 2026-10-15, *The Midbody Speed, Judged by the States It
-   Gives*), and those frames are lost not to missing skeletons but to the speed's values - often a little above
-   the paused band where the worm is nearly still, its runs breaking where the published ones bridge (journal of 2026-10-15, *Why the Lab's States Leave More Frames
-   Undefined*); a midbody of the three middle ends, to test a one-point jitter as the cause, refutes it - the excess
-   rises (journal of 2026-10-15, *A Midbody of Three Ends*); the lab's length equals the published and its speed is
-   lower at the median on nearly-still frames, so it is not an upward shift of the speed; inside the published paused runs the
-   lab's speed leaves the paused band for a quarter-second or more in about one gap in seven, fewer but longer
-   excursions than the published speed's (journal of 2026-10-15, *How the In-Band Frames Fall in Time*); next, the
-   two speeds' frame-to-frame variation on nearly-still frames, and how much of the undefined excess those gaps
-   account for, then the states' durations and the rate of reversals; (d) the reference statistics.
+   Gives*), and those frames are lost not to missing skeletons but to the speed's values - often a little above the
+   paused band where the worm is nearly still, its runs breaking where the published ones bridge (journal of
+   2026-10-15, *Why the Lab's States Leave More Frames Undefined*); a midbody of the three middle ends, to test a
+   one-point jitter as the cause, refutes it - the excess rises (journal of 2026-10-15, *A Midbody of Three Ends*);
+   the lab's length equals the published and its speed is lower at the median on nearly-still frames, so it is not an
+   upward shift of the speed; inside the published paused runs the lab's speed leaves the paused band for a
+   quarter-second or more in about one gap in seven, fewer but longer excursions than the published speed's (journal
+   of 2026-10-15, *How the In-Band Frames Fall in Time*); next, the two speeds' frame-to-frame variation on
+   nearly-still frames, and how much of the undefined excess those gaps and the run edges account for, then the
+   states' durations and the rate of reversals; (d) the reference statistics.
 3. **Prove the arena**: in the cloud machine, on Linux alone (the maintainer's ruling), build Master Control and the
    Grid (software Vulkan through Mesa's lavapipe) from `external/`, write the lab's own minimal Program - a
    placeholder brain that only undulates gently, shaped after
