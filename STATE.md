@@ -124,7 +124,11 @@ the idea for the next attempt.
   steadily with size, likely because draws that die out early mix with draws that fill the network, and no cure
   removed the transition. Next: rewrite the plan with a statistic conditioned on the seed's out-component being
   non-empty, more draws, a degree range of 0.5 to 6 with a finer step near each transition, an operating point per
-  variant, a smooth control and the plan's harness controls, and only then write the margins. C13-C17 went up on another path,
+  variant, a smooth control and the plan's harness controls, and only then write the margins. Tried again on 2026-10-15
+  from that pilot (journal, *C18's Plan, Attempted Again*): a width or steepest-slope test cannot tell a continuous
+  transition from a smooth change - the giant component's 10-90% width stays near 1.49 in the limit - so the plan
+  needs a test below and above the threshold (the reached fraction falling as 1/N below, holding above), and the
+  hunch's "cliff" settled first from Shrager, Hogg and Huberman 1987, not yet read. C13-C17 went up on another path,
   [#47](https://github.com/ai-quokka-wannabe/iso-lab/pull/47), merged.
 
 - **How the lab reads a Disk** (item 3(d2); waits on the maintainer's ruling). A Disk is Link's frames in a file,
