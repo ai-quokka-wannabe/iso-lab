@@ -24,8 +24,11 @@
 //!
 //! `cargo run --release --bin midbody-speed -- <record>`: that record's speed at every frame, one
 //! line a frame, `NaN` where it has none, for comparison with the dataset's own table.
+//!
+//! With `--published-choices` before the record, if any, the speed is
+//! `locomotion::published_choice_speeds` instead, and the half span column gives its half window.
 
-use features::locomotion::{half_span_frames, midbody_speeds};
+use features::locomotion::{half_span_frames, midbody_speeds, published_choice_speeds, published_half_window};
 use features::posture::eight_arcs;
 use features::read_skeletons;
 use std::path::Path;
@@ -44,7 +47,16 @@ fn median(values: &mut [f64]) -> f64 {
 }
 
 fn main() -> ExitCode {
-    let only = std::env::args().nth(1);
+    let mut arguments: Vec<String> = std::env::args().skip(1).collect();
+    let published = arguments.first().is_some_and(|argument| argument == "--published-choices");
+    if published {
+        arguments.remove(0);
+    }
+    if arguments.len() > 1 {
+        eprintln!("usage: midbody-speed [--published-choices] [<record>]");
+        return ExitCode::FAILURE;
+    }
+    let only = arguments.pop();
     let entries = match std::fs::read_dir(DIRECTORY) {
         Ok(entries) => entries,
         Err(error) => {
@@ -77,7 +89,11 @@ fn main() -> ExitCode {
             }
         };
         let arcs: Vec<_> = (0..skeletons.frames()).map(|index| skeletons.frame(index).and_then(eight_arcs)).collect();
-        let speeds = midbody_speeds(&arcs, skeletons.fps);
+        let speeds = if published {
+            published_choice_speeds(&arcs, skeletons.fps)
+        } else {
+            midbody_speeds(&arcs, skeletons.fps)
+        };
         if only.is_some() {
             for (frame, speed) in speeds.iter().enumerate() {
                 println!("{frame}\t{}", speed.map_or("NaN".to_string(), |speed| format!("{speed:.4}")));
@@ -94,7 +110,11 @@ fn main() -> ExitCode {
         println!(
             "{record}\t{:.2}\t{}\t{}\t{with_speed}\t{length:.1}\t{speed:.2}\t{:.4}\t{share:.4}",
             skeletons.fps,
-            half_span_frames(skeletons.fps),
+            if published {
+                published_half_window(skeletons.fps)
+            } else {
+                half_span_frames(skeletons.fps)
+            },
             skeletons.frames(),
             speed / length
         );
