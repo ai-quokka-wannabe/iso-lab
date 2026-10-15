@@ -46,8 +46,8 @@ Top first. Each item is sized for one run; split it here before starting if it i
    Rust*); and judged by the states it gives, the speed with the published choices passes a bar set from the spread
    between worms and the first measure fails, but the lab's states are biased one way - about 6% more frames in no
    state, so lower shares in every record (journal of 2026-10-15, *The Midbody Speed, Judged by the States It
-   Gives*), and those frames are lost not to missing skeletons but to the speed running a little above the
-   paused band where the worm is nearly still (journal of 2026-10-15, *Why the Lab's States Leave More Frames
+   Gives*), and those frames are lost not to missing skeletons but to the speed's values - often a little above
+   the paused band where the worm is nearly still, its runs breaking where the published ones bridge (journal of 2026-10-15, *Why the Lab's States Leave More Frames
    Undefined*); next, a midbody averaged over a stretch of the body, to test whether a one-point midbody's jitter is
    the cause, then the states' durations and the rate of reversals checked the same way; (d) the reference
    statistics.
@@ -178,9 +178,9 @@ points to the open ones and says what waits on each.
 
 ## Done
 
-- 2026-10-15: why the lab's states leave more frames undefined: 79.5% of those frames have the lab's speed outside
-  the published state's band (mostly nearly-still frames at a median 3.4% of length a second), 20.1% a run cut
-  short, 0.4% no speed.
+- 2026-10-15: why the lab's states leave more frames undefined: not missing skeletons (0.4%) but the speed's values;
+  in about 40% of those frames the published speed is in its state's band and the lab's (median 3.4% of length a
+  second where paused) is not, the rest are runs the lab's breaks did not bridge or cut short.
 - 2026-10-15: the midbody speed judged by the states it gives: with the published choices it passes the bar in all
   three states on seventeen records (paused narrowly), the measure of 2026-10-14 fails; the lab's states leave about
   6% more frames undefined in every record, a one-way bias the bar cannot see.
