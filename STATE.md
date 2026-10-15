@@ -41,7 +41,7 @@ Top first. Each item is sized for one run; split it here before starting if it i
    the published speed's definition is read and reproduced exactly, and its choices copied at eight arcs fail the
    same check in the same record by 0.0001 (journal of 2026-10-15, *The Midbody Speed With the Published Choices, at
    Eight Arcs*), so the departure lies in the eight arcs themselves; the published locomotion states are reproduced
-   exactly from the published speed (journal of 2026-10-15, *The Published Locomotion States, Read at Their Source*);
+   exactly from the published speed and length (journal of 2026-10-15, *The Published Locomotion States, Read at Their Source*);
    next, that rule in tested Rust, then the speed check re-run as the share of frames whose state the lab's speed
    changes; (d) the reference statistics.
 3. **Prove the arena**: in the cloud machine, on Linux alone (the maintainer's ruling), build Master Control and the
@@ -157,19 +157,11 @@ points to the open ones and says what waits on each.
   for the sense of the body's own intake). The reference worms are filmed on food and the Grid has none
   ([docs/benchmark/FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing)).
   The benchmark is not frozen until food is settled, by these issues or by comparing with foodless worms instead.
-- **The worm's bends against the Grid's joint limit** (tron-grid-lite; not yet an issue). In twelve reference
-  recordings 31 to 46% (median 38%) of the skeletonised frames bend beyond the Grid's 0.9 rad at some eight-arc joint
-  (journal of 2026-10-14). Per joint the excess is greatest at the head (median 13% of frames at the first
-  joint) and falls along the body (medians 3.2 to 4.5% at joints 4 to 6), though the tail joint varies most.
-  Smoothing the skeletons along their length lowers the joints by similar proportions (a five-point mean keeps about
-  0.8 of each share), the tail most, so the gradient survives it - but the smoothing leaves the tips, the noisiest
-  points, untouched; averaging over a tenth of a second removes 0.6 to 1.8% of it per joint. The stored skeletons were already
-  smoothed along their length by Tierpsy (Savitzky-Golay, 5 of 49 points, tips included; at the dataset's own commit
-  `cbfc23eb` too), not in time (journal of 2026-10-15). The head is named by Tierpsy as the end whose direction
-  varies more, block by block and with three quarters of the weight over the track, so the gradient is built in to
-  an unknown degree; no swap shows from one frame to the next (journal of
-  2026-10-15, *Which End Is the Head*). Next: draft the issue in full here, resting on the share at any joint, for the
-  maintainer to file (this session cannot open issues in tron-grid-lite).
+- **The worm's bends against the Grid's joint limit** (tron-grid-lite; drafted, not yet filed). At the eight-arc
+  resolution 9.8 to 68.6% (median 35.8%, 34 recordings) of the reference worms' skeletonised frames bend beyond the
+  chain's 0.9 rad at some joint, against 0.15% beyond Master Control's pi/2. The issue - raise the limit to pi/2, with the caveats - is
+  drafted in full in the journal of 2026-10-15, *The Joint-Limit Issue, Drafted*, for the maintainer to file, since
+  this session cannot open issues there. Once filed, this line becomes its link.
 - **Terrace edges** (master-control; the maintainer takes it up once the lab is set up - file nothing). A
   chain can be thrown when a segment crosses a terrace edge; a fix is in progress. Until it lands, every life
   in this lab is lived on a flat arena.
@@ -178,6 +170,8 @@ points to the open ones and says what waits on each.
 
 - 2026-10-15: the published locomotion states (forward, backward, paused) read at the toolbox's source and reproduced
   exactly from the published speed and length, on all 602,314 frames of seventeen records.
+- 2026-10-15: the joint-limit issue for tron-grid-lite drafted in full, from the evidence already measured, for the
+  maintainer to file.
 - 2026-10-15: which end is the head: Tierpsy names it mostly by movement, so the head's excess of bends is built in to a degree;
   no frame-to-frame swap in seventeen records (a planted-swap control catches all 474), 62 candidates across 18,105 gaps.
 - 2026-10-15: the midbody speed with the published choices at eight arcs: 1007405 fails the check again (r 0.9499
