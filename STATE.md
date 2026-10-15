@@ -1,8 +1,10 @@
 # State of the Lab
 
-**Last updated:** 2026-10-15, session's end: the published locomotion states reproduced exactly and ported to tested
-Rust, and the lab's midbody speed's excess of undefined frames found consistent with its smoothness - the published
-speed, smoothed to match, leaves as many paused frames undefined, though not all the same ones.
+**Last updated:** 2026-10-15, session's end (journal of 2026-10-15): the published locomotion states reproduced
+exactly and ported to tested Rust; the lab's midbody speed's excess of undefined paused frames found consistent with its
+smoothness - the published speed, smoothed to at least the lab's smoothness by a five-frame moving mean, leaves a
+median 83% as many undefined, about two thirds of them the same ones; a one-point jitter refuted as the cause; C18's
+plan retried and still parked; no gap of the pace note filled.
 
 ## Where We Are
 
@@ -58,7 +60,7 @@ Top first. Each item is sized for one run; split it here before starting if it i
    Lie*); on nearly-still frames the lab's speed varies about a third as much as the published from frame to frame
    (journal of 2026-10-15, *How Much the Two Speeds Vary From Frame to Frame on Nearly-Still Frames*); the published speed,
    smoothed to the lab's roughness by a five-frame moving mean, leaves a median 83% as many paused frames undefined as
-   the lab's states, so smoothness alone is enough to leave as many undefined, though not all the same frames (journal of
+   the lab's states, so smoothness alone is enough to leave most of them undefined, though not all the same frames (journal of
    2026-10-15, *Does Smoothing the Published Speed Leave as Many Frames Undefined?*); next, test the resampling to eight arcs as the source of the smoothness, then weigh
    matching the published roughness against judging the states by a rule not tuned to the published speed - then the
    states' durations and the rate of reversals; (d) the reference statistics.
