@@ -58,8 +58,8 @@ Top first. Each item is sized for one run; split it here before starting if it i
    Lie*); on nearly-still frames the lab's speed varies about a third as much as the published from frame to frame
    (journal of 2026-10-15, *How Much the Two Speeds Vary From Frame to Frame on Nearly-Still Frames*); the published speed,
    smoothed to the lab's roughness by a five-frame moving mean, leaves a median 83% as many paused frames undefined as
-   the lab's states, so smoothness alone is enough (journal of 2026-10-15, *Does Smoothing the Published Speed Leave
-   the Same Frames Undefined?*); next, test the resampling to eight arcs as the source of the smoothness, then weigh
+   the lab's states, so smoothness alone is enough to leave as many undefined, though not all the same frames (journal of
+   2026-10-15, *Does Smoothing the Published Speed Leave as Many Frames Undefined?*); next, test the resampling to eight arcs as the source of the smoothness, then weigh
    matching the published roughness against judging the states by a rule not tuned to the published speed - then the
    states' durations and the rate of reversals; (d) the reference statistics.
 3. **Prove the arena**: in the cloud machine, on Linux alone (the maintainer's ruling), build Master Control and the
@@ -190,7 +190,7 @@ points to the open ones and says what waits on each.
 ## Done
 
 - 2026-10-15: the published speed smoothed to the lab's roughness (moving mean of 5 frames, 3 in two records) leaves
-  0.834 (median over records) as many published-paused frames undefined as the lab's states; smoothness alone suffices.
+  0.834 (median over records) as many published-paused frames undefined as the lab's states, supporting smoothness as enough on its own.
 - 2026-10-15: frame-to-frame variation on published paused frames: the lab's speed changes 0.33 (median over records)
   as much as the published over one frame, 0.55 over a quarter-second; the smoothness hunch survives both lags.
 - 2026-10-15: where the lab's undefined paused frames lie: 52% at the edges of the published paused runs, 29% in long
