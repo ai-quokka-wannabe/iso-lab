@@ -31,10 +31,18 @@ pub enum MotionMode {
 /// The state at every frame, given the midbody speed (positive towards the head) and the body's
 /// length per frame, in the same unit of length, and the frame rate. `None` where a frame is in
 /// no state.
+///
+/// It agrees with the toolbox except at exact ties in the last bit of a double: numpy sums a
+/// run's distance pairwise and interpolates a length as a slope times a step, where this sums in
+/// order and scales the difference, so the two can differ only where a sum or a threshold falls
+/// exactly on its bound. With every length undefined the toolbox raises an error, where this
+/// gives no state at all.
 pub fn motion_modes(speeds: &[Option<f64>], lengths: &[Option<f64>], fps: f64) -> Vec<Option<MotionMode>> {
     let lengths = interpolated(lengths);
     let fraction = |share: f64| -> Vec<Option<f64>> { lengths.iter().map(|length| length.map(|length| share * length)).collect() };
-    let (speed_bound, pause_bound) = (fraction(0.05), fraction(0.025));
+    // The speed and distance thresholds are both 5% of the length in the toolbox's options, and
+    // are kept apart here so that one cannot change with the other.
+    let (speed_bound, distance_bound, pause_bound) = (fraction(0.05), fraction(0.05), fraction(0.025));
     let mut modes = vec![None; speeds.len()];
     // In the toolbox's order, each later mode overwriting an earlier one where their states overlap, as
     // they can when bridged gaps chain across modes.
@@ -48,7 +56,7 @@ pub fn motion_modes(speeds: &[Option<f64>], lengths: &[Option<f64>], fps: f64) -
             let Some(speed) = speeds[t] else { return false };
             low.admits_from_below(speed, t) && high.admits_from_above(speed, t)
         };
-        let distance = needs_distance.then_some(&speed_bound);
+        let distance = needs_distance.then_some(&distance_bound);
         for (start, stop) in states(speeds, fps, candidate, distance) {
             for slot in &mut modes[start..=stop] {
                 *slot = Some(mode);
@@ -281,6 +289,56 @@ mod tests {
         let modes = motion_modes(&speeds, &length(20), FPS);
         assert!(modes[..10].iter().all(|&m| m == Some(MotionMode::Forward)), "{modes:?}");
         assert!(modes[10..].iter().all(|&m| m == Some(MotionMode::Backward)), "{modes:?}");
+        // Backing for a second, two still frames, a two-frame backward blip, then still: paused holds the overlap.
+        let mut speeds = constant(-100.0, 20);
+        for t in [10, 11, 14, 15, 16, 17, 18, 19] {
+            speeds[t] = Some(0.0);
+        }
+        let modes = motion_modes(&speeds, &length(20), FPS);
+        assert!(modes[..10].iter().all(|&m| m == Some(MotionMode::Backward)), "{modes:?}");
+        assert!(modes[10..].iter().all(|&m| m == Some(MotionMode::Paused)), "{modes:?}");
+    }
+
+    #[test]
+    fn backing_at_exactly_five_percent_is_backward() {
+        assert!(motion_modes(&constant(-50.0, 20), &length(20), FPS).iter().all(|&m| m == Some(MotionMode::Backward)));
+    }
+
+    #[test]
+    fn interpolated_lengths_follow_a_ramp() {
+        // The length rises from 1000 to 3000 over twenty frames, so 5% of it is 50 + 5t: a speed of 104
+        // reaches it up to frame 10 and not from frame 11. A step fill or a wrong denominator moves that edge.
+        let mut lengths = vec![None; 21];
+        lengths[0] = Some(1000.0);
+        lengths[20] = Some(3000.0);
+        let modes = motion_modes(&constant(104.0, 21), &lengths, FPS);
+        assert!(modes[..=10].iter().all(|&m| m == Some(MotionMode::Forward)), "{modes:?}");
+        assert!(modes[11..].iter().all(|&m| m.is_none()), "{modes:?}");
+    }
+
+    #[test]
+    fn lengths_before_the_first_known_one_stay_undefined() {
+        // No threshold is defined before frame 5, so those frames are in no state, however fast.
+        let mut lengths = length(20);
+        for length in &mut lengths[..5] {
+            *length = None;
+        }
+        let modes = motion_modes(&constant(100.0, 20), &lengths, FPS);
+        assert!(modes[..5].iter().all(|&m| m.is_none()), "{modes:?}");
+        assert!(modes[5..].iter().all(|&m| m == Some(MotionMode::Forward)), "{modes:?}");
+    }
+
+    #[test]
+    fn the_distance_bound_is_averaged_over_defined_lengths_only() {
+        // Undefined speeds and lengths at the start join the first state; ten frames at exactly 5% cover
+        // exactly 5% of the length, averaged over the ten frames whose lengths are defined, so it is no state.
+        let mut speeds = constant(50.0, 15);
+        let mut lengths = length(15);
+        for t in 0..5 {
+            speeds[t] = None;
+            lengths[t] = None;
+        }
+        assert!(motion_modes(&speeds, &lengths, FPS).iter().all(|&m| m.is_none()));
     }
 
     #[test]

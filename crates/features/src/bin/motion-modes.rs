@@ -15,7 +15,8 @@
 
 //! `motion-modes <fps>`: reads one frame a line from standard input, its midbody speed and body
 //! length separated by a tab (`NaN` where undefined), and writes each frame's locomotion state
-//! (`features::states`): 1 forward, -1 backward, 0 paused, `NaN` none. For checking the rule
+//! (`features::states`): 1 forward, -1 backward, 0 paused, `NaN` none; an infinite value or one
+//! beyond a double's range is read as undefined. For checking the rule
 //! against a table the lab's Rust cannot read, such as the reference files' published features.
 
 use features::states::{MotionMode, motion_modes};
