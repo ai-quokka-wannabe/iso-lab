@@ -63,9 +63,11 @@ Top first. Each item is sized for one run; split it here before starting if it i
    the lab's states, so smoothness alone is enough to leave most of them undefined, though not all the same frames (journal of
    2026-10-15, *Does Smoothing the Published Speed Leave as Many Frames Undefined?*); of the eight arcs' two
    changes the midbody alone carries the smoothness, the point half-way by length in place of the centroid of points 21
-   to 29 (journal of 2026-10-15, *Which of the Eight Arcs' Two Changes Smooths the Speed*); next, measure whether that
-   centroid slides along the body from frame to frame, then weigh matching the published roughness against judging the
-   states by thresholds set for the lab's midbody - then the
+   to 29 (journal of 2026-10-15, *Which of the Eight Arcs' Two Changes Smooths the Speed*); and that centroid slides
+   along the body because the stored points' spacing varies from frame to frame - resampled to equal spacing, the
+   toolbox's speed is as smooth as the lab's (journal of 2026-10-15, *Does the Centroid of Points 21 to 29 Slide Along
+   the Body?*); next, write down, with its reason, whether the benchmark applies the published rule unchanged to the
+   lab's speed, before the reference statistics are frozen - then the
    states' durations and the rate of reversals; (d) the reference statistics.
 3. **Prove the arena**: in the cloud machine, on Linux alone (the maintainer's ruling), build Master Control and the
    Grid (software Vulkan through Mesa's lavapipe) from `external/`, write the lab's own minimal Program - a
@@ -194,6 +196,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-15: the centroid of points 21 to 29 slides along the body: with the stored points resampled to equal spacing,
+  the toolbox's speed has 0.304 of its roughness (median), the half-way point 0.324; the stored spacing varies by 7.8%.
 - 2026-10-15: of the eight arcs' two changes, the midbody point alone carries the lab's smoothness: the toolbox's speed with
   it has 0.325 of the published roughness (median), with the eight-arc direction 1.000; the lab's is 0.326.
 - 2026-10-15: the published speed smoothed to at least the lab's smoothness (moving mean of 5 frames, 3 in two records) leaves
