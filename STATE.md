@@ -68,7 +68,9 @@ Top first. Each item is sized for one run; split it here before starting if it i
    along the body because the stored points' spacing varies from frame to frame - resampled to equal spacing, the
    toolbox's speed is as smooth as the lab's (journal of 2026-10-15, *Does the Centroid of Points 21 to 29 Slide Along
    the Body?*), all three replicated on block 1's further 178 records (journal of 2026-10-15, *The Smoothness Findings on
-   the Rest of Block 1*); next, write down, with its reason, whether the benchmark applies the published rule unchanged to the
+   the Rest of Block 1*); and, counted on those records, the toolbox's speed on equally spaced skeletons leaves a median
+   92% as many published-paused frames undefined as the lab's states (journal of 2026-10-15, *Do the Undefined Frames
+   Follow From the Spacing?*); next, write down, with its reason, whether the benchmark applies the published rule unchanged to the
    lab's speed, before the reference statistics are frozen - then the
    states' durations and the rate of reversals; (d) the reference statistics.
 3. **Prove the arena**: in the cloud machine, on Linux alone (the maintainer's ruling), build Master Control and the
@@ -191,6 +193,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-15: the undefined frames follow from the spacing: on 178 records, states from the toolbox's speed on equally
+  spaced skeletons leave a median 0.921 as many published-paused frames undefined as the lab's; plumbing exact in 177.
 - 2026-10-15: block 1 fetched in full; the three roughness findings replicate on its 178 further records:
   `L`/P 0.328, M/P 0.327, PE/P 0.313 (medians), each below one in every record.
 - 2026-10-15: the centroid of points 21 to 29 slides along the body: with the stored points resampled to equal spacing,
