@@ -40,8 +40,10 @@ Top first. Each item is sized for one run; split it here before starting if it i
    Are*) - a midbody speed is built but fails its check in one record (journal of 2026-10-14, *A Midbody Speed*), and
    the published speed's definition is read and reproduced exactly, and its choices copied at eight arcs fail the
    same check in the same record by 0.0001 (journal of 2026-10-15, *The Midbody Speed With the Published Choices, at
-   Eight Arcs*), so the departure lies in the eight arcs themselves; next, the check's bar set from what moves a
-   locomotion state; (d) the reference statistics.
+   Eight Arcs*), so the departure lies in the eight arcs themselves; the published locomotion states are reproduced
+   exactly from the published speed (journal of 2026-10-15, *The Published Locomotion States, Read at Their Source*);
+   next, that rule in tested Rust, then the speed check re-run as the share of frames whose state the lab's speed
+   changes; (d) the reference statistics.
 3. **Prove the arena**: in the cloud machine, on Linux alone (the maintainer's ruling), build Master Control and the
    Grid (software Vulkan through Mesa's lavapipe) from `external/`, write the lab's own minimal Program - a
    placeholder brain that only undulates gently, shaped after
@@ -174,6 +176,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-15: the published locomotion states (forward, backward, paused) read at the toolbox's source and reproduced
+  exactly from the published speed and length, on all 602,314 frames of seventeen records.
 - 2026-10-15: which end is the head: Tierpsy names it mostly by movement, so the head's excess of bends is built in to a degree;
   no frame-to-frame swap in seventeen records (a planted-swap control catches all 474), 62 candidates across 18,105 gaps.
 - 2026-10-15: the midbody speed with the published choices at eight arcs: 1007405 fails the check again (r 0.9499
