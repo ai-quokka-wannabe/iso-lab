@@ -21,14 +21,16 @@
 //! body's direction there is the chord from the end three eighths along to the end five eighths
 //! along, pointing to the head. The speed at a frame is the midbody's displacement from a frame
 //! before it to a frame after it, projected on that frame's direction and divided by the time
-//! between: a centred difference over [`SPEED_SPAN_SECONDS`]. Only basic arithmetic and `sqrt`
+//! between: a centred difference over [`SPEED_SPAN_SECONDS`]. [`published_choice_speeds`] is
+//! the same speed with the published speed's choices instead. Only basic arithmetic and `sqrt`
 //! are used, as in `posture`.
 
 use crate::posture::EightArcs;
 
 /// The span a speed is taken over, centred on its frame. Chosen on one reference recording
 /// against the dataset's own published midbody speed (docs/journal of 2026-10-14, *A Midbody
-/// Speed*), whose definition the lab has not read.
+/// Speed*), and since found to be the published speed's own (`velocity_body_diff`; docs/journal
+/// of 2026-10-15, *The Published Midbody Speed, Read at Its Source*).
 pub const SPEED_SPAN_SECONDS: f64 = 0.5;
 
 /// Frames on either side of a speed's own frame at a frame rate: half the span, rounded to the

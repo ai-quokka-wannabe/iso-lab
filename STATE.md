@@ -38,10 +38,10 @@ Top first. Each item is sized for one run; split it here before starting if it i
    lengths, as the frame rate varies between recordings (25.4 to 32.6 fps seen), and with a rule for recordings of
    other lengths than 15 minutes (5 and 120 minutes seen; journal of 2026-10-14, *How Long the Reference Recordings
    Are*) - a midbody speed is built but fails its check in one record (journal of 2026-10-14, *A Midbody Speed*), and
-   the published speed's definition is now read and reproduced exactly (journal of 2026-10-15, *The Published Midbody
-   Speed, Read at Its Source*): the whole distance a centroid moves, signed by the body's direction, where the lab's
-   projects; next, a version with those choices at the eight-arc resolution and the check run again on it, or the
-   check's bar set from what moves a locomotion state; (d) the reference statistics.
+   the published speed's definition is read and reproduced exactly, and its choices copied at eight arcs fail the
+   same check in the same record by 0.0001 (journal of 2026-10-15, *The Midbody Speed With the Published Choices, at
+   Eight Arcs*), so the departure lies in the eight arcs themselves; next, the check's bar set from what moves a
+   locomotion state; (d) the reference statistics.
 3. **Prove the arena**: in the cloud machine, on Linux alone (the maintainer's ruling), build Master Control and the
    Grid (software Vulkan through Mesa's lavapipe) from `external/`, write the lab's own minimal Program - a
    placeholder brain that only undulates gently, shaped after
@@ -154,6 +154,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-15: the midbody speed with the published choices at eight arcs: 1007405 fails the check again (r 0.9499
+  against 0.95), sixteen records pass; the hunch that the definition's choices cause the departure is refuted.
 - 2026-10-15: the published midbody speed read at its source and reproduced exactly (correlation 1.00000 on two
   records); the stored skeletons were already smoothed along their length by Tierpsy, not in time.
 - 2026-10-14: C18's model piloted: no cure removed the transition, and the plan's statistic would measure early
