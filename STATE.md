@@ -197,7 +197,7 @@ points to the open ones and says what waits on each.
 ## Done
 
 - 2026-10-15: the centroid of points 21 to 29 slides along the body: with the stored points resampled to equal spacing,
-  the toolbox's speed has 0.304 of its roughness (median), the half-way point 0.324; the stored spacing varies by 7.8%.
+  the toolbox's speed has 0.305 of its roughness (median), the half-way point 0.325; the stored segments vary by 7.8% within a frame.
 - 2026-10-15: of the eight arcs' two changes, the midbody point alone carries the lab's smoothness: the toolbox's speed with
   it has 0.325 of the published roughness (median), with the eight-arc direction 1.000; the lab's is 0.326.
 - 2026-10-15: the published speed smoothed to at least the lab's smoothness (moving mean of 5 frames, 3 in two records) leaves
