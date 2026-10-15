@@ -44,8 +44,10 @@ Top first. Each item is sized for one run; split it here before starting if it i
    exactly from the published speed and length, read at their source and then by tested Rust (`features::states`;
    journal of 2026-10-15, *The Published Locomotion States, Read at Their Source* and *The Locomotion States in
    Rust*); and judged by the states it gives, the speed with the published choices passes a bar set from the spread
-   between worms, the first measure fails (journal of 2026-10-15, *The Midbody Speed, Judged by the States It
-   Gives*); next, the states' durations and the rate of reversals checked the same way; (d) the reference statistics.
+   between worms and the first measure fails, but the lab's states are biased one way - about 6% more frames in no
+   state, so lower shares in every record (journal of 2026-10-15, *The Midbody Speed, Judged by the States It
+   Gives*); next, why those frames are undefined, then the states' durations and the rate of reversals checked the
+   same way; (d) the reference statistics.
 3. **Prove the arena**: in the cloud machine, on Linux alone (the maintainer's ruling), build Master Control and the
    Grid (software Vulkan through Mesa's lavapipe) from `external/`, write the lab's own minimal Program - a
    placeholder brain that only undulates gently, shaped after
@@ -170,8 +172,9 @@ points to the open ones and says what waits on each.
 
 ## Done
 
-- 2026-10-15: the midbody speed judged by the states it gives: with the published choices it passes in all three
-  states on seventeen records (paused narrowly), the measure of 2026-10-14 fails in all three.
+- 2026-10-15: the midbody speed judged by the states it gives: with the published choices it passes the bar in all
+  three states on seventeen records (paused narrowly), the measure of 2026-10-14 fails; the lab's states leave about
+  6% more frames undefined in every record, a one-way bias the bar cannot see.
 - 2026-10-15: the locomotion states (forward, backward, paused) in tested Rust, `features::states`, reproducing the
   published states on all 602,314 frames of seventeen records.
 - 2026-10-15: the published locomotion states (forward, backward, paused) read at the toolbox's source and reproduced
