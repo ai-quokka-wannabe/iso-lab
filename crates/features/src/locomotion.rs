@@ -325,5 +325,18 @@ mod tests {
             published_choice_speeds_with(&crawling, 4.0, Midbody::ThreeMiddleEnds)[1].unwrap(),
         );
         assert!((a - b).abs() < 1e-9 && (a - 4.0).abs() < 1e-9, "{a} {b}");
+        // Only the end five eighths along jitters: the three-end midbody moves a third as far, which pins
+        // that neighbour; the end three eighths along is pinned the same way.
+        for neighbour in [3, 5] {
+            let frames: Vec<Option<EightArcs>> = (0..3)
+                .map(|t| {
+                    let mut arcs = straight(0.0, 0.0);
+                    arcs.ends[neighbour].1 += if t == 2 { 1.0 } else { 0.0 };
+                    Some(arcs)
+                })
+                .collect();
+            let three = published_choice_speeds_with(&frames, 4.0, Midbody::ThreeMiddleEnds)[1].unwrap();
+            assert!((three - 2.0 / 3.0).abs() < 1e-9, "end {neighbour}: {three}");
+        }
     }
 }
