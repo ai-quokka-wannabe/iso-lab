@@ -103,9 +103,10 @@ Fisher-Yates shuffle (`fetch::draw`). Running it again gives the same bytes; the
 files into `data/raw/owmd-n2/`, each named `<record>_features.hdf5`, and keeps a file only once its MD5 matches the
 record's. A file comes in 8 MiB `Range` requests appended to a `.part` file, so an interrupted run resumes from the
 byte where it stopped, in the file where it stopped; a file already there and correct is not fetched again. Run one
-`fetch-block` at a time: two runs on one block append to the same `.part` file, which the MD5 check then rejects. On
-2026-10-14 Zenodo served these files at 50 to 350 KB/s to this machine, so a block of 4.87 GB takes from about four
-hours to more than a day; see the journal of that date.
+`fetch-block` at a time: two runs on one block append to the same `.part` file, which the MD5 check then rejects. Zenodo's
+rate varies widely: on 2026-10-14 it served these files at 50 to 350 KB/s to this machine, so that a block of 4.87 GB
+would take from about four hours to more than a day, and on 2026-10-15 it served block 1 whole in 80 minutes, near
+1 MB/s; see the journals of those dates.
 
 ## Adding a Dataset
 

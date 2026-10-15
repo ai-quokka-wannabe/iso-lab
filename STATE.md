@@ -34,7 +34,8 @@ Top first. Each item is sized for one run; split it here before starting if it i
    Split into runs: (a) the workspace and the MD5 check, done; (b) the eligible manifest, done ([data/README.md § The
    Eligible Manifest](data/README.md#the-eligible-manifest)); and the seeded draw in blocks of 200, done
    ([data/README.md § The Reference Draw](data/README.md#the-reference-draw)); and `fetch-block`, which fetches a
-   block and checks every MD5, done; block 1 itself is not yet fetched (see *Blocked*); (c) the skeletons are read
+   block and checks every MD5, done; block 1 itself was fetched in full on 2026-10-15 in 80 minutes, near 1 MB/s (journal, *The Smoothness Findings on
+   the Rest of Block 1*), and deleted at the session's end, a fresh machine starting empty; (c) the skeletons are read
    (crate `features`, by `hdf5-pure`; the published feature table cannot be read by the pure-Rust readers tried, and
    the lab computes its own measures anyway), next the comparison space's measures from them, in seconds and body
    lengths, as the frame rate varies between recordings (25.4 to 32.6 fps seen), and with a rule for recordings of
@@ -66,7 +67,8 @@ Top first. Each item is sized for one run; split it here before starting if it i
    to 29 (journal of 2026-10-15, *Which of the Eight Arcs' Two Changes Smooths the Speed*); and that centroid slides
    along the body because the stored points' spacing varies from frame to frame - resampled to equal spacing, the
    toolbox's speed is as smooth as the lab's (journal of 2026-10-15, *Does the Centroid of Points 21 to 29 Slide Along
-   the Body?*); next, write down, with its reason, whether the benchmark applies the published rule unchanged to the
+   the Body?*), all three replicated on block 1's further 178 records (journal of 2026-10-15, *The Smoothness Findings on
+   the Rest of Block 1*); next, write down, with its reason, whether the benchmark applies the published rule unchanged to the
    lab's speed, before the reference statistics are frozen - then the
    states' durations and the rate of reversals; (d) the reference statistics.
 3. **Prove the arena**: in the cloud machine, on Linux alone (the maintainer's ruling), build Master Control and the
@@ -124,13 +126,6 @@ the idea for the next attempt.
 
 ## Blocked
 
-- **Fetching block 1 of the reference draw** (4.87 GB, item 2). Zenodo served the features files at 50 to 350 KB/s on
-  2026-10-14 (the journal has the commands), so the block needs from about four hours to more than a day. `fetch-block
-  1` resumes by byte, but only on a machine that keeps `data/raw/`; a fresh cloud machine starts empty, so the block
-  has to come in one long run (started early in a night, in the background) or on a machine that persists; the night
-  of 2026-10-14 fetched 34 of its 200 files, every one MD5-checked, before the fetch was stopped and `data/raw/`
-  deleted at the night's end. Next: run it again early on a later night, in
-  the background; item 2(c)'s work resumes on what it fetches.
 - **Three Dependabot alerts on `main`**, triaged on 2026-10-14
   ([the journal](docs/journal/2026-10-14.md#dependabot-alerts-triaged)). All three sit in markdownlint-cli2's
   dependencies, and none can be fixed cleanly yet. Only `smol-toml` is reachable, through any Markdown file's
@@ -196,6 +191,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-15: block 1 fetched in full (80 minutes); the three roughness findings replicate on its 178 further records:
+  `L`/P 0.328, M/P 0.327, PE/P 0.313 (medians), each below one in every record.
 - 2026-10-15: the centroid of points 21 to 29 slides along the body: with the stored points resampled to equal spacing,
   the toolbox's speed has 0.305 of its roughness (median), the half-way point 0.325; the stored segments vary by 7.8% within a frame.
 - 2026-10-15: of the eight arcs' two changes, the midbody point alone carries the lab's smoothness: the toolbox's speed with
