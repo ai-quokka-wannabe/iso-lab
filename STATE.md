@@ -125,16 +125,19 @@ the idea for the next attempt.
   [#47](https://github.com/ai-quokka-wannabe/iso-lab/pull/47), merged.
 
 - **How the lab reads a Disk** (item 3(d2); waits on the maintainer's ruling). A Disk is Link's frames in a file,
-  read back through Link's own library (`replay_open` and `poll` in `external/link/include/lnk/lnk_client.h`), and
-  the lab's rules make each route cost something. (1) Depend on `external/master-control` as a crate and reuse its
-  `link_dll` mirror and `replay_open`, as Clu does: one implementation, but every lab build, CI's included, then needs
-  the submodules checked out recursively and builds Link through Master Control's `build.rs`. (2) Copy the parts of
-  that mirror the reader needs into `features` (most of its structs, since the message view's union and the vtable
-  hold every message type and call): CI stays light, and a drifted copy is
-  refused at run time by the vtable's size and ABI version and the Disk's protocol fingerprint, but it is a third
-  copy of the layout. (3) Decode the frames in Rust: a second decoder, against the organisation's "one
-  implementation" doctrine - not recommended. The lab's rule that `external/link` is not what gets built rules out
-  depending on it directly. Recommended: (1), for one implementation; (2) if CI's weight matters more.
+  read back through Link's own library (`replay_open` and `poll` in `external/link/include/lnk/lnk_client.h`), which
+  must lie beside the executable that loads it; the lab's rules make each route cost something. (1) Depend on
+  `external/master-control` as a crate and reuse its `link_dll` mirror and `replay_open`, which its Clu module
+  uses: one implementation, its `unsafe` kept inside Master Control's crate, and its `build.rs` builds Link and
+  copies the library beside the lab's binaries and tests - but every lab build, CI's included, then needs the
+  submodules checked out recursively. (2) Copy the parts of that mirror the reader needs into `features` (most of
+  its structs, since the message view's union and the vtable hold every message type and call): a third copy of the
+  layout, guarded against the library only by the vtable's size and ABI version; `unsafe` code (fifteen uses in
+  `link_dll.rs`) in a workspace that denies it, allowed locally as in `placeholder-worm`; and the reader's tests still
+  need Link built and placed beside them, from `external/master-control/external/link`, so CI is no lighter unless
+  the reader goes untested, which the lab's rules do not allow. (3) Decode the frames in Rust: a second decoder,
+  against the organisation's "one implementation" doctrine - not recommended. The lab's rule that `external/link` is
+  not what gets built rules out depending on it directly. Recommended: (1).
 
 ## Needs From Other Repositories
 
@@ -159,8 +162,9 @@ points to the open ones and says what waits on each.
   0.8 of each share), the tail most, so the gradient survives it - but the smoothing leaves the tips, the noisiest
   points, untouched; averaging over a tenth of a second removes 0.6 to 1.8% of it per joint. The stored skeletons were already
   smoothed along their length by Tierpsy (Savitzky-Golay, 5 of 49 points, tips included; at the dataset's own commit
-  `cbfc23eb` too), not in time (journal of 2026-10-15). The head is named by Tierpsy as the end whose angle varies
-  more, block by block, so the gradient is partly built in; no swap shows from one frame to the next (journal of
+  `cbfc23eb` too), not in time (journal of 2026-10-15). The head is named by Tierpsy as the end whose direction
+  varies more, block by block and with three quarters of the weight over the track, so the gradient is built in to
+  an unknown degree; no swap shows from one frame to the next (journal of
   2026-10-15, *Which End Is the Head*). Next: draft the issue in full here, resting on the share at any joint, for the
   maintainer to file (this session cannot open issues in tron-grid-lite).
 - **Terrace edges** (master-control; the maintainer takes it up once the lab is set up - file nothing). A
@@ -169,7 +173,7 @@ points to the open ones and says what waits on each.
 
 ## Done
 
-- 2026-10-15: which end is the head: Tierpsy names it by movement, so the head's excess of bends is partly built in;
+- 2026-10-15: which end is the head: Tierpsy names it mostly by movement, so the head's excess of bends is built in to a degree;
   no frame-to-frame swap in seventeen records (a planted-swap control catches all 474), 62 candidates across 18,105 gaps.
 - 2026-10-15: the published midbody speed read at its source and reproduced exactly (correlation 1.00000 on two
   records); the stored skeletons were already smoothed along their length by Tierpsy, not in time.
