@@ -66,6 +66,53 @@ pub fn midbody_speeds(frames: &[Option<EightArcs>], fps: f64) -> Vec<Option<f64>
         .collect()
 }
 
+/// Frames on either side of a frame in the published speed's window at a frame rate: a quarter
+/// of a second in frames, rounded half to even as the toolbox's Python `round` does
+/// (`features/velocity.py`, `get_frames_per_sample`), and at least one.
+pub fn published_half_window(fps: f64) -> usize {
+    (SPEED_SPAN_SECONDS * fps / 2.0).round_ties_even().max(1.0) as usize
+}
+
+/// The body's direction for the published choices: the chord from the end seven eighths along to
+/// the end one eighth along, tail to head, nearest at eight arcs to the toolbox's points 41 and 9
+/// of 49. `None` when those ends meet.
+fn published_body_direction(arcs: &EightArcs) -> Option<(f64, f64)> {
+    let (x, y) = (
+        arcs.ends[1].0 - arcs.ends[crate::posture::ARCS - 1].0,
+        arcs.ends[1].1 - arcs.ends[crate::posture::ARCS - 1].1,
+    );
+    (x != 0.0 || y != 0.0).then_some((x, y))
+}
+
+/// The midbody speed with the published speed's choices (docs/journal of 2026-10-15, *The
+/// Midbody Speed With the Published Choices, at Eight Arcs*; the toolbox's `compute_speed` and
+/// `h__getSpeedIndices` in `features/velocity.py`), at every frame of a recording, given each
+/// frame's eight arcs (`None` where the frame has none) and the frame rate.
+///
+/// Each end of a frame's window lies [`published_half_window`] frames away, or, where that frame
+/// has no eight arcs or no body direction, the nearest frame further out that has both, up to
+/// twice as far; a frame needs no eight arcs of its own. The speed is the whole distance the
+/// middle end of the eight arcs moves between the window's ends over the time between them,
+/// negative when that motion lies more than 90 degrees from the body's direction at the first end.
+pub fn published_choice_speeds(frames: &[Option<EightArcs>], fps: f64) -> Vec<Option<f64>> {
+    let half = published_half_window(fps);
+    let middle = crate::posture::ARCS / 2;
+    let usable = |index: usize| {
+        let arcs = frames.get(index)?.as_ref()?;
+        Some((arcs.ends[middle], published_body_direction(arcs)?))
+    };
+    (0..frames.len())
+        .map(|t| {
+            let first = (half..=2 * half).find_map(|step| Some((t.checked_sub(step)?, usable(t.checked_sub(step)?)?)))?;
+            let second = (half..=2 * half).find_map(|step| Some((t + step, usable(t + step)?)))?;
+            let ((from, (start, (hx, hy))), (to, (end, _))) = (first, second);
+            let (dx, dy) = (end.0 - start.0, end.1 - start.1);
+            let speed = (dx * dx + dy * dy).sqrt() / ((to - from) as f64 / fps);
+            Some(if dx * hx + dy * hy < 0.0 { -speed } else { speed })
+        })
+        .collect()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -126,5 +173,75 @@ mod tests {
         let mut folded = straight(0.0, 0.0);
         folded.ends[5] = folded.ends[3];
         assert_eq!(midbody_speed(&straight(0.0, 0.0), &folded, &straight(-2.0, 0.0), 0.5), None);
+    }
+
+    #[test]
+    fn the_published_half_window_rounds_half_to_even() {
+        assert_eq!(published_half_window(25.575), 6);
+        assert_eq!(published_half_window(26.0), 6, "6.5 rounds to the even 6, as Python's round does");
+        assert_eq!(published_half_window(30.0), 8, "7.5 rounds to the even 8");
+        assert_eq!(published_half_window(1.0), 1, "never fewer than one");
+    }
+
+    #[test]
+    fn the_published_choices_sign_the_whole_distance_by_the_body() {
+        // At 4 fps the half window is one frame; one unit a frame is 4 units a second.
+        let forward: Vec<Option<EightArcs>> = (0..3).map(|t| Some(straight(-(t as f32), 0.0))).collect();
+        assert!((published_choice_speeds(&forward, 4.0)[1].unwrap() - 4.0).abs() < 1e-9);
+        let backward: Vec<Option<EightArcs>> = (0..3).map(|t| Some(straight(t as f32, 0.0))).collect();
+        assert!((published_choice_speeds(&backward, 4.0)[1].unwrap() + 4.0).abs() < 1e-9);
+        // Sliding sideways is the whole distance, not its projection, and at exactly 90 degrees not negative.
+        let sideways: Vec<Option<EightArcs>> = (0..3).map(|t| Some(straight(0.0, t as f32))).collect();
+        assert!((published_choice_speeds(&sideways, 4.0)[1].unwrap() - 4.0).abs() < 1e-9);
+        // Diagonally, three forwards and four sideways a frame: five a frame, forwards.
+        let diagonal: Vec<Option<EightArcs>> = (0..3).map(|t| Some(straight(-3.0 * t as f32, 4.0 * t as f32))).collect();
+        assert!((published_choice_speeds(&diagonal, 4.0)[1].unwrap() - 20.0).abs() < 1e-9);
+    }
+
+    #[test]
+    fn the_sign_comes_from_the_body_at_the_windows_first_end() {
+        // The worm moves to lower x throughout; only the first end's body points its head that way.
+        let mut frames: Vec<Option<EightArcs>> = (0..3).map(|t| Some(straight(-(t as f32), 0.0))).collect();
+        let turned = |offset: f32| {
+            let skeleton: Vec<f32> = (0..49).flat_map(|i| [offset - i as f32, 0.0]).collect();
+            eight_arcs(&skeleton).unwrap()
+        };
+        frames[1] = Some(turned(47.0));
+        frames[2] = Some(turned(46.0));
+        assert!(published_choice_speeds(&frames, 4.0)[1].unwrap() > 0.0, "the first end's body decides");
+        frames[0] = Some(turned(48.0));
+        frames[1] = Some(straight(-1.0, 0.0));
+        assert!(published_choice_speeds(&frames, 4.0)[1].unwrap() < 0.0, "not the middle frame's");
+    }
+
+    #[test]
+    fn a_missing_end_moves_outwards_up_to_twice_as_far() {
+        let mut frames: Vec<Option<EightArcs>> = (0..9).map(|t| Some(straight(-(t as f32), 0.0))).collect();
+        frames[3] = None;
+        let speeds = published_choice_speeds(&frames, 4.0);
+        assert!((speeds[3].unwrap() - 4.0).abs() < 1e-9, "a frame with no eight arcs of its own still has a speed");
+        assert!(
+            (speeds[4].unwrap() - 4.0).abs() < 1e-9,
+            "the first end moves from frame 3 to frame 2: 3 units in 0.75 s"
+        );
+        assert!((speeds[2].unwrap() - 4.0).abs() < 1e-9, "the second end moves from frame 3 to frame 4");
+        assert_eq!(speeds[0], None, "no frame before the first, at any distance");
+        frames[1] = None;
+        frames[4] = None;
+        assert_eq!(
+            published_choice_speeds(&frames, 4.0)[2],
+            None,
+            "frames 3 and 4 missing: no second end within twice the half window"
+        );
+    }
+
+    #[test]
+    fn an_end_with_no_body_direction_is_no_end() {
+        let mut frames: Vec<Option<EightArcs>> = (0..5).map(|t| Some(straight(-(t as f32), 0.0))).collect();
+        let mut folded = straight(-1.0, 0.0);
+        folded.ends[7] = folded.ends[1];
+        frames[1] = Some(folded);
+        let speeds = published_choice_speeds(&frames, 4.0);
+        assert!((speeds[2].unwrap() - 4.0).abs() < 1e-9, "the first end moves past the fold to frame 0");
     }
 }
