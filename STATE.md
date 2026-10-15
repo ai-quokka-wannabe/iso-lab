@@ -49,9 +49,10 @@ Top first. Each item is sized for one run; split it here before starting if it i
    Gives*), and those frames are lost not to missing skeletons but to the speed's values - often a little above
    the paused band where the worm is nearly still, its runs breaking where the published ones bridge (journal of 2026-10-15, *Why the Lab's States Leave More Frames
    Undefined*); a midbody of the three middle ends, to test a one-point jitter as the cause, refutes it - the excess
-   rises (journal of 2026-10-15, *A Midbody of Three Ends*); next, compare the lab's and the published speeds frame
-   by frame on nearly-still frames, then the states' durations and the rate of reversals; (d) the reference
-   statistics.
+   rises (journal of 2026-10-15, *A Midbody of Three Ends*); the lab's length equals the published and its speed is
+   lower at the median on nearly-still frames, so the cause is the speed's spread, not a shift (journal of
+   2026-10-15, *The Lab's Length and Speed Against the Published Ones*); next, measure that spread and where it comes
+   from, then the states' durations and the rate of reversals; (d) the reference statistics.
 3. **Prove the arena**: in the cloud machine, on Linux alone (the maintainer's ruling), build Master Control and the
    Grid (software Vulkan through Mesa's lavapipe) from `external/`, write the lab's own minimal Program - a
    placeholder brain that only undulates gently, shaped after
@@ -179,6 +180,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-15: the lab's eight-arc length equals the published length; its speed matches at the median overall and is
+  lower on nearly-still frames - the undefined frames come from the speed's spread, not a shift.
 - 2026-10-15: a midbody of three ends refutes the one-point-jitter reading of the lab's undefined frames: their
   excess rose from +0.058 to +0.067 (median); paused improved, forward and backward worsened.
 - 2026-10-15: why the lab's states leave more frames undefined: not missing skeletons (0.4%) but the speed's values;
