@@ -26,6 +26,7 @@
 
 pub mod locomotion;
 pub mod posture;
+pub mod states;
 
 use std::fmt;
 use std::path::Path;
