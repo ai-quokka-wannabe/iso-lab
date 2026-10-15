@@ -156,8 +156,8 @@ points to the open ones and says what waits on each.
   ([docs/benchmark/FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing)).
   The benchmark is not frozen until food is settled, by these issues or by comparing with foodless worms instead.
 - **The worm's bends against the Grid's joint limit** (tron-grid-lite; drafted, not yet filed). At the eight-arc
-  resolution 31 to 46% (median 38%, thirteen recordings) of the reference worms' skeletonised frames bend beyond the chain's 0.9 rad at
-  some joint, against 0.15% beyond Master Control's pi/2. The issue - raise the limit to pi/2, with the caveats - is
+  resolution 9.8 to 68.6% (median 35.8%, 34 recordings) of the reference worms' skeletonised frames bend beyond the
+  chain's 0.9 rad at some joint, against 0.15% beyond Master Control's pi/2. The issue - raise the limit to pi/2, with the caveats - is
   drafted in full in the journal of 2026-10-15, *The Joint-Limit Issue, Drafted*, for the maintainer to file, since
   this session cannot open issues there. Once filed, this line becomes its link.
 - **Terrace edges** (master-control; the maintainer takes it up once the lab is set up - file nothing). A
