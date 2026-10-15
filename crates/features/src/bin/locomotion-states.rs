@@ -13,15 +13,16 @@
     If not, see <https://www.gnu.org/licenses/>.
 */
 
-//! `locomotion-states [--published-choices] [--columns] <record>`: the locomotion state at every frame of one
-//! reference recording fetched into `data/raw/owmd-n2/`, by the published rule
+//! `locomotion-states [--published-choices] [--three-ends] [--columns] <record>`: the locomotion
+//! state at every frame of one reference recording fetched into `data/raw/owmd-n2/`, by the published rule
 //! (`features::states`) applied to the lab's own eight-arc midbody speed (`features::locomotion`,
 //! the published choices with the flag) and eight-arc body length. One line a frame: 1 forward,
 //! -1 backward, 0 paused, `NaN` none. With `--columns`, each line is the frame's speed, its
-//! eight-arc length and its state, tab-separated, `NaN` where undefined. Run from the repository's
-//! root.
+//! eight-arc length and its state, tab-separated, `NaN` where undefined. `--three-ends` takes the
+//! published-choice speed with the midbody as the mean of the three middle ends of the eight arcs
+//! (`locomotion::Midbody::ThreeMiddleEnds`). Run from the repository's root.
 
-use features::locomotion::{midbody_speeds, published_choice_speeds};
+use features::locomotion::{Midbody, midbody_speeds, published_choice_speeds_with};
 use features::posture::eight_arcs;
 use features::read_skeletons;
 use features::states::{MotionMode, motion_modes};
@@ -40,9 +41,9 @@ fn main() -> ExitCode {
         }
         None => false,
     };
-    let (published, columns) = (flag("--published-choices"), flag("--columns"));
+    let (published, three, columns) = (flag("--published-choices"), flag("--three-ends"), flag("--columns"));
     let [record] = arguments.as_slice() else {
-        eprintln!("usage: locomotion-states [--published-choices] [--columns] <record>");
+        eprintln!("usage: locomotion-states [--published-choices] [--three-ends] [--columns] <record>");
         return ExitCode::FAILURE;
     };
     let path = Path::new(DIRECTORY).join(format!("{record}_features.hdf5"));
@@ -54,10 +55,10 @@ fn main() -> ExitCode {
         }
     };
     let arcs: Vec<_> = (0..skeletons.frames()).map(|index| skeletons.frame(index).and_then(eight_arcs)).collect();
-    let speeds = if published {
-        published_choice_speeds(&arcs, skeletons.fps)
-    } else {
-        midbody_speeds(&arcs, skeletons.fps)
+    let speeds = match (published, three) {
+        (_, true) => published_choice_speeds_with(&arcs, skeletons.fps, Midbody::ThreeMiddleEnds),
+        (true, false) => published_choice_speeds_with(&arcs, skeletons.fps, Midbody::MiddleEnd),
+        (false, false) => midbody_speeds(&arcs, skeletons.fps),
     };
     let lengths: Vec<Option<f64>> = arcs.iter().map(|arcs| arcs.as_ref().map(|arcs| arcs.length)).collect();
     let mut out = std::io::BufWriter::new(std::io::stdout().lock());
