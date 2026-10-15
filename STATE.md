@@ -1,8 +1,8 @@
 # State of the Lab
 
 **Last updated:** 2026-10-15, session's end: the published locomotion states reproduced exactly and ported to tested
-Rust, and the lab's midbody speed traced through its excess of undefined frames to its smoothness - the published speed,
-smoothed to match, leaves as many paused frames undefined.
+Rust, and the lab's midbody speed's excess of undefined frames found consistent with its smoothness - the published
+speed, smoothed to match, leaves as many paused frames undefined, though not all the same ones.
 
 ## Where We Are
 
