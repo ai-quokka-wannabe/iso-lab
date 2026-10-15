@@ -36,7 +36,8 @@ pub fn motion_modes(speeds: &[Option<f64>], lengths: &[Option<f64>], fps: f64) -
     let fraction = |share: f64| -> Vec<Option<f64>> { lengths.iter().map(|length| length.map(|length| share * length)).collect() };
     let (speed_bound, pause_bound) = (fraction(0.05), fraction(0.025));
     let mut modes = vec![None; speeds.len()];
-    // In the toolbox's order, each later mode overwriting an earlier one where their states overlap.
+    // In the toolbox's order, each later mode overwriting an earlier one where their states overlap, as
+    // they can when bridged gaps chain across modes.
     let rules: [(MotionMode, Bound, Bound, bool); 3] = [
         (MotionMode::Forward, Bound::Above(&speed_bound), Bound::None, true),
         (MotionMode::Backward, Bound::None, Bound::Below(&speed_bound), true),
@@ -259,6 +260,27 @@ mod tests {
             *speed = Some(50.0);
         }
         assert!(motion_modes(&speeds, &length(30), FPS)[10..20].iter().all(|&m| m.is_none()));
+    }
+
+    #[test]
+    fn where_states_overlap_paused_wins_over_backward_over_forward() {
+        // Crawling for a second, two frames still, a two-frame forward blip, then still for 0.6 s:
+        // forward bridges the stillness to the blip (frames 0 to 13), paused bridges the blip
+        // (frames 10 to 19), and paused, written last, holds the overlap.
+        let mut speeds = constant(100.0, 20);
+        for t in [10, 11, 14, 15, 16, 17, 18, 19] {
+            speeds[t] = Some(0.0);
+        }
+        let modes = motion_modes(&speeds, &length(20), FPS);
+        assert!(modes[..10].iter().all(|&m| m == Some(MotionMode::Forward)), "{modes:?}");
+        assert!(modes[10..].iter().all(|&m| m == Some(MotionMode::Paused)), "{modes:?}");
+        // The same with backing for stillness: backward, written after forward, holds the overlap.
+        for t in [10, 11, 14, 15, 16, 17, 18, 19] {
+            speeds[t] = Some(-100.0);
+        }
+        let modes = motion_modes(&speeds, &length(20), FPS);
+        assert!(modes[..10].iter().all(|&m| m == Some(MotionMode::Forward)), "{modes:?}");
+        assert!(modes[10..].iter().all(|&m| m == Some(MotionMode::Backward)), "{modes:?}");
     }
 
     #[test]
