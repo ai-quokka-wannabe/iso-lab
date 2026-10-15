@@ -34,8 +34,8 @@ Top first. Each item is sized for one run; split it here before starting if it i
    Split into runs: (a) the workspace and the MD5 check, done; (b) the eligible manifest, done ([data/README.md § The
    Eligible Manifest](data/README.md#the-eligible-manifest)); and the seeded draw in blocks of 200, done
    ([data/README.md § The Reference Draw](data/README.md#the-reference-draw)); and `fetch-block`, which fetches a
-   block and checks every MD5, done; block 1 itself was fetched in full on 2026-10-15 in 80 minutes, near 1 MB/s (journal, *The Smoothness Findings on
-   the Rest of Block 1*), and deleted at the session's end, a fresh machine starting empty; (c) the skeletons are read
+   block and checks every MD5, done; block 1 itself was fetched in full on 2026-10-15 ([data/README.md § Fetching a
+   Block](data/README.md#fetching-a-block) gives the rate), to be deleted at the session's end, a fresh machine starting empty; (c) the skeletons are read
    (crate `features`, by `hdf5-pure`; the published feature table cannot be read by the pure-Rust readers tried, and
    the lab computes its own measures anyway), next the comparison space's measures from them, in seconds and body
    lengths, as the frame rate varies between recordings (25.4 to 32.6 fps seen), and with a rule for recordings of
@@ -191,7 +191,7 @@ points to the open ones and says what waits on each.
 
 ## Done
 
-- 2026-10-15: block 1 fetched in full (80 minutes); the three roughness findings replicate on its 178 further records:
+- 2026-10-15: block 1 fetched in full; the three roughness findings replicate on its 178 further records:
   `L`/P 0.328, M/P 0.327, PE/P 0.313 (medians), each below one in every record.
 - 2026-10-15: the centroid of points 21 to 29 slides along the body: with the stored points resampled to equal spacing,
   the toolbox's speed has 0.305 of its roughness (median), the half-way point 0.325; the stored segments vary by 7.8% within a frame.

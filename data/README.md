@@ -105,8 +105,8 @@ record's. A file comes in 8 MiB `Range` requests appended to a `.part` file, so 
 byte where it stopped, in the file where it stopped; a file already there and correct is not fetched again. Run one
 `fetch-block` at a time: two runs on one block append to the same `.part` file, which the MD5 check then rejects. Zenodo's
 rate varies widely: on 2026-10-14 it served these files at 50 to 350 KB/s to this machine, so that a block of 4.87 GB
-would take from about four hours to more than a day, and on 2026-10-15 it served block 1 whole in 80 minutes, near
-1 MB/s; see the journals of those dates.
+would take from about four hours to more than a day, and on 2026-10-15 it served block 1 whole in about 51 minutes,
+near 1.6 MB/s, with six transient failures resumed by byte; see the journals of those dates.
 
 ## Adding a Dataset
 
