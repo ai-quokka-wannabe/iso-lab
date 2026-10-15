@@ -100,11 +100,38 @@ fn published_body_direction(arcs: &EightArcs) -> Option<(f64, f64)> {
 /// middle end of the eight arcs moves between the window's ends over the time between them,
 /// negative when that motion lies more than 90 degrees from the body's direction at the first end.
 pub fn published_choice_speeds(frames: &[Option<EightArcs>], fps: f64) -> Vec<Option<f64>> {
+    published_choice_speeds_with(frames, fps, Midbody::MiddleEnd)
+}
+
+/// Which point of the eight arcs stands for the midbody.
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum Midbody {
+    /// The middle end, half the body's length from the head.
+    MiddleEnd,
+    /// The mean of the three middle ends, three, four and five eighths along (docs/journal of
+    /// 2026-10-15, *A Midbody of Three Ends*).
+    ThreeMiddleEnds,
+}
+
+impl Midbody {
+    fn point(self, arcs: &EightArcs) -> (f64, f64) {
+        let middle = crate::posture::ARCS / 2;
+        match self {
+            Midbody::MiddleEnd => arcs.ends[middle],
+            Midbody::ThreeMiddleEnds => {
+                let [a, b, c] = [arcs.ends[middle - 1], arcs.ends[middle], arcs.ends[middle + 1]];
+                ((a.0 + b.0 + c.0) / 3.0, (a.1 + b.1 + c.1) / 3.0)
+            }
+        }
+    }
+}
+
+/// [`published_choice_speeds`] with the midbody chosen.
+pub fn published_choice_speeds_with(frames: &[Option<EightArcs>], fps: f64, midbody: Midbody) -> Vec<Option<f64>> {
     let half = published_half_window(fps);
-    let middle = crate::posture::ARCS / 2;
     let usable = |index: usize| {
         let arcs = frames.get(index)?.as_ref()?;
-        Some((arcs.ends[middle], published_body_direction(arcs)?))
+        Some((midbody.point(arcs), published_body_direction(arcs)?))
     };
     (0..frames.len())
         .map(|t| {
@@ -274,5 +301,29 @@ mod tests {
         let frames: Vec<Option<EightArcs>> = (0..3).map(|t| Some(bent(-0.1 * t as f32, -(t as f32)))).collect();
         let speed = published_choice_speeds(&frames, 4.0)[1].unwrap();
         assert!(speed > 0.0, "forwards by the chord from end 7 to end 1: {speed}");
+    }
+
+    #[test]
+    fn three_middle_ends_average_away_one_ends_jitter() {
+        // A still worm whose middle end alone jitters sideways by one unit, frame to frame: the one-end
+        // midbody moves, the three-end midbody moves a third as far.
+        let frames: Vec<Option<EightArcs>> = (0..3)
+            .map(|t| {
+                let mut arcs = straight(0.0, 0.0);
+                arcs.ends[4].1 += if t == 2 { 1.0 } else { 0.0 };
+                Some(arcs)
+            })
+            .collect();
+        let one = published_choice_speeds_with(&frames, 4.0, Midbody::MiddleEnd)[1].unwrap();
+        let three = published_choice_speeds_with(&frames, 4.0, Midbody::ThreeMiddleEnds)[1].unwrap();
+        assert!((one - 2.0).abs() < 1e-9, "one unit in 0.5 s: {one}");
+        assert!((three - 2.0 / 3.0).abs() < 1e-9, "a third of it: {three}");
+        // A worm crawling bodily moves all three ends alike, so both midbodies give the same speed.
+        let crawling: Vec<Option<EightArcs>> = (0..3).map(|t| Some(straight(-(t as f32), 0.0))).collect();
+        let (a, b) = (
+            published_choice_speeds_with(&crawling, 4.0, Midbody::MiddleEnd)[1].unwrap(),
+            published_choice_speeds_with(&crawling, 4.0, Midbody::ThreeMiddleEnds)[1].unwrap(),
+        );
+        assert!((a - b).abs() < 1e-9 && (a - 4.0).abs() < 1e-9, "{a} {b}");
     }
 }
