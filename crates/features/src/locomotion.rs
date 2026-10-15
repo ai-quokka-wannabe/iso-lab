@@ -70,14 +70,17 @@ pub fn midbody_speeds(frames: &[Option<EightArcs>], fps: f64) -> Vec<Option<f64>
 
 /// Frames on either side of a frame in the published speed's window at a frame rate: a quarter
 /// of a second in frames, rounded half to even as the toolbox's Python `round` does
-/// (`features/velocity.py`, `get_frames_per_sample`), and at least one.
+/// (`features/velocity.py`, `get_frames_per_sample`), and at least one, where the toolbox would
+/// allow none - a departure only below 2 frames a second.
 pub fn published_half_window(fps: f64) -> usize {
     (SPEED_SPAN_SECONDS * fps / 2.0).round_ties_even().max(1.0) as usize
 }
 
 /// The body's direction for the published choices: the chord from the end seven eighths along to
 /// the end one eighth along, tail to head, nearest at eight arcs to the toolbox's points 41 and 9
-/// of 49. `None` when those ends meet.
+/// of 49 (whose mean step between them is that chord too). `None` when those ends meet, where the
+/// toolbox would take the angle as zero and keep the frame: a departure, on a frame folded so that
+/// its two ends meet.
 fn published_body_direction(arcs: &EightArcs) -> Option<(f64, f64)> {
     let (x, y) = (
         arcs.ends[1].0 - arcs.ends[crate::posture::ARCS - 1].0,
@@ -239,11 +242,37 @@ mod tests {
 
     #[test]
     fn an_end_with_no_body_direction_is_no_end() {
-        let mut frames: Vec<Option<EightArcs>> = (0..5).map(|t| Some(straight(-(t as f32), 0.0))).collect();
-        let mut folded = straight(-1.0, 0.0);
+        // The worm stands still from frame 0 to frame 1, then moves two units by frame 3. Frame 1 is
+        // folded, so frame 2's first end moves past it to frame 0: 2 units in 0.75 s, not 2 in 0.5 s.
+        let offsets = [0.0, 0.0, -1.0, -2.0, -3.0];
+        let mut frames: Vec<Option<EightArcs>> = offsets.iter().map(|&offset| Some(straight(offset, 0.0))).collect();
+        let mut folded = straight(0.0, 0.0);
         folded.ends[7] = folded.ends[1];
         frames[1] = Some(folded);
-        let speeds = published_choice_speeds(&frames, 4.0);
-        assert!((speeds[2].unwrap() - 4.0).abs() < 1e-9, "the first end moves past the fold to frame 0");
+        let speed = published_choice_speeds(&frames, 4.0)[2].unwrap();
+        assert!((speed - 2.0 / 0.75).abs() < 1e-9, "the folded frame is skipped: {speed}");
+    }
+
+    #[test]
+    fn the_body_direction_is_the_chord_from_seven_eighths_to_one_eighth() {
+        // A body straight from one eighth to seven eighths along x, its head eighth bent to +y and its
+        // tail eighth to -y: the chord from end 7 to end 1 points along -x, the one from end 8 to end 0
+        // is turned towards +y. Moving mostly along -y, a little along -x, is forwards by the first.
+        let bent = |dx: f32, dy: f32| {
+            let skeleton: Vec<f32> = (0..49)
+                .flat_map(|i| {
+                    let (x, y) = match i {
+                        0..=6 => (6.0, 6.0 - i as f32),
+                        7..=42 => (i as f32, 0.0),
+                        _ => (42.0, 42.0 - i as f32),
+                    };
+                    [x + dx, y + dy]
+                })
+                .collect();
+            eight_arcs(&skeleton).unwrap()
+        };
+        let frames: Vec<Option<EightArcs>> = (0..3).map(|t| Some(bent(-0.1 * t as f32, -(t as f32)))).collect();
+        let speed = published_choice_speeds(&frames, 4.0)[1].unwrap();
+        assert!(speed > 0.0, "forwards by the chord from end 7 to end 1: {speed}");
     }
 }
