@@ -1,10 +1,12 @@
 # State of the Lab
 
-**Last updated:** 2026-10-15, session's end (journal of 2026-10-15): the published locomotion states reproduced
-exactly and ported to tested Rust; the lab's midbody speed's excess of undefined paused frames found consistent with its
-smoothness - the published speed, smoothed to at least the lab's smoothness by a five-frame moving mean, leaves a
-median 83% as many undefined, about two thirds of them the same ones; a one-point jitter refuted as the cause; C18's
-plan retried and still parked; no gap of the pace note filled.
+**Last updated:** 2026-10-15, evening session's end (journal of 2026-10-15): the lab's excess of undefined paused
+frames shown, by counts, to follow largely from the stored skeletons' uneven point spacing - the half-way midbody carries all of the lab's
+smoothness, equal spacing carries that, and states from the toolbox's speed on equally spaced skeletons leave a median
+92% as many published-paused frames undefined as the lab's (its exact plumbing check failing in one record, on
+19 frames traced to one, without moving the call), counted on block 1's further 178 records (fetched in full
+tonight), on which the smoothness findings also replicated.
+The benchmark's choice of rule for the lab's speed is the next step; the pace note's gaps and C18 are unchanged.
 
 ## Where We Are
 
@@ -35,7 +37,7 @@ Top first. Each item is sized for one run; split it here before starting if it i
    Eligible Manifest](data/README.md#the-eligible-manifest)); and the seeded draw in blocks of 200, done
    ([data/README.md § The Reference Draw](data/README.md#the-reference-draw)); and `fetch-block`, which fetches a
    block and checks every MD5, done; block 1 itself was fetched in full on 2026-10-15 ([data/README.md § Fetching a
-   Block](data/README.md#fetching-a-block) gives the rate), to be deleted at the session's end, a fresh machine starting empty; (c) the skeletons are read
+   Block](data/README.md#fetching-a-block) gives the rate), and deleted at the session's end, a fresh machine starting empty; (c) the skeletons are read
    (crate `features`, by `hdf5-pure`; the published feature table cannot be read by the pure-Rust readers tried, and
    the lab computes its own measures anyway), next the comparison space's measures from them, in seconds and body
    lengths, as the frame rate varies between recordings (25.4 to 32.6 fps seen), and with a rule for recordings of
