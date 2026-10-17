@@ -135,10 +135,13 @@ the idea for the next attempt.
   hidden brain by training it as a whole does not yet: with 12 behaviour statistics it is refuted, and the fault points to
   the statistics more than the search (one parameter barely seen, two trading); five more statistics recover every
   real parameter in one fit, and the whole loop of fit, ablate, prune and refit then recovers the brain for one
-  optimiser seed of three - refuted by the rule set beforehand. What remains: the rate of leaving roaming 1.3 to 1.5
-  times too high in every seed, and habituation's two parameters appearing to trade (untested). Next: bout lengths
-  from complete bouts before the taps, a habituation-recovery statistic, then the loop again. For the benchmark: its
-  comparison space should hold state-conditioned rates, bout lengths and whole distributions, not only means.
+  optimiser seed of three - refuted by the rule set beforehand. Round 5 targeted the two obstacles left (bout
+  lengths from complete pre-tap bouts; ten finer tap bins), each alone and together, five seeds each: refuted - both
+  together pass for 3 of 5, neither change earns its credit, and the rate of leaving roaming is too high in all 20
+  refits, not (or not only) from the bouts' edges. Next: find that bias's cause before changing the statistics
+  again, and a tap protocol with a rest. For the
+  benchmark: its comparison space should hold state-conditioned rates, bout lengths and whole distributions, not only
+  means.
 
 ## Blocked
 
@@ -207,6 +210,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-17: H13 round 5, the two obstacles targeted: refuted (3 of 5 with both changes, 4 needed); pruning right in
+  all 20 loops; the roaming-exit rate too high in every refit.
 - 2026-10-17: H13's proof of concept gathered up: rounds 2 to 4 in one notebook, re-run byte-identical; STATE.md
   and H13 carry one summary.
 - 2026-10-17: H13 round 4, the whole loop: pruning right in all three seeds; recovery passes for one of three -
