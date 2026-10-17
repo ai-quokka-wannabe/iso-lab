@@ -138,8 +138,10 @@ the idea for the next attempt.
   optimiser seed of three - refuted by the rule set beforehand. Round 5 targeted the two obstacles left (bout
   lengths from complete pre-tap bouts; ten finer tap bins), each alone and together, five seeds each: refuted - both
   together pass for 3 of 5, neither change earns its credit, and the rate of leaving roaming is too high in all 20
-  refits, not (or not only) from the bouts' edges. Next: find that bias's cause before changing the statistics
-  again, and a tap protocol with a rest. For the
+  refits, not (or not only) from the bouts' edges. A diagnosis found two causes: noise in the fitter's 16-worm
+  comparisons (with 128 worms the noise-free fit recovers `k_rd`, 1.02 times, and on DEV the loop passes for 4 of 5,
+  with `k_rd` lower in every seed, though within 0.2 for only 2), and, *untested*, the precision of 30 worms. Next:
+  that precision, by fitting fresh populations at 128 worms; and a tap protocol with a rest. For the
   benchmark: its comparison space should hold state-conditioned rates, bout lengths and whole distributions, not only
   means.
 
@@ -210,6 +212,9 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-17: H13 diagnosis: fitter noise (16 worms per candidate) is a real part of the switching-rate bias; 128
+  worms recover it on a noise-free target, while on DEV about a third of the log over-estimate goes and the loop
+  passes 4 of 5, with `k_rd` within 0.2 in 2 (refuted).
 - 2026-10-17: H13 round 5, the two obstacles targeted: refuted (3 of 5 with both changes, 4 needed); pruning right in
   all 20 loops; the roaming-exit rate too high in every refit.
 - 2026-10-17: H13's proof of concept gathered up: rounds 2 to 4 in one notebook, re-run byte-identical; STATE.md
