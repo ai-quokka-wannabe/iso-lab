@@ -134,8 +134,10 @@ the idea for the next attempt.
   the truth; one parameter (the roaming reversal hazard) is barely seen by the statistics, and two (the rate of
   leaving roaming, the reverse speed) appear to trade against each other. Round 3: with five statistics added -
   reversal rates within fast and slow windows, bout lengths, the reverse speed - every real parameter is recovered
-  within the bar (largest 0.35); recovery fails on the decoy alone. Next: the whole loop - fit, ablate, prune,
-  refit - judged by recovery.
+  within the bar (largest 0.35); recovery fails on the decoy alone. Round 4, the whole loop for three
+  optimiser seeds: pruning right every time (the decoy dropped, nothing real), recovery passing for one seed of three -
+  refuted; the rate of leaving roaming 1.34 to 1.52 times too high in every seed, and habituation's two parameters
+  trading. Next: bout lengths from complete bouts before the taps, a habituation-recovery statistic, the loop again.
 
 ## Blocked
 
@@ -204,6 +206,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-17: H13 round 4, the whole loop: pruning right in all three seeds; recovery passes for one of three -
+  refuted by the rule set beforehand; a bias in the rate of leaving roaming and a habituation trade remain.
 - 2026-10-17: H13 round 3: five statistics added from the speed recover all 13 real parameters within the bar
   (median 0.038, largest 0.35); criterion 1 fails on the decoy alone (`g` 0.059).
 - 2026-10-17: H13 round 2: more search does not recover the hidden brain (a 360-generation fit as good as the truth on

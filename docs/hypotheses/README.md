@@ -239,8 +239,9 @@ real worm, only once the benchmark is frozen, as the rules require.
 [notebooks/h13_modular_poc.ipynb](../../notebooks/h13_modular_poc.ipynb): recovery of the hidden brain refuted, the
 search the first suspect; ablation (under the chosen reading of the noise), pruning and the held-out catch passed. A second round pointed to the statistics rather than
 the search: one parameter barely seen by them, two trading against each other. A third round, with
-five statistics added, recovered every real parameter within the bar and failed on the decoy alone. The journal has
-the numbers.
+five statistics added, recovered every real parameter within the bar and failed on the decoy alone. A fourth, the whole loop of
+fit, ablate, prune and refit, pruned right every time but recovered the brain for one optimiser seed of three -
+refuted. The journal has the numbers.
 
 ## Adding a Hypothesis
 
