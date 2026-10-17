@@ -135,10 +135,11 @@ the idea for the next attempt.
   hidden brain by training it as a whole does not yet: with 12 behaviour statistics it is refuted, and the fault points to
   the statistics more than the search (one parameter barely seen, two trading); five more statistics recover every
   real parameter in one fit, and the whole loop of fit, ablate, prune and refit then recovers the brain for one
-  optimiser seed of three - refuted by the rule set beforehand. Round 5 targeted the two obstacles left (bout lengths from complete pre-tap bouts; ten finer
-  tap bins), each alone and together, five seeds each: refuted - both together pass for 3 of 5, neither change earns
-  its credit, and the rate of leaving roaming is too high in all 20 refits, so not from the bouts' edges. Next, a
-  reading to test: a state proxy that does not count reversals as slowness, and a tap protocol with a rest. For the
+  optimiser seed of three - refuted by the rule set beforehand. Round 5 targeted the two obstacles left (bout
+  lengths from complete pre-tap bouts; ten finer tap bins), each alone and together, five seeds each: refuted - both
+  together pass for 3 of 5, neither change earns its credit, and the rate of leaving roaming is too high in all 20
+  refits, not (or not only) from the bouts' edges. Next: find that bias's cause before changing the statistics
+  again, and a tap protocol with a rest. For the
   benchmark: its comparison space should hold state-conditioned rates, bout lengths and whole distributions, not only
   means.
 
