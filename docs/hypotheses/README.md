@@ -237,7 +237,7 @@ criteria written in the journal before the run (2026-10-17, *H13's Proof of Conc
 real worm, only once the benchmark is frozen, as the rules require.
 *Tested so far*: the proof of concept, on synthetic worms only, in
 [notebooks/h13_modular_poc.ipynb](../../notebooks/h13_modular_poc.ipynb): recovery of the hidden brain refuted, the
-search the first suspect; ablation, pruning and the held-out catch passed. The journal has the numbers.
+search the first suspect; ablation (under the chosen reading of the noise), pruning and the held-out catch passed. The journal has the numbers.
 
 ## Adding a Hypothesis
 
