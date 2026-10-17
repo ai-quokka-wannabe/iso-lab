@@ -130,8 +130,9 @@ the idea for the next attempt.
 - **H13, the proof of concept's recovery** ([the notebook](notebooks/h13_modular_poc.ipynb), 2026-10-17): on synthetic
   worms, training the modular brain as a whole did not recover the hidden brain (four parameters off by 1.7 to 2.4
   times, the decoy not driven to zero), three of them left near their start; ablation, pruning and the held-out catch
-  passed. Next: tell convergence from identifiability - longer fits from several starts and optimiser seeds, and
-  slices of the distance along each badly recovered parameter.
+  passed. Round 2: not the search - longer, re-seeded and re-started fits all miss - but the statistics: two of the
+  four parameters are barely seen by them, and fits trade parameters along what looks like a ridge. Next: add
+  statistics conditioned on the state and bout-length distributions, and test recovery again.
 
 ## Blocked
 
@@ -200,6 +201,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-17: H13 round 2: convergence ruled out (five fits, none recovering); two of the four badly recovered
+  parameters barely seen by the 12 statistics (flat slices) - the statistics, not the search, need improving.
 - 2026-10-17: H13's proof of concept on synthetic worms: ablation, pruning and the held-out catch pass (ablation under the
   chosen reading of the noise); recovery of the hidden brain is refuted - four parameters off by 1.7 to 2.4 times, the
   decoy not zeroed - with the search, not the statistics, the first suspect.
