@@ -127,17 +127,18 @@ the idea for the next attempt.
   (v4 and v5 each lost a seed), then a full test of binary keys or Krotov and Hopfield 2016's dense energies against
   DeltaNet. Kanter and Sompolinsky 1987 was not found in open access (Crossref lists no abstract; Semantic Scholar's
   API marks it closed and the abstract elided by the publisher, checked 2026-10-14); it stays unread.
-- **H13, the proof of concept's recovery** ([the notebook](notebooks/h13_modular_poc.ipynb), 2026-10-17): on synthetic
-  worms, training the modular brain as a whole did not recover the hidden brain (four parameters off by 1.7 to 2.4
-  times, the decoy not driven to zero), three of them off by much the same factor as at the start; ablation, pruning and the held-out catch
-  passed. Round 2: the search found a fit as good as the truth on the data it sees without finding
-  the truth; one parameter (the roaming reversal hazard) is barely seen by the statistics, and two (the rate of
-  leaving roaming, the reverse speed) appear to trade against each other. Round 3: with five statistics added -
-  reversal rates within fast and slow windows, bout lengths, the reverse speed - every real parameter is recovered
-  within the bar (largest 0.35); recovery fails on the decoy alone. Round 4, the whole loop for three
-  optimiser seeds: pruning right every time (the decoy dropped, nothing real), recovery passing for one seed of three -
-  refuted; the rate of leaving roaming 1.34 to 1.52 times too high in every seed, and habituation's two parameters
-  trading. Next: bout lengths from complete bouts before the taps, a habituation-recovery statistic, the loop again.
+- **H13, the proof of concept on synthetic worms** (2026-10-17; [round 1](notebooks/h13_modular_poc.ipynb),
+  [rounds 2 to 4](notebooks/h13_rounds_2_to_4.ipynb); the journal of that date has the numbers). The grind's decisions
+  work: ablation told real modules from a decoy in every run (round 1's under the chosen reading of the noise), and the
+  fit after pruning the decoy was better each time (one comparison per run, an observation); the held-out check caught
+  a memorising model once, in round 1. Recovering the
+  hidden brain by training it as a whole does not yet: with 12 behaviour statistics it is refuted, and the fault points to
+  the statistics more than the search (one parameter barely seen, two trading); five more statistics recover every
+  real parameter in one fit, and the whole loop of fit, ablate, prune and refit then recovers the brain for one
+  optimiser seed of three - refuted by the rule set beforehand. What remains: the rate of leaving roaming 1.3 to 1.5
+  times too high in every seed, and habituation's two parameters appearing to trade (untested). Next: bout lengths
+  from complete bouts before the taps, a habituation-recovery statistic, then the loop again. For the benchmark: its
+  comparison space should hold state-conditioned rates, bout lengths and whole distributions, not only means.
 
 ## Blocked
 
@@ -206,8 +207,10 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-17: H13's proof of concept gathered up: rounds 2 to 4 in one notebook, re-run byte-identical; STATE.md
+  and H13 carry one summary.
 - 2026-10-17: H13 round 4, the whole loop: pruning right in all three seeds; recovery passes for one of three -
-  refuted by the rule set beforehand; a bias in the rate of leaving roaming and a habituation trade remain.
+  refuted by the rule set beforehand; a bias in the rate of leaving roaming remains, and an apparent habituation trade (untested).
 - 2026-10-17: H13 round 3: five statistics added from the speed recover all 13 real parameters within the bar
   (median 0.038, largest 0.35); criterion 1 fails on the decoy alone (`g` 0.059).
 - 2026-10-17: H13 round 2: more search does not recover the hidden brain (a 360-generation fit as good as the truth on
