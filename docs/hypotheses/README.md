@@ -240,8 +240,8 @@ real worm, only once the benchmark is frozen, as the rules require.
 journal of 2026-10-17 has the numbers). Ablation told real modules from the decoy in every run (round 1's under the
 chosen reading of the noise), and pruning it left a better fit each time; recovery of the hidden brain is refuted -
 first, as round 2 showed, for want of statistics, then, with five more, for one optimiser seed of three passing where two
-were needed; a fifth round, targeting what remained, passed for three seeds of five where four were needed; a diagnosis traced the
-remaining bias chiefly to noise in the fitter, with more simulated worms per candidate passing four of five but still
+were needed; a fifth round, targeting what remained, passed for three seeds of five where four were needed; a diagnosis found noise in the
+fitter a real part of the remaining bias, with more simulated worms per candidate passing four of five but still
 missing the switching rate in three.
 
 ## Adding a Hypothesis

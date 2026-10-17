@@ -212,8 +212,9 @@ points to the open ones and says what waits on each.
 
 ## Done
 
-- 2026-10-17: H13 diagnosis: the over-estimated switching rate is mostly fitter noise (16 worms per candidate); 128
-  worms recover it on a noise-free target, while on DEV the loop passes 4 of 5 but `k_rd` is within 0.2 in 2 (refuted).
+- 2026-10-17: H13 diagnosis: fitter noise (16 worms per candidate) is a real part of the switching-rate bias; 128
+  worms recover it on a noise-free target, while on DEV about a third of the log over-estimate goes and the loop
+  passes 4 of 5, with `k_rd` within 0.2 in 2 (refuted).
 - 2026-10-17: H13 round 5, the two obstacles targeted: refuted (3 of 5 with both changes, 4 needed); pruning right in
   all 20 loops; the roaming-exit rate too high in every refit.
 - 2026-10-17: H13's proof of concept gathered up: rounds 2 to 4 in one notebook, re-run byte-identical; STATE.md
