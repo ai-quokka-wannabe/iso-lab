@@ -236,7 +236,8 @@ the behaviour does not need, and the held-out check flags a module that only mem
 criteria written in the journal before the run (2026-10-17, *H13's Proof of Concept on Synthetic Worms*); on the
 real worm, only once the benchmark is frozen, as the rules require.
 *Tested so far*: the proof of concept, on synthetic worms only, in
-[notebooks/h13_modular_poc.ipynb](../../notebooks/h13_modular_poc.ipynb); results in the journal.
+[notebooks/h13_modular_poc.ipynb](../../notebooks/h13_modular_poc.ipynb): recovery of the hidden brain refuted, the
+search the first suspect; ablation, pruning and the held-out catch passed. The journal has the numbers.
 
 ## Adding a Hypothesis
 
