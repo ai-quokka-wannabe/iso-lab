@@ -220,6 +220,24 @@ and dwelling bouts, habituation - at the worm's pace, once the benchmark exists.
 one beyond that bound does; the richer parts are then credited by ablation, one by one.
 *Tested so far*: nothing; it needs the benchmark.
 
+### H13. Mechanism-Matched Modules, Trained as a Whole, Then Ground Down
+
+*A hunch*, the maintainer's (2026-10-17): build each part of the brain from the kind of mechanism that best matches
+that part's job - an oscillator for undulation, a switch for roaming and dwelling, a depressing synapse for
+habituation, a Hebbian store for memory - at the level of method rather than neuron (Marr's algorithmic level;
+[Marr 1982, reissued 2010](https://doi.org/10.7551/mitpress/9780262514620.001.0001)); train the slow parameters of all the modules together
+against the behaviour, leaving within-life learning local; then grind: ablate each module, drop what does not earn
+its place, simplify, and repeat, checking every step against held-out recordings. It extends the working assumption
+above and hunches A6, C4, C5 and E3 of [Matej's ideas and hunches](matej-hunches.md) with two things they do not
+state: joint training of the whole heterogeneous brain, and the grind as a loop.
+*Predicts*: the loop recovers a brain's mechanisms from its behaviour statistics alone, finds by ablation the modules
+the behaviour does not need, and the held-out check flags a module that only memorises the development set.
+*Refuted*: at the level of a proof of concept, when on synthetic worms with a known hidden brain the loop fails the
+criteria written in the journal before the run (2026-10-17, *H13's Proof of Concept on Synthetic Worms*); on the
+real worm, only once the benchmark is frozen, as the rules require.
+*Tested so far*: the proof of concept, on synthetic worms only, in
+[notebooks/h13_modular_poc.ipynb](../../notebooks/h13_modular_poc.ipynb); results in the journal.
+
 ## Adding a Hypothesis
 
 A pool of candidates waits in [Matej's ideas and hunches](matej-hunches.md): unverified, to be triaged and
