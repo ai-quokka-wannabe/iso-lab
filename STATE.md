@@ -132,8 +132,10 @@ the idea for the next attempt.
   times, the decoy not driven to zero), three of them off by much the same factor as at the start; ablation, pruning and the held-out catch
   passed. Round 2: the search found a fit as good as the truth on the data it sees without finding
   the truth; one parameter (the roaming reversal hazard) is barely seen by the statistics, and two (the rate of
-  leaving roaming, the reverse speed) appear to trade against each other. Next: add statistics conditioned on the
-  state, bout lengths and the reverse speed, and test recovery again.
+  leaving roaming, the reverse speed) appear to trade against each other. Round 3: with five statistics added -
+  reversal rates within fast and slow windows, bout lengths, the reverse speed - every real parameter is recovered
+  within the bar (largest 0.35); recovery fails on the decoy alone. Next: the whole loop - fit, ablate, prune,
+  refit - judged by recovery.
 
 ## Blocked
 
@@ -202,6 +204,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-17: H13 round 3: five statistics added from the speed recover all 13 real parameters within the bar
+  (median 0.038, largest 0.35); criterion 1 fails on the decoy alone (`g` 0.059).
 - 2026-10-17: H13 round 2: more search does not recover the hidden brain (a 360-generation fit as good as the truth on
   its data, still off); one parameter barely seen by the 12 statistics, two trading - the statistics need improving.
 - 2026-10-17: H13's proof of concept on synthetic worms: ablation, pruning and the held-out catch pass (ablation under the

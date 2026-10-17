@@ -238,7 +238,9 @@ real worm, only once the benchmark is frozen, as the rules require.
 *Tested so far*: the proof of concept, on synthetic worms only, in
 [notebooks/h13_modular_poc.ipynb](../../notebooks/h13_modular_poc.ipynb): recovery of the hidden brain refuted, the
 search the first suspect; ablation (under the chosen reading of the noise), pruning and the held-out catch passed. A second round pointed to the statistics rather than
-the search: one parameter barely seen by them, two trading against each other. The journal has the numbers.
+the search: one parameter barely seen by them, two trading against each other. A third round, with
+five statistics added, recovered every real parameter within the bar and failed on the decoy alone. The journal has
+the numbers.
 
 ## Adding a Hypothesis
 
