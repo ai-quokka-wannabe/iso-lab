@@ -235,13 +235,11 @@ the behaviour does not need, and the held-out check flags a module that only mem
 *Refuted*: at the level of a proof of concept, when on synthetic worms with a known hidden brain the loop fails the
 criteria written in the journal before the run (2026-10-17, *H13's Proof of Concept on Synthetic Worms*); on the
 real worm, only once the benchmark is frozen, as the rules require.
-*Tested so far*: the proof of concept, on synthetic worms only, in
-[notebooks/h13_modular_poc.ipynb](../../notebooks/h13_modular_poc.ipynb): recovery of the hidden brain refuted, the
-search the first suspect; ablation (under the chosen reading of the noise), pruning and the held-out catch passed. A second round pointed to the statistics rather than
-the search: one parameter barely seen by them, two trading against each other. A third round, with
-five statistics added, recovered every real parameter within the bar and failed on the decoy alone. A fourth, the whole loop of
-fit, ablate, prune and refit, pruned right every time but recovered the brain for one optimiser seed of three -
-refuted. The journal has the numbers.
+*Tested so far*: a proof of concept in four rounds, on synthetic worms only
+([round 1](../../notebooks/h13_modular_poc.ipynb), [rounds 2 to 4](../../notebooks/h13_rounds_2_to_4.ipynb); the
+journal of 2026-10-17 has the numbers). Ablation and pruning work, every time; recovery of the hidden brain is
+refuted - first for want of statistics, then, with five more, for one optimiser seed of three passing where two
+were needed.
 
 ## Adding a Hypothesis
 
