@@ -129,9 +129,11 @@ the idea for the next attempt.
   API marks it closed and the abstract elided by the publisher, checked 2026-10-14); it stays unread.
 - **H13, the proof of concept on synthetic worms** (2026-10-17; [round 1](notebooks/h13_modular_poc.ipynb),
   [rounds 2 to 4](notebooks/h13_rounds_2_to_4.ipynb); the journal of that date has the numbers). The grind's decisions
-  work: ablation tells real modules from a decoy and pruning the decoy improves the fit, in every run. Recovering the
-  hidden brain by training it as a whole does not yet: with 12 behaviour statistics it is refuted, and the fault is in
-  the statistics rather than the search (one parameter barely seen, two trading); five more statistics recover every
+  work: ablation told real modules from a decoy in every run (round 1's under the chosen reading of the noise), and the
+  fit after pruning the decoy was better each time (one comparison per run, an observation); the held-out check caught
+  a memorising model once, in round 1. Recovering the
+  hidden brain by training it as a whole does not yet: with 12 behaviour statistics it is refuted, and the fault points to
+  the statistics more than the search (one parameter barely seen, two trading); five more statistics recover every
   real parameter in one fit, and the whole loop of fit, ablate, prune and refit then recovers the brain for one
   optimiser seed of three - refuted by the rule set beforehand. What remains: the rate of leaving roaming 1.3 to 1.5
   times too high in every seed, and habituation's two parameters appearing to trade (untested). Next: bout lengths
@@ -205,8 +207,10 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-17: H13's proof of concept gathered up: rounds 2 to 4 in one notebook, re-run byte-identical; STATE.md
+  and H13 carry one summary.
 - 2026-10-17: H13 round 4, the whole loop: pruning right in all three seeds; recovery passes for one of three -
-  refuted by the rule set beforehand; a bias in the rate of leaving roaming and a habituation trade remain.
+  refuted by the rule set beforehand; a bias in the rate of leaving roaming remains, and an apparent habituation trade (untested).
 - 2026-10-17: H13 round 3: five statistics added from the speed recover all 13 real parameters within the bar
   (median 0.038, largest 0.35); criterion 1 fails on the decoy alone (`g` 0.059).
 - 2026-10-17: H13 round 2: more search does not recover the hidden brain (a 360-generation fit as good as the truth on

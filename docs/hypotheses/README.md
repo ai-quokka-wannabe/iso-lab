@@ -237,8 +237,9 @@ criteria written in the journal before the run (2026-10-17, *H13's Proof of Conc
 real worm, only once the benchmark is frozen, as the rules require.
 *Tested so far*: a proof of concept in four rounds, on synthetic worms only
 ([round 1](../../notebooks/h13_modular_poc.ipynb), [rounds 2 to 4](../../notebooks/h13_rounds_2_to_4.ipynb); the
-journal of 2026-10-17 has the numbers). Ablation and pruning work, every time; recovery of the hidden brain is
-refuted - first for want of statistics, then, with five more, for one optimiser seed of three passing where two
+journal of 2026-10-17 has the numbers). Ablation told real modules from the decoy in every run (round 1's under the
+chosen reading of the noise), and pruning it left a better fit each time; recovery of the hidden brain is refuted -
+first, as round 2 showed, for want of statistics, then, with five more, for one optimiser seed of three passing where two
 were needed.
 
 ## Adding a Hypothesis
