@@ -127,6 +127,11 @@ the idea for the next attempt.
   (v4 and v5 each lost a seed), then a full test of binary keys or Krotov and Hopfield 2016's dense energies against
   DeltaNet. Kanter and Sompolinsky 1987 was not found in open access (Crossref lists no abstract; Semantic Scholar's
   API marks it closed and the abstract elided by the publisher, checked 2026-10-14); it stays unread.
+- **H13, the proof of concept's recovery** ([the notebook](notebooks/h13_modular_poc.ipynb), 2026-10-17): on synthetic
+  worms, training the modular brain as a whole did not recover the hidden brain (four parameters off by 1.7 to 2.4
+  times, the decoy not driven to zero), three of them left near their start; ablation, pruning and the held-out catch
+  passed. Next: tell convergence from identifiability - longer fits from several starts and optimiser seeds, and
+  slices of the distance along each badly recovered parameter.
 
 ## Blocked
 
@@ -195,6 +200,9 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-17: H13's proof of concept on synthetic worms: ablation, pruning and the held-out catch pass (ablation under the
+  chosen reading of the noise); recovery of the hidden brain is refuted - four parameters off by 1.7 to 2.4 times, the
+  decoy not zeroed - with the search, not the statistics, the first suspect.
 - 2026-10-15: the undefined frames follow from the spacing: on 178 records, states from the toolbox's speed on equally
   spaced skeletons leave a median 0.921 as many published-paused frames undefined as the lab's; plumbing exact in 177.
 - 2026-10-15: block 1 fetched in full; the three roughness findings replicate on its 178 further records:
