@@ -143,8 +143,10 @@ the idea for the next attempt.
   `k_rd` is within 0.2 for only 2. A precision test on twelve fresh populations then found the fitter's noise the larger
   part (by its rule; the data's share is not resolved): the fit follows the optimiser's seed (seed 8 above seed 7 in
   all 12), and every fit shares one simulation noise stream; the bias, 1.15 times, holds for that stream and those
-  two seeds (seed 7 alone 1.03). Next: whether the fitter is biased over many seeds and streams, and whether
-  averaging cures it; and a tap protocol with a rest. For the
+  two seeds (seed 7 alone 1.03). Eight seeds on a noise-free target, with the shared stream and with
+  streams of their own, then showed the fitter biased on average (1.15 times, interval excluding zero, either
+  stream); averaging removes the scatter, not the bias, and is not shown to suffice. Next: the reading that the search's elite mean minimises a smoothed, lopsided
+  objective - test a final phase with a small fixed spread; and a tap protocol with a rest. For the
   benchmark: its comparison space should hold state-conditioned rates, bout lengths and whole distributions, not only
   means.
 
@@ -215,6 +217,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-18: H13 seeds test, eight optimiser seeds on a noise-free target: the fitter is biased on average, 1.15
+  times in `k_rd`, with the shared stream or streams of each seed's own; averaging is not shown to suffice.
 - 2026-10-18: H13 precision test, 12 fresh populations of 30 worms: by its rule the fitter's noise is the larger part of
   the scatter in `k_rd` (the data's share unresolved; seed 8 above seed 7 in all 12); 15 of 24 fits within 0.2.
 - 2026-10-17: H13 diagnosis: fitter noise (16 worms per candidate) is a real part of the switching-rate bias; 128
