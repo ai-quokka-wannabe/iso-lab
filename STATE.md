@@ -151,8 +151,11 @@ the idea for the next attempt.
   (mean -0.040, interval including zero). A long run to 480 generations
   then failed its rule (L1); post hoc, it brought the outlying seeds in (8 of 8 within 0.2 on `k_rd`, sd 0.124 to
   0.043), but the fall in the mean (1.15 to 1.05 times) is not shown by a paired interval, and a residual excluding
-  zero remains. Next:
-  round 4's whole loop on DEV with longer fits, pre-registered; and a tap protocol with a rest. For the
+  zero remains. Then round 4's
+  whole loop on DEV at 128 worms and 360 generations **passed its rule**: criterion 1 for 5 of 5 seeds, `k_rd` within
+  0.2 for 5 of 5, though still biased high (about 1.17 times) and with habituation's two parameters trading in two.
+  Next: the residual bias and habituation (a tap protocol with a rest); more populations than DEV before trusting the
+  rate. For the
   benchmark: its comparison space should hold state-conditioned rates, bout lengths and whole distributions, not only
   means.
 
@@ -223,6 +226,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-18: H13 loop on DEV, 128 worms and 360 generations: criterion 1 passes for 5 of 5 seeds and `k_rd` is within
+  0.2 for 5 of 5 - the first pass of the rule; `k_rd` still about 1.17 times, `dep` and `tau` off in two.
 - 2026-10-18: H13 long run, 480 generations: L1 and L2 fail; post hoc, the scatter in `k_rd` collapsed (8 of 8 within
   0.2) while the fall in the mean (1.15 to 1.05 times) is not shown by a paired interval.
 - 2026-10-18: H13 polish test: the smoothing reading weakened (the search's spread already at its 0.02 floor at
