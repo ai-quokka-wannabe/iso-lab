@@ -148,9 +148,10 @@ the idea for the next attempt.
   stream); averaging removes the scatter, not the bias, and is not shown to suffice. A polish test then weakened the smoothing
   reading, by its pre-registered rule: the search's spread on `k_rd` had already collapsed to its floor (0.02) by
   generation 120 in all 16 fits. Post hoc, 40 more generations moved the estimate towards the truth in 7 of 8 seeds
-  (mean -0.040, interval including zero). A long run then found
-  premature convergence the larger part: run to 480 generations, the bias fell from 1.15 to 1.05 times (all 8 fits
-  within 0.2 on `k_rd`), most of it by 240, though not at every checkpoint and with a residual excluding zero. Next:
+  (mean -0.040, interval including zero). A long run to 480 generations
+  then failed its rule (L1); post hoc, it brought the outlying seeds in (8 of 8 within 0.2 on `k_rd`, sd 0.124 to
+  0.043), but the fall in the mean (1.15 to 1.05 times) is not shown by a paired interval, and a residual excluding
+  zero remains. Next:
   round 4's whole loop on DEV with longer fits, pre-registered; and a tap protocol with a rest. For the
   benchmark: its comparison space should hold state-conditioned rates, bout lengths and whole distributions, not only
   means.
@@ -222,8 +223,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
-- 2026-10-18: H13 long run, 480 generations: the bias in `k_rd` fell from 1.15 to 1.05 times (8 of 8 within 0.2),
-  most of it by generation 240; L1 and L2 fail by their letter (one uptick; a residual excluding zero).
+- 2026-10-18: H13 long run, 480 generations: L1 and L2 fail; post hoc, the scatter in `k_rd` collapsed (8 of 8 within
+  0.2) while the fall in the mean (1.15 to 1.05 times) is not shown by a paired interval.
 - 2026-10-18: H13 polish test: the smoothing reading weakened (the search's spread already at its 0.02 floor at
   generation 120 in all 16 fits); a design flaw found (the "polish" widened it); post hoc, 40 more generations moved
   the estimate towards the truth in 7 of 8 seeds, interval including zero.
