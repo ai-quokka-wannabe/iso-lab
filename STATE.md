@@ -145,9 +145,10 @@ the idea for the next attempt.
   all 12), and every fit shares one simulation noise stream; the bias, 1.15 times, holds for that stream and those
   two seeds (seed 7 alone 1.03). Eight seeds on a noise-free target, with the shared stream and with
   streams of their own, then showed the fitter biased on average (1.15 times, interval excluding zero, either
-  stream); averaging removes the scatter, not the bias, and is not shown to suffice. A polish test then refuted the smoothing
-  reading: the search's spread on `k_rd` had already collapsed to its floor (0.02) by generation 120 in all 16 fits,
-  and 40 more generations still moved the estimate towards the truth (7 of 8 seeds). Next: *a hunch*, premature
+  stream); averaging removes the scatter, not the bias, and is not shown to suffice. A polish test then weakened the smoothing
+  reading, by its pre-registered rule: the search's spread on `k_rd` had already collapsed to its floor (0.02) by
+  generation 120 in all 16 fits. Post hoc, 40 more generations moved the estimate towards the truth in 7 of 8 seeds
+  (mean -0.040, interval including zero). Next: *a hunch*, premature
   convergence - run the same fits much longer and see whether the bias keeps shrinking; and a tap protocol with a
   rest. For the
   benchmark: its comparison space should hold state-conditioned rates, bout lengths and whole distributions, not only
@@ -220,8 +221,9 @@ points to the open ones and says what waits on each.
 
 ## Done
 
-- 2026-10-18: H13 polish test: the smoothing reading refuted (the search's spread already at its 0.02 floor at
-  generation 120 in all 16 fits); a design flaw found (the "polish" widened it); 40 more generations cut the bias.
+- 2026-10-18: H13 polish test: the smoothing reading weakened (the search's spread already at its 0.02 floor at
+  generation 120 in all 16 fits); a design flaw found (the "polish" widened it); post hoc, 40 more generations moved
+  the estimate towards the truth in 7 of 8 seeds, interval including zero.
 - 2026-10-18: H13 seeds test, eight optimiser seeds on a noise-free target: the fitter is biased on average, 1.15
   times in `k_rd`, with the shared stream or streams of each seed's own; averaging is not shown to suffice.
 - 2026-10-18: H13 precision test, 12 fresh populations of 30 worms: by its rule the fitter's noise is the larger part of
