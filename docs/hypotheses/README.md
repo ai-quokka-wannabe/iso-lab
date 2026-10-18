@@ -244,7 +244,7 @@ were needed; a fifth round, targeting what remained, passed for three seeds of f
 fitter a real part of the remaining bias, with more simulated worms per candidate passing four of five but still
 missing the switching rate in three; and a precision test on fresh populations found the fitter's noise the larger part of
 what remained; eight seeds on a noise-free target then showed the fitter biased on average, not merely noisy, and a
-polish test weakened the reading that the search's smoothing makes it; a longer search removed about two thirds of it.
+polish test weakened the reading that the search's smoothing makes it; a longer search failed its rule, though post hoc it brought the outlying seeds in.
 
 ## Adding a Hypothesis
 
