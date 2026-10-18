@@ -138,10 +138,12 @@ the idea for the next attempt.
   optimiser seed of three - refuted by the rule set beforehand. Round 5 targeted the two obstacles left (bout
   lengths from complete pre-tap bouts; ten finer tap bins), each alone and together, five seeds each: refuted - both
   together pass for 3 of 5, neither change earns its credit, and the rate of leaving roaming is too high in all 20
-  refits, not (or not only) from the bouts' edges. A diagnosis found two causes: noise in the fitter's 16-worm
-  comparisons (with 128 worms the noise-free fit recovers `k_rd`, 1.02 times, and on DEV the loop passes for 4 of 5,
-  with `k_rd` lower in every seed, though within 0.2 for only 2), and, *untested*, the precision of 30 worms. Next:
-  that precision, by fitting fresh populations at 128 worms; and a tap protocol with a rest. For the
+  refits, not (or not only) from the bouts' edges. A diagnosis found the fitter's noise a real part: with 128
+  worms per candidate the noise-free fit recovers `k_rd` (1.02 times), and on DEV the loop passes for 4 of 5, but
+  `k_rd` is within 0.2 for only 2. A precision test on twelve fresh populations then put the rest on the fitter, not
+  the data: the data adds no measurable scatter, the fit follows the optimiser's seed (seed 8 above seed 7 in all
+  12), and a bias of 1.15 times is left. Next: whether the fitter is biased over many seeds, and whether averaging
+  seeds cures it; and a tap protocol with a rest. For the
   benchmark: its comparison space should hold state-conditioned rates, bout lengths and whole distributions, not only
   means.
 
@@ -212,6 +214,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-18: H13 precision test, 12 fresh populations of 30 worms: the scatter in `k_rd` is the fitter's (the data
+  adds none; seed 8 above seed 7 in all 12), with a bias of 1.15 times left at 128 worms; 15 of 24 fits within 0.2.
 - 2026-10-17: H13 diagnosis: fitter noise (16 worms per candidate) is a real part of the switching-rate bias; 128
   worms recover it on a noise-free target, while on DEV about a third of the log over-estimate goes and the loop
   passes 4 of 5, with `k_rd` within 0.2 in 2 (refuted).
