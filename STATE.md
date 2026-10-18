@@ -140,10 +140,11 @@ the idea for the next attempt.
   together pass for 3 of 5, neither change earns its credit, and the rate of leaving roaming is too high in all 20
   refits, not (or not only) from the bouts' edges. A diagnosis found the fitter's noise a real part: with 128
   worms per candidate the noise-free fit recovers `k_rd` (1.02 times), and on DEV the loop passes for 4 of 5, but
-  `k_rd` is within 0.2 for only 2. A precision test on twelve fresh populations then put the rest on the fitter, not
-  the data: the data adds no measurable scatter, the fit follows the optimiser's seed (seed 8 above seed 7 in all
-  12), and a bias of 1.15 times is left. Next: whether the fitter is biased over many seeds, and whether averaging
-  seeds cures it; and a tap protocol with a rest. For the
+  `k_rd` is within 0.2 for only 2. A precision test on twelve fresh populations then found the fitter's noise the larger
+  part (by its rule; the data's share is not resolved): the fit follows the optimiser's seed (seed 8 above seed 7 in
+  all 12), and every fit shares one simulation noise stream; the bias, 1.15 times, holds for that stream and those
+  two seeds (seed 7 alone 1.03). Next: whether the fitter is biased over many seeds and streams, and whether
+  averaging cures it; and a tap protocol with a rest. For the
   benchmark: its comparison space should hold state-conditioned rates, bout lengths and whole distributions, not only
   means.
 
@@ -214,8 +215,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
-- 2026-10-18: H13 precision test, 12 fresh populations of 30 worms: the scatter in `k_rd` is the fitter's (the data
-  adds none; seed 8 above seed 7 in all 12), with a bias of 1.15 times left at 128 worms; 15 of 24 fits within 0.2.
+- 2026-10-18: H13 precision test, 12 fresh populations of 30 worms: by its rule the fitter's noise is the larger part of
+  the scatter in `k_rd` (the data's share unresolved; seed 8 above seed 7 in all 12); 15 of 24 fits within 0.2.
 - 2026-10-17: H13 diagnosis: fitter noise (16 worms per candidate) is a real part of the switching-rate bias; 128
   worms recover it on a noise-free target, while on DEV about a third of the log over-estimate goes and the loop
   passes 4 of 5, with `k_rd` within 0.2 in 2 (refuted).
