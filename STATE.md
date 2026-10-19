@@ -155,8 +155,9 @@ the idea for the next attempt.
   whole loop on DEV at 128 worms and 360 generations **passed its rule**: criterion 1 for 5 of 5 seeds, `k_rd` within
   0.2 for 5 of 5, though still biased high (about 1.17 times) and with habituation's two parameters trading in two.
   On five fresh
-  populations the loop then passed criterion 1 for 5 of 5 (`k_rd` within 0.2 for 4), and `k_rd` centred near the
-  truth (+0.064 in log, interval including zero); habituation's `dep` and `tau` traded in three of five. Next: a tap
+  populations the loop then passed criterion 1 for 5 of 5 (`k_rd` within 0.2 for 4), and no bias in `k_rd` was
+  shown (+0.064 in log, interval -0.056 to +0.184, which also covers DEV's +0.153); habituation's `dep` and `tau` were
+  not both within 0.2 in three of five, trading in two. Next: a tap
   protocol with a rest, to separate them. For the
   benchmark: its comparison space should hold state-conditioned rates, bout lengths and whole distributions, not only
   means.
@@ -228,8 +229,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
-- 2026-10-19: H13 on five fresh populations: criterion 1 passes for 5 of 5, `k_rd` within 0.2 for 4 of 5 and centred
-  near the truth; habituation's `dep` and `tau` both within 0.2 for only 2 of 5.
+- 2026-10-19: H13 on five fresh populations: criterion 1 passes for 5 of 5, `k_rd` within 0.2 for 4 of 5, no bias
+  in it shown; habituation's `dep` and `tau` both within 0.2 for only 2 of 5.
 - 2026-10-18: H13 loop on DEV, 128 worms and 360 generations: criterion 1 passes for 5 of 5 seeds and `k_rd` is within
   0.2 for 5 of 5 - the first pass of the rule; `k_rd` still about 1.17 times, `dep` and `tau` off in two.
 - 2026-10-18: H13 long run, 480 generations: L1 and L2 fail; post hoc, the scatter in `k_rd` collapsed (8 of 8 within
