@@ -159,8 +159,11 @@ the idea for the next attempt.
   shown (+0.064 in log, interval -0.056 to +0.184, which also covers DEV's +0.153); habituation's `dep` and `tau` were
   not both within 0.2 in three of five, trading in two. A tap protocol
   with a rest and three probe taps then failed to separate them: both within 0.2 for 3 of 8 seeds on the near
-  noise-free target, against 5 of 8 before. Next: profile the distance along the dep-tau trade under candidate
-  protocols, with more probes and a graded response, before another fit. For the
+  noise-free target, against 5 of 8 before. A profile of the distance then showed it nearly flat along
+  the dep-tau trade under both protocols (one to two hundred times flatter than across it): the statistics see one
+  combination far more clearly than the two apart; the rest protocol sharpens the trade about 1.4 times, not 2 (P1
+  fails).
+  Next: profile candidate measurements - longer rests, more probes, a graded response - before another fit. For the
   benchmark: its comparison space should hold state-conditioned rates, bout lengths and whole distributions, not only
   means.
 
@@ -231,6 +234,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-19: H13 profile of the dep-tau valley: P1 fails (ratio 1.81); the distance is nearly flat along the trade
+  under both protocols, so the fits at the budgets used could not resolve it.
 - 2026-10-19: H13 habituation, a rest protocol with three probe taps: refuted - `dep` and `tau` both within 0.2 for 3
   of 8 seeds (the old protocol had 5 of 8); `k_rd` within 0.2 for all 8.
 - 2026-10-19: H13 on five fresh populations: criterion 1 passes for 5 of 5, `k_rd` within 0.2 for 4 of 5, no bias
