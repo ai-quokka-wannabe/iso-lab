@@ -247,7 +247,7 @@ what remained; eight seeds on a noise-free target then showed the fitter biased 
 polish test weakened the reading that the search's smoothing makes it; a longer search failed its rule, though post hoc
 it brought the outlying seeds in; and with 128 worms per candidate and
 360 generations the whole loop passed criterion 1 for five seeds of five, with the switching rate still biased high but
-inside the tolerance.
+inside the tolerance; on five fresh populations it passed for all five, the switching rate centred near the truth.
 
 ## Adding a Hypothesis
 
