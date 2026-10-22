@@ -250,7 +250,7 @@ it brought the outlying seeds in; and with 128 worms per candidate and
 inside the tolerance; on five fresh populations it passed for all five, with no bias in the switching rate shown; a tap
 protocol with a rest did not separate habituation's two parameters, and a profile showed why: the statistics see almost
 only their combination; no tap protocol
-within 600 s does better, since a yes-or-no tap assay would need hundreds of worms to separate them.
+with intervals of 10 s or more does better, since a yes-or-no tap assay would then need hundreds of worms.
 
 ## Adding a Hypothesis
 
