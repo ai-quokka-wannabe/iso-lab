@@ -220,6 +220,37 @@ and dwelling bouts, habituation - at the worm's pace, once the benchmark exists.
 one beyond that bound does; the richer parts are then credited by ablation, one by one.
 *Tested so far*: nothing; it needs the benchmark.
 
+### H13. Mechanism-Matched Modules, Trained as a Whole, Then Ground Down
+
+*A hunch*, the maintainer's (2026-10-17): build each part of the brain from the kind of mechanism that best matches
+that part's job - an oscillator for undulation, a switch for roaming and dwelling, a depressing synapse for
+habituation, a Hebbian store for memory - at the level of method rather than neuron (Marr's algorithmic level;
+[Marr 1982, reissued 2010](https://doi.org/10.7551/mitpress/9780262514620.001.0001)); train the slow parameters of all the modules together
+against the behaviour, leaving within-life learning local; then grind: ablate each module, drop what does not earn
+its place, simplify, and repeat, checking every step against held-out recordings. It extends the working assumption
+above and hunches A6, C4, C5 and E3 of [Matej's ideas and hunches](matej-hunches.md) with two things they do not
+state: joint training of the whole heterogeneous brain, and the grind as a loop.
+*Predicts*: the loop recovers a brain's mechanisms from its behaviour statistics alone, finds by ablation the modules
+the behaviour does not need, and the held-out check flags a module that only memorises the development set.
+*Refuted*: at the level of a proof of concept, when on synthetic worms with a known hidden brain the loop fails the
+criteria written in the journal before the run (2026-10-17, *H13's Proof of Concept on Synthetic Worms*); on the
+real worm, only once the benchmark is frozen, as the rules require.
+*Tested so far*: a proof of concept in four rounds, on synthetic worms only
+([round 1](../../notebooks/h13_modular_poc.ipynb), [rounds 2 to 4](../../notebooks/h13_rounds_2_to_4.ipynb); the
+journal of 2026-10-17 has the numbers). Ablation told real modules from the decoy in every run (round 1's under the
+chosen reading of the noise), and pruning it left a better fit each time; recovery of the hidden brain is refuted -
+first, as round 2 showed, for want of statistics, then, with five more, for one optimiser seed of three passing where two
+were needed; a fifth round, targeting what remained, passed for three seeds of five where four were needed; a diagnosis found noise in the
+fitter a real part of the remaining bias, with more simulated worms per candidate passing four of five but still
+missing the switching rate in three; and a precision test on fresh populations found the fitter's noise the larger part of
+what remained; eight seeds on a noise-free target then showed the fitter biased on average, not merely noisy, and a
+polish test weakened the reading that the search's smoothing makes it; a longer search failed its rule, though post hoc
+it brought the outlying seeds in; and with 128 worms per candidate and
+360 generations the whole loop passed criterion 1 for five seeds of five, with the switching rate still biased high but
+inside the tolerance; on five fresh populations it passed for all five, with no bias in the switching rate shown; a tap
+protocol with a rest did not separate habituation's two parameters, and a profile showed why: the statistics see almost
+only their combination.
+
 ## Adding a Hypothesis
 
 A pool of candidates waits in [Matej's ideas and hunches](matej-hunches.md): unverified, to be triaged and

@@ -21,7 +21,7 @@ Every plan has the same parts:
 - **Cost**: compute and memory, in the terms of the rule *Lean brains*.
 - **Waits on**: what must exist first - the benchmark, the feature tool, the arena, a sense the Grid lacks.
 - **Leads**: each lead's status - found in Crossref by title and DOI, or read at the source (and for which number). A
-  lead that cannot be found is dropped and says so.
+  lead that cannot be found says so, and stays only as an unverified lead, never as evidence.
 
 A plan says what it cannot settle yet. Numbers it needs from the literature are named, not guessed; they are read
 out of their sources when the experiment is prepared.
@@ -71,13 +71,13 @@ out of their sources when the experiment is prepared.
 | C15 | A logistic-map arousal engine | [planned](C13-C24.md#c15-a-logistic-map-arousal-engine) |
 | C16 | Golden-ratio spacing of rhythms | [planned](C13-C24.md#c16-golden-ratio-spacing-of-rhythms) |
 | C17 | Memory timescales spaced by Feigenbaum's constant | [planned](C13-C24.md#c17-memory-timescales-spaced-by-feigenbaums-constant) |
-| C18 | Spreading activation has a cliff | [planned](C13-C24.md#c18-spreading-activation-has-a-cliff) |
-| C19 | Windowed tallies, not lifetime counts | to plan |
-| C20 | Bounded loops for rhythmic behaviour | to plan |
-| C21 | A noisy, log-compressed sense of elapsed time | to plan |
-| C22 | Inhibition of return and foraging in memory | to plan |
-| C23 | A stated, measured bound on what is held at once | to plan |
-| C24 | Instrument the state of attention | to plan |
+| C18 | Spreading activation has a cliff | [parked: plan failed verification](C13-C24.md#c18-spreading-activation-has-a-cliff) |
+| C19 | Windowed tallies, not lifetime counts | [planned](C13-C24.md#c19-windowed-tallies-not-lifetime-counts) |
+| C20 | Bounded loops for rhythmic behaviour | [planned](C13-C24.md#c20-bounded-loops-for-rhythmic-behaviour) |
+| C21 | A noisy, log-compressed sense of elapsed time | [planned](C13-C24.md#c21-a-noisy-log-compressed-sense-of-elapsed-time) |
+| C22 | Inhibition of return and foraging in memory | [planned](C13-C24.md#c22-inhibition-of-return-and-foraging-in-memory) |
+| C23 | A stated, measured bound on what is held at once | [planned](C13-C24.md#c23-a-stated-measured-bound-on-what-is-held-at-once) |
+| C24 | Instrument the state of attention | [planned](C13-C24.md#c24-instrument-the-state-of-attention) |
 | D1 | Roaming and dwelling from continuous drives | to plan |
 | D2 | Modulators that flip a smell's meaning | to plan |
 | D3 | One modulator state, three effects | to plan |
