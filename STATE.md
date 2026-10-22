@@ -163,7 +163,12 @@ the idea for the next attempt.
   the dep-tau trade under both protocols (one to two hundred times flatter than across it): the statistics see one
   combination far more clearly than the two apart; the rest protocol sharpens the trade about 1.4 times, not 2 (P1
   fails).
-  Next: profile candidate measurements - longer rests, more probes, a graded response - before another fit. For the
+  On 2026-10-22, three protocols with taps at two intervals
+  did no better (the trade cost stayed at 0.0004 to 0.0007 against a bar of 0.0022), and a deterministic calculation
+  showed why for designs with intervals of 10 s or more: a yes-or-no tap assay then needs 170 or more worms, against
+  DEV's 30. Short-interval trains (taps every 2 s) are not excluded by the same bound (about 16 to 30 worms at the
+  outer points) and are untested. Waiting on the maintainer: test a short-interval protocol first, size the tap
+  assay for hundreds of worms, or judge habituation on the combination the data can see. For the
   benchmark: its comparison space should hold state-conditioned rates, bout lengths and whole distributions, not only
   means.
 
@@ -235,6 +240,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-22: H13 tap protocols: three two-interval designs do not separate `dep` from `tau` (refuted); for intervals of
+  10 s or more a yes-or-no tap assay needs 170 or more worms, against DEV's 30; short-interval trains are untested.
 - 2026-10-22: [#45](https://github.com/ai-quokka-wannabe/iso-lab/pull/45) merged at the maintainer's request: its conflict
   resolved in favour of main's C13-C17, and its C18 plan kept as a record, marked as parked after failing verification.
 - 2026-10-19: H13 profile of the dep-tau valley: P1 fails (ratio 1.81); the distance is nearly flat along the trade
