@@ -165,10 +165,11 @@ the idea for the next attempt.
   fails).
   On 2026-10-22, three protocols with taps at two intervals
   did no better (the trade cost stayed at 0.0004 to 0.0007 against a bar of 0.0022), and a deterministic calculation
-  showed why for designs with intervals of 10 s or more: a yes-or-no tap assay then needs 170 or more worms, against
-  DEV's 30. Short-interval trains (taps every 2 s) are not excluded by the same bound (about 16 to 30 worms at the
-  outer points) and are untested. Waiting on the maintainer: test a short-interval protocol first, size the tap
-  assay for hundreds of worms, or judge habituation on the combination the data can see. For the
+  showed why for the five designs tried, all at intervals of 10 s or more: a yes-or-no tap assay then needs 170 or
+  more worms, against DEV's 30. A short-interval train - 60 taps every 2 s, then three probes - then lifted the trade
+  cost about thirteenfold, and on the near noise-free target the fit recovered `dep` and `tau` within 0.2 in 8 of 8
+  seeds (largest error 0.105). Next: the whole loop on fresh populations with that protocol. For the maintainer:
+  whether a 2 s tap interval is right for the benchmark's assay (not yet checked against the literature). For the
   benchmark: its comparison space should hold state-conditioned rates, bout lengths and whole distributions, not only
   means.
 
@@ -240,6 +241,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-22: H13 short-interval train (taps every 2 s): trade cost about 13 times the old protocol's; `dep` and `tau`
+  within 0.2 in 8 of 8 seeds on the near noise-free target. 512 worms per candidate under the old protocol: 3 of 4.
 - 2026-10-22: H13 tap protocols: three two-interval designs do not separate `dep` from `tau` (refuted); for intervals of
   10 s or more a yes-or-no tap assay needs 170 or more worms, against DEV's 30; short-interval trains are untested.
 - 2026-10-22: [#45](https://github.com/ai-quokka-wannabe/iso-lab/pull/45) merged at the maintainer's request: its conflict
