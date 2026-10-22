@@ -71,7 +71,7 @@ out of their sources when the experiment is prepared.
 | C15 | A logistic-map arousal engine | [planned](C13-C24.md#c15-a-logistic-map-arousal-engine) |
 | C16 | Golden-ratio spacing of rhythms | [planned](C13-C24.md#c16-golden-ratio-spacing-of-rhythms) |
 | C17 | Memory timescales spaced by Feigenbaum's constant | [planned](C13-C24.md#c17-memory-timescales-spaced-by-feigenbaums-constant) |
-| C18 | Spreading activation has a cliff | to plan |
+| C18 | Spreading activation has a cliff | [parked: plan failed verification](C13-C24.md#c18-spreading-activation-has-a-cliff) |
 | C19 | Windowed tallies, not lifetime counts | [planned](C13-C24.md#c19-windowed-tallies-not-lifetime-counts) |
 | C20 | Bounded loops for rhythmic behaviour | [planned](C13-C24.md#c20-bounded-loops-for-rhythmic-behaviour) |
 | C21 | A noisy, log-compressed sense of elapsed time | [planned](C13-C24.md#c21-a-noisy-log-compressed-sense-of-elapsed-time) |

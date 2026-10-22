@@ -176,7 +176,8 @@ the idea for the next attempt.
   and `smol-toml` as a tolerable risk, `katex` as not used. This session's GitHub access cannot write to the
   alerts. Dependabot will propose the fix when upstream releases one.
 - **The plan for C18, spreading activation's cliff**
-  ([#45](https://github.com/ai-quokka-wannabe/iso-lab/pull/45), left open after three rounds of review). Its model
+  ([#45](https://github.com/ai-quokka-wannabe/iso-lab/pull/45), merged on 2026-10-22 at the maintainer's request,
+  with the plan marked as parked in [C13-C24.md](docs/hypotheses/experiments/C13-C24.md#c18-spreading-activation-has-a-cliff)). Its model
   as written - 20 steps of spreading with fixed weights - would refute the hunch by construction: the verifier
   simulated it and found a clear cliff whose sharpness the 20-step horizon sets, not the network's size, so the
   size-scaling margin fires anyway. Of the cures as written, the "conserved budget" grows with degree and so is not
@@ -234,6 +235,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-22: [#45](https://github.com/ai-quokka-wannabe/iso-lab/pull/45) merged at the maintainer's request: its conflict
+  resolved in favour of main's C13-C17, and its C18 plan kept as a record, marked as parked after failing verification.
 - 2026-10-19: H13 profile of the dep-tau valley: P1 fails (ratio 1.81); the distance is nearly flat along the trade
   under both protocols, so the fits at the budgets used could not resolve it.
 - 2026-10-19: H13 habituation, a rest protocol with three probe taps: refuted - `dep` and `tau` both within 0.2 for 3
