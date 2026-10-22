@@ -168,7 +168,9 @@ the idea for the next attempt.
   showed why for the five designs tried, all at intervals of 10 s or more: a yes-or-no tap assay then needs 170 or
   more worms, against DEV's 30. A short-interval train - 60 taps every 2 s, then three probes - then lifted the trade
   cost about thirteenfold, and on the near noise-free target the fit recovered `dep` and `tau` within 0.2 in 8 of 8
-  seeds (largest error 0.105). Next: the whole loop on fresh populations with that protocol. For the maintainer:
+  seeds (largest error 0.105). But in the whole loop on five fresh 30-worm populations it did not carry: both within
+  0.2 for 1 of 5 (old protocol 2 of 5), criterion 1 for 3 of 5 (G1 and G3 fail). Next: the same loop under that
+  protocol on fresh populations of 60 or more to fit, to see whether the gain arrives as sampling noise falls. For the maintainer:
   whether a 2 s tap interval is right for the benchmark's assay (not yet checked against the literature). For the
   benchmark: its comparison space should hold state-conditioned rates, bout lengths and whole distributions, not only
   means.
@@ -241,6 +243,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-22: H13 loop on five fresh 30-worm populations under the short-interval train: G1 and G3 fail - `dep` and
+  `tau` both within 0.2 for 1 of 5, criterion 1 for 3 of 5; the train's gain does not reach the loop at DEV's size.
 - 2026-10-22: H13 short-interval train (taps every 2 s): trade cost about 13 times the old protocol's; `dep` and `tau`
   within 0.2 in 8 of 8 seeds on the near noise-free target. 512 worms per candidate under the old protocol: 3 of 4.
 - 2026-10-22: H13 tap protocols: three two-interval designs do not separate `dep` from `tau` (refuted); for intervals of
