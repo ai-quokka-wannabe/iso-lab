@@ -249,7 +249,8 @@ it brought the outlying seeds in; and with 128 worms per candidate and
 360 generations the whole loop passed criterion 1 for five seeds of five, with the switching rate still biased high but
 inside the tolerance; on five fresh populations it passed for all five, with no bias in the switching rate shown; a tap
 protocol with a rest did not separate habituation's two parameters, and a profile showed why: the statistics see almost
-only their combination.
+only their combination; no tap protocol
+within 600 s does better, since a yes-or-no tap assay would need hundreds of worms to separate them.
 
 ## Adding a Hypothesis
 
