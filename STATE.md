@@ -24,14 +24,6 @@ exactly. No creature has been scored.
 
 Top first. Each item is sized for one run; split it here before starting if it is bigger.
 
-**Before item 1, as soon as possible - the maintainer's priority (2026-10-26): move the Rust toolchain to 1.99.1**
-([issue #86](https://github.com/ai-quokka-wannabe/iso-lab/issues/86), opened by the tool-update watcher). Change
-`channel` in `rust-toolchain.toml`; keep `.github/scripts/check-toolchain-pin.sh` passing; run `cargo fmt --check`,
-`cargo doc` and `cargo clippy` with warnings denied and both test profiles under the new compiler, as
-[docs/DEV_ENV_SETUP.md](docs/DEV_ENV_SETUP.md) lists them, and fix what the new rustc or clippy flags without weakening a
-lint; bring the version named in [data/README.md](data/README.md) up to date; re-run the checks whose results the
-registry records and say in the journal whether anything moved. The watcher closes the issue once the pin catches up.
-
 1. **Fill the gaps in the pace note** ([docs/research/pace.md § Gaps, to Be
    Read](docs/research/pace.md#gaps-to-be-read)): a touch-to-reversal latency with frame-level timing (none of the 45
    open papers scanned states one in text, and Liu et al. 2018's figure shows reversals clustering within about a
@@ -252,6 +244,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-26: Rust toolchain moved to 1.99.1 ([issue #86](https://github.com/ai-quokka-wannabe/iso-lab/issues/86)):
+  fmt, doc, clippy and both test profiles clean with no code change; the registry's two manifests re-run to the same bytes.
 - 2026-10-22: H13 loop on five fresh 30-worm populations under the short-interval train: G1 and G3 fail - `dep` and
   `tau` both within 0.2 for 1 of 5, criterion 1 for 3 of 5; the train's gain does not reach the loop at DEV's size.
 - 2026-10-22: H13 short-interval train (taps every 2 s): trade cost about 13 times the old protocol's; `dep` and `tau`
