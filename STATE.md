@@ -252,6 +252,9 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-26: on gr-fec's worm, the designed gain is not carried by any single route (A1 fails by 0.0001); CMA-ES on the
+  designed brain did not beat CMA-ES alone (C1, C2 fail); gr-fec's value-steering hurt the optimised brain (S1 fails). On a fresh
+  panel the first CMA-ES genome beat e45 by +0.25 in worst case. One random stream moves a worst case by about 0.01.
 - 2026-10-26: e45's decisions split into signal and sensor noise: overall mostly signal (N3 fails), gut stretch half noise
   (N2 fails narrowly); the hunger-gated temperature map is 80% noise, the hunger gate reading a slow hormone through a noisy sensor.
 - 2026-10-26: an exact audit trail of gr-fec's e45 decisions: fourteen pathways sum to the brain's own decision quantity to
