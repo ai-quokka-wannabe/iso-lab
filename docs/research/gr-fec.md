@@ -295,6 +295,35 @@ not a point with a heading; the lab's benchmark comes from real recordings, not 
 worm's pace in simulated time; and its code is Rust. gr-fec's worm is best read as a design to rebuild and test on the
 Grid, its numbers as predictions to check there.
 
+## 9. What the Lab Found on Taking It Up (2026-10-26)
+
+The lab's first night with gr-fec's worm. The method of each step was pre-registered; some readings were post hoc and
+are marked so there. The runs used gr-fec's code unedited, except where a section says otherwise. Every number, its
+command and its caveats live in [the journal of 2026-10-26](../journal/2026-10-26.md); this section only says where each result stands and which section holds it. It
+is still a toy world; none of this is evidence about *C. elegans*.
+
+- **The turning rule can be predicted by equation and set by it** (journal § gr-fec's Worm by Equation: Its Turning
+  Rule).
+- **The worm's decisions can be audited exactly**, within stated limits:
+    - by pathway (journal § An Audit Trail of Its Decisions);
+    - into signal and sensor noise (§ How Much of Each Decision Is Noise?);
+    - each learned weight into exact ledgers (§ Where Its Learned Values Come From).
+- **A smoothed hunger reading** gave a gain over worms that was not shown over genomes. No single route's gain was
+  shown (journal § gr-fec's Worm by Design: A Smoothed Hunger Reading, and § gr-fec's Worm by Design and
+  Search).
+- **CMA-ES on e45's genome** raised its worst case in gr-fec's never-seen worlds and on a fresh panel; the optimiser
+  had a recorded defect (§ gr-fec's Worm, Optimised).
+- **CMA-ES on the designed brain** did not beat CMA-ES alone. gr-fec's value-steering, ported onto that second brain,
+  hurt it, and no positive control was run (§ gr-fec's Worm by Design and Search).
+- **Why the optimised genome wins**: two of its genes, slow learning and a weak smell instinct, are shown to carry part
+  of it (§ Why the Optimised Worm Wins). Moved onto e45, those two values recovered most of its worst-case lead on the
+  fresh panel, but not every world (§ Building the Worm by Hand). On fifteen new layouts the two-gene worm beat e45
+  everywhere, though being level with the optimised genome was not shown (§ The Hand-Built Worm on Fifteen New
+  Layouts).
+- **New problems found in gr-fec**, beyond § 6: `DirBody` samples the lateral points after the body's own position, so
+  `consume()` acts at the right-hand point; [#118](https://github.com/ai-quokka-wannabe/iso-lab/pull/118)'s
+  verification measured how often that names the wrong patch.
+
 ## Leads Named by gr-fec (Unverified)
 
 Biology: Hedgecock and Russell 1975; Saeki et al. 2001; Mohri et al. 2005; Zhang, Lu and Bargmann 2005;
