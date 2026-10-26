@@ -110,6 +110,13 @@ Top first. Each item is sized for one run; split it here before starting if it i
    [docs/hypotheses/experiments/B.md § B1](docs/hypotheses/experiments/B.md#b1-a-nervous-system-not-a-game-client):
    every sense and action against what a worm can transduce and produce, with a blind planted-field control; the
    delay grades wait on item 1.
+9. **gr-fec's worm by equation** - the maintainer's aim (2026-10-26): understand [gr-fec's worm](docs/research/gr-fec.md)
+   well enough to design it for a chosen behaviour, with every decision auditable, instead of evolving it. Done: the
+   turning layer (journal of 2026-10-26, *gr-fec's Worm by Equation*). Next, one run each: (a) an exact audit trail
+   splitting each turn's decision quantity into its pathways - concept nodes, instincts, gut, curiosity - for e45 in a
+   whole life; (b) the learning layer's fixed point against the least-squares fit of reward on the worm's own
+   features; (c) composing the layers to design a worm for a chosen behaviour in a world. Once the calculations matter
+   to anything the lab builds on, they move into tested Rust.
 
 ## To Revisit
 
@@ -244,6 +251,9 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-26: gr-fec's turning rule by equation: a closed-form drift theory agreed with gr-fec's own code in 36 of
+  36 conditions (median error 3%, biased slightly high), and four worms designed by inverting it hit their target drifts
+  within 10%.
 - 2026-10-26: Rust toolchain moved to 1.99.1 ([issue #86](https://github.com/ai-quokka-wannabe/iso-lab/issues/86)):
   fmt, doc, clippy and both test profiles clean with no code change; the registry's two manifests re-run to the same bytes.
 - 2026-10-22: H13 loop on five fresh 30-worm populations under the short-interval train: G1 and G3 fail - `dep` and
