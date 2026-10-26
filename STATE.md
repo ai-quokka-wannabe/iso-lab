@@ -112,10 +112,11 @@ Top first. Each item is sized for one run; split it here before starting if it i
    delay grades wait on item 1.
 9. **gr-fec's worm by equation** - the maintainer's aim (2026-10-26): understand [gr-fec's worm](docs/research/gr-fec.md)
    well enough to design it for a chosen behaviour, with every decision auditable, instead of evolving it. Done: the
-   turning layer (journal of 2026-10-26, *gr-fec's Worm by Equation*). Next, one run each: (a) an exact audit trail
-   splitting each turn's decision quantity into its pathways - concept nodes, instincts, gut, curiosity - for e45 in a
-   whole life; (b) the learning layer's fixed point against the least-squares fit of reward on the worm's own
-   features; (c) composing the layers to design a worm for a chosen behaviour in a world. Once the calculations matter
+   turning layer, and an exact audit trail of e45's decisions by fourteen pathways (journal of 2026-10-26, *gr-fec's
+   Worm by Equation*), and its split into signal and sensor noise. Next, one run each: (a) test designed changes the
+   audit points to, first a hunger reading the brain smooths before gating with it; (b) trace each
+   learned weight to the moments of experience that built it (the learner's update is an exact sum over past steps);
+   (c) composing the layers to design a worm for a chosen behaviour in a world. Once the calculations matter
    to anything the lab builds on, they move into tested Rust.
 
 ## To Revisit
@@ -253,6 +254,10 @@ points to the open ones and says what waits on each.
 
 - 2026-10-26: CMA-ES on gr-fec's e45 genome raised its worst case in gr-fec's never-seen worlds from 0.818 to 0.891 (+0.073,
   interval +0.053 to +0.100; O1, O2 hold); it switched gut stretch off and cut the smell instinct, as the audits had flagged.
+- 2026-10-26: e45's decisions split into signal and sensor noise: overall mostly signal (N3 fails), gut stretch half noise
+  (N2 fails narrowly); the hunger-gated temperature map is 80% noise, the hunger gate reading a slow hormone through a noisy sensor.
+- 2026-10-26: an exact audit trail of gr-fec's e45 decisions: fourteen pathways sum to the brain's own decision quantity to
+  1e-14; in Hardland the smell instinct's share halves, a learned temperature map's grows largest, curiosity fades (P1-P4 hold).
 - 2026-10-26: gr-fec's turning rule by equation: a closed-form drift theory agreed with gr-fec's own code in 36 of
   36 conditions (median error 3%, biased slightly high), and four worms designed by inverting it hit their target drifts
   within 10%.
