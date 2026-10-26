@@ -16,6 +16,7 @@ down here says how we know, and is where a reader goes when they want to check t
 | [behaviour-measures.md](behaviour-measures.md) | How worm behaviour is measured: posture, the feature database, motifs, locomotion states, roaming and dwelling |
 | [pace.md](pace.md) | The worm's pace: reaction latencies to touch, heat and light, the body's rhythm, and the time constants of its states, with the gaps still to read |
 | [findings.md](findings.md) | What the lab has tested and found, failures beside successes, for the brains up the ladder |
+| [gr-fec.md](gr-fec.md) | What the maintainer's gr-fec sandbox learned about a worm-level mind: its embodied worm, twenty pre-registered experiments, its principles and its failures - leads to reproduce, not evidence |
 
 ## The rule these follow
 
