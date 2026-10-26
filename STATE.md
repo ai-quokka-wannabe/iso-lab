@@ -254,6 +254,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-26: why the optimised gr-fec worm wins, gene by gene: slow learning (-0.050 if undone) and a weak smell instinct
+  (-0.024) are shown; the single swaps add to a third of the gap, the rest in combinations or saturation; G1 and G2 fail.
 - 2026-10-26: on gr-fec's worm, the designed gain is not carried by any single route (A1 fails by 0.0001); CMA-ES on the
   designed brain did not beat CMA-ES alone (C1, C2 fail); gr-fec's value-steering hurt the optimised brain (S1 fails). On a fresh
   panel the first CMA-ES genome beat e45 by +0.25 in worst case. Two pairs suggest one random stream can move a worst case by about 0.01 (not measured).
