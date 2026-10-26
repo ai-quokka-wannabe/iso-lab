@@ -252,6 +252,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-26: why the optimised gr-fec worm wins, gene by gene: slow learning (-0.050 if undone) and a weak smell instinct
+  (-0.024) are shown; the rest of its +0.25 lead lies in combinations; G1 and G2 fail; its r_hunger is worse than e45's.
 - 2026-10-26: where e45's learned values come from: each weight is an exact ledger of eating credit, hunger blame and
   the prediction term, which cancels about 99% of the other two; the peak sits over the odourless food (86-93% of worms); P1-P3 hold per band.
 - 2026-10-26: a designed change to gr-fec's e45, from the noise audit - the brain smooths its own hunger reading (60 s) -
