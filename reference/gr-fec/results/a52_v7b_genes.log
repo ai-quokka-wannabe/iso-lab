@@ -1,0 +1,37 @@
+elite fitness by generation (mean of cold / warm / rich lives):
+  gen  0: elite 0.710  cold 0.685 warm 0.648 rich 0.798  pop 0.524
+  gen  1: elite 0.719  cold 0.698 warm 0.662 rich 0.797  pop 0.611
+  gen  2: elite 0.786  cold 0.758 warm 0.758 rich 0.843  pop 0.698
+  gen  3: elite 0.781  cold 0.717 warm 0.781 rich 0.846  pop 0.707
+  gen  4: elite 0.763  cold 0.674 warm 0.780 rich 0.835  pop 0.678
+  gen  5: elite 0.774  cold 0.768 warm 0.711 rich 0.843  pop 0.658
+  gen  6: elite 0.767  cold 0.650 warm 0.785 rich 0.866  pop 0.688
+  gen  7: elite 0.783  cold 0.657 warm 0.825 rich 0.867  pop 0.716
+  gen  8: elite 0.770  cold 0.658 warm 0.805 rich 0.848  pop 0.665
+  gen  9: elite 0.773  cold 0.672 warm 0.800 rich 0.846  pop 0.688
+  gen 10: elite 0.787  cold 0.669 warm 0.826 rich 0.866  pop 0.678
+  gen 11: elite 0.806  cold 0.695 warm 0.858 rich 0.865  pop 0.706
+  gen 12: elite 0.814  cold 0.697 warm 0.872 rich 0.874  pop 0.764
+  gen 13: elite 0.779  cold 0.640 warm 0.855 rich 0.842  pop 0.700
+P36b learning rate: v7b 10^-5.00 vs v7 10^-4.16 -> FAIL
+P36c |temperature instinct| 2.78 (< 1?) -> FAIL
+               odour   salt      N   temp  touch pharyn stretc hunger novelt
+rew median     -0.22  +0.26  +3.34  -2.81  -1.25  +3.90  +0.07  +2.26  -0.74
+inst median    +2.00  +1.49  +2.69  +2.78  -0.27  +1.62  -2.27  +2.59  -0.73
+trust median   -2.53  +4.55  -4.33  -3.08  +3.38  -0.57  +2.57  -2.79  +1.48
+bias median    -1.57  +2.14  +1.48  +0.36  -2.85  -2.24  -2.04  +1.24  -0.33
+grand-pattern check, learned trust in smell: e45 2.92 | v7 +3.68 | v7b -2.53
+strongest gene–fitness correlations (all individuals, all generations):
+  ltau             r = -0.32
+  bias_touch       r = -0.26
+  rew_pharynx      r = +0.24
+  trust_N          r = -0.23
+  rew_N            r = +0.23
+  inst_N           r = +0.22
+  trust_salt       r = +0.22
+  lwidth_stretch   r = +0.20
+  lwidth_touch     r = +0.19
+  lnov             r = -0.19
+  inst_odour       r = +0.19
+  grow_novelty     r = +0.19
+genes with |r| < 0.05 (selection-neutral): 16 of 73

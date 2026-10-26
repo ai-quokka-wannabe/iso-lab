@@ -1,0 +1,23 @@
+Eb/N0=3.0 seed=700: 696 failed frames out of 12000; median wrong bits/frame 14  (7s)
+  localisation: mean per-frame AUC for finding currently-wrong bits: {'lyap': 0.493, 'unrel': 0.862, 'osc': 0.868, 'chan': 0.805, 'random': 0.502}
+  rule=lyap   k=1: rescued correctly   94/696 ( 13.5%), converged to WRONG codeword   0
+  rule=lyap   k=2: rescued correctly  153/696 ( 22.0%), converged to WRONG codeword   0
+  rule=lyap   k=4: rescued correctly  238/696 ( 34.2%), converged to WRONG codeword   0
+  rule=lyap   k=8: rescued correctly  328/696 ( 47.1%), converged to WRONG codeword   0
+  rule=unrel  k=1: rescued correctly  202/696 ( 29.0%), converged to WRONG codeword   0
+  rule=unrel  k=2: rescued correctly  279/696 ( 40.1%), converged to WRONG codeword   0
+  rule=unrel  k=4: rescued correctly  366/696 ( 52.6%), converged to WRONG codeword   0
+  rule=unrel  k=8: rescued correctly  423/696 ( 60.8%), converged to WRONG codeword   0
+  rule=osc    k=1: rescued correctly  254/696 ( 36.5%), converged to WRONG codeword   0
+  rule=osc    k=2: rescued correctly  323/696 ( 46.4%), converged to WRONG codeword   0
+  rule=osc    k=4: rescued correctly  373/696 ( 53.6%), converged to WRONG codeword   0
+  rule=osc    k=8: rescued correctly  418/696 ( 60.1%), converged to WRONG codeword   0
+  rule=chan   k=1: rescued correctly  175/696 ( 25.1%), converged to WRONG codeword   0
+  rule=chan   k=2: rescued correctly  271/696 ( 38.9%), converged to WRONG codeword   0
+  rule=chan   k=4: rescued correctly  359/696 ( 51.6%), converged to WRONG codeword   0
+  rule=chan   k=8: rescued correctly  428/696 ( 61.5%), converged to WRONG codeword   0
+  rule=random k=1: rescued correctly   84/696 ( 12.1%), converged to WRONG codeword   0
+  rule=random k=2: rescued correctly  151/696 ( 21.7%), converged to WRONG codeword   0
+  rule=random k=4: rescued correctly  238/696 ( 34.2%), converged to WRONG codeword   0
+  rule=random k=8: rescued correctly  325/696 ( 46.7%), converged to WRONG codeword   0
+done 144s

@@ -128,3 +128,33 @@ out of their sources when the experiment is prepared.
 | F15 | Rhythm and direction twisted together, as in the Hopf fibration | to plan |
 | F16 | Harmonic analysis, and the Kakeya needle in a worm's turn | to plan |
 | F17 | Metaphysics, kept for its testable parts | to plan |
+| G1 | Think by predicting value over a grown concept graph; turn when the prediction falls | to plan |
+| G2 | Walls come from events, not silence | to plan |
+| G3 | Two kinds of concept node: intensity and tuned | to plan |
+| G4 | Concepts grown by a novelty gate | to plan |
+| G5 | Instinct and learning as separate pathways | to plan |
+| G6 | Learned trust in instinct | to plan |
+| G7 | Inner senses gate; they do not predict | to plan |
+| G8 | Honest senses are noisy, so integrate before deciding | to plan |
+| G9 | Noise below the decision threshold is blur; above it, search | to plan |
+| G10 | Learning pays only when instinct is not enough | to plan |
+| G11 | Judge a design by its worst life | to plan |
+| G12 | Designed learning structure with evolved numbers | to plan |
+| G13 | Every new tool given to evolution is first used to cheat | to plan |
+| G14 | Steer by the learned value of the neighbouring concept | to plan |
+| G15 | Imagination needs an accurate model and a body that can act on it | to plan |
+| G16 | Complex edges as a Fourier code for timing | to plan |
+| G17 | Which confidence gate works depends on how dense the answer space is | to plan |
+| G18 | Walls as destructive interference | to plan |
+| G19 | Insight as tunnelling | to plan |
+| G20 | Spurious states as creativity, labelled | to plan |
+| G21 | Frozen and chaotic phases of a mind | to plan |
+| G22 | The portability test | to plan |
+| G23 | A noise gene at every stage | to plan |
+| G24 | The grand pattern: motifs that recur across independent evolutions | to plan |
+| G25 | Calibrate on more than one behaviour | to plan |
+| G26 | A printable mind | to plan |
+| G27 | Optimise the optimiser with measurements | to plan |
+| G28 | What transfers to the fly | to plan |
+| G29 | The worm rediscovered the cognitive architectures | to plan |
+| G30 | The worm model's realism gaps | to plan |

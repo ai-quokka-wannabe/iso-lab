@@ -1,0 +1,18 @@
+== F3 (fixed)  Is oscillation productive search? ==
+  unresolved at it.10: 886; converge later by it.50: 349 (39%)
+  unresolved at it.20: 670; converge later by it.50: 133 (20%)
+  unresolved at it.30: 594; converge later by it.50: 57 (10%)
+== F5 (extended)  Complex phase: how does the imaginary part evolve and how close does it get to tanh poles (|Im z/2| -> pi/2)? ==
+  theta=0.0: it3: median|Im tot|=0.00, frac |Im v2c/2|>pi/4: 0.000, frames with >0 wrong bits 0.462 | it10: median|Im tot|=0.00, frac |Im v2c/2|>pi/4: 0.000, frames with >0 wrong bits 0.112 | it30: median|Im tot|=0.00, frac |Im v2c/2|>pi/4: 0.000, frames with >0 wrong bits 0.071
+  theta=0.05: it3: median|Im tot|=0.74, frac |Im v2c/2|>pi/4: 0.070, frames with >0 wrong bits 0.462 | it10: median|Im tot|=0.23, frac |Im v2c/2|>pi/4: 0.057, frames with >0 wrong bits 0.114 | it30: median|Im tot|=0.21, frac |Im v2c/2|>pi/4: 0.035, frames with >0 wrong bits 0.095
+  theta=0.2: it3: median|Im tot|=2.93, frac |Im v2c/2|>pi/4: 0.707, frames with >0 wrong bits 0.461 | it10: median|Im tot|=0.87, frac |Im v2c/2|>pi/4: 0.161, frames with >0 wrong bits 0.139 | it30: median|Im tot|=0.85, frac |Im v2c/2|>pi/4: 0.138, frames with >0 wrong bits 0.130
+== F7  Lyapunov vector: where does it live? (flooding BP, failing frames, 50 it.) ==
+/home/claude/gr-fec/experiments/f02_forensics.py:33: RuntimeWarning: invalid value encountered in divide
+  pr = (ly.sum(1) ** 2) / (ly ** 2).sum(1)                     # participation ratio = effective number of bits
+  effective number of bits the Lyapunov sensitivity spans (participation ratio): median nan of 128
+  top-8 Lyapunov bits: fraction wrong 0.119 (base rate 0.106); fraction degree-5 0.735 (base 0.5); mean |posterior| of top-8 6.2 vs all 5.9
+== F10  Why OSD-2 and repulsion fail on residual frames: errors inside the most reliable basis (MRB) ==
+  ordering channel       : MRB errors over 664 BP failures: P(0)=0.264 P(1)=0.441 P(2)=0.245 P(>=3)=0.0497  -> OSD-2 can only fix <=2
+  ordering blend         : MRB errors over 664 BP failures: P(0)=0.389 P(1)=0.410 P(2)=0.161 P(>=3)=0.0407  -> OSD-2 can only fix <=2
+  ordering posterior it5 : MRB errors over 664 BP failures: P(0)=0.429 P(1)=0.319 P(2)=0.140 P(>=3)=0.1114  -> OSD-2 can only fix <=2
+  frames with >=3 MRB errors in blend: 27; of those, <=2 in the it5 universe: 18; >=3 in BOTH: 9

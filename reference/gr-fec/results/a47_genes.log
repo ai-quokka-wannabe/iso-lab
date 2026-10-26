@@ -1,0 +1,17 @@
+elite fitness: first two gens 0.762 (hard), 0.799 (rich); last two 0.851 (hard), 0.893 (rich)
+               odour   salt      N   temp  touch pharyn stretc hunger novelt
+rew median     -0.80  -2.18  +1.35  +2.21  -4.06  +1.63  +2.32  +2.61  -2.31
+inst median    +2.57  -0.56  +1.55  +2.33  +1.21  +2.30  -2.67  +1.98  -0.74
+trust median   +3.68  -3.60  +0.76  +2.24  -1.48  -3.13  +2.84  +1.21  -0.06
+bias median    -1.16  -0.41  +0.42  +1.30  +2.46  +1.75  +1.09  -0.75  -0.19
+grows nodes % +100.00 +60.00 +100.00 +95.00 +55.00 +40.00 +10.00 +70.00  +5.00
+width (log10)  -1.28  -0.75  -1.42  -0.51  -1.64  -1.66  -0.71  -0.26  -1.43
+leta   median -4.158
+lam    median +1.263
+integ  median +43.016
+lag    median +4.131
+ls0    median -2.398
+ltau   median -0.852
+pmax   median +0.328
+lnov   median +1.591
+gate channels in use among elites: {'salt': 3, 'temp': 1, 'pharynx': 5} (of 40 gate slots)

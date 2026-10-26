@@ -1,0 +1,16 @@
+calib s0=0.003: CI +0.60, foraging ratio 1.22, score 0.61
+calib s0=0.01: CI +0.73, foraging ratio 1.55, score 0.77
+calib s0=0.03: CI +0.62, foraging ratio 2.78, score 1.39
+calib s0=0.1: CI +0.25, foraging ratio 1.84, score 0.83
+-> s0 = 0.03
+
+A1 odour chemotaxis: CI=+0.61 (pass True); random walk -0.04 (pass True); pirouettes 4.09/min
+A2 thermotaxis memory: Tc=15 -> 17.59, Tc=25 -> 21.94, diff +4.34 °C (pass True)
+A3 salt learning: mock +0.33, salt-starved -0.08 (pass True)
+A4 habituation: 0.92 -> 0.23 -> rest 0.80 (pass True)
+A5 foraging: 5.64 vs 2.10 per min, ratio 2.69 (pass True)
+A6 no learning: A2 diff -0.10; A3 mock +0.46 salt +0.46
+A7 random walker: A1 -0.04; A2 diff +0.16; A3 mock +0.03 salt -0.02; A5 ratio 1.00
+A8: tau=0.03: +0.554±0.019  tau=0.1: +0.538±0.011  tau=0.3: +0.574±0.015  tau=1: +0.522±0.014  tau=3: +0.405±0.019  tau=10: +0.135±0.013 -> best 0.3, pass False
+Exploratory Mohri: |T-20| fed 1.79, starved 3.46
+learned thermal edges after 2 h at 25 °C (15..25): [0.   0.   0.   0.   0.   0.   0.   0.   0.05 0.22 0.36]

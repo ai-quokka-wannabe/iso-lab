@@ -1,0 +1,4 @@
+Eb/N0=3.5 seed=2601 N=192000: BP(20) FER 0.01393, BP undetected 2; single-blend FER 0.00032; MV2 FER 0.00010 (rescued 43, lost 0, p=1.1e-13); ratio 0.306
+  MV2 + gravity gate: accepted-but-wrong 0, detected FER 0.00122 (0.088 x BP-only)
+  MV6 FER 0.00003 vs MV2 (rescued 13, lost 0, p=1.2e-04)
+  (286s)

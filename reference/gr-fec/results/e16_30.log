@@ -1,0 +1,1 @@
+Eb/N0=3.0 seed=2300 N=48000: BP(20) detected failures 2696 (0.05617), BP undetected 0; OSD on failures: wrong (UNDETECTED) 95 -> hybrid UER 1.98e-03  (45s)

@@ -1,0 +1,1 @@
+ccsds: frames 24000, failures at 50 it 1174; progress ratio rho = unsat(50)/unsat(25): median 1.000; fraction rho<0.5 (still progressing) 0.046; fraction rho>=1 (stuck/worse) 0.633

@@ -1,0 +1,29 @@
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/290 [00:00<02:07,  2.26it/s]
+Loading weights:  34%|███▍      | 99/290 [00:00<00:00, 236.13it/s]
+Loading weights:  53%|█████▎    | 153/290 [00:00<00:00, 266.51it/s]
+Loading weights:  68%|██████▊   | 197/290 [00:00<00:00, 264.87it/s]
+Loading weights:  81%|████████  | 234/290 [00:01<00:00, 273.61it/s]
+Loading weights:  93%|█████████▎| 269/290 [00:01<00:00, 271.37it/s]
+Loading weights: 100%|██████████| 290/290 [00:01<00:00, 247.89it/s]
+0 469 sym 'H' True gap=4.16 agree=1.00
+25 469 elem 'Aluminum' True gap=2.00 agree=0.62
+50 469 sym 'Fe' True gap=5.69 agree=1.00
+75 469 elem 'Strontium' True gap=1.14 agree=0.38
+100 469 sym 'Sb' True gap=1.36 agree=0.62
+125 469 elem 'Euclid' False gap=4.04 agree=0.75
+150 469 sym 'Os' True gap=5.71 agree=1.00
+175 469 elem 'Radium' True gap=-0.04 agree=0.12
+200 469 sym 'Mc' False gap=0.28 agree=0.25
+225 469 elem 'Nitrogen (N)' False gap=-0.60 agree=0.12
+250 469 cap 'Manama' True gap=2.69 agree=0.62
+275 469 cap 'Beijing' True gap=3.28 agree=0.75
+300 469 cap 'Har porto' False gap=-2.76 agree=0.00
+325 469 cap 'Budapest' True gap=2.65 agree=0.75
+350 469 cap 'Vilnius' True gap=1.98 agree=0.75
+375 469 cap 'Amsterdam' True gap=3.90 agree=1.00
+400 469 cap 'Kinshasa' False gap=2.97 agree=0.88
+425 469 cap 'Cape Town' True gap=2.35 agree=0.38
+450 469 cap 'Montego Bay' False gap=0.32 agree=0.00

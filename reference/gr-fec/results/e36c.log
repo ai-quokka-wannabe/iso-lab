@@ -1,0 +1,8 @@
+A1 odour chemotaxis: CI +0.50 (pass True); pirouettes 5.19/min
+A2 thermotaxis memory: Tc=15 -> 17.49, Tc=25 -> 22.43, diff +4.94 °C (pass True)
+A3 salt learning: mock +0.32, salt-starved -0.11 (pass True)
+A4 habituation: 0.90 -> 0.27 -> 0.82 (pass True)
+A5 foraging: 3.41 vs 2.27 /min, ratio 1.50 (pass False)
+P25: 4/5 pass -> PASS;  S25 (A2 and A3): PASS
+nodes per worm after cultivation at 25 °C + thermal plate (odour, salt, temperature): mean [1.  1.  6.1]
+  temperature prototypes of worm 0: [20.3 21.3 22.5 23.8 24.5]

@@ -1,0 +1,17 @@
+calib s0=0.003: CI +0.69, foraging ratio 2.14, score 1.07
+calib s0=0.01: CI +0.67, foraging ratio 5.48, score 2.23
+calib s0=0.03: CI +0.63, foraging ratio 5.66, score 2.10
+-> s0 = 0.01
+
+A1 odour chemotaxis: CI +0.74 (pass True); random walk -0.07; pirouettes 10.61/min
+A2 thermotaxis memory: Tc=15 -> 18.08, Tc=25 -> 22.15, diff +4.07 °C (pass True)
+A3 salt learning: mock +0.37, salt-starved -0.13 (pass True)
+A4 habituation: 0.83 -> 0.20 -> 0.83 (pass True)
+A5 foraging: 14.92 vs 2.57 /min, ratio 5.82 (pass True)
+P28a: 5/5 -> PASS
+Control no-learning: A2 diff +0.42; A3 mock +0.65 salt +0.73
+Control random walk: A1 -0.07; A2 diff +0.37; A3 mock +0.03 salt -0.05; A5 ratio 1.01
+Mohri: |T-20| fed 0.82, starved 3.35
+gating hyperedges: CI fed +0.36, starved +0.43, diff +0.07  (true hunger at test, for the reader only: fed 0.09, starved 1.00)
+gating pairwise  : CI fed +0.50, starved +0.40, diff -0.10  (true hunger at test, for the reader only: fed 0.09, starved 1.00)
+P28b: FAIL

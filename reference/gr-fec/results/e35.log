@@ -1,0 +1,5 @@
+W1 single peak: k=0: CI +0.61±0.00 stuck 0.16  k=0.1: CI +0.48±0.02 stuck 0.03  k=0.3: CI +0.42±0.03 stuck 0.02  k=1: CI +0.80±0.02 stuck 0.09  k=3: CI +0.87±0.01 stuck 0.23  k=10: CI +0.32±0.01 stuck 0.24  k=30: CI -0.06±0.02 stuck 0.32
+   best k = 3;  P24a (CI(0) < best - 0.1): True;  P24b interior: True
+W2 trap world: k=0: CI -0.06±0.00 stuck 0.39  k=0.1: CI -0.22±0.02 stuck 0.48  k=0.3: CI -0.16±0.02 stuck 0.38  k=1: CI +0.29±0.01 stuck 0.39  k=3: CI +0.24±0.01 stuck 0.45  k=10: CI -0.12±0.03 stuck 0.43  k=30: CI -0.21±0.01 stuck 0.42
+   best k = 1;  P24a (CI(0) < best - 0.1): True;  P24b interior: True
+P24c: best k trap 1 >= single 3: False

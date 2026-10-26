@@ -1,0 +1,10 @@
+const 1.0              FER=0.05883 (1412)  undetected=0  avg iters=7.01  12s
+damping 0.3            FER=0.05221 (1253)  undetected=0  avg iters=6.66  11s
+damping 0.5            FER=0.05308 (1274)  undetected=0  avg iters=7.02  12s
+anneal hot->1 (20)     FER=0.05546 (1331)  undetected=0  avg iters=9.39  17s
+quench cold->1 (20)    FER=0.06008 (1442)  undetected=0  avg iters=8.71  15s
+cool 1->2 (50)         FER=0.06062 (1455)  undetected=0  avg iters=7.03  12s
+heat 1->0.5 (50)       FER=0.06300 (1512)  undetected=0  avg iters=7.09  12s
+temper cycle p10       FER=0.08058 (1934)  undetected=0  avg iters=8.00  13s
+temper cycle p4        FER=0.10017 (2404)  undetected=0  avg iters=9.49  15s
+jitter logU(0.6,1.6)   FER=0.07938 (1905)  undetected=0  avg iters=8.90  15s

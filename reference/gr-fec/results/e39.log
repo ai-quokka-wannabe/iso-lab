@@ -1,0 +1,22 @@
+calib s0=0.01: CI +0.72, foraging ratio 1.26, score 0.63
+calib s0=0.03: CI +0.54, foraging ratio 1.43, score 0.71
+calib s0=0.1: CI +0.35, foraging ratio 1.31, score 0.66
+-> s0 = 0.03
+
+A1 odour chemotaxis: CI +0.57 (pass True); random walk -0.03; pirouettes 6.07/min
+A2 thermotaxis memory: Tc=15 -> 18.69, Tc=25 -> 21.54, diff +2.85 °C (pass False)
+A3 salt learning: mock +0.24, salt-starved -0.12 (pass True)
+A4 habituation: 0.91 -> 0.19 -> 0.81 (pass True)
+A5 foraging: 5.13 vs 3.60 /min, ratio 1.42 (pass False)
+P28a: 3/5 -> FAIL
+Control no-learning: A2 diff +0.27; A3 mock +0.62 salt +0.73
+Control random walk: A1 -0.03; A2 diff -0.44; A3 mock -0.11 salt +0.05; A5 ratio 1.03
+Mohri: |T-20| fed 0.92, starved 3.40
+Traceback (most recent call last):
+  File "/home/claude/gr-fec/experiments/e39_embodied.py", line 67, in <module>
+    lawn = np.where(grp, (t >= 7200 - 1800).astype(float), 0.0); w.run(World(lawn=lawn), 1)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'bool' object has no attribute 'astype'
+gating hyperedges: CI fed +0.40, starved +0.52, diff +0.12  (true hunger at test, for the reader only: fed 0.09, starved 1.00)
+gating pairwise  : CI fed +0.49, starved +0.28, diff -0.21  (true hunger at test, for the reader only: fed 0.09, starved 1.00)
+P28b: FAIL

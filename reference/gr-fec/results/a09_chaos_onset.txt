@@ -1,0 +1,28 @@
+
+=== 2.5 dB (seed 600) ===
+  alpha=0.60 FER=0.3221 [0.3138,0.3305] fails= 3865  FTLE med=-0.517  fixed= 88.9%  osc=  4.3%
+  alpha=0.75 FER=0.1999 [0.1929,0.2072] fails= 2399  FTLE med=-0.208  fixed= 52.6%  osc= 23.5%
+  alpha=0.85 FER=0.1788 [0.1721,0.1858] fails= 2146  FTLE med=-0.085  fixed= 24.9%  osc= 45.1%
+  alpha=0.92 FER=0.1727 [0.1661,0.1796] fails= 2073  FTLE med=-0.038  fixed= 12.3%  osc= 59.6%
+  alpha=1.00 FER=0.1669 [0.1604,0.1737] fails= 2003  FTLE med=-0.005  fixed=  4.8%  osc= 74.9%
+  alpha=1.08 FER=0.1661 [0.1595,0.1728] fails= 1993  FTLE med=+0.029  fixed=  1.7%  osc= 84.9%
+  alpha=1.20 FER=0.1691 [0.1625,0.1759] fails= 2029  FTLE med=+0.102  fixed=  0.4%  osc= 93.8%
+  alpha=1.40 FER=0.1757 [0.1690,0.1826] fails= 2108  FTLE med=+0.186  fixed=  0.0%  osc= 98.7%
+  P6: alpha_c = 1.012 -> inside [0.8, 1.25]
+  S7: lowest FER at alpha=1.08 (0.1661); FER(alpha=1)=0.1669 -> PASS
+  S8: Spearman(alpha, FTLE)=+1.000, Spearman(alpha, fixed share)=-1.000 -> PASS
+
+=== 3.5 dB (seed 600) ===
+  alpha=0.60 FER=0.0226 [0.0208,0.0245] fails=  542  FTLE med=-0.167  fixed= 46.3%  osc= 31.4%
+  alpha=0.75 FER=0.0175 [0.0160,0.0193] fails=  421  FTLE med=-0.004  fixed=  7.1%  osc= 74.6%
+  alpha=0.85 FER=0.0163 [0.0148,0.0180] fails=  391  FTLE med=+0.053  fixed=  1.5%  osc= 88.0%
+  alpha=0.92 FER=0.0161 [0.0146,0.0178] fails=  387  FTLE med=+0.105  fixed=  0.3%  osc= 94.3%
+  alpha=1.00 FER=0.0168 [0.0153,0.0185] fails=  404  FTLE med=+0.153  fixed=  0.0%  osc= 97.8%
+  alpha=1.08 FER=0.0175 [0.0159,0.0192] fails=  419  FTLE med=+0.199  fixed=  0.0%  osc= 99.8%
+  alpha=1.20 FER=0.0182 [0.0166,0.0200] fails=  437  FTLE med=+0.245  fixed=  0.0%  osc=100.0%
+  alpha=1.40 FER=0.0209 [0.0192,0.0228] fails=  502  FTLE med=+0.295  fixed=  0.0%  osc=100.0%
+  P6: alpha_c = 0.756 -> OUTSIDE [0.8, 1.25]
+  S7: lowest FER at alpha=0.92 (0.0161); FER(alpha=1)=0.0168 -> PASS
+  S8: Spearman(alpha, FTLE)=+1.000, Spearman(alpha, fixed share)=-0.939 -> PASS
+
+P6 overall: FAILS

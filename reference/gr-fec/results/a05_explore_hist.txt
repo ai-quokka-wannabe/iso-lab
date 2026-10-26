@@ -1,0 +1,58 @@
+=== EXPLORATORY 3.0_s100 ===
+--- checkpoint t0=5: 2644 active frames, 737 will fail ---
+  model AUC: base=0.8045  base+curv=0.8136  curv-only=0.7669   dAUC 95% CI [+0.0037, +0.0142]
+  model AUC: hist=0.8161  hist+curv=0.8238   dAUC 95% CI [+0.0033, +0.0125]
+  stop rule (base     , <=1% of FER lost): avg iters 7.17 -> 6.99  (2.5% saved), failures caught 6.0%, good frames lost 7
+  stop rule (base+curv, <=1% of FER lost): avg iters 7.17 -> 7.02  (2.2% saved), failures caught 5.3%, good frames lost 7
+  stop rule (hist     , <=1% of FER lost): avg iters 7.17 -> 7.01  (2.3% saved), failures caught 5.4%, good frames lost 7
+  stop rule (hist+curv, <=1% of FER lost): avg iters 7.17 -> 7.03  (2.0% saved), failures caught 4.7%, good frames lost 7
+--- checkpoint t0=10: 1254 active frames, 737 will fail ---
+  model AUC: base=0.7205  base+curv=0.7508  curv-only=0.7343   dAUC 95% CI [+0.0140, +0.0460]
+  model AUC: hist=0.7278  hist+curv=0.7578   dAUC 95% CI [+0.0163, +0.0436]
+  stop rule (base     , <=1% of FER lost): avg iters 7.17 -> 6.88  (4.1% saved), failures caught 11.7%, good frames lost 7
+  stop rule (base+curv, <=1% of FER lost): avg iters 7.17 -> 6.89  (3.9% saved), failures caught 11.0%, good frames lost 7
+  stop rule (hist     , <=1% of FER lost): avg iters 7.17 -> 6.87  (4.2% saved), failures caught 12.1%, good frames lost 7
+  stop rule (hist+curv, <=1% of FER lost): avg iters 7.17 -> 6.87  (4.3% saved), failures caught 12.1%, good frames lost 7
+--- checkpoint t0=15: 1036 active frames, 737 will fail ---
+  model AUC: base=0.7512  base+curv=0.7928  curv-only=0.7804   dAUC 95% CI [+0.0212, +0.0616]
+  model AUC: hist=0.7505  hist+curv=0.7891   dAUC 95% CI [+0.0213, +0.0564]
+  stop rule (base     , <=1% of FER lost): avg iters 7.17 -> 6.87  (4.2% saved), failures caught 13.6%, good frames lost 7
+  stop rule (base+curv, <=1% of FER lost): avg iters 7.17 -> 6.57  (8.4% saved), failures caught 27.8%, good frames lost 7
+  stop rule (hist     , <=1% of FER lost): avg iters 7.17 -> 6.78  (5.5% saved), failures caught 17.8%, good frames lost 7
+  stop rule (hist+curv, <=1% of FER lost): avg iters 7.17 -> 6.71  (6.5% saved), failures caught 21.0%, good frames lost 7
+--- checkpoint t0=20: 929 active frames, 737 will fail ---
+  model AUC: base=0.7754  base+curv=0.7943  curv-only=0.7623   dAUC 95% CI [-0.0040, +0.0405]
+  model AUC: hist=0.7732  hist+curv=0.7911   dAUC 95% CI [+0.0018, +0.0331]
+  stop rule (base     , <=1% of FER lost): avg iters 7.17 -> 6.67  (7.0% saved), failures caught 26.7%, good frames lost 7
+  stop rule (base+curv, <=1% of FER lost): avg iters 7.17 -> 6.60  (8.0% saved), failures caught 30.5%, good frames lost 7
+  stop rule (hist     , <=1% of FER lost): avg iters 7.17 -> 6.74  (6.0% saved), failures caught 23.1%, good frames lost 7
+  stop rule (hist+curv, <=1% of FER lost): avg iters 7.17 -> 6.60  (7.9% saved), failures caught 30.4%, good frames lost 7
+=== EXPLORATORY 3.5_s101 ===
+--- checkpoint t0=5: 1074 active frames, 189 will fail ---
+  model AUC: base=0.7690  base+curv=0.7928  curv-only=0.7618   dAUC 95% CI [+0.0067, +0.0409]
+  model AUC: hist=0.7735  hist+curv=0.7971   dAUC 95% CI [+0.0077, +0.0397]
+  stop rule (base     , <=1% of FER lost): avg iters 3.96 -> 3.95  (0.3% saved), failures caught 1.6%, good frames lost 1
+  stop rule (base+curv, <=1% of FER lost): avg iters 3.96 -> 3.95  (0.5% saved), failures caught 2.6%, good frames lost 1
+  stop rule (hist     , <=1% of FER lost): avg iters 3.96 -> 3.95  (0.4% saved), failures caught 2.1%, good frames lost 1
+  stop rule (hist+curv, <=1% of FER lost): avg iters 3.96 -> 3.93  (0.8% saved), failures caught 4.2%, good frames lost 1
+--- checkpoint t0=10: 401 active frames, 189 will fail ---
+  model AUC: base=0.7340  base+curv=0.7668  curv-only=0.7450   dAUC 95% CI [+0.0049, +0.0616]
+  model AUC: hist=0.6952  hist+curv=0.7353   dAUC 95% CI [+0.0145, +0.0671]
+  stop rule (base     , <=1% of FER lost): avg iters 3.96 -> 3.92  (1.2% saved), failures caught 7.4%, good frames lost 1
+  stop rule (base+curv, <=1% of FER lost): avg iters 3.96 -> 3.91  (1.4% saved), failures caught 8.5%, good frames lost 1
+  stop rule (hist     , <=1% of FER lost): avg iters 3.96 -> 3.94  (0.6% saved), failures caught 3.7%, good frames lost 1
+  stop rule (hist+curv, <=1% of FER lost): avg iters 3.96 -> 3.94  (0.7% saved), failures caught 4.2%, good frames lost 1
+--- checkpoint t0=15: 298 active frames, 189 will fail ---
+  model AUC: base=0.7340  base+curv=0.7496  curv-only=0.6945   dAUC 95% CI [-0.0174, +0.0465]
+  model AUC: hist=0.6886  hist+curv=0.7120   dAUC 95% CI [-0.0104, +0.0542]
+  stop rule (base     , <=1% of FER lost): avg iters 3.96 -> 3.87  (2.3% saved), failures caught 16.4%, good frames lost 1
+  stop rule (base+curv, <=1% of FER lost): avg iters 3.96 -> 3.86  (2.7% saved), failures caught 19.0%, good frames lost 1
+  stop rule (hist     , <=1% of FER lost): avg iters 3.96 -> 3.89  (1.8% saved), failures caught 12.7%, good frames lost 1
+  stop rule (hist+curv, <=1% of FER lost): avg iters 3.96 -> 3.84  (3.1% saved), failures caught 21.7%, good frames lost 1
+--- checkpoint t0=20: 256 active frames, 189 will fail ---
+  model AUC: base=0.7262  base+curv=0.7438  curv-only=0.7471   dAUC 95% CI [-0.0160, +0.0504]
+  model AUC: hist=0.6660  hist+curv=0.6841   dAUC 95% CI [-0.0121, +0.0468]
+  stop rule (base     , <=1% of FER lost): avg iters 3.96 -> 3.85  (3.0% saved), failures caught 24.9%, good frames lost 1
+  stop rule (base+curv, <=1% of FER lost): avg iters 3.96 -> 3.83  (3.5% saved), failures caught 29.1%, good frames lost 1
+  stop rule (hist     , <=1% of FER lost): avg iters 3.96 -> 3.92  (1.1% saved), failures caught 9.5%, good frames lost 1
+  stop rule (hist+curv, <=1% of FER lost): avg iters 3.96 -> 3.88  (2.2% saved), failures caught 18.5%, good frames lost 1

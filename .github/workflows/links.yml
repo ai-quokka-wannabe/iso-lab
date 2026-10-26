@@ -45,4 +45,4 @@ jobs:
             # status GitHub hands anonymous crawlers is accepted, so a red run means a link is
             # dead rather than merely busy.
             - name: Check every link, external included
-              run: lychee --include-fragments --no-progress --max-retries 3 --timeout 45 --accept "200..=299,403,429" --root-dir "$(pwd)" --exclude-path node_modules --exclude-path external "./**/*.md"
+              run: lychee --include-fragments --no-progress --max-retries 3 --timeout 45 --accept "200..=299,403,429" --root-dir "$(pwd)" --exclude-path node_modules --exclude-path external --exclude-path reference "./**/*.md"

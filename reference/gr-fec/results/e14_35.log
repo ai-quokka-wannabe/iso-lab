@@ -1,0 +1,8 @@
+Eb/N0=3.5 seed=1901 N=48000: BP-only FER (50 it) = 0.00975
+  hand-off at t0= 2: OSD calls  18.96% of frames, avg BP iterations  1.63, hybrid FER 0.00088 (frames BP would have saved but OSD lost: 26)
+  hand-off at t0= 3: OSD calls   8.59% of frames, avg BP iterations  1.82, hybrid FER 0.00073 (frames BP would have saved but OSD lost: 19)
+  hand-off at t0= 5: OSD calls   4.36% of frames, avg BP iterations  1.96, hybrid FER 0.00067 (frames BP would have saved but OSD lost: 16)
+  hand-off at t0=10: OSD calls   2.34% of frames, avg BP iterations  2.13, hybrid FER 0.00048 (frames BP would have saved but OSD lost: 7)
+  hand-off at t0=20: OSD calls   1.45% of frames, avg BP iterations  2.31, hybrid FER 0.00040 (frames BP would have saved but OSD lost: 3)
+  hand-off at t0=50: OSD calls   0.97% of frames, avg BP iterations  2.66, hybrid FER 0.00033 (frames BP would have saved but OSD lost: 0)
+  (145s)

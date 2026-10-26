@@ -1,0 +1,17 @@
+W1 k=0   : CI +0.598 ± 0.006 (spread +0.56..+0.65)  turns/min 1.50  mean dist to target 7.8 mm
+W1 k=0.1 : CI +0.458 ± 0.010 (spread +0.40..+0.50)  turns/min 1.56  mean dist to target 7.7 mm
+W1 k=0.3 : CI +0.447 ± 0.011 (spread +0.38..+0.50)  turns/min 1.92  mean dist to target 7.7 mm
+W1 k=1   : CI +0.783 ± 0.010 (spread +0.73..+0.85)  turns/min 5.09  mean dist to target 6.8 mm
+W1 k=3   : CI +0.852 ± 0.013 (spread +0.77..+0.90)  turns/min 19.97  mean dist to target 7.3 mm
+W2 k=0   : CI -0.028 ± 0.006 (spread -0.06..+0.00)  turns/min 2.36  mean dist to target 14.5 mm
+W2 k=0.1 : CI -0.163 ± 0.012 (spread -0.23..-0.07)  turns/min 2.47  mean dist to target 14.3 mm
+W2 k=0.3 : CI -0.168 ± 0.015 (spread -0.32..-0.11)  turns/min 3.08  mean dist to target 12.8 mm
+W2 k=1   : CI +0.341 ± 0.015 (spread +0.24..+0.41)  turns/min 8.91  mean dist to target 11.3 mm
+W2 k=3   : CI +0.263 ± 0.032 (spread +0.05..+0.45)  turns/min 22.89  mean dist to target 12.7 mm
+Where do worms end up? (W1: distance to target; W2: share near target / near decoy)
+W1 k=0   : final distance percentiles 10/25/50/75/90 = [ 4.2  5.2  7.8  9.1 12.3];  within 8 mm 0.61;  distance wobble over last 2 min (median sd) 2.76 mm
+W1 k=0.1 : final distance percentiles 10/25/50/75/90 = [ 4.2  6.8  8.5 11.  13.6];  within 8 mm 0.45;  distance wobble over last 2 min (median sd) 2.22 mm
+W1 k=1   : final distance percentiles 10/25/50/75/90 = [4.9 5.8 6.6 7.8 9.5];  within 8 mm 0.79;  distance wobble over last 2 min (median sd) 1.13 mm
+W2 k=0   : near target 0.33, near decoy 0.39
+W2 k=0.1 : near target 0.29, near decoy 0.47
+W2 k=1   : near target 0.61, near decoy 0.28

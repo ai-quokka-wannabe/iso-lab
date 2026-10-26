@@ -2,5 +2,6 @@
     // Files owned by repository owner - do not modify
     // GitHub issue templates have their own format requirements
     // The world's repositories under external/ are linted in their own repositories
-    "ignores": ["node_modules/**", "target/**", "external/**", "CODE_OF_CONDUCT.md", ".github/ISSUE_TEMPLATE/**"]
+    // reference/ holds archives kept as they were given, not written to the lab's style
+    "ignores": ["node_modules/**", "target/**", "external/**", "reference/**", "CODE_OF_CONDUCT.md", ".github/ISSUE_TEMPLATE/**"]
 }

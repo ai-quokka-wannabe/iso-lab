@@ -1,0 +1,15 @@
+== F9  AR4JA: why does random layer order hurt? (information delivery to punctured nodes) ==
+  fixed : it1: |post| punct  0.47, wrong punct 0.395, wrong tx 0.1340 | it2: |post| punct  1.01, wrong punct 0.297, wrong tx 0.1303 | it3: |post| punct  1.38, wrong punct 0.249, wrong tx 0.1268 | it6: |post| punct  2.45, wrong punct 0.163, wrong tx 0.1142
+  random: it1: |post| punct  0.73, wrong punct 0.344, wrong tx 0.1329 | it2: |post| punct  1.13, wrong punct 0.280, wrong tx 0.1311 | it3: |post| punct  1.39, wrong punct 0.248, wrong tx 0.1275 | it6: |post| punct  2.27, wrong punct 0.173, wrong tx 0.1179
+  layers (block rows) touching punctured block-columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]  natural order processes them at positions: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+== F12  Why do tempering cycles hurt? FER vs cycle period (flooding BP, 3.0 dB) ==
+  period               4: FER 0.1032
+  period              10: FER 0.0833
+  period              25: FER 0.0579
+  period              50: FER 0.0612
+  period             100: FER 0.0628
+  period  inf (constant): FER 0.0585
+  period 10, amplitude 0.05: FER 0.0602
+  period 10, amplitude 0.1: FER 0.0610
+  period 10, amplitude 0.2: FER 0.0662
+  period 10, amplitude 0.4: FER 0.0833

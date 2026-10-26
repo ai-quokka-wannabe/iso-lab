@@ -1,0 +1,4 @@
+Eb/N0=3.5 seed=2401 N=192000: BP-only detected FER 0.01477, BP-only undetected 0
+  ungated hybrid: undetected 63 (UER 3.3e-04)
+  GATED (r>=0.5): accepted-but-wrong 0 -> UER 0.0e+00; detected FER 0.00148 = 0.101 x BP-only; OSD wins kept 92.0%
+  P12(a) PASS;  P12(b) PASS   (68s)

@@ -864,3 +864,229 @@ Ideas from philosophy, however strange, each kept only for a part that a run can
 than its plain alternative; the last refuted if the approximated measure does not separate brains whose behaviour
 differs on the benchmark.
 *Leads*: Whitehead 1929; Spinoza 1677; Leibniz 1714; Bergson 1889; Tononi 2004.
+
+## G. From the gr-fec Sandbox
+
+Matej's own sandbox, gr-fec, ran about twenty pre-registered experiments on a worm-level mind in October 2026 before
+the lab took the worm up. What it found, and how, is in
+[docs/research/gr-fec.md](../research/gr-fec.md). These are the ideas and hunches it leaves the lab. Its results
+are a toy world's - simulated agar plates, a few dozen concepts, a hundred worms - and not peer-reviewed (its code is
+kept in [reference/gr-fec/](../../reference/README.md#gr-fec)), so for the lab each is a hunch to be tested again on the Grid, never evidence.
+
+### G1. Think by predicting value over a grown concept graph; turn when the prediction falls
+
+One mechanism for a minimal mind: learned edges from sensed concepts to a value node, updated by prediction error,
+and a turn whenever the predicted value falls - klinokinesis and Rescorla-Wagner learning in one loop. In gr-fec it
+reproduced chemotaxis, thermotaxis memory, salt-avoidance learning, foraging search and a starvation effect, two of
+them with no code written for the assay, and the no-learning ablation failed exactly where predicted.
+*Why*: the cheapest candidate for the learning part of H12's plain worm brain.
+*Test*: on the Grid, the same loop against the reference statistics; refuted if the ablated twin does as well.
+*Leads*: Pierce-Shimomura et al. 1999; Rescorla and Wagner 1972; Hedgecock and Russell 1975; Saeki et al. 2001;
+Mohri et al. 2005.
+
+### G2. Walls come from events, not silence
+
+Every signal that was "always on" swallowed the learning when it reached the learner: nodes that fired for the
+*absence* of a smell or salt overshadowed the real cues; gut fullness as a predictor explained away every meal;
+imagination stepping by clock time stood still. Each time the fix was the same: only events create concepts,
+transitions and predictions. gr-fec counts it as its clearest candidate contribution - a rule the cognitive
+architectures it compared did not state as one.
+*Why*: a design rule for every module that learns.
+*Test*: in a learner on the Grid, an absence-firing input against an event-only one; refuted if the absence input
+does not overshadow.
+
+### G3. Two kinds of concept node: intensity and tuned
+
+"How much" nodes for more-is-better drives, "which value" nodes for where and which - a tuned odour node born at the
+starting concentration made the worm stay put, while tuned temperature nodes grown where the worm lived sharpened its
+memory. The worm's sensory neurons seem to split the same way: odour by intensity, temperature tuned near the
+remembered value.
+*Test*: swap the node kind for one sense; refuted if behaviour does not change as predicted.
+
+### G4. Concepts grown by a novelty gate
+
+Nodes are born from experience - only for readings above three times the sensor's noise - so a worm grows about one
+odour, one salt and half a dozen temperature prototypes in a life, and its vocabulary saturates after a day.
+*Test*: the count and spacing of grown nodes against the worm's discrimination thresholds, where the literature gives
+them.
+
+### G5. Instinct and learning as separate pathways
+
+With the innate drive inside the learner's prediction, a smell that over-promised taught the worm that the food zone
+itself was disappointing, and it fled the food - conditioned inhibition. Kept as a separate fixed pathway that the
+prediction error never corrects, the damage went.
+*Test*: both wirings on the Grid; refuted if the joint wiring does no harm.
+
+### G6. Learned trust in instinct
+
+Multiply each instinct by the learned value of its cue - a three-way relation, instinct times cue times learned
+value - so experience can turn a misleading instinct down. It turned a worm trapped by lying smells into one that found
+odourless food, and evolution switched it on by itself from random starts in three of four runs where learning was on:
+gr-fec's strongest recurring motif.
+*Why*: the worm does learn to avoid the smell of bacteria that made it ill, though it is drawn to that smell at first.
+*Test*: a world where an instinct misleads; refuted if trust does not beat both the plain learner and instinct alone.
+*Leads*: Zhang, Lu and Bargmann 2005; Daw, Niv and Dayan 2005.
+
+### G7. Inner senses gate; they do not predict
+
+Hunger and gut fullness as additive predictors reversed thermotaxis; as gates on the senses' value - hunger AND smell
+gives value - everything recovered and the starvation effect sharpened. A gate is a three-way relation, a genuine
+hyperedge; pairwise edges cannot express it without a conjunction node.
+*Test*: hunger-dependent attraction to a neutral learned cue, pairwise against gated; gr-fec's own test of this came out
+suggestive twice and never passed its threshold, so it needs more power.
+
+### G8. Honest senses are noisy, so integrate before deciding
+
+A noise-free "food memory" had been a hidden cheat; with a noisy gut-stretch sensor, foraging failed until the brain
+integrated its senses over about ten seconds. Evolution later preferred no integration with a sharper turning rule, so
+the optimum depends on the rest of the brain.
+*Test*: integration time swept against the reference foraging statistics; the constraint holds if no integration fails
+with honest noise.
+
+### G9. Noise below the decision threshold is blur; above it, search
+
+Sensor noise smaller than the turning threshold only blurred the worm's orbits (a little noise did worse than none);
+noise comparable to the threshold changed decisions and became search; with a smooth internal code a fully
+deterministic worm needed no noise at all. Randomness entered best through the senses, and evolution drove the decision
+temperature almost to determinism while keeping structured exploration.
+*Test*: the same sweep on the Grid, measuring turns and decoy escapes.
+*Leads*: Douglass et al. 1993; Faisal, Selen and Wolpert 2008.
+
+### G10. Learning pays only when instinct is not enough
+
+In a rich world the learner had nothing to learn; in a predictable world schedule evolution swapped learning for
+instincts and lost generality - the Baldwin trade-off, seen as it happened. Learning paid only when food did not smell,
+smells lied, and layouts changed between lives.
+*Why*: the lab's arenas must make learning necessary before a learning module can earn its place.
+*Leads*: Hinton and Nowlan 1987.
+
+### G11. Judge a design by its worst life
+
+Fitness as the mean over several lives still bred specialists; the minimum over lives produced gr-fec's best organic
+generalist. Applies to tuning a brain against the benchmark as much as to evolution.
+
+### G12. Designed learning structure with evolved numbers
+
+So far in gr-fec, a designed architecture whose numbers evolution tuned generalised best in every never-seen world;
+evolving the architecture too did worse.
+*Test*: on the Grid, the same contrast at equal compute.
+
+### G13. Every new tool given to evolution is first used to cheat
+
+Given steering, evolution built an innate bias plus random wobble; given a free architecture, "go warm" and learning
+switched off. The world schedule and fitness must make the honest strategy the only one that wins.
+
+### G14. Steer by the learned value of the neighbouring concept
+
+With a head-swing lateral sense, steering towards the side whose neighbouring concept has the higher learned value -
+weathervaning driven by learned value, not innate - beat no steering in never-seen worlds in five replications, and six
+pre-registered imagination variants never beat it.
+*Why*: the worm weathervanes by head swings; this drives the same motor trick from learning.
+*Leads*: Iino and Yoshida 2009.
+
+### G15. Imagination needs an accurate model and a body that can act on it
+
+Imagination as random walks over learned transitions between concept events failed in every form: walks stepped by
+clock time stood still, flickering labels taught the model noise, and actions pooled over headings could not express
+"turn towards the warmer side". Re-test only where one-step greed must fail - detours, barriers, valleys to cross.
+*Leads*: Sutton 1990; Johnson and Redish 2007.
+
+### G16. Complex edges as a Fourier code for timing
+
+One complex number per edge, the average of e^(iω·lag), composes delays by multiplying (6.97 against a true 7 in
+gr-fec's test) and carries confidence in its modulus; it adds no capability a real lag vector lacks, but stores eight
+times less and composes in one step. Grow extra harmonics only where timing is ambiguous, as a confusion gate adds
+them - the way the novelty gate adds nodes. (Bears on H10.)
+*Test*: an order task - A then B predicts food, B then A does not - with zero-shot composition, real against complex.
+*Leads*: Trouillon et al. 2016; Sun et al. 2019; Plate 1995; O'Keefe and Recce 1993.
+
+### G17. Which confidence gate works depends on how dense the answer space is
+
+In a dense space every wrong answer has a plausible neighbour, so errors are confusions and the margin to the runner-up
+detects them; in a sparse memory most errors are novelty, and distance from the evidence detects them. Some wrong
+answers are frozen - consistent and confident - and the margin still catches them where sample agreement cannot.
+*Why*: a brain that labels its own recalls needs the right gate for its memory's density.
+*Leads*: Forney 1968; Kadavath et al. 2022; Farquhar et al. 2024.
+
+### G18. Walls as destructive interference
+
+Untested: impossible combinations are not forbidden but cancelled, their evidence paths interfering destructively
+("cat, animal, some animals fly" against "cat, mammal, no wings") while true exceptions survive.
+*Test*: complex path sums against additive ones on a small graph with conflicting paths.
+*Leads*: Busemeyer and Bruza 2012; Chertkov and Chernyak 2006.
+
+### G19. Insight as tunnelling
+
+A thermal kick climbs over wide, low barriers; tunnelling passes through tall, thin ones - one strong assumption
+blocking a nearby idea. The hunch: which escape works is predictable from the barrier's shape.
+*Leads*: Kadowaki and Nishimori 1998; Santoro et al. 2002.
+
+### G20. Spurious states as creativity, labelled
+
+The blends an attractor memory invents - mixture states nobody stored - read as creativity when a two-wall gate labels
+them novel yet plausible, and as hallucination when novel and implausible.
+*Leads*: Amit, Gutfreund and Sompolinsky 1985; Hopfield 1982.
+
+### G21. Frozen and chaotic phases of a mind
+
+Decoders work best just on the soft side of a transition from frozen (stuck in a wrong valley) to chaotic (wandering);
+too stiff a wall makes dogma, too soft makes hallucination. gr-fec found no such optimum in the worm's decision
+temperature - a smooth gradient is not a search problem - so test where the world has traps.
+*Leads*: Sompolinsky, Crisanti and Sommers 1988; Langton 1990.
+
+### G22. The portability test
+
+Whatever is credited to the abstract layer must survive a change of implementation - floating point against quantised,
+interpreted against compiled; what does not survive belongs to the physical layer. A compiled brain in gr-fec matched
+the original to 10^-16 and then diverged chaotically, so the comparison must be statistical.
+
+### G23. A noise gene at every stage
+
+Give the senses, node growth, learning, decisions and imagination each their own noise parameter, and let evolution -
+or the benchmark - decide where randomness pays.
+
+### G24. The grand pattern: motifs that recur across independent evolutions
+
+Search for the general principle by convergence: run several independent evolutions in different worlds and count the
+motifs they keep - so far learned trust, value-steering, gating and wobble. A motif kept everywhere is a candidate;
+one kept once is noise.
+
+### G25. Calibrate on more than one behaviour
+
+Tuned for chemotaxis alone, the worm's turning became noise-driven at five to ten times a real worm's rate and broke
+foraging; calibrated on two behaviours it turned two to four times a minute.
+
+### G26. A printable mind
+
+Every concept, edge, hyperedge and gene readable by name, with a printout of a whole mind and its imagined walks.
+In gr-fec every major failure was read off the graph - a drifted "hunger feels good" gene in a starved worm, imagined
+walks that stood still - where an opaque model would have said only "worse".
+
+### G27. Optimise the optimiser with measurements
+
+A compiled brain gave 2.3 times the speed for free; textbook upgrades - self-adaptive mutation, successive halving on one
+short life - did not help at that scale. Next to try: a fixed panel of layouts with common random numbers, culling on
+several short lives, freezing the quarter of genes that are neutral, and covariance-matrix adaptation.
+*Leads*: Hansen and Ostermeier 2001.
+
+### G28. What transfers to the fly
+
+Each worm principle has a fly structure to test it in: prediction-error learning in the mushroom body, the separate
+instinct pathway in the lateral horn, hunger-gated odour responses, value-guided steering in the central complex's
+heading compass, and the fly's connectome as ground truth.
+*Leads*: Dorkenwald et al. 2024; Aso and Rubin 2016.
+
+### G29. The worm rediscovered the cognitive architectures
+
+Most of what the worm forced - a weighted concept hypergraph, needs that gate, prediction-error value learning,
+choosing by learned value, arbitration between instinct and learning, model-based imagination and its failure mode,
+the Baldwin trade-off - is what Psi theory, OpenCog, Soar, ACT-R and Dyna postulate. Read them as prior art before
+building, and treat "walls from events, not silence" as the part they do not state.
+*Leads*: Dörner 1999; Bach 2009; Laird 2012; Anderson 2007; Sutton 1990; Goertzel et al. 2014.
+
+### G30. The worm model's realism gaps
+
+A worm built this way turns three to five times too often, does not slow on food, lacks the reversal-then-omega
+sequence, sensory adaptation and quiescence after meals, and has its body constants chosen rather than measured.
+*Why*: a checklist for the lab's first brain, against the benchmark's measures.
+*Leads*: Sawin, Ranganathan and Horvitz 2000; You et al. 2008; Kato et al. 2015.

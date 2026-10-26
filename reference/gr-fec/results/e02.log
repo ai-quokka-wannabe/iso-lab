@@ -1,0 +1,4 @@
+Eb/N0 3.0: FER=5.96e-02 (5960/100000) nonconv=5960 undetected=0 median wt=14  60s
+   per-block bit-errors: [10310, 10346, 10257, 10256, 10498, 10462, 10475, 10446]
+Eb/N0 4.0: FER=3.20e-03 (3036/950000) nonconv=3036 undetected=0 median wt=13  251s
+   per-block bit-errors: [4990, 5054, 5053, 5126, 5009, 5073, 5085, 5027]

@@ -1,0 +1,6 @@
+GA gen  0: worm-hours    7200/43200 elite 0.153 best 0.792 median σ 0.100 (225s)
+GA gen  1: worm-hours   14400/43200 elite 0.219 best 0.445 median σ 0.100 (225s)
+GA gen  2: worm-hours   21600/43200 elite 0.244 best 0.544 median σ 0.100 (224s)
+GA gen  3: worm-hours   28800/43200 elite 0.384 best 0.704 median σ 0.100 (218s)
+GA gen  4: worm-hours   36000/43200 elite 0.538 best 0.815 median σ 0.100 (229s)
+GA gen  5: worm-hours   43200/43200 elite 0.557 best 0.761 median σ 0.100 (219s)

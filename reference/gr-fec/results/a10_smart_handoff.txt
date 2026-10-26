@@ -1,0 +1,12 @@
+OSD on 2450 active frames: 38s; OSD success 96.4%
+policy                                  FER  BP it/frame  OSD calls
+no early hand-off (t0=50)           0.00333         7.02      5.90%
+hand off ALL undecided at 10        0.00363         4.24     10.21%
+top 30% by hist                     0.00337         5.97      6.53%
+top 30% by hist+lamc8               0.00346         5.95      6.47%
+top 50% by hist                     0.00346         5.35      7.23%
+top 50% by hist+lamc8               0.00346         5.30      7.13%
+top 60% by hist                     0.00346         5.06      7.68%
+top 60% by hist+lamc8               0.00346         5.01      7.54%
+top 70% by hist                     0.00346         4.80      8.18%
+top 70% by hist+lamc8               0.00350         4.75      8.08%

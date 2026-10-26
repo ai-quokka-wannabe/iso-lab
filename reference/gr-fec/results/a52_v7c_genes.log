@@ -1,0 +1,22 @@
+P36b learning rate: v7b 10^-0.56 vs v7 10^-4.16 -> PASS
+P36c |temperature instinct| 2.78 (< 1?) -> FAIL
+               odour   salt      N   temp  touch pharyn stretc hunger novelt
+rew median     +0.63  -4.00  +2.70  -2.26  +2.67  +3.18  -4.96  +4.12  +1.47
+inst median    +0.61  +1.27  +1.61  +2.78  -0.95  -0.39  +2.20  +0.16  +2.00
+trust median   +3.30  +0.52  -4.01  -4.40  +4.08  -2.49  -4.18  -2.58  +4.37
+bias median    +1.54  +2.73  +0.75  -2.06  -0.77  -0.71  +2.89  -2.12  -1.87
+grand-pattern check, learned trust in smell: e45 2.92 | v7 +3.68 | this run +3.30
+strongest gene–fitness correlations (all individuals, all generations):
+  ls0              r = +0.40
+  thr_novelty      r = +0.28
+  lag              r = -0.26
+  bias_stretch     r = +0.24
+  rew_salt         r = -0.22
+  leta             r = +0.20
+  inst_stretch     r = +0.20
+  grow_odour       r = -0.19
+  bias_novelty     r = -0.18
+  trust_hunger     r = -0.18
+  bias_N           r = +0.17
+  rew_temp         r = -0.17
+genes with |r| < 0.05 (selection-neutral): 21 of 73

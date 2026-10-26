@@ -1,0 +1,36 @@
+469 questions; accuracy 0.608 (sym 0.75, elem 0.44, cap 0.62)
+AUROC (all): meanlp=0.839  lp=0.857  gap=0.875  action(-)=0.857  r=0.881  agree=0.858
+  sym : meanlp=0.858  lp=0.924  gap=0.933  action(-)=0.924  r=0.943  agree=0.844
+  elem: meanlp=0.777  lp=0.726  gap=0.760  action(-)=0.726  r=0.760  agree=0.830
+  cap : meanlp=0.866  lp=0.881  gap=0.889  action(-)=0.881  r=0.901  agree=0.874
+P20a: r 0.881 vs meanlp 0.839 -> PASS
+P20b: r 0.881 vs agree 0.858 -> PASS
+S20 : gap 0.875 vs meanlp 0.839 -> PASS
+H-AI5: wrong answers 184: frozen (agree>=0.75) 18 (10%), chaotic (agree<=0.25) 120 (65%)
+   within frozen subset (agree>=0.75): meanlp=0.763  lp=0.798  gap=0.784  action(-)=0.798  r=0.823
+   meanlp    : keeps  58.9% of correct answers while letting through 10% of wrong ones
+   lp        : keeps  61.1% of correct answers while letting through 10% of wrong ones
+   gap       : keeps  66.3% of correct answers while letting through 10% of wrong ones
+   action(-) : keeps  61.1% of correct answers while letting through 10% of wrong ones
+   r         : keeps  67.0% of correct answers while letting through 10% of wrong ones
+   agree     : keeps  62.1% of correct answers while letting through 10% of wrong ones
+
+examples of frozen hallucinations:
+   Which chemical element has the symbol Co? Answer with the el -> 'Carbon (Co)' (truth Cobalt) gap=0.87
+   What is the chemical symbol of Rhodium? Answer with the symb -> "Rhodium's chemical symbol is Ag." (truth Rh) gap=2.13
+   Which chemical element has the symbol In? Answer with the el -> 'Iron' (truth Indium) gap=2.19
+   Which chemical element has the symbol Eu? Answer with the el -> 'Euclid' (truth Europium) gap=4.04
+   Which chemical element has the symbol Ta? Answer with the el -> 'Titanium' (truth Tantalum) gap=1.91
+   What is the chemical symbol of Radon? Answer with the symbol -> 'Radon has the chemical symbol Rn.' (truth Rn) gap=-1.06
+   What is the chemical symbol of Curium? Answer with the symbo -> 'Curium has the chemical symbol symbol.' (truth Cm) gap=-0.51
+   Which chemical element has the symbol Cm? Answer with the el -> 'Carbon (C)' (truth Curium) gap=4.24
+   Which chemical element has the symbol Fm? Answer with the el -> 'Fluorine' (truth Fermium) gap=2.90
+   Which chemical element has the symbol Hs? Answer with the el -> 'Helium' (truth Hassium) gap=1.27
+   What is the chemical symbol of Meitnerium? Answer with the s -> 'Mc' (truth Mt) gap=2.92
+   What is the chemical symbol of Roentgenium? Answer with the  -> 'Rn' (truth Rg) gap=2.88
+   Which chemical element has the symbol Cn? Answer with the el -> 'Carbon (C)' (truth Copernicium) gap=4.38
+   Which chemical element has the symbol Lv? Answer with the el -> 'Lithium' (truth Livermorium) gap=2.84
+   What is the capital of Curaçao? Answer with the city name on -> 'Curaçao' (truth Willemstad) gap=5.32
+   What is the capital of Niue? Answer with the city name only. -> 'Niue City' (truth Alofi) gap=1.10
+   What is the capital of Republic of the Congo? Answer with th -> 'Kinshasa' (truth Brazzaville) gap=2.97
+   What is the capital of United Arab Emirates? Answer with the -> 'Dubai' (truth Abu Dhabi) gap=3.01

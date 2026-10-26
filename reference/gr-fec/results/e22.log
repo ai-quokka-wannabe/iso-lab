@@ -1,0 +1,7 @@
+beta=0.4: FER=0.2294 (2753)  FTLE(fail) median=-0.296  fixed/drift/osc = 82.4/15.4/2.2%  42s
+beta=0.5: FER=0.1197 (1436)  FTLE(fail) median=-0.100  fixed/drift/osc = 0.3/84.1/15.5%  42s
+beta=0.6: FER=0.0848 (1018)  FTLE(fail) median=+0.051  fixed/drift/osc = 0.0/3.9/96.1%  42s
+beta=0.7: FER=0.0653 (783)  FTLE(fail) median=+0.203  fixed/drift/osc = 0.0/0.1/99.9%  42s
+beta=0.8: FER=0.0658 (789)  FTLE(fail) median=+0.339  fixed/drift/osc = 0.0/0.0/100.0%  43s
+beta=0.9: FER=0.0838 (1005)  FTLE(fail) median=+0.459  fixed/drift/osc = 0.0/0.0/100.0%  42s
+beta=1.0: FER=0.1344 (1613)  FTLE(fail) median=+0.565  fixed/drift/osc = 0.0/0.0/100.0%  43s

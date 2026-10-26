@@ -96,10 +96,11 @@ Top first. Each item is sized for one run; split it here before starting if it i
    Zurada 1996 and Kobayashi 2017 at the source (H10 cites them unread), check the first test's attribution of its
    update rule, then run the next test under *To Revisit* with a finer grid, more cues, a symmetric success rule and
    a keep-the-state rule for ties.
-6. **Plan an experiment for every one of Matej's 98 ideas and hunches** - the maintainer's request - in the format
+6. **Plan an experiment for every one of Matej's 128 ideas and hunches** - the maintainer's request - in the format
    of [docs/hypotheses/experiments/README.md](docs/hypotheses/experiments/README.md), whose index shows which are
    planned. A, B, C1-C17 and C19-C24 are done (C18 is under *Blocked*); the rest, one task each, in this order: **D** (13, and answer
-   A10's question whether nematodes show anything like play), **E1-E10**, **E11-E20**, **F** (17). The journal
+   A10's question whether nematodes show anything like play), **E1-E10**, **E11-E20**, **F** (17), **G** (30, from
+   the gr-fec sandbox; [docs/research/gr-fec.md](docs/research/gr-fec.md) has its numbers). The journal
    records the triage, and hunches that survive are promoted into numbered hypotheses or tasks here.
 7. **Audit H10's first test by A12's plan**
    ([docs/hypotheses/experiments/A9-A15.md § A12](docs/hypotheses/experiments/A9-A15.md#a12-experiment-hygiene)):

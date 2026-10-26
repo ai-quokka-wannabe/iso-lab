@@ -1,0 +1,4 @@
+evolved elites, Hardland 72 h: energy h48-72 0.773; odourless share h48-72 0.359; cold-band share at end 0.68
+   (hand-built v6 trust in the same protocol, PREREG33: 0.682, 0.158; v5 learner 0.426; random 0.387; instinct 0.292)
+evolved elites, Agarland 48 h: energy h24-48 0.892 (hand-built v6 trust+curiosity 0.854, instinct-only 0.858)
+final elite median genes: {'g_odour': 1.7237, 'g_salt': -0.0135, 'g_gut': -1.5477, 'r_eat': 4.449, 'r_hunger': 3.9665, 'trust_k': 2.9158, 'roam': 1.4672, 'curiosity': 1.2981, 'eta': 0.01, 's0': 0.0197, 'tau': 0.0442, 'integ': 1.0}

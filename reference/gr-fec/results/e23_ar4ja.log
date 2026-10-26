@@ -1,0 +1,1 @@
+ar4ja: frames 1500, failures at 50 it 127; progress ratio rho = unsat(50)/unsat(25): median 0.986; fraction rho<0.5 (still progressing) 0.110; fraction rho>=1 (stuck/worse) 0.465

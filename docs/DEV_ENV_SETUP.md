@@ -42,7 +42,7 @@ CI runs two jobs, *Quick Checks* and *Rust*, behind the `CI Success` gate. At ho
 ```text
 npm ci --ignore-scripts
 npx markdownlint-cli2 "**/*.md"
-lychee --offline --include-fragments --no-progress --root-dir "$(pwd)" --exclude-path node_modules --exclude-path external --exclude-path target "./**/*.md"
+lychee --offline --include-fragments --no-progress --root-dir "$(pwd)" --exclude-path node_modules --exclude-path external --exclude-path reference --exclude-path target "./**/*.md"
 bash .github/scripts/check-toolchain-pin.sh
 ```
 

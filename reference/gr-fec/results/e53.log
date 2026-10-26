@@ -1,0 +1,5 @@
+hard_cold: v7 0.442  v6 0.431  e45 0.836  random 0.379  v7b 0.576  v7c 0.690
+hard_warm: v7 0.816  v6 0.810  e45 0.828  random 0.345  v7b 0.853  v7c 0.703
+rich_new: v7 0.843  v6 0.890  e45 0.892  random 0.427  v7b 0.858  v7c 0.780
+P36a (cold >= 0.70): FAIL (0.690)
+P36d (>= e45 - 0.05 everywhere): FAIL

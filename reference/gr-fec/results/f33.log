@@ -1,0 +1,10 @@
+A2 20 min: Tc=15 -> 19.18 (share <17.5: 0.54), Tc=25 -> 20.44 (share >22.5: 0.46)
+A2 60 min: Tc=15 -> 17.98 (share <17.5: 0.66), Tc=25 -> 22.45 (share >22.5: 0.72)
+   learned thermal edges after cultivation at 25 °C (bins 15..25): [0.   0.   0.   0.   0.   0.   0.   0.   0.03 0.12 0.19]
+A5 s0=0.003: pirouettes/min 0-5 12.29, 15-20 8.83, ratio 1.39
+A5 s0=0.01: pirouettes/min 0-5 10.37, 15-20 5.76, ratio 1.80
+A5 s0=0.03: pirouettes/min 0-5 5.45, 15-20 1.84, ratio 2.97
+A8 tau=0.03: CI mean +0.753 ± 0.009 (SE, 8 seeds)
+A8 tau=0.3: CI mean +0.746 ± 0.009 (SE, 8 seeds)
+A8 tau=1: CI mean +0.721 ± 0.009 (SE, 8 seeds)
+A8 tau=10: CI mean +0.586 ± 0.018 (SE, 8 seeds)
