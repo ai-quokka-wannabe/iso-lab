@@ -111,13 +111,18 @@ Top first. Each item is sized for one run; split it here before starting if it i
    every sense and action against what a worm can transduce and produce, with a blind planted-field control; the
    delay grades wait on item 1.
 9. **gr-fec's worm by equation** - the maintainer's aim (2026-10-26): understand [gr-fec's worm](docs/research/gr-fec.md)
-   well enough to design it for a chosen behaviour, with every decision auditable, instead of evolving it. Done: the
-   turning layer, and an exact audit trail of e45's decisions by fourteen pathways (journal of 2026-10-26, *gr-fec's
-   Worm by Equation*), and its split into signal and sensor noise. Next, one run each: (a) test designed changes the
-   audit points to, first a hunger reading the brain smooths before gating with it; (b) trace each
-   learned weight to the moments of experience that built it (the learner's update is an exact sum over past steps);
-   (c) composing the layers to design a worm for a chosen behaviour in a world. Once the calculations matter
-   to anything the lab builds on, they move into tested Rust.
+   well enough to design it for a chosen behaviour, with every decision auditable, instead of evolving it. Done on
+   2026-10-26 (that night's journal): the turning rule by equation; exact audits of e45's decisions, their noise and
+   its learned values; a smoothed hunger reading; CMA-ES; the optimised worm's genes swapped back; and a worm built by
+   hand from two of them that matches the optimised one. Next, one run each:
+   - (a) why slow learning and a weak smell instinct need each other: the audits run on the hand-built worm and its two
+     one-gene halves;
+   - (b) the hand-built worm on more layouts, since tonight's win rests on one cold layout;
+   - (c) a positive control for steering: gr-fec's own steering brain on the corrected lateral body and the same panels;
+   - (d) a sound CMA-ES (the one used put an unevaluated step into its update);
+   - (e) composing the layers into a design rule for a chosen behaviour.
+
+   Once a calculation matters to anything the lab builds on, it moves into tested Rust.
 
 ## To Revisit
 
@@ -256,7 +261,12 @@ points to the open ones and says what waits on each.
   optimised worm's lead (worst case 0.860 against 0.873, difference not shown); the two genes act together; the lead (+0.25)
   holds over five random streams (sd 0.003 and 0.011). H0-H3 hold.
 - 2026-10-26: why the optimised gr-fec worm wins, gene by gene: slow learning (-0.050 if undone) and a weak smell instinct
-  (-0.024) are shown; the rest of its +0.25 lead lies in combinations; G1 and G2 fail; its r_hunger is worse than e45's.
+  (-0.024) are shown; the single swaps add to a third of the gap, the rest in combinations or saturation; G1 and G2 fail.
+- 2026-10-26: on gr-fec's worm, the designed gain is not carried by any single route (A1 fails by 0.0001); CMA-ES on the
+  designed brain did not beat CMA-ES alone (C1, C2 fail); gr-fec's value-steering hurt the optimised brain (S1 fails). On a fresh
+  panel the first CMA-ES genome beat e45 by +0.25 in worst case. Two pairs suggest one random stream can move a worst case by about 0.01 (not measured).
+- 2026-10-26: CMA-ES on gr-fec's e45 genome raised its worst case in gr-fec's never-seen worlds from 0.818 to 0.891 (+0.073,
+  interval +0.053 to +0.100; over genomes +0.047 to +0.115; O1, O2 hold); three genes ended at range limits; why it wins is not yet attributed.
 - 2026-10-26: where e45's learned values come from: each weight is an exact ledger of eating credit, hunger blame and
   the prediction term, which cancels about 99% of the other two; the peak sits over the odourless food (86-93% of worms); P1-P3 hold per band.
 - 2026-10-26: a designed change to gr-fec's e45, from the noise audit - the brain smooths its own hunger reading (60 s) -
