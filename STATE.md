@@ -117,7 +117,8 @@ Top first. Each item is sized for one run; split it here before starting if it i
    audit points to, first a hunger reading the brain smooths before gating with it; (b) trace each
    learned weight to the moments of experience that built it (the learner's update is an exact sum over past steps);
    (c) composing the layers to design a worm for a chosen behaviour in a world; (d) for the CMA-ES genome (journal of 2026-10-26, *gr-fec's Worm,
-   Optimised*), run the audits on the winner and ablate it gene by gene to say why it wins. Once the calculations matter
+   Optimised*), run the audits on the winner and ablate it gene by gene to say why it wins; (e) a positive control for
+   steering: gr-fec's own steering brain on the corrected lateral body and tonight's panels. Once the calculations matter
    to anything the lab builds on, they move into tested Rust.
 
 ## To Revisit
@@ -253,6 +254,9 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-26: on gr-fec's worm, the designed gain is not carried by any single route (A1 fails by 0.0001); CMA-ES on the
+  designed brain did not beat CMA-ES alone (C1, C2 fail); gr-fec's value-steering hurt the optimised brain (S1 fails). On a fresh
+  panel the first CMA-ES genome beat e45 by +0.25 in worst case. Two pairs suggest one random stream can move a worst case by about 0.01 (not measured).
 - 2026-10-26: CMA-ES on gr-fec's e45 genome raised its worst case in gr-fec's never-seen worlds from 0.818 to 0.891 (+0.073,
   interval +0.053 to +0.100; over genomes +0.047 to +0.115; O1, O2 hold); three genes ended at range limits; why it wins is not yet attributed.
 - 2026-10-26: where e45's learned values come from: each weight is an exact ledger of eating credit, hunger blame and
