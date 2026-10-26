@@ -1,0 +1,14 @@
+5 codes; FER range 3.07e-03 .. 3.54e-03 (ratio 1.15)
+feature     rho(FER)            95% CI  partial|c6,c8  p_perm
+c6            -0.667   [-1.000, 1.000]
+c8             0.600   [-1.000, 1.000]
+c10            0.100   [-1.000, 1.000]         -0.917   0.056
+oll2_mean     -0.900   [-1.000,-0.111]         -0.964   0.017
+oll2_min       0.500   [-1.000, 1.000]          0.312   0.578
+oll3_mean     -0.900   [-1.000,-0.111]         -0.964   0.012
+oll3_min       0.500   [-1.000, 1.000]          0.312   0.598
+res_mean       0.000   [-1.000, 1.000]         -0.702   0.217
+res_min        0.500   [-1.000, 1.000]          0.312   0.574
+median relative SE of FER estimates: 0.045
+H1 (pre-registered): rho(oll3_mean, FER) = -0.900, one-sided permutation p = 0.0407
+H2 (pre-registered): partial rho | c6,c8 = -0.964, one-sided p = 0.0084

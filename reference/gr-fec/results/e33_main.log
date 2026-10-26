@@ -1,0 +1,9 @@
+A1 odour chemotaxis: CI=+0.67 (pass True); random walk CI=+0.05 (pass True); mean pirouette rate 10.25/min
+A2 thermotaxis memory: final T  Tc=15: 19.02  Tc=25: 21.05  diff=+2.03 °C (pass False)
+A3 salt learning: CI mock=+0.77, salt-starved=+0.01 (pass True)
+A4 habituation: tap1 0.90, tap30 0.20, after rest 0.74 (pass True)
+A5 foraging: pirouettes/min 0-5 min 12.37, 15-20 min 8.82 (pass False)
+A6 no-learning ablation: A2 diff=-0.08 (fails True); A3 mock +0.62 salt +0.51 (fails True)
+A7 random walker: A1 CI +0.05; A2 diff -0.04; A3 mock +0.00 salt +0.00; A5 10.09 vs 10.28
+A8 exploration temperature: tau=0.03: CI +0.78  tau=0.1: CI +0.77  tau=0.3: CI +0.79  tau=1: CI +0.82  tau=3: CI +0.74  tau=10: CI +0.63 -> best tau=1 (interior: True)
+Exploratory (Mohri): mean |T-20| after cultivation at 20 °C  fed 2.18  starved 3.99

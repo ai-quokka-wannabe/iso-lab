@@ -1,0 +1,6 @@
+ccsds    girth=6 c6=14016 c8=263232 oll3_mean=-0.3780 res_min=0.1499  FER=3.327e-03 (499)  41s
+lift1    girth=6 c6=14304 c8=258816 oll3_mean=-0.3686 res_min=0.1535  FER=3.267e-03 (490)  39s
+lift2    girth=6 c6=12576 c8=268032 oll3_mean=-0.3838 res_min=0.1540  FER=3.540e-03 (531)  40s
+lift3    girth=6 c6=13056 c8=261568 oll3_mean=-0.3593 res_min=0.1547  FER=3.180e-03 (477)  40s
+lift4    girth=6 c6=12576 c8=266304 oll3_mean=-0.3764 res_min=0.1571  FER=3.347e-03 (502)  40s
+lift5    girth=6 c6=13728 c8=262400 oll3_mean=-0.3622 res_min=0.1494  FER=3.067e-03 (460)  39s

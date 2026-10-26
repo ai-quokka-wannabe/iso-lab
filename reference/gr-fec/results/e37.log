@@ -1,0 +1,4 @@
+U unimodal: R0 strength 1.00 (no timing) | RL peaks at [7] (16 numbers/edge) | C1 time 6.97, confidence |z| 0.90 (2 numbers/edge) | C3 peak at 7 (6 numbers/edge)
+   P26b: C1 within ±0.5 of 7: True
+M bimodal: R0 strength 1.00 (no timing) | RL peaks at [5, 11] (16 numbers/edge) | C1 time 8.08, confidence |z| 0.35 (2 numbers/edge) | C3 peak at 11 (6 numbers/edge)
+   P26c: C1 near mean & low confidence (0.35 < 0.45), RL finds 5 and 11, C3 hits a true peak: True

@@ -1,0 +1,12 @@
+seed 0 girth 6 Eb/N0 3.0: FER=1.20e-02 (482 fails / 40000 frames) median wt=15  15s
+seed 0 girth 6 Eb/N0 3.5: FER=2.36e-03 (424 fails / 180000 frames) median wt=13  57s
+seed 1 girth 6 Eb/N0 3.0: FER=1.12e-02 (448 fails / 40000 frames) median wt=15  15s
+seed 1 girth 6 Eb/N0 3.5: FER=2.29e-03 (413 fails / 180000 frames) median wt=13  51s
+seed 2 girth 6 Eb/N0 3.0: FER=1.18e-02 (471 fails / 40000 frames) median wt=15  16s
+seed 2 girth 6 Eb/N0 3.5: FER=2.43e-03 (438 fails / 180000 frames) median wt=14  52s
+seed 3 girth 6 Eb/N0 3.0: FER=1.22e-02 (487 fails / 40000 frames) median wt=15  16s
+seed 3 girth 6 Eb/N0 3.5: FER=2.46e-03 (443 fails / 180000 frames) median wt=14  53s
+seed 4 girth 6 Eb/N0 3.0: FER=1.14e-02 (454 fails / 40000 frames) median wt=15  16s
+seed 4 girth 6 Eb/N0 3.5: FER=2.04e-03 (408 fails / 200000 frames) median wt=13  70s
+seed 5 girth 6 Eb/N0 3.0: FER=1.18e-02 (471 fails / 40000 frames) median wt=15  17s
+seed 5 girth 6 Eb/N0 3.5: FER=2.17e-03 (434 fails / 200000 frames) median wt=14  64s

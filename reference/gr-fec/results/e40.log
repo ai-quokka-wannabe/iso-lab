@@ -1,0 +1,79 @@
+L h 2: energy 0.79 on-food 0.18 turns 9.5/min nodes [5.94, 4.17, 1.0, 5.06] mean x +5.8
+L h 4: energy 0.83 on-food 0.25 turns 9.2/min nodes [5.98, 5.31, 1.0, 6.04] mean x -5.1
+L h 6: energy 0.84 on-food 0.33 turns 9.2/min nodes [6.02, 5.89, 1.0, 6.79] mean x -11.4
+L h 8: energy 0.84 on-food 0.35 turns 9.2/min nodes [6.09, 5.99, 1.0, 7.13] mean x -11.3
+L h10: energy 0.83 on-food 0.35 turns 9.2/min nodes [6.16, 6.05, 1.0, 7.52] mean x -11.6
+L h12: energy 0.81 on-food 0.34 turns 9.1/min nodes [6.22, 6.06, 1.0, 7.79] mean x -18.0
+L h14: energy 0.83 on-food 0.37 turns 9.1/min nodes [6.34, 6.09, 1.0, 8.06] mean x -17.1
+L h16: energy 0.77 on-food 0.35 turns 9.0/min nodes [6.42, 6.09, 1.0, 8.19] mean x -19.2
+L h18: energy 0.82 on-food 0.37 turns 9.0/min nodes [6.6, 6.09, 1.0, 8.41] mean x -18.0
+L h20: energy 0.83 on-food 0.39 turns 9.0/min nodes [6.72, 6.09, 1.0, 8.54] mean x -20.4
+L h22: energy 0.83 on-food 0.40 turns 9.1/min nodes [6.89, 6.09, 1.0, 8.68] mean x -20.8
+L h24: energy 0.80 on-food 0.37 turns 8.9/min nodes [7.06, 6.1, 1.0, 8.75] mean x -20.2
+L h26: energy 0.79 on-food 0.37 turns 8.8/min nodes [7.17, 6.1, 1.0, 8.85] mean x -17.8
+L h28: energy 0.78 on-food 0.36 turns 8.9/min nodes [7.25, 6.1, 1.0, 8.93] mean x -17.6
+L h30: energy 0.76 on-food 0.35 turns 8.8/min nodes [7.33, 6.11, 1.0, 8.97] mean x -16.1
+L h32: energy 0.76 on-food 0.33 turns 8.7/min nodes [7.52, 6.11, 1.0, 9.0] mean x -17.0
+L h34: energy 0.75 on-food 0.33 turns 8.8/min nodes [7.65, 6.11, 1.0, 9.08] mean x -14.1
+L h36: energy 0.72 on-food 0.31 turns 8.7/min nodes [7.75, 6.11, 1.0, 9.14] mean x -13.0
+L h38: energy 0.78 on-food 0.32 turns 8.7/min nodes [7.84, 6.11, 1.0, 9.18] mean x -10.9
+L h40: energy 0.77 on-food 0.32 turns 8.8/min nodes [7.91, 6.11, 1.0, 9.25] mean x -11.3
+L h42: energy 0.78 on-food 0.31 turns 8.7/min nodes [8.03, 6.11, 1.0, 9.37] mean x -9.5
+L h44: energy 0.71 on-food 0.27 turns 8.6/min nodes [8.07, 6.11, 1.0, 9.43] mean x -7.0
+L h46: energy 0.74 on-food 0.27 turns 8.5/min nodes [8.15, 6.12, 1.0, 9.53] mean x -8.2
+L h48: energy 0.73 on-food 0.28 turns 8.7/min nodes [8.23, 6.13, 1.0, 9.56] mean x -6.1
+F h 2: energy 0.86 on-food 0.23 turns 8.1/min nodes [5.93, 3.04, 1.0, 4.15] mean x +23.2
+F h 4: energy 0.86 on-food 0.25 turns 8.4/min nodes [5.95, 3.59, 1.0, 4.32] mean x +22.3
+F h 6: energy 0.86 on-food 0.24 turns 8.3/min nodes [5.97, 3.88, 1.0, 4.47] mean x +22.4
+F h 8: energy 0.86 on-food 0.25 turns 8.3/min nodes [5.97, 4.1, 1.0, 4.55] mean x +22.3
+F h10: energy 0.86 on-food 0.24 turns 8.4/min nodes [5.98, 4.29, 1.0, 4.66] mean x +22.9
+F h12: energy 0.86 on-food 0.25 turns 8.3/min nodes [5.98, 4.47, 1.0, 4.8] mean x +21.4
+F h14: energy 0.85 on-food 0.25 turns 8.3/min nodes [6.02, 4.57, 1.0, 4.86] mean x +23.6
+F h16: energy 0.86 on-food 0.25 turns 8.3/min nodes [6.05, 4.75, 1.0, 4.98] mean x +22.7
+F h18: energy 0.85 on-food 0.24 turns 8.4/min nodes [6.07, 4.88, 1.0, 5.06] mean x +23.8
+F h20: energy 0.86 on-food 0.24 turns 8.3/min nodes [6.1, 4.96, 1.0, 5.17] mean x +24.1
+F h22: energy 0.86 on-food 0.24 turns 8.3/min nodes [6.1, 5.0, 1.0, 5.21] mean x +22.7
+F h24: energy 0.86 on-food 0.24 turns 8.3/min nodes [6.11, 5.03, 1.0, 5.29] mean x +23.1
+F h26: energy 0.86 on-food 0.24 turns 8.3/min nodes [6.12, 5.06, 1.0, 5.29] mean x +22.6
+F h28: energy 0.86 on-food 0.24 turns 8.4/min nodes [6.14, 5.12, 1.0, 5.31] mean x +22.5
+F h30: energy 0.86 on-food 0.24 turns 8.4/min nodes [6.14, 5.16, 1.0, 5.32] mean x +24.2
+F h32: energy 0.86 on-food 0.25 turns 8.4/min nodes [6.16, 5.21, 1.0, 5.38] mean x +22.7
+F h34: energy 0.85 on-food 0.23 turns 8.3/min nodes [6.17, 5.28, 1.0, 5.45] mean x +23.4
+F h36: energy 0.86 on-food 0.24 turns 8.3/min nodes [6.18, 5.31, 1.0, 5.48] mean x +23.0
+F h38: energy 0.86 on-food 0.24 turns 8.3/min nodes [6.19, 5.34, 1.0, 5.5] mean x +24.6
+F h40: energy 0.86 on-food 0.24 turns 8.2/min nodes [6.19, 5.39, 1.0, 5.53] mean x +23.7
+F h42: energy 0.86 on-food 0.24 turns 8.3/min nodes [6.28, 5.46, 1.0, 5.58] mean x +23.6
+F h44: energy 0.86 on-food 0.24 turns 8.3/min nodes [6.3, 5.53, 1.0, 5.65] mean x +22.3
+F h46: energy 0.86 on-food 0.23 turns 8.3/min nodes [6.35, 5.57, 1.0, 5.68] mean x +23.3
+F h48: energy 0.86 on-food 0.24 turns 8.4/min nodes [6.37, 5.59, 1.0, 5.76] mean x +22.7
+R h 2: energy 0.53 on-food 0.10 turns 9.0/min nodes [5.76, 4.39, 1.0, 3.63] mean x +0.2
+R h 4: energy 0.51 on-food 0.12 turns 9.0/min nodes [5.87, 5.34, 1.0, 4.75] mean x +0.6
+R h 6: energy 0.54 on-food 0.13 turns 8.9/min nodes [5.97, 5.81, 1.0, 5.48] mean x +0.8
+R h 8: energy 0.48 on-food 0.11 turns 8.9/min nodes [6.02, 5.87, 1.0, 6.03] mean x +1.4
+R h10: energy 0.48 on-food 0.11 turns 8.9/min nodes [6.1, 5.99, 1.0, 6.49] mean x -0.9
+R h12: energy 0.43 on-food 0.11 turns 8.9/min nodes [6.15, 6.02, 1.0, 6.77] mean x +0.2
+R h14: energy 0.48 on-food 0.11 turns 8.9/min nodes [6.18, 6.05, 1.0, 7.11] mean x -3.3
+R h16: energy 0.50 on-food 0.10 turns 8.9/min nodes [6.26, 6.08, 1.0, 7.35] mean x -4.0
+R h18: energy 0.47 on-food 0.10 turns 8.9/min nodes [6.33, 6.09, 1.0, 7.6] mean x +1.4
+R h20: energy 0.51 on-food 0.12 turns 8.9/min nodes [6.34, 6.11, 1.0, 7.77] mean x -4.3
+R h22: energy 0.45 on-food 0.11 turns 8.9/min nodes [6.37, 6.11, 1.0, 7.91] mean x -6.1
+R h24: energy 0.44 on-food 0.10 turns 8.9/min nodes [6.41, 6.13, 1.0, 8.0] mean x -1.4
+R h26: energy 0.49 on-food 0.11 turns 8.9/min nodes [6.44, 6.13, 1.0, 8.08] mean x -0.1
+R h28: energy 0.49 on-food 0.12 turns 8.9/min nodes [6.49, 6.15, 1.0, 8.22] mean x -1.2
+R h30: energy 0.45 on-food 0.11 turns 8.9/min nodes [6.53, 6.17, 1.0, 8.28] mean x +0.9
+R h32: energy 0.53 on-food 0.12 turns 8.9/min nodes [6.54, 6.19, 1.0, 8.43] mean x +3.8
+R h34: energy 0.54 on-food 0.13 turns 8.9/min nodes [6.57, 6.21, 1.0, 8.58] mean x -1.7
+R h36: energy 0.50 on-food 0.11 turns 8.9/min nodes [6.6, 6.22, 1.0, 8.69] mean x -1.2
+R h38: energy 0.50 on-food 0.11 turns 8.9/min nodes [6.64, 6.22, 1.0, 8.78] mean x -2.5
+R h40: energy 0.48 on-food 0.11 turns 9.0/min nodes [6.68, 6.23, 1.0, 8.86] mean x +6.6
+R h42: energy 0.55 on-food 0.13 turns 8.9/min nodes [6.7, 6.24, 1.0, 8.95] mean x +0.5
+R h44: energy 0.51 on-food 0.13 turns 8.9/min nodes [6.71, 6.25, 1.0, 9.0] mean x -2.7
+R h46: energy 0.45 on-food 0.10 turns 8.9/min nodes [6.73, 6.3, 1.0, 9.08] mean x +0.4
+R h48: energy 0.49 on-food 0.12 turns 8.9/min nodes [6.77, 6.33, 1.0, 9.14] mean x +2.3
+
+P29a energy h24-48: L 0.757  F 0.858  R 0.499 -> FAIL
+L exams: {"0": {"thermal": 20.09948395589647, "salt": 0.4, "odour": 0.64}, "6": {"thermal": 17.61558686150764, "salt": 0.46, "odour": 0.66}, "24": {"thermal": 17.215082954746713, "salt": 0.24, "odour": 0.69}, "48": {"thermal": 17.548341339204054, "salt": 0.27, "odour": 0.53}}
+F exams: {"0": {"thermal": 19.890460313670722, "salt": 0.7, "odour": 0.76}, "6": {"thermal": 20.29357344618385, "salt": 0.71, "odour": 0.76}, "24": {"thermal": 19.946590651579637, "salt": 0.78, "odour": 0.8}, "48": {"thermal": 19.811593041401867, "salt": 0.73, "odour": 0.78}}
+P29b thermal: h48 17.55 vs h0 20.10 °C -> FAIL
+P29c salt: CI h48 +0.27 vs h0 +0.40 -> FAIL
+P29d nodes: added h0-24 22.9, h24-48 2.0 -> PASS

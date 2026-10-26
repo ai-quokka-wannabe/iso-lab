@@ -870,8 +870,8 @@ differs on the benchmark.
 Matej's own sandbox, gr-fec, ran about twenty pre-registered experiments on a worm-level mind in October 2026 before
 the lab took the worm up. What it found, and how, is in
 [docs/research/gr-fec.md](../research/gr-fec.md). These are the ideas and hunches it leaves the lab. Its results
-are a toy world's - simulated agar plates, a few dozen concepts, a hundred worms - and unpublished, so for the lab
-each is a hunch to be tested again on the Grid, never evidence.
+are a toy world's - simulated agar plates, a few dozen concepts, a hundred worms - and not peer-reviewed (its code is
+kept in [reference/gr-fec/](../../reference/README.md#gr-fec)), so for the lab each is a hunch to be tested again on the Grid, never evidence.
 
 ### G1. Think by predicting value over a grown concept graph; turn when the prediction falls
 

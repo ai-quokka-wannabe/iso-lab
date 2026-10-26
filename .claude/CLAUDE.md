@@ -230,3 +230,7 @@ pip, Cargo, the pinned actions and the submodules under `external/`. Keep this s
 - `external/` - the world's repositories, pinned; the lab's contributions to them are made there, on branches
   of their own.
 - `runs/` - run outputs, logs and Disks (never committed; conclusions go to the journal).
+- `reference/` - archives kept as they were given, today the maintainer's gr-fec sandbox
+  ([reference/README.md](../reference/README.md)). Read them, run them to reproduce them, never edit them; they are
+  exempt from the lab's style, licence-header and *Rust first* rules, and whatever the lab takes from them is rebuilt
+  in its own Rust or a notebook.

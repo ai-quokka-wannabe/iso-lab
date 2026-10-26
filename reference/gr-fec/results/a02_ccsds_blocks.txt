@@ -1,0 +1,38 @@
+block features (blocks 0-3 degree 5, 4-7 degree 3):
+  c6    [152. 172. 164. 160.  58.  62.  56.  52.]
+  c8    [3060. 3000. 3044. 3016. 1056. 1092. 1098. 1086.]
+  c10   [66344. 66152. 66076. 66632. 23352. 23088. 23326. 23270.]
+  oll2  [-0.65   -0.635  -0.6475 -0.6325 -0.4681 -0.4694 -0.5042 -0.4958]
+  oll3  [-0.4569 -0.4352 -0.4531 -0.4327 -0.2886 -0.2914 -0.3385 -0.3277]
+  oll4  [-0.237  -0.213  -0.2324 -0.2105 -0.0931 -0.0946 -0.1421 -0.1326]
+  res   [0.1694 0.1706 0.1616 0.163  0.3395 0.3381 0.3376 0.3375]
+
+Eb/N0 3.0: 5960 failures, 100000 frames, median weight 14
+  per-block mean bit-error/failure: [0.1081 0.1085 0.1076 0.1076 0.1101 0.1097 0.1098 0.1095]  within-block SD: [0.004  0.0035 0.0043 0.0029 0.0034 0.0044 0.0039 0.0038]
+  degree-5: ANOVA between blocks F=0.25 p=0.863; block means [0.1081 0.1085 0.1076 0.1076]
+      rho(block mean, c6  ) = +0.40
+      rho(block mean, c8  ) = -0.20
+      rho(block mean, oll3) = -0.40
+      rho(block mean, oll4) = -0.40
+      rho(block mean, res ) = +0.80
+  degree-3: ANOVA between blocks F=0.06 p=0.982; block means [0.1101 0.1097 0.1098 0.1095]
+      rho(block mean, c6  ) = +0.40
+      rho(block mean, c8  ) = -0.20
+      rho(block mean, oll3) = +0.40
+      rho(block mean, oll4) = +0.40
+      rho(block mean, res ) = +0.80
+
+Eb/N0 4.0: 3036 failures, 950000 frames, median weight 13
+  per-block mean bit-error/failure: [0.1027 0.104  0.104  0.1055 0.1031 0.1044 0.1047 0.1035]  within-block SD: [0.0062 0.0077 0.0044 0.0058 0.0047 0.0059 0.0071 0.0065]
+  degree-5: ANOVA between blocks F=0.56 p=0.645; block means [0.1027 0.104  0.104  0.1055]
+      rho(block mean, c6  ) = +0.40
+      rho(block mean, c8  ) = -0.80
+      rho(block mean, oll3) = +1.00
+      rho(block mean, oll4) = +1.00
+      rho(block mean, res ) = +0.00
+  degree-3: ANOVA between blocks F=0.24 p=0.869; block means [0.1031 0.1044 0.1047 0.1035]
+      rho(block mean, c6  ) = +0.00
+      rho(block mean, c8  ) = +1.00
+      rho(block mean, oll3) = -0.80
+      rho(block mean, oll4) = -0.80
+      rho(block mean, res ) = -0.40

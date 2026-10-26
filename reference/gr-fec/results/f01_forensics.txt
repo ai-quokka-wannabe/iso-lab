@@ -1,0 +1,23 @@
+== F1  Why are failures not localised (curvature could not predict which bits fail)? ==
+  failing frames: median 14 wrong bits, touching median 7 of 8 circulant blocks
+  channel errors: failing frames median 15 vs successful 10 (of 128 bits)
+== F2  Why does temperature diversity fail (same frames fail at every temperature)? ==
+  alpha=0.7: failures shared with alpha=1: 527/537;  channel errors in shared failures median 15
+  alpha=1.4: failures shared with alpha=1: 437/537;  channel errors in shared failures median 15
+  channel-error quantiles over all frames (50/90/99%): [10. 14. 18.]; FER by channel-error count:
+      0- 8 errors:  3776 frames, FER 0.001
+      9-11 errors:  4464 frames, FER 0.005
+     12-14 errors:  2831 frames, FER 0.071
+     15-17 errors:   786 frames, FER 0.280
+     18-40 errors:   143 frames, FER 0.622
+== F3  Why does heating oscillating frames hurt (is oscillation productive search)? ==
+  frames still flipping in it. 11-20: 7393; of those, converge later (it. 21-50): 131 (2%); never converge: 501
+== F4  Why does time-crystal averaging rescue nothing? ==
+  replayed failing frames still unconverged: 537; wrong bits: final state median 14, cycle-average median 13; unsatisfied checks: final 14, average 12
+== F5  Why do complex phases hurt? (message magnitude / information destroyed by interference) ==
+  theta=0.0: after 3 it. mean Re(c2v)=2.169, mean |Im(c2v)|=0.000, fraction of check messages with WRONG sign of Re: 0.1927
+  theta=0.05: after 3 it. mean Re(c2v)=2.167, mean |Im(c2v)|=0.195, fraction of check messages with WRONG sign of Re: 0.1929
+  theta=0.2: after 3 it. mean Re(c2v)=2.168, mean |Im(c2v)|=0.732, fraction of check messages with WRONG sign of Re: 0.1938
+== F6  Why did redundant "multipole" checks wreck BP? ==
+  original      : check pairs sharing >=2 bits 0, 4-cycles 0, max bits shared by two checks 1
+  +64 redundant : check pairs sharing >=2 bits 1507, 4-cycles 6514, max bits shared by two checks 7

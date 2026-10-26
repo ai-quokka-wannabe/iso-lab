@@ -1,0 +1,29 @@
+=== Mind of elite 0 after 24 h in a hard world (food band side -1); energy 0.00 ===
+GENOME (what evolution decided):
+  feels good (+) / bad (−): hunger +5.00, touch -5.00, temp +3.99, stretch +3.74
+  instinct pull           : temp +3.00, hunger +3.00, salt -2.56, odour +2.41
+  trust learning          : salt -5.00, stretch +4.51, pharynx -4.09, touch -3.67
+  turning bias            : salt -3.00, novelty -3.00, touch +2.23, stretch +2.13
+  hyperedge gates          : pharynx (on), touch (off)
+CONCEPT NODES (grown from experience) and their learned value:
+  [odour ≈ 0.57] value +0.14
+  [odour ≈ 0.46] value +0.06
+  [odour ≈ 0.37] value +0.01
+  [odour ≈ 0.68] value +0.24
+  [odour ≈ 0.27] value +0.01
+  [odour ≈ 0.77] value +0.38
+  [odour ≈ 0.86] value +0.49
+  [odour ≈ 0.93] value +0.54
+  [odour ≈ 1.00] value +0.65
+  [temp ≈ 24.1 °C] value +1.26, gated by pharynx -0.03
+  [hunger ≈ 1.00] value +1.67
+INTENSITY RELATIONS (learned value of each sense level) and current trust in instinct:
+  odour   : learned value +1.28; instinct +2.41 × trust 1.50
+  salt    : learned value -0.05; instinct -2.56 × trust 1.23
+  N       : learned value +0.00; instinct +1.46 × trust 1.00
+  temp    : learned value +1.17; instinct +3.00 × trust 1.50
+  touch   : learned value -0.05; instinct -0.47 × trust 1.19
+  pharynx : learned value +0.01; instinct +1.89 × trust 0.97
+  stretch : learned value +0.33; instinct -1.96 × trust 1.50
+  hunger  : learned value +1.15; instinct +3.00 × trust 1.50
+  novelty : learned value -0.00; instinct -1.64 × trust 1.00

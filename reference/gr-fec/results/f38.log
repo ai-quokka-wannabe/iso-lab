@@ -1,0 +1,5 @@
+salt tuned nodes per worm: 2.0
+additive salt-node weight (sum) +0.303, salt intensity additive +0.947
+hunger-gated salt-node weight (sum) +0.183, gated salt intensity +0.146
+h=0.1: predicted value along the salt gradient 0.46→1.0: [0.442 0.572 0.702 0.831 0.961] (intensity part only)
+h=0.9: predicted value along the salt gradient 0.46→1.0: [0.496 0.641 0.787 0.932 1.078] (intensity part only)

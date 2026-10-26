@@ -1,0 +1,74 @@
+=== CONFIRMATION 3.0 dB: train seed 100 (frozen) -> test seed 200 ===
+
+--- checkpoint t0=5: 2644 active frames, 737 will fail ---
+  single-feature AUC (sign = direction): synd=+0.744  synd_trend=+0.678  mabs=-0.746  mabs_trend=-0.713  nflip=+0.602  dnorm=-0.700  ratio=-0.669  lam=-0.764  lam_trend=-0.705
+  model AUC: base=0.7909  base+curv=0.8070  curv-only=0.7653   dAUC 95% CI [+0.0122, +0.0200]
+  model AUC: hist=0.7981  hist+curv=0.8143   dAUC 95% CI [+0.0123, +0.0194]
+  stop rule (base     , <=1% of FER lost): avg iters 7.00 -> 6.89  (1.6% saved), failures caught 3.9%, good frames lost 14
+  stop rule (base+curv, <=1% of FER lost): avg iters 7.00 -> 6.86  (2.1% saved), failures caught 5.2%, good frames lost 14
+  stop rule (hist     , <=1% of FER lost): avg iters 7.00 -> 6.90  (1.4% saved), failures caught 3.4%, good frames lost 14
+  stop rule (hist+curv, <=1% of FER lost): avg iters 7.00 -> 6.85  (2.1% saved), failures caught 5.3%, good frames lost 14
+
+--- checkpoint t0=10: 1254 active frames, 737 will fail ---
+  single-feature AUC (sign = direction): synd=+0.640  synd_trend=+0.600  mabs=-0.712  mabs_trend=-0.606  nflip=+0.503  dnorm=-0.681  ratio=-0.594  lam=-0.748  lam_trend=-0.631
+  model AUC: base=0.7272  base+curv=0.7666  curv-only=0.7507   dAUC 95% CI [+0.0270, +0.0508]
+  model AUC: hist=0.7246  hist+curv=0.7632   dAUC 95% CI [+0.0281, +0.0494]
+  stop rule (base     , <=1% of FER lost): avg iters 7.00 -> 6.76  (3.4% saved), failures caught 9.8%, good frames lost 14
+  stop rule (base+curv, <=1% of FER lost): avg iters 7.00 -> 6.76  (3.5% saved), failures caught 9.9%, good frames lost 14
+  stop rule (hist     , <=1% of FER lost): avg iters 7.00 -> 6.79  (3.0% saved), failures caught 8.7%, good frames lost 14
+  stop rule (hist+curv, <=1% of FER lost): avg iters 7.00 -> 6.81  (2.7% saved), failures caught 7.5%, good frames lost 14
+
+--- checkpoint t0=15: 1036 active frames, 737 will fail ---
+  single-feature AUC (sign = direction): synd=+0.609  synd_trend=+0.609  mabs=-0.714  mabs_trend=-0.605  nflip=-0.518  dnorm=-0.689  ratio=-0.592  lam=-0.720  lam_trend=-0.624
+  model AUC: base=0.7252  base+curv=0.7494  curv-only=0.7254   dAUC 95% CI [+0.0079, +0.0407]
+  model AUC: hist=0.7183  hist+curv=0.7492   dAUC 95% CI [+0.0171, +0.0451]
+  stop rule (base     , <=1% of FER lost): avg iters 7.00 -> 6.68  (4.5% saved), failures caught 14.9%, good frames lost 14
+  stop rule (base+curv, <=1% of FER lost): avg iters 7.00 -> 6.66  (4.9% saved), failures caught 16.1%, good frames lost 14
+  stop rule (hist     , <=1% of FER lost): avg iters 7.00 -> 6.74  (3.8% saved), failures caught 12.3%, good frames lost 14
+  stop rule (hist+curv, <=1% of FER lost): avg iters 7.00 -> 6.76  (3.5% saved), failures caught 11.3%, good frames lost 14
+
+--- checkpoint t0=20: 929 active frames, 737 will fail ---
+  single-feature AUC (sign = direction): synd=+0.587  synd_trend=+0.554  mabs=-0.698  mabs_trend=-0.565  nflip=-0.556  dnorm=-0.696  ratio=-0.573  lam=-0.715  lam_trend=-0.592
+  model AUC: base=0.7137  base+curv=0.7387  curv-only=0.7294   dAUC 95% CI [+0.0086, +0.0398]
+  model AUC: hist=0.7053  hist+curv=0.7340   dAUC 95% CI [+0.0166, +0.0409]
+  stop rule (base     , <=1% of FER lost): avg iters 7.00 -> 6.71  (4.1% saved), failures caught 15.9%, good frames lost 14
+  stop rule (base+curv, <=1% of FER lost): avg iters 7.00 -> 6.57  (6.1% saved), failures caught 23.7%, good frames lost 14
+  stop rule (hist     , <=1% of FER lost): avg iters 7.00 -> 6.69  (4.5% saved), failures caught 17.3%, good frames lost 14
+  stop rule (hist+curv, <=1% of FER lost): avg iters 7.00 -> 6.64  (5.2% saved), failures caught 20.0%, good frames lost 14
+=== CONFIRMATION 3.5 dB: train seed 101 (frozen) -> test seed 201 ===
+
+--- checkpoint t0=5: 1074 active frames, 189 will fail ---
+  single-feature AUC (sign = direction): synd=+0.739  synd_trend=+0.699  mabs=-0.724  mabs_trend=-0.693  nflip=+0.641  dnorm=-0.685  ratio=-0.658  lam=-0.742  lam_trend=-0.683
+  model AUC: base=0.7826  base+curv=0.7938  curv-only=0.7447   dAUC 95% CI [+0.0007, +0.0223]
+  model AUC: hist=0.7960  hist+curv=0.8087   dAUC 95% CI [+0.0035, +0.0224]
+  stop rule (base     , <=1% of FER lost): avg iters 4.08 -> 4.05  (0.8% saved), failures caught 4.0%, good frames lost 3
+  stop rule (base+curv, <=1% of FER lost): avg iters 4.08 -> 4.06  (0.6% saved), failures caught 3.0%, good frames lost 3
+  stop rule (hist     , <=1% of FER lost): avg iters 4.08 -> 4.06  (0.5% saved), failures caught 2.8%, good frames lost 3
+  stop rule (hist+curv, <=1% of FER lost): avg iters 4.08 -> 4.06  (0.4% saved), failures caught 2.0%, good frames lost 3
+
+--- checkpoint t0=10: 401 active frames, 189 will fail ---
+  single-feature AUC (sign = direction): synd=+0.643  synd_trend=+0.593  mabs=-0.705  mabs_trend=-0.598  nflip=+0.565  dnorm=-0.655  ratio=-0.564  lam=-0.726  lam_trend=-0.624
+  model AUC: base=0.7098  base+curv=0.7431  curv-only=0.7274   dAUC 95% CI [+0.0134, +0.0518]
+  model AUC: hist=0.7046  hist+curv=0.7398   dAUC 95% CI [+0.0184, +0.0535]
+  stop rule (base     , <=1% of FER lost): avg iters 4.08 -> 4.02  (1.4% saved), failures caught 8.3%, good frames lost 3
+  stop rule (base+curv, <=1% of FER lost): avg iters 4.08 -> 4.03  (1.1% saved), failures caught 6.5%, good frames lost 3
+  stop rule (hist     , <=1% of FER lost): avg iters 4.08 -> 4.03  (1.3% saved), failures caught 7.5%, good frames lost 3
+  stop rule (hist+curv, <=1% of FER lost): avg iters 4.08 -> 4.02  (1.5% saved), failures caught 8.8%, good frames lost 3
+
+--- checkpoint t0=15: 298 active frames, 189 will fail ---
+  single-feature AUC (sign = direction): synd=+0.599  synd_trend=+0.581  mabs=-0.680  mabs_trend=-0.592  nflip=+0.502  dnorm=-0.673  ratio=-0.524  lam=-0.682  lam_trend=-0.601
+  model AUC: base=0.7073  base+curv=0.7285  curv-only=0.6853   dAUC 95% CI [+0.0061, +0.0363]
+  model AUC: hist=0.6897  hist+curv=0.7081   dAUC 95% CI [+0.0026, +0.0349]
+  stop rule (base     , <=1% of FER lost): avg iters 4.08 -> 4.02  (1.6% saved), failures caught 10.8%, good frames lost 3
+  stop rule (base+curv, <=1% of FER lost): avg iters 4.08 -> 4.01  (1.6% saved), failures caught 11.3%, good frames lost 3
+  stop rule (hist     , <=1% of FER lost): avg iters 4.08 -> 4.02  (1.3% saved), failures caught 9.3%, good frames lost 3
+  stop rule (hist+curv, <=1% of FER lost): avg iters 4.08 -> 4.02  (1.6% saved), failures caught 10.8%, good frames lost 3
+
+--- checkpoint t0=20: 256 active frames, 189 will fail ---
+  single-feature AUC (sign = direction): synd=+0.593  synd_trend=+0.551  mabs=-0.677  mabs_trend=-0.564  nflip=+0.512  dnorm=-0.673  ratio=-0.518  lam=-0.681  lam_trend=-0.569
+  model AUC: base=0.6854  base+curv=0.7110  curv-only=0.6914   dAUC 95% CI [-0.0039, +0.0551]
+  model AUC: hist=0.6849  hist+curv=0.7029   dAUC 95% CI [-0.0041, +0.0413]
+  stop rule (base     , <=1% of FER lost): avg iters 4.08 -> 4.00  (1.8% saved), failures caught 14.8%, good frames lost 3
+  stop rule (base+curv, <=1% of FER lost): avg iters 4.08 -> 4.03  (1.3% saved), failures caught 10.6%, good frames lost 3
+  stop rule (hist     , <=1% of FER lost): avg iters 4.08 -> 4.01  (1.7% saved), failures caught 13.6%, good frames lost 3
+  stop rule (hist+curv, <=1% of FER lost): avg iters 4.08 -> 4.00  (1.9% saved), failures caught 15.3%, good frames lost 3

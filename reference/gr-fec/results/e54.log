@@ -1,0 +1,2 @@
+hardland: pairs plain 0.645 / imagine 0.626, plain 0.632 / imagine 0.641, plain 0.657 / imagine 0.627 | differences [-0.019, 0.009, -0.03] mean -0.013 -> FAIL
+cold_new: pairs plain 0.429 / imagine 0.447, plain 0.464 / imagine 0.462, plain 0.396 / imagine 0.443 | differences [0.018, -0.002, 0.046] mean +0.021 -> FAIL

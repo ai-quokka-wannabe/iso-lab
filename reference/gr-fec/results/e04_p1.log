@@ -1,0 +1,12 @@
+lift1    FER4=3.400e-03  FER5=8.000e-05 (64)  median wt=12  122s
+lift3    FER4=3.300e-03  FER5=5.625e-05 (45)  median wt=11  121s
+lift5    FER4=3.000e-03  FER5=6.625e-05 (53)  median wt=11  122s
+lift7    FER4=3.053e-03  FER5=5.250e-05 (42)  median wt=12  122s
+lift9    FER4=3.333e-03  FER5=5.750e-05 (46)  median wt=12  122s
+lift11   FER4=3.487e-03  FER5=6.250e-05 (50)  median wt=11  124s
+lift13   FER4=3.353e-03  FER5=5.750e-05 (46)  median wt=12  120s
+lift15   FER4=3.333e-03  FER5=6.000e-05 (48)  median wt=13  120s
+lift17   FER4=3.340e-03  FER5=6.000e-05 (48)  median wt=13  120s
+lift19   FER4=3.500e-03  FER5=6.000e-05 (48)  median wt=11  120s
+lift21   FER4=3.647e-03  FER5=7.875e-05 (63)  median wt=8  120s
+lift23   FER4=3.420e-03  FER5=5.875e-05 (47)  median wt=12  120s

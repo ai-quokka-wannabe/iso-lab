@@ -1,0 +1,10 @@
+hardland  plain   : late energy 0.625; cold-band share at end 0.45
+hardland  imagine : late energy 0.616; cold-band share at end 0.41
+    imagined walk — keep going: 20.7°C↑ → 21.4°C↑ → 20.7°C↓ → 21.4°C↑ → 21.4°C· → 21.4°C↓ → 21.4°C↑ → 21.4°C↓ → 20.7°C↓
+    imagined walk — turn: 20.7°C↑ → 21.4°C↑ → 21.4°C· → 21.4°C↓ → 21.4°C· → 21.4°C↓ → 20.7°C↓ → 19.7°C↓ → 19.7°C·
+cold_new  plain   : late energy 0.442; cold-band share at end 0.35
+cold_new  imagine : late energy 0.504; cold-band share at end 0.32
+    imagined walk — keep going: 19.9°C↓ → 19.9°C↑ → 19.9°C· → 19.9°C↑ → 19.9°C· → 19.9°C↑ → 20.5°C↑ → 20.5°C· → 20.5°C↑
+    imagined walk — turn: 19.9°C↓ → 19.9°C↑ → 19.9°C· → 19.9°C↑ → 19.9°C↓ → 19.9°C↑ → 19.9°C· → 20.5°C↑ → 20.5°C·
+P38a (Hardland, ≥ +0.05): -0.009 -> FAIL
+P38b (new cold band, ≥ +0.05): +0.062 -> PASS

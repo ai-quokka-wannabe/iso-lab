@@ -1,0 +1,22 @@
+decoder trajectories identical to PREREG2 data: True True
+
+t0=5: test active=5255, will fail=1419; AUC(hist)=0.7981
+  K=1: single AUC=0.685  AUC(hist+lamc1)=0.7980  dAUC=-0.0001 CI [-0.0004,+0.0002]   stop@1%: caught 3.4% -> 3.5%
+  K=2: single AUC=0.668  AUC(hist+lamc2)=0.7985  dAUC=+0.0004 CI [-0.0002,+0.0010]   stop@1%: caught 3.4% -> 3.8%
+  K=3: single AUC=0.682  AUC(hist+lamc3)=0.7992  dAUC=+0.0011 CI [-0.0004,+0.0026]   stop@1%: caught 3.4% -> 3.7%
+  K=5: single AUC=0.736  AUC(hist+lamc5)=0.8052  dAUC=+0.0072 CI [+0.0037,+0.0104]   stop@1%: caught 3.4% -> 5.4%
+  K=8: single AUC=0.796  AUC(hist+lamc8)=0.8235  dAUC=+0.0254 CI [+0.0198,+0.0309]   stop@1%: caught 3.4% -> 5.1%
+
+t0=10: test active=2438, will fail=1419; AUC(hist)=0.7246
+  K=1: single AUC=0.668  AUC(hist+lamc1)=0.7251  dAUC=+0.0005 CI [-0.0029,+0.0039]   stop@1%: caught 8.7% -> 8.5%
+  K=2: single AUC=0.668  AUC(hist+lamc2)=0.7259  dAUC=+0.0014 CI [-0.0010,+0.0036]   stop@1%: caught 8.7% -> 8.9%
+  K=3: single AUC=0.690  AUC(hist+lamc3)=0.7289  dAUC=+0.0043 CI [+0.0023,+0.0063]   stop@1%: caught 8.7% -> 8.7%
+  K=5: single AUC=0.710  AUC(hist+lamc5)=0.7407  dAUC=+0.0161 CI [+0.0099,+0.0222]   stop@1%: caught 8.7% -> 8.2%
+  K=8: single AUC=0.741  AUC(hist+lamc8)=0.7606  dAUC=+0.0360 CI [+0.0268,+0.0458]   stop@1%: caught 8.7% -> 8.4%
+
+t0=15: test active=1956, will fail=1419; AUC(hist)=0.7183
+  K=1: single AUC=0.673  AUC(hist+lamc1)=0.7183  dAUC=-0.0001 CI [-0.0002,+0.0001]   stop@1%: caught 12.3% -> 12.5%
+  K=2: single AUC=0.648  AUC(hist+lamc2)=0.7176  dAUC=-0.0008 CI [-0.0034,+0.0021]   stop@1%: caught 12.3% -> 11.9%
+  K=3: single AUC=0.671  AUC(hist+lamc3)=0.7202  dAUC=+0.0018 CI [-0.0005,+0.0039]   stop@1%: caught 12.3% -> 13.9%
+  K=5: single AUC=0.692  AUC(hist+lamc5)=0.7268  dAUC=+0.0084 CI [+0.0022,+0.0147]   stop@1%: caught 12.3% -> 10.4%
+  K=8: single AUC=0.724  AUC(hist+lamc8)=0.7412  dAUC=+0.0229 CI [+0.0142,+0.0317]   stop@1%: caught 12.3% -> 14.4%

@@ -1,0 +1,5 @@
+hard_cold: v7 0.442  v6 0.431  e45 0.836  random 0.379
+hard_warm: v7 0.816  v6 0.810  e45 0.828  random 0.345
+rich_new: v7 0.843  v6 0.890  e45 0.892  random 0.427
+P35b (v7 > v6 in both new harsh layouts): PASS
+P35c (v7 >= e45 + 0.05 in the warm-band layout): FAIL

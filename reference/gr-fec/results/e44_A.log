@@ -1,0 +1,72 @@
+L5 h 4 [HardWorld]: energy 0.50 on-food 0.09 odourless 0.002 cool 0.00 turns 8.1 trust [1.0, 1.0]
+L5 h 8 [HardWorld]: energy 0.35 on-food 0.06 odourless 0.004 cool 0.01 turns 8.0 trust [1.0, 1.0]
+L5 h12 [HardWorld]: energy 0.33 on-food 0.05 odourless 0.003 cool 0.02 turns 7.9 trust [1.0, 1.0]
+L5 h16 [HardWorld]: energy 0.37 on-food 0.06 odourless 0.005 cool 0.02 turns 7.9 trust [1.0, 1.0]
+L5 h20 [HardWorld]: energy 0.34 on-food 0.06 odourless 0.004 cool 0.01 turns 7.9 trust [1.0, 1.0]
+L5 h24 [HardWorld]: energy 0.39 on-food 0.06 odourless 0.009 cool 0.05 turns 7.9 trust [1.0, 1.0]
+L5 h28 [HardWorld]: energy 0.35 on-food 0.06 odourless 0.014 cool 0.09 turns 7.9 trust [1.0, 1.0]
+L5 h32 [HardWorld]: energy 0.42 on-food 0.07 odourless 0.022 cool 0.12 turns 8.0 trust [1.0, 1.0]
+L5 h36 [HardWorld]: energy 0.41 on-food 0.08 odourless 0.031 cool 0.12 turns 8.0 trust [1.0, 1.0]
+L5 h40 [HardWorld]: energy 0.42 on-food 0.08 odourless 0.029 cool 0.11 turns 8.0 trust [1.0, 1.0]
+L5 h44 [HardWorld]: energy 0.41 on-food 0.08 odourless 0.029 cool 0.13 turns 8.0 trust [1.0, 1.0]
+L5 h48 [HardWorld]: energy 0.40 on-food 0.08 odourless 0.029 cool 0.13 turns 8.0 trust [1.0, 1.0]
+L5 h52 [HardWorld]: energy 0.43 on-food 0.08 odourless 0.034 cool 0.15 turns 8.1 trust [1.0, 1.0]
+L5 h56 [HardWorld]: energy 0.42 on-food 0.09 odourless 0.034 cool 0.13 turns 8.1 trust [1.0, 1.0]
+L5 h60 [HardWorld]: energy 0.45 on-food 0.08 odourless 0.034 cool 0.11 turns 8.1 trust [1.0, 1.0]
+L5 h64 [HardWorld]: energy 0.43 on-food 0.09 odourless 0.034 cool 0.14 turns 8.1 trust [1.0, 1.0]
+L5 h68 [HardWorld]: energy 0.42 on-food 0.08 odourless 0.035 cool 0.13 turns 8.1 trust [1.0, 1.0]
+L5 h72 [HardWorld]: energy 0.40 on-food 0.09 odourless 0.035 cool 0.13 turns 8.1 trust [1.0, 1.0]
+F h 4 [HardWorld]: energy 0.43 on-food 0.07 odourless 0.000 cool 0.00 turns 7.6
+F h 8 [HardWorld]: energy 0.30 on-food 0.05 odourless 0.000 cool 0.00 turns 7.7
+F h12 [HardWorld]: energy 0.30 on-food 0.05 odourless 0.000 cool 0.00 turns 7.7
+F h16 [HardWorld]: energy 0.31 on-food 0.05 odourless 0.000 cool 0.00 turns 7.8
+F h20 [HardWorld]: energy 0.29 on-food 0.05 odourless 0.000 cool 0.00 turns 7.8
+F h24 [HardWorld]: energy 0.29 on-food 0.05 odourless 0.000 cool 0.00 turns 7.7
+F h28 [HardWorld]: energy 0.24 on-food 0.04 odourless 0.000 cool 0.00 turns 7.7
+F h32 [HardWorld]: energy 0.28 on-food 0.05 odourless 0.000 cool 0.00 turns 7.7
+F h36 [HardWorld]: energy 0.35 on-food 0.05 odourless 0.000 cool 0.00 turns 7.7
+F h40 [HardWorld]: energy 0.30 on-food 0.05 odourless 0.000 cool 0.00 turns 7.7
+F h44 [HardWorld]: energy 0.30 on-food 0.04 odourless 0.000 cool 0.00 turns 7.7
+F h48 [HardWorld]: energy 0.26 on-food 0.05 odourless 0.000 cool 0.00 turns 7.7
+F h52 [HardWorld]: energy 0.32 on-food 0.05 odourless 0.000 cool 0.00 turns 7.7
+F h56 [HardWorld]: energy 0.23 on-food 0.04 odourless 0.000 cool 0.00 turns 7.8
+F h60 [HardWorld]: energy 0.30 on-food 0.05 odourless 0.000 cool 0.00 turns 7.7
+F h64 [HardWorld]: energy 0.30 on-food 0.05 odourless 0.000 cool 0.00 turns 7.7
+F h68 [HardWorld]: energy 0.29 on-food 0.04 odourless 0.000 cool 0.00 turns 7.7
+F h72 [HardWorld]: energy 0.30 on-food 0.05 odourless 0.000 cool 0.00 turns 7.7
+R h 4 [HardWorld]: energy 0.41 on-food 0.08 odourless 0.051 cool 0.21 turns 8.0
+R h 8 [HardWorld]: energy 0.35 on-food 0.08 odourless 0.052 cool 0.18 turns 8.0
+R h12 [HardWorld]: energy 0.41 on-food 0.09 odourless 0.066 cool 0.25 turns 8.0
+R h16 [HardWorld]: energy 0.35 on-food 0.09 odourless 0.061 cool 0.16 turns 8.0
+R h20 [HardWorld]: energy 0.32 on-food 0.08 odourless 0.053 cool 0.19 turns 8.0
+R h24 [HardWorld]: energy 0.40 on-food 0.08 odourless 0.045 cool 0.23 turns 8.0
+R h28 [HardWorld]: energy 0.37 on-food 0.09 odourless 0.060 cool 0.22 turns 8.0
+R h32 [HardWorld]: energy 0.38 on-food 0.09 odourless 0.061 cool 0.19 turns 8.0
+R h36 [HardWorld]: energy 0.36 on-food 0.09 odourless 0.061 cool 0.20 turns 8.0
+R h40 [HardWorld]: energy 0.29 on-food 0.08 odourless 0.053 cool 0.17 turns 8.1
+R h44 [HardWorld]: energy 0.39 on-food 0.08 odourless 0.052 cool 0.17 turns 8.0
+R h48 [HardWorld]: energy 0.40 on-food 0.09 odourless 0.063 cool 0.21 turns 8.0
+R h52 [HardWorld]: energy 0.37 on-food 0.09 odourless 0.059 cool 0.19 turns 8.0
+R h56 [HardWorld]: energy 0.33 on-food 0.08 odourless 0.048 cool 0.16 turns 8.0
+R h60 [HardWorld]: energy 0.41 on-food 0.09 odourless 0.066 cool 0.21 turns 8.0
+R h64 [HardWorld]: energy 0.45 on-food 0.10 odourless 0.072 cool 0.30 turns 8.0
+R h68 [HardWorld]: energy 0.38 on-food 0.08 odourless 0.057 cool 0.19 turns 8.0
+R h72 [HardWorld]: energy 0.38 on-food 0.09 odourless 0.063 cool 0.17 turns 8.0
+T h 4 [HardWorld]: energy 0.42 on-food 0.08 odourless 0.000 cool 0.01 turns 8.7 trust [0.703, 0.892]
+T h 8 [HardWorld]: energy 0.44 on-food 0.07 odourless 0.014 cool 0.16 turns 8.2 trust [0.593, 0.851]
+T h12 [HardWorld]: energy 0.52 on-food 0.09 odourless 0.047 cool 0.28 turns 8.2 trust [0.544, 0.852]
+T h16 [HardWorld]: energy 0.57 on-food 0.11 odourless 0.068 cool 0.32 turns 8.3 trust [0.539, 0.862]
+T h20 [HardWorld]: energy 0.62 on-food 0.13 odourless 0.091 cool 0.48 turns 8.3 trust [0.527, 0.868]
+T h24 [HardWorld]: energy 0.63 on-food 0.15 odourless 0.119 cool 0.51 turns 8.6 trust [0.505, 0.87]
+T h28 [HardWorld]: energy 0.66 on-food 0.16 odourless 0.126 cool 0.56 turns 8.6 trust [0.529, 0.88]
+T h32 [HardWorld]: energy 0.70 on-food 0.17 odourless 0.140 cool 0.57 turns 8.7 trust [0.547, 0.896]
+T h36 [HardWorld]: energy 0.67 on-food 0.17 odourless 0.142 cool 0.58 turns 8.7 trust [0.527, 0.897]
+T h40 [HardWorld]: energy 0.68 on-food 0.18 odourless 0.156 cool 0.59 turns 8.7 trust [0.54, 0.903]
+T h44 [HardWorld]: energy 0.68 on-food 0.19 odourless 0.160 cool 0.59 turns 8.8 trust [0.529, 0.906]
+T h48 [HardWorld]: energy 0.69 on-food 0.18 odourless 0.149 cool 0.58 turns 8.7 trust [0.543, 0.91]
+T h52 [HardWorld]: energy 0.68 on-food 0.18 odourless 0.154 cool 0.58 turns 8.7 trust [0.543, 0.914]
+T h56 [HardWorld]: energy 0.69 on-food 0.18 odourless 0.158 cool 0.60 turns 8.8 trust [0.552, 0.916]
+T h60 [HardWorld]: energy 0.70 on-food 0.19 odourless 0.164 cool 0.63 turns 8.8 trust [0.553, 0.925]
+T h64 [HardWorld]: energy 0.68 on-food 0.18 odourless 0.155 cool 0.57 turns 8.8 trust [0.559, 0.934]
+T h68 [HardWorld]: energy 0.67 on-food 0.19 odourless 0.160 cool 0.56 turns 8.7 trust [0.549, 0.937]
+T h72 [HardWorld]: energy 0.68 on-food 0.18 odourless 0.154 cool 0.57 turns 8.7 trust [0.553, 0.937]

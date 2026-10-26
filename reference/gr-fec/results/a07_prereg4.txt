@@ -1,0 +1,12 @@
+
+3.0 dB  train seed 100 -> test seed 300: 24000 frames, FER=0.0590, active at t0=10: 2450 (10.2%), of which fail 1415; avg decoder iterations 7.02
+  AUC(hist) = 0.7253
+  K= 5: AUC(hist+lamc5) = 0.7346   dAUC = +0.0093  95% CI [+0.0033, +0.0153]   overhead = 0.51 steps/frame (7.3% of avg iterations)
+  K= 8: AUC(hist+lamc8) = 0.7574   dAUC = +0.0321  95% CI [+0.0225, +0.0416]   overhead = 0.82 steps/frame (11.6% of avg iterations)  <-- PRE-REGISTERED
+  K=12: AUC(hist+lamc12) = 0.7623   dAUC = +0.0370  95% CI [+0.0252, +0.0489]   overhead = 1.23 steps/frame (17.4% of avg iterations)
+
+3.5 dB  train seed 101 -> test seed 301: 24000 frames, FER=0.0164, active at t0=10: 924 (3.9%), of which fail 394; avg decoder iterations 4.08
+  AUC(hist) = 0.7182
+  K= 5: AUC(hist+lamc5) = 0.7349   dAUC = +0.0167  95% CI [+0.0100, +0.0237]   overhead = 0.19 steps/frame (4.7% of avg iterations)
+  K= 8: AUC(hist+lamc8) = 0.7556   dAUC = +0.0374  95% CI [+0.0248, +0.0494]   overhead = 0.31 steps/frame (7.6% of avg iterations)  <-- PRE-REGISTERED
+  K=12: AUC(hist+lamc12) = 0.7548   dAUC = +0.0366  95% CI [+0.0204, +0.0527]   overhead = 0.46 steps/frame (11.3% of avg iterations)

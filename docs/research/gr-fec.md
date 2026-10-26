@@ -5,12 +5,14 @@ began on 23 October 2026 as a study of the geometry of error-correcting codes an
 branch": an embodied, senses-only *C. elegans*-level agent with an interpretable concept-hypergraph mind, grown,
 tested and evolved in about twenty pre-registered experiments over three days.
 
-**How to read this note.** gr-fec is the maintainer's own work, unpublished, done in a toy world: simulated agar
-plates, a few dozen concepts, a hundred worms, one second per step. Every number below is gr-fec's, from its own
-ledger and pre-registrations, not the lab's; for the lab each is a lead to reproduce on the Grid, never evidence, as
-[the rules](../../.claude/CLAUDE.md) require. The literature gr-fec names is listed as it names it and is unverified
-here; check each item at its source before citing it, as [README.md](README.md) says. The ideas this note leaves the
-lab are written as hunches in [Matej's ideas and hunches § G](../hypotheses/matej-hunches.md#g-from-the-gr-fec-sandbox).
+**How to read this note.** gr-fec is the maintainer's own work, kept in full - code, ledger, pre-registrations and
+results - in [reference/gr-fec/](../../reference/README.md#gr-fec), so every run can be repeated. It is not
+peer-reviewed, and it was done in a toy world: simulated agar plates, a few dozen concepts, a hundred worms, one
+second per step. Every number below is gr-fec's, from its own ledger and pre-registrations, not the lab's; for the
+lab each is a lead to reproduce on the Grid, never evidence, as [the rules](../../.claude/CLAUDE.md) require. The
+literature gr-fec names is listed as it names it and is unverified here; check each item at its source before citing
+it, as [README.md](README.md) says. The ideas this note leaves the lab are written as hunches in [Matej's ideas and
+hunches § G](../hypotheses/matej-hunches.md#g-from-the-gr-fec-sandbox).
 
 gr-fec's own honesty, kept: about two in five of its pre-registered predictions passed (34 PASS against 54 FAIL across
 22 outcome files, by its own count); two apparent wins were seed luck caught by replication; and its worm models are,

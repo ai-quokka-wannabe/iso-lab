@@ -1,0 +1,10 @@
+Eb/N0=4.0 seed=1102: 192000 frames (95s)
+  FLOOD    FER=0.00301 (  577)  avg work=2.63 it/frame  undetected=0
+  FLOOD-D  FER=0.00187 (  360)  avg work=2.52 it/frame  undetected=0
+  LAY-FIX  FER=0.00162 (  311)  avg work=1.65 it/frame  undetected=0
+  LAY-RND  FER=0.00132 (  253)  avg work=1.69 it/frame  undetected=0
+  PIPE     FER=0.00029 (   56)  avg work=1.90 it/frame  undetected=1
+  McNemar LAY-RND better than LAY-FIX: rescued 118, lost 60, one-sided p=8.23e-06
+  McNemar LAY-RND better than FLOOD-D: rescued 150, lost 43, one-sided p=2.20e-15
+  McNemar LAY-RND better than FLOOD: rescued 346, lost 22, one-sided p=2.34e-76
+  PIPE vs FLOOD: FER ratio 10.30x lower

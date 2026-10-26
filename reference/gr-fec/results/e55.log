@@ -1,0 +1,15 @@
+hardland  plain   : late energy 0.672; cold-band share at end 0.50
+hardland  greedy  : late energy 0.629; cold-band share at end 0.34
+hardland  imagine : late energy 0.556; cold-band share at end 0.28
+    imagined — steer right: 22.0°CL → 22.0°CR → 22.0°CL → 22.0°C· → 22.0°CR → 22.0°CL → 22.0°CR → 22.0°CL → 22.0°CR
+    imagined — straight: 22.0°CL → 22.0°CR → 22.0°CL → 22.0°CR → 22.0°CL → 22.0°CR → 22.7°C· → 22.7°CL → 22.7°CR
+    imagined — steer left: 22.0°CL → 22.0°CR → 20.1°CR → 20.1°CL → 20.1°CR → 22.0°CR → 22.0°CL → 22.0°CR → 22.0°CL
+cold_new  plain   : late energy 0.388; cold-band share at end 0.18
+cold_new  greedy  : late energy 0.625; cold-band share at end 0.38
+cold_new  imagine : late energy 0.475; cold-band share at end 0.22
+    imagined — steer right: 20.4°CL → 20.4°C· → 20.4°CR → 20.4°C· → 20.4°CL → 20.4°CR → 20.4°C· → 20.4°CL → 20.4°CR
+    imagined — straight: 20.4°CL → 20.4°CR → 21.4°CR → 21.4°CL → 21.4°CR → 21.4°CL → 21.4°CR → 21.4°CL → 19.7°CL
+    imagined — steer left: 20.4°CL → 20.4°CR → 20.4°C· → 20.4°CL → 20.4°CR → 21.4°CL → 22.9°CL → 22.9°CR → 21.4°CR
+hardland: imagine − plain -0.116; imagine − greedy -0.073; greedy − plain -0.042
+cold_new: imagine − plain +0.088; imagine − greedy -0.149; greedy − plain +0.237
+P39a: FAIL   P39b: FAIL

@@ -1,0 +1,4 @@
+alpha=0.55: FER=0.0043 (207), undetected=0, FTLE(fail) median=-0.104, classes(fail) fixed/drift/osc = [72, 56, 79]  319s
+alpha=0.65: FER=0.0034 (165), undetected=0, FTLE(fail) median=-0.009, classes(fail) fixed/drift/osc = [15, 36, 114]  322s
+alpha=0.75: FER=0.0032 (154), undetected=0, FTLE(fail) median=+0.063, classes(fail) fixed/drift/osc = [2, 17, 135]  312s
+alpha=0.9: FER=0.0034 (162), undetected=0, FTLE(fail) median=+0.172, classes(fail) fixed/drift/osc = [0, 2, 160]  313s

@@ -1,0 +1,2 @@
+A1 CI +0.84 | A2 diff +3.88 °C | A3 mock +0.69 salt -0.18 | A4 0.92->0.18->0.81 | A5 15.11 vs 2.69 (x5.61)
+P33c: 5/5 pass -> PASS  [np.True_, np.True_, np.True_, np.True_, np.True_]

@@ -1,0 +1,85 @@
+T h 4: energy 0.42 on-food 0.07 (odourless 0.00) cool-band share 0.06 mean x +19.9 turns 8.6/min
+T h 8: energy 0.47 on-food 0.07 (odourless 0.02) cool-band share 0.17 mean x +12.8 turns 8.2/min
+T h12: energy 0.50 on-food 0.09 (odourless 0.04) cool-band share 0.20 mean x +9.7 turns 8.1/min
+T h16: energy 0.54 on-food 0.11 (odourless 0.06) cool-band share 0.25 mean x +7.4 turns 8.1/min
+T h20: energy 0.56 on-food 0.12 (odourless 0.07) cool-band share 0.31 mean x +3.6 turns 8.2/min
+T h24: energy 0.62 on-food 0.13 (odourless 0.09) cool-band share 0.41 mean x -3.5 turns 8.3/min
+T h28: energy 0.62 on-food 0.14 (odourless 0.10) cool-band share 0.48 mean x -7.7 turns 8.5/min
+T h32: energy 0.64 on-food 0.15 (odourless 0.12) cool-band share 0.46 mean x -6.0 turns 8.5/min
+T h36: energy 0.62 on-food 0.15 (odourless 0.11) cool-band share 0.43 mean x -5.3 turns 8.5/min
+T h40: energy 0.63 on-food 0.16 (odourless 0.12) cool-band share 0.48 mean x -5.5 turns 8.5/min
+T h44: energy 0.62 on-food 0.16 (odourless 0.12) cool-band share 0.46 mean x -5.1 turns 8.6/min
+T h48: energy 0.62 on-food 0.15 (odourless 0.11) cool-band share 0.42 mean x -4.2 turns 8.6/min
+T h52: energy 0.63 on-food 0.15 (odourless 0.12) cool-band share 0.44 mean x -7.0 turns 8.5/min
+T h56: energy 0.60 on-food 0.16 (odourless 0.12) cool-band share 0.44 mean x -3.7 turns 8.6/min
+T h60: energy 0.60 on-food 0.15 (odourless 0.11) cool-band share 0.43 mean x -5.3 turns 8.6/min
+T h64: energy 0.61 on-food 0.16 (odourless 0.12) cool-band share 0.43 mean x -3.6 turns 8.6/min
+T h68: energy 0.61 on-food 0.15 (odourless 0.11) cool-band share 0.45 mean x -4.3 turns 8.5/min
+T h72: energy 0.59 on-food 0.15 (odourless 0.11) cool-band share 0.41 mean x -3.6 turns 8.5/min
+C h 4: energy 0.52 on-food 0.09 (odourless 0.01) cool-band share 0.02 mean x +25.1 turns 9.1/min
+C h 8: energy 0.38 on-food 0.06 (odourless 0.01) cool-band share 0.07 mean x +16.9 turns 8.0/min
+C h12: energy 0.39 on-food 0.07 (odourless 0.02) cool-band share 0.06 mean x +18.8 turns 8.1/min
+C h16: energy 0.34 on-food 0.06 (odourless 0.01) cool-band share 0.05 mean x +17.6 turns 8.0/min
+C h20: energy 0.34 on-food 0.06 (odourless 0.01) cool-band share 0.04 mean x +21.1 turns 7.9/min
+C h24: energy 0.38 on-food 0.07 (odourless 0.01) cool-band share 0.05 mean x +19.0 turns 7.9/min
+C h28: energy 0.38 on-food 0.06 (odourless 0.01) cool-band share 0.04 mean x +19.3 turns 7.9/min
+C h32: energy 0.34 on-food 0.07 (odourless 0.01) cool-band share 0.05 mean x +18.2 turns 7.9/min
+C h36: energy 0.36 on-food 0.06 (odourless 0.01) cool-band share 0.04 mean x +18.2 turns 7.9/min
+C h40: energy 0.37 on-food 0.07 (odourless 0.01) cool-band share 0.04 mean x +19.2 turns 7.9/min
+C h44: energy 0.39 on-food 0.07 (odourless 0.01) cool-band share 0.03 mean x +19.5 turns 7.9/min
+C h48: energy 0.34 on-food 0.06 (odourless 0.01) cool-band share 0.05 mean x +15.8 turns 7.9/min
+C h52: energy 0.39 on-food 0.07 (odourless 0.01) cool-band share 0.06 mean x +17.3 turns 7.9/min
+C h56: energy 0.40 on-food 0.07 (odourless 0.02) cool-band share 0.08 mean x +17.6 turns 7.9/min
+C h60: energy 0.38 on-food 0.07 (odourless 0.02) cool-band share 0.09 mean x +17.8 turns 8.0/min
+C h64: energy 0.44 on-food 0.08 (odourless 0.02) cool-band share 0.12 mean x +13.2 turns 8.0/min
+C h68: energy 0.39 on-food 0.08 (odourless 0.03) cool-band share 0.11 mean x +14.1 turns 8.1/min
+C h72: energy 0.44 on-food 0.08 (odourless 0.03) cool-band share 0.09 mean x +16.0 turns 8.1/min
+TC h 4: energy 0.50 on-food 0.08 (odourless 0.01) cool-band share 0.06 mean x +20.5 turns 9.7/min
+TC h 8: energy 0.42 on-food 0.07 (odourless 0.01) cool-band share 0.09 mean x +16.6 turns 8.3/min
+TC h12: energy 0.47 on-food 0.08 (odourless 0.03) cool-band share 0.17 mean x +11.1 turns 8.1/min
+TC h16: energy 0.51 on-food 0.10 (odourless 0.04) cool-band share 0.24 mean x +9.0 turns 8.2/min
+TC h20: energy 0.58 on-food 0.11 (odourless 0.06) cool-band share 0.30 mean x +2.5 turns 8.3/min
+TC h24: energy 0.58 on-food 0.13 (odourless 0.08) cool-band share 0.34 mean x -0.1 turns 8.4/min
+TC h28: energy 0.61 on-food 0.14 (odourless 0.10) cool-band share 0.45 mean x -4.1 turns 8.4/min
+TC h32: energy 0.61 on-food 0.14 (odourless 0.10) cool-band share 0.36 mean x -0.9 turns 8.5/min
+TC h36: energy 0.59 on-food 0.14 (odourless 0.10) cool-band share 0.44 mean x -3.9 turns 8.5/min
+TC h40: energy 0.63 on-food 0.15 (odourless 0.11) cool-band share 0.43 mean x -2.4 turns 8.5/min
+TC h44: energy 0.59 on-food 0.15 (odourless 0.11) cool-band share 0.43 mean x -2.9 turns 8.5/min
+TC h48: energy 0.55 on-food 0.14 (odourless 0.10) cool-band share 0.38 mean x -0.9 turns 8.5/min
+TC h52: energy 0.58 on-food 0.14 (odourless 0.10) cool-band share 0.38 mean x -2.0 turns 8.5/min
+TC h56: energy 0.56 on-food 0.14 (odourless 0.10) cool-band share 0.41 mean x -2.4 turns 8.5/min
+TC h60: energy 0.55 on-food 0.13 (odourless 0.09) cool-band share 0.34 mean x +0.4 turns 8.6/min
+TC h64: energy 0.57 on-food 0.13 (odourless 0.09) cool-band share 0.35 mean x +0.5 turns 8.5/min
+TC h68: energy 0.59 on-food 0.14 (odourless 0.09) cool-band share 0.36 mean x -0.3 turns 8.5/min
+TC h72: energy 0.58 on-food 0.13 (odourless 0.09) cool-band share 0.37 mean x -0.1 turns 8.5/min
+TC h 4: energy 0.84 on-food 0.23 (odourless 0.10) cool-band share 0.12 mean x +17.6 turns 10.9/min
+TC h 8: energy 0.85 on-food 0.24 (odourless 0.11) cool-band share 0.12 mean x +18.4 turns 10.4/min
+TC h12: energy 0.85 on-food 0.26 (odourless 0.12) cool-band share 0.15 mean x +17.0 turns 10.3/min
+TC h16: energy 0.85 on-food 0.26 (odourless 0.11) cool-band share 0.15 mean x +17.4 turns 10.2/min
+TC h20: energy 0.85 on-food 0.26 (odourless 0.12) cool-band share 0.12 mean x +16.8 turns 10.2/min
+TC h24: energy 0.85 on-food 0.25 (odourless 0.12) cool-band share 0.07 mean x +19.0 turns 10.2/min
+TC h28: energy 0.85 on-food 0.25 (odourless 0.12) cool-band share 0.12 mean x +16.6 turns 10.2/min
+TC h32: energy 0.85 on-food 0.25 (odourless 0.12) cool-band share 0.14 mean x +18.5 turns 10.1/min
+TC h36: energy 0.85 on-food 0.26 (odourless 0.12) cool-band share 0.12 mean x +17.6 turns 10.0/min
+TC h40: energy 0.86 on-food 0.27 (odourless 0.13) cool-band share 0.14 mean x +18.1 turns 9.8/min
+TC h44: energy 0.86 on-food 0.27 (odourless 0.13) cool-band share 0.14 mean x +17.5 turns 9.8/min
+TC h48: energy 0.86 on-food 0.28 (odourless 0.12) cool-band share 0.16 mean x +15.7 turns 9.6/min
+F h 4: energy 0.86 on-food 0.23 (odourless 0.14) cool-band share 0.05 mean x +24.1 turns 8.3/min
+F h 8: energy 0.86 on-food 0.24 (odourless 0.14) cool-band share 0.05 mean x +23.8 turns 8.3/min
+F h12: energy 0.86 on-food 0.24 (odourless 0.14) cool-band share 0.05 mean x +23.0 turns 8.4/min
+F h16: energy 0.86 on-food 0.24 (odourless 0.14) cool-band share 0.07 mean x +22.4 turns 8.3/min
+F h20: energy 0.86 on-food 0.25 (odourless 0.14) cool-band share 0.05 mean x +22.5 turns 8.3/min
+F h24: energy 0.86 on-food 0.25 (odourless 0.14) cool-band share 0.09 mean x +21.6 turns 8.4/min
+F h28: energy 0.86 on-food 0.25 (odourless 0.14) cool-band share 0.08 mean x +21.2 turns 8.3/min
+F h32: energy 0.86 on-food 0.25 (odourless 0.13) cool-band share 0.07 mean x +22.6 turns 8.4/min
+F h36: energy 0.86 on-food 0.25 (odourless 0.13) cool-band share 0.07 mean x +22.1 turns 8.4/min
+F h40: energy 0.86 on-food 0.25 (odourless 0.14) cool-band share 0.08 mean x +22.2 turns 8.4/min
+F h44: energy 0.86 on-food 0.25 (odourless 0.13) cool-band share 0.08 mean x +22.0 turns 8.4/min
+F h48: energy 0.85 on-food 0.25 (odourless 0.13) cool-band share 0.08 mean x +21.8 turns 8.3/min
+
+energy h48-72: {'T': np.float64(0.607), 'C': np.float64(0.406), 'TC': np.float64(0.572)}  odourless share: {'T': np.float64(0.115), 'C': np.float64(0.021), 'TC': np.float64(0.095)}
+P32a: TC 0.572 >= 0.454 and >= 0.419 -> PASS
+P32b: TC odourless 0.095 >= 0.054 -> PASS
+P32c: T 0.607, C 0.406 between L5 0.404 and TC 0.572: T False, C True
+P32d (rich world, h24-48): TC 0.854 vs F 0.858 -> PASS
+exams: {"T": {"0": {"thermal": 20.17080887180082, "salt": 0.66, "odour": 0.85}, "24": {"thermal": 19.694634272427106, "salt": 0.75, "odour": 0.67}, "48": {"thermal": 19.730532791254927, "salt": 0.69, "odour": 0.73}, "72": {"thermal": 20.139165111692794, "salt": 0.7, "odour": 0.64}}, "C": {"0": {"thermal": 19.77075719062668, "salt": 0.36, "odour": 0.72}, "24": {"thermal": 18.324447746091835, "salt": 0.74, "odour": 0.8}, "48": {"thermal": 18.293604637409814, "salt": 0.71, "odour": 0.77}, "72": {"thermal": 18.813665234538295, "salt": 0.72, "odour": 0.86}}, "TC": {"0": {"thermal": 19.74946794071712, "salt": 0.37, "odour": 0.74}, "24": {"thermal": 19.263828106148114, "salt": 0.72, "odour": 0.65}, "48": {"thermal": 19.287017236392956, "salt": 0.72, "odour": 0.75}, "72": {"thermal": 20.0271227538269, "salt": 0.69, "odour": 0.62}}, "TC_rich": {"0": {"thermal": 20.28368749296619, "salt": 0.34, "odour": 0.58}, "24": {"thermal": 18.48992413621409, "salt": 0.76, "odour": 0.79}, "48": {"thermal": 18.337068571371336, "salt": 0.66, "odour": 0.81}}, "F_rich": {"0": {"thermal": 20.123489170836727, "salt": 0.67, "odour": 0.79}, "24": {"thermal": 20.08055515661407, "salt": 0.7, "odour": 0.76}, "48": {"thermal": 20.076410031388857, "salt": 0.7, "odour": 0.74}}}

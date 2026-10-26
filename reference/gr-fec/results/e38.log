@@ -1,0 +1,20 @@
+calib s0=0.01: CI +0.63, foraging ratio 1.25, score 0.62
+calib s0=0.03: CI +0.49, foraging ratio 1.40, score 0.70
+calib s0=0.1: CI +0.24, foraging ratio 1.36, score 0.68
+-> s0 = 0.03
+
+A1 odour chemotaxis: CI +0.62 (pass True); random walk -0.11; pirouettes 5.68/min
+A2 thermotaxis memory: Tc=15 -> 20.68, Tc=25 -> 19.57, diff -1.11 °C (pass False)
+A3 salt learning: mock +0.42, salt-starved -0.18 (pass True)
+A4 habituation: 0.89 -> 0.23 -> 0.83 (pass True)
+A5 foraging: 4.76 vs 3.46 /min, ratio 1.38 (pass False)
+P27a: 3/5 -> FAIL
+A6 no learning: A2 diff +0.26 (fails True); A3 mock +0.58 salt +0.66 (fails True)
+A7 random walker: A1 -0.11; A2 diff +0.26; A3 mock +0.07 salt -0.03; A5 ratio 0.99
+A8 tau sweep: 0.03: +0.540±0.021  0.1: +0.552±0.015  0.3: +0.581±0.020  1: +0.590±0.018  3: +0.439±0.012  10: +0.152±0.018
+Mohri: |T-20| fed 2.70, starved 3.27
+senses-only W1: k=0: +1.00  k=0.1: +1.00  k=0.3: +1.00  k=1: +1.00  k=3: +0.99  k=10: +0.43  k=30: -0.03 -> best k=0.1
+senses-only W2: k=0: +0.42  k=0.1: +0.38  k=0.3: +0.40  k=1: +0.46  k=3: +0.36  k=10: -0.02  k=30: -0.18 -> best k=1
+P27b: FAIL
+Hunger gating: hyperedges CI h=0.1 +0.65, h=0.9 +0.66 (diff +0.01); pairwise CI h=0.1 +0.57, h=0.9 +0.57 (diff +0.00)
+P27c: FAIL

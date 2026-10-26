@@ -1,0 +1,1 @@
+Eb/N0=3.0 N=96000 [6-bit LLRs, min-sum 0.75, fixed order, 20 it]: BP FER 0.06501 (undetected 1); +blend OSD-2 FER 0.00208; +MV2 FER 0.00090; MV2+gate: accepted-wrong 0, retransmissions 0.00849 (0.131 x BP-only)  (210s)

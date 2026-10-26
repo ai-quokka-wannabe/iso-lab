@@ -1,0 +1,5 @@
+Eb/N0=3.0 N=48000: BP failures 2558; MV2 FER 0.00056  (81s)
+  repulsion q=2.0: FER 0.00050 (rescued 3, lost 0)  (42s)
+  repulsion q=4.0: FER 0.00056 (rescued 0, lost 0)  (43s)
+  repulsion q=8.0: FER 0.00056 (rescued 0, lost 0)  (1s)
+  repulsion q=16.0: FER 0.00056 (rescued 0, lost 0)  (0s)
