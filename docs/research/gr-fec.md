@@ -297,44 +297,32 @@ Grid, its numbers as predictions to check there.
 
 ## 9. What the Lab Found on Taking It Up (2026-10-26)
 
-The lab's first night with gr-fec's worm, every step pre-registered, run on gr-fec's own code unedited and checked by
-a second agent. The numbers and their commands live in [the journal of 2026-10-26](../journal/2026-10-26.md). This
-section only says where each result stands. It is still a toy world; none of this is evidence about *C. elegans*.
+The lab's first night with gr-fec's worm. The method of each step was pre-registered; some readings were post hoc and
+are marked so there. The runs used gr-fec's code unedited, except where a section says otherwise. Every number, its
+command and its caveats live in [the journal of 2026-10-26](../journal/2026-10-26.md); this section only says where each result stands and which section holds it. It
+is still a toy world; none of this is evidence about *C. elegans*.
 
-- **Decisions can be predicted and audited exactly.** A closed-form theory of the turning rule predicted the worm's
-  drift in 36 of 36 conditions (median error 3%, biased high), and set it by equation to within 10% of a chosen
-  target. The quantity behind every turn splits exactly into fourteen named pathways. Each pathway splits into signal
-  and sensor noise, and each learned weight into three exact ledgers: eating credit, hunger blame and the prediction
-  term. The limits:
-    - shares are of the pathways' summed movement, which partly cancels;
-    - the prediction term cancels about 99% of the other two ledgers;
-    - prototypes, habituation, the novelty trace and the integrated drive are not ledgered.
-- **What the audits found in e45**, the best evolved brain:
-    - its decisions are mostly signal;
-    - its gut-stretch pathway is half noise;
-    - its hunger-gated temperature map is about 80% noise, because the gate reads a slow hormone through a noisy
-      sensor;
-    - its learned value peaks over the odourless food, for the band as a whole.
-- **Better worms, and why.**
-    - CMA-ES on e45's genome raised its worst case in gr-fec's never-seen worlds from 0.818 to 0.891. On a fresh
-      panel the lead was +0.25, held over genomes, though it rests on one cold layout. The optimiser had a defect: its
-      update used a step that was never evaluated.
-    - Gene by gene, slow learning (`eta`) and a weak smell instinct (`g_odour`) are the two genes shown to carry part
-      of the win. The single swaps add to a third of it.
-    - **Those two genes' values, moved onto e45**, recovered 95% of the optimised worm's worst-case lead on a fresh
-      panel. No worst-case difference was shown, though it was 0.04 lower in the warm world. The two act together.
-      The values came from the search; only the choice of genes came from the ablation.
-    - On fifteen layouts no one had used, that two-gene worm beat e45 in all fifteen. Its worst case was above the
-      full optimised genome's, an advantage not shown (the journal's § The Hand-Built Worm on Fifteen New Layouts).
-    - A designed change - the brain smoothing its own hunger reading - helped e45 over worms but not over genomes, and
-      no single route carried it.
-    - CMA-ES on the designed brain did not beat CMA-ES alone.
-    - gr-fec's value-steering, ported, hurt the optimised brain. No positive control was run.
-- **New problems found in gr-fec**, beyond § 6:
-    - `DirBody` samples the lateral points after the body's own position, so `consume()` acts at the right-hand point.
-      In [#118](https://github.com/ai-quokka-wannabe/iso-lab/pull/118)'s verification this named the wrong patch, or none, in about 18-20% of on-patch ticks.
-    - The string-hash seeding of § 6 is why gr-fec's recorded e45 scores (0.836, 0.828, 0.892) cannot be reproduced
-      exactly. The lab's protocol gave 0.832, 0.818 and 0.897 for the same worlds.
+- **The turning rule can be predicted by equation and set by it** (journal § gr-fec's Worm by Equation: Its Turning
+  Rule).
+- **The worm's decisions can be audited exactly**, within stated limits:
+    - by pathway (journal § An Audit Trail of Its Decisions);
+    - into signal and sensor noise (§ How Much of Each Decision Is Noise?);
+    - each learned weight into exact ledgers (§ Where Its Learned Values Come From).
+- **A smoothed hunger reading** gave a gain over worms that was not shown over genomes. No single route's gain was
+  shown (journal § gr-fec's Worm by Design: A Smoothed Hunger Reading, and § gr-fec's Worm by Design and
+  Search).
+- **CMA-ES on e45's genome** raised its worst case in gr-fec's never-seen worlds and on a fresh panel; the optimiser
+  had a recorded defect (§ gr-fec's Worm, Optimised).
+- **CMA-ES on the designed brain** did not beat CMA-ES alone. gr-fec's value-steering, ported onto that second brain,
+  hurt it, and no positive control was run (§ gr-fec's Worm by Design and Search).
+- **Why the optimised genome wins**: two of its genes, slow learning and a weak smell instinct, are shown to carry part
+  of it (§ Why the Optimised Worm Wins). Moved onto e45, those two values recovered most of its worst-case lead on the
+  fresh panel, but not every world (§ Building the Worm by Hand). On fifteen new layouts the two-gene worm beat e45
+  everywhere, though being level with the optimised genome was not shown (§ The Hand-Built Worm on Fifteen New
+  Layouts).
+- **New problems found in gr-fec**, beyond § 6: `DirBody` samples the lateral points after the body's own position, so
+  `consume()` acts at the right-hand point; [#118](https://github.com/ai-quokka-wannabe/iso-lab/pull/118)'s
+  verification measured how often that names the wrong patch.
 
 ## Leads Named by gr-fec (Unverified)
 
