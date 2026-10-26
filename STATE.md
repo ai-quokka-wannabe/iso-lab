@@ -251,6 +251,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-26: CMA-ES on gr-fec's e45 genome raised its worst case in gr-fec's never-seen worlds from 0.818 to 0.891 (+0.073,
+  interval +0.053 to +0.100; O1, O2 hold); it switched gut stretch off and cut the smell instinct, as the audits had flagged.
 - 2026-10-26: gr-fec's turning rule by equation: a closed-form drift theory agreed with gr-fec's own code in 36 of
   36 conditions (median error 3%, biased slightly high), and four worms designed by inverting it hit their target drifts
   within 10%.
