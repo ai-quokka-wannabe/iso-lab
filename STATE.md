@@ -251,6 +251,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-26: e45's decisions split into signal and sensor noise: overall mostly signal (N3 fails), gut stretch half noise
+  (N2 fails narrowly); the hunger-gated temperature map is 80% noise, the hunger gate reading a slow hormone through a noisy sensor.
 - 2026-10-26: an exact audit trail of gr-fec's e45 decisions: sixteen pathways sum to the brain's own decision quantity to
   1e-14; in Hardland the smell instinct's share halves, a learned temperature map rises past half, curiosity fades (P1-P4 hold).
 - 2026-10-26: gr-fec's turning rule by equation: a closed-form drift theory agreed with gr-fec's own code in 36 of
