@@ -252,6 +252,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-26: where e45's learned values come from: each weight is an exact ledger of eating credit, hunger blame and
+  correction; the value peak sits over the odourless food (16.65 C, 86-93% of worms), built by credit; the middle's valley by blame.
 - 2026-10-26: a designed change to gr-fec's e45, from the noise audit - the brain smooths its own hunger reading (60 s) -
   raised its worst case in gr-fec's never-seen worlds from 0.818 to 0.853 (+0.036, interval +0.005 to +0.066); D0-D2 hold.
 - 2026-10-26: e45's decisions split into signal and sensor noise: overall mostly signal (N3 fails), gut stretch half noise
