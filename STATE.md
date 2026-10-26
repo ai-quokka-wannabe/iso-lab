@@ -252,6 +252,9 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-26: gr-fec's worm built by hand: e45 with only slow learning and a weak smell instinct recovers 95% of the
+  optimised worm's lead (worst case 0.860 against 0.873, difference not shown); the two genes act together; the lead (+0.25)
+  holds over five random streams (sd 0.003 and 0.011). H0-H3 hold.
 - 2026-10-26: why the optimised gr-fec worm wins, gene by gene: slow learning (-0.050 if undone) and a weak smell instinct
   (-0.024) are shown; the rest of its +0.25 lead lies in combinations; G1 and G2 fail; its r_hunger is worse than e45's.
 - 2026-10-26: where e45's learned values come from: each weight is an exact ledger of eating credit, hunger blame and
