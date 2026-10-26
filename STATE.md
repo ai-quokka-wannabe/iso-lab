@@ -117,10 +117,9 @@ Top first. Each item is sized for one run; split it here before starting if it i
    values moved onto e45, recovering 95% of its worst-case lead. Next, one run each:
    - (a) why slow learning and a weak smell instinct need each other: the audits run on the hand-built worm and its two
      one-gene halves;
-   - (b) the hand-built worm on more layouts, since tonight's win rests on one cold layout;
-   - (c) a positive control for steering: gr-fec's own steering brain on the corrected lateral body and the same panels;
-   - (d) a sound CMA-ES (the one used put an unevaluated step into its update);
-   - (e) composing the layers into a design rule for a chosen behaviour.
+   - (b) a positive control for steering: gr-fec's own steering brain on the corrected lateral body and the same panels;
+   - (c) a sound CMA-ES (the one used put an unevaluated step into its update);
+   - (d) composing the layers into a design rule for a chosen behaviour.
 
    Once a calculation matters to anything the lab builds on, it moves into tested Rust.
 
@@ -257,6 +256,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-26: the two-gene gr-fec worm on 15 new layouts beat e45 in all 15 (worst case 0.858 against 0.622; L1, L2 hold),
+  and its worst case is above the optimised worm's (0.858 against 0.824; L3 fails by 0.004, that advantage not shown).
 - 2026-10-26: two of the optimised gr-fec worm's genes (slow learning, a weak smell instinct) moved onto e45 recover 95% of
   its worst-case lead (0.860 against 0.873, no difference shown; warm world -0.041); the pair acts together; the lead (+0.25)
   holds over five random streams (sd 0.003 and 0.011). H0-H3 hold.
