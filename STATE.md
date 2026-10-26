@@ -113,8 +113,8 @@ Top first. Each item is sized for one run; split it here before starting if it i
 9. **gr-fec's worm by equation** - the maintainer's aim (2026-10-26): understand [gr-fec's worm](docs/research/gr-fec.md)
    well enough to design it for a chosen behaviour, with every decision auditable, instead of evolving it. Done on
    2026-10-26 (that night's journal): the turning rule by equation; exact audits of e45's decisions, their noise and
-   its learned values; a smoothed hunger reading; CMA-ES; the optimised worm's genes swapped back; and a worm built by
-   hand from two of them that matches the optimised one. Next, one run each:
+   its learned values; a smoothed hunger reading; CMA-ES; the optimised worm's genes swapped back; and two of its gene
+   values moved onto e45, recovering 95% of its worst-case lead. Next, one run each:
    - (a) why slow learning and a weak smell instinct need each other: the audits run on the hand-built worm and its two
      one-gene halves;
    - (b) the hand-built worm on more layouts, since tonight's win rests on one cold layout;
@@ -257,8 +257,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
-- 2026-10-26: gr-fec's worm built by hand: e45 with only slow learning and a weak smell instinct recovers 95% of the
-  optimised worm's lead (worst case 0.860 against 0.873, difference not shown); the two genes act together; the lead (+0.25)
+- 2026-10-26: two of the optimised gr-fec worm's genes (slow learning, a weak smell instinct) moved onto e45 recover 95% of
+  its worst-case lead (0.860 against 0.873, no difference shown; warm world -0.041); the pair acts together; the lead (+0.25)
   holds over five random streams (sd 0.003 and 0.011). H0-H3 hold.
 - 2026-10-26: why the optimised gr-fec worm wins, gene by gene: slow learning (-0.050 if undone) and a weak smell instinct
   (-0.024) are shown; the single swaps add to a third of the gap, the rest in combinations or saturation; G1 and G2 fail.
