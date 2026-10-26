@@ -254,7 +254,9 @@ points to the open ones and says what waits on each.
 ## Done
 
 - 2026-10-26: CMA-ES on gr-fec's e45 genome raised its worst case in gr-fec's never-seen worlds from 0.818 to 0.891 (+0.073,
-  interval +0.053 to +0.100, also over genomes; O1, O2 hold); three genes ended at range limits; why it wins is not yet attributed.
+  interval +0.053 to +0.100; over genomes +0.047 to +0.115; O1, O2 hold); three genes ended at range limits; why it wins is not yet attributed.
+- 2026-10-26: where e45's learned values come from: each weight is an exact ledger of eating credit, hunger blame and
+  the prediction term, which cancels about 99% of the other two; the peak sits over the odourless food (86-93% of worms); P1-P3 hold per band.
 - 2026-10-26: a designed change to gr-fec's e45, from the noise audit - the brain smooths its own hunger reading (60 s) -
   raised its worst case in gr-fec's never-seen worlds from 0.818 to 0.853 (+0.036; D0-D2 hold over worms, but over genomes
   the interval, -0.013 to +0.080, includes zero); which of its four routes carries it is not yet shown.
