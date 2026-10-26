@@ -117,7 +117,8 @@ Top first. Each item is sized for one run; split it here before starting if it i
    audit points to, first a hunger reading the brain smooths before gating with it; (b) trace each
    learned weight to the moments of experience that built it (the learner's update is an exact sum over past steps);
    (c) composing the layers to design a worm for a chosen behaviour in a world; (d) for the CMA-ES genome (journal of 2026-10-26, *gr-fec's Worm,
-   Optimised*), run the audits on the winner and ablate it gene by gene to say why it wins. Once the calculations matter
+   Optimised*), run the audits on the winner and ablate it gene by gene to say why it wins; (e) a positive control for
+   steering: gr-fec's own steering brain on the corrected lateral body and tonight's panels. Once the calculations matter
    to anything the lab builds on, they move into tested Rust.
 
 ## To Revisit
