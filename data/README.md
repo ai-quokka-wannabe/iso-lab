@@ -84,7 +84,8 @@ ascending record id: the record id, its features file's name, its size in bytes 
 from even if Zenodo changes. It was written on 2026-10-14 by `cargo run --release --bin list-n2`, run from the
 repository's root (crate `fetch`, toolchain 1.98.0), which applies the survey's rule above
 unchanged; the listing held 1792 records, as on 2026-10-13. Its SHA-256 is
-`cfa9bc5f06748910c604f3593dae2f5fd14fbfb147a661250dfc5362eeb788f7`.
+`cfa9bc5f06748910c604f3593dae2f5fd14fbfb147a661250dfc5362eeb788f7`. Re-run on 2026-10-26 under toolchain 1.99.1, it
+listed the same 1792 records and wrote the same bytes.
 
 ### The Reference Draw
 
@@ -94,7 +95,7 @@ block 1, the development reference (200 features files, 4.87 GB), and nothing is
 and the block size were written in the journal and pushed before the draw (2026-10-14, *The Reference Draw,
 Written Down First*), where the reasons are. It was written by `cargo run --release --bin draw-n2`, run from the
 repository's root; the seed and block size are constants in that command, and its generator is SplitMix64 with a
-Fisher-Yates shuffle (`fetch::draw`). Running it again gives the same bytes; the file's SHA-256 is
+Fisher-Yates shuffle (`fetch::draw`). Running it again gives the same bytes, under toolchain 1.98.0 and, on 2026-10-26, 1.99.1; the file's SHA-256 is
 `8f647d0aac25e620980725d32454615c69cd3f7c67455e6d045008763c2c9e6d`.
 
 ### Fetching a Block
