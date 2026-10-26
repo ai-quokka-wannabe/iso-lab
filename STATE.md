@@ -112,7 +112,7 @@ Top first. Each item is sized for one run; split it here before starting if it i
    delay grades wait on item 1.
 9. **gr-fec's worm by equation** - the maintainer's aim (2026-10-26): understand [gr-fec's worm](docs/research/gr-fec.md)
    well enough to design it for a chosen behaviour, with every decision auditable, instead of evolving it. Done: the
-   turning layer, and an exact audit trail of e45's decisions by sixteen pathways (journal of 2026-10-26, *gr-fec's
+   turning layer, and an exact audit trail of e45's decisions by fourteen pathways (journal of 2026-10-26, *gr-fec's
    Worm by Equation*). Next, one run each: (a) split each pathway's share into signal and sensor noise; (b) trace each
    learned weight to the moments of experience that built it (the learner's update is an exact sum over past steps);
    (c) composing the layers to design a worm for a chosen behaviour in a world. Once the calculations matter
@@ -251,8 +251,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
-- 2026-10-26: an exact audit trail of gr-fec's e45 decisions: sixteen pathways sum to the brain's own decision quantity to
-  1e-14; in Hardland the smell instinct's share halves, a learned temperature map rises past half, curiosity fades (P1-P4 hold).
+- 2026-10-26: an exact audit trail of gr-fec's e45 decisions: fourteen pathways sum to the brain's own decision quantity to
+  1e-14; in Hardland the smell instinct's share halves, a learned temperature map's grows largest, curiosity fades (P1-P4 hold).
 - 2026-10-26: gr-fec's turning rule by equation: a closed-form drift theory agreed with gr-fec's own code in 36 of
   36 conditions (median error 3%, biased slightly high), and four worms designed by inverting it hit their target drifts
   within 10%.
