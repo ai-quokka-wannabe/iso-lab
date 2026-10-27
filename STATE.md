@@ -122,7 +122,8 @@ Top first. Each item is sized for one run; split it here before starting if it i
      layouts), but the rule costs in both rich layouts and one warm one, and the port fell short in cold layouts
      where the rule gains (lost in one, flat in the other); a hunger gate removes the rich-world cost but does worse
      than never steering in two Hardland layouts; next, record what the gated worm does there before another gate;
-   - (c) a sound CMA-ES (the one used put an unevaluated step into its update);
+   - (c) done on 2026-10-27: a sound CMA-ES from two seeds reaches last night's level and again chooses slow learning
+     and a weak nose (K1, K2 hold); neither run converged, and all start from e45's median on one panel;
    - (d) a first rule done on 2026-10-27: in the cold world, multiplying the two levers' remaining failures predicts a
      pair's score from each lever alone (error 0.019, against 0.059 for adding; on the eight fresh cells only just
      better), while mild settings do better than the law; next, why, the same law for other genes and worlds, and
@@ -265,6 +266,8 @@ points to the open ones and says what waits on each.
 
 - 2026-10-27: a hunger gate on value-steering removes its rich-world cost (G2 holds, to within 0.005) but fails in the cold (G1):
   in one cold layout and one warm the gated worm does worse than never steering (−0.17, −0.10). Why is open.
+- 2026-10-27: a sound CMA-ES (no injected mean) from two seeds beats e45's elites by +0.06 to +0.07 on gr-fec's panel and
+  +0.23 to +0.24 on the fresh one (K1), and both runs end with slow learning and a weak nose (K2): two optimiser seeds agree, from one start.
 - 2026-10-27: a positive control for value-steering: gr-fec's result reproduces exactly (P0) and survives the corrected body
   (P1) and fresh cold layouts (+0.19, +0.21; P2), but its sign depends on the world: it costs in both rich layouts and one warm.
 - 2026-10-27: a first design rule for gr-fec's worm: multiplying slow learning's and a weak nose's remaining failures predicts a
