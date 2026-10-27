@@ -48,14 +48,19 @@ told in [the organisation's vision](docs/VISION.md#the-long-arc), and the lab's 
 | [STATE.md](STATE.md) | Where the work stands and what is next; every run reads it first |
 | [docs/PLAN.md](docs/PLAN.md) | The research plan, phase by phase |
 | [docs/hypotheses/](docs/hypotheses/) | Ideas about the brain, each with the behaviour that would confirm or refute it |
+| [docs/benchmark/](docs/benchmark/FEATURES.md) | The benchmark's comparison space, drafted before any brain is scored |
 | [docs/journal/](docs/journal/) | One entry per night: what was tried, what came out, what failed |
-| [docs/research/](docs/research/) | Literature notes: how we know what the plan rests on |
+| [docs/research/](docs/research/) | Literature notes: how we know what the plan rests on; and [what the lab has found](docs/research/findings.md), for the brains up the ladder |
 | [docs/NIGHT_SHIFT.md](docs/NIGHT_SHIFT.md) | How a night starts, and the agents' prompt, word for word |
 | [docs/VISION.md](docs/VISION.md) | The organisation's vision, and the lab's part in it |
 | [docs/DEV_ENV_SETUP.md](docs/DEV_ENV_SETUP.md) | The tools, and the checks exactly as CI runs them |
 | [data/README.md](data/README.md) | Every dataset the lab uses: source, licence, size, checksum |
+| `crates/` | The Rust workspace: `features` (reading the reference skeletons and computing measures), `fetch` (listing, drawing and fetching the reference recordings) and the placeholder Program |
+| [notebooks/](notebooks/) | Jupyter notebooks for thinking: toy tests of hypotheses and checks of measures against the reference data, never what a score depends on |
+| `docs/figures/` | Figures, SVG only, each made by a script or notebook in the repository |
+| [reference/](reference/README.md) | Archives kept as given, read-only - today the maintainer's gr-fec sandbox, whose toy worm the lab takes apart in [docs/research/gr-fec.md](docs/research/gr-fec.md) |
 | `external/` | The world's repositories as submodules pinned by commit - tron-grid-lite, master-control and link - where the lab also makes its contributions to them |
-| [.claude/CLAUDE.md](.claude/CLAUDE.md) | The agents' working rules |
+| [.claude/CLAUDE.md](.claude/CLAUDE.md) | The agents' working rules, and in [.claude/commands/](.claude/commands/) the audits they run |
 
 ## Joining In
 
