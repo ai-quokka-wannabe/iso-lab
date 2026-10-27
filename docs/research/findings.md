@@ -12,7 +12,8 @@ How firmly, in four words:
 - **observed** - seen in a verified run, but not the comparison that run pre-registered;
 - **reading** - an interpretation, not itself tested; a hunch until a run isolates it.
 
-Every result so far is from toy tasks in notebooks, not from a creature on the Grid. A toy result says what a module
+Every result so far is from toy tasks - in notebooks, and in the gr-fec sandbox's toy worm - not from a creature on
+the Grid. A toy result says what a module
 can do in principle; only the benchmark says what a brain needs.
 
 ## Memory and Learning
@@ -82,6 +83,48 @@ the v4 and v5 result sections above.
 *For bigger brains*: before judging a small module, make its training reliable; one collapsed seed can hide or fake an
 effect.
 
+## Designing a Brain
+
+From the toy worm of the maintainer's gr-fec sandbox ([gr-fec.md](gr-fec.md) §§ 9-11), on 2026-10-26 and 2026-10-27.
+Toy worlds, few layouts and body seeds; none of it is evidence about *C. elegans*, and none of it has met the
+benchmark.
+
+### D1. A brain whose drive is a sum of terms can be audited exactly - observed
+
+Every decision of gr-fec's e45 brain split into fourteen pathways that add back to it within about 1e-14, into signal
+and sensor noise, and every learned weight into an exact ledger. Evidence: journal 2026-10-26, § An Audit Trail of
+Its Decisions, § How Much of Each Decision Is Noise?, § Where Its Learned Values Come From.
+*For bigger brains*: keep the drive additive where it can be, and the audit comes free; a fly's learned valuation has
+that shape, if its modules are built so.
+
+### D2. Two repairs of one failure act as alternatives, not partners - pilot
+
+Slow learning and a weak smell instinct each repair their own failure (the nose drags the worm to decoys; fast
+learning leaves its map at chance), and either alone recovers most of the loss: removing both costs far more than
+either. Evidence: journal 2026-10-27, § Why Slow Learning and a Weak Nose Need Each Other.
+*For bigger brains*: an interaction found by removal can be redundancy; check by adding each part alone.
+
+### D3. Multiplying remaining failures predicts a pair of levers - pilot
+
+The two levers' remaining failures, measured alone, multiply to predict a pair's score better than adding their
+gains; mild pairs beat the rule. One world. Evidence: journal 2026-10-27, § A First Design Rule.
+*For bigger brains*: a candidate rule for composing levers without searching every combination - to be tested on
+other genes and worlds first.
+
+### D4. A lever's sign can depend on the world, and a gate can make it worse - pilot
+
+Steering by learned value gained in two cold layouts and cost in rich ones; a hunger gate removed the rich-world cost
+but left the worm below one that never steers in two Hardland layouts, with or without hysteresis. Evidence: journal
+2026-10-27, § A Positive Control for Steering, § Steering Only When Hungry, § Why the Hunger Gate Harms, § A Hunger
+Gate with Hysteresis.
+*For bigger brains*: test every world again after gating a module; a fix in one world is a new claim in all.
+
+### D5. Search finds the same recipe again from one start - pilot
+
+Two seeds of a sound CMA-ES, like the first defective run, chose slow learning and a weak nose. Evidence: journal
+2026-10-27, § A Sound CMA-ES, from Two Seeds.
+*For bigger brains*: search, then ablate, then explain: the levers a search keeps choosing are where to look first.
+
 ## How the Lab Works
 
 Lessons about method, each learned at a cost, for every brain to come.
@@ -114,6 +157,13 @@ Lessons about method, each learned at a cost, for every brain to come.
 - **A fix is a new claim.** Wording changed to answer a verifier introduced a new error of its own at least once (a
   dropped qualifier, in [#52](https://github.com/ai-quokka-wannabe/iso-lab/pull/52)), caught on the next look; re-read a
   fix as sceptically as the first draft.
+- **Smoke-test a module against its switch.** A gate's threshold silently took the name of an attribute gr-fec's brain
+  already had (`H`), and a first smoke test showed the gated worm identical to the plain one (journal 2026-10-27,
+  § Why the Hunger Gate Harms). A switch that does nothing looks exactly like a module that does nothing.
+- **Resolve a conflict by rebuilding from `main`.** Joining both sides of a conflict in STATE.md once duplicated a
+  whole list, caught before the push; take the base's file and re-apply the branch's own lines.
+- **A rate is not a rhythm.** 88 crossings an hour were first read as one every 41 s; a slow signal under fast noise
+  crosses in bursts (journal 2026-10-27, § Why the Hunger Gate Harms).
 - **An event can go missing.** Once a push to a pull request started no CI run at all; a real change, merging the
   base, started one. Never an empty commit (journal 2026-10-14, *Closing the Night*).
 
@@ -124,4 +174,6 @@ Lessons about method, each learned at a cost, for every brain to come.
 - Does the delta rule beat Hebb's rule, once the ablation is computed (M4)?
 - How should a fixed-size memory hold many time scales at once (M2's limit; the hunch
   [F13](../hypotheses/matej-hunches.md#f13-a-memory-that-renormalises-time-shaped-like-mera))?
+- Why do mild pairs of levers beat the multiplying rule (D3), and why does hunger-gated steering fall below no
+  steering in some Hardland layouts (D4)?
 - Which of these does the worm need at all? Only the benchmark can say, and it comes first.

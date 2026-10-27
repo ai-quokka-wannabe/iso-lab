@@ -1,12 +1,9 @@
 # State of the Lab
 
-**Last updated:** 2026-10-15, evening session's end (journal of 2026-10-15): the lab's excess of undefined paused
-frames shown, by counts, to follow largely from the stored skeletons' uneven point spacing - the half-way midbody carries all of the lab's
-smoothness, equal spacing carries that, and states from the toolbox's speed on equally spaced skeletons leave a median
-92% as many published-paused frames undefined as the lab's (its exact plumbing check failing in one record, on
-19 frames traced to one, without moving the call), counted on block 1's further 178 records (fetched in full
-tonight), on which the smoothness findings also replicated.
-The benchmark's choice of rule for the lab's speed is the next step; the pace note's gaps and C18 are unchanged.
+**Last updated:** 2026-10-27, evening (journal of 2026-10-27): six pre-registered, verified experiments on gr-fec's toy
+worm - why slow learning and a weak nose look inseparable, a first rule for composing two levers, a positive control
+for steering, a sound CMA-ES, and two hunger gates on steering; and the repository tidied so its parts are easy to find.
+The benchmark's choice of rule for the lab's speed is still the next step for Phase 0.
 
 ## Where We Are
 
@@ -18,7 +15,9 @@ must be settled before the benchmark is frozen, food first. The Rust workspace r
 the first measures - eight-arc posture and a midbody speed, the latter not yet trusted - and the arena is proven to a
 first life: a placeholder Program, which undulates only, lived fifteen minutes on the Grid and its world replays
 exactly. No creature has been scored.
-[docs/PLAN.md](docs/PLAN.md) says what the phases are and why the benchmark comes before any brain.
+[docs/PLAN.md](docs/PLAN.md) says what the phases are and why the benchmark comes before any brain. Beside the benchmark, the lab takes apart the
+maintainer's toy worm ([docs/research/gr-fec.md](docs/research/gr-fec.md) §§ 9-11) to learn how to design a brain
+rather than search for one; what carries up the ladder is kept in [docs/research/findings.md](docs/research/findings.md).
 
 ## Next
 
@@ -307,175 +306,6 @@ points to the open ones and says what waits on each.
   within 10%.
 - 2026-10-26: Rust toolchain moved to 1.99.1 ([issue #86](https://github.com/ai-quokka-wannabe/iso-lab/issues/86)):
   fmt, doc, clippy and both test profiles clean with no code change; the registry's two manifests re-run to the same bytes.
-- 2026-10-22: H13 loop on five fresh 30-worm populations under the short-interval train: G1 and G3 fail - `dep` and
-  `tau` both within 0.2 for 1 of 5, criterion 1 for 3 of 5; the train's gain does not reach the loop at DEV's size.
-- 2026-10-22: H13 short-interval train (taps every 2 s): trade cost about 13 times the old protocol's; `dep` and `tau`
-  within 0.2 in 8 of 8 seeds on the near noise-free target. 512 worms per candidate under the old protocol: 3 of 4.
-- 2026-10-22: H13 tap protocols: three two-interval designs do not separate `dep` from `tau` (refuted); for intervals of
-  10 s or more a yes-or-no tap assay needs 170 or more worms, against DEV's 30; short-interval trains are untested.
-- 2026-10-22: [#45](https://github.com/ai-quokka-wannabe/iso-lab/pull/45) merged at the maintainer's request: its conflict
-  resolved in favour of main's C13-C17, and its C18 plan kept as a record, marked as parked after failing verification.
-- 2026-10-19: H13 profile of the dep-tau valley: P1 fails (ratio 1.81); the distance is nearly flat along the trade
-  under both protocols, so the fits at the budgets used could not resolve it.
-- 2026-10-19: H13 habituation, a rest protocol with three probe taps: refuted - `dep` and `tau` both within 0.2 for 3
-  of 8 seeds (the old protocol had 5 of 8); `k_rd` within 0.2 for all 8.
-- 2026-10-19: H13 on five fresh populations: criterion 1 passes for 5 of 5, `k_rd` within 0.2 for 4 of 5, no bias
-  in it shown; habituation's `dep` and `tau` both within 0.2 for only 2 of 5.
-- 2026-10-18: H13 loop on DEV, 128 worms and 360 generations: criterion 1 passes for 5 of 5 seeds and `k_rd` is within
-  0.2 for 5 of 5 - the first pass of the rule; `k_rd` still about 1.17 times, `dep` and `tau` off in two.
-- 2026-10-18: H13 long run, 480 generations: L1 and L2 fail; post hoc, the scatter in `k_rd` collapsed (8 of 8 within
-  0.2) while the fall in the mean (1.15 to 1.05 times) is not shown by a paired interval.
-- 2026-10-18: H13 polish test: the smoothing reading weakened (the search's spread already at its 0.02 floor at
-  generation 120 in all 16 fits); a design flaw found (the "polish" widened it); post hoc, 40 more generations moved
-  the estimate towards the truth in 7 of 8 seeds, interval including zero.
-- 2026-10-18: H13 seeds test, eight optimiser seeds on a noise-free target: the fitter is biased on average, 1.15
-  times in `k_rd`, with the shared stream or streams of each seed's own; averaging is not shown to suffice.
-- 2026-10-18: H13 precision test, 12 fresh populations of 30 worms: by its rule the fitter's noise is the larger part of
-  the scatter in `k_rd` (the data's share unresolved; seed 8 above seed 7 in all 12); 15 of 24 fits within 0.2.
-- 2026-10-17: H13 diagnosis: fitter noise (16 worms per candidate) is a real part of the switching-rate bias; 128
-  worms recover it on a noise-free target, while on DEV about a third of the log over-estimate goes and the loop
-  passes 4 of 5, with `k_rd` within 0.2 in 2 (refuted).
-- 2026-10-17: H13 round 5, the two obstacles targeted: refuted (3 of 5 with both changes, 4 needed); pruning right in
-  all 20 loops; the roaming-exit rate too high in every refit.
-- 2026-10-17: H13's proof of concept gathered up: rounds 2 to 4 in one notebook, re-run byte-identical; STATE.md
-  and H13 carry one summary.
-- 2026-10-17: H13 round 4, the whole loop: pruning right in all three seeds; recovery passes for one of three -
-  refuted by the rule set beforehand; a bias in the rate of leaving roaming remains, and an apparent habituation trade (untested).
-- 2026-10-17: H13 round 3: five statistics added from the speed recover all 13 real parameters within the bar
-  (median 0.038, largest 0.35); criterion 1 fails on the decoy alone (`g` 0.059).
-- 2026-10-17: H13 round 2: more search does not recover the hidden brain (a 360-generation fit as good as the truth on
-  its data, still off); one parameter barely seen by the 12 statistics, two trading - the statistics need improving.
-- 2026-10-17: H13's proof of concept on synthetic worms: ablation, pruning and the held-out catch pass (ablation under the
-  chosen reading of the noise); recovery of the hidden brain is refuted - four parameters off by 1.7 to 2.4 times, the
-  decoy not zeroed - with the search, not the statistics, the first suspect.
-- 2026-10-15: the undefined frames follow from the spacing: on 178 records, states from the toolbox's speed on equally
-  spaced skeletons leave a median 0.921 as many published-paused frames undefined as the lab's; plumbing exact in 177.
-- 2026-10-15: block 1 fetched in full; the three roughness findings replicate on its 178 further records:
-  `L`/P 0.328, M/P 0.327, PE/P 0.313 (medians), each below one in every record.
-- 2026-10-15: the centroid of points 21 to 29 slides along the body: with the stored points resampled to equal spacing,
-  the toolbox's speed has 0.305 of its roughness (median), the half-way point 0.325; the stored segments vary by 7.8% within a frame.
-- 2026-10-15: of the eight arcs' two changes, the midbody point alone carries the lab's smoothness: the toolbox's speed with
-  it has 0.325 of the published roughness (median), with the eight-arc direction 1.000; the lab's is 0.326.
-- 2026-10-15: the published speed smoothed to at least the lab's smoothness (moving mean of 5 frames, 3 in two records) leaves
-  0.834 (median over records) as many published-paused frames undefined as the lab's states, supporting smoothness as enough on its own.
-- 2026-10-15: frame-to-frame variation on published paused frames: the lab's speed changes 0.33 (median over records)
-  as much as the published over one frame, 0.55 over a quarter-second; the smoothness hunch survives both lags.
-- 2026-10-15: where the lab's undefined paused frames lie: 52% at the edges of the published paused runs, 29% in long
-  interior gaps, 19% in short runs the rule dropped.
-- 2026-10-15: how the in-band frames fall in time: inside published paused runs, 14.9% (median) of the gaps between
-  the lab's in-band frames are a quarter-second or longer, in every record; the published side is zero by construction.
-- 2026-10-15: the lab's length equals the published (by construction) and its speed matches at the median overall
-  and is lower on nearly-still frames, so the undefined frames are not an upward shift of the speed; their cause is open.
-- 2026-10-15: a midbody of three ends refutes the one-point-jitter reading of the lab's undefined frames: their
-  excess rose from +0.058 to +0.067 (median); paused improved, forward and backward worsened.
-- 2026-10-15: why the lab's states leave more frames undefined: not missing skeletons (0.4%) but the speed's values;
-  in about 40% of those frames the published speed is in its state's band and the lab's (median 3.4% of length a
-  second where paused) is not, the rest are runs the lab's breaks did not bridge or cut short.
-- 2026-10-15: the midbody speed judged by the states it gives: with the published choices it passes the bar in all
-  three states on seventeen records (paused narrowly), the measure of 2026-10-14 fails; the lab's states leave about
-  6% more frames undefined in every record, a one-way bias the bar cannot see.
-- 2026-10-15: the locomotion states (forward, backward, paused) in tested Rust, `features::states`, reproducing the
-  published states on all 602,314 frames of seventeen records.
-- 2026-10-15: the published locomotion states (forward, backward, paused) read at the toolbox's source and reproduced
-  exactly from the published speed and length, on all 602,314 frames of seventeen records.
-- 2026-10-15: the joint-limit issue for tron-grid-lite drafted in full, from the evidence already measured, for the
-  maintainer to file.
-- 2026-10-15: which end is the head: Tierpsy names it mostly by movement, so the head's excess of bends is built in to a degree;
-  no frame-to-frame swap in seventeen records (a planted-swap control catches all 474), 62 candidates across 18,105 gaps.
-- 2026-10-15: the midbody speed with the published choices at eight arcs: 1007405 fails the check again (r 0.9499
-  against 0.95), sixteen records pass; the hunch that the definition's choices cause the departure is refuted.
-- 2026-10-15: the published midbody speed read at its source and reproduced exactly (correlation 1.00000 on two
-  records); the stored skeletons were already smoothed along their length by Tierpsy, not in time.
-- 2026-10-14: C18's model piloted: no cure removed the transition, and the plan's statistic would measure early
-  die-out as much as sharpness; the plan is to be rewritten from it.
-- 2026-10-14: satiety quiescence's source found (You et al. 2008), but its abstract gives no timing and its full text
-  could not be reached (Europe PMC's HTTP 500, PMC's CAPTCHA, not got around); the gap stays, now with its source.
-- 2026-10-14: averaged over neighbouring frames, the bends beyond 0.9 rad barely fall (0.6 to 1.8% per joint at a
-  tenth of a second), on 34 recordings; the head's ratio within 0.002 of the body's, no evidence either way.
-- 2026-10-14: the arena's first life: the placeholder lived all 28 800 ticks of a fifteen-minute life on lavapipe,
-  and Clu replayed its log with all 902 hashes agreeing; 9 intents (0.03%) arrived a tick late and were refused.
-- 2026-10-14: the midbody speed's review taken: no speed where the body has no direction, the notebook pinned to its
-  records and numpy in step; the check's result unchanged.
-- 2026-10-14: a midbody speed at the eight-arc resolution; its check against the dataset's own speed fails in one record
-  of sixteen (correlation 0.947 against the 0.95 required), where the 49-point version agrees; not yet trusted.
-- 2026-10-14: the placeholder Program, `crates/placeholder-worm`: an eight-segment chain undulating at 0.18 Hz and 0.3 rad,
-  its C interface checked against the Grid's published layout; the Grid's loader lists it as usable.
-- 2026-10-14: the Grid builds from `external/` with the Vulkan SDK and runs on lavapipe alone: its three verifications and
-  22 tests pass, and its reference render is recorded as the lab's first arena reference (journal).
-- 2026-10-14: Master Control builds in place from `external/` (the lab's Cargo workspace now excludes it) and passes its
-  own cheap suite, 92 tests, at the pinned commit; the arena's first step.
-- 2026-10-14: smoothing the skeletons along their length lowers the head's share beyond 0.9 rad no more than the body's,
-  the tail's most; the tips stay unsmoothed; 31% of frames (median) still bend beyond it at some joint.
-- 2026-10-14: experiment plans for hunches C19-C24 ([C13-C24.md](docs/hypotheses/experiments/C13-C24.md)); D next.
-- 2026-10-14: experiment plans for hunches C13-C17 ([C13-C24.md](docs/hypotheses/experiments/C13-C24.md)), after four
-  reviews of its pull request; C18 parked, C19-C24 next.
-- 2026-10-14: per joint, the bends beyond the Grid's limit are greatest at the head (median 13% of frames) and fall along
-  the body (medians 3.2 to 4.5% at joints 4 to 6); a smoothing check next.
-- 2026-10-14: the eight-arc posture in Rust, and a first measurement: in 12 reference recordings, 31 to 46% of
-  skeletonised frames bend beyond the Grid's 0.9 rad at some joint; a per-joint breakdown next.
-- 2026-10-14: the pace note gains quiescence after stress (Hill et al. 2014): suppressed up to an hour after a heat shock,
-  a peak 20 minutes after cold; satiety quiescence still a gap.
-- 2026-10-14: the findings kept for the ladder: [docs/research/findings.md](docs/research/findings.md), a ledger of what
-  the lab has tested (failures beside successes) and the lessons of method; H12, a plain worm brain, as a hunch.
-- 2026-10-14: H11 v5, a pilot of binary keys for sharp basins: the settling still no help (-0.22 [-1.07, +0.64] against
-  its ablation, 3 seeds, one collapsed).
-- 2026-10-14: H11 v4, a DeltaNet that settles its cue, derived from v3: 0.75 against DeltaNet's 0.94 at the trained
-  noise, its settling no help at any level; in none of four tests did the settling earn its place.
-- 2026-10-14: H11 v3, recall from a noisy cue: v2's hybrid recalls 0.59 against DeltaNet's 0.94 and softmax's 0.98 at
-  the trained noise, and its settling harms; v4 aims at softmax's lead over DeltaNet (0.98 against 0.94), whose cause is untested.
-- 2026-10-14: H11 v2, a pilot: written by the delta rule in four heads, the hybrid recalls 0.89 (v1: 0.18, another
-  protocol), but it does not beat a DeltaNet memory of the same size (-0.11 [-0.25, +0.03] at 3 seeds).
-- 2026-10-14: H11, a Hebbian Hopfield transformer (the maintainer's hunch), refuted at the toy level: 18% recall
-  against 99.8% for linear attention of the same memory, the settling itself the harm; frozen, the matched Hebbian memory
-  still recalled 92% in streams three times the trained length.
-- 2026-10-14: the lengths of 15 reference recordings: 13 last 15 minutes, one 5 and one 120; the benchmark needs a
-  rule for unequal lengths.
-- 2026-10-14: the reference skeletons read in Rust (crate `features`), identical to h5py's on 13 files; the published
-  feature table is not readable by the pure-Rust readers tried, and the lab will compute its own measures.
-- 2026-10-14: `fetch-block`, which downloads a block of the reference draw and accepts each file only by its MD5,
-  resuming by byte; a run fetched part of block 1, every file checked.
-- 2026-10-14: the reference draw: the 1646 eligible records in one order fixed by seed 20261014 (pre-registered and
-  pushed first), in blocks of 200; block 1, 4.87 GB, is the development reference.
-- 2026-10-14: the eligible manifest of the N2 reference records, written by a Rust tool (`list-n2`): 1792 records
-  listed and 1646 eligible, the counts predicted from the survey.
-- 2026-10-14: the lab's Rust workspace (toolchain 1.98.0 and its furniture taken from master-control and link, a Rust
-  job in CI under `CI Success`) and its first crate, `fetch`, which checks a file against its record's MD5.
-- 2026-10-14: Liu et al. 2018's touch responses read from a figure: classified reversals peak about 0.25 s after a
-  tap, but their classifier's timing is uncertain by up to 2.7 s and onsets are not resolved, so the touch latency
-  stays a gap.
-- 2026-10-14: Ghosh et al. 2012, cited by Mohammadi et al. for the response time, read in full: it does not define a
-  response latency either; the heat reaction times' reference moment stays a gap.
-- 2026-10-14: heat reaction times read from Mohammadi et al. 2013, Figure 2c, by pixel: about 0.33 to 0.25 s for a
-  head stimulus, falling with laser current; what they count from is not stated.
-- 2026-10-14: Roman et al. 2023's fitted thermal-preference time scales added to the pace note (avoidance about 45-83
-  min, habituation about 20 min and known only to a factor of about two, read as hours from a unitless table); Europe
-  PMC's supplementary-files service found to serve figure images.
-- 2026-10-14: the pace note's gaps, a third pass: thermotaxis memory and dispersal over hours without food, AFD's
-  threshold following a hold of at least 15 min, tap habituation's protocol timescales (a review); no fitted τ yet.
-- 2026-10-14: the pace note's gaps, a second pass: receptor latency to nose touch, a smell avoidance latency, the
-  feeding and lethargus time scales; none of the 45 open papers scanned gives a touch-to-reversal latency in text.
-- 2026-10-14: the pace note, a first pass ([docs/research/pace.md](docs/research/pace.md)): latencies to touch,
-  heat and light, the body's rhythm and the time constants of four states, from text only; the gaps are item 1.
-- 2026-10-14: the comparison space drafted ([docs/benchmark/FEATURES.md](docs/benchmark/FEATURES.md)): which
-  measures carry over to the Grid's body and in which units; roaming and dwelling shares fit in 15 minutes, their
-  durations do not; five open questions before freezing, food first.
-- 2026-10-13: the five notes of #21's last verification written into C8 and C12 of
-  [the C1-C12 plans](docs/hypotheses/experiments/C1-C12.md).
-- 2026-10-13: the three notes of #20's last verification carried into
-  [the C1-C12 plans](docs/hypotheses/experiments/C1-C12.md) (C8, C10, C12).
-- 2026-10-13: experiment plans for hunches C1-C12
-  ([docs/hypotheses/experiments/C1-C12.md](docs/hypotheses/experiments/C1-C12.md)).
-- 2026-10-13: experiment plans for hunches B1-B9
-  ([docs/hypotheses/experiments/B.md](docs/hypotheses/experiments/B.md)).
-- 2026-10-13: experiment plans for hunches A9-A15, completing section A
-  ([docs/hypotheses/experiments/A9-A15.md](docs/hypotheses/experiments/A9-A15.md)).
-- 2026-10-13: experiment plans for hunches A1-A8, with the plan format and an index of all 93
-  ([docs/hypotheses/experiments/](docs/hypotheses/experiments/README.md)).
-- 2026-10-13: H10, the maintainer's quantum-like brain, written as a hunch; its first test (phasor against real
-  memory) refuted it at that level, and the test is kept under *To Revisit*.
-- 2026-10-13: the literature note on how worm behaviour is measured,
-  [docs/research/behaviour-measures.md](docs/research/behaviour-measures.md).
-- 2026-10-13: the dataset survey - the Open Worm Movement Database's N2 records chosen for Phase 0, selected by
-  their metadata; the CeMEE data set aside ([data/README.md § The Phase 0 Survey](data/README.md#the-phase-0-survey)).
-- 2026-10-13: the lab opened - repository, rules ([.claude/CLAUDE.md](.claude/CLAUDE.md)), plan, hypotheses,
-  journal and dataset registry.
+
+Earlier work, from 2026-10-13 to 2026-10-22, is recorded night by night in [the journal](docs/journal/); each night's
+entry says what was done and what came of it.

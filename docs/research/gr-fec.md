@@ -324,6 +324,51 @@ is still a toy world; none of this is evidence about *C. elegans*.
   `consume()` acts at the right-hand point; [#118](https://github.com/ai-quokka-wannabe/iso-lab/pull/118)'s
   verification measured how often that names the wrong patch.
 
+## 10. The Second Night (2026-10-27)
+
+Every number, command and caveat lives in [the journal of 2026-10-27](../journal/2026-10-27.md); this section only
+points. Still a toy world.
+
+- **Slow learning and a weak nose are alternatives, not partners**: each repairs its own failure - the nose keeps the
+  worm off decoys, slow learning keeps its temperature map pointing to the food - and either alone recovers most of
+  e45's loss in the cold world (§ Why Slow Learning and a Weak Nose Need Each Other).
+- **A first design rule**: multiplying the two levers' remaining failures predicts a pair's score from each lever
+  alone, better than adding their gains, in one world; mild pairs do better than the rule (§ A First Design Rule).
+- **gr-fec's value-steering is real and its sign depends on the world**: its gain survives the corrected body in two
+  cold layouts, and it costs in both rich layouts and one warm one (§ A Positive Control for Steering).
+- **A sound CMA-ES** reaches the first run's level, and both of its seeds again choose slow learning and a weak nose
+  (§ A Sound CMA-ES, from Two Seeds).
+- **Gating steering on hunger** removes the rich-world cost but leaves the worm below one that never steers in two
+  Hardland layouts; flicker at the threshold was found and then refuted as the cause (§ Steering Only When Hungry,
+  § Why the Hunger Gate Harms, § A Hunger Gate with Hysteresis).
+
+## 11. Where the Lab's Toy-Worm Scripts Are
+
+The scripts that ran these experiments are Python against gr-fec's unedited code, kept outside the repository and
+published in full, with their SHA-256, in the body of the pull request that first used them; a later pull request
+that reuses one names it there. They are evaluation tools for a toy world, not code the lab builds on; anything that
+becomes so moves into tested Rust.
+
+| Script | What it does | Pull request |
+|--------|--------------|--------------|
+| `turn/theory.py`, `turn/sim.py` | The turning rule by equation, and the simulations it is checked against | [#112](https://github.com/ai-quokka-wannabe/iso-lab/pull/112) |
+| `audit/audit.py` | The exact pathway audit of every decision | [#113](https://github.com/ai-quokka-wannabe/iso-lab/pull/113) |
+| `audit2/audit2.py` | The audit split into signal and sensor noise | [#114](https://github.com/ai-quokka-wannabe/iso-lab/pull/114) |
+| `design/gate.py`, `design/boot.py`, `design/boot2.py` | The smoothed hunger reading, and the worm- and genome-level bootstraps | [#115](https://github.com/ai-quokka-wannabe/iso-lab/pull/115) |
+| `opt/opt.py`, `opt/opt_v2.py` | The first CMA-ES, with the recorded defect | [#116](https://github.com/ai-quokka-wannabe/iso-lab/pull/116) |
+| `ledger/ledger.py`, `ledger/pernode.py` | The exact ledgers of each learned weight | [#117](https://github.com/ai-quokka-wannabe/iso-lab/pull/117) |
+| `design/routes.py`, `opt/opt3.py`, `steer/steer3.py` | Routes of the designed change, the second CMA-ES, steering ported | [#118](https://github.com/ai-quokka-wannabe/iso-lab/pull/118) |
+| `genes/swap.py` | The optimised genome's genes swapped back one at a time | [#119](https://github.com/ai-quokka-wannabe/iso-lab/pull/119) |
+| `build/build.py`, `design/bootworld.py` | Genomes built from two parents; a per-world bootstrap | [#120](https://github.com/ai-quokka-wannabe/iso-lab/pull/120) |
+| `layouts/layouts.py`, `layouts/stats.py` | The two-gene worm on fifteen layouts | [#121](https://github.com/ai-quokka-wannabe/iso-lab/pull/121) |
+| `probe/probe.py`, `probe/stats.py` | Why the two genes look as if they need each other | [#123](https://github.com/ai-quokka-wannabe/iso-lab/pull/123) |
+| `sweep/sweep.py`, `sweep/law.py`, `sweep/law_post.py` | The 4 × 4 sweep and the composition law | [#124](https://github.com/ai-quokka-wannabe/iso-lab/pull/124) |
+| `steer/ctl.py`, `steer/ctlstats.py` | The steering positive control, with the corrected body | [#125](https://github.com/ai-quokka-wannabe/iso-lab/pull/125) |
+| `opt4/opt4.py` | The sound CMA-ES | [#126](https://github.com/ai-quokka-wannabe/iso-lab/pull/126) |
+| `gate/gate.py`, `gate/gatestats.py` | Steering behind a hunger gate | [#127](https://github.com/ai-quokka-wannabe/iso-lab/pull/127) |
+| `gate/diag.py`, `gate/diagstats.py` | What the hunger-gated worm does | [#128](https://github.com/ai-quokka-wannabe/iso-lab/pull/128) |
+| `gate/hyst.py`, `gate/hyststats.py` | Steering behind a hunger gate with hysteresis | [#129](https://github.com/ai-quokka-wannabe/iso-lab/pull/129) |
+
 ## Leads Named by gr-fec (Unverified)
 
 Biology: Hedgecock and Russell 1975; Saeki et al. 2001; Mohri et al. 2005; Zhang, Lu and Bargmann 2005;
