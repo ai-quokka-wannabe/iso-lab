@@ -121,8 +121,9 @@ Top first. Each item is sized for one run; split it here before starting if it i
      layouts), but the rule costs in both rich layouts and one warm one, and the port fell short in cold layouts
      where the rule gains (lost in one, flat in the other); a hunger gate removes the rich-world cost but does worse
      than never steering in two Hardland layouts; in one, 75000, its gate opens and shuts a median 88 times an hour,
-     but a gate with hysteresis, switching under once an hour, leaves the harm (flicker refuted); next, test whether
-     steering while fed is what pays in 75000 (a worm that steers only while fed);
+     but a gate with hysteresis, switching under once an hour, leaves the harm (flicker refuted); steering only while
+     fed gains in all four Hardland layouts but keeps a rich-world cost the hunger gates remove; next, why steering only
+     while hungry harms;
    - (c) done on 2026-10-27: a sound CMA-ES from two seeds reaches last night's level and again chooses slow learning
      and a weak nose (K1, K2 hold); neither run converged, and all start from e45's median on one panel;
    - (d) a first rule done on 2026-10-27: in the cold world, multiplying the two levers' remaining failures predicts a
@@ -265,6 +266,9 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-27: value-steering only while fed: +0.14 over never steering in layout 75000 (F1, F2 hold), and above it in all four
+  Hardland layouts, in two of which steering only while hungry harms; but it costs up to −0.057 in rich layouts, which hunger
+  gates avoid.
 - 2026-10-27: `external/` moved to each repository's latest main (link `5a1c6b0`, master-control `2e809e2`, tron-grid-lite
   `081503c`); the arena's reference measurements are unchanged at old and new pins (B1-B3), render digest as on 2026-10-14.
 - 2026-10-27: a hunger gate with hysteresis switches under once an hour (Y1) and keeps the rich-world fix (Y3), but the
