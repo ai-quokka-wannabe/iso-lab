@@ -115,8 +115,9 @@ Top first. Each item is sized for one run; split it here before starting if it i
    2026-10-26 (that night's journal): the turning rule by equation; exact audits of e45's decisions, their noise and
    its learned values; a smoothed hunger reading; CMA-ES; the optimised worm's genes swapped back; and two of its gene
    values moved onto e45, recovering 95% of its worst-case lead. Next, one run each:
-   - (a) why slow learning and a weak smell instinct need each other: the audits run on the hand-built worm and its two
-     one-gene halves;
+   - (a) done on 2026-10-27: they do not need each other - the weak nose keeps e45 off decoys, slow learning steadies
+     its map (and keeps it off decoys too, less), and either alone recovers most of the gap; next, the warm world,
+     where the weak nose's effect is small and mixed;
    - (b) a positive control for steering: gr-fec's own steering brain on the corrected lateral body and the same panels;
    - (c) a sound CMA-ES (the one used put an unevaluated step into its update);
    - (d) composing the layers into a design rule for a chosen behaviour.
@@ -256,6 +257,9 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-27: why slow learning and a weak nose looked as if they needed each other: they are alternatives, not partners.
+  Each alone lifts e45's worst case by about +0.19 to +0.21 (A1 fails): the weak nose cuts decoy time 0.59 to 0.17, slow
+  learning turns the map towards the food, 0.50 to 0.75 (A2-A4 hold), and cuts decoy time too, less. Sub-additive, an OR.
 - 2026-10-26: the two-gene gr-fec worm on 15 new layouts beat e45 in all 15 (worst case 0.858 against 0.622; L1, L2 hold),
   and its worst case is above the optimised worm's (0.858 against 0.824; L3 fails by 0.004, that advantage not shown).
 - 2026-10-26: two of the optimised gr-fec worm's genes (slow learning, a weak smell instinct) moved onto e45 recover 95% of
