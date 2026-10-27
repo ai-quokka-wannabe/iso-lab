@@ -121,8 +121,9 @@ Top first. Each item is sized for one run; split it here before starting if it i
    - (b) done on 2026-10-27: gr-fec's steering gain is real and survives the corrected body (+0.19 to +0.21 in two cold
      layouts), but the rule costs in both rich layouts and one warm one, and the port fell short in cold layouts
      where the rule gains (lost in one, flat in the other); a hunger gate removes the rich-world cost but does worse
-     than never steering in two Hardland layouts; in one, 75000, its gate opens and shuts a median 88 times an hour;
-     next, a gate with hysteresis;
+     than never steering in two Hardland layouts; in one, 75000, its gate opens and shuts a median 88 times an hour,
+     but a gate with hysteresis, switching under once an hour, leaves the harm (flicker refuted); next, test whether
+     steering while fed is what pays in 75000 (a worm that steers only while fed);
    - (c) done on 2026-10-27: a sound CMA-ES from two seeds reaches last night's level and again chooses slow learning
      and a weak nose (K1, K2 hold); neither run converged, and all start from e45's median on one panel;
    - (d) a first rule done on 2026-10-27: in the cold world, multiplying the two levers' remaining failures predicts a
@@ -265,6 +266,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-27: a hunger gate with hysteresis switches under once an hour (Y1) and keeps the rich-world fix (Y3), but the
+  harm in 75000 and 23001 stays (Y2, Y4 fail): the flicker hunch is refuted.
 - 2026-10-27: why the hunger gate harms in layout 75000: not a cycle (C1 fails), not a worse map (C3 fails); of three
   candidates only flicker survives (C2) - the gated worm's gate opens and shuts a median 88 times an hour. A lead, not a cause.
 - 2026-10-27: a hunger gate on value-steering removes its rich-world cost (G2 holds, to within 0.005) but fails in the cold (G1):
