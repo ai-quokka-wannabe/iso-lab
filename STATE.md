@@ -263,7 +263,7 @@ points to the open ones and says what waits on each.
 
 ## Done
 
-- 2026-10-27: a hunger gate on value-steering removes its rich-world cost exactly (G2 holds) but fails in the cold (G1):
+- 2026-10-27: a hunger gate on value-steering removes its rich-world cost (G2 holds, to within 0.005) but fails in the cold (G1):
   in one cold layout and one warm the gated worm does worse than never steering (−0.17, −0.10). Why is open.
 - 2026-10-27: a positive control for value-steering: gr-fec's result reproduces exactly (P0) and survives the corrected body
   (P1) and fresh cold layouts (+0.19, +0.21; P2), but its sign depends on the world: it costs in both rich layouts and one warm.
