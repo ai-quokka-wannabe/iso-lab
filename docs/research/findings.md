@@ -165,6 +165,9 @@ Lessons about method, each learned at a cost, for every brain to come.
   2026-10-27, § Why the Hunger Gate Harms). A switch that does nothing looks exactly like a module that does nothing.
 - **A rate is not a rhythm.** 88 crossings an hour were first read as one every 41 s; a slow signal under fast noise
   crosses in bursts (journal 2026-10-27, § Why the Hunger Gate Harms).
+- **`git submodule update` puts the recorded pins back.** A submodule moved by hand and then updated runs the old
+  commit; check out, record, then build (journal 2026-10-27, § The World Moved to Its Latest Main). And a `pkill -f`
+  whose pattern appears in its own command kills the shell running it; match a bracketed pattern or a process id.
 - **An event can go missing.** Once a push to a pull request started no CI run at all; a real change, merging the
   base, started one. Never an empty commit (journal 2026-10-14, *Closing the Night*).
 

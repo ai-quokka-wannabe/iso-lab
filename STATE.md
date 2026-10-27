@@ -265,6 +265,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-27: `external/` moved to each repository's latest main (link `5a1c6b0`, master-control `2e809e2`, tron-grid-lite
+  `081503c`); the arena's reference measurements are unchanged at old and new pins (B1-B3), render digest as on 2026-10-14.
 - 2026-10-27: a hunger gate with hysteresis switches under once an hour (Y1) and keeps the rich-world fix (Y3), but the
   harm in 75000 and 23001 stays (Y2, Y4 fail): the flicker hunch is refuted.
 - 2026-10-27: why the hunger gate harms in layout 75000: not a cycle (C1 fails), not a worse map (C3 fails); of three
