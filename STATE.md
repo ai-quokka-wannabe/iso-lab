@@ -122,6 +122,15 @@ Top first. Each item is sized for one run; split it here before starting if it i
    - (c) done on 2026-10-27: a sound CMA-ES from two seeds reaches last night's level and again chooses slow learning
      and a weak nose (K1, K2 hold); neither run converged;
    - (d) composing the layers into a design rule for a chosen behaviour.
+   - (b) done on 2026-10-27: gr-fec's steering gain is real and survives the corrected body (+0.19 to +0.21 in two cold
+     layouts), but the rule costs in both rich layouts and one warm one, and the port fell short in cold layouts
+     where the rule gains (lost in one, flat in the other); next, why it costs, and a gate that keeps the gain without the cost (steer only when hungry, or only
+     when the map is confident);
+   - (c) a sound CMA-ES (the one used put an unevaluated step into its update);
+   - (d) a first rule done on 2026-10-27: in the cold world, multiplying the two levers' remaining failures predicts a
+     pair's score from each lever alone (error 0.019, against 0.059 for adding; on the eight fresh cells only just
+     better), while mild settings do better than the law; next, why, the same law for other genes and worlds, and
+     the composition of the turning rule with the learned map.
 
    Once a calculation matters to anything the lab builds on, it moves into tested Rust.
 
@@ -260,6 +269,10 @@ points to the open ones and says what waits on each.
 
 - 2026-10-27: a sound CMA-ES (no injected mean) from two seeds beats e45's elites by +0.06 to +0.07 on gr-fec's panel and
   +0.23 to +0.24 on the fresh one (K1), and both runs end with slow learning and a weak nose (K2): three searches agree.
+- 2026-10-27: a positive control for value-steering: gr-fec's result reproduces exactly (P0) and survives the corrected body
+  (P1) and fresh cold layouts (+0.19, +0.21; P2), but its sign depends on the world: it costs in both rich layouts and one warm.
+- 2026-10-27: a first design rule for gr-fec's worm: multiplying slow learning's and a weak nose's remaining failures predicts a
+  4 x 4 sweep's interior from its edges (mean error 0.0185, D1 holds; additive 0.0591, D2 holds), one world; mild pairs beat it.
 - 2026-10-27: why slow learning and a weak nose looked as if they needed each other: they are alternatives, not partners.
   Each alone lifts e45's worst case by about +0.19 to +0.21 (A1 fails): the weak nose cuts decoy time 0.59 to 0.17, slow
   learning turns the map towards the food, 0.50 to 0.75 (A2-A4 hold), and cuts decoy time too, less. Sub-additive, an OR.
