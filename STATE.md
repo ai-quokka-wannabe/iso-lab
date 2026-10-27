@@ -118,9 +118,10 @@ Top first. Each item is sized for one run; split it here before starting if it i
    - (a) done on 2026-10-27: they do not need each other - the weak nose keeps e45 off decoys, slow learning steadies
      its map (and keeps it off decoys too, less), and either alone recovers most of the gap; next, the warm world,
      where the weak nose's effect is small and mixed;
-   - (b) done on 2026-10-27: gr-fec's steering gain is real and survives the corrected body (+0.19 to +0.21 in cold
-     worlds), but the rule costs in rich worlds and one warm one; next, a gate that keeps the cold-world gain without
-     the cost (steer only when hungry, or only when the map is confident);
+   - (b) done on 2026-10-27: gr-fec's steering gain is real and survives the corrected body (+0.19 to +0.21 in two cold
+     layouts), but the rule costs in both rich layouts and one warm one, and the port lost in cold layouts where the
+     rule gains; next, why it costs, and a gate that keeps the gain without the cost (steer only when hungry, or only
+     when the map is confident);
    - (c) a sound CMA-ES (the one used put an unevaluated step into its update);
    - (d) composing the layers into a design rule for a chosen behaviour.
 
@@ -260,7 +261,7 @@ points to the open ones and says what waits on each.
 ## Done
 
 - 2026-10-27: a positive control for value-steering: gr-fec's result reproduces exactly (P0) and survives the corrected body
-  (P1) and fresh cold layouts (+0.19, +0.21; P2), but the rule lowers the score in both rich layouts and one warm one.
+  (P1) and fresh cold layouts (+0.19, +0.21; P2), but its sign depends on the world: it costs in both rich layouts and one warm.
 - 2026-10-27: why slow learning and a weak nose looked as if they needed each other: they are alternatives, not partners.
   Each alone lifts e45's worst case by about +0.19 to +0.21 (A1 fails): the weak nose cuts decoy time 0.59 to 0.17, slow
   learning turns the map towards the food, 0.50 to 0.75 (A2-A4 hold), and cuts decoy time too, less. Sub-additive, an OR.
