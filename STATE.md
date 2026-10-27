@@ -120,9 +120,10 @@ Top first. Each item is sized for one run; split it here before starting if it i
      where the weak nose's effect is small and mixed;
    - (b) a positive control for steering: gr-fec's own steering brain on the corrected lateral body and the same panels;
    - (c) a sound CMA-ES (the one used put an unevaluated step into its update);
-   - (d) a first rule done on 2026-10-27: in the cold world the two levers compose as independent failures, so a pair's
-     score follows from each lever measured alone (error 0.019, against 0.059 for adding; a floor, not exact); next,
-     the same law for other genes and worlds, and the composition of the turning rule with the learned map.
+   - (d) a first rule done on 2026-10-27: in the cold world, multiplying the two levers' remaining failures predicts a
+     pair's score from each lever alone (error 0.019, against 0.059 for adding; on the eight fresh cells only just
+     better), while mild settings do better than the law; next, why, the same law for other genes and worlds, and
+     the composition of the turning rule with the learned map.
 
    Once a calculation matters to anything the lab builds on, it moves into tested Rust.
 
@@ -259,8 +260,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
-- 2026-10-27: a first design rule for gr-fec's worm: slow learning and a weak nose combine as independent failures, so a 4 x 4
-  sweep's interior is predicted from its edges (mean error 0.0185, D1 holds; additive 0.0591, D2 holds), one world.
+- 2026-10-27: a first design rule for gr-fec's worm: multiplying slow learning's and a weak nose's remaining failures predicts a
+  4 x 4 sweep's interior from its edges (mean error 0.0185, D1 holds; additive 0.0591, D2 holds), one world; mild pairs beat it.
 - 2026-10-27: why slow learning and a weak nose looked as if they needed each other: they are alternatives, not partners.
   Each alone lifts e45's worst case by about +0.19 to +0.21 (A1 fails): the weak nose cuts decoy time 0.59 to 0.17, slow
   learning turns the map towards the food, 0.50 to 0.75 (A2-A4 hold), and cuts decoy time too, less. Sub-additive, an OR.
