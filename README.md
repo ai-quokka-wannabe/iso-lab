@@ -55,8 +55,8 @@ told in [the organisation's vision](docs/VISION.md#the-long-arc), and the lab's 
 | [docs/VISION.md](docs/VISION.md) | The organisation's vision, and the lab's part in it |
 | [docs/DEV_ENV_SETUP.md](docs/DEV_ENV_SETUP.md) | The tools, and the checks exactly as CI runs them |
 | [data/README.md](data/README.md) | Every dataset the lab uses: source, licence, size, checksum |
-| `crates/` | The Rust workspace: the feature extraction, the fetch tool and the placeholder Program |
-| [notebooks/](notebooks/) | Jupyter notebooks for thinking: toy tests of hypotheses, never what a score depends on |
+| `crates/` | The Rust workspace: `features` (reading the reference skeletons and computing measures), `fetch` (listing, drawing and fetching the reference recordings) and the placeholder Program |
+| [notebooks/](notebooks/) | Jupyter notebooks for thinking: toy tests of hypotheses and checks of measures against the reference data, never what a score depends on |
 | `docs/figures/` | Figures, SVG only, each made by a script or notebook in the repository |
 | [reference/](reference/README.md) | Archives kept as given, read-only - today the maintainer's gr-fec sandbox, whose toy worm the lab takes apart in [docs/research/gr-fec.md](docs/research/gr-fec.md) |
 | `external/` | The world's repositories as submodules pinned by commit - tron-grid-lite, master-control and link - where the lab also makes its contributions to them |

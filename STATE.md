@@ -1,8 +1,8 @@
 # State of the Lab
 
-**Last updated:** 2026-10-27, evening (journal of 2026-10-27): six pre-registered, verified experiments on gr-fec's toy
+**Last updated:** 2026-10-27, evening (journal of 2026-10-27): seven pre-registered, verified experiments on gr-fec's toy
 worm - why slow learning and a weak nose look inseparable, a first rule for composing two levers, a positive control
-for steering, a sound CMA-ES, and two hunger gates on steering; and the repository tidied so its parts are easy to find.
+for steering, a sound CMA-ES, two hunger gates on steering and a diagnosis between them; and the repository tidied so its parts are easy to find.
 The benchmark's choice of rule for the lab's speed is still the next step for Phase 0.
 
 ## Where We Are

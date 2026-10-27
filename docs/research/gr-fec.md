@@ -345,21 +345,22 @@ points. Still a toy world.
 ## 11. Where the Lab's Toy-Worm Scripts Are
 
 The scripts that ran these experiments are Python against gr-fec's unedited code, kept outside the repository and
-published in full, with their SHA-256, in the body of the pull request that first used them; a later pull request
-that reuses one names it there. They are evaluation tools for a toy world, not code the lab builds on; anything that
-becomes so moves into tested Rust.
+published in full in the body of the pull request that first used them - `opt/opt_v2.py` as its diff from `opt/opt.py`
+in [#116](https://github.com/ai-quokka-wannabe/iso-lab/pull/116). Each one's SHA-256 is given there or in the
+journal section that ran it, in some bodies shortened; a later pull request that reuses one names it. They are
+evaluation tools for a toy world, not code the lab builds on; anything that becomes so moves into tested Rust.
 
 | Script | What it does | Pull request |
 |--------|--------------|--------------|
 | `turn/theory.py`, `turn/sim.py` | The turning rule by equation, and the simulations it is checked against | [#112](https://github.com/ai-quokka-wannabe/iso-lab/pull/112) |
-| `audit/audit.py` | The exact pathway audit of every decision | [#113](https://github.com/ai-quokka-wannabe/iso-lab/pull/113) |
-| `audit2/audit2.py` | The audit split into signal and sensor noise | [#114](https://github.com/ai-quokka-wannabe/iso-lab/pull/114) |
+| `audit/audit.py`, `diag/cancel.py` | The exact pathway audit of every decision, and how much its pathways cancel | [#113](https://github.com/ai-quokka-wannabe/iso-lab/pull/113) |
+| `audit2/audit2.py`, `audit2/redfirst.py` | The audit split into signal and sensor noise, and its red-first check | [#114](https://github.com/ai-quokka-wannabe/iso-lab/pull/114) |
 | `design/gate.py`, `design/boot.py`, `design/boot2.py` | The smoothed hunger reading, and the worm- and genome-level bootstraps | [#115](https://github.com/ai-quokka-wannabe/iso-lab/pull/115) |
 | `opt/opt.py`, `opt/opt_v2.py` | The first CMA-ES, with the recorded defect | [#116](https://github.com/ai-quokka-wannabe/iso-lab/pull/116) |
-| `ledger/ledger.py`, `ledger/pernode.py` | The exact ledgers of each learned weight | [#117](https://github.com/ai-quokka-wannabe/iso-lab/pull/117) |
+| `ledger/ledger.py`, `ledger/pernode.py`, `ledger/redfirst.py` | Exact ledgers of each learned weight; red-first check | [#117](https://github.com/ai-quokka-wannabe/iso-lab/pull/117) |
 | `design/routes.py`, `opt/opt3.py`, `steer/steer3.py` | Routes of the designed change, the second CMA-ES, steering ported | [#118](https://github.com/ai-quokka-wannabe/iso-lab/pull/118) |
-| `genes/swap.py` | The optimised genome's genes swapped back one at a time | [#119](https://github.com/ai-quokka-wannabe/iso-lab/pull/119) |
-| `build/build.py`, `design/bootworld.py` | Genomes built from two parents; a per-world bootstrap | [#120](https://github.com/ai-quokka-wannabe/iso-lab/pull/120) |
+| `genes/swap.py`, `build/build.py` | The optimised genome's genes swapped back one at a time; genomes built from two parents | [#119](https://github.com/ai-quokka-wannabe/iso-lab/pull/119) |
+| `design/bootworld.py` | A per-world bootstrap (`build.py` reused) | [#120](https://github.com/ai-quokka-wannabe/iso-lab/pull/120) |
 | `layouts/layouts.py`, `layouts/stats.py` | The two-gene worm on fifteen layouts | [#121](https://github.com/ai-quokka-wannabe/iso-lab/pull/121) |
 | `probe/probe.py`, `probe/stats.py` | Why the two genes look as if they need each other | [#123](https://github.com/ai-quokka-wannabe/iso-lab/pull/123) |
 | `sweep/sweep.py`, `sweep/law.py`, `sweep/law_post.py` | The 4 × 4 sweep and the composition law | [#124](https://github.com/ai-quokka-wannabe/iso-lab/pull/124) |

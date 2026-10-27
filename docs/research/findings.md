@@ -89,19 +89,21 @@ From the toy worm of the maintainer's gr-fec sandbox ([gr-fec.md](gr-fec.md) §�
 Toy worlds, few layouts and body seeds; none of it is evidence about *C. elegans*, and none of it has met the
 benchmark.
 
-### D1. A brain whose drive is a sum of terms can be audited exactly - observed
+### D1. A brain whose drive is a sum of terms can be audited exactly - tested
 
-Every decision of gr-fec's e45 brain split into fourteen pathways that add back to it within about 1e-14, into signal
-and sensor noise, and every learned weight into an exact ledger. Evidence: journal 2026-10-26, § An Audit Trail of
-Its Decisions, § How Much of Each Decision Is Noise?, § Where Its Learned Values Come From.
-*For bigger brains*: keep the drive additive where it can be, and the audit comes free; a fly's learned valuation has
-that shape, if its modules are built so.
+Every decision of gr-fec's e45 brain split into fourteen pathways that add back to it within about 1e-14, and into
+signal and sensor noise; every learned weight split into three ledgers that sum to it within 1e-9, the bound
+registered (five lives each, verified). Evidence: journal 2026-10-26, § An Audit Trail of Its Decisions, § How Much
+of Each Decision Is Noise?, § Where Its Learned Values Come From.
+*For bigger brains*: keep the drive additive where it can be, and the audit comes free; whether a bigger animal's
+learned valuation can be built in that shape is *a hunch*, untested.
 
 ### D2. Two repairs of one failure act as alternatives, not partners - pilot
 
-Slow learning and a weak smell instinct each repair their own failure (the nose drags the worm to decoys; fast
-learning leaves its map at chance), and either alone recovers most of the loss: removing both costs far more than
-either. Evidence: journal 2026-10-27, § Why Slow Learning and a Weak Nose Need Each Other.
+The weak smell instinct keeps the worm off decoys; slow learning steadies its temperature map, which fast learning
+leaves at chance, and also cuts its time near decoys, less. Either alone recovers most of the loss and the gains are
+sub-additive - consistent with, not shown to explain, removing both from the optimised genome costing far more than
+either (journal 2026-10-26). Evidence: journal 2026-10-27, § Why Slow Learning and a Weak Nose Need Each Other.
 *For bigger brains*: an interaction found by removal can be redundancy; check by adding each part alone.
 
 ### D3. Multiplying remaining failures predicts a pair of levers - pilot
@@ -158,10 +160,9 @@ Lessons about method, each learned at a cost, for every brain to come.
   dropped qualifier, in [#52](https://github.com/ai-quokka-wannabe/iso-lab/pull/52)), caught on the next look; re-read a
   fix as sceptically as the first draft.
 - **Smoke-test a module against its switch.** A gate's threshold silently took the name of an attribute gr-fec's brain
-  already had (`H`), and a first smoke test showed the gated worm identical to the plain one (journal 2026-10-27,
-  § Why the Hunger Gate Harms). A switch that does nothing looks exactly like a module that does nothing.
-- **Resolve a conflict by rebuilding from `main`.** Joining both sides of a conflict in STATE.md once duplicated a
-  whole list, caught before the push; take the base's file and re-apply the branch's own lines.
+  already had (`H`), and a first smoke test showed the gated worm identical to the plain one
+  ([#128](https://github.com/ai-quokka-wannabe/iso-lab/pull/128)'s description; the clash itself is in journal
+  2026-10-27, § Why the Hunger Gate Harms). A switch that does nothing looks exactly like a module that does nothing.
 - **A rate is not a rhythm.** 88 crossings an hour were first read as one every 41 s; a slow signal under fast noise
   crosses in bursts (journal 2026-10-27, § Why the Hunger Gate Harms).
 - **An event can go missing.** Once a push to a pull request started no CI run at all; a real change, merging the
