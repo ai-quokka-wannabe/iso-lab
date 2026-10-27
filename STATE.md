@@ -119,7 +119,8 @@ Top first. Each item is sized for one run; split it here before starting if it i
      its map (and keeps it off decoys too, less), and either alone recovers most of the gap; next, the warm world,
      where the weak nose's effect is small and mixed;
    - (b) a positive control for steering: gr-fec's own steering brain on the corrected lateral body and the same panels;
-   - (c) a sound CMA-ES (the one used put an unevaluated step into its update);
+   - (c) done on 2026-10-27: a sound CMA-ES from two seeds reaches last night's level and again chooses slow learning
+     and a weak nose (K1, K2 hold); neither run converged;
    - (d) composing the layers into a design rule for a chosen behaviour.
 
    Once a calculation matters to anything the lab builds on, it moves into tested Rust.
@@ -257,6 +258,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-27: a sound CMA-ES (no injected mean) from two seeds beats e45's elites by +0.06 to +0.07 on gr-fec's panel and
+  +0.23 to +0.24 on the fresh one (K1), and both runs end with slow learning and a weak nose (K2): three searches agree.
 - 2026-10-27: why slow learning and a weak nose looked as if they needed each other: they are alternatives, not partners.
   Each alone lifts e45's worst case by about +0.19 to +0.21 (A1 fails): the weak nose cuts decoy time 0.59 to 0.17, slow
   learning turns the map towards the food, 0.50 to 0.75 (A2-A4 hold), and cuts decoy time too, less. Sub-additive, an OR.
