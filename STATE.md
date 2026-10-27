@@ -119,8 +119,8 @@ Top first. Each item is sized for one run; split it here before starting if it i
      its map (and keeps it off decoys too, less), and either alone recovers most of the gap; next, the warm world,
      where the weak nose's effect is small and mixed;
    - (b) done on 2026-10-27: gr-fec's steering gain is real and survives the corrected body (+0.19 to +0.21 in two cold
-     layouts), but the rule costs in both rich layouts and one warm one, and the port lost in cold layouts where the
-     rule gains; next, why it costs, and a gate that keeps the gain without the cost (steer only when hungry, or only
+     layouts), but the rule costs in both rich layouts and one warm one, and the port fell short in cold layouts
+     where the rule gains (lost in one, flat in the other); next, why it costs, and a gate that keeps the gain without the cost (steer only when hungry, or only
      when the map is confident);
    - (c) a sound CMA-ES (the one used put an unevaluated step into its update);
    - (d) composing the layers into a design rule for a chosen behaviour.
