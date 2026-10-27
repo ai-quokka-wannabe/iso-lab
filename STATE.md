@@ -121,7 +121,7 @@ Top first. Each item is sized for one run; split it here before starting if it i
    - (b) done on 2026-10-27: gr-fec's steering gain is real and survives the corrected body (+0.19 to +0.21 in two cold
      layouts), but the rule costs in both rich layouts and one warm one, and the port fell short in cold layouts
      where the rule gains (lost in one, flat in the other); a hunger gate removes the rich-world cost but does worse than never steering in two
-     Hardland layouts, where its steering flickers on and off about every 40 s; next, a gate with hysteresis;
+     Hardland layouts; in one, 75000, its gate opens and shuts a median 88 times an hour; next, a gate with hysteresis;
    - (c) a sound CMA-ES (the one used put an unevaluated step into its update);
    - (d) a first rule done on 2026-10-27: in the cold world, multiplying the two levers' remaining failures predicts a
      pair's score from each lever alone (error 0.019, against 0.059 for adding; on the eight fresh cells only just
@@ -264,7 +264,7 @@ points to the open ones and says what waits on each.
 ## Done
 
 - 2026-10-27: why the hunger gate harms in layout 75000: not a cycle (C1 fails), not a worse map (C3 fails); of three
-  candidates only flicker survives (C2) - the gated worm's steering switches every ~40 s. A lead, not yet a cause.
+  candidates only flicker survives (C2) - the gated worm's gate opens and shuts a median 88 times an hour. A lead, not a cause.
 - 2026-10-27: a positive control for value-steering: gr-fec's result reproduces exactly (P0) and survives the corrected body
   (P1) and fresh cold layouts (+0.19, +0.21; P2), but its sign depends on the world: it costs in both rich layouts and one warm.
 - 2026-10-27: a first design rule for gr-fec's worm: multiplying slow learning's and a weak nose's remaining failures predicts a
