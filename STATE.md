@@ -118,7 +118,10 @@ Top first. Each item is sized for one run; split it here before starting if it i
    - (a) done on 2026-10-27: they do not need each other - the weak nose keeps e45 off decoys, slow learning steadies
      its map (and keeps it off decoys too, less), and either alone recovers most of the gap; next, the warm world,
      where the weak nose's effect is small and mixed;
-   - (b) a positive control for steering: gr-fec's own steering brain on the corrected lateral body and the same panels;
+   - (b) done on 2026-10-27: gr-fec's steering gain is real and survives the corrected body (+0.19 to +0.21 in two cold
+     layouts), but the rule costs in both rich layouts and one warm one, and the port fell short in cold layouts
+     where the rule gains (lost in one, flat in the other); next, why it costs, and a gate that keeps the gain without the cost (steer only when hungry, or only
+     when the map is confident);
    - (c) a sound CMA-ES (the one used put an unevaluated step into its update);
    - (d) a first rule done on 2026-10-27: in the cold world, multiplying the two levers' remaining failures predicts a
      pair's score from each lever alone (error 0.019, against 0.059 for adding; on the eight fresh cells only just
@@ -260,6 +263,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-27: a positive control for value-steering: gr-fec's result reproduces exactly (P0) and survives the corrected body
+  (P1) and fresh cold layouts (+0.19, +0.21; P2), but its sign depends on the world: it costs in both rich layouts and one warm.
 - 2026-10-27: a first design rule for gr-fec's worm: multiplying slow learning's and a weak nose's remaining failures predicts a
   4 x 4 sweep's interior from its edges (mean error 0.0185, D1 holds; additive 0.0591, D2 holds), one world; mild pairs beat it.
 - 2026-10-27: why slow learning and a weak nose looked as if they needed each other: they are alternatives, not partners.
