@@ -120,8 +120,8 @@ Top first. Each item is sized for one run; split it here before starting if it i
      where the weak nose's effect is small and mixed;
    - (b) done on 2026-10-27: gr-fec's steering gain is real and survives the corrected body (+0.19 to +0.21 in two cold
      layouts), but the rule costs in both rich layouts and one warm one, and the port fell short in cold layouts
-     where the rule gains (lost in one, flat in the other); next, why it costs, and a gate that keeps the gain without the cost (steer only when hungry, or only
-     when the map is confident);
+     where the rule gains (lost in one, flat in the other); a hunger gate removes the rich-world cost but does worse
+     than never steering in two Hardland layouts; next, record what the gated worm does there before another gate;
    - (c) a sound CMA-ES (the one used put an unevaluated step into its update);
    - (d) a first rule done on 2026-10-27: in the cold world, multiplying the two levers' remaining failures predicts a
      pair's score from each lever alone (error 0.019, against 0.059 for adding; on the eight fresh cells only just
@@ -263,6 +263,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-27: a hunger gate on value-steering removes its rich-world cost exactly (G2 holds) but fails in the cold (G1):
+  in one cold layout and one warm the gated worm does worse than never steering (−0.17, −0.10). Why is open.
 - 2026-10-27: a positive control for value-steering: gr-fec's result reproduces exactly (P0) and survives the corrected body
   (P1) and fresh cold layouts (+0.19, +0.21; P2), but its sign depends on the world: it costs in both rich layouts and one warm.
 - 2026-10-27: a first design rule for gr-fec's worm: multiplying slow learning's and a weak nose's remaining failures predicts a
