@@ -1,7 +1,8 @@
 # State of the Lab
 
-**Last updated:** 2026-10-28 (journal of 2026-10-28): the composition law for gr-fec's toy worm tested beyond its
-first world and pair, and where its hungry steering points. Before it, on 2026-10-27, seven verified experiments on the toy worm and the repository tidied.
+**Last updated:** 2026-10-28 (journal of 2026-10-28): gr-fec's toy worm - the composition law tested in three more
+worlds and with a second pair, and where its hungry steering points. Before it, on 2026-10-27, seven verified
+experiments on the toy worm and the repository tidied.
 The benchmark's choice of rule for the lab's speed is still the next step for Phase 0.
 
 ## Where We Are
@@ -133,7 +134,10 @@ Top first. Each item is sized for one run; split it here before starting if it i
      the turning rule's `tau` (errors 0.012, 0.013), but there one lever barely moves the score and ignoring it does as
      well (post hoc), and the hunch that a weak nose also cleans the map held on its registered point estimates but
      not post hoc (both intervals include zero); next, a
-     second pair of two strong levers, and why mild pairs beat the law.
+     second pair of two strong levers, and why mild pairs beat the law; on 2026-10-28 the law held for `eta` and
+     `g_odour` in two fresh worlds where both levers work (errors 0.018 and 0.011, beating adding and either lever
+     alone), and the mild-pair synergy was not detected there (though cold 82003 cannot exclude it); next, other pairs of strong
+     levers, and three at once.
 
    Once a calculation matters to anything the lab builds on, it moves into tested Rust.
 
@@ -270,6 +274,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-28: the OR composition law for slow learning and a weak nose in two fresh worlds (cold 82003, warm 82104):
+  S1-S3 hold in both (errors 0.018, 0.011; better than adding and than either lever alone); S4, the mild-pair synergy, fails.
 - 2026-10-28: where hungry steering points in layout 75000: towards cold 0.483 of the time, fed 0.572 (D1 holds);
   the value peak is the same concept at hunger 1 and 0.2 in about 98% of samples (D2 fails): the peak does not explain the harm.
 - 2026-10-28: the OR composition law in the warm world and for `eta` with `tau` (W1, T1 hold: 0.012, 0.013; W2
