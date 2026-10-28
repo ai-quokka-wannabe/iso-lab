@@ -129,7 +129,8 @@ Top first. Each item is sized for one run; split it here before starting if it i
      pair's score from each lever alone (error 0.019, against 0.059 for adding; on the eight fresh cells only just
      better), while mild settings do better than the law; on 2026-10-28 it held in the warm world and for `eta` with
      the turning rule's `tau` (errors 0.012, 0.013), but there one lever barely moves the score and ignoring it does as
-     well (post hoc), and the hunch that a weak nose also cleans the map is unsupported (intervals include zero); next, a
+     well (post hoc), and the hunch that a weak nose also cleans the map held on its registered point estimates but
+     not post hoc (both intervals include zero); next, a
      second pair of two strong levers, and why mild pairs beat the law.
 
    Once a calculation matters to anything the lab builds on, it moves into tested Rust.
