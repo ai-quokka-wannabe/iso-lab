@@ -378,6 +378,7 @@ evaluation tools for a toy world, not code the lab builds on; anything that beco
 | `who/who2.py`, `who/who2stats.py`, `who/pairing.py` | Who loses under the hunger gate, by map (uninformative) | [#138](https://github.com/ai-quokka-wannabe/iso-lab/pull/138) |
 | `imprint/imprint.py`, `imprint/imprintstats.py` | Where a worm's map comes from: its first meals | [#139](https://github.com/ai-quokka-wannabe/iso-lab/pull/139) |
 | `branch/branch.py`, `branch/branchstats.py`, `branch/compare.py` | Who loses under the hunger gate, from one shared life | [#140](https://github.com/ai-quokka-wannabe/iso-lab/pull/140) |
+| `gpath2/gpath2.py`, `gpath2/gpath2stats.py` | What the hunger gate changes for a well-mapped worm | [#141](https://github.com/ai-quokka-wannabe/iso-lab/pull/141) |
 
 ## Leads Named by gr-fec (Unverified)
 
