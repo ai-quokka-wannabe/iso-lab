@@ -135,8 +135,8 @@ than half of far concepts: it is bumpy, not flat (§ Does the Hungry Map Point H
 *For bigger brains*: test every world again after gating a module; a fix in one world is a new claim in all. A state
 used as a gate may mark *which* individuals are in it, not only *when* - split by individual before reading a gate,
 and test the split under the gate itself - with the same individuals in both arms (branch one life), never two
-lives paired by index. A learned map that a rule reads only between neighbours must be smooth to guide; check its shape before
-trusting local steering on it.
+lives paired by index. A learned map that a rule reads only between neighbours must be single-peaked to guide; check its shape
+before trusting local steering on it.
 
 ### D5. Search finds the same recipe again from one start - pilot
 

@@ -139,7 +139,7 @@ Top first. Each item is sized for one run; split it here before starting if it i
      a scoring convention possibly all of it); it leaves the band less often under the
      gate but returns less than half as often (X2 holds), and off the band its steering is not shown to point to
      the band or its map's peak (0.481, 0.495); the learned map, read as the greedy rule reads it,
-     does not point home from far concepts - it is bumpy, not flat (S1, S2 hold: 0.556 and 0.547 point to the peak);
+     does not point home from far concepts, beyond a weak net lean - it is bumpy, not flat (S1, S2 hold: 0.556 and 0.547 point to the peak);
      next, steer by the map's global contrast and test whether the gate's harm goes; where off-band maps
      come from: on 2026-10-28 the first meal is not a switch that sets the map (imprinting refuted; a weaker lean not
      excluded), but worms whose map ends off the band ate 88-89% of their first day's food at the smelly patches,
