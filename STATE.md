@@ -134,9 +134,9 @@ Top first. Each item is sized for one run; split it here before starting if it i
      shared state at h24 and the gate switched on there, the reading was refuted in 75000 - on-band worms lose more
      (−0.170 against −0.093) - and, weakly, in 23001, where a gate from h24 barely costs anyone; for an on-band worm a gate from
      h24 halves its time on the band and cuts its intake by a quarter, but its steering inside the band is not detectably
-     biased away (G3 fails); outside the band its steering leans
-     slightly away from the band and from its own map's peak (0.481, 0.480; O1 holds, O2 fails); next, strip exits
-     and returns per hour, gated against plain; where off-band maps
+     biased away (G3 fails); outside the band its steering leans slightly
+     away from the band (0.481; O1 holds), as off-band worms' does, and is not shown to follow its map's peak (O2 fails,
+     a scoring convention possibly all of it); next, strip exits and returns per hour, gated against plain; where off-band maps
      come from: on 2026-10-28 the first meal is not a switch that sets the map (imprinting refuted; a weaker lean not
      excluded), but worms whose map ends off the band ate 88-89% of their first day's food at the smelly patches,
      against 42-48% (an association; which comes first is open); next, the timing of meals against the map's turning;
@@ -290,8 +290,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
-- 2026-10-28: where a gated well-mapped worm steers off the band in 75000: slightly away from the band (0.481, O1 holds)
-  and from its own map's peak (0.480, O2 fails; partly a scoring convention) - a small bias, not yet shown to be the cost.
+- 2026-10-28: where a gated well-mapped worm steers off the band in 75000: slightly away from the band (0.481, O1 holds),
+  as every worm does; not shown to follow its map's peak (0.480, O2 fails, partly or wholly a scoring convention).
 - 2026-10-28: what a hunger gate from h24 changes for a well-mapped worm in 75000: half the time on the band (G1), about
   28% less food (G2), but its steering inside the band is not detectably biased away (G3 fails).
 - 2026-10-28: who loses under a hunger gate switched on at h24, from one shared life: in 75000 on-band worms lose more
