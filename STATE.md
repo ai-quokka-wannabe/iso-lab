@@ -128,10 +128,12 @@ Top first. Each item is sized for one run; split it here before starting if it i
      rather than towards cold, and look for a local rise in the hungry map; on 2026-10-28 scored towards the food
      the gap grew (0.48 against 0.71; position refuted), the local view carries at most a small part, and post hoc 87%
      of hungry decisions come from the quarter of worms whose map peaks off the band, who live off it (a post hoc
-     reading, not a cause); next, test whose energy the hunger gate costs, and find where off-band maps come from; where off-band maps come from:
-     on 2026-10-28 not the first meal (imprinting refuted), but worms whose map ends off the band ate 89% of their
-     first day's food at the smelly patches, against 42-48% (an association; which comes first is open); next, the
-     timing of meals against the map's turning;
+     reading, not a cause); on 2026-10-28 a test of
+     the gate's cost by map was uninformative: it paired worms by index across lives that had diverged (post hoc,
+     regression to the mean); next, the same question with lives branched from one shared state at h24; where off-band maps
+     come from: on 2026-10-28 the first meal is not a switch that sets the map (imprinting refuted; a weaker lean not
+     excluded), but worms whose map ends off the band ate 88-89% of their first day's food at the smelly patches,
+     against 42-48% (an association; which comes first is open); next, the timing of meals against the map's turning;
    - (c) done on 2026-10-27: a sound CMA-ES from two seeds reaches last night's level and again chooses slow learning
      and a weak nose (K1, K2 hold); neither run converged, and all start from e45's median on one panel;
    - (d) a first rule done on 2026-10-27: in the cold world, multiplying the two levers' remaining failures predicts a
@@ -282,8 +284,10 @@ points to the open ones and says what waits on each.
 
 ## Done
 
-- 2026-10-28: where a worm's map comes from: not its first meal (I1 fails, +0.09 and +0.12); worms with off-band maps ate
-  most of their first day's food at the smelly patches (I2 holds, +0.47 and +0.41), cause unordered.
+- 2026-10-28: where a worm's map comes from: the first meal is not a switch that sets it (I1 fails, +0.09 and +0.12); worms
+  with off-band maps ate most of their first day's food at the smelly patches (I2 holds, +0.47 and +0.41), cause unordered.
+- 2026-10-28: who loses under the hunger gate, by map: W1 held and W2-W4 failed as registered, but post hoc the design
+  could not answer - worms paired by index had diverged, so the class gap is regression to the mean. Uninformative.
 - 2026-10-28: three levers at once (`eta`, `g_odour`, `roam`) in cold 82003: the OR law's error is 0.015 (R1 holds), but
   `roam` alone barely acts (0.011), so R2-R3 are uninformative; post hoc, raising `roam` cost energy in two of nine pairs, not shown to differ from its effect alone.
 - 2026-10-28: hungry steering scored towards the food in 75000: 0.483 against 0.707 fed (F1, position, fails); towards
