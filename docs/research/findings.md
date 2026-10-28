@@ -121,8 +121,11 @@ other pairs of strong levers, and on three at once.
 Steering by learned value gained in two cold layouts and cost in rich ones; a hunger gate removed the rich-world cost
 but left the worm below one that never steers in two Hardland layouts, with or without hysteresis. Evidence: journal
 2026-10-27, § A Positive Control for Steering, § Steering Only When Hungry, § Why the Hunger Gate Harms, § A Hunger
-Gate with Hysteresis.
-*For bigger brains*: test every world again after gating a module; a fix in one world is a new claim in all.
+Gate with Hysteresis. Why, as a reading not yet tested: in two layouts about nine in ten hungry decisions came from
+worms whose map peaks on the wrong half, so a hunger gate hands the steering to the worms whose map is wrong
+(journal 2026-10-28, § Hungry Steering, Scored Towards the Food, post hoc).
+*For bigger brains*: test every world again after gating a module; a fix in one world is a new claim in all. A state
+used as a gate may mark *which* individuals are in it, not only *when* - split by individual before reading a gate.
 
 ### D5. Search finds the same recipe again from one start - pilot
 

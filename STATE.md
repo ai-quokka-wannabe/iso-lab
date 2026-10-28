@@ -1,7 +1,7 @@
 # State of the Lab
 
 **Last updated:** 2026-10-28 (journal of 2026-10-28): gr-fec's toy worm - the composition law tested in three more
-worlds and with a second pair, and where its hungry steering points. Before it, on 2026-10-27, seven verified
+worlds and with a second pair, and where its hungry steering points and why. Before it, on 2026-10-27, seven verified
 experiments on the toy worm and the repository tidied.
 The benchmark's choice of rule for the lab's speed is still the next step for Phase 0.
 
@@ -125,7 +125,10 @@ Top first. Each item is sized for one run; split it here before starting if it i
      fed gains in all four Hardland layouts but keeps a rich-world cost the hunger gates remove; on 2026-10-28, in
      75000 hungry steering points towards cold (the food's side) less often than fed steering (0.48 against 0.57),
      while hunger barely moves the map's peak (the moved-peak hunch refuted); next, score each decision towards the food
-     rather than towards cold, and look for a local rise in the hungry map;
+     rather than towards cold, and look for a local rise in the hungry map; on 2026-10-28 scored towards the food
+     the gap grew (0.48 against 0.71; position refuted), the local view carries at most a small part, and post hoc 87%
+     of hungry decisions come from the quarter of worms whose map peaks on the wrong half - hunger marks wrong maps;
+     next, test that reading within worms, and find where wrong maps come from;
    - (c) done on 2026-10-27: a sound CMA-ES from two seeds reaches last night's level and again chooses slow learning
      and a weak nose (K1, K2 hold); neither run converged, and all start from e45's median on one panel;
    - (d) a first rule done on 2026-10-27: in the cold world, multiplying the two levers' remaining failures predicts a
@@ -274,6 +277,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-28: hungry steering scored towards the food in 75000: 0.483 against 0.707 fed (F1, position, fails); towards
+  the map's peak 0.637 against 0.686 (F2 holds, narrowly). Post hoc, hungry decisions come mostly from worms with wrong-half maps.
 - 2026-10-28: the OR composition law for slow learning and a weak nose in two fresh worlds (cold 82003, warm 82104):
   S1-S3 hold in both (errors 0.018, 0.011; better than adding and than either lever alone); S4, the mild-pair synergy, fails.
 - 2026-10-28: where hungry steering points in layout 75000: towards cold 0.483 of the time, fed 0.572 (D1 holds);
