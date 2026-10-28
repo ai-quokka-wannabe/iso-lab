@@ -109,8 +109,8 @@ either (journal 2026-10-26). Evidence: journal 2026-10-27, § Why Slow Learning 
 ### D3. Multiplying remaining failures predicts a pair of levers - pilot
 
 The two levers' remaining failures, measured alone, multiply to predict a pair's score better than adding their
-gains, and (in the two later worlds) better than ignoring either lever: three worlds, one pair, errors 0.011 to
-0.019. Mild pairs beat the rule in the first world only. Where one lever barely acts, the rule is no better than
+gains, and (in the two later worlds) better than ignoring either lever: three worlds (layouts 75000, 82003, 82104),
+one pair, errors 0.011 to 0.019. Mild pairs detectably beat the rule in the first world only. Where one lever barely acts, the rule is no better than
 ignoring it. Evidence: journal 2026-10-27, § A First Design Rule; journal 2026-10-28, § The Composition Law Beyond
 Its First World and Pair and § The Composition Law Where Both Levers Work.
 *For bigger brains*: a candidate rule for composing levers without searching every combination - to be tested on

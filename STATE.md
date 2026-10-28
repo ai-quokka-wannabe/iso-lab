@@ -136,7 +136,7 @@ Top first. Each item is sized for one run; split it here before starting if it i
      not post hoc (both intervals include zero); next, a
      second pair of two strong levers, and why mild pairs beat the law; on 2026-10-28 the law held for `eta` and
      `g_odour` in two fresh worlds where both levers work (errors 0.018 and 0.011, beating adding and either lever
-     alone), and the mild-pair synergy did not come back (a property of layout 75000); next, other pairs of strong
+     alone), and the mild-pair synergy was not detected there (though cold 82003 cannot exclude it); next, other pairs of strong
      levers, and three at once.
 
    Once a calculation matters to anything the lab builds on, it moves into tested Rust.
