@@ -113,16 +113,22 @@ gains, and (in the two later worlds) better than ignoring either lever: three wo
 one pair, errors 0.011 to 0.019. Mild pairs detectably beat the rule in the first world only. Where one lever barely acts, the rule is no better than
 ignoring it. Evidence: journal 2026-10-27, § A First Design Rule; journal 2026-10-28, § The Composition Law Beyond
 Its First World and Pair and § The Composition Law Where Both Levers Work.
+With a third lever (`roam`) that barely acts alone, the law held to 0.015 but could not be told from ignoring it;
+post hoc, raising that lever cost energy in two of nine pairs, not surviving a correction for multiple comparisons.
+If such an interaction is real, no rule built from edges can see it (journal 2026-10-28, § Three Levers at Once).
 *For bigger brains*: a candidate rule for composing levers without searching every combination - to be tested on
-other pairs of strong levers, and on three at once.
+other pairs of strong levers, and on three at once; a lever that seems to do nothing alone may still matter in company - to be shown.
 
 ### D4. A lever's sign can depend on the world, and a gate can make it worse - pilot
 
 Steering by learned value gained in two cold layouts and cost in rich ones; a hunger gate removed the rich-world cost
 but left the worm below one that never steers in two Hardland layouts, with or without hysteresis. Evidence: journal
 2026-10-27, § A Positive Control for Steering, § Steering Only When Hungry, § Why the Hunger Gate Harms, § A Hunger
-Gate with Hysteresis.
-*For bigger brains*: test every world again after gating a module; a fix in one world is a new claim in all.
+Gate with Hysteresis. Why, as a reading not yet tested: in ungated lives in two layouts about nine in ten hungry decisions
+came from worms whose map peaks off the band and who live off it; that a hunger gate hands the steering to such
+worms extrapolates to gated lives (journal 2026-10-28, § Hungry Steering, Scored Towards the Food, post hoc).
+*For bigger brains*: test every world again after gating a module; a fix in one world is a new claim in all. A state
+used as a gate may mark *which* individuals are in it, not only *when* - split by individual before reading a gate.
 
 ### D5. Search finds the same recipe again from one start - pilot
 
