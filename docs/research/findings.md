@@ -130,11 +130,13 @@ and the gate switched on at the branch, it cost the worms whose map peaks *on* t
 Scored Towards the Food, post hoc; § Who Loses Under the Hunger Gate, from One Shared Life). In that layout (two body
 seeds) the cost is in getting back: gated, well-mapped worms leave the band less often but return less than half as
 often, and off the band their steering is not shown to point to the band or their map's peak (§ Leaving the Band
-and Coming Back).
+and Coming Back). And the learned map, read as the greedy rule reads it, points home from little more
+than half of far concepts: it is bumpy, not flat (§ Does the Hungry Map Point Home?).
 *For bigger brains*: test every world again after gating a module; a fix in one world is a new claim in all. A state
 used as a gate may mark *which* individuals are in it, not only *when* - split by individual before reading a gate,
 and test the split under the gate itself - with the same individuals in both arms (branch one life), never two
-lives paired by index.
+lives paired by index. A learned map that a rule reads only between neighbours must be single-peaked to guide; check its shape
+before trusting local steering on it.
 
 ### D5. Search finds the same recipe again from one start - pilot
 

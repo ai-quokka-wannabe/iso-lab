@@ -138,7 +138,9 @@ Top first. Each item is sized for one run; split it here before starting if it i
      away from the band (0.481; O1 holds), as off-band worms' does, and is not shown to follow its map's peak (O2 fails,
      a scoring convention possibly all of it); it leaves the band less often under the
      gate but returns less than half as often (X2 holds), and off the band its steering is not shown to point to
-     the band or its map's peak (0.481, 0.495); next, the shape of the hungry map away from its peak; where off-band maps
+     the band or its map's peak (0.481, 0.495); the learned map, read as the greedy rule reads it,
+     does not point home from far concepts, beyond a weak net lean - it is bumpy, not flat (S1, S2 hold: 0.556 and 0.547 point to the peak);
+     next, steer by the map's global contrast and test whether the gate's harm goes; where off-band maps
      come from: on 2026-10-28 the first meal is not a switch that sets the map (imprinting refuted; a weaker lean not
      excluded), but worms whose map ends off the band ate 88-89% of their first day's food at the smelly patches,
      against 42-48% (an association; which comes first is open); next, the timing of meals against the map's turning;
@@ -292,6 +294,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-28: does the hungry map point home? Read locally, a well-mapped worm's map points towards its peak from only 0.556
+  of far concepts (S1, S2 hold); it is bumpy (39% tilt away), not flat (5%), and other worms' maps are alike.
 - 2026-10-28: leaving the band and coming back in 75000, gate from h24: well-mapped worms leave it less often (X1 fails the
   other way) but return less than half as often (X2 holds, 2.23 against 5.87 per hour out); why is untested.
 - 2026-10-28: where a gated well-mapped worm steers off the band in 75000: slightly away from the band (0.481, O1 holds),
