@@ -140,7 +140,10 @@ Top first. Each item is sized for one run; split it here before starting if it i
      gate but returns less than half as often (X2 holds), and off the band its steering is not shown to point to
      the band or its map's peak (0.481, 0.495); the learned map, read as the greedy rule reads it,
      does not point home from far concepts, beyond a weak net lean - it is bumpy, not flat (S1, S2 hold: 0.556 and 0.547 point to the peak);
-     next, steer by the map's global contrast and test whether the gate's harm goes; where off-band maps
+     gated steering by the map's global
+     contrast lifts the gated worm by 0.17 in 75000, to near never-steering (Q1 holds, Q2 narrowly fails), but not in
+     23001 (Q1 fails), where the harm arises in the first day; next, what the gate does in 23001's first day, and the
+     global rule ungated, in rich worlds and on the fifteen layouts; where off-band maps
      come from: on 2026-10-28 the first meal is not a switch that sets the map (imprinting refuted; a weaker lean not
      excluded), but worms whose map ends off the band ate 88-89% of their first day's food at the smelly patches,
      against 42-48% (an association; which comes first is open); next, the timing of meals against the map's turning;
@@ -294,6 +297,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-28: hunger-gated steering by the map's global contrast (towards the peak's side): +0.167 over the greedy gated
+  brain in 75000, near never steering (Q1 holds, Q2 fails narrowly); no help in 23001 (Q1, Q2 fail).
 - 2026-10-28: does the hungry map point home? Read locally, a well-mapped worm's map points towards its peak from only 0.556
   of far concepts (S1, S2 hold); it is bumpy (39% tilt away), not flat (5%), and other worms' maps are alike.
 - 2026-10-28: leaving the band and coming back in 75000, gate from h24: well-mapped worms leave it less often (X1 fails the
