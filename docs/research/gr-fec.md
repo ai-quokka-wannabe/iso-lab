@@ -381,6 +381,7 @@ evaluation tools for a toy world, not code the lab builds on; anything that beco
 | `gpath2/gpath2.py`, `gpath2/gpath2stats.py` | What the hunger gate changes for a well-mapped worm | [#141](https://github.com/ai-quokka-wannabe/iso-lab/pull/141) |
 | `gout/gout.py`, `gout/goutstats.py` | Where a gated worm steers off the band | [#142](https://github.com/ai-quokka-wannabe/iso-lab/pull/142) |
 | `gexit/gexit.py`, `gexit/gexitstats.py`, `gexit/peakci.py` | Leaving the band and coming back | [#143](https://github.com/ai-quokka-wannabe/iso-lab/pull/143) |
+| `mapshape/mapshape.py`, `mapshape/mapstats.py` | Does the hungry map point home? | [#144](https://github.com/ai-quokka-wannabe/iso-lab/pull/144) |
 
 ## Leads Named by gr-fec (Unverified)
 
