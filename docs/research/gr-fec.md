@@ -377,6 +377,7 @@ evaluation tools for a toy world, not code the lab builds on; anything that beco
 | `sweep4/sweep4.py`, `sweep4/law4.py`, `sweep4/roam.py`, `sweep4/roam_bonf.py` | Three levers at once | [#137](https://github.com/ai-quokka-wannabe/iso-lab/pull/137) |
 | `who/who2.py`, `who/who2stats.py`, `who/pairing.py` | Who loses under the hunger gate, by map (uninformative) | [#138](https://github.com/ai-quokka-wannabe/iso-lab/pull/138) |
 | `imprint/imprint.py`, `imprint/imprintstats.py` | Where a worm's map comes from: its first meals | [#139](https://github.com/ai-quokka-wannabe/iso-lab/pull/139) |
+| `branch/branch.py`, `branch/branchstats.py`, `branch/compare.py` | Who loses under the hunger gate, from one shared life | [#140](https://github.com/ai-quokka-wannabe/iso-lab/pull/140) |
 
 ## Leads Named by gr-fec (Unverified)
 
