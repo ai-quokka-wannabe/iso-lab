@@ -137,8 +137,8 @@ Top first. Each item is sized for one run; split it here before starting if it i
      biased away (G3 fails); outside the band its steering leans slightly
      away from the band (0.481; O1 holds), as off-band worms' does, and is not shown to follow its map's peak (O2 fails,
      a scoring convention possibly all of it); it leaves the band less often under the
-     gate but returns less than half as often (X2 holds), and off the band its steering follows its map's peak no
-     better than chance (0.495); next, the shape of the hungry map away from its peak; where off-band maps
+     gate but returns less than half as often (X2 holds), and off the band its steering is not shown to point to
+     the band or its map's peak (0.481, 0.495); next, the shape of the hungry map away from its peak; where off-band maps
      come from: on 2026-10-28 the first meal is not a switch that sets the map (imprinting refuted; a weaker lean not
      excluded), but worms whose map ends off the band ate 88-89% of their first day's food at the smelly patches,
      against 42-48% (an association; which comes first is open); next, the timing of meals against the map's turning;
@@ -293,7 +293,7 @@ points to the open ones and says what waits on each.
 ## Done
 
 - 2026-10-28: leaving the band and coming back in 75000, gate from h24: well-mapped worms leave it less often (X1 fails the
-  other way) but return less than half as often (X2 holds, 2.23 against 5.87 per hour out); their map does not guide them home.
+  other way) but return less than half as often (X2 holds, 2.23 against 5.87 per hour out); why is untested.
 - 2026-10-28: where a gated well-mapped worm steers off the band in 75000: slightly away from the band (0.481, O1 holds),
   as every worm does; not shown to follow its map's peak (0.480, O2 fails, partly or wholly a scoring convention).
 - 2026-10-28: what a hunger gate from h24 changes for a well-mapped worm in 75000: half the time on the band (G1), about
