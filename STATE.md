@@ -1,7 +1,7 @@
 # State of the Lab
 
 **Last updated:** 2026-10-28 (journal of 2026-10-28): the composition law for gr-fec's toy worm tested beyond its
-first world and pair. Before it, on 2026-10-27, seven verified experiments on the toy worm and the repository tidied.
+first world and pair, and where its hungry steering points. Before it, on 2026-10-27, seven verified experiments on the toy worm and the repository tidied.
 The benchmark's choice of rule for the lab's speed is still the next step for Phase 0.
 
 ## Where We Are
@@ -121,8 +121,10 @@ Top first. Each item is sized for one run; split it here before starting if it i
      where the rule gains (lost in one, flat in the other); a hunger gate removes the rich-world cost but does worse
      than never steering in two Hardland layouts; in one, 75000, its gate opens and shuts a median 88 times an hour,
      but a gate with hysteresis, switching under once an hour, leaves the harm (flicker refuted); steering only while
-     fed gains in all four Hardland layouts but keeps a rich-world cost the hunger gates remove; next, why steering only
-     while hungry harms;
+     fed gains in all four Hardland layouts but keeps a rich-world cost the hunger gates remove; on 2026-10-28, in
+     75000 hungry steering points towards cold (the food's side) less often than fed steering (0.48 against 0.57),
+     while hunger barely moves the map's peak (the moved-peak hunch refuted); next, score each decision towards the food
+     rather than towards cold, and look for a local rise in the hungry map;
    - (c) done on 2026-10-27: a sound CMA-ES from two seeds reaches last night's level and again chooses slow learning
      and a weak nose (K1, K2 hold); neither run converged, and all start from e45's median on one panel;
    - (d) a first rule done on 2026-10-27: in the cold world, multiplying the two levers' remaining failures predicts a
@@ -268,6 +270,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-28: where hungry steering points in layout 75000: towards cold 0.483 of the time, fed 0.572 (D1 holds);
+  the value peak is the same concept at hunger 1 and 0.2 in about 98% of samples (D2 fails): the peak does not explain the harm.
 - 2026-10-28: the OR composition law in the warm world and for `eta` with `tau` (W1, T1 hold: 0.012, 0.013; W2
   uninformative, T2 fails); post hoc, ignoring the weak lever does as well there, so only the cold `eta`-nose pair tests it.
 - 2026-10-27: value-steering only while fed: +0.14 over never steering in layout 75000 (F1, F2 hold), and above it in all four

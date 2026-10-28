@@ -371,6 +371,7 @@ evaluation tools for a toy world, not code the lab builds on; anything that beco
 | `gate/hyst.py`, `gate/hyststats.py` | Steering behind a hunger gate with hysteresis | [#129](https://github.com/ai-quokka-wannabe/iso-lab/pull/129) |
 | `fed/fed.py`, `fed/fedstats.py` | Steering only while fed | [#132](https://github.com/ai-quokka-wannabe/iso-lab/pull/132) |
 | `sweep2/sweep2.py`, `sweep2/law2.py`, `sweep2/base.py`, `sweep2/m1ci.py` | The composition law in a second world and for a second pair | [#133](https://github.com/ai-quokka-wannabe/iso-lab/pull/133) |
+| `dir/dir.py`, `dir/dirstats.py`, `dir/peaks.py` | Where steering points, hungry and fed | [#134](https://github.com/ai-quokka-wannabe/iso-lab/pull/134) |
 
 ## Leads Named by gr-fec (Unverified)
 
