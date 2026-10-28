@@ -113,8 +113,11 @@ gains, and (in the two later worlds) better than ignoring either lever: three wo
 one pair, errors 0.011 to 0.019. Mild pairs detectably beat the rule in the first world only. Where one lever barely acts, the rule is no better than
 ignoring it. Evidence: journal 2026-10-27, § A First Design Rule; journal 2026-10-28, § The Composition Law Beyond
 Its First World and Pair and § The Composition Law Where Both Levers Work.
+With a third lever (`roam`) that barely acts alone, the law held to 0.015 but could not be told from ignoring it;
+post hoc, raising that lever cost energy in two of nine pairs, not surviving a correction for multiple comparisons.
+If such an interaction is real, no rule built from edges can see it (journal 2026-10-28, § Three Levers at Once).
 *For bigger brains*: a candidate rule for composing levers without searching every combination - to be tested on
-other pairs of strong levers, and on three at once.
+other pairs of strong levers, and on three at once; a lever that seems to do nothing alone may still matter in company - to be shown.
 
 ### D4. A lever's sign can depend on the world, and a gate can make it worse - pilot
 
