@@ -133,8 +133,8 @@ Top first. Each item is sized for one run; split it here before starting if it i
      regression to the mean); with lives branched from one
      shared state at h24 and the gate switched on there, the reading was refuted in 75000 - on-band worms lose more
      (−0.170 against −0.093) - and, weakly, in 23001, where a gate from h24 barely costs anyone; for an on-band worm a gate from
-     h24 halves its time on the band and cuts its intake by a quarter, but its steering inside the band is no worse than
-     even (G3 fails); next, score its steering outside the band; where off-band maps
+     h24 halves its time on the band and cuts its intake by a quarter, but its steering inside the band is not detectably
+     biased away (G3 fails); next, how often it leaves the band, and its steering outside it; where off-band maps
      come from: on 2026-10-28 the first meal is not a switch that sets the map (imprinting refuted; a weaker lean not
      excluded), but worms whose map ends off the band ate 88-89% of their first day's food at the smelly patches,
      against 42-48% (an association; which comes first is open); next, the timing of meals against the map's turning;
@@ -288,8 +288,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
-- 2026-10-28: what a hunger gate from h24 changes for a well-mapped worm in 75000: half the time on the band (G1), a
-  quarter less food (G2), but its steering inside the band is not biased away (G3 fails).
+- 2026-10-28: what a hunger gate from h24 changes for a well-mapped worm in 75000: half the time on the band (G1), about
+  28% less food (G2), but its steering inside the band is not detectably biased away (G3 fails).
 - 2026-10-28: who loses under a hunger gate switched on at h24, from one shared life: in 75000 on-band worms lose more
   (+0.077 off minus on; B2 fails the other way), refuting the reading; in 23001 (B4 fails) weakly, the late gate costing little.
 - 2026-10-28: where a worm's map comes from: the first meal is not a switch that sets it (I1 fails, +0.09 and +0.12); worms
