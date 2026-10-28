@@ -125,12 +125,13 @@ Steering by learned value gained in two cold layouts and cost in rich ones; a hu
 but left the worm below one that never steers in two Hardland layouts, with or without hysteresis. Evidence: journal
 2026-10-27, § A Positive Control for Steering, § Steering Only When Hungry, § Why the Hunger Gate Harms, § A Hunger
 Gate with Hysteresis. Why is open. In ungated lives in two layouts about nine in ten hungry decisions came from
-worms whose map peaks off the band and who live off it (post hoc), but a test under the gate refuted that as the
-mechanism: the gate costs most the worms whose map peaks *on* the band (journal 2026-10-28, § Hungry Steering,
-Scored Towards the Food, post hoc; § Who Loses Under the Hunger Gate).
+worms whose map peaks off the band and who live off it (post hoc); a first test of whether the gate's harm
+falls on them was uninformative, its worms paired by index across diverged lives (journal 2026-10-28, § Hungry
+Steering, Scored Towards the Food, post hoc; § Who Loses Under the Hunger Gate).
 *For bigger brains*: test every world again after gating a module; a fix in one world is a new claim in all. A state
 used as a gate may mark *which* individuals are in it, not only *when* - split by individual before reading a gate,
-and test the split under the gate itself.
+and test the split under the gate itself - with the same individuals in both arms (branch one life), never two
+lives paired by index.
 
 ### D5. Search finds the same recipe again from one start - pilot
 

@@ -128,10 +128,9 @@ Top first. Each item is sized for one run; split it here before starting if it i
      rather than towards cold, and look for a local rise in the hungry map; on 2026-10-28 scored towards the food
      the gap grew (0.48 against 0.71; position refuted), the local view carries at most a small part, and post hoc 87%
      of hungry decisions come from the quarter of worms whose map peaks off the band, who live off it (a post hoc
-     reading, not a cause); on 2026-10-28 the gate's
-     cost was tested by map: it falls hardest on worms whose map peaks *on* the band (−0.25 and −0.13, against −0.08
-     and +0.02; reading refuted); next, where on its path the gate costs a well-mapped worm, and where off-band maps come
-     from;
+     reading, not a cause); on 2026-10-28 a test of
+     the gate's cost by map was uninformative: it paired worms by index across lives that had diverged (post hoc,
+     regression to the mean); next, the same question with lives branched from one shared state at h24;
    - (c) done on 2026-10-27: a sound CMA-ES from two seeds reaches last night's level and again chooses slow learning
      and a weak nose (K1, K2 hold); neither run converged, and all start from e45's median on one panel;
    - (d) a first rule done on 2026-10-27: in the cold world, multiplying the two levers' remaining failures predicts a
@@ -282,8 +281,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
-- 2026-10-28: who loses under the hunger gate: worms whose map peaks on the band lose most (75000 −0.247, 23001 −0.132),
-  not those whose map peaks off it (−0.079, +0.019); W2-W4 fail, refuting the reading that the gate harms through off-band worms.
+- 2026-10-28: who loses under the hunger gate, by map: W1 held and W2-W4 failed as registered, but post hoc the design
+  could not answer - worms paired by index had diverged, so the class gap is regression to the mean. Uninformative.
 - 2026-10-28: three levers at once (`eta`, `g_odour`, `roam`) in cold 82003: the OR law's error is 0.015 (R1 holds), but
   `roam` alone barely acts (0.011), so R2-R3 are uninformative; post hoc, raising `roam` cost energy in two of nine pairs, not shown to differ from its effect alone.
 - 2026-10-28: hungry steering scored towards the food in 75000: 0.483 against 0.707 fed (F1, position, fails); towards

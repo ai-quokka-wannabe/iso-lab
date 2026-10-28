@@ -375,7 +375,7 @@ evaluation tools for a toy world, not code the lab builds on; anything that beco
 | `sweep3/sweep3.py`, `sweep3/law3.py`, `sweep3/h0.py` | The composition law in two fresh worlds where both levers work | [#135](https://github.com/ai-quokka-wannabe/iso-lab/pull/135) |
 | `dir2/dir2.py`, `dir2/dir2stats.py`, `dir2/who.py`, `dir2/who_more.py` | Hungry steering scored towards the food, and which worms are hungry | [#136](https://github.com/ai-quokka-wannabe/iso-lab/pull/136) |
 | `sweep4/sweep4.py`, `sweep4/law4.py`, `sweep4/roam.py`, `sweep4/roam_bonf.py` | Three levers at once | [#137](https://github.com/ai-quokka-wannabe/iso-lab/pull/137) |
-| `who/who2.py`, `who/who2stats.py` | Who loses under the hunger gate, by map | [#138](https://github.com/ai-quokka-wannabe/iso-lab/pull/138) |
+| `who/who2.py`, `who/who2stats.py`, `who/pairing.py` | Who loses under the hunger gate, by map (uninformative) | [#138](https://github.com/ai-quokka-wannabe/iso-lab/pull/138) |
 
 ## Leads Named by gr-fec (Unverified)
 
