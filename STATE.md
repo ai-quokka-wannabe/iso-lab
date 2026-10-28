@@ -130,7 +130,9 @@ Top first. Each item is sized for one run; split it here before starting if it i
      of hungry decisions come from the quarter of worms whose map peaks off the band, who live off it (a post hoc
      reading, not a cause); on 2026-10-28 a test of
      the gate's cost by map was uninformative: it paired worms by index across lives that had diverged (post hoc,
-     regression to the mean); next, the same question with lives branched from one shared state at h24; where off-band maps
+     regression to the mean); with lives branched from one
+     shared state at h24 the reading was refuted in 75000 - the gate costs on-band worms more (−0.170 against −0.093) -
+     while in 23001 a gate from h24 barely costs anyone; next, what the gate changes for an on-band worm; where off-band maps
      come from: on 2026-10-28 the first meal is not a switch that sets the map (imprinting refuted; a weaker lean not
      excluded), but worms whose map ends off the band ate 88-89% of their first day's food at the smelly patches,
      against 42-48% (an association; which comes first is open); next, the timing of meals against the map's turning;
@@ -284,6 +286,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-28: who loses under the hunger gate, from one shared life: in 75000 on-band worms lose more than off-band ones
+  (+0.077 off minus on; B2 fails the other way), refuting the reading; in 23001 a gate from h24 barely costs anyone.
 - 2026-10-28: where a worm's map comes from: the first meal is not a switch that sets it (I1 fails, +0.09 and +0.12); worms
   with off-band maps ate most of their first day's food at the smelly patches (I2 holds, +0.47 and +0.41), cause unordered.
 - 2026-10-28: who loses under the hunger gate, by map: W1 held and W2-W4 failed as registered, but post hoc the design
