@@ -1,7 +1,8 @@
 # State of the Lab
 
-**Last updated:** 2026-10-28 (journal of 2026-10-28): the composition law for gr-fec's toy worm tested beyond its
-first world and pair, and where its hungry steering points. Before it, on 2026-10-27, seven verified experiments on the toy worm and the repository tidied.
+**Last updated:** 2026-10-28 (journal of 2026-10-28): gr-fec's toy worm - the composition law tested in three more
+worlds and with a second pair, and where its hungry steering points and why. Before it, on 2026-10-27, seven verified
+experiments on the toy worm and the repository tidied.
 The benchmark's choice of rule for the lab's speed is still the next step for Phase 0.
 
 ## Where We Are
@@ -124,7 +125,10 @@ Top first. Each item is sized for one run; split it here before starting if it i
      fed gains in all four Hardland layouts but keeps a rich-world cost the hunger gates remove; on 2026-10-28, in
      75000 hungry steering points towards cold (the food's side) less often than fed steering (0.48 against 0.57),
      while hunger barely moves the map's peak (the moved-peak hunch refuted); next, score each decision towards the food
-     rather than towards cold, and look for a local rise in the hungry map;
+     rather than towards cold, and look for a local rise in the hungry map; on 2026-10-28 scored towards the food
+     the gap grew (0.48 against 0.71; position refuted), the local view carries at most a small part, and post hoc 87%
+     of hungry decisions come from the quarter of worms whose map peaks off the band, who live off it (a post hoc
+     reading, not a cause); next, test whose energy the hunger gate costs, and find where off-band maps come from;
    - (c) done on 2026-10-27: a sound CMA-ES from two seeds reaches last night's level and again chooses slow learning
      and a weak nose (K1, K2 hold); neither run converged, and all start from e45's median on one panel;
    - (d) a first rule done on 2026-10-27: in the cold world, multiplying the two levers' remaining failures predicts a
@@ -133,7 +137,10 @@ Top first. Each item is sized for one run; split it here before starting if it i
      the turning rule's `tau` (errors 0.012, 0.013), but there one lever barely moves the score and ignoring it does as
      well (post hoc), and the hunch that a weak nose also cleans the map held on its registered point estimates but
      not post hoc (both intervals include zero); next, a
-     second pair of two strong levers, and why mild pairs beat the law.
+     second pair of two strong levers, and why mild pairs beat the law; on 2026-10-28 the law held for `eta` and
+     `g_odour` in two fresh worlds where both levers work (errors 0.018 and 0.011, beating adding and either lever
+     alone), and the mild-pair synergy was not detected there (though cold 82003 cannot exclude it); next, other pairs of strong
+     levers, and three at once.
 
    Once a calculation matters to anything the lab builds on, it moves into tested Rust.
 
@@ -270,6 +277,10 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-28: hungry steering scored towards the food in 75000: 0.483 against 0.707 fed (F1, position, fails); towards
+  the map's peak 0.637 against 0.686 (F2 holds, narrowly). Post hoc, hungry decisions come mostly from worms whose maps peak off the band.
+- 2026-10-28: the OR composition law for slow learning and a weak nose in two fresh worlds (cold 82003, warm 82104):
+  S1-S3 hold in both (errors 0.018, 0.011; better than adding and than either lever alone); S4, the mild-pair synergy, fails.
 - 2026-10-28: where hungry steering points in layout 75000: towards cold 0.483 of the time, fed 0.572 (D1 holds);
   the value peak is the same concept at hunger 1 and 0.2 in about 98% of samples (D2 fails): the peak does not explain the harm.
 - 2026-10-28: the OR composition law in the warm world and for `eta` with `tau` (W1, T1 hold: 0.012, 0.013; W2

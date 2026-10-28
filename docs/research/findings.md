@@ -109,17 +109,23 @@ either (journal 2026-10-26). Evidence: journal 2026-10-27, § Why Slow Learning 
 ### D3. Multiplying remaining failures predicts a pair of levers - pilot
 
 The two levers' remaining failures, measured alone, multiply to predict a pair's score better than adding their
-gains; mild pairs beat the rule. One world. Evidence: journal 2026-10-27, § A First Design Rule.
+gains, and (in the two later worlds) better than ignoring either lever: three worlds (layouts 75000, 82003, 82104),
+one pair, errors 0.011 to 0.019. Mild pairs detectably beat the rule in the first world only. Where one lever barely acts, the rule is no better than
+ignoring it. Evidence: journal 2026-10-27, § A First Design Rule; journal 2026-10-28, § The Composition Law Beyond
+Its First World and Pair and § The Composition Law Where Both Levers Work.
 *For bigger brains*: a candidate rule for composing levers without searching every combination - to be tested on
-other genes and worlds first.
+other pairs of strong levers, and on three at once.
 
 ### D4. A lever's sign can depend on the world, and a gate can make it worse - pilot
 
 Steering by learned value gained in two cold layouts and cost in rich ones; a hunger gate removed the rich-world cost
 but left the worm below one that never steers in two Hardland layouts, with or without hysteresis. Evidence: journal
 2026-10-27, § A Positive Control for Steering, § Steering Only When Hungry, § Why the Hunger Gate Harms, § A Hunger
-Gate with Hysteresis.
-*For bigger brains*: test every world again after gating a module; a fix in one world is a new claim in all.
+Gate with Hysteresis. Why, as a reading not yet tested: in ungated lives in two layouts about nine in ten hungry decisions
+came from worms whose map peaks off the band and who live off it; that a hunger gate hands the steering to such
+worms extrapolates to gated lives (journal 2026-10-28, § Hungry Steering, Scored Towards the Food, post hoc).
+*For bigger brains*: test every world again after gating a module; a fix in one world is a new claim in all. A state
+used as a gate may mark *which* individuals are in it, not only *when* - split by individual before reading a gate.
 
 ### D5. Search finds the same recipe again from one start - pilot
 
