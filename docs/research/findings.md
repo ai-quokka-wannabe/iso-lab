@@ -133,7 +133,9 @@ often, and off the band their steering is not shown to point to the band or thei
 and Coming Back). And the learned map, read as the greedy rule reads it, points home from little more
 than half of far concepts: it is bumpy, not flat (§ Does the Hungry Map Point Home?). Steering towards the side of the map's
 peak instead (also without the greedy rule's 0.02 margin, a confound) lifted the gated worm by 0.17 in 75000, but
-not in 23001, where the harm depends on the first day (§ Steering by the Map's Global Contrast).
+not in 23001, where the harm depends on the first day (§ Steering by the Map's Global Contrast). With the margin kept, the global rule
+still lifted it, to above never steering in 75000 (descriptive, one layout; § The Global Rule with the Greedy
+Margin).
 *For bigger brains*: test every world again after gating a module; a fix in one world is a new claim in all. A state
 used as a gate may mark *which* individuals are in it, not only *when* - split by individual before reading a gate,
 and test the split under the gate itself - with the same individuals in both arms (branch one life), never two
