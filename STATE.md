@@ -142,8 +142,8 @@ Top first. Each item is sized for one run; split it here before starting if it i
      does not point home from far concepts, beyond a weak net lean - it is bumpy, not flat (S1, S2 hold: 0.556 and 0.547 point to the peak);
      gated steering by the map's global
      contrast lifts the gated worm by 0.17 in 75000, to near never-steering (Q1 holds, Q2 narrowly fails), but not in
-     23001 (Q1 fails), where the harm arises in the first day; next, what the gate does in 23001's first day, and the
-     global rule ungated, in rich worlds and on the fifteen layouts; where off-band maps
+     23001 (Q1 fails), where the harm depends on the first day; the rule also drops the greedy 0.02 margin, a confound;
+     next, the global rule with the margin, what the gate does in 23001's first day, and the rule elsewhere; where off-band maps
      come from: on 2026-10-28 the first meal is not a switch that sets the map (imprinting refuted; a weaker lean not
      excluded), but worms whose map ends off the band ate 88-89% of their first day's food at the smelly patches,
      against 42-48% (an association; which comes first is open); next, the timing of meals against the map's turning;
