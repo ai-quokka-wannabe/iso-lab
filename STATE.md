@@ -1,8 +1,9 @@
 # State of the Lab
 
-**Last updated:** 2026-10-28 (journal of 2026-10-28): gr-fec's toy worm - the composition law tested in three more
-worlds and with a second pair, and where its hungry steering points and why. Before it, on 2026-10-27, seven verified
-experiments on the toy worm and the repository tidied.
+**Last updated:** 2026-10-28 (journal of 2026-10-28): gr-fec's toy worm - the composition law tested in more worlds
+and with three levers; the hunger gate's harm traced, with branched lives, to well-mapped worms not finding their way
+back to the band over a bumpy map; and a designed fix, steering by the map's global contrast, that helps in cold
+worlds but is not yet shown safe in warm ones. Before it, on 2026-10-27, seven verified experiments and a tidy.
 The benchmark's choice of rule for the lab's speed is still the next step for Phase 0.
 
 ## Where We Are
@@ -145,8 +146,9 @@ Top first. Each item is sized for one run; split it here before starting if it i
      23001 (Q1 fails), where the harm depends on the first day; the rule also drops the greedy 0.02 margin, a confound;
      elsewhere it keeps the rich-world fix and does better
      in cold 23000 (+0.074, descriptive; the margin confound applies), but may cost in warm 75001 (W1 fails there); with the greedy margin kept the global
-     rule still beats greedy gating in 75000 (+0.213, M1 holds) and ends above never steering (+0.040, descriptive, 75000 only); next, the
-     margin rule in the six layouts and on the fifteen fresh ones, and what the gate does in 23001's first day; where off-band maps
+     rule still beats greedy gating in 75000 (+0.213, M1 holds) and ends above never steering (+0.040, descriptive, 75000 only); in the other five layouts
+     the margin rule keeps the rich fix and helps in cold 23000 (+0.091) but fails V1 in both warm layouts; next, the
+     fifteen fresh layouts to test the cold-band hunch, and what the gate does in 23001's first day; where off-band maps
      come from: on 2026-10-28 the first meal is not a switch that sets the map (imprinting refuted; a weaker lean not
      excluded), but worms whose map ends off the band ate 88-89% of their first day's food at the smelly patches,
      against 42-48% (an association; which comes first is open); next, the timing of meals against the map's turning;
@@ -300,6 +302,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-28: the margin rule elsewhere: keeps the rich-world fix (V2 holds), helps in cold 23000 (+0.091), but new harm is not
+  excluded in either warm layout (V1 fails in 23001 and 75001) - a cold-band hunch, two layouts a side.
 - 2026-10-28: the global rule with the greedy margin in 75000: +0.213 over greedy gating (M1 holds) and +0.040 over never
   steering (descriptive) - the dropped margin does not explain the lift; the global reading carries at least part of it.
 - 2026-10-28: the global rule elsewhere: keeps the rich-world fix (W2 holds), helps in cold 23000 (+0.074 over greedy gated),
