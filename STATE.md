@@ -140,7 +140,9 @@ Top first. Each item is sized for one run; split it here before starting if it i
      second pair of two strong levers, and why mild pairs beat the law; on 2026-10-28 the law held for `eta` and
      `g_odour` in two fresh worlds where both levers work (errors 0.018 and 0.011, beating adding and either lever
      alone), and the mild-pair synergy was not detected there (though cold 82003 cannot exclude it); next, other pairs of strong
-     levers, and three at once.
+     levers, and three at once; on 2026-10-28 with `roam` as a third lever the law held (error 0.015) but the test
+     was uninformative, `roam` alone moving the score by 0.011; post hoc, raising it cost energy in two of nine pairs (up to
+     0.06), not surviving a correction for nine comparisons; next, a third lever that acts alone, and roaming's interaction as its own test.
 
    Once a calculation matters to anything the lab builds on, it moves into tested Rust.
 
@@ -277,6 +279,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-28: three levers at once (`eta`, `g_odour`, `roam`) in cold 82003: the OR law's error is 0.015 (R1 holds), but
+  `roam` alone barely acts (0.011), so R2-R3 are uninformative; post hoc, raising `roam` cost energy in two of nine pairs, not shown to differ from its effect alone.
 - 2026-10-28: hungry steering scored towards the food in 75000: 0.483 against 0.707 fed (F1, position, fails); towards
   the map's peak 0.637 against 0.686 (F2 holds, narrowly). Post hoc, hungry decisions come mostly from worms whose maps peak off the band.
 - 2026-10-28: the OR composition law for slow learning and a weak nose in two fresh worlds (cold 82003, warm 82104):
