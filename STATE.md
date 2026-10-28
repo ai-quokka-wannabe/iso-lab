@@ -144,8 +144,9 @@ Top first. Each item is sized for one run; split it here before starting if it i
      contrast lifts the gated worm by 0.17 in 75000, to near never-steering (Q1 holds, Q2 narrowly fails), but not in
      23001 (Q1 fails), where the harm depends on the first day; the rule also drops the greedy 0.02 margin, a confound;
      elsewhere it keeps the rich-world fix and does better
-     in cold 23000 (+0.074, descriptive; the margin confound applies), but may cost in warm 75001 (W1 fails there); next, the global rule with the margin, what the
-     gate does in 23001's first day, and the fifteen fresh layouts; where off-band maps
+     in cold 23000 (+0.074, descriptive; the margin confound applies), but may cost in warm 75001 (W1 fails there); with the greedy margin kept the global
+     rule still beats greedy gating in 75000 (+0.213, M1 holds) and ends above never steering (+0.040); next, the
+     margin rule in the six layouts and on the fifteen fresh ones, and what the gate does in 23001's first day; where off-band maps
      come from: on 2026-10-28 the first meal is not a switch that sets the map (imprinting refuted; a weaker lean not
      excluded), but worms whose map ends off the band ate 88-89% of their first day's food at the smelly patches,
      against 42-48% (an association; which comes first is open); next, the timing of meals against the map's turning;
@@ -299,6 +300,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-28: the global rule with the greedy margin in 75000: +0.213 over greedy gating (M1 holds) and +0.040 over never
+  steering - the global reading, not the dropped margin, carries the lift.
 - 2026-10-28: the global rule elsewhere: keeps the rich-world fix (W2 holds), helps in cold 23000 (+0.074 over greedy gated),
   but new harm in warm 75001 is not excluded (−0.043, W1 fails there).
 - 2026-10-28: hunger-gated steering by the map's global contrast (towards the peak's side): +0.167 over the greedy gated
