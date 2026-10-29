@@ -430,7 +430,7 @@ evaluation tools for a toy world, not code the lab builds on; anything that beco
 | `glob2/glob2.py`, `glob2/glob2stats.py` | The global rule elsewhere | [#146](https://github.com/ai-quokka-wannabe/iso-lab/pull/146) |
 | `glob3/glob3.py`, `glob3/glob3stats.py` | The global rule with the greedy margin | [#147](https://github.com/ai-quokka-wannabe/iso-lab/pull/147) |
 | `glob4/glob4.py`, `glob4/glob4stats.py` | The margin rule elsewhere | [#148](https://github.com/ai-quokka-wannabe/iso-lab/pull/148) |
-| `fresh10/run.sh`, `fresh10/fresh10stats.py` | The cold-band hunch on ten fresh layouts (2026-10-29) | this pull request's body |
+| `fresh10/run.sh`, `fresh10/fresh10stats.py` | The cold-band hunch on ten fresh layouts (2026-10-29) | [#156](https://github.com/ai-quokka-wannabe/iso-lab/pull/156) |
 
 ## Leads Named by gr-fec (Unverified)
 
