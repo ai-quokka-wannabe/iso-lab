@@ -1,8 +1,10 @@
 # State of the Lab
 
-**Last updated:** 2026-10-29 ([the journal of 2026-10-29](docs/journal/2026-10-29.md)): a housekeeping night - the
-linter's dependencies patched, the night's audits, `external/` moved to latest `main` with the world unchanged, and
-this file cut to pointers. The last research night is [2026-10-28](docs/journal/2026-10-28.md), summarised in
+**Last updated:** 2026-10-29 ([the journal of 2026-10-29](docs/journal/2026-10-29.md)): mostly housekeeping - the
+linter's and the fetch tool's dependencies patched, the night's audits, this file cut to pointers, and `external/`
+moved twice, the second time to the food world, where Master Control's new physics shifts the placeholder's life in
+the sixth decimal - and one toy-worm test: the cold-band hunch, refuted narrowly on ten fresh layouts. The night
+before is [2026-10-28](docs/journal/2026-10-28.md), summarised in
 [gr-fec.md § 10.2](docs/research/gr-fec.md#102-2026-10-28). The benchmark's choice of rule for the lab's speed is
 still the next step for Phase 0.
 
@@ -84,9 +86,10 @@ found lives in the journal section it names; this list keeps only what is open.
    [findings.md § Designing a Brain](docs/research/findings.md#designing-a-brain); each experiment's script and pull
    request are in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are). Open, one run each:
    - (a) the weak nose in the warm world, where its effect is small and mixed;
-   - (b) the hunger gate and its fix: test the cold-band hunch, named after the data were seen - steering by the map's
-     global contrast helps where the band is cold and not where it is warm - on fifteen fresh layouts, with and
-     without the greedy margin; what the gate
+   - (b) the hunger gate and its fix: the cold-band hunch was refuted on the ten fresh banded layouts, narrowly
+     (journal of 2026-10-29, § The Cold-Band Hunch on Ten Fresh Layouts), and there gated steering mostly ends below
+     never steering; next, more body seeds per layout to tell a small cold-band gain from none, the rule without the
+     margin, and the five fresh rich layouts; what the gate
      does in 23001's first day, where its harm starts; and the timing of a worm's meals against the turning of its
      map;
    - (c) the sound CMA-ES, done;
@@ -196,4 +199,6 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   certificate-trust issue in three crates (CVE-2026-111943), patched by `cargo update`; OSV clean.
 - 2026-10-29: `external/` moved to the food world (link `23c89f5`, protocol v12 read only; master-control `ee2fdc2`;
   tron-grid-lite `9c56aaf`); B1′-B3 hold, the digest unchanged, the placeholder's closing state moved in the sixth decimal.
+- 2026-10-29: the cold-band hunch on ten fresh layouts: refuted by its rule (F1, F2 fail narrowly: cold +0.032, −0.006 to
+  +0.068); the margin rule ends below never steering in all five warm layouts.
 - 2026-10-29: STATE.md cut from 388 lines to pointers; the stale Dependabot item retired.
