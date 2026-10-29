@@ -4,7 +4,7 @@
 and with three levers; the hunger gate's harm traced with branched lives, in one layout (75000), a chain to well-mapped
 worms not finding their way back to the band over a bumpy map, each link measured and their causal join a reading; and
 a designed fix, steering by the map's global contrast, that helps in the two cold layouts tested but is not yet shown
-safe in the two warm ones. Before it, on 2026-10-27, seven verified experiments and a tidy.
+safe in the two warm ones. Before it, on 2026-10-27, eight verified experiments, a tidy and a world bump.
 The benchmark's choice of rule for the lab's speed is still the next step for Phase 0.
 
 ## Where We Are
@@ -135,7 +135,7 @@ Top first. Each item is sized for one run; split it here before starting if it i
      regression to the mean); with lives branched from one
      shared state at h24 and the gate switched on there, the reading was refuted in 75000 - on-band worms lose more
      (−0.170 against −0.093) - and, weakly, in 23001, where a gate from h24 barely costs anyone; for an on-band worm a gate from
-     h24 halves its time on the band and cuts its intake by a quarter, but its steering inside the band is not detectably
+     h24 halves its time on the band and cuts its intake by about 28%, but its steering inside the band is not detectably
      biased away (G3 fails); outside the band its steering leans slightly
      away from the band (0.481; O1 holds), as off-band worms' does, and is not shown to follow its map's peak (O2 fails,
      a scoring convention possibly all of it); it leaves the band less often under the
@@ -304,6 +304,7 @@ points to the open ones and says what waits on each.
 ## Done
 
 - 2026-10-29: `external/` moved to each repository's latest `main` (link `c8412b8`, master-control `3ba732e`, tron-grid-lite `c5b2815`); B1-B3 hold, render digest unchanged.
+- 2026-10-29: the night's audits: spelling and style clean; seven coherence findings fixed (VISION today, CI today, gr-fec § 10, counts); STATE.md's slimming next.
 - 2026-10-29: the linter's vulnerable `katex` and `re2js` overridden to patched releases; `npm audit` clean, lint unchanged.
 - 2026-10-28: the margin rule elsewhere: keeps the rich-world fix (V2 holds), helps in cold 23000 (+0.091, descriptive), but new harm is not
   excluded in either warm layout (V1 fails in 23001 and 75001) - a cold-band hunch, two layouts a side.

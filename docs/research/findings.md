@@ -85,7 +85,7 @@ effect.
 
 ## Designing a Brain
 
-From the toy worm of the maintainer's gr-fec sandbox ([gr-fec.md](gr-fec.md) §§ 9-11), on 2026-10-26 and 2026-10-27.
+From the toy worm of the maintainer's gr-fec sandbox ([gr-fec.md](gr-fec.md) §§ 9-11), on 2026-10-26, 2026-10-27 and 2026-10-28.
 Toy worlds, few layouts and body seeds; none of it is evidence about *C. elegans*, and none of it has met the
 benchmark.
 
@@ -93,8 +93,9 @@ benchmark.
 
 Every decision of gr-fec's e45 brain split into fourteen pathways that add back to it within about 1e-14, and into
 signal and sensor noise; every learned weight split into three ledgers that sum to it within 1e-9, the bound
-registered (five lives each, verified). Evidence: journal 2026-10-26, § An Audit Trail of Its Decisions, § How Much
-of Each Decision Is Noise?, § Where Its Learned Values Come From.
+registered (five lives each, verified). Evidence: journal 2026-10-26, § gr-fec's Worm by Equation: An Audit Trail of Its
+Decisions, § gr-fec's Worm by Equation: How Much of Each Decision Is Noise?, § gr-fec's Worm by Equation: Where Its
+Learned Values Come From.
 *For bigger brains*: keep the drive additive where it can be, and the audit comes free; whether a bigger animal's
 learned valuation can be built in that shape is *a hunch*, untested.
 
