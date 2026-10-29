@@ -308,7 +308,8 @@ points to the open ones and says what waits on each.
 
 ## Done
 
-- 2026-10-29: `external/` moved to each repository's latest `main` (link `c8412b8`, master-control `3ba732e`, tron-grid-lite `c5b2815`); B1-B3 hold, render digest unchanged.
+- 2026-10-29: `external/` moved to each repository's `main` as fetched at about 20:20 UTC (link `c8412b8`, master-control `3ba732e`,
+  tron-grid-lite `c5b2815`); B1-B3 hold, render digest unchanged; the food world since merged upstream is item 10.
 - 2026-10-29: the night's audits: spelling and style clean; seven coherence findings fixed (VISION today, CI today, gr-fec § 10, counts); STATE.md's slimming next.
 - 2026-10-29: the linter's vulnerable `katex` and `re2js` overridden to patched releases; `npm audit` clean, lint unchanged.
 - 2026-10-28: the margin rule elsewhere: keeps the rich-world fix (V2 holds), helps in cold 23000 (+0.091, descriptive), but new harm is not
