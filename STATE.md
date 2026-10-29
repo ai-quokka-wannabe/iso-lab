@@ -94,11 +94,6 @@ found lives in the journal section it names; this list keeps only what is open.
 
    Once a calculation matters to anything the lab builds on, it moves into tested Rust.
 
-10. **Move `external/` to the food world**: link protocol v12 (food, smell in the letter), master-control's food and
-    smell and its risers with a top, and tron-grid-lite's documents, all merged upstream on 2026-10-29 after that
-    night's pin. This changes the world: measure the arena before and after, check the placeholder against protocol v12,
-    and say what moved (journal of 2026-10-29, § The World Moved to Its Latest Main Again, Measured Before and After).
-
 ## To Revisit
 
 Experiments that failed or came out inconclusive, kept rather than discarded (the maintainer's ruling); each with
@@ -168,17 +163,22 @@ points to the open ones and says what waits on each.
   the world provides one, chemotaxis is listed as not comparable - never quietly dropped. B2 of
   [the B plans](docs/hypotheses/experiments/B.md#b2-smell-as-an-unlabelled-fingerprint) lists the properties a
   hunch asks of it (intensity, its change over time, a left-right difference, blending mixtures, blurring traces).
-  tron-grid-lite has since designed one, nothing built yet (its `docs/CHEMORECEPTION.md`, in the pin of 2026-10-29).
+  Smell is now designed with food (tron-grid-lite `docs/CHEMORECEPTION.md`: two amphids, eight receptor types) and
+  being built with it; see the next line.
 - **Food, and a sense of taking it in** ([master-control#63](https://github.com/ai-quokka-wannabe/master-control/issues/63)
   for food on the floor and the rule for intake; [tron-grid-lite#153](https://github.com/ai-quokka-wannabe/tron-grid-lite/issues/153)
   for the sense of the body's own intake). The reference worms are filmed on food and the Grid has none
   ([docs/benchmark/FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing)).
   The benchmark is not frozen until food is settled, by these issues or by comparing with foodless worms instead.
-- **The worm's bends against the Grid's joint limit** (tron-grid-lite; drafted, not yet filed). At the eight-arc
+  Under way upstream, by the maintainer's comment on both issues (2026-10-29): the design is merged (tron-grid-lite
+  #164, #166), then master-control#70 (the world's half, no wire) and link#49 (protocol v12), both merged; next the
+  wire, the Grid (Program ABI 11) and rc-worm. When Program ABI 11 lands, the lab's placeholder Program must be
+  rebuilt against it before the next bump merges.
+- **The worm's bends against the Grid's joint limit**
+  ([tron-grid-lite#165](https://github.com/ai-quokka-wannabe/tron-grid-lite/issues/165), filed 2026-10-29). At the eight-arc
   resolution 9.8 to 68.6% (median 35.8%, 34 recordings) of the reference worms' skeletonised frames bend beyond the
-  chain's 0.9 rad at some joint, against 0.15% beyond Master Control's pi/2. The issue - raise the limit to pi/2, with the caveats - is
-  drafted in full in the journal of 2026-10-15, *The Joint-Limit Issue, Drafted*, for the maintainer to file, since
-  this session cannot open issues there. Once filed, this line becomes its link.
+  chain's 0.9 rad at some joint, against 0.15% beyond Master Control's pi/2. The issue asks to raise the limit to
+  pi/2, with the caveats (journal of 2026-10-15, *The Joint-Limit Issue, Drafted*).
 - **Terrace edges** (master-control; the maintainer takes it up once the lab is set up - file nothing). A
   chain can be thrown when a segment crosses a terrace edge; a fix is in progress. Until it lands, every life
   in this lab is lived on a flat arena.
@@ -190,8 +190,10 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
 
 - 2026-10-29: the linter's vulnerable `katex` and `re2js` overridden to patched releases; `npm audit` clean, lint unchanged.
 - 2026-10-29: `external/` moved to each repository's `main` as fetched at about 20:20 UTC (link `c8412b8`, master-control `3ba732e`,
-  tron-grid-lite `c5b2815`); B1-B3 hold, render digest unchanged; the food world since merged upstream is item 10.
+  tron-grid-lite `c5b2815`); B1-B3 hold, render digest unchanged; the food world followed (next line).
 - 2026-10-29: the night's audits: spelling and style clean; seven coherence findings fixed (VISION today, CI today, gr-fec § 10, counts).
 - 2026-10-29: four `rustls` advisories in the fetch tool's TLS (1 moderate, 3 low), and one
   certificate-trust issue in three crates (CVE-2026-111943), patched by `cargo update`; OSV clean.
+- 2026-10-29: `external/` moved to the food world (link `23c89f5`, protocol v12 read only; master-control `ee2fdc2`;
+  tron-grid-lite `9c56aaf`); B1′-B3 hold, the digest unchanged, the placeholder's closing state moved in the sixth decimal.
 - 2026-10-29: STATE.md cut from 388 lines to pointers; the stale Dependabot item retired.
