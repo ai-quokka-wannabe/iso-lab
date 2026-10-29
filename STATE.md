@@ -303,6 +303,7 @@ points to the open ones and says what waits on each.
 
 ## Done
 
+- 2026-10-29: the linter's vulnerable `katex` and `re2js` overridden to patched releases; `npm audit` clean, lint unchanged.
 - 2026-10-28: the margin rule elsewhere: keeps the rich-world fix (V2 holds), helps in cold 23000 (+0.091, descriptive), but new harm is not
   excluded in either warm layout (V1 fails in 23001 and 75001) - a cold-band hunch, two layouts a side.
 - 2026-10-28: the global rule with the greedy margin in 75000: +0.213 over greedy gating (M1 holds) and +0.040 over never
