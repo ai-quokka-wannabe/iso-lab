@@ -170,6 +170,11 @@ Top first. Each item is sized for one run; split it here before starting if it i
 
    Once a calculation matters to anything the lab builds on, it moves into tested Rust.
 
+10. **Move `external/` to the food world**: link protocol v12 (food, smell in the letter), master-control's food and
+    smell and its risers with a top, and tron-grid-lite's documents, all merged upstream on 2026-10-29 after that
+    night's pin. This changes the world: measure the arena before and after, check the placeholder against protocol v12,
+    and say what moved (journal of 2026-10-29, § The World Moved to Its Latest Main Again, Measured Before and After).
+
 ## To Revisit
 
 Experiments that failed or came out inconclusive, kept rather than discarded (the maintainer's ruling); each with
