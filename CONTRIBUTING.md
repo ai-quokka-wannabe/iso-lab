@@ -121,7 +121,7 @@ under `external/` - is [docs/DEV_ENV_SETUP.md](docs/DEV_ENV_SETUP.md).
 
 ### Rust Style
 
-- Follow `cargo fmt` formatting (the toolchain's rustfmt defaults)
+- Follow `cargo fmt` formatting (rustfmt's defaults, but for the 170-column limit in `rustfmt.toml`)
 - Use edition-2024 Rust, as Master Control and Link do
 - Keep clippy clean with warnings denied
 - 4-space indentation
