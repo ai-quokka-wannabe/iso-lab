@@ -200,5 +200,5 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
 - 2026-10-29: `external/` moved to the food world (link `23c89f5`, protocol v12 read only; master-control `ee2fdc2`;
   tron-grid-lite `9c56aaf`); B1′-B3 hold, the digest unchanged, the placeholder's closing state moved in the sixth decimal.
 - 2026-10-29: the cold-band hunch on ten fresh layouts: refuted by its rule (F1, F2 fail narrowly: cold +0.032, −0.006 to
-  +0.069); the margin rule ends below never steering in all five warm layouts.
+  +0.068); the margin rule ends below never steering in all five warm layouts.
 - 2026-10-29: STATE.md cut from 388 lines to pointers; the stale Dependabot item retired.
