@@ -305,9 +305,9 @@ is still a toy world; none of this is evidence about *C. elegans*.
 - **The turning rule can be predicted by equation and set by it** (journal § gr-fec's Worm by Equation: Its Turning
   Rule).
 - **The worm's decisions can be audited exactly**, within stated limits:
-    - by pathway (journal § An Audit Trail of Its Decisions);
-    - into signal and sensor noise (§ How Much of Each Decision Is Noise?);
-    - each learned weight into exact ledgers (§ Where Its Learned Values Come From).
+    - by pathway (journal § gr-fec's Worm by Equation: An Audit Trail of Its Decisions);
+    - into signal and sensor noise (§ gr-fec's Worm by Equation: How Much of Each Decision Is Noise?);
+    - each learned weight into exact ledgers (§ gr-fec's Worm by Equation: Where Its Learned Values Come From).
 - **A smoothed hunger reading** gave a gain over worms that was not shown over genomes. No single route's gain was
   shown (journal § gr-fec's Worm by Design: A Smoothed Hunger Reading, and § gr-fec's Worm by Design and
   Search).
@@ -324,10 +324,12 @@ is still a toy world; none of this is evidence about *C. elegans*.
   `consume()` acts at the right-hand point; [#118](https://github.com/ai-quokka-wannabe/iso-lab/pull/118)'s
   verification measured how often that names the wrong patch.
 
-## 10. The Second Night (2026-10-27)
+## 10. The Second and Third Nights (2026-10-27 and 2026-10-28)
 
-Every number, command and caveat lives in [the journal of 2026-10-27](../journal/2026-10-27.md); this section only
-points. Still a toy world.
+Every number, command and caveat lives in the journals of [2026-10-27](../journal/2026-10-27.md) and
+[2026-10-28](../journal/2026-10-28.md); this section only points. Still a toy world.
+
+### 10.1 2026-10-27
 
 - **Slow learning and a weak nose are alternatives, not partners**: each repairs its own failure - the nose keeps the
   worm off decoys, slow learning keeps its temperature map pointing to the food - and either alone recovers most of
@@ -341,6 +343,43 @@ points. Still a toy world.
 - **Gating steering on hunger** removes the rich-world cost but leaves the worm below one that never steers in two
   Hardland layouts; flicker at the threshold was found and then refuted as the cause (§ Steering Only When Hungry,
   § Why the Hunger Gate Harms, § A Hunger Gate with Hysteresis).
+- **Steering only while fed** raised the score in all four Hardland layouts. Across that night's three gates, steering
+  *only* while hungry is the configuration that harms in Hardland; in the rich layouts steering while fed still costs
+  (§ Steering Only When Fed).
+
+### 10.2 2026-10-28
+
+- **The composition law** (multiplying two levers' remaining failures):
+    - It holds in the warm world, and for `eta` with the turning rule's `tau`. In the warm world, though, a post hoc
+      baseline that ignores the weak lever does as well (§ The Composition Law Beyond Its First World and Pair).
+    - It holds for `eta` with `g_odour` in two fresh layouts and beats both simpler rules there. The mild pairs' extra
+      gain is not detected (§ The Composition Law Where Both Levers Work).
+    - With three levers its error stays small. Roaming moves the score too little, so the tests that depend on it say
+      nothing (§ Three Levers at Once).
+- **Hungry steering, in 75000**:
+    - Hungry decisions point towards cold less often than fed ones (§ Where Hungry Steering Points).
+    - Scored towards the food, they are worse, 0.483 against 0.707 (§ Hungry Steering, Scored Towards the Food).
+- **Who loses under the hunger gate**:
+    - The first test, splitting worms by where their map peaks, was uninformative. It paired worms across two lives
+      that had diverged, and so measured regression to the mean (§ Who Loses Under the Hunger Gate).
+    - Re-run from one shared life, branched at hour 24, worms whose map peaks on the band lose more in 75000. In 23001
+      the branched gate reproduces almost none of the harm (§ Who Loses Under the Hunger Gate, from One Shared Life).
+    - The first meal is not a switch that sets the map (§ Where a Worm's Map Comes From: Its First Meals).
+- **What the gate does to a well-mapped worm, in 75000 from hour 24**:
+    - It halves the worm's time on the band and cuts its intake by about 28%. Steering inside the band is not biased
+      (§ What the Hunger Gate Changes for a Well-Mapped Worm).
+    - Off the band, the gated worm leans slightly away from it (§ Where a Gated Worm Steers Off the Band). It leaves
+      the band less often but comes back less than half as often (§ Leaving the Band and Coming Back).
+    - Its map is bumpy rather than flat (§ Does the Hungry Map Point Home?).
+    - Each of these links is measured; that they join causally is a reading.
+- **A designed fix: steering by the map's global contrast**:
+    - In 75000 it beats greedy gating (+0.167, without the greedy rule's 0.02 margin). In 23001 the hunch is refuted (§ Steering by the Map's Global
+      Contrast).
+    - Elsewhere it keeps the rich-world fix but is not shown safe in warm 75001 (§ The Global Rule Elsewhere).
+    - With the greedy rule's margin kept, it beats greedy gating in 75000 by +0.213 (§ The Global Rule with the Greedy
+      Margin).
+    - In five more layouts it did better in cold 23000 (descriptive), was no different in the two rich ones and was not
+      shown safe in either warm one, so it is not yet a candidate (§ The Margin Rule Elsewhere).
 
 ## 11. Where the Lab's Toy-Worm Scripts Are
 

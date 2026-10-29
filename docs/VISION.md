@@ -115,10 +115,9 @@ lab makes.
 
 ## What Exists Today
 
-The lab opened on 2026-10-13: its rules ([.claude/CLAUDE.md](../.claude/CLAUDE.md)), the plan, nine
-hypotheses, the journal, the dataset registry, and the world pinned under `external/`. No dataset is chosen, no
-feature defined, no brain built and no creature scored yet. Where the work stands tonight is always in
-[STATE.md](../STATE.md), and what each night tried in [the journal](journal/).
+The lab opened on 2026-10-13 with its rules ([.claude/CLAUDE.md](../.claude/CLAUDE.md)), the plan, the hypotheses,
+the journal, the dataset registry, and the world pinned under `external/`. Where the work stands is kept in one place,
+[STATE.md § Where We Are](../STATE.md#where-we-are), and what each night tried is in [the journal](journal/).
 
 The Grid's own vision - what the renderer and its senses are for - is the flagship's
 [docs/VISION.md](https://github.com/ai-quokka-wannabe/tron-grid-lite/blob/main/docs/VISION.md).
