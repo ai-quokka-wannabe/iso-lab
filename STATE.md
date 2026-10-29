@@ -4,7 +4,8 @@
 linter's and the fetch tool's dependencies patched, the night's audits, this file cut to pointers, and `external/`
 moved twice, the second time to the food world, where Master Control's new physics shifts the placeholder's life in
 the sixth decimal - and one toy-worm test: the cold-band hunch, refuted narrowly on ten fresh layouts. The night
-before is [2026-10-28](docs/journal/2026-10-28.md), summarised in [gr-fec.md § 10.2](docs/research/gr-fec.md#102-2026-10-28). The benchmark's choice of rule for the lab's speed is
+before is [2026-10-28](docs/journal/2026-10-28.md), summarised in
+[gr-fec.md § 10.2](docs/research/gr-fec.md#102-2026-10-28). The benchmark's choice of rule for the lab's speed is
 still the next step for Phase 0.
 
 ## Where We Are
