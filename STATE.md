@@ -84,9 +84,10 @@ found lives in the journal section it names; this list keeps only what is open.
    [findings.md § Designing a Brain](docs/research/findings.md#designing-a-brain); each experiment's script and pull
    request are in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are). Open, one run each:
    - (a) the weak nose in the warm world, where its effect is small and mixed;
-   - (b) the hunger gate and its fix: test the cold-band hunch, named after the data were seen - steering by the map's
-     global contrast helps where the band is cold and not where it is warm - on fifteen fresh layouts, with and
-     without the greedy margin; what the gate
+   - (b) the hunger gate and its fix: the cold-band hunch was refuted on the ten fresh banded layouts, narrowly
+     (journal of 2026-10-29, § The Cold-Band Hunch on Ten Fresh Layouts), and there gated steering mostly ends below
+     never steering; next, more body seeds per layout to tell a small cold-band gain from none, the rule without the
+     margin, and the five fresh rich layouts; what the gate
      does in 23001's first day, where its harm starts; and the timing of a worm's meals against the turning of its
      map;
    - (c) the sound CMA-ES, done;
@@ -194,4 +195,6 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
 - 2026-10-29: the night's audits: spelling and style clean; seven coherence findings fixed (VISION today, CI today, gr-fec § 10, counts).
 - 2026-10-29: four `rustls` advisories in the fetch tool's TLS (1 moderate, 3 low), and one
   certificate-trust issue in three crates (CVE-2026-111943), patched by `cargo update`; OSV clean.
+- 2026-10-29: the cold-band hunch on ten fresh layouts: refuted by its rule (F1, F2 fail narrowly: cold +0.032, −0.006 to
+  +0.069); the margin rule ends below never steering in all five warm layouts.
 - 2026-10-29: STATE.md cut from 388 lines to pointers; the stale Dependabot item retired.

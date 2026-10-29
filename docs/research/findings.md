@@ -137,7 +137,9 @@ peak instead (also without the greedy rule's 0.02 margin, a confound) lifted the
 not in 23001, where the harm depends on the first day (§ Steering by the Map's Global Contrast). With the margin kept, the global rule
 still lifted it, to above never steering in 75000 (descriptive, one layout; § The Global Rule with the Greedy
 Margin). In five more layouts it kept the rich-world fix and helped in the other cold one (descriptive), but was
-not shown safe in either warm one (§ The Margin Rule Elsewhere).
+not shown safe in either warm one (§ The Margin Rule Elsewhere). On ten fresh banded layouts the hunch that it helps
+where the band is cold was refuted, narrowly, and there gated steering of either kind mostly ended below never
+steering (journal 2026-10-29, § The Cold-Band Hunch on Ten Fresh Layouts).
 *For bigger brains*: test every world again after gating a module; a fix in one world is a new claim in all. A state
 used as a gate may mark *which* individuals are in it, not only *when* - split by individual before reading a gate,
 and test the split under the gate itself - with the same individuals in both arms (branch one life), never two
