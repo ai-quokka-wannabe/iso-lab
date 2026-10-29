@@ -350,30 +350,35 @@ Every number, command and caveat lives in the journals of [2026-10-27](../journa
 ### 10.2 2026-10-28
 
 - **The composition law** (multiplying two levers' remaining failures):
-    - It holds in the warm world, and for `eta` with the turning rule's `tau`. In the warm world, though, a post hoc
-      baseline that ignores the weak lever does as well (§ The Composition Law Beyond Its First World and Pair).
+    - It passes its bar in the warm world, and for `eta` with the turning rule's `tau`, but only because one lever
+      barely moves the score in each: post hoc, ignoring the weaker lever does as well in both, and `tau` and the map
+      could not be shown to compose (T2 fails; § The Composition Law Beyond Its First World and Pair).
     - It holds for `eta` with `g_odour` in two fresh layouts and beats both simpler rules there. The mild pairs' extra
       gain is not detected (§ The Composition Law Where Both Levers Work).
     - With three levers its error stays small. Roaming moves the score too little, so the tests that depend on it say
       nothing (§ Three Levers at Once).
 - **Hungry steering, in 75000**:
-    - Hungry decisions point towards cold less often than fed ones (§ Where Hungry Steering Points).
+    - Hungry decisions point towards cold less often than fed ones; the map's peak does not move with hunger (D2
+      fails; § Where Hungry Steering Points).
     - Scored towards the food, they are worse, 0.483 against 0.707 (§ Hungry Steering, Scored Towards the Food).
 - **Who loses under the hunger gate**:
     - The first test, splitting worms by where their map peaks, was uninformative. It paired worms across two lives
       that had diverged, and so measured regression to the mean (§ Who Loses Under the Hunger Gate).
-    - Re-run from one shared life, branched at hour 24, worms whose map peaks on the band lose more in 75000. In 23001
-      the branched gate reproduces almost none of the harm (§ Who Loses Under the Hunger Gate, from One Shared Life).
+    - Re-run from one shared life, branched at hour 24, the reading that the harm falls on worms whose map peaks off the band is refuted in both
+      layouts: in 75000 worms whose map peaks on the band lose more, and in 23001 the branched gate reproduces almost
+      none of the harm (§ Who Loses Under the Hunger Gate, from One Shared Life).
     - The first meal is not a switch that sets the map (§ Where a Worm's Map Comes From: Its First Meals).
 - **What the gate does to a well-mapped worm, in 75000 from hour 24**:
-    - It halves the worm's time on the band and cuts its intake by about 28%. Steering inside the band is not biased
-      (§ What the Hunger Gate Changes for a Well-Mapped Worm).
-    - Off the band, the gated worm leans slightly away from it (§ Where a Gated Worm Steers Off the Band). It leaves
-      the band less often but comes back less than half as often (§ Leaving the Band and Coming Back).
+    - It halves the worm's time on the band and cuts its intake by about 28%. Steering inside the band is not
+      detectably biased away (G3 fails; § What the Hunger Gate Changes for a Well-Mapped Worm).
+    - Off the band, the gated worm leans slightly away from it, and does not point towards its map's peak more than
+      half the time (O2 fails; § Where a Gated Worm Steers Off the Band). It leaves the band
+      less often but comes back less than half as often (§ Leaving the Band and Coming Back).
     - Its map is bumpy rather than flat (§ Does the Hungry Map Point Home?).
     - Each of these links is measured; that they join causally is a reading.
 - **A designed fix: steering by the map's global contrast**:
-    - In 75000 it beats greedy gating (+0.167, without the greedy rule's 0.02 margin). In 23001 the hunch is refuted (§ Steering by the Map's Global
+    - In 75000 it beats greedy gating (+0.167, without the greedy rule's 0.02 margin), but the harm against never
+      steering is not shown to be gone (Q2 fails, narrowly). In 23001 the hunch is refuted (§ Steering by the Map's Global
       Contrast).
     - Elsewhere it keeps the rich-world fix but is not shown safe in warm 75001 (§ The Global Rule Elsewhere).
     - With the greedy rule's margin kept, it beats greedy gating in 75000 by +0.213 (§ The Global Rule with the Greedy
