@@ -372,7 +372,7 @@ Every number, command and caveat lives in the journals of [2026-10-27](../journa
     - It halves the worm's time on the band and cuts its intake by about 28%. Steering inside the band is not
       detectably biased away (G3 fails; § What the Hunger Gate Changes for a Well-Mapped Worm).
     - Off the band, the gated worm leans slightly away from it, and does not point towards its map's peak more than
-      half the time (O2 fails; § Where a Gated Worm Steers Off the Band). It leaves the band
+      half the time as scored (O2 fails; § Where a Gated Worm Steers Off the Band). It leaves the band
       less often but comes back less than half as often (§ Leaving the Band and Coming Back).
     - Its map is bumpy rather than flat (§ Does the Hungry Map Point Home?).
     - Each of these links is measured; that they join causally is a reading.
