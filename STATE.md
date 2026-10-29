@@ -43,7 +43,7 @@ found lives in the journal section it names; this list keeps only what is open.
      of other lengths than 15 minutes (journal of 2026-10-14, § How Long the Reference Recordings Are). The published
      locomotion states are reproduced exactly (`features::states`). The lab's midbody speed leaves more frames in no
      state than the published one, and the chain of tests that traced why, from 2026-10-14 to 2026-10-15, ends at
-     the stored skeletons' uneven spacing (journal of 2026-10-15, § Do the Undefined Frames Follow From the Spacing?,
+     the stored skeletons' uneven spacing, which accounts for most of it (a median 92%) (journal of 2026-10-15, § Do the Undefined Frames Follow From the Spacing?,
      and the sections before it). Next: write down, with its reason, whether the benchmark applies the published
      rule unchanged to the lab's speed, before the reference statistics are frozen; then the states' durations and
      the rate of reversals;
@@ -84,8 +84,9 @@ found lives in the journal section it names; this list keeps only what is open.
    [findings.md § Designing a Brain](docs/research/findings.md#designing-a-brain); each experiment's script and pull
    request are in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are). Open, one run each:
    - (a) the weak nose in the warm world, where its effect is small and mixed;
-   - (b) the hunger gate and its fix: test the cold-band hunch - steering by the map's global contrast, with the
-     greedy margin, helps where the band is cold and not where it is warm - on fifteen fresh layouts; what the gate
+   - (b) the hunger gate and its fix: test the cold-band hunch, named after the data were seen - steering by the map's
+     global contrast helps where the band is cold and not where it is warm - on fifteen fresh layouts, with and
+     without the greedy margin; what the gate
      does in 23001's first day, where its harm starts; and the timing of a worm's meals against the turning of its
      map;
    - (c) the sound CMA-ES, done;
@@ -117,12 +118,13 @@ the idea for the next attempt.
   API marks it closed and the abstract elided by the publisher, checked 2026-10-14); it stays unread.
 - **H13, the proof of concept on synthetic worms** ([round 1](notebooks/h13_modular_poc.ipynb),
   [rounds 2 to 4](notebooks/h13_rounds_2_to_4.ipynb); the journals of
-  [2026-10-17](docs/journal/2026-10-17.md), [2026-10-18](docs/journal/2026-10-18.md) and
-  [2026-10-22](docs/journal/2026-10-22.md) hold every round). Where it stands: the grind's decisions work - ablation
-  told real modules from a decoy in every run - and on five fresh populations the whole loop passed its first
-  criterion for 5 of 5, with the rate of leaving roaming (`k_rd`) within 0.2 for 4; habituation's `dep` and `tau`
-  were not both recovered in three of five, the behaviour statistics seeing one combination of them far more clearly
-  than the two apart. A short-interval tap train separates them on a near noise-free target but did not carry to the whole
+  [2026-10-17](docs/journal/2026-10-17.md), [2026-10-18](docs/journal/2026-10-18.md),
+  [2026-10-19](docs/journal/2026-10-19.md) and [2026-10-22](docs/journal/2026-10-22.md) hold every round).
+  Where it stands: the grind's decisions work - ablation told real modules from a decoy in every run - and on five
+  fresh populations, one optimiser seed each, the whole loop passed its first criterion for 5 of 5 (journal of
+  2026-10-19, § H13: Does the Pass Hold beyond DEV?), with the rate of leaving roaming (`k_rd`) within 0.2 for 4;
+  habituation's `dep` and `tau` were not both recovered in three of five, the behaviour statistics seeing one
+  combination of them far more clearly than the two apart. A short-interval tap train separates them on a near noise-free target but did not carry to the whole
   loop on five fresh 30-worm populations (journal of 2026-10-22, § H13: The Whole Loop on Fresh Populations, under
   the Short-Interval Train). Next: the same loop under that protocol on fresh populations of 60 or more to fit, to
   see whether the gain arrives as sampling noise falls. For the maintainer: whether a 2 s tap interval is right for
@@ -190,4 +192,6 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
 - 2026-10-29: `external/` moved to each repository's `main` as fetched at about 20:20 UTC (link `c8412b8`, master-control `3ba732e`,
   tron-grid-lite `c5b2815`); B1-B3 hold, render digest unchanged; the food world since merged upstream is item 10.
 - 2026-10-29: the night's audits: spelling and style clean; seven coherence findings fixed (VISION today, CI today, gr-fec § 10, counts).
+- 2026-10-29: four `rustls` advisories in the fetch tool's TLS (1 moderate, 3 low), and one
+  certificate-trust issue in three crates (CVE-2026-111943), patched by `cargo update`; OSV clean.
 - 2026-10-29: STATE.md cut from 388 lines to pointers; the stale Dependabot item retired.
