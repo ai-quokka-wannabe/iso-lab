@@ -88,8 +88,8 @@ found lives in the journal section it names; this list keeps only what is open.
    - (a) the weak nose in the warm world, where its effect is small and mixed;
    - (b) the hunger gate and its fix: the cold-band hunch was refuted on the ten fresh banded layouts, narrowly
      (journal of 2026-10-29, § The Cold-Band Hunch on Ten Fresh Layouts), and there gated steering mostly ends below
-     never steering; next, more body seeds per layout to tell a small cold-band gain from none, the rule without the
-     margin, and the five fresh rich layouts; what the gate
+     never steering, while in the five fresh rich layouts it keeps the rich-world fix (R2); next, more body seeds per
+     layout to tell a small cold-band gain from none, and the rule without the margin; what the gate
      does in 23001's first day, where its harm starts; and the timing of a worm's meals against the turning of its
      map;
    - (c) the sound CMA-ES, done;
@@ -201,4 +201,5 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   tron-grid-lite `9c56aaf`); B1′-B3 hold, the digest unchanged, the placeholder's closing state moved in the sixth decimal.
 - 2026-10-29: the cold-band hunch on ten fresh layouts: refuted by its rule (F1, F2 fail narrowly: cold +0.032, −0.006 to
   +0.068); the margin rule ends below never steering in all five warm layouts.
+- 2026-10-29: the margin rule in five fresh rich layouts: the rich-world fix holds in all five (R2; lowest bound −0.0024).
 - 2026-10-29: STATE.md cut from 388 lines to pointers; the stale Dependabot item retired.
