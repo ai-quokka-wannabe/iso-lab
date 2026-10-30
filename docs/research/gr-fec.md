@@ -440,13 +440,13 @@ evaluation tools for a toy world, not code the lab builds on; anything that beco
 | `matched/matched.py`, `matched/run.sh` (statistics: `scaled/scstats.py`) | Grading or smaller turns, with the constant matched (2026-10-30) | [#166](https://github.com/ai-quokka-wannabe/iso-lab/pull/166) |
 | `seeds3/run.sh`, `seeds3/pstats.py` | Graded, matched and un-latched with three body seeds per layout (2026-10-30) | [#167](https://github.com/ai-quokka-wannabe/iso-lab/pull/167) |
 | `mrich/matchedrich.py`, `mrich/mrstats.py`, `mrich/run.sh` | The matched scaled step in the rich layouts (2026-10-30) | [#168](https://github.com/ai-quokka-wannabe/iso-lab/pull/168) |
-| `zero/zero.py`, `zero/zstats.py`, `zero/run.sh` | The graded gain without its steering below 0.3 (2026-10-30) | [#169](https://github.com/ai-quokka-wannabe/iso-lab/pull/169) |
-| `floor/floor.py`, `floor/fstats.py`, `floor/run.sh` | A constant floor below 0.3, with three seeds in the rich layouts (2026-10-30) | [#171](https://github.com/ai-quokka-wannabe/iso-lab/pull/171) |
+| `zero/zero.py`, `zero/zstats.py`, `zero/run.sh`, `zero/znever.py` | The graded gain without its steering below 0.3 (2026-10-30) | [#169](https://github.com/ai-quokka-wannabe/iso-lab/pull/169) |
+| `floor/floor.py`, `floor/fstats.py`, `floor/run.sh`; `floor/perseed.py` in [#175](https://github.com/ai-quokka-wannabe/iso-lab/pull/175) | A constant floor below 0.3, with three seeds in the rich layouts (2026-10-30) | [#171](https://github.com/ai-quokka-wannabe/iso-lab/pull/171) |
 | `floor10/run.sh`, `floor10/f10stats.py` | The constant floor on ten fresh rich layouts (2026-10-30) | [#173](https://github.com/ai-quokka-wannabe/iso-lab/pull/173) |
 
 ## Leads Named by gr-fec (Unverified)
 
-Biology: Hedgecock and Russell 1975; Saeki et al. 2001; Mohri et al. 2005; Zhang, Lu and Bargmann 2005;
+Biology: Hedgecock and Russell 1975 (its abstract since read, for H14); Saeki et al. 2001; Mohri et al. 2005; Zhang, Lu and Bargmann 2005;
 Pierce-Shimomura et al. 1999; Kato et al. 2015; White et al. 1986; Cook et al. 2019; Douglass et al. 1993; Priplata et
 al. 2003; Faisal, Selen and Wolpert 2008; O'Keefe and Recce 1993; Fiser, Berkes, Orbán and Lengyel 2010; Ginsburg and
 Jablonka 2019; the FlyWire connectome 2024; a 2024 brain-body-environment worm model from Beijing (gr-fec: "verify
