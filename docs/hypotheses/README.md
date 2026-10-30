@@ -305,7 +305,10 @@ gain helps by making turns smaller, and the graded half of the hunch is not supp
 +0.0149 to +0.0737, seeds pooled; on the new worms alone +0.0506, +0.0161 to +0.0892), and the graded gain kept the
 rich-world fix (K4; § The Graded Hunger Gain: a Second Body Seed, and the Rich Layouts). The matched step keeps it
 too (W1), though the graded gain ends slightly above it in three rich layouts, where its steering below 0.3, its
-grading and turn size are not separated (§ The Matched Scaled Step in the Rich Layouts). The benchmark half waits on
+grading and turn size are not separated (§ The Matched Scaled Step in the Rich Layouts). There the worms spend about
+99% of their time below 0.3; zeroing the graded gain's steering below 0.3 is not shown to remove its edge over the
+five layouts (Z1 fails), but removes it in the two where it was clearest, and leaves it not told apart from the
+matched step (§ The Graded Gain Without Its Steering Below 0.3). The benchmark half waits on
 the benchmark.
 
 ### H15. The Pattern: a Small Core That Recurs
@@ -352,6 +355,9 @@ one to three body seeds per layout and no benchmark; each is stated no more stro
   and § Graded, Matched and Un-latched With Three Body Seeds per Layout.
 - *Removing the gate's latch between decisions*: not detected to add anything (L2, −0.0063, −0.0275 to +0.0140).
   § Graded or Un-latched? An Ablation of the Graded Hunger Gain.
+- *The graded gain's small steering below the gate's threshold*, in the rich layouts: not shown over five layouts (Z1,
+  +0.0025, −0.0012 to +0.0053); its removal takes away the graded gain's edge in the two layouts where it was
+  clearest (descriptive). § The Graded Gain Without Its Steering Below 0.3.
 
 ## Adding a Hypothesis
 
