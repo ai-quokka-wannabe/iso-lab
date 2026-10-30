@@ -113,6 +113,22 @@ A reference recording lasts 15 minutes, 900 s, by the protocol (most do; see *Un
   half is asked for by issue: food on the floor in
   [master-control#63](https://github.com/ai-quokka-wannabe/master-control/issues/63), a sense of the body's own intake
   in [tron-grid-lite#153](https://github.com/ai-quokka-wannabe/tron-grid-lite/issues/153).
+- **Which speed the locomotion states are computed from: decided (journal of 2026-10-30, § One Instrument for Both
+  Bodies' Locomotion States).** Both bodies' forward, backward and paused states are computed by the lab's one
+  pipeline. Yemini et al.'s rule and thresholds are applied unchanged (`features::states`) to the lab's eight-arc
+  midbody speed and length with the published choices (`locomotion-states --published-choices`), on the reference
+  skeletons and on the Grid's poses alike. The published `motion_modes` are not the reference states.
+    - *Why*: a comparison of two bodies must measure both with the same instrument, or an instrument's difference is
+      scored as a difference in behaviour. The published speed carries jitter from the stored skeletons' uneven point
+      spacing, and the published states rely on it, on a median 15% of paused frames, to bridge short runs (journal of
+      2026-10-15, § Do the Undefined Frames Follow From the Spacing?). The Grid's equally spaced chain cannot have that
+      jitter. On seventeen records the lab's states give a paused share lower by a median 0.047, about a quarter of
+      the spread between worms (§ The Midbody Speed, Judged by the States It Gives).
+    - *What it costs*: the reference statistics will differ from what Yemini et al.'s published states give, with more
+      frames in no state and less time paused. That difference is reported beside the reference statistics, never
+      hidden.
+    - *What would reopen it*: a check showing the lab's speed misses the published states on durations or reversal
+      rates where the published speed does not, for a cause other than the spacing.
 - **The habituation window.** Yemini et al. tracked 25 wild-type worms for two hours without the usual wait and found
   speed decaying with τ = 19 minutes, midbody amplitude with τ = 48 minutes and crawling frequency with τ = 19
   minutes. The reference recordings start 30 minutes after the worm is moved, so a Grid life must be compared over the
