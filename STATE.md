@@ -202,8 +202,9 @@ points to the open ones and says what waits on each.
   ([docs/benchmark/FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing)).
   The benchmark is not frozen until food is settled, by these issues or by comparing with foodless worms instead.
   Under way upstream, by the maintainer's comment on both issues (2026-10-29): the design is merged (tron-grid-lite
-  #164, #166), then master-control#70 (the world's half, no wire) and link#49 (protocol v12), both merged; next the
-  wire, the Grid (Program ABI 11) and rc-worm. When Program ABI 11 lands, the lab's placeholder Program must be
+  #164, #166), then master-control#70 (the world's half, no wire) and link#49 (protocol v12), both merged, then the
+  wire and food in the tick (master-control#72 and #73, pinned since the journal of 2026-10-30); next the Grid
+  (Program ABI 11) and rc-worm. When Program ABI 11 lands, the lab's placeholder Program must be
   rebuilt against it before the next bump merges.
 - **The worm's bends against the Grid's joint limit**
   ([tron-grid-lite#165](https://github.com/ai-quokka-wannabe/tron-grid-lite/issues/165), filed 2026-10-29). At the eight-arc
@@ -240,5 +241,7 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   from a conversation the maintainer relayed; two new sources read at their abstracts.
 - 2026-10-30: the global rule without the margin on ten fresh layouts: N1 fails (cold +0.0179, −0.0321 to +0.0630); N2
   holds only through harm in the warm band (−0.0623, wholly below zero); the margin limits that harm.
+- 2026-10-30: `external/` moved to latest `main` again: Link protocol 12 and food eaten in the tick (master-control
+  `53e5acb`, tron-grid-lite `ee5332d`); C1-C3 hold, the placeholder's life unchanged.
 - 2026-10-30: `external/` moved to latest `main` (the upstream re2js linter override; link `9b1b771`, master-control
   `866b13c`, tron-grid-lite `91f38a0`); B1-B3 hold, the world unchanged.
