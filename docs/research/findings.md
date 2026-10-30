@@ -159,7 +159,9 @@ The lead held with a second body seed (on the new
 worms alone, +0.0506, +0.0161 to +0.0892), and the graded gain kept the rich-world fix in five fresh rich layouts (§ The Graded Hunger Gain: a Second Body Seed, and the
 Rich Layouts). The matched step kept it too, though the graded gain ended slightly above it in three of those
 layouts; there the graded gain also steers a little below 0.3, where the matched step does not, and that, its
-grading and turn size are not yet separated (§ The Matched Scaled Step in the Rich Layouts).
+grading and turn size are not separated there (§ The Matched Scaled Step in the Rich Layouts). In the rich layouts the
+worms spend about 99% of their time below 0.3; without its steering there the graded gain is not told apart from the
+matched step, though the registered pooled test fails (§ The Graded Gain Without Its Steering Below 0.3).
 *For bigger brains*: test every world again after gating a module; a fix in one world is a new claim in all. A state
 used as a gate may mark *which* individuals are in it, not only *when* - split by individual before reading a gate,
 and test the split under the gate itself - with the same individuals in both arms (branch one life), never two
