@@ -121,6 +121,9 @@ found lives in the journal section it names; this list keeps only what is open.
 Experiments that failed or came out inconclusive, kept rather than discarded (the maintainer's ruling); each with
 the idea for the next attempt.
 
+- **For the maintainer**: whether a decided item, such as the speed for the locomotion states, stays under
+  [FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing) or moves to
+  a section of decisions (journal of 2026-10-30, § A Coherence Audit, and What It Mended).
 - **H10, phasor against real memory** ([the notebook](notebooks/h10_phasor_memory.ipynb), 2026-10-13): no better at
   the same memory budget, at twice the compute. Next, after item 5's re-run of this test with fairer rules: test
   phase where the hunch says it matters - the undulation phase of a rhythm generator, interference between two paths
@@ -214,7 +217,8 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
 - 2026-10-30: the night's coherence audit: fourteen points, most mended (journal of 2026-10-30, § A Coherence Audit,
   and What It Mended).
 - 2026-10-30: one instrument for both bodies' locomotion states: the published rule applied to the lab's own speed,
-  decided with its reason in FEATURES.md.
+  decided in FEATURES.md, with its reason in the journal of 2026-10-30, § One Instrument for Both Bodies' Locomotion
+  States.
 - 2026-10-30: the constant floor on ten fresh rich layouts: H1 fails (+0.0021, −0.0014 to +0.0052); eight of ten lean its
   way and one is clearly worse (descriptive).
 - 2026-10-30: a constant floor below 0.3, three seeds in the rich layouts: F1 and F2 fail; the graded gain's rich edge

@@ -58,7 +58,7 @@ locomotion measure counts as comparable until food is settled.
 |---|---|---|---|
 | Morphology | Length, width, area | Not comparable | The Grid's body is authored by the Program at rez; its shape is a choice, not a behaviour |
 | Posture | Eigen-shape amplitudes (Stephens et al. 2008) | Comparable | On the eight-angle resampling above |
-| Posture | Bend angles at head, midbody and tail | With a caveat | At the eight-arc resolution; a real bend beyond the Grid's 0.9 rad per joint cannot be reproduced, and 9.8 to 68.6% (median 35.8%, 34 recordings) of the worm's skeletonised frames have such a bend at some joint (journal of 2026-10-15, § The Joint-Limit Issue, Drafted; the first measurement is in the journal of 2026-10-14, *How Often the Reference Worms Bend Beyond the Grid's Joint Limit*) |
+| Posture | Bend angles at head, midbody and tail | With a caveat | At the eight-arc resolution; a real bend beyond the Grid's 0.9 rad per joint cannot be reproduced, and in one block's first measurement 9.8 to 68.6% (median 35.8%, 34 recordings, some of other lengths; not yet the reference statistic) of the worm's skeletonised frames had such a bend at some joint (journal of 2026-10-15, § The Joint-Limit Issue, Drafted; the first measurement is in the journal of 2026-10-14, *How Often the Reference Worms Bend Beyond the Grid's Joint Limit*) |
 | Posture | Amplitude, wavelength, track length, eccentricity | With a caveat | Wavelength from eight samples resolves only waves longer than two segments; the tool reports whether the worm's waves are |
 | Posture | Coils, kinks | With a caveat | Yemini et al. find coils from frames whose segmentation failed ("by scanning the video frame annotations"); the Grid's recordings never fail, so a coil needs a geometric definition, the body touching itself, applied to both. A coil also needs bends the 0.9 rad limit may forbid |
 | Locomotion | Speed and angular speed of head, midbody, tail | Comparable | In L per second and radians per second |
@@ -124,6 +124,8 @@ A reference recording lasts 15 minutes, 900 s, by the protocol (most do; see *Un
     - *What it costs*: the reference statistics differ from Yemini et al.'s published states, with more frames in no
       state and every state's share lower, paused most; the difference is reported beside them.
     - *What it does not close*: the reference skeletons' tracking noise and gaps (§ The Two Bodies).
+    - *What would reopen it*: the check of durations and reversal rates (STATE.md item 2(c)), if the lab's speed misses
+      the published states there for a cause other than the spacing.
 - **The habituation window.** Yemini et al. tracked 25 wild-type worms for two hours without the usual wait and found
   speed decaying with τ = 19 minutes, midbody amplitude with τ = 48 minutes and crawling frequency with τ = 19
   minutes. The reference recordings start 30 minutes after the worm is moved, so a Grid life must be compared over the
