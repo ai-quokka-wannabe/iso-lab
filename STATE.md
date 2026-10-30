@@ -191,15 +191,5 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
-- 2026-10-29: the linter's vulnerable `katex` and `re2js` overridden to patched releases; `npm audit` clean, lint unchanged.
-- 2026-10-29: `external/` moved to each repository's `main` as fetched at about 20:20 UTC (link `c8412b8`, master-control `3ba732e`,
-  tron-grid-lite `c5b2815`); B1-B3 hold, render digest unchanged; the food world followed (next line).
-- 2026-10-29: the night's audits: spelling and style clean; seven coherence findings fixed (VISION today, CI today, gr-fec § 10, counts).
-- 2026-10-29: four `rustls` advisories in the fetch tool's TLS (1 moderate, 3 low), and one
-  certificate-trust issue in three crates (CVE-2026-111943), patched by `cargo update`; OSV clean.
-- 2026-10-29: `external/` moved to the food world (link `23c89f5`, protocol v12 read only; master-control `ee2fdc2`;
-  tron-grid-lite `9c56aaf`); B1′-B3 hold, the digest unchanged, the placeholder's closing state moved in the sixth decimal.
-- 2026-10-29: the cold-band hunch on ten fresh layouts: refuted by its rule (F1, F2 fail narrowly: cold +0.032, −0.006 to
-  +0.068); the margin rule ends below never steering in all five warm layouts.
-- 2026-10-29: the margin rule in five fresh rich layouts: the rich-world fix holds in all five (R2; lowest bound −0.0024).
-- 2026-10-29: STATE.md cut from 388 lines to pointers; the stale Dependabot item retired.
+- 2026-10-30: `external/` moved to latest `main` (the upstream re2js linter override; link `9b1b771`, master-control
+  `866b13c`, tron-grid-lite `91f38a0`); B1-B3 hold, the world unchanged.
