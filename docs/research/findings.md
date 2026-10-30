@@ -149,7 +149,9 @@ switches, and that is not latched between decisions, is the first change to it s
 against an un-latched on/off gain, the scaling carries the lead, and no contribution from removing the latch was
 detected (§ Graded or Un-latched? An Ablation of the Graded Hunger Gain); and a step scaled by a constant
 0.65 recovers the lead, with grading adding nothing detectable (§ Grading or Smaller Turns? A Scaled On/Off Gain):
-what helped was turning less, not turning in proportion to hunger. The lead held with a second body seed (on the new
+on the toy worm, with one body seed per layout, turning less
+helped, and turning in proportion to hunger added nothing detectable (its interval reaches +0.0362, so a part as large
+as most of the lead is not excluded). The lead held with a second body seed (on the new
 worms alone, +0.0506, +0.0161 to +0.0892), and the graded gain kept the rich-world fix in five fresh rich layouts (§ The Graded Hunger Gain: a Second Body Seed, and the
 Rich Layouts).
 *For bigger brains*: test every world again after gating a module; a fix in one world is a new claim in all. A state
