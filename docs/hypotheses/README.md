@@ -293,7 +293,9 @@ between worms.
 *Tested so far*: on the toy worm, the graded hunger gain beat the on/off gate across ten fresh layouts by the
 registered rule (K1, +0.0377, interval +0.0046 to +0.0678), but was not shown better than never steering (journal of
 2026-10-30, § H14's Graded Hunger Gain on Ten Fresh Layouts). The graded gain is also un-latched, unlike the gate;
-whether gradedness carries the lead is not yet separated. The lead held with a second body seed (K3, +0.0441,
+in an ablation the gain `y[7]` in place of a step carries the lead (L1, +0.0440, +0.0096 to +0.0768), and no
+contribution from removing the latch was detected (L2, −0.0063, −0.0275 to +0.0140, a latch effect up to +0.0140 not
+excluded; § Graded or Un-latched? An Ablation of the Graded Hunger Gain). The lead held with a second body seed (K3, +0.0441,
 +0.0149 to +0.0737, seeds pooled; on the new worms alone +0.0506, +0.0161 to +0.0892), and the graded gain kept the
 rich-world fix (K4; § The Graded Hunger Gain: a Second Body Seed, and the Rich Layouts). The benchmark half waits on
 the benchmark.
