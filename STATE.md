@@ -2,7 +2,8 @@
 
 **Last updated:** 2026-10-30 ([the journal of 2026-10-30](docs/journal/2026-10-30.md)): `external/` moved to latest
 `main` again (the world unchanged), and the global rule without the margin tested on the ten fresh banded layouts:
-the cold-band hunch is refuted for it too, and it harms the warm layouts more than the margin rule does. Before it,
+the cold-band hunch is refuted for it too, and it harms the warm layouts more than the margin rule does. H14 was
+added, and its toy-worm prediction held: a graded hunger gain beat the on/off gate on those ten layouts. Before it,
 2026-10-29 ([the journal](docs/journal/2026-10-29.md)): mostly housekeeping - the
 linter's and the fetch tool's dependencies patched, the night's audits, this file cut to pointers, and `external/`
 moved twice, the second time to the food world, where Master Control's new physics shifts the placeholder's life in
@@ -89,13 +90,16 @@ found lives in the journal section it names; this list keeps only what is open.
    [findings.md § Designing a Brain](docs/research/findings.md#designing-a-brain); each experiment's script and pull
    request are in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are). Open, one run each:
    - (a) the weak nose in the warm world, where its effect is small and mixed;
-   - (b) the hunger gate and its fix: the cold-band hunch was refuted on the ten fresh banded layouts, narrowly
-     (journal of 2026-10-29, § The Cold-Band Hunch on Ten Fresh Layouts), and there gated steering mostly ends below
-     never steering, while in the five fresh rich layouts it keeps the rich-world fix (R2); next, more body seeds per
-     layout to tell a small cold-band gain from none (the rule without the margin, tested on 2026-10-30, also fails N1
-     and harms the warm layouts); what the gate
-     does in 23001's first day, where its harm starts; and the timing of a worm's meals against the turning of its
-     map;
+   - (b) the hunger gate and its fix. The global-contrast fix does not generalise: the cold-band hunch was refuted on
+     the ten fresh banded layouts, narrowly with the margin and also without it, and there gated steering mostly ends
+     below never steering; the margin rule keeps the rich-world fix in the five fresh rich layouts (journal of
+     2026-10-29 and 2026-10-30).
+     H14's graded hunger gain on steering beat the on/off gate on those ten layouts (K1 holds), though not shown
+     better than never steering ([H14](docs/hypotheses/README.md#h14-graded-slow-knobs-change-detecting-senses-and-individuality)).
+     Next: the graded gain with more body seeds and in the rich layouts, and why gated steering of any kind still
+     trails never steering in warm layouts; more body
+     seeds per layout, to tell a small cold-band gain from none; what the gate does in 23001's first day, where its harm starts; and the timing of a worm's
+     meals against the turning of its map;
    - (c) the sound CMA-ES, done;
    - (d) the composition law: a third lever that acts alone, and roaming's interaction as its own test.
 
@@ -195,6 +199,10 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-10-30: H14's graded hunger gain on ten fresh layouts: beats the on/off gate (K1 holds, +0.0377, +0.0046 to
+  +0.0678); not shown better than never steering (K2 −0.0279, −0.0723 to +0.0151).
+- 2026-10-30: H14 added to the hypotheses (graded slow knobs, change-detecting senses, a set point, individuality),
+  from a conversation the maintainer relayed; two new sources read at their abstracts.
 - 2026-10-30: the global rule without the margin on ten fresh layouts: N1 fails (cold +0.0179, −0.0321 to +0.0630); N2
   holds only through harm in the warm band (−0.0623, wholly below zero); the margin limits that harm.
 - 2026-10-30: `external/` moved to latest `main` (the upstream re2js linter override; link `9b1b771`, master-control
