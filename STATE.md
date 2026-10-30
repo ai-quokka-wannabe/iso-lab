@@ -114,9 +114,9 @@ found lives in the journal section it names; this list keeps only what is open.
      With three body seeds per layout, the same again: Q2 holds (+0.0471, +0.0281 to +0.0644), Q1 fails (+0.0015,
      −0.0202 to +0.0216).
      The matched step keeps the rich-world fix in all five rich layouts (W1 holds); the graded gain ends slightly
-     above it in three of them, where its steering below 0.3, its grading and turn size are not separated. Next: in
-     the rich layouts, the graded gain with its sub-0.3 part set to zero against the graded gain as it is, with the
-     time below 0.3 logged; why gated steering of any kind still
+     above it in three of them. Rich worms spend about 99% of their time below 0.3; without its steering there the
+     graded gain is not told apart from the matched step, though the pooled test (Z1) fails. Next: whether a small
+     constant steering below 0.3 carries what the graded gain's does, with more body seeds in the rich layouts; why gated steering of any kind still
      trails never steering in warm layouts; more body
      seeds per layout, to tell a small cold-band gain from none; what the gate does in 23001's first day, where its harm starts; and the timing of a worm's
      meals against the turning of its map;
@@ -219,6 +219,8 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-10-30: the graded gain without its steering below 0.3: Z1 fails (rich, +0.0025, −0.0012 to +0.0053); its edge
+  goes in 82201 and 82204; rich worms spend about 99% of their time below 0.3.
 - 2026-10-30: the matched step in the rich layouts: W1 holds in all five (lowest bound −0.0046); graded ends above it
   in three (descriptive; sub-0.3 steering, grading and turn size not separated).
 - 2026-10-30: graded, matched and un-latched with three body seeds per layout: Q2 holds (+0.0471, +0.0281 to +0.0644;
