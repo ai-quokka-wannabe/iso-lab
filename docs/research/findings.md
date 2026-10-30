@@ -157,7 +157,8 @@ Smaller Turns, With the Constant Matched). With three body seeds per layout it h
 lead replicated on worms no earlier test used (§ Graded, Matched and Un-latched With Three Body Seeds per Layout).
 The lead held with a second body seed (on the new
 worms alone, +0.0506, +0.0161 to +0.0892), and the graded gain kept the rich-world fix in five fresh rich layouts (§ The Graded Hunger Gain: a Second Body Seed, and the
-Rich Layouts).
+Rich Layouts). The matched step kept it too, though the graded gain ended slightly above it in three of those
+layouts, where the constant turned harder than the graded rule would (§ The Matched Scaled Step in the Rich Layouts).
 *For bigger brains*: test every world again after gating a module; a fix in one world is a new claim in all. A state
 used as a gate may mark *which* individuals are in it, not only *when* - split by individual before reading a gate,
 and test the split under the gate itself - with the same individuals in both arms (branch one life), never two

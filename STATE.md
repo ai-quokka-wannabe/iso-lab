@@ -112,7 +112,10 @@ found lives in the journal section it names; this list keeps only what is open.
      A step scaled by a constant 0.65 recovers that lead (M2 holds); grading adds nothing detectable (M1 fails).
      With the constant closer to matched (0.5572), the same: P2 holds, P1 fails (−0.0056, −0.0365 to +0.0218).
      With three body seeds per layout, the same again: Q2 holds (+0.0471, +0.0281 to +0.0644), Q1 fails (+0.0015,
-     −0.0202 to +0.0216). Running: the matched step in the rich layouts (registered on `claude/grfec-matched-rich`). Next: why gated steering of any kind still
+     −0.0202 to +0.0216).
+     The matched step keeps the rich-world fix in all five rich layouts (W1 holds); the graded gain ends slightly
+     above it in three of them, with turn size not separated there. Next: a rich-layout constant matched to the
+     rich worlds' own gain (about 0.42), to tell grading from turn size there; why gated steering of any kind still
      trails never steering in warm layouts; more body
      seeds per layout, to tell a small cold-band gain from none; what the gate does in 23001's first day, where its harm starts; and the timing of a worm's
      meals against the turning of its map;
@@ -215,6 +218,8 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-10-30: the matched step in the rich layouts: W1 holds in all five (lowest bound −0.0046); graded ends above it
+  in three (descriptive, turn size not separated).
 - 2026-10-30: graded, matched and un-latched with three body seeds per layout: Q2 holds (+0.0471, +0.0281 to +0.0644;
   new seeds alone +0.0458); Q1 fails (+0.0015, −0.0202 to +0.0216).
 - 2026-10-30: the same with the constant closer to matched (0.5572): P2 holds (+0.0496, +0.0198 to +0.0772); P1 fails (graded
