@@ -290,7 +290,10 @@ to match the spread between reference worms, not only their mean.
 *Refuted*: on the toy worm, if a graded hunger gain does no better than the on/off gate across fresh layouts, by a
 rule set before the run; on the benchmark, if a Program with identical individuals matches the reference spread
 between worms.
-*Tested so far*: nothing.
+*Tested so far*: on the toy worm, the graded hunger gain beat the on/off gate across ten fresh layouts by the
+registered rule (K1, +0.0377, interval +0.0046 to +0.0678), but was not shown better than never steering (journal of
+2026-10-30, § H14's Graded Hunger Gain on Ten Fresh Layouts). The graded gain is also un-latched, unlike the gate;
+whether gradedness carries the lead is not yet separated. The benchmark half waits on the benchmark.
 
 ## Adding a Hypothesis
 
