@@ -274,7 +274,9 @@ three claims that H12 does not make; the rest of that conversation's picture is 
 - **A remembered set point, not a map**, and **individuality**. Learning keeps a few slow numbers, such as a
   preferred temperature: worms grown at a temperature between 16 and 25 °C migrate to it on a thermal gradient, and
   adapting to a new one "takes several hours" ([Hedgecock and Russell 1975](https://doi.org/10.1073/pnas.72.10.4061),
-  abstract). That such numbers stand in place of a map of places is the hunch, not a sourced claim. And worms differ from one another persistently: within
+  abstract). The same abstract reports that "Starved animals, in contrast, disperse from the growth temperature":
+  hunger reshapes a set-point behaviour. That such numbers stand in place of a map of places is the hunch, not a
+  sourced claim. And worms differ from one another persistently: within
   isogenic populations raised alike, a fraction of individuals have "consistent, non-genetic behavioral biases that
   persist across development", shaped by neuromodulatory systems
   ([Stern et al. 2017](https://doi.org/10.1016/j.cell.2017.10.041), abstract). A brain whose every individual is
