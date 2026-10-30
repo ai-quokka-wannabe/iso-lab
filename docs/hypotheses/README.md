@@ -330,10 +330,10 @@ a rule.
 *The ledger*, one line per mechanism tested by a registered ablation, kept current by the standing watch in STATE.md:
 
 All lines so far are toy-worm results about one behaviour, greedy steering under a hunger gate, from ablations with
-one body seed per layout (three in the latest) and no benchmark; each is stated no more strongly than the journal section it cites.
+one to three body seeds per layout and no benchmark; each is stated no more strongly than the journal section it cites.
 
 - *A gain below 1 on steering while the hunger gate is on*: survives against the un-latched full-gain step (M2, +0.0423,
-  +0.0116 to +0.0725, at 0.65; P2, +0.0496, +0.0198 to +0.0772, at 0.5572; with three body seeds per layout, Q2,
+  +0.0116 to +0.0725, at 0.65; P2, +0.0496, +0.0198 to +0.0772; with three body seeds per layout, Q2,
   +0.0471, +0.0281 to +0.0644, and +0.0458, +0.0258 to +0.0654 on the new seeds alone; at 0.5572, the mean gain the graded rule would have
   applied in the 0.65 arm's lives; 0.5457 in the matched arm's own; the graded arm's own gain was not logged, and the
   match holds for the mean over layouts, not within each). Not shown better than
