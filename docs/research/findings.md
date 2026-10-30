@@ -140,7 +140,9 @@ Margin). In five more layouts it kept the rich-world fix and helped in the other
 not shown safe in either warm one (§ The Margin Rule Elsewhere). On ten fresh banded layouts the hunch that it helps
 where the band is cold was refuted, narrowly, and there gated steering of either kind mostly ended below never
 steering (descriptive; journal 2026-10-29, § The Cold-Band Hunch on Ten Fresh Layouts). It kept the rich-world fix in
-all five fresh rich layouts (§ The Margin Rule in Five Fresh Rich Layouts).
+all five fresh rich layouts (§ The Margin Rule in Five Fresh Rich Layouts). Without the margin it harmed the fresh
+warm layouts more, and helped no fresh cold one detectably (descriptive; journal 2026-10-30, § The Global Rule
+Without the Margin on Ten Fresh Layouts): the fix designed on one layout does not generalise as a fix.
 *For bigger brains*: test every world again after gating a module; a fix in one world is a new claim in all. A state
 used as a gate may mark *which* individuals are in it, not only *when* - split by individual before reading a gate,
 and test the split under the gate itself - with the same individuals in both arms (branch one life), never two

@@ -432,6 +432,7 @@ evaluation tools for a toy world, not code the lab builds on; anything that beco
 | `glob4/glob4.py`, `glob4/glob4stats.py` | The margin rule elsewhere | [#148](https://github.com/ai-quokka-wannabe/iso-lab/pull/148) |
 | `fresh10/run.sh`, `fresh10/fresh10stats.py` | The cold-band hunch on ten fresh layouts (2026-10-29) | [#156](https://github.com/ai-quokka-wannabe/iso-lab/pull/156) |
 | `rich5/run.sh`, `rich5/rich5stats.py` | The margin rule in five fresh rich layouts (2026-10-29) | [#157](https://github.com/ai-quokka-wannabe/iso-lab/pull/157) |
+| `nomargin/run.sh`, `nomargin/nmstats.py` | The global rule without the margin on ten fresh layouts (2026-10-30) | [#159](https://github.com/ai-quokka-wannabe/iso-lab/pull/159) |
 
 ## Leads Named by gr-fec (Unverified)
 
