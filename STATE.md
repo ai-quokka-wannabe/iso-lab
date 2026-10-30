@@ -96,7 +96,8 @@ found lives in the journal section it names; this list keeps only what is open.
      2026-10-29 and 2026-10-30).
      H14's graded hunger gain on steering beat the on/off gate on those ten layouts (K1 holds), though not shown
      better than never steering ([H14](docs/hypotheses/README.md#h14-graded-slow-knobs-change-detecting-senses-and-individuality)).
-     Next: the graded gain with more body seeds and in the rich layouts, and why gated steering of any kind still
+     Next: an un-latched on/off gain, to tell gradedness from latching as the source of that lead; the graded gain
+     with more body seeds and in the rich layouts; and why gated steering of any kind still
      trails never steering in warm layouts; more body
      seeds per layout, to tell a small cold-band gain from none; what the gate does in 23001's first day, where its harm starts; and the timing of a worm's
      meals against the turning of its map;
