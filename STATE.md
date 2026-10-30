@@ -1,6 +1,9 @@
 # State of the Lab
 
-**Last updated:** 2026-10-29 ([the journal of 2026-10-29](docs/journal/2026-10-29.md)): mostly housekeeping - the
+**Last updated:** 2026-10-30 ([the journal of 2026-10-30](docs/journal/2026-10-30.md)): `external/` moved to latest
+`main` again (the world unchanged), and the global rule without the margin tested on the ten fresh banded layouts:
+the cold-band hunch is refuted for it too, and it harms the warm layouts more than the margin rule does. Before it,
+2026-10-29 ([the journal](docs/journal/2026-10-29.md)): mostly housekeeping - the
 linter's and the fetch tool's dependencies patched, the night's audits, this file cut to pointers, and `external/`
 moved twice, the second time to the food world, where Master Control's new physics shifts the placeholder's life in
 the sixth decimal - and one toy-worm test: the cold-band hunch, refuted narrowly on ten fresh layouts. The night
@@ -89,7 +92,8 @@ found lives in the journal section it names; this list keeps only what is open.
    - (b) the hunger gate and its fix: the cold-band hunch was refuted on the ten fresh banded layouts, narrowly
      (journal of 2026-10-29, § The Cold-Band Hunch on Ten Fresh Layouts), and there gated steering mostly ends below
      never steering, while in the five fresh rich layouts it keeps the rich-world fix (R2); next, more body seeds per
-     layout to tell a small cold-band gain from none, and the rule without the margin; what the gate
+     layout to tell a small cold-band gain from none (the rule without the margin, tested on 2026-10-30, also fails N1
+     and harms the warm layouts); what the gate
      does in 23001's first day, where its harm starts; and the timing of a worm's meals against the turning of its
      map;
    - (c) the sound CMA-ES, done;
@@ -191,15 +195,7 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
-- 2026-10-29: the linter's vulnerable `katex` and `re2js` overridden to patched releases; `npm audit` clean, lint unchanged.
-- 2026-10-29: `external/` moved to each repository's `main` as fetched at about 20:20 UTC (link `c8412b8`, master-control `3ba732e`,
-  tron-grid-lite `c5b2815`); B1-B3 hold, render digest unchanged; the food world followed (next line).
-- 2026-10-29: the night's audits: spelling and style clean; seven coherence findings fixed (VISION today, CI today, gr-fec § 10, counts).
-- 2026-10-29: four `rustls` advisories in the fetch tool's TLS (1 moderate, 3 low), and one
-  certificate-trust issue in three crates (CVE-2026-111943), patched by `cargo update`; OSV clean.
-- 2026-10-29: `external/` moved to the food world (link `23c89f5`, protocol v12 read only; master-control `ee2fdc2`;
-  tron-grid-lite `9c56aaf`); B1′-B3 hold, the digest unchanged, the placeholder's closing state moved in the sixth decimal.
-- 2026-10-29: the cold-band hunch on ten fresh layouts: refuted by its rule (F1, F2 fail narrowly: cold +0.032, −0.006 to
-  +0.068); the margin rule ends below never steering in all five warm layouts.
-- 2026-10-29: the margin rule in five fresh rich layouts: the rich-world fix holds in all five (R2; lowest bound −0.0024).
-- 2026-10-29: STATE.md cut from 388 lines to pointers; the stale Dependabot item retired.
+- 2026-10-30: the global rule without the margin on ten fresh layouts: N1 fails (cold +0.0179, −0.0321 to +0.0630); N2
+  holds only through harm in the warm band (−0.0623, wholly below zero); the margin limits that harm.
+- 2026-10-30: `external/` moved to latest `main` (the upstream re2js linter override; link `9b1b771`, master-control
+  `866b13c`, tron-grid-lite `91f38a0`); B1-B3 hold, the world unchanged.
