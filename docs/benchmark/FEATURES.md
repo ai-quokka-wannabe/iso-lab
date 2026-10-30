@@ -117,15 +117,22 @@ A reference recording lasts 15 minutes, 900 s, by the protocol (most do; see *Un
   Bodies' Locomotion States).** Both bodies' forward, backward and paused states are computed by the lab's one
   pipeline. Yemini et al.'s rule and thresholds are applied unchanged (`features::states`) to the lab's eight-arc
   midbody speed and length with the published choices (`locomotion-states --published-choices`), on the reference
-  skeletons and on the Grid's poses alike. The published `motion_modes` are not the reference states.
+  skeletons, and it will be applied to the Grid's poses alike once a path reads them. The published `motion_modes` are not the reference states.
     - *Why*: a comparison of two bodies must measure both with the same instrument, or an instrument's difference is
       scored as a difference in behaviour. The published speed carries jitter from the stored skeletons' uneven point
       spacing, and the published states rely on it, on a median 15% of paused frames, to bridge short runs (journal of
       2026-10-15, § Do the Undefined Frames Follow From the Spacing?). The Grid's equally spaced chain cannot have that
       jitter. On seventeen records the lab's states give a paused share lower by a median 0.047, about a quarter of
       the spread between worms (§ The Midbody Speed, Judged by the States It Gives).
+    - *Why the rule unchanged*: two other single-instrument options were named on 2026-10-15 (§ Does Smoothing the
+      Published Speed Leave as Many Frames Undefined?): matching the published speed's roughness, or a rule not tuned
+      to it. Both would add parameters the lab has no source for, and fit them to the reference data. The unchanged
+      rule keeps Yemini et al.'s published, cited thresholds, at the cost below.
+    - *What it does not close*: the reference skeletons still carry tracking noise and gaps (46% of frames without a
+      skeleton in record 1011832, § The Two Bodies) that the Grid's exact, gapless poses do not; the rule bridges
+      across the gaps. This decision removes the spacing jitter only.
     - *What it costs*: the reference statistics will differ from what Yemini et al.'s published states give, with more
-      frames in no state and less time paused. That difference is reported beside the reference statistics, never
+      frames in no state and every state's share lower, paused most. That difference is reported beside the reference statistics, never
       hidden.
     - *What would reopen it*: a check showing the lab's speed misses the published states on durations or reversal
       rates where the published speed does not, for a cause other than the spacing.
