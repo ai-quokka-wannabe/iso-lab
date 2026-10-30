@@ -363,6 +363,9 @@ one to three body seeds per layout and no benchmark; each is stated no more stro
   rich edge is not detected pooled over five layouts (+0.0014, −0.0039 to +0.0061), and neither a constant floor below
   0.3 (F1) nor grading beyond it (F2) is shown to matter as registered; descriptively, the edge varies by layout, and
   where it exists a constant floor carries it. § A Constant Floor Below 0.3, With Three Body Seeds in the Rich Layouts.
+- *A constant steering below the gate's threshold*, in rich worlds: not shown on ten fresh rich layouts (H1, +0.0021,
+  −0.0014 to +0.0052); eight of ten lean its way and one, 82300, is clearly worse (descriptive). § The Constant Floor on Ten Fresh Rich
+  Layouts.
 
 ## Adding a Hypothesis
 
