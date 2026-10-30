@@ -303,6 +303,31 @@ graded half of the hunch is not supported there. The lead held with a second bod
 rich-world fix (K4; § The Graded Hunger Gain: a Second Body Seed, and the Rich Layouts). The benchmark half waits on
 the benchmark.
 
+### H15. The Pattern: a Small Core That Recurs
+
+*A hunch*, from the maintainer (2026-10-30): that somewhere under the worm's behaviour, and under every animal's after
+it, lies one recurring pattern of computation, the thing that would say what thought is and how it works. Put that
+way it cannot be refuted, so the lab keeps a narrower, testable form of it and a standing watch for more.
+
+- **The claim.** A small set of mechanisms, few enough to name in a sentence, earns its place by ablation in most of
+  the behaviours one animal's benchmark measures, and the same set earns it again in the next animal's benchmark. The
+  set is not fixed in advance; it is whatever keeps surviving. H3, H5, H7 and H14 each name candidates.
+- **Why it might hold.** Nothing yet in the lab's own evidence. The hunch rests on the hope that brains share design
+  across species; no source for that is cited here, and none is claimed.
+- **Why it might not.** Each animal's brain may be a pile of special cases. On the toy worm so far, the more elaborate
+  of two hunger mechanisms was not told apart from the plainer one (below).
+
+*Predicts*: the ledger below converges on a short list of mechanisms that keep surviving ablation as the benchmark
+grows; the list survives the move to the next animal.
+*Refuted*: if, after the worm's benchmark is frozen and a lean Program scores well on it, no mechanism survives
+ablation in more than a few of the behaviours measured; or if the next animal's best lean brain keeps none of the
+worm's surviving mechanisms.
+*The ledger*, one line per mechanism tested by a registered ablation, kept current by the standing watch in STATE.md:
+
+- Slow hunger state rescaling steering, on the toy worm: it helps, and the help comes from smaller turns when hungry.
+  Its grading by hunger was not detected to add anything (journal of 2026-10-30, § Grading or Smaller Turns? A Scaled
+  On/Off Gain). One behaviour, a toy worm, no benchmark yet.
+
 ## Adding a Hypothesis
 
 A pool of candidates waits in [Matej's ideas and hunches](matej-hunches.md): unverified, to be triaged and

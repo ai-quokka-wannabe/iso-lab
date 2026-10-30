@@ -28,6 +28,13 @@ exactly. No creature has been scored.
 maintainer's toy worm ([docs/research/gr-fec.md](docs/research/gr-fec.md) §§ 9-11) to learn how to design a brain
 rather than search for one; what carries up the ladder is kept in [docs/research/findings.md](docs/research/findings.md).
 
+## Standing Watch
+
+- **The Pattern** ([H15](docs/hypotheses/README.md#h15-the-pattern-a-small-core-that-recurs)), for as long as the
+  lab runs. Once a month, the first run of the month reads the journal's registered ablations since the last review,
+  adds each mechanism that survived or failed to H15's ledger, and writes in the journal whether any candidate is
+  recurring. A watch, not a task: it never leaves this list, and it claims nothing the ledger does not show.
+
 ## Next
 
 Top first. Each item is sized for one run; split it here before starting if it is bigger. What each finished step
