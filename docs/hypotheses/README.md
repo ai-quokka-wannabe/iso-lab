@@ -304,8 +304,8 @@ per Layout): on the toy worm, the
 gain helps by making turns smaller, and the graded half of the hunch is not supported there. The lead held with a second body seed (K3, +0.0441,
 +0.0149 to +0.0737, seeds pooled; on the new worms alone +0.0506, +0.0161 to +0.0892), and the graded gain kept the
 rich-world fix (K4; § The Graded Hunger Gain: a Second Body Seed, and the Rich Layouts). The matched step keeps it
-too (W1), though the graded gain ends slightly above it in three rich layouts, where grading and turn size are not
-separated (§ The Matched Scaled Step in the Rich Layouts). The benchmark half waits on
+too (W1), though the graded gain ends slightly above it in three rich layouts, where its steering below 0.3, its
+grading and turn size are not separated (§ The Matched Scaled Step in the Rich Layouts). The benchmark half waits on
 the benchmark.
 
 ### H15. The Pattern: a Small Core That Recurs
@@ -344,7 +344,8 @@ one to three body seeds per layout and no benchmark; each is stated no more stro
   two body seeds, −0.0305, −0.0725 to +0.0111). Journal of 2026-10-30, § Grading or Smaller Turns? A Scaled On/Off
   Gain, § Grading or Smaller Turns, With the Constant Matched, and § The Graded Hunger Gain: a Second Body Seed, and
   the Rich Layouts.
-- *Grading that gain by the hunger reading*: not detected to add anything, three times (M1, +0.0018, −0.0298 to +0.0362;
+- *Grading that gain by the hunger reading*, tested together with the graded gain's small steering below 0.3: not
+  detected to add anything in the banded layouts, three times (M1, +0.0018, −0.0298 to +0.0362;
   with the turn size closer to matched, P1, −0.0056, −0.0365 to +0.0218: an effect above +0.0218, about half the lead's point estimate, is excluded
   at a 95% bootstrap over ten layouts with one body seed; with three body seeds per layout, Q1, +0.0015, −0.0202 to
   +0.0216). § Grading or Smaller Turns? A Scaled On/Off Gain, § Grading or Smaller Turns, With the Constant Matched,
