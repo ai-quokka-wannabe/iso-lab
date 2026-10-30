@@ -92,22 +92,29 @@ Read at the source on 2026-10-30, the OpenWorm analysis toolbox at commit `181ab
   on the midbody speed, and builds an `EventListWithFeatures` from each. The per-frame `motion_modes`, where a later
   mode overwrites an earlier one, are built separately. So durations and rates come from each mode's own events, and
   an event that the per-frame states partly overwrite still counts whole in its own list.
+- **Event spans include untracked frames.** `EventFinder.get_start_stop_indices` extends the first event back to frame
+  0 when every value before it is undefined, and the last event forward to the final frame likewise; `remove_gaps`
+  joins runs across short gaps. So an event's span counts the untracked frames inside it, and an edge event's span
+  takes in the whole untracked lead-in or lead-out.
 - **Durations**: `event_durations = (end_frames - start_frames + 1) / fps`, for every event, those cut off by the
-  recording's ends included. The times between events are `(next start - end - 1) / fps`.
+  recording's ends included, and with the untracked frames above counted. The times between events are `(next start - end - 1) / fps`.
 - **Distance**: per event, the sum over its frames of `|midbody speed| / fps`, skipping frames without a speed.
 - **Total time**: `num_video_frames / fps`, with `num_video_frames` set to the length of the midbody speed. That is
   every frame of the recording, those without a skeleton included.
 - **Frequency**: `num_events_for_stats / total_time`, in events per second, so the reversal rate is backward events
   per second of recording. `num_events_for_stats` leaves out an event already under way at the first frame and one
-  still under way at the last. It does so only when there are at least two events: a lone event touching an edge is
-  counted.
+  still under way at the last, judged on the extended spans, so an event whose first tracked frame comes well after
+  an untracked start counts as partial. It does so only when there are at least two events: a lone event touching an
+  edge is counted.
+- **No events**: when a mode has none, `is_null` is set and its frequency and time ratio are undefined (NaN), not
+  zero. A recording with no reversals has an undefined reversal rate in the toolbox.
 - **Time ratio**: `nansum(event_durations) / total_time`, partial events included.
 
 Two cautions. The docstring names a MATLAB original (`+seg_worm/+feature/+event/event.m`), and whether the reference
 records' stored frequencies were computed by this Python or by that MATLAB is not yet shown; the stored motion modes
-were reproduced exactly from this rule (journal of 2026-10-15). And the edge rule's exception for a lone event reads
-like an accident of the code rather than a choice, so the lab's own durations and rates should follow it only where
-matching the published values is the point.
+were reproduced exactly from this rule (journal of 2026-10-15). And the edge rule's exception for a lone event may be an
+accident of the code rather than a choice: that is unverified, to be settled by reading `event.m`. The lab's own
+durations and rates should follow it only where matching the published values is the point.
 
 ## Roaming and Dwelling
 

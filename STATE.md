@@ -215,7 +215,8 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
-- 2026-10-30: the toolbox's definitions of state durations and rates, read at source for item 2(c).
+- 2026-10-30: the toolbox's definitions of state durations and rates, read at source for item 2(c) (journal of
+  2026-10-30, § How the Toolbox Turns States Into Durations and Rates).
 - 2026-10-30: the night's coherence audit: fourteen points, most mended (journal of 2026-10-30, § A Coherence Audit,
   and What It Mended).
 - 2026-10-30: one instrument for both bodies' locomotion states: the published rule applied to the lab's own speed,
