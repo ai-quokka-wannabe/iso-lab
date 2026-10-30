@@ -240,5 +240,7 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   from a conversation the maintainer relayed; two new sources read at their abstracts.
 - 2026-10-30: the global rule without the margin on ten fresh layouts: N1 fails (cold +0.0179, −0.0321 to +0.0630); N2
   holds only through harm in the warm band (−0.0623, wholly below zero); the margin limits that harm.
+- 2026-10-30: `external/` moved to latest `main` again: Link protocol 12 and food eaten in the tick (master-control
+  `53e5acb`, tron-grid-lite `ee5332d`); C1-C3 hold, the placeholder's life unchanged.
 - 2026-10-30: `external/` moved to latest `main` (the upstream re2js linter override; link `9b1b771`, master-control
   `866b13c`, tron-grid-lite `91f38a0`); B1-B3 hold, the world unchanged.
