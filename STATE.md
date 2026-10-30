@@ -4,7 +4,8 @@
 `main` again (the world unchanged), and the global rule without the margin tested on the ten fresh banded layouts:
 the cold-band hunch is refuted for it too, and it harms the warm layouts more than the margin rule does. H14 was
 added, and its toy-worm prediction held: a graded hunger gain beat the on/off gate on those ten layouts, again with a
-second body seed, and kept the rich-world fix. Before it,
+second body seed, and kept the rich-world fix; an ablation attributes the lead to its being graded, not to its
+missing latch. Before it,
 2026-10-29 ([the journal](docs/journal/2026-10-29.md)): mostly housekeeping - the
 linter's and the fetch tool's dependencies patched, the night's audits, this file cut to pointers, and `external/`
 moved twice, the second time to the food world, where Master Control's new physics shifts the placeholder's life in
@@ -98,7 +99,8 @@ found lives in the journal section it names; this list keeps only what is open.
      H14's graded hunger gain on steering beat the on/off gate on those ten layouts (K1 holds), though not shown
      better than never steering ([H14](docs/hypotheses/README.md#h14-graded-slow-knobs-change-detecting-senses-and-individuality)).
      The lead held with a second body seed (K3), and the graded gain kept the rich-world fix (K4).
-     Next: an un-latched on/off gain, to tell gradedness from latching as the source of that lead; and why gated steering of any kind still
+     An un-latched on/off gain attributes the lead to gradedness (L1 holds), not to the missing latch (L2 fails).
+     Next: why gated steering of any kind still
      trails never steering in warm layouts; more body
      seeds per layout, to tell a small cold-band gain from none; what the gate does in 23001's first day, where its harm starts; and the timing of a worm's
      meals against the turning of its map;
@@ -201,6 +203,8 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-10-30: graded or un-latched, an ablation: L1 holds (graded minus un-latched +0.0440, +0.0096 to +0.0768); L2
+  fails (un-latched minus latched gate −0.0063, −0.0275 to +0.0140): the lead comes from gradedness.
 - 2026-10-30: the graded hunger gain, a second body seed and the rich layouts: K3 holds (+0.0441, +0.0149 to +0.0737,
   seeds pooled; new seed alone +0.0506, +0.0161 to +0.0892); K4 holds in all five rich layouts; still not shown better
   than never steering (−0.0305, −0.0725 to +0.0111).

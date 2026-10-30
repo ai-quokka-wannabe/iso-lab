@@ -146,7 +146,8 @@ Without the Margin on Ten Fresh Layouts): the fix designed on one layout does no
 on/off gate, beat the gate on the same ten layouts by its registered rule, though it was not shown better than never
 steering (journal 2026-10-30, § H14's Graded Hunger Gain on Ten Fresh Layouts): a gate that scales, rather than
 switches, and that is not latched between decisions, is the first change to it shown to beat it on fresh layouts;
-which of the two differences carries the lead is not yet separated. The lead held with a second body seed (on the new
+an un-latched on/off gain attributes the lead to the scaling, not to the missing latch (§ Graded or Un-latched? An
+Ablation of the Graded Hunger Gain). The lead held with a second body seed (on the new
 worms alone, +0.0506, +0.0161 to +0.0892), and the graded gain kept the rich-world fix in five fresh rich layouts (§ The Graded Hunger Gain: a Second Body Seed, and the
 Rich Layouts).
 *For bigger brains*: test every world again after gating a module; a fix in one world is a new claim in all. A state
