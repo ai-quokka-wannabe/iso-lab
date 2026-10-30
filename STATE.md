@@ -1,19 +1,19 @@
 # State of the Lab
 
 **Last updated:** 2026-10-30 ([the journal of 2026-10-30](docs/journal/2026-10-30.md)): `external/` moved to latest
-`main` again (the world unchanged), and the global rule without the margin tested on the ten fresh banded layouts:
-the cold-band hunch is refuted for it too, and it harms the warm layouts more than the margin rule does. H14 was
-added, and its toy-worm prediction held: a graded hunger gain beat the on/off gate on those ten layouts, again with a
-second body seed, and kept the rich-world fix; two ablations trace the lead to smaller turns; neither the
-missing latch nor grading was detected to contribute. H15
-and a standing watch for a recurring core were added. Before it,
+`main` twice, the first time with the world unchanged, the second to Link protocol 12 with food eaten in the tick.
+The global rule without the margin was tested on the ten fresh banded layouts: the cold-band hunch is refuted for it
+too. H14 was added, and its toy-worm prediction held: a graded hunger gain beat the on/off gate, and ablations trace
+that lead to smaller turns, with neither the missing latch nor grading detected to contribute; the series rests
+there. H15 and a standing watch for a recurring core were added, and the benchmark's choice of speed for the
+locomotion states was decided: one instrument for both bodies. Before it,
 2026-10-29 ([the journal](docs/journal/2026-10-29.md)): mostly housekeeping - the
 linter's and the fetch tool's dependencies patched, the night's audits, this file cut to pointers, and `external/`
 moved twice, the second time to the food world, where Master Control's new physics shifts the placeholder's life in
 the sixth decimal - and one toy-worm test: the cold-band hunch, refuted narrowly on ten fresh layouts. The night
 before is [2026-10-28](docs/journal/2026-10-28.md), summarised in
-[gr-fec.md § 10.2](docs/research/gr-fec.md#102-2026-10-28). The benchmark's choice of rule for the lab's speed is
-still the next step for Phase 0.
+[gr-fec.md § 10.2](docs/research/gr-fec.md#102-2026-10-28). The next step for Phase 0 is the locomotion
+states' durations and reversal rates (item 2(c)).
 
 ## Where We Are
 
@@ -22,7 +22,8 @@ recordings ([data/README.md § The Phase 0 Survey](data/README.md#the-phase-0-su
 literature note says how worm behaviour is measured. The comparison space is drafted
 ([docs/benchmark/FEATURES.md](docs/benchmark/FEATURES.md)): which measures carry over to the Grid's body, and what
 must be settled before the benchmark is frozen, food first. The Rust workspace reads the reference skeletons and computes
-the first measures - eight-arc posture and a midbody speed, the latter not yet trusted - and the arena is proven to a
+the first measures - eight-arc posture and a midbody speed, the latter chosen as the benchmark's instrument but its durations and
+reversals not yet checked - and the arena is proven to a
 first life: a placeholder Program, which undulates only, lived fifteen minutes on the Grid and its world replays
 exactly. No creature has been scored.
 [docs/PLAN.md](docs/PLAN.md) says what the phases are and why the benchmark comes before any brain. Beside the benchmark, the lab takes apart the
@@ -104,28 +105,13 @@ found lives in the journal section it names; this list keeps only what is open.
      the ten fresh banded layouts, narrowly with the margin and also without it, and there gated steering mostly ends
      below never steering; the margin rule keeps the rich-world fix in the five fresh rich layouts (journal of
      2026-10-29 and 2026-10-30).
-     H14's graded hunger gain on steering beat the on/off gate on those ten layouts (K1 holds), though not shown
-     better than never steering ([H14](docs/hypotheses/README.md#h14-graded-slow-knobs-change-detecting-senses-and-individuality)).
-     The lead held with a second body seed (K3), and the graded gain kept the rich-world fix (K4).
-     An un-latched on/off gain: the gain `y[7]` in place of a step carries the lead (L1 holds); no contribution
-     from removing the latch was detected (L2 fails, interval up to +0.0140).
-     A step scaled by a constant 0.65 recovers that lead (M2 holds); grading adds nothing detectable (M1 fails).
-     With the constant closer to matched (0.5572), the same: P2 holds, P1 fails (−0.0056, −0.0365 to +0.0218).
-     With three body seeds per layout, the same again: Q2 holds (+0.0471, +0.0281 to +0.0644), Q1 fails (+0.0015,
-     −0.0202 to +0.0216).
-     The matched step keeps the rich-world fix in all five rich layouts (W1 holds); the graded gain ends slightly
-     above it in three of them. Rich worms spend about 99% of their time below 0.3; without its steering there the
-     graded gain is not told apart from the matched step, though the pooled test (Z1) fails. With three body seeds the
-     graded gain's rich-world edge is not detected pooled over five layouts (+0.0014); it varies with the layout and
-     repeats across seeds, and where it exists a constant floor below 0.3 carries it (descriptive; F1 and F2 fail as
-     registered). On ten fresh rich layouts the floor is not shown to beat the matched step (H1 fails, +0.0021, −0.0014
-     to +0.0052); eight of ten lean its way and one, 82300, is clearly worse (descriptive). Next: the hunger-gain
-     series rests here; reopening the floor would take a test over many more rich layouts, sized beforehand to resolve
+     H14's graded hunger gain and its ablations, tested on 2026-10-30: the results are in
+     [H14](docs/hypotheses/README.md#h14-graded-slow-knobs-change-detecting-senses-and-individuality) § *Tested so
+     far*. Next: the hunger-gain series rests here; reopening the floor would take a test over many more rich layouts, sized beforehand to resolve
      an effect of about +0.002; why gated steering of any kind still
      trails never steering in warm layouts; more body
      seeds per layout, to tell a small cold-band gain from none; what the gate does in 23001's first day, where its harm starts; and the timing of a worm's
      meals against the turning of its map;
-   - (c) the sound CMA-ES, done;
    - (d) the composition law: a third lever that acts alone, and roaming's interaction as its own test.
 
    Once a calculation matters to anything the lab builds on, it moves into tested Rust.
@@ -135,6 +121,9 @@ found lives in the journal section it names; this list keeps only what is open.
 Experiments that failed or came out inconclusive, kept rather than discarded (the maintainer's ruling); each with
 the idea for the next attempt.
 
+- **For the maintainer**: whether a decided item, such as the speed for the locomotion states, stays under
+  [FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing) or moves to
+  a section of decisions (journal of 2026-10-30, § A Coherence Audit, and What It Mended).
 - **H10, phasor against real memory** ([the notebook](notebooks/h10_phasor_memory.ipynb), 2026-10-13): no better at
   the same memory budget, at twice the compute. Next, after item 5's re-run of this test with fairer rules: test
   phase where the hunch says it matters - the undulation phase of a rhythm generator, interference between two paths
@@ -225,8 +214,11 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-10-30: the night's coherence audit: fourteen points, most mended (journal of 2026-10-30, § A Coherence Audit,
+  and What It Mended).
 - 2026-10-30: one instrument for both bodies' locomotion states: the published rule applied to the lab's own speed,
-  decided with its reason in FEATURES.md.
+  decided in FEATURES.md, with its reason in the journal of 2026-10-30, § One Instrument for Both Bodies' Locomotion
+  States.
 - 2026-10-30: the constant floor on ten fresh rich layouts: H1 fails (+0.0021, −0.0014 to +0.0052); eight of ten lean its
   way and one is clearly worse (descriptive).
 - 2026-10-30: a constant floor below 0.3, three seeds in the rich layouts: F1 and F2 fail; the graded gain's rich edge
@@ -249,7 +241,7 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
 - 2026-10-30: H14's graded hunger gain on ten fresh layouts: beats the on/off gate (K1 holds, +0.0377, +0.0046 to
   +0.0678); not shown better than never steering (K2 −0.0279, −0.0723 to +0.0151).
 - 2026-10-30: H14 added to the hypotheses (graded slow knobs, change-detecting senses, a set point, individuality),
-  from a conversation the maintainer relayed; two new sources read at their abstracts.
+  from a conversation the maintainer relayed; three new sources read at their abstracts.
 - 2026-10-30: the global rule without the margin on ten fresh layouts: N1 fails (cold +0.0179, −0.0321 to +0.0630); N2
   holds only through harm in the warm band (−0.0623, wholly below zero); the margin limits that harm.
 - 2026-10-30: `external/` moved to latest `main` again: Link protocol 12 and food eaten in the tick (master-control

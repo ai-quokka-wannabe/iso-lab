@@ -9,8 +9,9 @@ The sources were read in full on PubMed Central on 2026-10-14, unless a line say
 ([doi:10.1038/nmeth.2560](https://doi.org/10.1038/nmeth.2560), PMC3962822) and Flavell et al. 2013
 ([doi:10.1016/j.cell.2013.08.001](https://doi.org/10.1016/j.cell.2013.08.001), PMC3942133). Stephens et al. 2008 and
 Brown et al. 2013 were read for [the behaviour-measures note](../research/behaviour-measures.md). The Grid's facts
-are read from the world's sources at the commits `external/` pins (tron-grid-lite `c083262`, master-control
-`03e71ce`, link `75383e7`).
+are read from the world's sources at the commits `external/` pins, and were last re-checked at tron-grid-lite
+`ee5332d`, master-control `53e5acb` and link `9b1b771` (journal of 2026-10-30, § A Coherence Audit, and What It
+Mended).
 
 ## The Two Bodies
 
@@ -57,7 +58,7 @@ locomotion measure counts as comparable until food is settled.
 |---|---|---|---|
 | Morphology | Length, width, area | Not comparable | The Grid's body is authored by the Program at rez; its shape is a choice, not a behaviour |
 | Posture | Eigen-shape amplitudes (Stephens et al. 2008) | Comparable | On the eight-angle resampling above |
-| Posture | Bend angles at head, midbody and tail | With a caveat | At the eight-arc resolution; a real bend beyond the Grid's 0.9 rad per joint cannot be reproduced, and in a first measurement on twelve recordings 31 to 46% (median 38%) of the worm's skeletonised frames had such a bend at some joint (journal of 2026-10-14, *How Often the Reference Worms Bend Beyond the Grid's Joint Limit*) |
+| Posture | Bend angles at head, midbody and tail | With a caveat | At the eight-arc resolution; a real bend beyond the Grid's 0.9 rad per joint cannot be reproduced, and in one block's first measurement 9.8 to 68.6% (median 35.8%, 34 recordings, some of other lengths; not yet the reference statistic) of the worm's skeletonised frames had such a bend at some joint (journal of 2026-10-15, § The Joint-Limit Issue, Drafted; the first measurement is in the journal of 2026-10-14, *How Often the Reference Worms Bend Beyond the Grid's Joint Limit*) |
 | Posture | Amplitude, wavelength, track length, eccentricity | With a caveat | Wavelength from eight samples resolves only waves longer than two segments; the tool reports whether the worm's waves are |
 | Posture | Coils, kinks | With a caveat | Yemini et al. find coils from frames whose segmentation failed ("by scanning the video frame annotations"); the Grid's recordings never fail, so a coil needs a geometric definition, the body touching itself, applied to both. A coil also needs bends the 0.9 rad limit may forbid |
 | Locomotion | Speed and angular speed of head, midbody, tail | Comparable | In L per second and radians per second |
@@ -118,24 +119,13 @@ A reference recording lasts 15 minutes, 900 s, by the protocol (most do; see *Un
   pipeline. Yemini et al.'s rule and thresholds are applied unchanged (`features::states`) to the lab's eight-arc
   midbody speed and length with the published choices (`locomotion-states --published-choices`), on the reference
   skeletons, and it will be applied to the Grid's poses alike once a path reads them. The published `motion_modes` are not the reference states.
-    - *Why*: a comparison of two bodies must measure both with the same instrument, or an instrument's difference is
-      scored as a difference in behaviour. The published speed carries jitter from the stored skeletons' uneven point
-      spacing, and the published states rely on it, on a median 15% of paused frames, to bridge short runs (journal of
-      2026-10-15, § Do the Undefined Frames Follow From the Spacing?). The Grid's equally spaced chain cannot have that
-      jitter. On seventeen records the lab's states give a paused share lower by a median 0.047, about a quarter of
-      the spread between worms (§ The Midbody Speed, Judged by the States It Gives).
-    - *Why the rule unchanged*: two other single-instrument options were named on 2026-10-15 (§ Does Smoothing the
-      Published Speed Leave as Many Frames Undefined?): matching the published speed's roughness, or a rule not tuned
-      to it. Both would add parameters the lab has no source for, and fit them to the reference data. The unchanged
-      rule keeps Yemini et al.'s published, cited thresholds, at the cost below.
-    - *What it does not close*: the reference skeletons still carry tracking noise and gaps (46% of frames without a
-      skeleton in record 1011832, § The Two Bodies) that the Grid's exact, gapless poses do not; the rule bridges
-      across the gaps. This decision removes the spacing jitter only.
-    - *What it costs*: the reference statistics will differ from what Yemini et al.'s published states give, with more
-      frames in no state and every state's share lower, paused most. That difference is reported beside the reference statistics, never
-      hidden.
-    - *What would reopen it*: a check showing the lab's speed misses the published states on durations or reversal
-      rates where the published speed does not, for a cause other than the spacing.
+    - *Why, and the options weighed*: in the journal entry above. In short, mixing instruments would score a
+      measurement bias as behaviour, and the other single-instrument options would add parameters with no source.
+    - *What it costs*: the reference statistics differ from Yemini et al.'s published states, with more frames in no
+      state and every state's share lower, paused most; the difference is reported beside them.
+    - *What it does not close*: the reference skeletons' tracking noise and gaps (§ The Two Bodies).
+    - *What would reopen it*: the check of durations and reversal rates (STATE.md item 2(c)), if the lab's speed misses
+      the published states there for a cause other than the spacing.
 - **The habituation window.** Yemini et al. tracked 25 wild-type worms for two hours without the usual wait and found
   speed decaying with τ = 19 minutes, midbody amplitude with τ = 48 minutes and crawling frequency with τ = 19
   minutes. The reference recordings start 30 minutes after the worm is moved, so a Grid life must be compared over the

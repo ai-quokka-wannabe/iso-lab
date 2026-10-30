@@ -25,7 +25,7 @@ principles go with it:
 ## The Hypotheses
 
 Each states the idea, why biology suggests it, what behaviour it should produce, and how the benchmark would
-show it. All are untested.
+show it. Each says under *Tested so far*, where it has one, how far it has been tested; the rest are untested.
 
 ### H1. A Fast Reflex Arc
 
@@ -310,8 +310,9 @@ grading and turn size are not separated (§ The Matched Scaled Step in the Rich 
 five layouts (Z1 fails), but removes it in the two where it was clearest, and leaves it not told apart from the
 matched step (§ The Graded Gain Without Its Steering Below 0.3). With three body seeds that edge is not detected
 pooled over five layouts; it varies with the layout, and where it exists an ungraded constant floor carries it
-(descriptive; § A Constant Floor Below 0.3, With Three Body Seeds in the Rich Layouts). The benchmark half waits on the
-benchmark.
+(descriptive; § A Constant Floor Below 0.3, With Three Body Seeds in the Rich Layouts). On ten fresh rich layouts that
+floor was not shown to beat the matched step (§ The Constant Floor on Ten Fresh Rich Layouts). The benchmark half waits
+on the benchmark.
 
 ### H15. The Pattern: a Small Core That Recurs
 

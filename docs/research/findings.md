@@ -85,7 +85,7 @@ effect.
 
 ## Designing a Brain
 
-From the toy worm of the maintainer's gr-fec sandbox ([gr-fec.md](gr-fec.md) §§ 9-11), on 2026-10-26, 2026-10-27 and 2026-10-28.
+From the toy worm of the maintainer's gr-fec sandbox ([gr-fec.md](gr-fec.md) §§ 9-11), on 2026-10-26 to 2026-10-30.
 Toy worlds, few layouts and body seeds; none of it is evidence about *C. elegans*, and none of it has met the
 benchmark.
 
@@ -112,7 +112,7 @@ either (journal 2026-10-26). Evidence: journal 2026-10-27, § Why Slow Learning 
 The two levers' remaining failures, measured alone, multiply to predict a pair's score better than adding their
 gains, and (in the two later worlds) better than ignoring either lever: three worlds (layouts 75000, 82003, 82104),
 one pair, errors 0.011 to 0.019. Mild pairs detectably beat the rule in the first world only. Where one lever barely acts, the rule is no better than
-ignoring it. Evidence: journal 2026-10-27, § A First Design Rule; journal 2026-10-28, § The Composition Law Beyond
+ignoring it. Evidence: journal 2026-10-27, § A First Design Rule: Two Levers on One Failure; journal 2026-10-28, § The Composition Law Beyond
 Its First World and Pair and § The Composition Law Where Both Levers Work.
 With a third lever (`roam`) that barely acts alone, the law held to 0.015 but could not be told from ignoring it;
 post hoc, raising that lever cost energy in two of nine pairs, not surviving a correction for multiple comparisons.
@@ -124,7 +124,7 @@ other pairs of strong levers, and on three at once; a lever that seems to do not
 
 Steering by learned value gained in two cold layouts and cost in rich ones; a hunger gate removed the rich-world cost
 but left the worm below one that never steers in two Hardland layouts, with or without hysteresis. Evidence: journal
-2026-10-27, § A Positive Control for Steering, § Steering Only When Hungry, § Why the Hunger Gate Harms, § A Hunger
+2026-10-27, § A Positive Control for Steering, § Steering Only When Hungry, § Why the Hunger Gate Harms: What the Gated Worm Does, § A Hunger
 Gate with Hysteresis. Why is open. In ungated lives in two layouts about nine in ten hungry decisions came from
 worms whose map peaks off the band and who live off it (post hoc); but with lives branched from one shared state
 and the gate switched on at the branch, it cost the worms whose map peaks *on* the band more, in one layout (journal 2026-10-28, § Hungry Steering,
@@ -213,11 +213,11 @@ Lessons about method, each learned at a cost, for every brain to come.
 - **Smoke-test a module against its switch.** A gate's threshold silently took the name of an attribute gr-fec's brain
   already had (`H`), and a first smoke test showed the gated worm identical to the plain one
   ([#128](https://github.com/ai-quokka-wannabe/iso-lab/pull/128)'s description; the clash itself is in journal
-  2026-10-27, § Why the Hunger Gate Harms). A switch that does nothing looks exactly like a module that does nothing.
+  2026-10-27, § Why the Hunger Gate Harms: What the Gated Worm Does). A switch that does nothing looks exactly like a module that does nothing.
 - **A rate is not a rhythm.** 88 crossings an hour were first read as one every 41 s; a slow signal under fast noise
-  crosses in bursts (journal 2026-10-27, § Why the Hunger Gate Harms).
+  crosses in bursts (journal 2026-10-27, § Why the Hunger Gate Harms: What the Gated Worm Does).
 - **`git submodule update` puts the recorded pins back.** A submodule moved by hand and then updated runs the old
-  commit; check out, record, then build (journal 2026-10-27, § The World Moved to Its Latest Main). And a `pkill -f`
+  commit; check out, record, then build (journal 2026-10-27, § The World Moved to Its Latest Main, Measured Before and After). And a `pkill -f`
   whose pattern appears in its own command kills the shell running it; match a bracketed pattern or a process id.
 - **An event can go missing.** Once a push to a pull request started no CI run at all; a real change, merging the
   base, started one. Never an empty commit (journal 2026-10-14, *Closing the Night*).
