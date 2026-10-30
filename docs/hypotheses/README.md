@@ -266,18 +266,22 @@ three claims that H12 does not make; the rest of that conversation's picture is 
 - **Senses that report change.** The salt-sensing pair ASE splits into an ON-cell (ASEL, stimulated by increases in
   NaCl) and an OFF-cell (ASER, by decreases), and both responses are transient, "indicating that ASE neurons report
   changes in concentration rather than absolute levels" ([Suzuki et al. 2008](https://doi.org/10.1038/nature06927),
-  abstract). Navigation then needs only two rules on such signals: pirouettes when things get worse (H2;
-  [Pierce-Shimomura et al. 1999](https://doi.org/10.1523/JNEUROSCI.19-21-09557.1999)) and weathervaning, gradual
-  curving up a gradient ([Iino and Yoshida 2009](https://doi.org/10.1523/JNEUROSCI.3633-08.2009)).
+  abstract). Chemotaxis to salt uses two mechanisms in parallel: pirouettes, bursts of turns when things get worse
+  (H2; [Pierce-Shimomura et al. 1999](https://doi.org/10.1523/JNEUROSCI.19-21-09557.1999)), and weathervaning,
+  gradual curving up a gradient ([Iino and Yoshida 2009](https://doi.org/10.1523/JNEUROSCI.3633-08.2009)). Whether
+  weathervaning, which that abstract describes as a response to a spatial gradient, needs only change signals is not
+  yet read.
 - **A remembered set point, not a map**, and **individuality**. Learning keeps a few slow numbers, such as a
-  preferred temperature, rather than a map of places. And worms differ from one another persistently: within
+  preferred temperature: worms grown at a temperature between 16 and 25 °C migrate to it on a thermal gradient, and
+  adapting to a new one "takes several hours" ([Hedgecock and Russell 1975](https://doi.org/10.1073/pnas.72.10.4061),
+  abstract). That such numbers stand in place of a map of places is the hunch, not a sourced claim. And worms differ from one another persistently: within
   isogenic populations raised alike, a fraction of individuals have "consistent, non-genetic behavioral biases that
   persist across development", shaped by neuromodulatory systems
   ([Stern et al. 2017](https://doi.org/10.1016/j.cell.2017.10.041), abstract). A brain whose every individual is
   identical would fail an indistinguishability test that looks at individuals.
 
-*Read so far*: the two quotations above are from the papers' abstracts (Europe PMC); the full texts are not yet
-read, and the claim of graded neuromodulatory gains has no source yet.
+*Read so far*: the quotations above are from the papers' abstracts (Europe PMC); the full texts are not yet read.
+The claims of graded neuromodulatory gains and of set points standing in place of a map have no source yet.
 *Predicts*: on the toy worm, a hunger *gain* on steering (steering scaled by hunger) does better across fresh
 layouts than the on/off hunger gate of findings.md § D4; on the benchmark, a Program needs per-individual parameters
 to match the spread between reference worms, not only their mean.
