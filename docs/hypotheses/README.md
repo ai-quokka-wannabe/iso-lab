@@ -319,14 +319,25 @@ way it cannot be refuted, so the lab keeps a narrower, testable form of it and a
 
 *Predicts*: the ledger below converges on a short list of mechanisms that keep surviving ablation as the benchmark
 grows; the list survives the move to the next animal.
-*Refuted*: if, after the worm's benchmark is frozen and a lean Program scores well on it, no mechanism survives
-ablation in more than a few of the behaviours measured; or if the next animal's best lean brain keeps none of the
-worm's surviving mechanisms.
+*Refuted*: if, after the worm's benchmark is frozen and a lean Program scores well on it, no set of mechanisms small
+enough to count as a core survives ablation in most of the behaviours measured; or if the next animal's best lean
+brain keeps fewer than half of the worm's core. "Small enough", "most" and the scoring of "survives" are fixed in the
+journal when the worm's benchmark is frozen, before any Program is scored on it; until then the refutation is not yet
+a rule.
 *The ledger*, one line per mechanism tested by a registered ablation, kept current by the standing watch in STATE.md:
 
-- Slow hunger state rescaling steering, on the toy worm: it helps, and the help comes from smaller turns when hungry.
-  Its grading by hunger was not detected to add anything (journal of 2026-10-30, § Grading or Smaller Turns? A Scaled
-  On/Off Gain). One behaviour, a toy worm, no benchmark yet.
+All lines so far are toy-worm results about one behaviour, steering by value under a hunger gate, with one body seed
+per layout and no benchmark; each is stated no more strongly than the journal section it cites.
+
+- *A gain below 1 on steering while the hunger gate is on*: survives against the full-gain gate (M2, +0.0423, +0.0116
+  to +0.0725), at one constant, 0.65, that did not match the graded gain's mean (about 0.56). Not shown better than
+  never steering: the graded gain, whose lead over the un-latched step is of like size (L1 +0.0440), is not (pooled −0.0305, −0.0725 to +0.0111). Journal of
+  2026-10-30, § Grading or Smaller Turns? A Scaled On/Off Gain, and § The Graded Hunger Gain: a Second Body Seed, and
+  the Rich Layouts.
+- *Grading that gain by the hunger reading*: not detected to add anything (M1, +0.0018, −0.0298 to +0.0362; an effect
+  as large as most of the lead is not excluded). § Grading or Smaller Turns? A Scaled On/Off Gain.
+- *Removing the gate's latch between decisions*: not detected to add anything (L2, −0.0063, −0.0275 to +0.0140).
+  § Graded or Un-latched? An Ablation of the Graded Hunger Gain.
 
 ## Adding a Hypothesis
 

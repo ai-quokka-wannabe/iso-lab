@@ -5,7 +5,8 @@
 the cold-band hunch is refuted for it too, and it harms the warm layouts more than the margin rule does. H14 was
 added, and its toy-worm prediction held: a graded hunger gain beat the on/off gate on those ten layouts, again with a
 second body seed, and kept the rich-world fix; two ablations trace the lead to smaller turns; neither the
-missing latch nor grading was detected to contribute. Before it,
+missing latch nor grading was detected to contribute. H15
+and a standing watch for a recurring core were added. Before it,
 2026-10-29 ([the journal](docs/journal/2026-10-29.md)): mostly housekeeping - the
 linter's and the fetch tool's dependencies patched, the night's audits, this file cut to pointers, and `external/`
 moved twice, the second time to the food world, where Master Control's new physics shifts the placeholder's life in
