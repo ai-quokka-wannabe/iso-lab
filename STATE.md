@@ -60,9 +60,9 @@ found lives in the journal section it names; this list keeps only what is open.
      locomotion states are reproduced exactly (`features::states`). The lab's midbody speed leaves more frames in no
      state than the published one, and the chain of tests that traced why, from 2026-10-14 to 2026-10-15, ends at
      the stored skeletons' uneven spacing, which accounts for most of it (a median 92%) (journal of 2026-10-15, § Do the Undefined Frames Follow From the Spacing?,
-     and the sections before it). Next: write down, with its reason, whether the benchmark applies the published
-     rule unchanged to the lab's speed, before the reference statistics are frozen; then the states' durations and
-     the rate of reversals;
+     and the sections before it). Decided: both bodies' states come from the published rule applied to the lab's
+     own speed, one instrument for both ([docs/benchmark/FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing)).
+     Next: the states' durations and the rate of reversals, checked the same way;
    - (d) the reference statistics.
 3. **Prove the arena**: build Master Control and the Grid from `external/` on Linux with lavapipe, write a placeholder
    Program, live one life and extract the same features from it. Done: (a) Master Control, (b) the Grid,
@@ -225,6 +225,8 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-10-30: one instrument for both bodies' locomotion states: the published rule applied to the lab's own speed,
+  decided with its reason in FEATURES.md.
 - 2026-10-30: the constant floor on ten fresh rich layouts: H1 fails (+0.0021, −0.0014 to +0.0052); eight of ten lean its
   way and one is clearly worse (descriptive).
 - 2026-10-30: a constant floor below 0.3, three seeds in the rich layouts: F1 and F2 fail; the graded gain's rich edge
