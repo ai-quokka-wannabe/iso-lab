@@ -441,6 +441,7 @@ evaluation tools for a toy world, not code the lab builds on; anything that beco
 | `seeds3/run.sh`, `seeds3/pstats.py` | Graded, matched and un-latched with three body seeds per layout (2026-10-30) | [#167](https://github.com/ai-quokka-wannabe/iso-lab/pull/167) |
 | `mrich/matchedrich.py`, `mrich/mrstats.py`, `mrich/run.sh` | The matched scaled step in the rich layouts (2026-10-30) | [#168](https://github.com/ai-quokka-wannabe/iso-lab/pull/168) |
 | `zero/zero.py`, `zero/zstats.py`, `zero/run.sh` | The graded gain without its steering below 0.3 (2026-10-30) | [#169](https://github.com/ai-quokka-wannabe/iso-lab/pull/169) |
+| `floor/floor.py`, `floor/fstats.py`, `floor/run.sh` | A constant floor below 0.3, with three seeds in the rich layouts (2026-10-30) | [#171](https://github.com/ai-quokka-wannabe/iso-lab/pull/171) |
 
 ## Leads Named by gr-fec (Unverified)
 

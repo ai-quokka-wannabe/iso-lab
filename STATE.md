@@ -115,8 +115,9 @@ found lives in the journal section it names; this list keeps only what is open.
      −0.0202 to +0.0216).
      The matched step keeps the rich-world fix in all five rich layouts (W1 holds); the graded gain ends slightly
      above it in three of them. Rich worms spend about 99% of their time below 0.3; without its steering there the
-     graded gain is not told apart from the matched step, though the pooled test (Z1) fails. Next: whether a small
-     constant steering below 0.3 carries what the graded gain's does, with more body seeds in the rich layouts; why gated steering of any kind still
+     graded gain is not told apart from the matched step, though the pooled test (Z1) fails. With three body seeds the
+     graded gain's rich-world edge is not detected at all (+0.0014), and a constant floor below 0.3 (F1) and grading
+     beyond it (F2) are not shown to matter. Next: why gated steering of any kind still
      trails never steering in warm layouts; more body
      seeds per layout, to tell a small cold-band gain from none; what the gate does in 23001's first day, where its harm starts; and the timing of a worm's
      meals against the turning of its map;
@@ -220,6 +221,8 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-10-30: a constant floor below 0.3, three seeds in the rich layouts: F1 and F2 fail; the graded gain's rich edge
+  over the matched step is not detected with three seeds (+0.0014, −0.0039 to +0.0061).
 - 2026-10-30: the graded gain without its steering below 0.3: Z1 fails (rich, +0.0025, −0.0012 to +0.0053); its edge
   goes in 82201 and 82204 (descriptive); rich worms spend about 99% of their time below 0.3.
 - 2026-10-30: the matched step in the rich layouts: W1 holds in all five (lowest bound −0.0046); graded ends above it

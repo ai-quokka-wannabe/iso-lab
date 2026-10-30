@@ -308,8 +308,9 @@ too (W1), though the graded gain ends slightly above it in three rich layouts, w
 grading and turn size are not separated (§ The Matched Scaled Step in the Rich Layouts). There the worms spend about
 99% of their time below 0.3; zeroing the graded gain's steering below 0.3 is not shown to remove its edge over the
 five layouts (Z1 fails), but removes it in the two where it was clearest, and leaves it not told apart from the
-matched step (§ The Graded Gain Without Its Steering Below 0.3). The benchmark half waits on
-the benchmark.
+matched step (§ The Graded Gain Without Its Steering Below 0.3). With three body seeds that edge is not detected at
+all (§ A Constant Floor Below 0.3, With Three Body Seeds in the Rich Layouts). The benchmark half waits on the
+benchmark.
 
 ### H15. The Pattern: a Small Core That Recurs
 
@@ -357,7 +358,9 @@ one to three body seeds per layout and no benchmark; each is stated no more stro
   § Graded or Un-latched? An Ablation of the Graded Hunger Gain.
 - *The graded gain's small steering below the gate's threshold*, in the rich layouts: not shown over five layouts (Z1,
   +0.0025, −0.0012 to +0.0053); its removal takes away the graded gain's edge in the two layouts where it was
-  clearest (descriptive). § The Graded Gain Without Its Steering Below 0.3.
+  clearest (descriptive). § The Graded Gain Without Its Steering Below 0.3. With three body seeds, the graded gain's
+  rich edge itself is not detected (+0.0014, −0.0039 to +0.0061), and neither a constant floor below 0.3 (F1) nor
+  grading beyond it (F2) is shown to matter. § A Constant Floor Below 0.3, With Three Body Seeds in the Rich Layouts.
 
 ## Adding a Hypothesis
 
