@@ -202,7 +202,8 @@ The latest night only, one line a task; earlier nights are in [the journal](docs
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
 - 2026-10-30: the graded hunger gain, a second body seed and the rich layouts: K3 holds (+0.0441, +0.0149 to +0.0737,
-  seeds pooled); K4 holds in all five rich layouts; still not shown better than never steering (−0.0305).
+  seeds pooled; new seed alone +0.0506, +0.0161 to +0.0892); K4 holds in all five rich layouts; still not shown better
+  than never steering (−0.0305, −0.0725 to +0.0111).
 - 2026-10-30: H14's graded hunger gain on ten fresh layouts: beats the on/off gate (K1 holds, +0.0377, +0.0046 to
   +0.0678); not shown better than never steering (K2 −0.0279, −0.0723 to +0.0151).
 - 2026-10-30: H14 added to the hypotheses (graded slow knobs, change-detecting senses, a set point, individuality),
