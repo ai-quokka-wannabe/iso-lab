@@ -254,6 +254,38 @@ protocols tried at intervals of 10 s or more did better, but a train of taps eve
 whole loop on five fresh 30-worm populations it did not carry, 1 of 5; the interval's realism is unchecked, see
 [the journal](../journal/2026-10-22.md)).
 
+### H14. Graded Slow Knobs, Change-Detecting Senses and Individuality
+
+*A hunch*, brought by the maintainer from a conversation with another Claude session (2026-10-30). It sharpens H12 with
+three claims that H12 does not make; the rest of that conversation's picture is already H2, H3, H4, H6 and H12.
+
+- **Slow state as a graded knob, not a switch.** Hunger and the roaming-dwelling state act as continuous, brain-wide
+  gains on turning and roaming rather than as gates that switch a behaviour on or off. Serotonin and PDF set roaming
+  and dwelling (H3; [Flavell et al. 2013](https://doi.org/10.1016/j.cell.2013.08.001)); whether their effect on
+  turning rates is graded is the claim, not yet read at a source.
+- **Senses that report change.** The salt-sensing pair ASE splits into an ON-cell (ASEL, stimulated by increases in
+  NaCl) and an OFF-cell (ASER, by decreases), and both responses are transient, "indicating that ASE neurons report
+  changes in concentration rather than absolute levels" ([Suzuki et al. 2008](https://doi.org/10.1038/nature06927),
+  abstract). Navigation then needs only two rules on such signals: pirouettes when things get worse (H2;
+  [Pierce-Shimomura et al. 1999](https://doi.org/10.1523/JNEUROSCI.19-21-09557.1999)) and weathervaning, gradual
+  curving up a gradient ([Iino and Yoshida 2009](https://doi.org/10.1523/JNEUROSCI.3633-08.2009)).
+- **A remembered set point, not a map**, and **individuality**. Learning keeps a few slow numbers, such as a
+  preferred temperature, rather than a map of places. And worms differ from one another persistently: within
+  isogenic populations raised alike, a fraction of individuals have "consistent, non-genetic behavioral biases that
+  persist across development", shaped by neuromodulatory systems
+  ([Stern et al. 2017](https://doi.org/10.1016/j.cell.2017.10.041), abstract). A brain whose every individual is
+  identical would fail an indistinguishability test that looks at individuals.
+
+*Read so far*: the two quotations above are from the papers' abstracts (Europe PMC); the full texts are not yet
+read, and the claim of graded neuromodulatory gains has no source yet.
+*Predicts*: on the toy worm, a hunger *gain* on steering (steering scaled by hunger) does better across fresh
+layouts than the on/off hunger gate of findings.md § D4; on the benchmark, a Program needs per-individual parameters
+to match the spread between reference worms, not only their mean.
+*Refuted*: on the toy worm, if a graded hunger gain does no better than the on/off gate across fresh layouts, by a
+rule set before the run; on the benchmark, if a Program with identical individuals matches the reference spread
+between worms.
+*Tested so far*: nothing.
+
 ## Adding a Hypothesis
 
 A pool of candidates waits in [Matej's ideas and hunches](matej-hunches.md): unverified, to be triaged and
