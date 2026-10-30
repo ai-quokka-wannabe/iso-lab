@@ -5,7 +5,8 @@
 the cold-band hunch is refuted for it too, and it harms the warm layouts more than the margin rule does. H14 was
 added, and its toy-worm prediction held: a graded hunger gain beat the on/off gate on those ten layouts, again with a
 second body seed, and kept the rich-world fix; two ablations trace the lead to smaller turns; neither the
-missing latch nor grading was detected to contribute. Before it,
+missing latch nor grading was detected to contribute. H15
+and a standing watch for a recurring core were added. Before it,
 2026-10-29 ([the journal](docs/journal/2026-10-29.md)): mostly housekeeping - the
 linter's and the fetch tool's dependencies patched, the night's audits, this file cut to pointers, and `external/`
 moved twice, the second time to the food world, where Master Control's new physics shifts the placeholder's life in
@@ -27,6 +28,13 @@ exactly. No creature has been scored.
 [docs/PLAN.md](docs/PLAN.md) says what the phases are and why the benchmark comes before any brain. Beside the benchmark, the lab takes apart the
 maintainer's toy worm ([docs/research/gr-fec.md](docs/research/gr-fec.md) §§ 9-11) to learn how to design a brain
 rather than search for one; what carries up the ladder is kept in [docs/research/findings.md](docs/research/findings.md).
+
+## Standing Watch
+
+- **The Pattern** ([H15](docs/hypotheses/README.md#h15-the-pattern-a-small-core-that-recurs)), for as long as the
+  lab runs. Once a month, the first run of the month reads the journal's registered ablations since the last review,
+  adds each mechanism that survived or failed to H15's ledger, and writes in the journal whether any candidate is
+  recurring. A watch, not a task: it never leaves this list, and it claims nothing the ledger does not show.
 
 ## Next
 
@@ -102,7 +110,9 @@ found lives in the journal section it names; this list keeps only what is open.
      An un-latched on/off gain: the gain `y[7]` in place of a step carries the lead (L1 holds); no contribution
      from removing the latch was detected (L2 fails, interval up to +0.0140).
      A step scaled by a constant 0.65 recovers that lead (M2 holds); grading adds nothing detectable (M1 fails).
-     Next: the scaled step with its constant matched to the measured mean gain (about 0.56); why gated steering of any kind still
+     With the constant closer to matched (0.5572), the same: P2 holds, P1 fails (−0.0056, −0.0365 to +0.0218).
+     With three body seeds per layout, the same again: Q2 holds (+0.0471, +0.0281 to +0.0644), Q1 fails (+0.0015,
+     −0.0202 to +0.0216). Running: the matched step in the rich layouts (registered on `claude/grfec-matched-rich`). Next: why gated steering of any kind still
      trails never steering in warm layouts; more body
      seeds per layout, to tell a small cold-band gain from none; what the gate does in 23001's first day, where its harm starts; and the timing of a worm's
      meals against the turning of its map;
@@ -205,6 +215,10 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-10-30: graded, matched and un-latched with three body seeds per layout: Q2 holds (+0.0471, +0.0281 to +0.0644;
+  new seeds alone +0.0458); Q1 fails (+0.0015, −0.0202 to +0.0216).
+- 2026-10-30: the same with the constant closer to matched (0.5572): P2 holds (+0.0496, +0.0198 to +0.0772); P1 fails (graded
+  minus matched −0.0056, −0.0365 to +0.0218).
 - 2026-10-30: grading or smaller turns, a scaled step: M2 holds (scaled minus un-latched +0.0423, +0.0116 to +0.0725);
   M1 fails (graded minus scaled +0.0018, −0.0298 to +0.0362): smaller turns carry the lead, grading adds nothing detected.
 - 2026-10-30: graded or un-latched, an ablation: L1 holds (graded minus un-latched +0.0440, +0.0096 to +0.0768); L2

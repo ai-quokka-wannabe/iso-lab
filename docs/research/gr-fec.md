@@ -437,6 +437,8 @@ evaluation tools for a toy world, not code the lab builds on; anything that beco
 | `graded2/graded2.py`, `graded2/grad2stats.py`, `graded2/run.sh` | The graded hunger gain: a second body seed, and the rich layouts (2026-10-30) | [#162](https://github.com/ai-quokka-wannabe/iso-lab/pull/162) |
 | `unlatch/unlatch.py`, `unlatch/ulstats.py`, `unlatch/run.sh` | Graded or un-latched? An ablation of the graded hunger gain (2026-10-30) | [#163](https://github.com/ai-quokka-wannabe/iso-lab/pull/163) |
 | `scaled/scaled.py`, `scaled/scstats.py`, `scaled/run.sh` | Grading or smaller turns? A scaled on/off gain (2026-10-30) | [#164](https://github.com/ai-quokka-wannabe/iso-lab/pull/164) |
+| `matched/matched.py`, `matched/run.sh` (statistics: `scaled/scstats.py`) | Grading or smaller turns, with the constant matched (2026-10-30) | [#166](https://github.com/ai-quokka-wannabe/iso-lab/pull/166) |
+| `seeds3/run.sh`, `seeds3/pstats.py` | Graded, matched and un-latched with three body seeds per layout (2026-10-30) | [#167](https://github.com/ai-quokka-wannabe/iso-lab/pull/167) |
 
 ## Leads Named by gr-fec (Unverified)
 

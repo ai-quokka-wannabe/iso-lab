@@ -150,8 +150,12 @@ against an un-latched on/off gain, the scaling carries the lead, and no contribu
 detected (§ Graded or Un-latched? An Ablation of the Graded Hunger Gain); and a step scaled by a constant
 0.65 recovers the lead, with grading adding nothing detectable (§ Grading or Smaller Turns? A Scaled On/Off Gain):
 on the toy worm, with one body seed per layout, turning less
-helped, and turning in proportion to hunger added nothing detectable (its interval reaches +0.0362, so a part as large
-as most of the lead is not excluded). The lead held with a second body seed (on the new
+helped, and turning in proportion to hunger added nothing detectable. With the constant set to the mean gain the graded
+rule would have applied in the 0.65 arm's lives (0.5572) the same held, and grading's part is then excluded above
++0.0218, about half the lead's point estimate, at a 95% bootstrap over ten layouts with one body seed (§ Grading or
+Smaller Turns, With the Constant Matched). With three body seeds per layout it held again, and the smaller-turns
+lead replicated on worms no earlier test used (§ Graded, Matched and Un-latched With Three Body Seeds per Layout).
+The lead held with a second body seed (on the new
 worms alone, +0.0506, +0.0161 to +0.0892), and the graded gain kept the rich-world fix in five fresh rich layouts (§ The Graded Hunger Gain: a Second Body Seed, and the
 Rich Layouts).
 *For bigger brains*: test every world again after gating a module; a fix in one world is a new claim in all. A state
