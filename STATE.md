@@ -111,8 +111,8 @@ found lives in the journal section it names; this list keeps only what is open.
      from removing the latch was detected (L2 fails, interval up to +0.0140).
      A step scaled by a constant 0.65 recovers that lead (M2 holds); grading adds nothing detectable (M1 fails).
      With the constant closer to matched (0.5572), the same: P2 holds, P1 fails (−0.0056, −0.0365 to +0.0218).
-     Running: three body seeds per layout for the graded, matched and un-latched arms, and the matched step in the
-     rich layouts (registered on the branches `claude/grfec-seeds3` and `claude/grfec-matched-rich`). Next: why gated steering of any kind still
+     With three body seeds per layout, the same again: Q2 holds (+0.0471, +0.0281 to +0.0644), Q1 fails (+0.0015,
+     −0.0202 to +0.0216). Running: the matched step in the rich layouts (registered on `claude/grfec-matched-rich`). Next: why gated steering of any kind still
      trails never steering in warm layouts; more body
      seeds per layout, to tell a small cold-band gain from none; what the gate does in 23001's first day, where its harm starts; and the timing of a worm's
      meals against the turning of its map;
@@ -215,6 +215,8 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-10-30: graded, matched and un-latched with three body seeds per layout: Q2 holds (+0.0471, +0.0281 to +0.0644;
+  new seeds alone +0.0458); Q1 fails (+0.0015, −0.0202 to +0.0216).
 - 2026-10-30: the same with the constant closer to matched (0.5572): P2 holds (+0.0496, +0.0198 to +0.0772); P1 fails (graded
   minus matched −0.0056, −0.0365 to +0.0218).
 - 2026-10-30: grading or smaller turns, a scaled step: M2 holds (scaled minus un-latched +0.0423, +0.0116 to +0.0725);
