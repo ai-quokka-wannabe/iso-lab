@@ -110,7 +110,9 @@ found lives in the journal section it names; this list keeps only what is open.
      An un-latched on/off gain: the gain `y[7]` in place of a step carries the lead (L1 holds); no contribution
      from removing the latch was detected (L2 fails, interval up to +0.0140).
      A step scaled by a constant 0.65 recovers that lead (M2 holds); grading adds nothing detectable (M1 fails).
-     Next: the scaled step with its constant matched to the measured mean gain (about 0.56); why gated steering of any kind still
+     With the constant matched (0.5572), the same: P2 holds, P1 fails (−0.0056, −0.0365 to +0.0218).
+     Running: three body seeds per layout for the graded, matched and un-latched arms, and the matched step in the
+     rich layouts (journal of 2026-10-30, both registered). Next: why gated steering of any kind still
      trails never steering in warm layouts; more body
      seeds per layout, to tell a small cold-band gain from none; what the gate does in 23001's first day, where its harm starts; and the timing of a worm's
      meals against the turning of its map;
@@ -213,6 +215,8 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-10-30: the same with the constant matched (0.5572): P2 holds (+0.0496, +0.0198 to +0.0772); P1 fails (graded
+  minus matched −0.0056, −0.0365 to +0.0218).
 - 2026-10-30: grading or smaller turns, a scaled step: M2 holds (scaled minus un-latched +0.0423, +0.0116 to +0.0725);
   M1 fails (graded minus scaled +0.0018, −0.0298 to +0.0362): smaller turns carry the lead, grading adds nothing detected.
 - 2026-10-30: graded or un-latched, an ablation: L1 holds (graded minus un-latched +0.0440, +0.0096 to +0.0768); L2
