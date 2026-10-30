@@ -434,6 +434,7 @@ evaluation tools for a toy world, not code the lab builds on; anything that beco
 | `rich5/run.sh`, `rich5/rich5stats.py` | The margin rule in five fresh rich layouts (2026-10-29) | [#157](https://github.com/ai-quokka-wannabe/iso-lab/pull/157) |
 | `nomargin/run.sh`, `nomargin/nmstats.py` | The global rule without the margin on ten fresh layouts (2026-10-30) | [#159](https://github.com/ai-quokka-wannabe/iso-lab/pull/159) |
 | `graded/graded.py`, `graded/gradstats.py`, `graded/run.sh` | H14's graded hunger gain on ten fresh layouts (2026-10-30) | [#161](https://github.com/ai-quokka-wannabe/iso-lab/pull/161) |
+| `graded2/graded2.py`, `graded2/grad2stats.py`, `graded2/run.sh` | The graded hunger gain: a second body seed, and the rich layouts (2026-10-30) | [#162](https://github.com/ai-quokka-wannabe/iso-lab/pull/162) |
 
 ## Leads Named by gr-fec (Unverified)
 

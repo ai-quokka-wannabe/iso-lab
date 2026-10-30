@@ -3,7 +3,8 @@
 **Last updated:** 2026-10-30 ([the journal of 2026-10-30](docs/journal/2026-10-30.md)): `external/` moved to latest
 `main` again (the world unchanged), and the global rule without the margin tested on the ten fresh banded layouts:
 the cold-band hunch is refuted for it too, and it harms the warm layouts more than the margin rule does. H14 was
-added, and its toy-worm prediction held: a graded hunger gain beat the on/off gate on those ten layouts. Before it,
+added, and its toy-worm prediction held: a graded hunger gain beat the on/off gate on those ten layouts, again with a
+second body seed, and kept the rich-world fix. Before it,
 2026-10-29 ([the journal](docs/journal/2026-10-29.md)): mostly housekeeping - the
 linter's and the fetch tool's dependencies patched, the night's audits, this file cut to pointers, and `external/`
 moved twice, the second time to the food world, where Master Control's new physics shifts the placeholder's life in
@@ -96,8 +97,8 @@ found lives in the journal section it names; this list keeps only what is open.
      2026-10-29 and 2026-10-30).
      H14's graded hunger gain on steering beat the on/off gate on those ten layouts (K1 holds), though not shown
      better than never steering ([H14](docs/hypotheses/README.md#h14-graded-slow-knobs-change-detecting-senses-and-individuality)).
-     Next: an un-latched on/off gain, to tell gradedness from latching as the source of that lead; the graded gain
-     with more body seeds and in the rich layouts; and why gated steering of any kind still
+     The lead held with a second body seed (K3), and the graded gain kept the rich-world fix (K4).
+     Next: an un-latched on/off gain, to tell gradedness from latching as the source of that lead; and why gated steering of any kind still
      trails never steering in warm layouts; more body
      seeds per layout, to tell a small cold-band gain from none; what the gate does in 23001's first day, where its harm starts; and the timing of a worm's
      meals against the turning of its map;
@@ -200,6 +201,9 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-10-30: the graded hunger gain, a second body seed and the rich layouts: K3 holds (+0.0441, +0.0149 to +0.0737,
+  seeds pooled; new seed alone +0.0506, +0.0161 to +0.0892); K4 holds in all five rich layouts; still not shown better
+  than never steering (−0.0305, −0.0725 to +0.0111).
 - 2026-10-30: H14's graded hunger gain on ten fresh layouts: beats the on/off gate (K1 holds, +0.0377, +0.0046 to
   +0.0678); not shown better than never steering (K2 −0.0279, −0.0723 to +0.0151).
 - 2026-10-30: H14 added to the hypotheses (graded slow knobs, change-detecting senses, a set point, individuality),
