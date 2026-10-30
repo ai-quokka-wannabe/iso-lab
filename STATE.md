@@ -220,7 +220,7 @@ The latest night only, one line a task; earlier nights are in [the journal](docs
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
 - 2026-10-30: the graded gain without its steering below 0.3: Z1 fails (rich, +0.0025, −0.0012 to +0.0053); its edge
-  goes in 82201 and 82204; rich worms spend about 99% of their time below 0.3.
+  goes in 82201 and 82204 (descriptive); rich worms spend about 99% of their time below 0.3.
 - 2026-10-30: the matched step in the rich layouts: W1 holds in all five (lowest bound −0.0046); graded ends above it
   in three (descriptive; sub-0.3 steering, grading and turn size not separated).
 - 2026-10-30: graded, matched and un-latched with three body seeds per layout: Q2 holds (+0.0471, +0.0281 to +0.0644;
