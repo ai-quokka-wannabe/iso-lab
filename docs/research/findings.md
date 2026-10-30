@@ -161,7 +161,10 @@ Rich Layouts). The matched step kept it too, though the graded gain ended slight
 layouts; there the graded gain also steers a little below 0.3, where the matched step does not, and that, its
 grading and turn size are not separated there (§ The Matched Scaled Step in the Rich Layouts). In the rich layouts the
 worms spend about 99% of their time below 0.3; without its steering there the graded gain is not told apart from the
-matched step, though the registered pooled test fails (§ The Graded Gain Without Its Steering Below 0.3).
+matched step, though the registered pooled test fails (§ The Graded Gain Without Its Steering Below 0.3). With three
+body seeds per rich layout, that edge is not detected pooled over five layouts; it varies with the layout and repeats
+across seeds, and where it exists an ungraded constant floor below 0.3 carries it (descriptive; § A Constant Floor
+Below 0.3, With Three Body Seeds in the Rich Layouts).
 *For bigger brains*: test every world again after gating a module; a fix in one world is a new claim in all. A state
 used as a gate may mark *which* individuals are in it, not only *when* - split by individual before reading a gate,
 and test the split under the gate itself - with the same individuals in both arms (branch one life), never two
