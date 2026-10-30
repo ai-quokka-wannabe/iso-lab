@@ -298,7 +298,9 @@ contribution from removing the latch was detected (L2, −0.0063, −0.0275 to +
 excluded; § Graded or Un-latched? An Ablation of the Graded Hunger Gain). A step scaled by a constant 0.65 recovers
 the lead (M2, +0.0423, +0.0116 to +0.0725) and grading adds nothing detectable (M1, +0.0018, −0.0298 to +0.0362;
 § Grading or Smaller Turns? A Scaled On/Off Gain), and again with the constant set to the mean gain the graded rule would have applied in the other arms' lives (P2
-holds; P1, −0.0056, −0.0365 to +0.0218; § Grading or Smaller Turns, With the Constant Matched): on the toy worm, the
+holds; P1, −0.0056, −0.0365 to +0.0218; § Grading or Smaller Turns, With the Constant Matched), and with three body
+seeds per layout (Q2 holds; Q1, +0.0015, −0.0202 to +0.0216; § Graded, Matched and Un-latched With Three Body Seeds
+per Layout): on the toy worm, the
 gain helps by making turns smaller, and the graded half of the hunch is not supported there. The lead held with a second body seed (K3, +0.0441,
 +0.0149 to +0.0737, seeds pooled; on the new worms alone +0.0506, +0.0161 to +0.0892), and the graded gain kept the
 rich-world fix (K4; § The Graded Hunger Gain: a Second Body Seed, and the Rich Layouts). The benchmark half waits on
@@ -328,20 +330,22 @@ a rule.
 *The ledger*, one line per mechanism tested by a registered ablation, kept current by the standing watch in STATE.md:
 
 All lines so far are toy-worm results about one behaviour, greedy steering under a hunger gate, from ablations with
-one body seed per layout and no benchmark; each is stated no more strongly than the journal section it cites.
+one body seed per layout (three in the latest) and no benchmark; each is stated no more strongly than the journal section it cites.
 
 - *A gain below 1 on steering while the hunger gate is on*: survives against the un-latched full-gain step (M2, +0.0423,
-  +0.0116 to +0.0725, at 0.65; P2, +0.0496, +0.0198 to +0.0772, at 0.5572, the mean gain the graded rule would have
+  +0.0116 to +0.0725, at 0.65; P2, +0.0496, +0.0198 to +0.0772, at 0.5572; with three body seeds per layout, Q2,
+  +0.0471, +0.0281 to +0.0644, and +0.0458, +0.0258 to +0.0654 on the new seeds alone; at 0.5572, the mean gain the graded rule would have
   applied in the 0.65 arm's lives; 0.5457 in the matched arm's own; the graded arm's own gain was not logged, and the
   match holds for the mean over layouts, not within each). Not shown better than
   never steering: the graded gain, whose lead over the un-latched step is of like size (L1 +0.0440), is not (pooled over
   two body seeds, −0.0305, −0.0725 to +0.0111). Journal of 2026-10-30, § Grading or Smaller Turns? A Scaled On/Off
   Gain, § Grading or Smaller Turns, With the Constant Matched, and § The Graded Hunger Gain: a Second Body Seed, and
   the Rich Layouts.
-- *Grading that gain by the hunger reading*: not detected to add anything, twice (M1, +0.0018, −0.0298 to +0.0362;
+- *Grading that gain by the hunger reading*: not detected to add anything, three times (M1, +0.0018, −0.0298 to +0.0362;
   with the turn size closer to matched, P1, −0.0056, −0.0365 to +0.0218: an effect above +0.0218, about half the lead's point estimate, is excluded
-  at a 95% bootstrap over ten layouts with one body seed).
-  § Grading or Smaller Turns? A Scaled On/Off Gain, and § Grading or Smaller Turns, With the Constant Matched.
+  at a 95% bootstrap over ten layouts with one body seed; with three body seeds per layout, Q1, +0.0015, −0.0202 to
+  +0.0216). § Grading or Smaller Turns? A Scaled On/Off Gain, § Grading or Smaller Turns, With the Constant Matched,
+  and § Graded, Matched and Un-latched With Three Body Seeds per Layout.
 - *Removing the gate's latch between decisions*: not detected to add anything (L2, −0.0063, −0.0275 to +0.0140).
   § Graded or Un-latched? An Ablation of the Graded Hunger Gain.
 
