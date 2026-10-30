@@ -433,6 +433,7 @@ evaluation tools for a toy world, not code the lab builds on; anything that beco
 | `fresh10/run.sh`, `fresh10/fresh10stats.py` | The cold-band hunch on ten fresh layouts (2026-10-29) | [#156](https://github.com/ai-quokka-wannabe/iso-lab/pull/156) |
 | `rich5/run.sh`, `rich5/rich5stats.py` | The margin rule in five fresh rich layouts (2026-10-29) | [#157](https://github.com/ai-quokka-wannabe/iso-lab/pull/157) |
 | `nomargin/run.sh`, `nomargin/nmstats.py` | The global rule without the margin on ten fresh layouts (2026-10-30) | [#159](https://github.com/ai-quokka-wannabe/iso-lab/pull/159) |
+| `graded/graded.py`, `graded/gradstats.py`, `graded/run.sh` | H14's graded hunger gain on ten fresh layouts (2026-10-30) | [#161](https://github.com/ai-quokka-wannabe/iso-lab/pull/161) |
 
 ## Leads Named by gr-fec (Unverified)
 

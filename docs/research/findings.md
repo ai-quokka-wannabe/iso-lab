@@ -142,7 +142,11 @@ where the band is cold was refuted, narrowly, and there gated steering of either
 steering (descriptive; journal 2026-10-29, § The Cold-Band Hunch on Ten Fresh Layouts). It kept the rich-world fix in
 all five fresh rich layouts (§ The Margin Rule in Five Fresh Rich Layouts). Without the margin it harmed the fresh
 warm layouts more, and helped no fresh cold one detectably (descriptive; journal 2026-10-30, § The Global Rule
-Without the Margin on Ten Fresh Layouts): the fix designed on one layout does not generalise as a fix.
+Without the Margin on Ten Fresh Layouts): the fix designed on one layout does not generalise as a fix. A graded hunger gain on steering, in place of the
+on/off gate, beat the gate on the same ten layouts by its registered rule, though it was not shown better than never
+steering (journal 2026-10-30, § H14's Graded Hunger Gain on Ten Fresh Layouts): a gate that scales, rather than
+switches, and that is not latched between decisions, is the first change to it shown to beat it on fresh layouts;
+which of the two differences carries the lead is not yet separated.
 *For bigger brains*: test every world again after gating a module; a fix in one world is a new claim in all. A state
 used as a gate may mark *which* individuals are in it, not only *when* - split by individual before reading a gate,
 and test the split under the gate itself - with the same individuals in both arms (branch one life), never two
