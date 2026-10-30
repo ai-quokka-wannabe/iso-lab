@@ -89,13 +89,15 @@ found lives in the journal section it names; this list keeps only what is open.
    [findings.md § Designing a Brain](docs/research/findings.md#designing-a-brain); each experiment's script and pull
    request are in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are). Open, one run each:
    - (a) the weak nose in the warm world, where its effect is small and mixed;
-   - (b) the hunger gate and its fix: the cold-band hunch was refuted on the ten fresh banded layouts, narrowly
-     (journal of 2026-10-29, § The Cold-Band Hunch on Ten Fresh Layouts), and there gated steering mostly ends below
-     never steering, while in the five fresh rich layouts it keeps the rich-world fix (R2); next, more body seeds per
-     layout to tell a small cold-band gain from none (the rule without the margin, tested on 2026-10-30, also fails N1
-     and harms the warm layouts); what the gate
-     does in 23001's first day, where its harm starts; and the timing of a worm's meals against the turning of its
-     map;
+   - (b) the hunger gate and its fix. The global-contrast fix does not generalise: the cold-band hunch was refuted on
+     the ten fresh banded layouts, narrowly with the margin and also without it, and there gated steering mostly ends
+     below never steering; the margin rule keeps the rich-world fix in the five fresh rich layouts (journal of
+     2026-10-29 and 2026-10-30).
+     Next: H14's graded hunger gain on steering in place of the on/off gate, on the same ten layouts with greedy
+     gating and never steering as controls
+     ([H14](docs/hypotheses/README.md#h14-graded-slow-knobs-change-detecting-senses-and-individuality)); more body
+     seeds per layout, to tell a small cold-band gain from none; what the gate does in 23001's first day, where its harm starts; and the timing of a worm's
+     meals against the turning of its map;
    - (c) the sound CMA-ES, done;
    - (d) the composition law: a third lever that acts alone, and roaming's interaction as its own test.
 
@@ -195,6 +197,8 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-10-30: H14 added to the hypotheses (graded slow knobs, change-detecting senses, a set point, individuality),
+  from a conversation the maintainer relayed; two new sources read at their abstracts.
 - 2026-10-30: the global rule without the margin on ten fresh layouts: N1 fails (cold +0.0179, −0.0321 to +0.0630); N2
   holds only through harm in the warm band (−0.0623, wholly below zero); the margin limits that harm.
 - 2026-10-30: `external/` moved to latest `main` (the upstream re2js linter override; link `9b1b771`, master-control
