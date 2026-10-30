@@ -202,8 +202,9 @@ points to the open ones and says what waits on each.
   ([docs/benchmark/FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing)).
   The benchmark is not frozen until food is settled, by these issues or by comparing with foodless worms instead.
   Under way upstream, by the maintainer's comment on both issues (2026-10-29): the design is merged (tron-grid-lite
-  #164, #166), then master-control#70 (the world's half, no wire) and link#49 (protocol v12), both merged; next the
-  wire, the Grid (Program ABI 11) and rc-worm. When Program ABI 11 lands, the lab's placeholder Program must be
+  #164, #166), then master-control#70 (the world's half, no wire) and link#49 (protocol v12), both merged, then the
+  wire and food in the tick (master-control#72 and #73, pinned since the journal of 2026-10-30); next the Grid
+  (Program ABI 11) and rc-worm. When Program ABI 11 lands, the lab's placeholder Program must be
   rebuilt against it before the next bump merges.
 - **The worm's bends against the Grid's joint limit**
   ([tron-grid-lite#165](https://github.com/ai-quokka-wannabe/tron-grid-lite/issues/165), filed 2026-10-29). At the eight-arc
