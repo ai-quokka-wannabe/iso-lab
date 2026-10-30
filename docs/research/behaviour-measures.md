@@ -79,6 +79,36 @@ concentration (dC/dt) but not with absolute concentration", and the average head
 the gradient. Chemotaxis itself is not comparable on the Grid yet, which has no chemical sense
 ([STATE.md](../../STATE.md)); the run and pirouette structure of a track is.
 
+### How the Toolbox Turns States Into Durations and Rates
+
+Read at the source on 2026-10-30, the OpenWorm analysis toolbox at commit `181ab13`, as in the journal of 2026-10-15
+(§ The Published Locomotion States, Read at Their Source):
+[`features/events.py`](https://github.com/openworm/open-worm-analysis-toolbox/blob/181ab13/open_worm_analysis_toolbox/features/events.py),
+`EventListWithFeatures` (SHA-256 `c0349183…c124`), and
+[`features/locomotion_features.py`](https://github.com/openworm/open-worm-analysis-toolbox/blob/181ab13/open_worm_analysis_toolbox/features/locomotion_features.py),
+`MotionEvent` (`334a66de…bc23`).
+
+- **Each mode has its own event list.** `MotionEvent` runs `EventFinder` once per mode, forward, backward and paused,
+  on the midbody speed, and builds an `EventListWithFeatures` from each. The per-frame `motion_modes`, where a later
+  mode overwrites an earlier one, are built separately. So durations and rates come from each mode's own events, and
+  an event that the per-frame states partly overwrite still counts whole in its own list.
+- **Durations**: `event_durations = (end_frames - start_frames + 1) / fps`, for every event, those cut off by the
+  recording's ends included. The times between events are `(next start - end - 1) / fps`.
+- **Distance**: per event, the sum over its frames of `|midbody speed| / fps`, skipping frames without a speed.
+- **Total time**: `num_video_frames / fps`, with `num_video_frames` set to the length of the midbody speed. That is
+  every frame of the recording, those without a skeleton included.
+- **Frequency**: `num_events_for_stats / total_time`, in events per second, so the reversal rate is backward events
+  per second of recording. `num_events_for_stats` leaves out an event already under way at the first frame and one
+  still under way at the last. It does so only when there are at least two events: a lone event touching an edge is
+  counted.
+- **Time ratio**: `nansum(event_durations) / total_time`, partial events included.
+
+Two cautions. The docstring names a MATLAB original (`+seg_worm/+feature/+event/event.m`), and whether the reference
+records' stored frequencies were computed by this Python or by that MATLAB is not yet shown; the stored motion modes
+were reproduced exactly from this rule (journal of 2026-10-15). And the edge rule's exception for a lone event reads
+like an accident of the code rather than a choice, so the lab's own durations and rates should follow it only where
+matching the published values is the point.
+
 ## Roaming and Dwelling
 
 [Flavell et al. 2013](https://doi.org/10.1016/j.cell.2013.08.001): worms on food "spontaneously switch between
