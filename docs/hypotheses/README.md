@@ -323,9 +323,10 @@ floor was not shown to beat the matched step (§ The Constant Floor on Ten Fresh
 on the benchmark.
 
 ![A forest plot of H14's toy-worm contrasts in two panels, each a difference in late energy with its 95% interval.
-Warm world: the graded gain leads the greedy gate (K1, K3) and the un-latched step (L1), but is not shown better
-than never steering (K2 and the K3 run, both straddling zero); a scaled on/off step does as well as the graded gain
-(M1, P1 and Q1 straddle zero) and itself leads the un-latched step (M2, P2 and Q2 hold). Rich layouts: K4 and W1 stay above their -0.03 margin
+Ten fresh banded layouts, cold and warm pooled: the graded gain leads the greedy gate (K1, K3, and the new body seed
+alone) and the un-latched step (L1), but is not shown better than never steering (K2 and the K3 run, both straddling
+zero); a scaled on/off step is not told apart from the graded gain (M1, P1 and Q1 straddle zero) and itself leads the
+un-latched step (M2, P2 and Q2 hold). Rich layouts: K4 and W1 stay above their -0.03 margin
 in every layout; Z1, F1, F2 and H1 all straddle zero.](../figures/plot_toyworm_graded.svg)
 
 *Every contrast above, with the journal section each is read from in the code that draws it; blue holds, orange
