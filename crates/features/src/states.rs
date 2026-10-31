@@ -38,32 +38,92 @@ pub enum MotionMode {
 /// exactly on its bound. With every length undefined the toolbox raises an error, where this
 /// gives no state at all.
 pub fn motion_modes(speeds: &[Option<f64>], lengths: &[Option<f64>], fps: f64) -> Vec<Option<MotionMode>> {
-    let lengths = interpolated(lengths);
-    let fraction = |share: f64| -> Vec<Option<f64>> { lengths.iter().map(|length| length.map(|length| share * length)).collect() };
-    // The speed and distance thresholds are both 5% of the length in the toolbox's options, and
-    // are kept apart here so that one cannot change with the other.
-    let (speed_bound, distance_bound, pause_bound) = (fraction(0.05), fraction(0.05), fraction(0.025));
     let mut modes = vec![None; speeds.len()];
     // In the toolbox's order, each later mode overwriting an earlier one where their states overlap, as
     // they can when bridged gaps chain across modes.
-    let rules: [(MotionMode, Bound, Bound, bool); 3] = [
-        (MotionMode::Forward, Bound::Above(&speed_bound), Bound::None, true),
-        (MotionMode::Backward, Bound::None, Bound::Below(&speed_bound), true),
-        (MotionMode::Paused, Bound::Below(&pause_bound), Bound::Above(&pause_bound), false),
-    ];
-    for (mode, low, high, needs_distance) in rules {
-        let candidate = |t: usize| -> bool {
-            let Some(speed) = speeds[t] else { return false };
-            low.admits_from_below(speed, t) && high.admits_from_above(speed, t)
-        };
-        let distance = needs_distance.then_some(&distance_bound);
-        for (start, stop) in states(speeds, fps, candidate, distance) {
+    for (mode, events) in motion_events(speeds, lengths, fps) {
+        for (start, stop) in events {
             for slot in &mut modes[start..=stop] {
                 *slot = Some(mode);
             }
         }
     }
     modes
+}
+
+/// Each mode's own events, as `(first frame, last frame)` pairs, in the order forward, backward,
+/// paused: what the toolbox's `MotionEvent` finds for each mode before `motion_modes` merges them,
+/// and what its durations and rates are computed from (docs/research/behaviour-measures.md, *How
+/// the Toolbox Turns States Into Durations and Rates*). Events of two modes may overlap.
+pub fn motion_events(speeds: &[Option<f64>], lengths: &[Option<f64>], fps: f64) -> [(MotionMode, Vec<(usize, usize)>); 3] {
+    let lengths = interpolated(lengths);
+    let fraction = |share: f64| -> Vec<Option<f64>> { lengths.iter().map(|length| length.map(|length| share * length)).collect() };
+    // The speed and distance thresholds are both 5% of the length in the toolbox's options, and
+    // are kept apart here so that one cannot change with the other.
+    let (speed_bound, distance_bound, pause_bound) = (fraction(0.05), fraction(0.05), fraction(0.025));
+    let rules: [(MotionMode, Bound, Bound, bool); 3] = [
+        (MotionMode::Forward, Bound::Above(&speed_bound), Bound::None, true),
+        (MotionMode::Backward, Bound::None, Bound::Below(&speed_bound), true),
+        (MotionMode::Paused, Bound::Below(&pause_bound), Bound::Above(&pause_bound), false),
+    ];
+    rules.map(|(mode, low, high, needs_distance)| {
+        let candidate = |t: usize| -> bool {
+            let Some(speed) = speeds[t] else { return false };
+            low.admits_from_below(speed, t) && high.admits_from_above(speed, t)
+        };
+        let distance = needs_distance.then_some(&distance_bound);
+        (mode, states(speeds, fps, candidate, distance))
+    })
+}
+
+/// One mode's events summarised as the toolbox's `EventListWithFeatures` does, over a recording of
+/// `frames` frames at `fps` - its timing features only; the distance features (`distance_during_events`,
+/// `distance_between_events`) and `data_ratio` are not included.
+#[derive(Clone, PartialEq, Debug)]
+pub struct EventStats {
+    /// Each event's duration in seconds, `(last - first + 1) / fps`, those cut off by the recording's
+    /// ends included.
+    pub durations: Vec<f64>,
+    /// The seconds between each event and the next, `(next first - last - 1) / fps`.
+    pub between: Vec<f64>,
+    /// Events per second of the whole recording, every frame counted, leaving out an event under way
+    /// at the first frame and one still under way at the last - but only when there are at least two
+    /// events, as the toolbox's `num_events_for_stats` does. `None` when there are no events, where
+    /// the toolbox gives NaN.
+    pub frequency: Option<f64>,
+    /// The share of the recording's time spent in the events, partial ones included; `None` when
+    /// there are no events.
+    pub time_ratio: Option<f64>,
+}
+
+/// The toolbox's statistics of one mode's `events`, as `motion_events` gives them, over a recording
+/// of `frames` frames at `fps`. The events must be sorted, disjoint and separated by at least one
+/// frame, each with `first <= last < frames`.
+pub fn event_stats(events: &[(usize, usize)], frames: usize, fps: f64) -> EventStats {
+    debug_assert!(events.iter().all(|&(first, last)| first <= last && last < frames));
+    debug_assert!(events.windows(2).all(|pair| pair[1].0 > pair[0].1 + 1));
+    let durations: Vec<f64> = events.iter().map(|&(start, stop)| (stop - start + 1) as f64 / fps).collect();
+    let between = events.windows(2).map(|pair| (pair[1].0 - pair[0].1 - 1) as f64 / fps).collect();
+    let (Some(&(first, _)), Some(&(_, last))) = (events.first(), events.last()) else {
+        return EventStats {
+            durations,
+            between,
+            frequency: None,
+            time_ratio: None,
+        };
+    };
+    let total_time = frames as f64 / fps;
+    let mut counted = events.len();
+    if counted > 1 {
+        counted -= usize::from(first == 0) + usize::from(last + 1 == frames);
+    }
+    let time_ratio = Some(durations.iter().sum::<f64>() / total_time);
+    EventStats {
+        durations,
+        between,
+        frequency: Some(counted as f64 / total_time),
+        time_ratio,
+    }
 }
 
 /// A per-frame bound on the speed: `Above(b)` admits a speed of at least `b`, `Below(b)` of at
@@ -357,5 +417,43 @@ mod tests {
         lengths[0] = Some(1000.0);
         lengths[19] = Some(1000.0);
         assert!(motion_modes(&constant(100.0, 20), &lengths, FPS).iter().all(|&m| m == Some(MotionMode::Forward)));
+    }
+
+    #[test]
+    fn motion_events_keep_each_mode_apart() {
+        // Two seconds forward, then two seconds paused, at 10 fps.
+        let mut speeds = constant(100.0, 20);
+        speeds.extend(constant(0.0, 20));
+        let events = motion_events(&speeds, &length(40), FPS);
+        assert_eq!(events[0], (MotionMode::Forward, vec![(0, 19)]));
+        assert_eq!(events[1], (MotionMode::Backward, vec![]));
+        assert_eq!(events[2], (MotionMode::Paused, vec![(20, 39)]));
+    }
+
+    #[test]
+    fn durations_count_whole_frames_and_the_gaps_between() {
+        let stats = event_stats(&[(10, 19), (30, 34)], 100, FPS);
+        assert_eq!(stats.durations, vec![1.0, 0.5]);
+        assert_eq!(stats.between, vec![1.0]);
+        // 1.5 s of 10 s; two events, neither at an edge.
+        assert_eq!(stats.time_ratio, Some(0.15));
+        assert_eq!(stats.frequency, Some(0.2));
+    }
+
+    #[test]
+    fn events_cut_off_at_the_edges_are_left_out_of_the_frequency_only_among_two_or_more() {
+        // Three events, the first from frame 0 and the last to frame 99: one is counted.
+        assert_eq!(event_stats(&[(0, 9), (40, 49), (90, 99)], 100, FPS).frequency, Some(0.1));
+        // A lone event touching an edge is counted, as the toolbox counts it.
+        assert_eq!(event_stats(&[(0, 9)], 100, FPS).frequency, Some(0.1));
+        // Two events, both partial: none counted.
+        assert_eq!(event_stats(&[(0, 9), (90, 99)], 100, FPS).frequency, Some(0.0));
+    }
+
+    #[test]
+    fn no_events_have_an_undefined_frequency_and_time_ratio() {
+        let stats = event_stats(&[], 100, FPS);
+        assert_eq!((stats.frequency, stats.time_ratio), (None, None));
+        assert!(stats.durations.is_empty() && stats.between.is_empty());
     }
 }
