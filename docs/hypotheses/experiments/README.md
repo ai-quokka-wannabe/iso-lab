@@ -84,13 +84,13 @@ out of their sources when the experiment is prepared.
 | D4 | Learning rate from uncertainty; surprise resets the current thought | [planned](D1-D6.md#d4-learning-rate-from-uncertainty-surprise-resets-the-current-thought) |
 | D5 | A modulator design law | [planned](D1-D6.md#d5-a-modulator-design-law) |
 | D6 | Receptors that tire, ten times faster than they recover | [planned](D1-D6.md#d6-receptors-that-tire-ten-times-faster-than-they-recover) |
-| D7 | Roles for a handful of modulators | to plan |
-| D8 | What not to build in chemistry | to plan |
-| D9 | Patience is confidence that reward will come | to plan |
-| D10 | Watch for drift into an anxious regime | to plan |
-| D11 | Affect in several dimensions, emotions as regions | to plan |
-| D12 | Pain damped by an opioid-like system, as dynamics | to plan |
-| D13 | Bad things are learned faster than good ones | to plan |
+| D7 | Roles for a handful of modulators | [planned](D7-D13.md#d7-roles-for-a-handful-of-modulators) |
+| D8 | What not to build in chemistry | [planned](D7-D13.md#d8-what-not-to-build-in-chemistry) |
+| D9 | Patience is confidence that reward will come | [planned](D7-D13.md#d9-patience-is-confidence-that-reward-will-come) |
+| D10 | Watch for drift into an anxious regime | [planned](D7-D13.md#d10-watch-for-drift-into-an-anxious-regime) |
+| D11 | Affect in several dimensions, emotions as regions | [planned](D7-D13.md#d11-affect-in-several-dimensions-emotions-as-regions) |
+| D12 | Pain damped by an opioid-like system, as dynamics | [planned](D7-D13.md#d12-pain-damped-by-an-opioid-like-system-as-dynamics) |
+| D13 | Bad things are learned faster than good ones | [planned](D7-D13.md#d13-bad-things-are-learned-faster-than-good-ones) |
 | E1 | Habituation is ten properties, not one decrement | to plan |
 | E2 | Novelty as mismatch, proven by an omission | to plan |
 | E3 | Three kinds of learning in three places | to plan |
