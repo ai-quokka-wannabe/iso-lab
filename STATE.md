@@ -87,7 +87,7 @@ found lives in the journal section it names; this list keeps only what is open.
    a keep-the-state rule for ties.
 6. **Plan an experiment for every one of Matej's 128 ideas and hunches** - the maintainer's request - in the format
    of [docs/hypotheses/experiments/README.md](docs/hypotheses/experiments/README.md), whose index shows which are
-   planned. Next, one task each, in this order: **E1-E10**, **E11-E20**, **F** (17), **G** (30, from the gr-fec sandbox;
+   planned. Next, one task each, in this order: **E6-E10** (E1-E5 are parked in #180; see *Blocked*), **E11-E20**, **F** (17), **G** (30, from the gr-fec sandbox;
    [docs/research/gr-fec.md](docs/research/gr-fec.md) has its numbers). The journal records the triage, and hunches
    that survive are promoted into numbered hypotheses or tasks here.
 7. **Audit H10's first test by A12's plan**
@@ -157,11 +157,11 @@ the idea for the next attempt.
 ## Blocked
 
 - **The plans for E1-E5** ([#180](https://github.com/ai-quokka-wannabe/iso-lab/pull/180), open, parked after three
-  rounds of verification fixes, by rule 13). Four reviews found, in turn: tests decided by construction, a margin
-  chance could cross, a missed worm source, in-sample fitting, an overloaded network, and a capacity check the
-  measured effect could block. The last finding remains in E4's resting-high condition. Next: write "without the pair's
+  rounds of verification fixes, by rule 13). Four reviews found, among other things, tests decided by construction,
+  a margin chance could cross, three missed worm sources, in-sample fitting, an overloaded network and a capacity
+  check the measured effect could block; the full set is in the reviews on #180. The last finding remains in E4's resting-high condition. Next: write "without the pair's
   training, or without the hub held high" in E4's capacity check and no-pair control, read E4 once more for anything
-  naming only one condition, and ask a fresh verifier to read the PR whole. Item 6's E1-E10 waits on it.
+  naming only one condition, and ask a fresh verifier to read the PR whole. E1-E5 wait on it; E6-E10 do not.
 - **The plan for C18, spreading activation's cliff**
   ([#45](https://github.com/ai-quokka-wannabe/iso-lab/pull/45), merged as a record, with the plan marked as parked in
   [C13-C24.md](docs/hypotheses/experiments/C13-C24.md#c18-spreading-activation-has-a-cliff)). Its model as written
