@@ -206,7 +206,8 @@ points to the open ones and says what waits on each.
   Smell is built with food (tron-grid-lite `docs/CHEMORECEPTION.md`); see the next line.
 - **Food, and a sense of taking it in** ([master-control#63](https://github.com/ai-quokka-wannabe/master-control/issues/63)
   for food on the floor and the rule for intake; [tron-grid-lite#153](https://github.com/ai-quokka-wannabe/tron-grid-lite/issues/153)
-  for the sense of the body's own intake). The reference worms are filmed on food and the Grid has none
+  for the sense of the body's own intake). The reference worms are filmed on food, and the world has had food orbs since the pins of 2026-10-30, drawn by the
+  Grid since Program ABI 11
   ([docs/benchmark/FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing)).
   The benchmark is not frozen until food is settled, by these issues or by comparing with foodless worms instead.
   Under way upstream, by the maintainer's comment on both issues (2026-10-29): the design is merged (tron-grid-lite
