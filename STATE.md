@@ -1,7 +1,8 @@
 # State of the Lab
 
-**Last updated:** 2026-10-31 ([the journal of 2026-10-31](docs/journal/2026-10-31.md)): section D was planned whole, and the toolbox's
-event statistics (done 2026-10-30) were merged. Before it, 2026-10-30
+**Last updated:** 2026-10-31 ([the journal of 2026-10-31](docs/journal/2026-10-31.md)): C18 was unparked - its lead read in
+full, its cliff defined, its test piloted on three controls, which it read as it must; section D was planned whole, and
+the toolbox's event statistics (done 2026-10-30) were merged. Before it, 2026-10-30
 ([the journal of 2026-10-30](docs/journal/2026-10-30.md)): `external/` moved to latest
 `main` twice, the first time with the world unchanged, the second to Link protocol 12 with food eaten in the tick.
 The global rule without the margin was tested on the ten fresh banded layouts: the cold-band hunch is refuted for it
@@ -146,6 +147,10 @@ found lives in the journal section it names; this list keeps only what is open.
       checked, one by one, to be held by the journal it points to;
     - (g) the hypotheses' README: a short section with (c)'s diagram, pointing to the experiments' index for the rest;
     - (h) the audits (`check-coherence`, `check-style`, `check-spelling`) once more, to catch what is left.
+11. **Run C18's plan** ([C13-C24.md § C18](docs/hypotheses/experiments/C13-C24.md#c18-spreading-activation-has-a-cliff)):
+    the three controls first, then the pure network, the budget at both gains, the corrected fan-out penalty and
+    inhibition, with fresh seeds; its expectations are pre-registered in the journal of 2026-10-31, § C18 Unparked: the
+    Cliff Defined, the Test Piloted. Waits on nothing; minutes of compute.
 
 ## To Revisit
 
@@ -195,15 +200,6 @@ the idea for the next attempt.
   its output named; a stated rule at zero input; overlap taken as absolute, so a cue that settles in the mirror of a
   pattern counts; and a capacity check per seed. Write the plan only once the pilot shows Hebb's rule alone capturing
   and a stabiliser able to change it.
-- **The plan for C18, spreading activation's cliff**
-  ([#45](https://github.com/ai-quokka-wannabe/iso-lab/pull/45), merged as a record, with the plan marked as parked in
-  [C13-C24.md](docs/hypotheses/experiments/C13-C24.md#c18-spreading-activation-has-a-cliff)). Its model as written
-  would refute the hunch by construction; the pilot, run to a steady state, found no steady narrowing with size, and a
-  width test cannot tell a continuous transition from a smooth change (journal of 2026-10-14, § C18's Model,
-  Piloted; journal of 2026-10-15, § C18's Plan, Attempted Again: the Width Test Cannot See a Transition).
-  Next: settle what the hunch's "cliff" means (Shrager, Hogg and Huberman 1987, not yet read), then plan a test of
-  the reached fraction below and above the threshold (falling as 1/N below, holding above), with the giant component
-  and a jump-shaped model as controls, the pilot's conditioned statistic and more draws.
 - **How the lab reads a Disk** (item 3(d2); waits on the maintainer's ruling). A Disk is Link's frames in a file,
   read back through Link's own library (`replay_open` and `poll` in `external/link/include/lnk/lnk_client.h`), which
   must lie beside the executable that loads it; the lab's rules make each route cost something. (1) Depend on
@@ -258,6 +254,9 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-10-31: C18 unparked - Shrager, Hogg and Huberman 1987 read in full, the hunch's cliff settled as a threshold
+  between finite and extensive reach, and a two-stage test of it piloted on three controls, which it read as it must
+  (journal of 2026-10-31, § C18 Unparked: the Cliff Defined, the Test Piloted).
 - 2026-10-31: item 10 (b), two diagrams - a night's cycle, in the README and NIGHT_SHIFT.md, and the benchmark's
   pipeline, in PLAN.md and FEATURES.md (journal of 2026-10-31, § Two Diagrams: a Night's Cycle and the Benchmark's
   Pipeline).
