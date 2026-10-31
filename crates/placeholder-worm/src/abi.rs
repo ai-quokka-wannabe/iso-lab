@@ -13,7 +13,7 @@
     If not, see <https://www.gnu.org/licenses/>.
 */
 
-//! The Program's side of the Grid's C interface, ABI version 10: `#[repr(C)]` mirrors of the
+//! The Program's side of the Grid's C interface, ABI version 11: `#[repr(C)]` mirrors of the
 //! structs this Program reads or writes, the vtable, and the one exported symbol. Every other
 //! struct is reached only through a pointer it never follows.
 //!
@@ -26,7 +26,7 @@ use crate::gait::{SEGMENTS, joint_targets};
 use std::sync::atomic::{AtomicU32, Ordering};
 
 /// The interface version this Program was written against (`TGL_ABI_VERSION`).
-pub const ABI_VERSION: u32 = 10;
+pub const ABI_VERSION: u32 = 11;
 
 /// The longest chain the interface carries, the head counted (`TGL_SEGMENTS_MAX`): a fact about the
 /// interface, kept apart from this Program's own body length.
@@ -115,7 +115,7 @@ pub struct ProgramVTable {
     pub library_shutdown: extern "C" fn(),
 }
 
-// The layout of ABI version 10, from tron-grid-lite's libs/program-abi/abi_layout.txt: every struct's
+// The layout of ABI version 11, from tron-grid-lite's libs/program-abi/abi_layout.txt: every struct's
 // size and every member's offset, checked when this crate compiles, so that a broken mirror fails the
 // build even where the submodule is absent; the tests compare the same members with that file when
 // it is present.

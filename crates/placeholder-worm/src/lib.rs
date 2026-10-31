@@ -28,7 +28,7 @@
 //! the bit on any machine.
 //!
 //! The C interface is tron-grid-lite's `libs/program-abi/include/tgl/tgl_program_abi.h`, ABI
-//! version 10, mirrored in [`abi`] for the members this Program touches.
+//! version 11, mirrored in [`abi`] for the members this Program touches.
 
 pub mod abi;
 pub mod gait;
