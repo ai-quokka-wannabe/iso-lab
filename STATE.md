@@ -63,8 +63,9 @@ found lives in the journal section it names; this list keeps only what is open.
      the stored skeletons' uneven spacing, which accounts for most of it (a median 92%) (journal of 2026-10-15, § Do the Undefined Frames Follow From the Spacing?,
      and the sections before it). Decided: both bodies' states come from the published rule applied to the lab's
      own speed, one instrument for both ([docs/benchmark/FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing)).
-     Next: the states' durations and the rate of reversals, checked the same way, by the toolbox's own definitions
-     ([behaviour-measures.md § How the Toolbox Turns States Into Durations and Rates](docs/research/behaviour-measures.md#how-the-toolbox-turns-states-into-durations-and-rates));
+     The durations and rates are written to the toolbox's definitions (`features::states::event_stats`;
+     [behaviour-measures.md § How the Toolbox Turns States Into Durations and Rates](docs/research/behaviour-measures.md#how-the-toolbox-turns-states-into-durations-and-rates)).
+     Next: reproduce the stored durations and frequencies from the published speed, then check the lab's speed against them;
    - (d) the reference statistics.
 3. **Prove the arena**: build Master Control and the Grid from `external/` on Linux with lavapipe, write a placeholder
    Program, live one life and extract the same features from it. Done: (a) Master Control, (b) the Grid,
@@ -215,6 +216,8 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-10-30: the toolbox's event statistics in Rust (`motion_events`, `event_stats`), tested red-first (journal of
+  2026-10-30, § The Toolbox's Event Statistics in Rust).
 - 2026-10-30: the toolbox's definitions of state durations and rates, read at source for item 2(c) (journal of
   2026-10-30, § How the Toolbox Turns States Into Durations and Rates).
 - 2026-10-30: the night's coherence audit: fourteen points, most mended (journal of 2026-10-30, § A Coherence Audit,
