@@ -68,7 +68,25 @@ found lives in the journal section it names; this list keeps only what is open.
      The durations and rates are written to the toolbox's definitions (`features::states::event_stats`;
      [behaviour-measures.md § How the Toolbox Turns States Into Durations and Rates](docs/research/behaviour-measures.md#how-the-toolbox-turns-states-into-durations-and-rates)).
      Next: reproduce the stored durations and frequencies from the published speed, then check the lab's speed against them;
-   - (d) the reference statistics.
+   - (d) the reference statistics, split into runs (the maintainer's request, 2026-10-31, to build the benchmark
+     next; journal of 2026-10-31, § The Benchmark, Split Into Runs):
+       - (d1) one row of measures per recording: `features::profile` and a binary that writes one tab-separated row
+         per recording of a block, from the measures already built (eight-arc posture, midbody speed, the three
+         locomotion states' fractions, durations and rates), in the units of FEATURES.md § Common Units, with a stated
+         rule for a recording too short or too gappy to measure;
+       - (d2) the reference statistics over block 1: each measure's median and spread across recordings, with a
+         seeded bootstrap interval, and how stable they are between the block's two halves;
+   - (e) the benchmark's test (PLAN.md Phase 0, step 5), split into runs:
+       - (e1) a crate `benchmark` with the classifier two-sample test PLAN.md names (Lopez-Paz and Oquab 2017): a
+         small classifier, deterministic given a seed, its cross-validated accuracy and a permutation p-value; red-first
+         tests on synthetic samples - one distribution must not be told apart from itself beyond chance, a shifted one
+         must be - with the statistics and the rule fixed before any real data is seen;
+       - (e2) the test on real data alone: real worms against held-out real worms, which must come out
+         indistinguishable, and a positive control - the same recordings deliberately altered - which must be told
+         apart; how large an alteration it can see, per measure;
+       - (e3) freezing the definition, which waits on
+         [FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing) -
+         food first - and on reading a Disk (*Blocked*).
 3. **Prove the arena**: build Master Control and the Grid from `external/` on Linux with lavapipe, write a placeholder
    Program, live one life and extract the same features from it. Done: (a) Master Control, (b) the Grid,
    (c) the placeholder (`crates/placeholder-worm`), (d1) one life, its Disk and log kept and replayed (journal of
