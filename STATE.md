@@ -73,7 +73,7 @@ found lives in the journal section it names; this list keeps only what is open.
      next; journal of 2026-10-31, § The Benchmark, Split Into Runs):
        - (d1) one row of measures per recording, done (journal of 2026-10-31, § One Row of Measures per Recording:
          Built, and Run on Block 1): `features::profile` and `profiles <block>`, its durations and rates provisional
-         until (c)'s check passes. Block 1 has 17 five-minute recordings (ids 1031915 to 1033195), excluded as short;
+         until (c)'s check passes. Block 1 has 17 short recordings with ids 1031915 to 1033195 (16 of five minutes, one of 52.7 s);
          what they are is to be read from their metadata before (d2);
        - (d2) the reference statistics over block 1: the eigen-shapes fitted on its real worms' eight angles, with the
          share of variance they carry; each measure's median and spread across recordings, with a seeded bootstrap

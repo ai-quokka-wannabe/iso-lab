@@ -345,6 +345,23 @@ mod tests {
     }
 
     #[test]
+    fn mean_removed_angles_survive_the_branch_cut() {
+        // Turned by pi - 0.5, the arc's chords point from about pi - 0.44 to pi + 0.44, across the
+        // cut at +-pi where atan2 jumps by 2 pi; the angles must still match the unturned arc's.
+        let (sin, cos) = (std::f64::consts::PI - 0.5).sin_cos();
+        let turned: Vec<f32> = arc(1.0)
+            .chunks(2)
+            .flat_map(|xy| {
+                let (x, y) = (f64::from(xy[0]), f64::from(xy[1]));
+                [(x * cos - y * sin) as f32, (x * sin + y * cos) as f32]
+            })
+            .collect();
+        let a = mean_removed_angles(&eight_arcs(&arc(1.0)).unwrap());
+        let b = mean_removed_angles(&eight_arcs(&turned).unwrap());
+        assert!(a.iter().zip(b).all(|(a, b)| close(*a, b, 1e-5)), "{a:?} against {b:?}");
+    }
+
+    #[test]
     fn the_window_is_the_first_900_seconds() {
         let profile = profile(&sliding(10.0, 1000.0, 200.0));
         assert_eq!(profile.context.frames, 9000);
