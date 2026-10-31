@@ -162,4 +162,6 @@ A reference recording lasts 15 minutes, 900 s, by the protocol (most do; see *Un
   Features Files](../journal/2026-10-14.md#reading-the-features-files)) to 32.57 frames per second ([data/README.md §
   The Phase 0 Survey](../../data/README.md#the-phase-0-survey)). Measures are taken in seconds, and the benchmark
   must say how recordings of unequal length enter it, by a fixed window of each, by excluding those far from 15
-  minutes, or otherwise, before any statistic is computed.
+  minutes, or otherwise, before any statistic is computed. *Decided* for the reference statistics (journal of
+  2026-10-31, § One Row of Measures per Recording: the Rules, Written Before the Data): each recording's first 900 s,
+  one whose window is shorter than 855 s excluded, and the frame rate not resampled (`features::profile`).
