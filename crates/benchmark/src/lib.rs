@@ -50,6 +50,8 @@
 
 use std::fmt;
 
+pub mod compare;
+
 /// The test's settings.
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub struct Config {
@@ -284,23 +286,55 @@ pub fn two_sample_test(a: &[Vec<f64>], b: &[Vec<f64>], config: &Config, seed: u6
     })
 }
 
+/// Helpers shared by the crate's tests: synthetic samples and an exact binomial interval.
 #[cfg(test)]
-mod tests {
-    use super::*;
+mod test_support {
+    use super::SplitMix64;
 
     /// Standard normal draws by the Box-Muller transform, from the test's own generator.
-    fn normal(rng: &mut SplitMix64) -> f64 {
+    pub(crate) fn normal(rng: &mut SplitMix64) -> f64 {
         let u1 = (rng.next() >> 11) as f64 / (1u64 << 53) as f64;
         let u2 = (rng.next() >> 11) as f64 / (1u64 << 53) as f64;
         (-2.0 * (1.0 - u1).ln()).sqrt() * (2.0 * std::f64::consts::PI * u2).cos()
     }
 
     /// `rows` rows of `width` standard normal measures, the first scaled by `spread` and moved by `shift`.
-    fn sample(rng: &mut SplitMix64, rows: usize, width: usize, shift: f64, spread: f64) -> Vec<Vec<f64>> {
+    pub(crate) fn sample(rng: &mut SplitMix64, rows: usize, width: usize, shift: f64, spread: f64) -> Vec<Vec<f64>> {
         (0..rows)
             .map(|_| (0..width).map(|c| if c == 0 { normal(rng) * spread + shift } else { normal(rng) }).collect())
             .collect()
     }
+
+    /// The exact (Clopper-Pearson) 95% interval of a binomial share, by bisection on the
+    /// binomial distribution function.
+    pub(crate) fn clopper_pearson(successes: usize, trials: usize) -> (f64, f64) {
+        let cdf = |k: usize, p: f64| -> f64 {
+            let mut term = (1.0 - p).powi(trials as i32);
+            let mut total = term;
+            for i in 0..k {
+                term *= (trials - i) as f64 / (i + 1) as f64 * p / (1.0 - p);
+                total += term;
+            }
+            total
+        };
+        let solve = |above: &dyn Fn(f64) -> bool| -> f64 {
+            let (mut lo, mut hi) = (0.0, 1.0);
+            for _ in 0..60 {
+                let mid = 0.5 * (lo + hi);
+                if above(mid) { hi = mid } else { lo = mid }
+            }
+            0.5 * (lo + hi)
+        };
+        let lower = if successes == 0 { 0.0 } else { solve(&|p| 1.0 - cdf(successes - 1, p) >= 0.025) };
+        let upper = if successes == trials { 1.0 } else { solve(&|p| cdf(successes, p) <= 0.025) };
+        (lower, upper)
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::test_support::{clopper_pearson, sample};
 
     /// Fewer shuffles than the lab's runs, so the suite stays fast in a debug build.
     fn quick() -> Config {
@@ -425,31 +459,6 @@ mod tests {
             })
             .count();
         assert!(count <= 3, "{count} of 20 unequal identical pairs told apart");
-    }
-
-    /// The exact (Clopper-Pearson) 95% interval of a binomial share, by bisection on the
-    /// binomial distribution function.
-    fn clopper_pearson(successes: usize, trials: usize) -> (f64, f64) {
-        let cdf = |k: usize, p: f64| -> f64 {
-            let mut term = (1.0 - p).powi(trials as i32);
-            let mut total = term;
-            for i in 0..k {
-                term *= (trials - i) as f64 / (i + 1) as f64 * p / (1.0 - p);
-                total += term;
-            }
-            total
-        };
-        let solve = |above: &dyn Fn(f64) -> bool| -> f64 {
-            let (mut lo, mut hi) = (0.0, 1.0);
-            for _ in 0..60 {
-                let mid = 0.5 * (lo + hi);
-                if above(mid) { hi = mid } else { lo = mid }
-            }
-            0.5 * (lo + hi)
-        };
-        let lower = if successes == 0 { 0.0 } else { solve(&|p| 1.0 - cdf(successes - 1, p) >= 0.025) };
-        let upper = if successes == trials { 1.0 } else { solve(&|p| cdf(successes, p) <= 0.025) };
-        (lower, upper)
     }
 
     /// The table behind the choice of 21 neighbours, over 100 pairs per cell, 60 worms a side:
