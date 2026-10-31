@@ -122,7 +122,8 @@ found lives in the journal section it names; this list keeps only what is open.
     presentable so that new people are not lost, with more plots, diagrams and flowcharts, as SVG and never as
     binaries. The survey and the reasons are in the journal of 2026-10-31, § A Plan to Make the Lab Easy to Enter.
     One run each, in this order:
-    - (a) the figure tooling: `notebooks/figures.ipynb`, which writes every new diagram as plain SVG from Python and
+    - (a) done (journal of 2026-10-31, § The Figure Tooling, and the First Diagram): the figure tooling,
+      `notebooks/figures.ipynb`, which writes every new diagram as plain SVG from Python and
       every new plot with matplotlib by the rules of *Figures are SVG*, and checks in its last cell, run locally, that
       drawing again changes no byte (a local check, not a CI job; H11's figures stay with their own notebooks); proved
       on the first diagram, how the pieces fit;
@@ -256,6 +257,8 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-10-31: item 10 (a), the figure tooling and the first diagram, how the pieces fit, in the README (journal of
+  2026-10-31, § The Figure Tooling, and the First Diagram).
 - 2026-10-31: plans for E1-E3 and E5 (learning and memory), taken up again after parking and read whole by a fresh
   verifier; E4 parked again, its network needing a pilot (journal of 2026-10-31, § The E1-E5 Plans, Taken Up Again).
 - 2026-10-31: four documents brought in step with the Grid's chemical sense at Program ABI 11 (journal of
