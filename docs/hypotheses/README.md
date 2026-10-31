@@ -4,6 +4,14 @@ A starting set of ideas about how a creature's brain should be built, written so
 against the benchmark. They are hypotheses, not decisions: any of them may be refuted, replaced or joined by
 better ones, with the reasons written in the journal.
 
+![From an idea to a brain, as a flowchart: the maintainer's hunches and ideas from people become a plan, written
+before any run; the plan is tested on the toy worm, in a notebook or on the Grid. An idea that survives is promoted
+to a hypothesis or a task in STATE.md, and a module stays in a brain only if switching it off costs the worm on the
+benchmark. One that fails or is unclear is kept under To Revisit or Blocked, with the next idea to try, and tried
+again.](../figures/diagram_ideas.svg)
+
+*How an idea travels through the lab. Drawn by [notebooks/figures.ipynb](../../notebooks/figures.ipynb).*
+
 ## The Shape of the Brain
 
 The working assumption is that the brain is **modular and heterogeneous**: a few compartments with different
@@ -313,6 +321,17 @@ pooled over five layouts; it varies with the layout, and where it exists an ungr
 (descriptive; § A Constant Floor Below 0.3, With Three Body Seeds in the Rich Layouts). On ten fresh rich layouts that
 floor was not shown to beat the matched step (§ The Constant Floor on Ten Fresh Rich Layouts). The benchmark half waits
 on the benchmark.
+
+![A forest plot of H14's toy-worm contrasts in two panels, each a difference in late energy with its 95% interval.
+Ten fresh banded layouts, cold and warm pooled: the graded gain leads the greedy gate (K1, K3, and the new body seed
+alone) and the un-latched step (L1), but is not shown better than never steering (K2 and the K3 run, both straddling
+zero); a scaled on/off step is not told apart from the graded gain (M1, P1 and Q1 straddle zero) and itself leads the
+un-latched step (M2, P2 and Q2 hold). Rich layouts: K4 and W1 stay above their -0.03 margin
+in every layout; Z1, F1, F2 and H1 all straddle zero.](../figures/plot_toyworm_graded.svg)
+
+*Every contrast above, with the journal section each is read from in the code that draws it; blue holds, orange
+fails, grey is descriptive. The two panels have different scales. Drawn by
+[notebooks/figures.ipynb](../../notebooks/figures.ipynb).*
 
 ### H15. The Pattern: a Small Core That Recurs
 

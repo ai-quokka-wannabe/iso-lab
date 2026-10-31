@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1110" height="520" viewBox="0 0 1110 520" font-family="DejaVu Sans, Verdana, Arial, sans-serif">
+<title>From an idea to a brain</title>
+<defs><marker id="head" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#444444"/></marker></defs>
+<rect x="0" y="0" width="1110" height="520" fill="#ffffff"/>
+<text x="555" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#1d1d1d">From an idea to a brain</text>
+<text x="555" y="58" text-anchor="middle" font-size="13" fill="#333333">every idea is tested before it is trusted; what fails is kept, not dropped</text>
+<rect x="30" y="90" width="230" height="90" rx="10" fill="#eef0f2" stroke="#4d5a66" stroke-width="2"/>
+<text x="145" y="116" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">Matej&#x27;s hunches</text>
+<text x="145" y="138" text-anchor="middle" font-size="13" fill="#333333">128 ideas, A to G</text>
+<text x="145" y="157" text-anchor="middle" font-size="13" fill="#333333">(matej-hunches.md)</text>
+<rect x="30" y="230" width="230" height="90" rx="10" fill="#eef0f2" stroke="#4d5a66" stroke-width="2"/>
+<text x="145" y="256" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">Ideas from people</text>
+<text x="145" y="278" text-anchor="middle" font-size="13" fill="#333333">issues labelled idea,</text>
+<text x="145" y="297" text-anchor="middle" font-size="13" fill="#333333">answered every night</text>
+<rect x="320" y="150" width="230" height="110" rx="10" fill="#fff8d9" stroke="#9a7b00" stroke-width="2"/>
+<text x="435" y="176" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">A plan</text>
+<text x="435" y="198" text-anchor="middle" font-size="13" fill="#333333">written before any run:</text>
+<text x="435" y="217" text-anchor="middle" font-size="13" fill="#333333">question, method, controls,</text>
+<text x="435" y="236" text-anchor="middle" font-size="13" fill="#333333">what would refute it</text>
+<path d="M 260 135 L 318 180" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<path d="M 260 275 L 318 230" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<rect x="610" y="150" width="230" height="110" rx="10" fill="#fff8d9" stroke="#9a7b00" stroke-width="2"/>
+<text x="725" y="176" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">A test</text>
+<text x="725" y="198" text-anchor="middle" font-size="13" fill="#333333">on the toy worm, in a notebook,</text>
+<text x="725" y="217" text-anchor="middle" font-size="13" fill="#333333">or on the Grid; results</text>
+<text x="725" y="236" text-anchor="middle" font-size="13" fill="#333333">in the journal</text>
+<path d="M 550 205 L 608 205" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<rect x="890" y="90" width="200" height="110" rx="10" fill="#fff8d9" stroke="#9a7b00" stroke-width="2"/>
+<text x="990" y="116" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">A hypothesis</text>
+<text x="990" y="138" text-anchor="middle" font-size="13" fill="#333333">promoted, not copied:</text>
+<text x="990" y="157" text-anchor="middle" font-size="13" fill="#333333">H1, H2, ... or</text>
+<text x="990" y="176" text-anchor="middle" font-size="13" fill="#333333">a task in STATE.md</text>
+<path d="M 840 180 L 888 150" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<text x="872" y="224" text-anchor="middle" font-size="13" fill="#333333">survives</text>
+<rect x="890" y="330" width="200" height="110" rx="10" fill="#f6ecfa" stroke="#8a3fa8" stroke-width="2"/>
+<text x="990" y="356" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">In a brain</text>
+<text x="990" y="378" text-anchor="middle" font-size="13" fill="#333333">a module stays only if</text>
+<text x="990" y="397" text-anchor="middle" font-size="13" fill="#333333">switching it off costs</text>
+<text x="990" y="416" text-anchor="middle" font-size="13" fill="#333333">the worm on the benchmark</text>
+<path d="M 990 200 L 990 328" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<text x="1048" y="270" text-anchor="middle" font-size="13" font-style="italic" fill="#333333">earns its place</text>
+<rect x="610" y="360" width="230" height="100" rx="10" fill="#ffffff" stroke="#7a7a7a" stroke-width="2"/>
+<text x="725" y="386" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">Kept, not dropped</text>
+<text x="725" y="408" text-anchor="middle" font-size="13" fill="#333333">To Revisit or Blocked,</text>
+<text x="725" y="427" text-anchor="middle" font-size="13" fill="#333333">with the next idea to try</text>
+<path d="M 725 260 L 725 358" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<text x="790" y="314" text-anchor="middle" font-size="13" font-style="italic" fill="#333333">fails or unclear</text>
+<path d="M 608 410 L 435 410 L 435 262" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<text x="522" y="402" text-anchor="middle" font-size="12" fill="#7a7a7a">tried again</text>
+</svg>

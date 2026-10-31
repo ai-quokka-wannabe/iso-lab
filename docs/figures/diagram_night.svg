@@ -35,7 +35,7 @@
 <path d="M 838 245 L 802 245" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
 <path d="M 568 245 L 532 245" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
 <path d="M 298 245 L 262 245" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
-<text x="415" y="186" text-anchor="middle" font-size="12" fill="#7a7a7a">on a night&#x27;s first task, also the new ideas and the audits</text>
+<text x="415" y="178" text-anchor="middle" font-size="12" fill="#7a7a7a">on a night&#x27;s first task, also the new ideas and the audits</text>
 <rect x="270" y="340" width="230" height="70" rx="10" fill="#fff8d9" stroke="#9a7b00" stroke-width="2"/>
 <text x="385" y="366" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">10-11. CI, then a review</text>
 <text x="385" y="388" text-anchor="middle" font-size="13" fill="#333333">CI Success; a fresh verifier</text>
@@ -60,8 +60,8 @@
 <text x="882" y="452" text-anchor="start" font-size="12" fill="#7a7a7a">after 3 rounds</text>
 <rect x="270" y="620" width="230" height="80" rx="10" fill="#fff8d9" stroke="#9a7b00" stroke-width="2"/>
 <text x="385" y="646" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">14. Next task, or stop</text>
-<text x="385" y="668" text-anchor="middle" font-size="13" fill="#333333">at the hour, or when nothing</text>
-<text x="385" y="687" text-anchor="middle" font-size="13" fill="#333333">is left to move forward</text>
+<text x="385" y="668" text-anchor="middle" font-size="13" fill="#333333">at the hour, or when nothing is</text>
+<text x="385" y="687" text-anchor="middle" font-size="13" fill="#333333">left, Blocked retried first</text>
 <path d="M 385 560 L 385 618" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
 <path d="M 805 578 L 805 660 L 502 660" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
 <path d="M 268 660 L 14 660 L 14 125 L 28 125" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
