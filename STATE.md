@@ -118,10 +118,6 @@ found lives in the journal section it names; this list keeps only what is open.
    - (d) the composition law: a third lever that acts alone, and roaming's interaction as its own test.
 
    Once a calculation matters to anything the lab builds on, it moves into tested Rust.
-10. **Bring four documents in step with the Grid's chemical sense** (housekeeping, from the review of the ABI 11 bump):
-   `docs/research/behaviour-measures.md`, `docs/research/pace.md`, `docs/benchmark/FEATURES.md` and
-   `docs/hypotheses/experiments/C1-C12.md` still say the Grid has no chemical sense; since Program ABI 11 it carries
-   `odour` and `intake` (journal of 2026-10-31, § The Grid Moves to Program ABI 11).
 
 ## To Revisit
 
@@ -163,7 +159,7 @@ the idea for the next attempt.
 - **The plan for E4, Hebb's rule with a stabiliser and a "used together" rule**
   ([#180](https://github.com/ai-quokka-wannabe/iso-lab/pull/180), merged with the plan marked as parked in
   [E1-E5.md](docs/hypotheses/experiments/E1-E5.md#e4-hebbian-learning-needs-a-stabiliser-and-a-used-together-rule)).
-  A probe found that sign units ignore Oja's rescaling, so the stabiliser cannot act; Oja's update is not written as an
+  A probe found that sign units ignore Oja's rescaling, so on the plain reading the stabiliser cannot act; Oja's update is not written as an
   equation; and an unstated zero-input rule decides the hub condition. Next: pilot the network in a notebook before
   writing the plan again - graded units, or a threshold, so a rescaling can matter; Oja's update as an equation with
   its output named; a stated rule at zero input; overlap taken as absolute, so a cue that settles in the mirror of a
@@ -234,9 +230,11 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
 
 - 2026-10-31: plans for E1-E3 and E5 (learning and memory), taken up again after parking and read whole by a fresh
   verifier; E4 parked again, its network needing a pilot (journal of 2026-10-31, § The E1-E5 Plans, Taken Up Again).
+- 2026-10-31: four documents brought in step with the Grid's chemical sense at Program ABI 11 (journal of
+  2026-10-31, § Four Documents in Step With the Grid's Smell).
 - 2026-10-31: `external/` at the latest mains: tron-grid-lite to Program ABI 11, the placeholder rebuilt; build,
-  render and the placeholder's life unchanged (a life with no refused intent is byte-identical at both pins) (journal of 2026-10-31, § The Grid Moves to
-  Program ABI 11).
+  render and the placeholder's life unchanged - a life with no refused intent is the same at both pins in everything
+  but its wall-clock start (journal of 2026-10-31, § The Grid Moves to Program ABI 11).
 - 2026-10-31: plans for D7-D13, and A10's question answered: no report of play in a nematode found (journal of
   2026-10-31, § Plans for D7-D13).
 - 2026-10-31: plans for D1-D6 (chemistry and affect), each waiting on food and a sense of intake; the leads' bearing

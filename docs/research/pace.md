@@ -149,7 +149,8 @@ PMC10770330): a scoring window, like Liu et al.'s, not a measured latency. Three
 [Sanders et al. 2013](https://doi.org/10.1186/1471-2202-14-156) (PMC3878553) held a hair dipped in 30% octanol before
 the worm's nose and "observed reversals characteristic of the avoidance response ... with latencies of 4 sec in both
 genetic backgrounds, both on and off food (data not shown)". A number stated in text, but for data the paper does not
-show, so it is weak. The Grid has no chemical sense yet in any case.
+show, so it is weak. The Grid has carried a chemical sense since Program ABI 11, but its only odours are those of
+food (STATE.md *Needs From Other Repositories*), so it has no repellent to time an avoidance against yet.
 
 ## Rhythms
 
