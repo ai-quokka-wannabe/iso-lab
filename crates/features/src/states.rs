@@ -77,7 +77,8 @@ pub fn motion_events(speeds: &[Option<f64>], lengths: &[Option<f64>], fps: f64) 
 }
 
 /// One mode's events summarised as the toolbox's `EventListWithFeatures` does, over a recording of
-/// `frames` frames at `fps`.
+/// `frames` frames at `fps` - its timing features only; the distance features (`distance_during_events`,
+/// `distance_between_events`) and `data_ratio` are not included.
 #[derive(Clone, PartialEq, Debug)]
 pub struct EventStats {
     /// Each event's duration in seconds, `(last - first + 1) / fps`, those cut off by the recording's
@@ -96,8 +97,11 @@ pub struct EventStats {
 }
 
 /// The toolbox's statistics of one mode's `events`, as `motion_events` gives them, over a recording
-/// of `frames` frames at `fps`.
+/// of `frames` frames at `fps`. The events must be sorted, disjoint and separated by at least one
+/// frame, each with `first <= last < frames`.
 pub fn event_stats(events: &[(usize, usize)], frames: usize, fps: f64) -> EventStats {
+    debug_assert!(events.iter().all(|&(first, last)| first <= last && last < frames));
+    debug_assert!(events.windows(2).all(|pair| pair[1].0 > pair[0].1 + 1));
     let durations: Vec<f64> = events.iter().map(|&(start, stop)| (stop - start + 1) as f64 / fps).collect();
     let between = events.windows(2).map(|pair| (pair[1].0 - pair[0].1 - 1) as f64 / fps).collect();
     let (Some(&(first, _)), Some(&(_, last))) = (events.first(), events.last()) else {
@@ -416,7 +420,7 @@ mod tests {
     }
 
     #[test]
-    fn motion_events_keep_each_mode_and_motion_modes_merge_them() {
+    fn motion_events_keep_each_mode_apart() {
         // Two seconds forward, then two seconds paused, at 10 fps.
         let mut speeds = constant(100.0, 20);
         speeds.extend(constant(0.0, 20));
