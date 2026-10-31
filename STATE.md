@@ -133,11 +133,6 @@ found lives in the journal section it names; this list keeps only what is open.
       in the README and the hypotheses' README, and the graded-gain series as a forest plot in two panels, under H14;
     - (d) done (journal of 2026-10-31, § A "Start Here" Tour in the README): a six-stop tour at the README's head,
       built around the diagrams and pointing to *Where Things Are*, and a short glossary of the lab's own words;
-    - (e) a journal index in the existing `docs/journal/README.md`, one line per night; whether each night's write-up
-      step should add its line is the maintainer's call (see *To Revisit*);
-    - (d) a "start here" tour in the README, built around the diagrams, which replaces or points to the README's
-      *Where Things Are* table rather than repeating it; its glossary defines only the lab's own words and links to
-      tron-grid-lite's README and `.claude/CLAUDE.md` § Writing for the organisation's;
     - (e) done (journal of 2026-10-31, § A Journal Index): a table in `docs/journal/README.md`, one line a night with
       the section to start reading at; whether each night's write-up step should add its line is the maintainer's call
       (see *To Revisit*);

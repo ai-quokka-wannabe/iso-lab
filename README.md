@@ -142,16 +142,15 @@ The emoji follow the [All Contributors emoji key](https://allcontributors.org/en
 
 The organisation's words - *the Grid*, *Program*, *User*, *Master Control*, *Link*, *Disk* - are explained in
 [tron-grid-lite's note on the vocabulary](https://github.com/ai-quokka-wannabe/tron-grid-lite#a-note-on-the-vocabulary)
-and [.claude/CLAUDE.md § Writing](.claude/CLAUDE.md#writing). The lab's own:
+and [.claude/CLAUDE.md § Writing](.claude/CLAUDE.md#writing), which is where *Disk* is. The lab's own:
 
 - **Night staff** - the Claude agents that do the lab's work, one task per pull request, by the rules in
   [.claude/CLAUDE.md](.claude/CLAUDE.md).
 - **Second agent** - a fresh agent that did not write a change and reviews it before it merges, ending *verified* or
   *changes needed*.
-- **Hunch** - an idea marked as not yet tested, with the outcomes that would refute it; the maintainer's are in
-  [docs/hypotheses/matej-hunches.md](docs/hypotheses/matej-hunches.md).
-- **Hypothesis** (H1, H2, ...) - an idea about the brain, with the behaviour that would confirm or refute it, in
-  [docs/hypotheses/](docs/hypotheses/README.md).
+- **Hunch** - an idea marked *a hunch*: untested, and written with the outcomes that would refute it. A hypothesis can
+  be one too; the maintainer's are in [docs/hypotheses/matej-hunches.md](docs/hypotheses/matej-hunches.md).
+- **Hypothesis** (H1, H2, ...) - see [docs/hypotheses/](docs/hypotheses/README.md).
 - **Experiment plan** (A1, C18, E4, ...) - a hunch's test, written down before it runs, in
   [docs/hypotheses/experiments/](docs/hypotheses/experiments/README.md).
 - **Pre-registration** - writing down, before a run, the result that would count as a failure.
