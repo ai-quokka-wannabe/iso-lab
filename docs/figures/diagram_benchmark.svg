@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1190" height="520" viewBox="0 0 1190 520" font-family="DejaVu Sans, Verdana, Arial, sans-serif">
+<title>The benchmark&#x27;s pipeline</title>
+<defs><marker id="head" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#444444"/></marker></defs>
+<rect x="0" y="0" width="1190" height="520" fill="#ffffff"/>
+<text x="595" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#1d1d1d">The benchmark&#x27;s pipeline</text>
+<text x="595" y="58" text-anchor="middle" font-size="13" fill="#333333">real worms and the Grid&#x27;s worm, measured the same way, compared by rules fixed in advance</text>
+<rect x="30" y="90" width="250" height="90" rx="10" fill="#eef0f2" stroke="#4d5a66" stroke-width="2"/>
+<text x="155" y="116" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">Real worms</text>
+<text x="155" y="138" text-anchor="middle" font-size="13" fill="#333333">recordings of wild-type</text>
+<text x="155" y="157" text-anchor="middle" font-size="13" fill="#333333"><tspan font-style="italic">C. elegans</tspan> (public)</text>
+<rect x="320" y="90" width="250" height="90" rx="10" fill="#fff8d9" stroke="#9a7b00" stroke-width="2"/>
+<text x="445" y="116" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">fetch-block</text>
+<text x="445" y="138" text-anchor="middle" font-size="13" fill="#333333">download a block;</text>
+<text x="445" y="157" text-anchor="middle" font-size="13" fill="#333333">keep files whose MD5 matches</text>
+<rect x="610" y="90" width="250" height="90" rx="10" fill="#fff8d9" stroke="#9a7b00" stroke-width="2"/>
+<text x="735" y="116" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">features</text>
+<text x="735" y="138" text-anchor="middle" font-size="13" fill="#333333">skeletons to speed, states,</text>
+<text x="735" y="157" text-anchor="middle" font-size="13" fill="#333333">durations and rates</text>
+<rect x="900" y="90" width="250" height="90" rx="10" fill="#fff8d9" stroke="#9a7b00" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="1025" y="116" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">Reference statistics</text>
+<text x="1025" y="138" text-anchor="middle" font-size="13" fill="#333333">the real worms&#x27; spread</text>
+<text x="1025" y="157" text-anchor="middle" font-size="13" fill="#333333">for every measure</text>
+<path d="M 280 135 L 318 135" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<path d="M 570 135 L 608 135" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<path d="M 860 135 L 898 135" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<rect x="30" y="300" width="250" height="90" rx="10" fill="#f6ecfa" stroke="#8a3fa8" stroke-width="2"/>
+<text x="155" y="326" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">A Program&#x27;s lives</text>
+<text x="155" y="348" text-anchor="middle" font-size="13" fill="#333333">on the Grid, many seeds</text>
+<rect x="320" y="300" width="250" height="90" rx="10" fill="#e8f1fb" stroke="#2f6db3" stroke-width="2"/>
+<text x="445" y="326" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">Disk</text>
+<text x="445" y="348" text-anchor="middle" font-size="13" fill="#333333">each life, recorded</text>
+<text x="445" y="367" text-anchor="middle" font-size="13" fill="#333333">by Master Control</text>
+<rect x="610" y="300" width="250" height="90" rx="10" fill="#fff8d9" stroke="#9a7b00" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="735" y="326" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">features</text>
+<text x="735" y="348" text-anchor="middle" font-size="13" fill="#333333">the same measures,</text>
+<text x="735" y="367" text-anchor="middle" font-size="13" fill="#333333">via a Disk reader</text>
+<rect x="900" y="300" width="250" height="90" rx="10" fill="#fff8d9" stroke="#9a7b00" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="1025" y="326" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">Grid worm statistics</text>
+<text x="1025" y="348" text-anchor="middle" font-size="13" fill="#333333">the same measures</text>
+<text x="1025" y="367" text-anchor="middle" font-size="13" fill="#333333">over its lives</text>
+<path d="M 280 345 L 318 345" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<path d="M 570 345 L 608 345" fill="none" stroke="#444444" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#head)"/>
+<path d="M 860 345 L 898 345" fill="none" stroke="#444444" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#head)"/>
+<rect x="900" y="420" width="250" height="80" rx="10" fill="#fdf1e3" stroke="#c46f12" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="1025" y="446" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">Verdict</text>
+<text x="1025" y="468" text-anchor="middle" font-size="13" fill="#333333">per measure, by frozen rules</text>
+<path d="M 1150 135 L 1168 135 L 1168 460 L 1152 460" fill="none" stroke="#444444" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#head)"/>
+<path d="M 1025 390 L 1025 418" fill="none" stroke="#444444" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#head)"/>
+<text x="735" y="455" text-anchor="middle" font-size="13" fill="#333333">the benchmark is frozen</text>
+<text x="735" y="474" text-anchor="middle" font-size="13" fill="#333333">before any brain is scored</text>
+</svg>

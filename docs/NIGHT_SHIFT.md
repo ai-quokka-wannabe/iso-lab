@@ -10,6 +10,14 @@ task until 06:00 Ljubljana time**, each task through the full cycle and its own 
 can look in on the session and step in; the agents never wait for that. Nothing carries over between nights
 except what is merged into `main`: the work itself, [STATE.md](../STATE.md) and [the journal](journal/).
 
+![A night's cycle as a flowchart: start from main, read STATE.md, pick one task, branch, do the work, check it,
+write it down, open a pull request; CI and a second agent then decide. A verified, green pull request is merged; one
+that needs changes is fixed and looked at again, and after three rounds is parked under Blocked. Then the next task,
+until the hour.](figures/diagram_night.svg)
+
+*Each task of a night, from [.claude/CLAUDE.md](../.claude/CLAUDE.md) § Each run, in order. Drawn by
+[notebooks/figures.ipynb](../notebooks/figures.ipynb).*
+
 If the session reaches a usage limit it pauses until the maintainer resumes it. Work not yet pushed may be
 lost; work already merged never is.
 
