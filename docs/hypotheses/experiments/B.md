@@ -99,8 +99,9 @@ proven (STATE.md item 3), so no plan gives absolute figures yet; each will when 
 - **Seeds and repetitions**: 20 seeds per test pattern; at least 8 distances and 8 blend proportions.
 - **Cost**: 20 lives per test point, 16 points - about 320 test lives for each of the three Programs (P-trained,
   Q-trained, untrained), 960 in all, plus the training lives of the two trained Programs, whose number H9 will fix.
-- **Waits on**: a chemical sense on the Grid (STATE.md *Needs From Other Repositories*, which the maintainer takes
-  up), and a Program that learns (H9).
+- **Waits on**: a Program that reads the Grid's chemical sense, which has carried food odour since Program ABI 11 (an
+  odour other than food's waits on the world; STATE.md *Needs From Other Repositories*), and a Program that learns
+  (H9).
 - **Leads**: none named.
 
 ## B3. Senses switched on by rung
@@ -184,8 +185,8 @@ proven (STATE.md item 3), so no plan gives absolute figures yet; each will when 
   default, and as many for the control.
 - **Cost**: step 1, 20 lives for the noise floor and 40 to 200 Grid lives (20 per pattern tried, two to ten
   patterns); step 2, at least 80 lives in whichever world has the gradient, more if the power calculation asks.
-- **Waits on**: step 1, the arena only (STATE.md item 3). Step 2 waits on a chemical gradient - a chemical sense on the
-  Grid (STATE.md *Needs From Other Repositories*), or B5's dish sooner - and a chemotaxis Program.
+- **Waits on**: step 1, the arena only (STATE.md item 3). Step 2 waits on a chemical gradient - the Grid's food odour,
+  carried since Program ABI 11, or B5's dish - and a chemotaxis Program.
 - **Leads**: none named for the hunch. The measures' sources: Pierce-Shimomura, Morse and Lockery 1999, "The
   fundamental role of pirouettes in *Caenorhabditis elegans* chemotaxis" (*The Journal of Neuroscience*,
   [doi:10.1523/JNEUROSCI.19-21-09557.1999](https://doi.org/10.1523/JNEUROSCI.19-21-09557.1999)) - cited elsewhere,
@@ -221,8 +222,9 @@ proven (STATE.md item 3), so no plan gives absolute figures yet; each will when 
 - **Statistics**: compute per simulated second measured in both worlds; per assay, A1's rule in each world.
 - **Seeds and repetitions**: 20 seeds per assay per world per brain.
 - **Cost**: the dish's own build; 20 dish lives and 20 Grid lives per assay per brain, three brains.
-- **Waits on**: A1's bands and the arena. A1's chemotaxis assays can be compared on the Grid only once the Grid
-  has a chemical sense (STATE.md *Needs From Other Repositories*); until then they run in the dish alone and the
+- **Waits on**: A1's bands and the arena. A1's chemotaxis assays can be compared on the Grid only for odours
+  it carries - food's alone, since Program ABI 11 (STATE.md *Needs From Other Repositories*); the rest run in the dish
+  alone and the
   dish-to-Grid comparison covers the rest. The dish's temperature gradient is built because the hunch names it, but A1
   has no thermotaxis assay, so nothing is compared on it until one is planned with its source; a sense of the
   substrate's temperature on the Grid is not asked for until then. The dish is a tool, so it is

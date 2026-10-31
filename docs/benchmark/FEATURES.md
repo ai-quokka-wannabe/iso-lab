@@ -91,12 +91,14 @@ A reference recording lasts 15 minutes, 900 s, by the protocol (most do; see *Un
   s) are seen whole often enough. A survival analysis that treats cut-off states as censored could estimate the
   dwelling time constant, but how well at 900 s per worm is for the tool to show, not for this note to assume.
 - **The states are defined on food.** Flavell et al. describe them as foraging states on a bacterial lawn; whether a
-  worm on the Grid, without food, should show them at all is part of the next question.
+  worm on the Grid, among sparse orbs rather than on a lawn, should show them at all is part of the next question.
 
 ## Open Questions Before Freezing
 
-- **Food.** The reference worms are on food after a 30-minute wait (Yemini et al. 2013), and the Grid's arena has
-  none. Roaming and dwelling are defined as foraging states on food, and Flavell et al. 2013's introduction,
+- **Food.** The reference worms are on food after a 30-minute wait (Yemini et al. 2013), and the world has had food since
+  the pins of 2026-10-30: orbs on the floor, eaten in bites, which the Grid has drawn and carried to Programs as
+  `intake` and `odour` since Program ABI 11 (STATE.md *Needs From Other Repositories*). Whether orbs at the default
+  density resemble a bacterial lawn is not yet checked. Roaming and dwelling are defined as foraging states on food, and Flavell et al. 2013's introduction,
   summarising earlier work, says "the proportion of time spent roaming increases when food is limited or low in
   quality" and that serotonin and dopamine "promote food-related behaviors such as eating, egg-laying and slow
   locomotion"; so food changes what the benchmark measures, though the size of the change for each measure is still to
