@@ -86,12 +86,10 @@ found lives in the journal section it names; this list keeps only what is open.
          frames split between dropped frames, stage movements and failed extraction, and per measure how much it
          leans on frames likely to be lost;
    - (e) the benchmark's test (PLAN.md Phase 0, step 5), split into runs:
-       - (e1) a crate `benchmark` with the classifier two-sample test PLAN.md names (Lopez-Paz and Oquab 2017): a
-         small classifier, deterministic given a seed, its cross-validated accuracy, and chance measured by a
-         permutation test - the spread of the accuracy under shuffled labels - in place of PLAN.md's "confidence
-         interval", for the reason in the journal; red-first tests on synthetic samples - one distribution must not
-         be told apart from itself beyond chance, a shifted one must be - with the settings fixed before any real data
-         is seen;
+       - (e1) done (journal of 2026-10-31, § The Benchmark's Test, Built Red-First): crate `benchmark`, a 21-nearest-
+         neighbour classifier two-sample test with five folds and a 999-shuffle permutation p-value, its settings fixed
+         on synthetic samples; with 199 shuffles it held its level (4 of 100 identical pairs told apart, 95% interval
+         1-10%) but caught a change of spread only 17 times in 100 (10-26%), which (e2) must cover;
        - (e2) the per-measure comparisons PLAN.md asks for beside the classifier ("say where they differ when they
          do"): for each measure, the two samples' distributions compared by a statistic fixed beforehand;
        - (e3) the test on real data alone: block 1's real worms against block 2's, recordings neither has seen, which
@@ -286,6 +284,9 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-10-31: item 2 (e1), the benchmark's test - crate `benchmark`, a classifier two-sample test, red-first, with
+  its settings and power measured on synthetic samples (journal of 2026-10-31, § The Benchmark's Test, Built
+  Red-First).
 - 2026-10-31: item 10 (d), a "start here" tour and a glossary of the lab's own words in the README (journal of
   2026-10-31, § A "Start Here" Tour in the README).
 - 2026-10-31: item 10 (e), a journal index - one line a night, with the section to start at, in
