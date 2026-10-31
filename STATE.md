@@ -71,15 +71,10 @@ found lives in the journal section it names; this list keeps only what is open.
      Next: reproduce the stored durations and frequencies from the published speed, then check the lab's speed against them;
    - (d) the reference statistics, split into runs (the maintainer's request, 2026-10-31, to build the benchmark
      next; journal of 2026-10-31, § The Benchmark, Split Into Runs):
-       - (d1) one row of measures per recording: `features::profile` and a binary that writes one tab-separated row
-         per recording of a block, in the units of FEATURES.md § Common Units. It first decides, with its reason in
-         the journal, how recordings of unequal length and frame rate enter (FEATURES.md § Open Questions Before
-         Freezing asks for that before any statistic), and states a rule for a recording too gappy to measure, with a
-         reason column rather than silent dropping. Its columns are the measures already built: the spread of each
-         of the eight mean-removed arc angles (the eigen-shapes are fitted in (d2), across all the real worms), the
-         midbody speed, the three locomotion states' fractions, durations and rates, and each recording's share of
-         frames without a skeleton. The durations and rates stand only once item 2(c)'s check passes, and are marked
-         provisional until then;
+       - (d1) one row of measures per recording, done (journal of 2026-10-31, § One Row of Measures per Recording:
+         Built, and Run on Block 1): `features::profile` and `profiles <block>`, its durations and rates provisional
+         until (c)'s check passes. Block 1 has 17 short recordings with ids 1031915 to 1033195 (16 of five minutes, one of 52.7 s);
+         what they are is to be read from their metadata before (d2);
        - (d2) the reference statistics over block 1: the eigen-shapes fitted on its real worms' eight angles, with the
          share of variance they carry; each measure's median and spread across recordings, with a seeded bootstrap
          interval; and how stable they are between the block's two halves;
@@ -282,6 +277,9 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-10-31: item 2 (d1), one row of measures per recording (`features::profile`, `profiles`): block 1 gives 179
+  rows measured, 18 excluded as short and 3 as gappy (journal of 2026-10-31, § One Row of Measures per Recording:
+  Built, and Run on Block 1).
 - 2026-10-31: plans for E6-E10 (learning and memory) (journal of 2026-10-31, § Plans for E6-E10).
 - 2026-10-31: C18 unparked - Shrager, Hogg and Huberman 1987 read in full, the hunch's cliff settled as a threshold
   between finite and extensive reach, and a two-stage test of it piloted on four controls, which it read as it must

@@ -26,6 +26,7 @@
 
 pub mod locomotion;
 pub mod posture;
+pub mod profile;
 pub mod states;
 
 use std::fmt;
