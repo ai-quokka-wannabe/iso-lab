@@ -1,7 +1,8 @@
 # State of the Lab
 
-**Last updated:** 2026-10-31 ([the journal of 2026-10-31](docs/journal/2026-10-31.md)): section D was planned whole, and the toolbox's
-event statistics (done 2026-10-30) were merged. Before it, 2026-10-30
+**Last updated:** 2026-10-31 ([the journal of 2026-10-31](docs/journal/2026-10-31.md)): C18 was unparked - its lead read in
+full, its cliff defined, its test piloted on four controls, which it read as it must; section D was planned whole, and
+the toolbox's event statistics (done 2026-10-30) were merged. Before it, 2026-10-30
 ([the journal of 2026-10-30](docs/journal/2026-10-30.md)): `external/` moved to latest
 `main` twice, the first time with the world unchanged, the second to Link protocol 12 with food eaten in the tick.
 The global rule without the margin was tested on the ten fresh banded layouts: the cold-band hunch is refuted for it
@@ -51,8 +52,8 @@ found lives in the journal section it names; this list keeps only what is open.
    latency; fitted time constants for tap habituation from primary papers; and the primary sources for lethargus and
    sleep-like quiescence (for satiety, You et al. 2008 is identified, its full text not yet reached). Figures are
    within reach: Europe PMC's supplementary-files service serves a paper's figure images (pace.md § Noxious Heat).
-2. **Build the feature-extraction tool** for the chosen dataset, in the lab's Rust workspace (`crates/`), and compute
-   the wild-type reference statistics. Split into runs:
+2. **Build the feature-extraction tool** for the chosen dataset, in the lab's Rust workspace (`crates/`), compute
+   the wild-type reference statistics, and build the benchmark's test on them. Split into runs:
    - (a) the workspace and the MD5 check, done;
    - (b) the eligible manifest, the seeded draw in blocks of 200 and `fetch-block`, done
      ([data/README.md § The Eligible Manifest](data/README.md#the-eligible-manifest),
@@ -68,13 +69,34 @@ found lives in the journal section it names; this list keeps only what is open.
      The durations and rates are written to the toolbox's definitions (`features::states::event_stats`;
      [behaviour-measures.md § How the Toolbox Turns States Into Durations and Rates](docs/research/behaviour-measures.md#how-the-toolbox-turns-states-into-durations-and-rates)).
      Next: reproduce the stored durations and frequencies from the published speed, then check the lab's speed against them;
-   - (d) the reference statistics, split into runs (journal of 2026-10-31, § The Benchmark, Split Into Runs, on
-     [#191](https://github.com/ai-quokka-wannabe/iso-lab/pull/191)):
+   - (d) the reference statistics, split into runs (the maintainer's request, 2026-10-31, to build the benchmark
+     next; journal of 2026-10-31, § The Benchmark, Split Into Runs):
        - (d1) one row of measures per recording, done (journal of 2026-10-31, § One Row of Measures per Recording:
-         Built, and Run on Block 1): `features::profile` and `profiles <block>`; its durations and rates stay
-         provisional until (c)'s check passes. Block 1 has 17 five-minute recordings (ids 1031915 to 1033195), excluded
-         as short; what they are is to be read from their metadata before (d2);
-       - (d2) the reference statistics over block 1, as worded on #191;
+         Built, and Run on Block 1): `features::profile` and `profiles <block>`, its durations and rates provisional
+         until (c)'s check passes. Block 1 has 17 five-minute recordings (ids 1031915 to 1033195), excluded as short;
+         what they are is to be read from their metadata before (d2);
+       - (d2) the reference statistics over block 1: the eigen-shapes fitted on its real worms' eight angles, with the
+         share of variance they carry; each measure's median and spread across recordings, with a seeded bootstrap
+         interval; and how stable they are between the block's two halves;
+       - (d3) the gaps by cause, as FEATURES.md § Open Questions Before Freezing asks: how a recording's missing
+         frames split between dropped frames, stage movements and failed extraction, and per measure how much it
+         leans on frames likely to be lost;
+   - (e) the benchmark's test (PLAN.md Phase 0, step 5), split into runs:
+       - (e1) done (journal of 2026-10-31, § The Benchmark's Test, Built Red-First): crate `benchmark`, a 21-nearest-
+         neighbour classifier two-sample test with five folds and a 999-shuffle permutation p-value, its settings fixed
+         on synthetic samples; with 199 shuffles it held its level (4 of 100 identical pairs told apart, 95% interval
+         1-10%) but caught a change of spread only 17 times in 100 (10-26%), which (e2) must cover;
+       - (e2) done (journal of 2026-10-31, § The Per-Measure Comparisons): `benchmark::compare`, a two-sample
+         Cramér-von Mises statistic per measure with a 999-shuffle permutation p-value, Holm's correction across the
+         measures, and each sample's median and interquartile range, the statistic computed exactly in integers; with 199
+         shuffles it held its level (49 of 1000, 3.6-6.4%) and caught a doubled spread 73 times in 100 (63-81%);
+       - (e3) the test on real data alone: block 1's real worms against block 2's, recordings neither has seen, which
+         must come out indistinguishable; and a positive control - the same recordings deliberately altered by a
+         stated amount - which must be told apart;
+       - (e4) how large an alteration of each measure the test can see, from the positive control at several sizes;
+       - (e5) freezing the definition, which waits on
+         [FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing) -
+         food first - and on reading a Disk (*Blocked*).
 3. **Prove the arena**: build Master Control and the Grid from `external/` on Linux with lavapipe, write a placeholder
    Program, live one life and extract the same features from it. Done: (a) Master Control, (b) the Grid,
    (c) the placeholder (`crates/placeholder-worm`), (d1) one life, its Disk and log kept and replayed (journal of
@@ -93,7 +115,7 @@ found lives in the journal section it names; this list keeps only what is open.
    a keep-the-state rule for ties.
 6. **Plan an experiment for every one of Matej's 128 ideas and hunches** - the maintainer's request - in the format
    of [docs/hypotheses/experiments/README.md](docs/hypotheses/experiments/README.md), whose index shows which are
-   planned. Next, one task each, in this order: **E6-E10** (E1-E3 and E5 are planned; E4 is parked, see *Blocked*), **E11-E20**, **F** (17), **G** (30, from the gr-fec sandbox;
+   planned. Next, one task each, in this order: **E11-E20** (E1-E3, E5 and E6-E10 are planned; E4 is parked, see *Blocked*), **F** (17), **G** (30, from the gr-fec sandbox;
    [docs/research/gr-fec.md](docs/research/gr-fec.md) has its numbers). The journal records the triage, and hunches
    that survive are promoted into numbered hypotheses or tasks here.
 7. **Audit H10's first test by A12's plan**
@@ -148,6 +170,10 @@ found lives in the journal section it names; this list keeps only what is open.
     - (g) the hypotheses' README: (c)'s diagram is in it; what is left is a short section pointing to the experiments'
       index for the rest;
     - (h) the audits (`check-coherence`, `check-style`, `check-spelling`) once more, to catch what is left.
+11. **Run C18's plan** ([C13-C24.md § C18](docs/hypotheses/experiments/C13-C24.md#c18-spreading-activation-has-a-cliff)):
+    the four controls first, then the pure network, the budget at both gains, the corrected fan-out penalty and
+    inhibition, with fresh seeds; its expectations are pre-registered in the journal of 2026-10-31, § C18 Unparked: the
+    Cliff Defined, the Test Piloted. Waits on nothing; minutes of compute.
 
 ## To Revisit
 
@@ -197,15 +223,6 @@ the idea for the next attempt.
   its output named; a stated rule at zero input; overlap taken as absolute, so a cue that settles in the mirror of a
   pattern counts; and a capacity check per seed. Write the plan only once the pilot shows Hebb's rule alone capturing
   and a stabiliser able to change it.
-- **The plan for C18, spreading activation's cliff**
-  ([#45](https://github.com/ai-quokka-wannabe/iso-lab/pull/45), merged as a record, with the plan marked as parked in
-  [C13-C24.md](docs/hypotheses/experiments/C13-C24.md#c18-spreading-activation-has-a-cliff)). Its model as written
-  would refute the hunch by construction; the pilot, run to a steady state, found no steady narrowing with size, and a
-  width test cannot tell a continuous transition from a smooth change (journal of 2026-10-14, § C18's Model,
-  Piloted; journal of 2026-10-15, § C18's Plan, Attempted Again: the Width Test Cannot See a Transition).
-  Next: settle what the hunch's "cliff" means (Shrager, Hogg and Huberman 1987, not yet read), then plan a test of
-  the reached fraction below and above the threshold (falling as 1/N below, holding above), with the giant component
-  and a jump-shaped model as controls, the pilot's conditioned statistic and more draws.
 - **How the lab reads a Disk** (item 3(d2); waits on the maintainer's ruling). A Disk is Link's frames in a file,
   read back through Link's own library (`replay_open` and `poll` in `external/link/include/lnk/lnk_client.h`), which
   must lie beside the executable that loads it; the lab's rules make each route cost something. (1) Depend on
@@ -263,6 +280,15 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
 - 2026-10-31: item 2 (d1), one row of measures per recording (`features::profile`, `profiles`): block 1 gives 179
   rows measured, 18 excluded as short and 3 as gappy (journal of 2026-10-31, § One Row of Measures per Recording:
   Built, and Run on Block 1).
+- 2026-10-31: plans for E6-E10 (learning and memory) (journal of 2026-10-31, § Plans for E6-E10).
+- 2026-10-31: C18 unparked - Shrager, Hogg and Huberman 1987 read in full, the hunch's cliff settled as a threshold
+  between finite and extensive reach, and a two-stage test of it piloted on four controls, which it read as it must
+  (journal of 2026-10-31, § C18 Unparked: the Cliff Defined, the Test Piloted).
+- 2026-10-31: item 2 (e2), the per-measure comparisons - Cramér-von Mises per measure, permutation p-values and
+  Holm's correction, red-first (journal of 2026-10-31, § The Per-Measure Comparisons).
+- 2026-10-31: item 2 (e1), the benchmark's test - crate `benchmark`, a classifier two-sample test, red-first, with
+  its settings and power measured on synthetic samples (journal of 2026-10-31, § The Benchmark's Test, Built
+  Red-First).
 - 2026-10-31: item 10 (d), a "start here" tour and a glossary of the lab's own words in the README (journal of
   2026-10-31, § A "Start Here" Tour in the README).
 - 2026-10-31: item 10 (e), a journal index - one line a night, with the section to start at, in

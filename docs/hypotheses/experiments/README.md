@@ -71,7 +71,7 @@ out of their sources when the experiment is prepared.
 | C15 | A logistic-map arousal engine | [planned](C13-C24.md#c15-a-logistic-map-arousal-engine) |
 | C16 | Golden-ratio spacing of rhythms | [planned](C13-C24.md#c16-golden-ratio-spacing-of-rhythms) |
 | C17 | Memory timescales spaced by Feigenbaum's constant | [planned](C13-C24.md#c17-memory-timescales-spaced-by-feigenbaums-constant) |
-| C18 | Spreading activation has a cliff | [parked: plan failed verification](C13-C24.md#c18-spreading-activation-has-a-cliff) |
+| C18 | Spreading activation has a cliff | [planned](C13-C24.md#c18-spreading-activation-has-a-cliff) |
 | C19 | Windowed tallies, not lifetime counts | [planned](C13-C24.md#c19-windowed-tallies-not-lifetime-counts) |
 | C20 | Bounded loops for rhythmic behaviour | [planned](C13-C24.md#c20-bounded-loops-for-rhythmic-behaviour) |
 | C21 | A noisy, log-compressed sense of elapsed time | [planned](C13-C24.md#c21-a-noisy-log-compressed-sense-of-elapsed-time) |
@@ -96,11 +96,11 @@ out of their sources when the experiment is prepared.
 | E3 | Three kinds of learning in three places | [planned](E1-E5.md#e3-three-kinds-of-learning-in-three-places) |
 | E4 | Hebbian learning needs a stabiliser and a "used together" rule | [parked: plan failed verification](E1-E5.md#e4-hebbian-learning-needs-a-stabiliser-and-a-used-together-rule) |
 | E5 | Memories that bind what, where, when and how it felt | [planned](E1-E5.md#e5-memories-that-bind-what-where-when-and-how-it-felt) |
-| E6 | Separate, complete, consolidate, replay | to plan |
-| E7 | Promote after spaced recurrence; merge when predictions agree; never delete | to plan |
-| E8 | Two strengths: forgetting loses influence, not the trace | to plan |
-| E9 | Attention as a conserved economy | to plan |
-| E10 | The input reshapes the attractor landscape | to plan |
+| E6 | Separate, complete, consolidate, replay | [planned](E6-E10.md#e6-separate-complete-consolidate-replay) |
+| E7 | Promote after spaced recurrence; merge when predictions agree; never delete | [planned](E6-E10.md#e7-promote-after-spaced-recurrence-merge-when-predictions-agree-never-delete) |
+| E8 | Two strengths: forgetting loses influence, not the trace | [planned](E6-E10.md#e8-two-strengths-forgetting-loses-influence-not-the-trace) |
+| E9 | Attention as a conserved economy | [planned](E6-E10.md#e9-attention-as-a-conserved-economy) |
+| E10 | The input reshapes the attractor landscape | [planned](E6-E10.md#e10-the-input-reshapes-the-attractor-landscape) |
 | E11 | Completion, with gates | to plan |
 | E12 | Drives retrieve what could satisfy them | to plan |
 | E13 | Curiosity as expected information gain | to plan |
