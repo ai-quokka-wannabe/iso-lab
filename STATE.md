@@ -92,8 +92,8 @@ found lives in the journal section it names; this list keeps only what is open.
          1-10%) but caught a change of spread only 17 times in 100 (10-26%), which (e2) must cover;
        - (e2) done (journal of 2026-10-31, § The Per-Measure Comparisons): `benchmark::compare`, a two-sample
          Cramér-von Mises statistic per measure with a 999-shuffle permutation p-value, Holm's correction across the
-         measures, and each sample's median and interquartile range; with 199 shuffles it held its level (49 of 1000,
-         3.6-6.4%) and caught a doubled spread 73 times in 100 (63-81%);
+         measures, and each sample's median and interquartile range, the statistic computed exactly in integers; with 199
+         shuffles it held its level (49 of 1000, 3.6-6.4%) and caught a doubled spread 73 times in 100 (63-81%);
        - (e3) the test on real data alone: block 1's real worms against block 2's, recordings neither has seen, which
          must come out indistinguishable; and a positive control - the same recordings deliberately altered by a
          stated amount - which must be told apart;

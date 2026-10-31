@@ -59,7 +59,7 @@ impl Default for CompareConfig {
 pub struct MeasureComparison {
     /// The measure's column in the rows.
     pub column: usize,
-    /// The statistic for the real split into the two sets.
+    /// Anderson's T for the real split into the two sets.
     pub statistic: f64,
     /// The permutation p-value, before correction for the number of measures.
     pub p_value: f64,
@@ -67,11 +67,13 @@ pub struct MeasureComparison {
     pub adjusted_p: f64,
     /// Whether the adjusted p-value is at most alpha.
     pub differs: bool,
-    /// The first sample's median and interquartile range.
+    /// The first sample's median.
     pub median_a: f64,
+    /// The first sample's interquartile range.
     pub iqr_a: f64,
-    /// The second sample's median and interquartile range.
+    /// The second sample's median.
     pub median_b: f64,
+    /// The second sample's interquartile range.
     pub iqr_b: f64,
 }
 
@@ -130,27 +132,35 @@ fn runs_of_equal_values(values: &[f64]) -> Vec<Vec<usize>> {
     runs
 }
 
-/// The statistic for one labelling: `in_b[row]` says which set a pooled row belongs to.
-fn statistic(runs: &[Vec<usize>], in_b: &[bool], count_b: usize, which: Statistic) -> f64 {
+/// The statistic for one labelling, exactly, as an integer: `in_b[row]` says which set a pooled row
+/// belongs to. With `n_a` and `n_b` rows, the gap between the two distribution functions after a
+/// run is `(seen_a * n_b - seen_b * n_a) / (n_a * n_b)`; its numerator is an integer, so summing
+/// `len * numerator^2` in integers keeps two labellings with equal statistics exactly equal. A sum
+/// in floating point would not: added in another order, equal statistics can differ in the last
+/// bit, and a shuffle as large as the real labelling would then be missed by `>=`.
+fn score(runs: &[Vec<usize>], in_b: &[bool], count_b: usize, which: Statistic) -> u128 {
     let count_a = in_b.len() - count_b;
-    let (mut seen_a, mut seen_b) = (0usize, 0usize);
-    let mut total = 0.0f64;
+    let (mut seen_a, mut seen_b) = (0u128, 0u128);
+    let mut total = 0u128;
     for run in runs {
-        let b_here = run.iter().filter(|&&row| in_b[row]).count();
+        let b_here = run.iter().filter(|&&row| in_b[row]).count() as u128;
         seen_b += b_here;
-        seen_a += run.len() - b_here;
-        let gap = seen_a as f64 / count_a as f64 - seen_b as f64 / count_b as f64;
+        seen_a += run.len() as u128 - b_here;
+        let numerator = (seen_a * count_b as u128).abs_diff(seen_b * count_a as u128);
         total = match which {
             #[cfg(test)]
-            Statistic::KolmogorovSmirnov => total.max(gap.abs()),
-            Statistic::CramerVonMises => total + run.len() as f64 * gap * gap,
+            Statistic::KolmogorovSmirnov => total.max(numerator),
+            Statistic::CramerVonMises => total + run.len() as u128 * numerator * numerator,
         };
     }
-    match which {
-        #[cfg(test)]
-        Statistic::KolmogorovSmirnov => total,
-        Statistic::CramerVonMises => total * (count_a * count_b) as f64 / (in_b.len() * in_b.len()) as f64,
-    }
+    total
+}
+
+/// Anderson's T from the exact score: the sum of `len * gap^2`, times `n_a * n_b / N^2`, which is
+/// the score divided by `n_a * n_b * N^2`. Used only to report the statistic, never to compare.
+fn anderson_t(score: u128, count_a: usize, count_b: usize) -> f64 {
+    let pooled = (count_a + count_b) as f64;
+    score as f64 / (count_a as f64 * count_b as f64 * pooled * pooled)
 }
 
 /// The value below which a share `q` of the sorted values lie, by linear interpolation between
@@ -197,15 +207,15 @@ fn compare_measures_with(a: &[Vec<f64>], b: &[Vec<f64>], config: &CompareConfig,
         let values: Vec<f64> = a.iter().chain(b).map(|r| r[column]).collect();
         let runs = runs_of_equal_values(&values);
         let mut in_b: Vec<bool> = std::iter::repeat_n(false, a.len()).chain(std::iter::repeat_n(true, b.len())).collect();
-        let observed = statistic(&runs, &in_b, b.len(), which);
+        let observed = score(&runs, &in_b, b.len(), which);
         let mut as_large = 0;
         for _ in 0..config.permutations {
             rng.shuffle(&mut in_b);
-            if statistic(&runs, &in_b, b.len(), which) >= observed {
+            if score(&runs, &in_b, b.len(), which) >= observed {
                 as_large += 1;
             }
         }
-        raw.push((observed, (1 + as_large) as f64 / (1 + config.permutations) as f64));
+        raw.push((anderson_t(observed, a.len(), b.len()), (1 + as_large) as f64 / (1 + config.permutations) as f64));
     }
     let adjusted = holm(&raw.iter().map(|r| r.1).collect::<Vec<_>>());
     Ok((0..width)
@@ -332,6 +342,36 @@ mod tests {
     }
 
     #[test]
+    fn holm_caps_at_one() {
+        assert_eq!(holm(&[0.6, 0.7]), vec![1.0, 1.0]);
+    }
+
+    #[test]
+    fn a_mirrored_measure_scores_exactly_the_same() {
+        // Negating every value reverses the order of the runs, so the same terms are summed in the
+        // opposite order; the score must not change by a single bit.
+        for seed in 0..20u64 {
+            let mut rng = SplitMix64(9500 + seed);
+            let values: Vec<f64> = sample(&mut rng, 70, 1, 0.0, 1.0).into_iter().map(|r| r[0]).collect();
+            let mirrored: Vec<f64> = values.iter().map(|v| -v).collect();
+            let mut in_b: Vec<bool> = (0..values.len()).map(|i| i >= 31).collect();
+            rng.shuffle(&mut in_b);
+            let forward = score(&runs_of_equal_values(&values), &in_b, 39, Statistic::CramerVonMises);
+            let backward = score(&runs_of_equal_values(&mirrored), &in_b, 39, Statistic::CramerVonMises);
+            assert_eq!(forward, backward, "seed {seed}");
+        }
+    }
+
+    #[test]
+    fn the_reported_statistic_is_andersons_t() {
+        // a = {1, 2}, b = {3, 4}: the gaps after each value are 1/2, 1, 1/2, 0, so T = (4/16)
+        // x (1/4 + 1 + 1/4) = 0.375.
+        let a = vec![vec![1.0], vec![2.0]];
+        let b = vec![vec![3.0], vec![4.0]];
+        assert_eq!(compare_measures(&a, &b, &quick(), 0).unwrap()[0].statistic, 0.375);
+    }
+
+    #[test]
     fn quartiles_interpolate_between_order_statistics() {
         let rows: Vec<Vec<f64>> = [4.0, 1.0, 3.0, 2.0].iter().map(|&v| vec![v]).collect();
         assert_eq!(median_and_iqr(&rows, 0), (2.5, 1.5));
@@ -349,6 +389,25 @@ mod tests {
         assert!(matches!(compare_measures(&rows, &missing, &quick(), 0), Err(TestError::NotFinite { .. })));
         let zero = CompareConfig { permutations: 0, ..quick() };
         assert!(matches!(compare_measures(&rows, &rows, &zero, 0), Err(TestError::BadConfig(_))));
+    }
+
+    /// The level check behind the journal's deciles: 1000 pairs of one distribution (seeds 50000 to
+    /// 50999, shuffle seeds 0 to 999, 199 shuffles), Cramér-von Mises, with p binned by floor(10p):
+    /// `cargo test --release -p benchmark compare::tests::level_deciles -- --ignored --nocapture`.
+    #[test]
+    #[ignore = "a table for the journal, not a check; run by hand in release"]
+    fn level_deciles() {
+        let mut deciles = [0usize; 10];
+        let mut flagged = 0;
+        for seed in 0..1000u64 {
+            let mut rng = SplitMix64(50_000 + seed);
+            let a = sample(&mut rng, 60, 1, 0.0, 1.0);
+            let b = sample(&mut rng, 60, 1, 0.0, 1.0);
+            let found = &compare_measures(&a, &b, &quick(), seed).unwrap()[0];
+            flagged += usize::from(found.differs);
+            deciles[((found.p_value * 10.0) as usize).min(9)] += 1;
+        }
+        println!("flagged {flagged}/1000; p-value deciles {deciles:?}");
     }
 
     /// The table behind the choice of statistic:
