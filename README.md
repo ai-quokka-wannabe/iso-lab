@@ -14,9 +14,9 @@ Nothing like that exists yet. Where the work stands tonight is always in [STATE.
 ![How the pieces fit: Master Control, the world server, talks over Link to the Grid, which renders a creature's
 senses for its brain, a Program, and applies the Program's actions. Master Control records each life as a Disk and a
 log, which Clu replays. The lab's Rust tools download recordings of real worms and measure them, and will measure the
-Grid worm's Disk too; the benchmark compares the two.](docs/figures/diagram_pieces.svg)
+Grid worm's Disk too; the benchmark, not yet built, will compare the two.](docs/figures/diagram_pieces.svg)
 
-*How the pieces fit. A dashed arrow is planned, not built. Drawn by
+*How the pieces fit. A dashed box or arrow is planned, not built. Drawn by
 [notebooks/figures.ipynb](notebooks/figures.ipynb).*
 
 ## How the Lab Works

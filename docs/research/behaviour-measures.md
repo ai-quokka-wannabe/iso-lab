@@ -76,8 +76,9 @@ body of any size, which is what the comparison space needs.
 (PMC6782915), divide each track "into periods of smooth swimming (runs) and periods of frequent turning
 (pirouettes)"; in a chemical gradient, "the initiation of pirouettes was correlated with the rate of change of
 concentration (dC/dt) but not with absolute concentration", and the average heading after a pirouette was up
-the gradient. Chemotaxis itself is not comparable on the Grid yet, which has no chemical sense
-([STATE.md](../../STATE.md)); the run and pirouette structure of a track is.
+the gradient. Chemotaxis itself is not comparable on the Grid yet: the Grid has carried a chemical sense since Program ABI 11, but
+no Program reads it and no feature measures chemotaxis ([STATE.md](../../STATE.md)); the run and pirouette structure
+of a track is.
 
 ### How the Toolbox Turns States Into Durations and Rates
 

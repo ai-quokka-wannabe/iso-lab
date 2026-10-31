@@ -118,16 +118,41 @@ found lives in the journal section it names; this list keeps only what is open.
    - (d) the composition law: a third lever that acts alone, and roaming's interaction as its own test.
 
    Once a calculation matters to anything the lab builds on, it moves into tested Rust.
-10. **Bring four documents in step with the Grid's chemical sense** (housekeeping, from the review of the ABI 11 bump):
-   `docs/research/behaviour-measures.md`, `docs/research/pace.md`, `docs/benchmark/FEATURES.md` and
-   `docs/hypotheses/experiments/C1-C12.md` still say the Grid has no chemical sense; since Program ABI 11 it carries
-   `odour` and `intake` (journal of 2026-10-31, § The Grid Moves to Program ABI 11).
+10. **Make the repository easy to enter** - the maintainer's request (2026-10-31): tidy the repository and make it
+    presentable so that new people are not lost, with more plots, diagrams and flowcharts, as SVG and never as
+    binaries. The survey and the reasons are in the journal of 2026-10-31, § A Plan to Make the Lab Easy to Enter.
+    One run each, in this order:
+    - (a) done (journal of 2026-10-31, § The Figure Tooling, and the First Diagram): the figure tooling,
+      `notebooks/figures.ipynb`, which writes every new diagram as plain SVG from Python and
+      every new plot with matplotlib by the rules of *Figures are SVG*, and checks in its last cell, run locally, that
+      drawing again changes no byte (a local check, not a CI job; H11's figures stay with their own notebooks); proved
+      on the first diagram, how the pieces fit;
+    - (b) two diagrams: a night's cycle, and the benchmark's pipeline from recordings and lives to a verdict;
+    - (c) one more diagram, how hypotheses, hunches and plans relate, and one plot of the toy worm's graded-gain series
+      with their intervals, in two panels whose scope is stated on the figure: the warm-world contrasts on fresh
+      layouts (K1, K2, K3 and the K3 run's contrast with never steering, L1, L2, M1, M2, P1, P2, Q1, Q2), the leads
+      beside the results against never steering; and the rich-layout contrasts (K4, W1, Z1, F1, F2, H1).
+      Each number is read from the journal section that
+      [README.md § H14](docs/hypotheses/README.md#h14-graded-slow-knobs-change-detecting-senses-and-individuality)
+      cites for it, and cited to it in the notebook;
+    - (d) a "start here" tour in the README, built around the diagrams, which replaces or points to the README's
+      *Where Things Are* table rather than repeating it; its glossary defines only the lab's own words and links to
+      tron-grid-lite's README and `.claude/CLAUDE.md` § Writing for the organisation's;
+    - (e) a journal index in the existing `docs/journal/README.md`, one line per night; whether each night's write-up
+      step should add its line is the maintainer's call (see *To Revisit*);
+    - (f) STATE.md cut back to what is current: *Done* to the latest night only, as its own header says; the *Last
+      updated* paragraph; and the longest *Next* items (2 and 9) cut to their open steps, each removed line first
+      checked, one by one, to be held by the journal it points to;
+    - (g) the hypotheses' README: a short section with (c)'s diagram, pointing to the experiments' index for the rest;
+    - (h) the audits (`check-coherence`, `check-style`, `check-spelling`) once more, to catch what is left.
 
 ## To Revisit
 
 Experiments that failed or came out inconclusive, kept rather than discarded (the maintainer's ruling); each with
 the idea for the next attempt.
 
+- **For the maintainer**: whether each night's write-up (step 8 of *Each run, in order*) should also add a line to
+  the journal index planned in item 10 (e); without that, the index goes stale.
 - **For the maintainer**: whether a decided item, such as the speed for the locomotion states, stays under
   [FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing) or moves to
   a section of decisions (journal of 2026-10-30, § A Coherence Audit, and What It Mended).
@@ -229,6 +254,10 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-10-31: item 10 (a), the figure tooling and the first diagram, how the pieces fit, in the README (journal of
+  2026-10-31, § The Figure Tooling, and the First Diagram).
+- 2026-10-31: four documents brought in step with the Grid's chemical sense at Program ABI 11 (journal of
+  2026-10-31, § Four Documents in Step With the Grid's Smell).
 - 2026-10-31: `external/` at the latest mains: tron-grid-lite to Program ABI 11, the placeholder rebuilt; build,
   render and the placeholder's life unchanged (a life with no refused intent is byte-identical at both pins) (journal of 2026-10-31, § The Grid Moves to
   Program ABI 11).
