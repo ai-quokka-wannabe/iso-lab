@@ -156,6 +156,12 @@ the idea for the next attempt.
 
 ## Blocked
 
+- **The plans for E1-E5** ([#180](https://github.com/ai-quokka-wannabe/iso-lab/pull/180), open, parked after three
+  rounds of verification fixes, by rule 13). Four reviews found, in turn: tests decided by construction, a margin
+  chance could cross, a missed worm source, in-sample fitting, an overloaded network, and a capacity check the
+  measured effect could block. The last finding remains in E4's resting-high condition. Next: write "without the pair's
+  training, or without the hub held high" in E4's capacity check and no-pair control, read E4 once more for anything
+  naming only one condition, and ask a fresh verifier to read the PR whole. Item 6's E1-E10 waits on it.
 - **The plan for C18, spreading activation's cliff**
   ([#45](https://github.com/ai-quokka-wannabe/iso-lab/pull/45), merged as a record, with the plan marked as parked in
   [C13-C24.md](docs/hypotheses/experiments/C13-C24.md#c18-spreading-activation-has-a-cliff)). Its model as written
