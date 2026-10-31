@@ -135,7 +135,7 @@ the line that leads to the modern Hopfield networks of H5.
 
 The worm does learn by association: it learns to avoid the smell of bacteria that made it ill
 ([Zhang et al. 2005](https://doi.org/10.1038/nature04216)). Which of its learned behaviours the Grid can
-measure - it has no smell yet - is for the literature to say. For a brain on the worm's scale the questions
+measure - it has carried a sense of food odour since Program ABI 11, and no other smell - is for the literature to say. For a brain on the worm's scale the questions
 are concrete: which behaviour such a memory would carry, how few neurons it needs, what it costs to run,
 sampled or settled, and whether its state can still be read.
 
