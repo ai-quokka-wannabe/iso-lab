@@ -122,6 +122,21 @@ found lives in the journal section it names; this list keeps only what is open.
    `docs/research/behaviour-measures.md`, `docs/research/pace.md`, `docs/benchmark/FEATURES.md` and
    `docs/hypotheses/experiments/C1-C12.md` still say the Grid has no chemical sense; since Program ABI 11 it carries
    `odour` and `intake` (journal of 2026-10-31, § The Grid Moves to Program ABI 11).
+11. **Make the repository easy to enter** - the maintainer's request (2026-10-31): plan the repository's tidying and
+    presentability so that new people are not lost, with more plots, diagrams and flowcharts, as SVG and never as
+    binaries. The survey and the reasons are in the journal of 2026-10-31, § A Plan to Make the Lab Easy to Enter.
+    One run each, in this order:
+    - (a) the figure tooling: one notebook that writes every diagram as plain SVG from Python and every plot with
+      matplotlib by the rules of *Figures are SVG*, and a check that regenerating changes nothing;
+    - (b) four diagrams: how the pieces fit (the Grid, Master Control, Link, Programs, the lab, the reference data);
+      a night's cycle; from a hunch to a brain; the benchmark's pipeline;
+    - (c) plots from numbers the lab already holds: the toy worm's series with their intervals
+      ([gr-fec.md § 11](docs/research/gr-fec.md)), and how far the 128 hunches are planned;
+    - (d) a "start here" tour in the README, with the diagrams and a glossary of the lab's words;
+    - (e) a journal index, one line per night;
+    - (f) STATE.md cut back to what is current, its old *Done* lines left to the journals that hold them;
+    - (g) the hypotheses' README: how numbered hypotheses, hunches and plans relate;
+    - (h) the audits (`check-coherence`, `check-style`, `check-spelling`) once more, to catch what is left.
 
 ## To Revisit
 
