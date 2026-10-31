@@ -127,7 +127,8 @@ found lives in the journal section it names; this list keeps only what is open.
       every new plot with matplotlib by the rules of *Figures are SVG*, and checks in its last cell, run locally, that
       drawing again changes no byte (a local check, not a CI job; H11's figures stay with their own notebooks); proved
       on the first diagram, how the pieces fit;
-    - (b) two diagrams: a night's cycle, and the benchmark's pipeline from recordings and lives to a verdict;
+    - (b) done (journal of 2026-10-31, § Two Diagrams: a Night's Cycle and the Benchmark's Pipeline): two diagrams,
+      a night's cycle and the benchmark's pipeline;
     - (c) one more diagram, how hypotheses, hunches and plans relate, and one plot of the toy worm's graded-gain series
       with their intervals, in two panels whose scope is stated on the figure: the warm-world contrasts on fresh
       layouts (K1, K2, K3 and the K3 run's contrast with never steering, L1, L2, M1, M2, P1, P2, Q1, Q2), the leads
@@ -257,6 +258,9 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-10-31: item 10 (b), two diagrams - a night's cycle, in the README and NIGHT_SHIFT.md, and the benchmark's
+  pipeline, in PLAN.md and FEATURES.md (journal of 2026-10-31, § Two Diagrams: a Night's Cycle and the Benchmark's
+  Pipeline).
 - 2026-10-31: item 10 (a), the figure tooling and the first diagram, how the pieces fit, in the README (journal of
   2026-10-31, § The Figure Tooling, and the First Diagram).
 - 2026-10-31: plans for E1-E3 and E5 (learning and memory), taken up again after parking and read whole by a fresh

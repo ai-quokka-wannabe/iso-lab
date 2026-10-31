@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="720" viewBox="0 0 1100 720" font-family="DejaVu Sans, Verdana, Arial, sans-serif">
+<title>A night&#x27;s cycle</title>
+<defs><marker id="head" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#444444"/></marker></defs>
+<rect x="0" y="0" width="1100" height="720" fill="#ffffff"/>
+<text x="550" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#1d1d1d">A night&#x27;s cycle</text>
+<text x="550" y="58" text-anchor="middle" font-size="13" fill="#333333">each task lands through the same steps, or is honestly parked</text>
+<rect x="30" y="90" width="230" height="70" rx="10" fill="#fff8d9" stroke="#9a7b00" stroke-width="2"/>
+<text x="145" y="116" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">1. Start from main</text>
+<text x="145" y="138" text-anchor="middle" font-size="13" fill="#333333">fetch, check out, pull</text>
+<rect x="300" y="90" width="230" height="70" rx="10" fill="#fff8d9" stroke="#9a7b00" stroke-width="2"/>
+<text x="415" y="116" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">2. Read</text>
+<text x="415" y="138" text-anchor="middle" font-size="13" fill="#333333">STATE.md, the plan, the journal</text>
+<rect x="570" y="90" width="230" height="70" rx="10" fill="#fff8d9" stroke="#9a7b00" stroke-width="2"/>
+<text x="685" y="116" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">3. Pick one task</text>
+<text x="685" y="138" text-anchor="middle" font-size="13" fill="#333333">about 45 minutes; split if bigger</text>
+<rect x="840" y="90" width="230" height="70" rx="10" fill="#fff8d9" stroke="#9a7b00" stroke-width="2"/>
+<text x="955" y="116" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">4. Branch</text>
+<text x="955" y="138" text-anchor="middle" font-size="13" fill="#333333">claude/&lt;short-name&gt;</text>
+<path d="M 260 125 L 298 125" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<path d="M 530 125 L 568 125" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<path d="M 800 125 L 838 125" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<path d="M 955 160 L 955 208" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<rect x="840" y="210" width="230" height="70" rx="10" fill="#fff8d9" stroke="#9a7b00" stroke-width="2"/>
+<text x="955" y="236" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">5. Do the work</text>
+<text x="955" y="258" text-anchor="middle" font-size="13" fill="#333333">pre-register; record every run</text>
+<rect x="570" y="210" width="230" height="70" rx="10" fill="#fff8d9" stroke="#9a7b00" stroke-width="2"/>
+<text x="685" y="236" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">6-7. Check</text>
+<text x="685" y="258" text-anchor="middle" font-size="13" fill="#333333">review as a sceptic; lint, tests</text>
+<rect x="300" y="210" width="230" height="70" rx="10" fill="#fff8d9" stroke="#9a7b00" stroke-width="2"/>
+<text x="415" y="236" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">8. Write it down</text>
+<text x="415" y="258" text-anchor="middle" font-size="13" fill="#333333">STATE.md and the journal</text>
+<rect x="30" y="210" width="230" height="70" rx="10" fill="#fff8d9" stroke="#9a7b00" stroke-width="2"/>
+<text x="145" y="236" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">9. Pull request</text>
+<text x="145" y="258" text-anchor="middle" font-size="13" fill="#333333">commit, push, open it</text>
+<path d="M 838 245 L 802 245" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<path d="M 568 245 L 532 245" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<path d="M 298 245 L 262 245" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<text x="415" y="186" text-anchor="middle" font-size="12" fill="#7a7a7a">on a night&#x27;s first task, also the new ideas and the audits</text>
+<rect x="270" y="340" width="230" height="70" rx="10" fill="#fff8d9" stroke="#9a7b00" stroke-width="2"/>
+<text x="385" y="366" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">10-11. CI, then a review</text>
+<text x="385" y="388" text-anchor="middle" font-size="13" fill="#333333">CI Success; a fresh verifier</text>
+<path d="M 145 280 L 145 375 L 268 375" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<rect x="680" y="340" width="230" height="70" rx="10" fill="#ffffff" stroke="#7a7a7a" stroke-width="2"/>
+<text x="795" y="366" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">Fix what is wrong</text>
+<text x="795" y="388" text-anchor="middle" font-size="13" fill="#333333">or answer why not</text>
+<path d="M 500 365 L 678 365" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<text x="590" y="352" text-anchor="middle" font-size="13" fill="#333333">CI red, or changes needed</text>
+<path d="M 760 410 L 760 440 L 440 440 L 440 412" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<text x="600" y="458" text-anchor="middle" font-size="12" fill="#333333">push; after a substantial fix it is looked at again</text>
+<rect x="270" y="490" width="230" height="70" rx="10" fill="#fff8d9" stroke="#9a7b00" stroke-width="2"/>
+<text x="385" y="516" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">12. Merge</text>
+<text x="385" y="538" text-anchor="middle" font-size="13" fill="#333333">the branch is deleted</text>
+<path d="M 330 410 L 330 488" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<text x="320" y="470" text-anchor="end" font-size="13" fill="#333333">green, verified</text>
+<rect x="680" y="490" width="250" height="88" rx="10" fill="#ffffff" stroke="#7a7a7a" stroke-width="2"/>
+<text x="805" y="516" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">13. Park it</text>
+<text x="805" y="538" text-anchor="middle" font-size="13" fill="#333333">after three rounds: stays open,</text>
+<text x="805" y="557" text-anchor="middle" font-size="13" fill="#333333">recorded under Blocked</text>
+<path d="M 870 410 L 870 488" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<text x="882" y="452" text-anchor="start" font-size="12" fill="#7a7a7a">after 3 rounds</text>
+<rect x="270" y="620" width="230" height="80" rx="10" fill="#fff8d9" stroke="#9a7b00" stroke-width="2"/>
+<text x="385" y="646" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">14. Next task, or stop</text>
+<text x="385" y="668" text-anchor="middle" font-size="13" fill="#333333">at the hour, or when nothing</text>
+<text x="385" y="687" text-anchor="middle" font-size="13" fill="#333333">is left to move forward</text>
+<path d="M 385 560 L 385 618" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<path d="M 805 578 L 805 660 L 502 660" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<path d="M 268 660 L 14 660 L 14 125 L 28 125" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<text x="140" y="650" text-anchor="middle" font-size="13" fill="#333333">the next task</text>
+</svg>
