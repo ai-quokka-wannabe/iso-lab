@@ -91,11 +91,11 @@ out of their sources when the experiment is prepared.
 | D11 | Affect in several dimensions, emotions as regions | [planned](D7-D13.md#d11-affect-in-several-dimensions-emotions-as-regions) |
 | D12 | Pain damped by an opioid-like system, as dynamics | [planned](D7-D13.md#d12-pain-damped-by-an-opioid-like-system-as-dynamics) |
 | D13 | Bad things are learned faster than good ones | [planned](D7-D13.md#d13-bad-things-are-learned-faster-than-good-ones) |
-| E1 | Habituation is ten properties, not one decrement | to plan |
-| E2 | Novelty as mismatch, proven by an omission | to plan |
-| E3 | Three kinds of learning in three places | to plan |
-| E4 | Hebbian learning needs a stabiliser and a "used together" rule | to plan |
-| E5 | Memories that bind what, where, when and how it felt | to plan |
+| E1 | Habituation is ten properties, not one decrement | [planned](E1-E5.md#e1-habituation-is-ten-properties-not-one-decrement) |
+| E2 | Novelty as mismatch, proven by an omission | [planned](E1-E5.md#e2-novelty-as-mismatch-proven-by-an-omission) |
+| E3 | Three kinds of learning in three places | [planned](E1-E5.md#e3-three-kinds-of-learning-in-three-places) |
+| E4 | Hebbian learning needs a stabiliser and a "used together" rule | [planned](E1-E5.md#e4-hebbian-learning-needs-a-stabiliser-and-a-used-together-rule) |
+| E5 | Memories that bind what, where, when and how it felt | [planned](E1-E5.md#e5-memories-that-bind-what-where-when-and-how-it-felt) |
 | E6 | Separate, complete, consolidate, replay | to plan |
 | E7 | Promote after spaced recurrence; merge when predictions agree; never delete | to plan |
 | E8 | Two strengths: forgetting loses influence, not the trace | to plan |
