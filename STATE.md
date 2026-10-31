@@ -120,7 +120,7 @@ found lives in the journal section it names; this list keeps only what is open.
    a keep-the-state rule for ties.
 6. **Plan an experiment for every one of Matej's 128 ideas and hunches** - the maintainer's request - in the format
    of [docs/hypotheses/experiments/README.md](docs/hypotheses/experiments/README.md), whose index shows which are
-   planned. Next, one task each, in this order: **E6-E10** (E1-E3 and E5 are planned; E4 is parked, see *Blocked*), **E11-E20**, **F** (17), **G** (30, from the gr-fec sandbox;
+   planned. Next, one task each, in this order: **E11-E20** (E1-E3, E5 and E6-E10 are planned; E4 is parked, see *Blocked*), **F** (17), **G** (30, from the gr-fec sandbox;
    [docs/research/gr-fec.md](docs/research/gr-fec.md) has its numbers). The journal records the triage, and hunches
    that survive are promoted into numbered hypotheses or tasks here.
 7. **Audit H10's first test by A12's plan**
@@ -282,6 +282,7 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-10-31: plans for E6-E10 (learning and memory) (journal of 2026-10-31, § Plans for E6-E10).
 - 2026-10-31: C18 unparked - Shrager, Hogg and Huberman 1987 read in full, the hunch's cliff settled as a threshold
   between finite and extensive reach, and a two-stage test of it piloted on four controls, which it read as it must
   (journal of 2026-10-31, § C18 Unparked: the Cliff Defined, the Test Piloted).
