@@ -27,7 +27,7 @@
 //! - **Scaling.** Each measure is centred and divided by its standard deviation over the pooled
 //!   rows. This never looks at the labels, so permuting the labels later leaves it unchanged.
 //! - **The classifier.** A k-nearest-neighbour vote in the scaled space, Euclidean, with distance
-//!   ties broken by row order. Lopez-Paz and Oquab use k-nearest neighbours as one of their two
+//!   ties broken by each row's place in a seeded shuffle. Lopez-Paz and Oquab use k-nearest neighbours as one of their two
 //!   classifiers; it has no training loop and no learning rate to tune.
 //! - **Accuracy.** Cross-validated: the pooled rows are dealt into folds by a seeded shuffle that
 //!   ignores the labels, and each row is classified by its neighbours in the other folds.
@@ -38,14 +38,15 @@
 //!
 //! Lopez-Paz and Oquab judge one held-out test set against a binomial null. Here every row is
 //! classified once by cross-validation, and those predictions share training rows, so a binomial
-//! null no longer applies and no unbiased estimate of the variance of a cross-validated accuracy
-//! exists ([Bengio and Grandvalet 2004](https://www.jmlr.org/papers/v5/grandvalet04a.html)). The
+//! null no longer applies, and no estimator of the variance of a cross-validated accuracy is
+//! unbiased for every distribution ([Bengio and Grandvalet 2004](https://www.jmlr.org/papers/v5/grandvalet04a.html)). The
 //! permutation null needs no such estimate: it is the accuracy's spread when the labels carry no
 //! information, computed on the same folds.
 //!
 //! [`Config::default`] holds the values fixed for the lab's runs before any real data was seen
 //! (journal of 2026-10-31, § The Benchmark's Test, Built Red-First). Freezing the benchmark
-//! (STATE.md item 2 (e3)) is a separate step, which may still change them with a written reason.
+//! (docs/PLAN.md, Phase 0, step 5) is a separate step, which may still change them with a written
+//! reason.
 
 use std::fmt;
 
@@ -121,7 +122,7 @@ impl fmt::Display for TestError {
 
 impl std::error::Error for TestError {}
 
-/// SplitMix64 (Steele, Lea and Flood 2014): a small generator whose whole state is one integer,
+/// SplitMix64 ([Steele, Lea and Flood 2014](https://doi.org/10.1145/2660193.2660195)): a small generator whose whole state is one integer,
 /// so a seed fixes every shuffle.
 struct SplitMix64(u64);
 
@@ -213,8 +214,10 @@ fn scaled(rows: &[&Vec<f64>], width: usize) -> Vec<Vec<f64>> {
     out
 }
 
-/// For every row, its `k` nearest rows among those in other folds, nearest first.
-fn neighbour_lists(points: &[Vec<f64>], fold: &[usize], k: usize) -> Vec<Vec<usize>> {
+/// For every row, its `k` nearest rows among those in other folds, nearest first. Exact ties in
+/// distance are broken by `rank`, each row's place in the seeded shuffle, never by row order: row
+/// order puts every row of one sample before the other, and so would carry the labels.
+fn neighbour_lists(points: &[Vec<f64>], fold: &[usize], rank: &[usize], k: usize) -> Vec<Vec<usize>> {
     let n = points.len();
     (0..n)
         .map(|i| {
@@ -225,7 +228,7 @@ fn neighbour_lists(points: &[Vec<f64>], fold: &[usize], k: usize) -> Vec<Vec<usi
                     (d2, j)
                 })
                 .collect();
-            others.sort_by(|x, y| x.0.total_cmp(&y.0).then(x.1.cmp(&y.1)));
+            others.sort_by(|x, y| x.0.total_cmp(&y.0).then(rank[x.1].cmp(&rank[y.1])));
             others.into_iter().take(k).map(|(_, j)| j).collect()
         })
         .collect()
@@ -256,10 +259,12 @@ pub fn two_sample_test(a: &[Vec<f64>], b: &[Vec<f64>], config: &Config, seed: u6
     let mut order: Vec<usize> = (0..points.len()).collect();
     rng.shuffle(&mut order);
     let mut fold = vec![0; points.len()];
+    let mut rank = vec![0; points.len()];
     for (position, &row) in order.iter().enumerate() {
         fold[row] = position % config.folds;
+        rank[row] = position;
     }
-    let near = neighbour_lists(&points, &fold, config.neighbours);
+    let near = neighbour_lists(&points, &fold, &rank, config.neighbours);
 
     let observed = accuracy(&near, &labels);
     let mut as_good = 0;
@@ -379,6 +384,74 @@ mod tests {
         assert!(matches!(two_sample_test(&five, &five, &level, 0), Err(TestError::BadConfig(_))));
     }
 
+    #[test]
+    fn a_row_is_judged_only_by_rows_in_other_folds() {
+        let mut rng = SplitMix64(5000);
+        let points = sample(&mut rng, 23, 2, 0.0, 1.0);
+        let fold: Vec<usize> = (0..points.len()).map(|i| i % 5).collect();
+        let rank: Vec<usize> = (0..points.len()).collect();
+        for (i, near) in neighbour_lists(&points, &fold, &rank, 7).iter().enumerate() {
+            assert_eq!(near.len(), 7);
+            assert!(near.iter().all(|&j| j != i && fold[j] != fold[i]), "row {i}: {near:?}");
+        }
+    }
+
+    #[test]
+    fn the_smallest_p_value_is_one_over_one_plus_the_shuffles() {
+        // Two samples ten standard deviations apart: no shuffle can match the real labels, so the
+        // p-value is the formula's floor, never zero.
+        let mut rng = SplitMix64(6000);
+        let a = sample(&mut rng, 30, 2, 0.0, 1.0);
+        let b = sample(&mut rng, 30, 2, 10.0, 1.0);
+        let config = Config {
+            permutations: 19,
+            ..Config::default()
+        };
+        let outcome = two_sample_test(&a, &b, &config, 3).unwrap();
+        assert_eq!(outcome.accuracy, 1.0);
+        assert_eq!(outcome.p_value, 1.0 / 20.0);
+    }
+
+    #[test]
+    fn unequal_samples_from_one_distribution_are_rarely_told_apart() {
+        // 30 worms against 90: chance accuracy is the larger share, 0.75, not 0.5, and the
+        // permutation null must absorb it. The same bound as for equal samples applies.
+        let count = (0..20u64)
+            .filter(|&seed| {
+                let mut rng = SplitMix64(7000 + seed);
+                let a = sample(&mut rng, 30, 3, 0.0, 1.0);
+                let b = sample(&mut rng, 90, 3, 0.0, 1.0);
+                two_sample_test(&a, &b, &quick(), seed).unwrap().told_apart
+            })
+            .count();
+        assert!(count <= 3, "{count} of 20 unequal identical pairs told apart");
+    }
+
+    /// The exact (Clopper-Pearson) 95% interval of a binomial share, by bisection on the
+    /// binomial distribution function.
+    fn clopper_pearson(successes: usize, trials: usize) -> (f64, f64) {
+        let cdf = |k: usize, p: f64| -> f64 {
+            let mut term = (1.0 - p).powi(trials as i32);
+            let mut total = term;
+            for i in 0..k {
+                term *= (trials - i) as f64 / (i + 1) as f64 * p / (1.0 - p);
+                total += term;
+            }
+            total
+        };
+        let solve = |above: &dyn Fn(f64) -> bool| -> f64 {
+            let (mut lo, mut hi) = (0.0, 1.0);
+            for _ in 0..60 {
+                let mid = 0.5 * (lo + hi);
+                if above(mid) { hi = mid } else { lo = mid }
+            }
+            0.5 * (lo + hi)
+        };
+        let lower = if successes == 0 { 0.0 } else { solve(&|p| 1.0 - cdf(successes - 1, p) >= 0.025) };
+        let upper = if successes == trials { 1.0 } else { solve(&|p| cdf(successes, p) <= 0.025) };
+        (lower, upper)
+    }
+
     /// The table behind the choice of 21 neighbours, over 100 pairs per cell, 60 worms a side:
     /// `cargo test --release -p benchmark power_table -- --ignored --nocapture`.
     #[test]
@@ -393,7 +466,9 @@ mod tests {
         for k in [5, 11, 21, 31] {
             let config = Config { neighbours: k, ..quick() };
             for (name, width, shift, spread) in cases {
-                println!("k {k:2}  {name:30} {:3}/100", told_apart(100, 9000, width, shift, spread, &config));
+                let count = told_apart(100, 9000, width, shift, spread, &config);
+                let (lower, upper) = clopper_pearson(count, 100);
+                println!("k {k:2}  {name:30} {count:3}/100  ({:.0}% to {:.0}%)", 100.0 * lower, 100.0 * upper);
             }
         }
     }

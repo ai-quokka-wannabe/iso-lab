@@ -88,8 +88,8 @@ found lives in the journal section it names; this list keeps only what is open.
    - (e) the benchmark's test (PLAN.md Phase 0, step 5), split into runs:
        - (e1) done (journal of 2026-10-31, § The Benchmark's Test, Built Red-First): crate `benchmark`, a 21-nearest-
          neighbour classifier two-sample test with five folds and a 999-shuffle permutation p-value, its settings fixed
-         on synthetic samples; it holds its level (4 of 100 identical pairs told apart) but is weak on changes of
-         spread (17 of 100), which (e2) must cover;
+         on synthetic samples; with 199 shuffles it held its level (4 of 100 identical pairs told apart, 95% interval
+         1-10%) but caught a change of spread only 17 times in 100 (10-26%), which (e2) must cover;
        - (e2) the per-measure comparisons PLAN.md asks for beside the classifier ("say where they differ when they
          do"): for each measure, the two samples' distributions compared by a statistic fixed beforehand;
        - (e3) the test on real data alone: block 1's real worms against block 2's, recordings neither has seen, which
