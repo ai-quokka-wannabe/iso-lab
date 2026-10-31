@@ -1,6 +1,8 @@
 # State of the Lab
 
-**Last updated:** 2026-10-30 ([the journal of 2026-10-30](docs/journal/2026-10-30.md)): `external/` moved to latest
+**Last updated:** 2026-10-31 ([the journal of 2026-10-31](docs/journal/2026-10-31.md)): the toolbox's event
+statistics landed in Rust, and D1-D6 were planned. Before it, 2026-10-30
+([the journal of 2026-10-30](docs/journal/2026-10-30.md)): `external/` moved to latest
 `main` twice, the first time with the world unchanged, the second to Link protocol 12 with food eaten in the tick.
 The global rule without the margin was tested on the ten fresh banded layouts: the cold-band hunch is refuted for it
 too. H14 was added, and its toy-worm prediction held: a graded hunger gain beat the on/off gate, and ablations trace
@@ -216,8 +218,8 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
-- 2026-10-31: plans for D1-D6 (chemistry and affect), each waiting on food and a sense of intake; two leads' claims
-  corrected from their abstracts (journal of 2026-10-31, § Plans for D1-D6).
+- 2026-10-31: plans for D1-D6 (chemistry and affect), each waiting on food and a sense of intake; the leads' bearing
+  checked against their abstracts (journal of 2026-10-31, § Plans for D1-D6).
 - 2026-10-30: the toolbox's event statistics in Rust (`motion_events`, `event_stats`), tested red-first (journal of
   2026-10-30, § The Toolbox's Event Statistics in Rust).
 - 2026-10-30: the toolbox's definitions of state durations and rates, read at source for item 2(c) (journal of
