@@ -127,10 +127,11 @@ found lives in the journal section it names; this list keeps only what is open.
       drawing again changes no byte (a local check, not a CI job; H11's figures stay with their own notebooks); proved
       on the first diagram, how the pieces fit;
     - (b) two diagrams: a night's cycle, and the benchmark's pipeline from recordings and lives to a verdict;
-    - (c) one more diagram, how hypotheses, hunches and plans relate, and one plot: the toy worm's graded-gain series
-      with their intervals, every contrast H14 records and none left out - the leads (K1, L1, M2, K3) beside the null
-      and negative results, against never steering above all (K2, and the K3 run's contrast with never steering), and
-      the ablations (L2, M1, P1, Q1) - each number read from the journal section that
+    - (c) one more diagram, how hypotheses, hunches and plans relate, and one plot of the toy worm's graded-gain series
+      with their intervals, in two panels whose scope is stated on the figure: the warm-world contrasts on fresh
+      layouts (K1, K2, K3 and the K3 run's contrast with never steering, L1, L2, M1, M2, P1, P2, Q1, Q2), the leads
+      beside the results against never steering; and the rich-layout contrasts (K4, W1, Z1, F1, F2, H1).
+      Each number is read from the journal section that
       [README.md § H14](docs/hypotheses/README.md#h14-graded-slow-knobs-change-detecting-senses-and-individuality)
       cites for it, and cited to it in the notebook;
     - (d) a "start here" tour in the README, built around the diagrams, which replaces or points to the README's
