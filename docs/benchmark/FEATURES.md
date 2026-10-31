@@ -72,7 +72,7 @@ locomotion measure counts as comparable until food is settled.
 | Path | "Dwelling" as occupancy of grid squares | With a caveat | Yemini et al.'s grid squares are a worm's width across; in body lengths they are comparable, but the name is not Flavell et al.'s dwelling state |
 | States | Roaming and dwelling (Flavell et al. 2013) | With a caveat | See below |
 | Motifs | Behavioural motif dictionary (Brown et al. 2013) | With a caveat | Fitted on eight-angle postures, if the eigen-shapes carry the motifs at that resolution |
-| Responses | Chemotaxis, thermotaxis, touch responses | Not yet | The reference recordings are of spontaneous behaviour, with no stimulus; and the Grid has no chemical sense (STATE.md *Needs From Other Repositories*) |
+| Responses | Chemotaxis, thermotaxis, touch responses | Not yet | The reference recordings are of spontaneous behaviour, with no stimulus; and the Grid's chemical sense, carried since Program ABI 11, is read by no Program yet (STATE.md *Needs From Other Repositories*) |
 
 ## Roaming and Dwelling in Fifteen Minutes
 

@@ -118,10 +118,6 @@ found lives in the journal section it names; this list keeps only what is open.
    - (d) the composition law: a third lever that acts alone, and roaming's interaction as its own test.
 
    Once a calculation matters to anything the lab builds on, it moves into tested Rust.
-10. **Bring four documents in step with the Grid's chemical sense** (housekeeping, from the review of the ABI 11 bump):
-   `docs/research/behaviour-measures.md`, `docs/research/pace.md`, `docs/benchmark/FEATURES.md` and
-   `docs/hypotheses/experiments/C1-C12.md` still say the Grid has no chemical sense; since Program ABI 11 it carries
-   `odour` and `intake` (journal of 2026-10-31, § The Grid Moves to Program ABI 11).
 
 ## To Revisit
 
@@ -229,6 +225,8 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-10-31: four documents brought in step with the Grid's chemical sense at Program ABI 11 (journal of
+  2026-10-31, § Four Documents in Step With the Grid's Smell).
 - 2026-10-31: `external/` at the latest mains: tron-grid-lite to Program ABI 11, the placeholder rebuilt; build,
   render and the placeholder's life unchanged (a life with no refused intent is byte-identical at both pins) (journal of 2026-10-31, § The Grid Moves to
   Program ABI 11).
