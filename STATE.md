@@ -129,13 +129,8 @@ found lives in the journal section it names; this list keeps only what is open.
       on the first diagram, how the pieces fit;
     - (b) done (journal of 2026-10-31, § Two Diagrams: a Night's Cycle and the Benchmark's Pipeline): two diagrams,
       a night's cycle and the benchmark's pipeline;
-    - (c) one more diagram, how hypotheses, hunches and plans relate, and one plot of the toy worm's graded-gain series
-      with their intervals, in two panels whose scope is stated on the figure: the warm-world contrasts on fresh
-      layouts (K1, K2, K3 and the K3 run's contrast with never steering, L1, L2, M1, M2, P1, P2, Q1, Q2), the leads
-      beside the results against never steering; and the rich-layout contrasts (K4, W1, Z1, F1, F2, H1).
-      Each number is read from the journal section that
-      [README.md § H14](docs/hypotheses/README.md#h14-graded-slow-knobs-change-detecting-senses-and-individuality)
-      cites for it, and cited to it in the notebook;
+    - (c) done (journal of 2026-10-31, § An Idea's Path, and the Toy Worm's Graded Gain as a Plot): the ideas diagram,
+      in the README and the hypotheses' README, and the graded-gain series as a forest plot in two panels, under H14;
     - (d) a "start here" tour in the README, built around the diagrams, which replaces or points to the README's
       *Where Things Are* table rather than repeating it; its glossary defines only the lab's own words and links to
       tron-grid-lite's README and `.claude/CLAUDE.md` § Writing for the organisation's;
@@ -145,7 +140,8 @@ found lives in the journal section it names; this list keeps only what is open.
     - (f) STATE.md cut back to what is current: *Done* to the latest night only, as its own header says; the *Last
       updated* paragraph; and the longest *Next* items (2 and 9) cut to their open steps, each removed line first
       checked, one by one, to be held by the journal it points to;
-    - (g) the hypotheses' README: a short section with (c)'s diagram, pointing to the experiments' index for the rest;
+    - (g) the hypotheses' README: (c)'s diagram is in it; what is left is a short section pointing to the experiments'
+      index for the rest;
     - (h) the audits (`check-coherence`, `check-style`, `check-spelling`) once more, to catch what is left.
 
 ## To Revisit
@@ -261,6 +257,8 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
 
 - 2026-10-31: item 10 (e), a journal index - one line a night, with the section to start at, in
   `docs/journal/README.md` (journal of 2026-10-31, § A Journal Index).
+- 2026-10-31: item 10 (c), the ideas diagram and a forest plot of every contrast H14 records, both drawn by
+  `notebooks/figures.ipynb` (journal of 2026-10-31, § An Idea's Path, and the Toy Worm's Graded Gain as a Plot).
 - 2026-10-31: item 10 (b), two diagrams - a night's cycle, in the README and NIGHT_SHIFT.md, and the benchmark's
   pipeline, in PLAN.md and FEATURES.md (journal of 2026-10-31, § Two Diagrams: a Night's Cycle and the Benchmark's
   Pipeline).
