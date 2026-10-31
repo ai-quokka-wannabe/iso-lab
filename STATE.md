@@ -68,7 +68,13 @@ found lives in the journal section it names; this list keeps only what is open.
      The durations and rates are written to the toolbox's definitions (`features::states::event_stats`;
      [behaviour-measures.md § How the Toolbox Turns States Into Durations and Rates](docs/research/behaviour-measures.md#how-the-toolbox-turns-states-into-durations-and-rates)).
      Next: reproduce the stored durations and frequencies from the published speed, then check the lab's speed against them;
-   - (d) the reference statistics.
+   - (d) the reference statistics, split into runs (journal of 2026-10-31, § The Benchmark, Split Into Runs, on
+     [#191](https://github.com/ai-quokka-wannabe/iso-lab/pull/191)):
+       - (d1) one row of measures per recording, done (journal of 2026-10-31, § One Row of Measures per Recording:
+         Built, and Run on Block 1): `features::profile` and `profiles <block>`; its durations and rates stay
+         provisional until (c)'s check passes. Block 1 has 17 five-minute recordings (ids 1031915 to 1033195), excluded
+         as short; what they are is to be read from their metadata before (d2);
+       - (d2) the reference statistics over block 1, as worded on #191;
 3. **Prove the arena**: build Master Control and the Grid from `external/` on Linux with lavapipe, write a placeholder
    Program, live one life and extract the same features from it. Done: (a) Master Control, (b) the Grid,
    (c) the placeholder (`crates/placeholder-worm`), (d1) one life, its Disk and log kept and replayed (journal of
@@ -254,6 +260,9 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-10-31: item 2 (d1), one row of measures per recording (`features::profile`, `profiles`): block 1 gives 179
+  rows measured, 18 excluded as short and 3 as gappy (journal of 2026-10-31, § One Row of Measures per Recording:
+  Built, and Run on Block 1).
 - 2026-10-31: item 10 (d), a "start here" tour and a glossary of the lab's own words in the README (journal of
   2026-10-31, § A "Start Here" Tour in the README).
 - 2026-10-31: item 10 (e), a journal index - one line a night, with the section to start at, in
