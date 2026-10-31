@@ -1,7 +1,7 @@
 # State of the Lab
 
 **Last updated:** 2026-10-31 ([the journal of 2026-10-31](docs/journal/2026-10-31.md)): C18 was unparked - its lead read in
-full, its cliff defined, its test piloted on three controls, which it read as it must; section D was planned whole, and
+full, its cliff defined, its test piloted on four controls, which it read as it must; section D was planned whole, and
 the toolbox's event statistics (done 2026-10-30) were merged. Before it, 2026-10-30
 ([the journal of 2026-10-30](docs/journal/2026-10-30.md)): `external/` moved to latest
 `main` twice, the first time with the world unchanged, the second to Link protocol 12 with food eaten in the tick.
@@ -174,7 +174,7 @@ found lives in the journal section it names; this list keeps only what is open.
       index for the rest;
     - (h) the audits (`check-coherence`, `check-style`, `check-spelling`) once more, to catch what is left.
 11. **Run C18's plan** ([C13-C24.md § C18](docs/hypotheses/experiments/C13-C24.md#c18-spreading-activation-has-a-cliff)):
-    the three controls first, then the pure network, the budget at both gains, the corrected fan-out penalty and
+    the four controls first, then the pure network, the budget at both gains, the corrected fan-out penalty and
     inhibition, with fresh seeds; its expectations are pre-registered in the journal of 2026-10-31, § C18 Unparked: the
     Cliff Defined, the Test Piloted. Waits on nothing; minutes of compute.
 
@@ -281,7 +281,7 @@ The latest night only, one line a task; earlier nights are in [the journal](docs
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
 - 2026-10-31: C18 unparked - Shrager, Hogg and Huberman 1987 read in full, the hunch's cliff settled as a threshold
-  between finite and extensive reach, and a two-stage test of it piloted on three controls, which it read as it must
+  between finite and extensive reach, and a two-stage test of it piloted on four controls, which it read as it must
   (journal of 2026-10-31, § C18 Unparked: the Cliff Defined, the Test Piloted).
 - 2026-10-31: item 2 (e1), the benchmark's test - crate `benchmark`, a classifier two-sample test, red-first, with
   its settings and power measured on synthetic samples (journal of 2026-10-31, § The Benchmark's Test, Built
