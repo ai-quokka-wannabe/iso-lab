@@ -78,12 +78,12 @@ out of their sources when the experiment is prepared.
 | C22 | Inhibition of return and foraging in memory | [planned](C13-C24.md#c22-inhibition-of-return-and-foraging-in-memory) |
 | C23 | A stated, measured bound on what is held at once | [planned](C13-C24.md#c23-a-stated-measured-bound-on-what-is-held-at-once) |
 | C24 | Instrument the state of attention | [planned](C13-C24.md#c24-instrument-the-state-of-attention) |
-| D1 | Roaming and dwelling from continuous drives | to plan |
-| D2 | Modulators that flip a smell's meaning | to plan |
-| D3 | One modulator state, three effects | to plan |
-| D4 | Learning rate from uncertainty; surprise resets the current thought | to plan |
-| D5 | A modulator design law | to plan |
-| D6 | Receptors that tire, ten times faster than they recover | to plan |
+| D1 | Roaming and dwelling from continuous drives | [planned](D1-D6.md#d1-roaming-and-dwelling-from-continuous-drives) |
+| D2 | Modulators that flip a smell's meaning | [planned](D1-D6.md#d2-modulators-that-flip-a-smells-meaning) |
+| D3 | One modulator state, three effects | [planned](D1-D6.md#d3-one-modulator-state-three-effects) |
+| D4 | Learning rate from uncertainty; surprise resets the current thought | [planned](D1-D6.md#d4-learning-rate-from-uncertainty-surprise-resets-the-current-thought) |
+| D5 | A modulator design law | [planned](D1-D6.md#d5-a-modulator-design-law) |
+| D6 | Receptors that tire, ten times faster than they recover | [planned](D1-D6.md#d6-receptors-that-tire-ten-times-faster-than-they-recover) |
 | D7 | Roles for a handful of modulators | to plan |
 | D8 | What not to build in chemistry | to plan |
 | D9 | Patience is confidence that reward will come | to plan |
