@@ -139,8 +139,9 @@ found lives in the journal section it names; this list keeps only what is open.
     - (d) a "start here" tour in the README, built around the diagrams, which replaces or points to the README's
       *Where Things Are* table rather than repeating it; its glossary defines only the lab's own words and links to
       tron-grid-lite's README and `.claude/CLAUDE.md` § Writing for the organisation's;
-    - (e) a journal index in the existing `docs/journal/README.md`, one line per night; whether each night's write-up
-      step should add its line is the maintainer's call (see *To Revisit*);
+    - (e) done (journal of 2026-10-31, § A Journal Index): a table in `docs/journal/README.md`, one line a night with
+      the section to start reading at; whether each night's write-up step should add its line is the maintainer's call
+      (see *To Revisit*);
     - (f) STATE.md cut back to what is current: *Done* to the latest night only, as its own header says; the *Last
       updated* paragraph; and the longest *Next* items (2 and 9) cut to their open steps, each removed line first
       checked, one by one, to be held by the journal it points to;
@@ -153,7 +154,7 @@ Experiments that failed or came out inconclusive, kept rather than discarded (th
 the idea for the next attempt.
 
 - **For the maintainer**: whether each night's write-up (step 8 of *Each run, in order*) should also add a line to
-  the journal index planned in item 10 (e); without that, the index goes stale.
+  the journal index in `docs/journal/README.md` (item 10 (e)); without that, the index goes stale.
 - **For the maintainer**: whether a decided item, such as the speed for the locomotion states, stays under
   [FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing) or moves to
   a section of decisions (journal of 2026-10-30, § A Coherence Audit, and What It Mended).
@@ -258,6 +259,8 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-10-31: item 10 (e), a journal index - one line a night, with the section to start at, in
+  `docs/journal/README.md` (journal of 2026-10-31, § A Journal Index).
 - 2026-10-31: item 10 (b), two diagrams - a night's cycle, in the README and NIGHT_SHIFT.md, and the benchmark's
   pipeline, in PLAN.md and FEATURES.md (journal of 2026-10-31, § Two Diagrams: a Night's Cycle and the Benchmark's
   Pipeline).
