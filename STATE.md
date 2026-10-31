@@ -131,9 +131,8 @@ found lives in the journal section it names; this list keeps only what is open.
       a night's cycle and the benchmark's pipeline;
     - (c) done (journal of 2026-10-31, § An Idea's Path, and the Toy Worm's Graded Gain as a Plot): the ideas diagram,
       in the README and the hypotheses' README, and the graded-gain series as a forest plot in two panels, under H14;
-    - (d) a "start here" tour in the README, built around the diagrams, which replaces or points to the README's
-      *Where Things Are* table rather than repeating it; its glossary defines only the lab's own words and links to
-      tron-grid-lite's README and `.claude/CLAUDE.md` § Writing for the organisation's;
+    - (d) done (journal of 2026-10-31, § A "Start Here" Tour in the README): a six-stop tour at the README's head,
+      built around the diagrams and pointing to *Where Things Are*, and a short glossary of the lab's own words;
     - (e) a journal index in the existing `docs/journal/README.md`, one line per night; whether each night's write-up
       step should add its line is the maintainer's call (see *To Revisit*);
     - (f) STATE.md cut back to what is current: *Done* to the latest night only, as its own header says; the *Last
@@ -254,6 +253,8 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-10-31: item 10 (d), a "start here" tour and a glossary of the lab's own words in the README (journal of
+  2026-10-31, § A "Start Here" Tour in the README).
 - 2026-10-31: item 10 (c), the ideas diagram and a forest plot of every contrast H14 records, both drawn by
   `notebooks/figures.ipynb` (journal of 2026-10-31, § An Idea's Path, and the Toy Worm's Graded Gain as a Plot).
 - 2026-10-31: item 10 (b), two diagrams - a night's cycle, in the README and NIGHT_SHIFT.md, and the benchmark's
