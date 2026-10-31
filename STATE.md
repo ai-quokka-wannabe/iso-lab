@@ -90,8 +90,10 @@ found lives in the journal section it names; this list keeps only what is open.
          neighbour classifier two-sample test with five folds and a 999-shuffle permutation p-value, its settings fixed
          on synthetic samples; with 199 shuffles it held its level (4 of 100 identical pairs told apart, 95% interval
          1-10%) but caught a change of spread only 17 times in 100 (10-26%), which (e2) must cover;
-       - (e2) the per-measure comparisons PLAN.md asks for beside the classifier ("say where they differ when they
-         do"): for each measure, the two samples' distributions compared by a statistic fixed beforehand;
+       - (e2) done (journal of 2026-10-31, § The Per-Measure Comparisons): `benchmark::compare`, a two-sample
+         Cramér-von Mises statistic per measure with a 999-shuffle permutation p-value, Holm's correction across the
+         measures, and each sample's median and interquartile range, the statistic computed exactly in integers; with 199
+         shuffles it held its level (49 of 1000, 3.6-6.4%) and caught a doubled spread 73 times in 100 (63-81%);
        - (e3) the test on real data alone: block 1's real worms against block 2's, recordings neither has seen, which
          must come out indistinguishable; and a positive control - the same recordings deliberately altered by a
          stated amount - which must be told apart;
@@ -284,6 +286,8 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-10-31: item 2 (e2), the per-measure comparisons - Cramér-von Mises per measure, permutation p-values and
+  Holm's correction, red-first (journal of 2026-10-31, § The Per-Measure Comparisons).
 - 2026-10-31: item 2 (e1), the benchmark's test - crate `benchmark`, a classifier two-sample test, red-first, with
   its settings and power measured on synthetic samples (journal of 2026-10-31, § The Benchmark's Test, Built
   Red-First).
