@@ -1,6 +1,6 @@
 # State of the Lab
 
-**Last updated:** 2026-10-31 ([the journal of 2026-10-31](docs/journal/2026-10-31.md)): section D and E1-E5 were planned, and the toolbox's
+**Last updated:** 2026-10-31 ([the journal of 2026-10-31](docs/journal/2026-10-31.md)): section D was planned whole, and the toolbox's
 event statistics (done 2026-10-30) were merged. Before it, 2026-10-30
 ([the journal of 2026-10-30](docs/journal/2026-10-30.md)): `external/` moved to latest
 `main` twice, the first time with the world unchanged, the second to Link protocol 12 with food eaten in the tick.
@@ -118,6 +118,10 @@ found lives in the journal section it names; this list keeps only what is open.
    - (d) the composition law: a third lever that acts alone, and roaming's interaction as its own test.
 
    Once a calculation matters to anything the lab builds on, it moves into tested Rust.
+10. **Bring four documents in step with the Grid's chemical sense** (housekeeping, from the review of the ABI 11 bump):
+   `docs/research/behaviour-measures.md`, `docs/research/pace.md`, `docs/benchmark/FEATURES.md` and
+   `docs/hypotheses/experiments/C1-C12.md` still say the Grid has no chemical sense; since Program ABI 11 it carries
+   `odour` and `intake` (journal of 2026-10-31, § The Grid Moves to Program ABI 11).
 
 ## To Revisit
 
@@ -187,22 +191,24 @@ Each need is an issue in the repository that would meet it, triaged there by its
 points to the open ones and says what waits on each.
 
 - **A sense of smell** (tron-grid-lite, master-control; the maintainer takes it up once the lab is set up -
-  file nothing). The Grid has no chemical sense, and chemotaxis is the worm's best-studied behaviour. Until
-  the world provides one, chemotaxis is listed as not comparable - never quietly dropped. B2 of
+  file nothing). The Grid at the pinned commit carries a chemical sense to Programs: Program ABI 11's
+  `TglSenses.odour[2][8]`, the bound fraction of eight receptor types at each of two amphids, smelt from the food orbs
+  (journal of 2026-10-31, § The Grid Moves to Program ABI 11). Chemotaxis stays listed as not comparable until a
+  Program reads it and the benchmark measures it - never quietly dropped. B2 of
   [the B plans](docs/hypotheses/experiments/B.md#b2-smell-as-an-unlabelled-fingerprint) lists the properties a
   hunch asks of it (intensity, its change over time, a left-right difference, blending mixtures, blurring traces).
-  Smell is now designed with food (tron-grid-lite `docs/CHEMORECEPTION.md`: two amphids, eight receptor types) and
-  being built with it; see the next line.
+  Smell is built with food (tron-grid-lite `docs/CHEMORECEPTION.md`); see the next line.
 - **Food, and a sense of taking it in** ([master-control#63](https://github.com/ai-quokka-wannabe/master-control/issues/63)
   for food on the floor and the rule for intake; [tron-grid-lite#153](https://github.com/ai-quokka-wannabe/tron-grid-lite/issues/153)
-  for the sense of the body's own intake). The reference worms are filmed on food and the Grid has none
+  for the sense of the body's own intake). The reference worms are filmed on food, and the world has had food orbs since the pins of 2026-10-30, drawn by the
+  Grid since Program ABI 11
   ([docs/benchmark/FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing)).
   The benchmark is not frozen until food is settled, by these issues or by comparing with foodless worms instead.
   Under way upstream, by the maintainer's comment on both issues (2026-10-29): the design is merged (tron-grid-lite
   #164, #166), then master-control#70 (the world's half, no wire) and link#49 (protocol v12), both merged, then the
-  wire and food in the tick (master-control#72 and #73, pinned since the journal of 2026-10-30); next the Grid
-  (Program ABI 11) and rc-worm. When Program ABI 11 lands, the lab's placeholder Program must be
-  rebuilt against it before the next bump merges.
+  wire and food in the tick (master-control#72 and #73, pinned since the journal of 2026-10-30); then the Grid's
+  Program ABI 11 (tron-grid-lite #172 and #173), which carries `intake` and `odour[2][8]` to Programs, pinned with the
+  placeholder rebuilt against it (journal of 2026-10-31, § The Grid Moves to Program ABI 11); next rc-worm.
 - **The worm's bends against the Grid's joint limit**
   ([tron-grid-lite#165](https://github.com/ai-quokka-wannabe/tron-grid-lite/issues/165), filed 2026-10-29). At the eight-arc
   resolution 9.8 to 68.6% (median 35.8%, 34 recordings) of the reference worms' skeletonised frames bend beyond the
@@ -217,8 +223,11 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
-- 2026-10-31: plans for E1-E5 (learning and memory); the Program side of each is asserted, the worm side tested where
-  a source allows (journal of 2026-10-31, § Plans for E1-E5).
+- 2026-10-31: plans for E1-E5 (learning and memory), merged after the parked pull request's last finding was fixed and
+  a fresh verifier read it whole (journal of 2026-10-31, § The E1-E5 Plans, Taken Up Again).
+- 2026-10-31: `external/` at the latest mains: tron-grid-lite to Program ABI 11, the placeholder rebuilt; build,
+  render and the placeholder's life unchanged (a life with no refused intent is byte-identical at both pins) (journal of 2026-10-31, § The Grid Moves to
+  Program ABI 11).
 - 2026-10-31: plans for D7-D13, and A10's question answered: no report of play in a nematode found (journal of
   2026-10-31, § Plans for D7-D13).
 - 2026-10-31: plans for D1-D6 (chemistry and affect), each waiting on food and a sense of intake; the leads' bearing
