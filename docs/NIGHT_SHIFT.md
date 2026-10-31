@@ -12,7 +12,7 @@ except what is merged into `main`: the work itself, [STATE.md](../STATE.md) and 
 
 ![A night's cycle as a flowchart: start from main, read STATE.md, pick one task, branch, do the work, check it,
 write it down, open a pull request; CI and a second agent then decide. A verified, green pull request is merged; one
-that needs changes is fixed and looked at again, and after three rounds is parked under Blocked. Then the next task,
+with CI red or changes needed is fixed and looked at again, and after three rounds is parked under Blocked. Then the next task,
 until the hour.](figures/diagram_night.svg)
 
 *Each task of a night, from [.claude/CLAUDE.md](../.claude/CLAUDE.md) § Each run, in order. Drawn by
