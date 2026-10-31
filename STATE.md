@@ -118,12 +118,37 @@ found lives in the journal section it names; this list keeps only what is open.
    - (d) the composition law: a third lever that acts alone, and roaming's interaction as its own test.
 
    Once a calculation matters to anything the lab builds on, it moves into tested Rust.
+10. **Make the repository easy to enter** - the maintainer's request (2026-10-31): tidy the repository and make it
+    presentable so that new people are not lost, with more plots, diagrams and flowcharts, as SVG and never as
+    binaries. The survey and the reasons are in the journal of 2026-10-31, § A Plan to Make the Lab Easy to Enter.
+    One run each, in this order:
+    - (a) the figure tooling: `notebooks/figures.ipynb`, which writes every new diagram as plain SVG from Python and
+      every new plot with matplotlib by the rules of *Figures are SVG*, and checks in its last cell, run locally, that
+      drawing again changes no byte (a local check, not a CI job; H11's figures stay with their own notebooks); proved
+      on the first diagram, how the pieces fit;
+    - (b) two diagrams: a night's cycle, and the benchmark's pipeline from recordings and lives to a verdict;
+    - (c) one more diagram, how hypotheses, hunches and plans relate, and one plot: the toy worm's graded-gain series
+      (K1, L1, L2, M1, M2, P1, Q1, K3) with their intervals, each number read from the journal section that
+      [README.md § H14](docs/hypotheses/README.md#h14-graded-slow-knobs-change-detecting-senses-and-individuality)
+      cites for it, and cited to it in the notebook;
+    - (d) a "start here" tour in the README, built around the diagrams, which replaces or points to the README's
+      *Where Things Are* table rather than repeating it; its glossary defines only the lab's own words and links to
+      tron-grid-lite's README and `.claude/CLAUDE.md` § Writing for the organisation's;
+    - (e) a journal index in the existing `docs/journal/README.md`, one line per night; whether each night's write-up
+      step should add its line is the maintainer's call (see *To Revisit*);
+    - (f) STATE.md cut back to what is current: *Done* to the latest night only, as its own header says; the *Last
+      updated* paragraph; and the longest *Next* items (2 and 9) cut to their open steps, each removed line first
+      checked, one by one, to be held by the journal it points to;
+    - (g) the hypotheses' README: a short section with (c)'s diagram, pointing to the experiments' index for the rest;
+    - (h) the audits (`check-coherence`, `check-style`, `check-spelling`) once more, to catch what is left.
 
 ## To Revisit
 
 Experiments that failed or came out inconclusive, kept rather than discarded (the maintainer's ruling); each with
 the idea for the next attempt.
 
+- **For the maintainer**: whether each night's write-up (step 8 of *Each run, in order*) should also add a line to
+  the journal index planned in item 10 (e); without that, the index goes stale.
 - **For the maintainer**: whether a decided item, such as the speed for the locomotion states, stays under
   [FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing) or moves to
   a section of decisions (journal of 2026-10-30, § A Coherence Audit, and What It Mended).
