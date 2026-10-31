@@ -223,8 +223,8 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
-- 2026-10-31: plans for E1-E5 (learning and memory), merged after the parked pull request's last finding was fixed and
-  a fresh verifier read it whole (journal of 2026-10-31, § The E1-E5 Plans, Taken Up Again).
+- 2026-10-31: plans for E1-E5 (learning and memory), taken up again after parking, E4 written out in full, and read whole
+  by a fresh verifier (journal of 2026-10-31, § The E1-E5 Plans, Taken Up Again).
 - 2026-10-31: `external/` at the latest mains: tron-grid-lite to Program ABI 11, the placeholder rebuilt; build,
   render and the placeholder's life unchanged (a life with no refused intent is byte-identical at both pins) (journal of 2026-10-31, § The Grid Moves to
   Program ABI 11).
