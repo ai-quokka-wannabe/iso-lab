@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="620" viewBox="0 0 1100 620" font-family="DejaVu Sans, Verdana, Arial, sans-serif">
+<title>How the pieces fit</title>
+<defs><marker id="head" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#444444"/></marker></defs>
+<rect x="0" y="0" width="1100" height="620" fill="#ffffff"/>
+<text x="550" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#1d1d1d">How the pieces fit</text>
+<text x="550" y="58" text-anchor="middle" font-size="13" fill="#333333">a creature lives on the Grid; the lab compares its life with real worms</text>
+<rect x="30" y="90" width="220" height="120" rx="10" fill="#e8f1fb" stroke="#2f6db3" stroke-width="2"/>
+<text x="140" y="116" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">Master Control</text>
+<text x="140" y="138" text-anchor="middle" font-size="13" fill="#333333">the world server: physics,</text>
+<text x="140" y="157" text-anchor="middle" font-size="13" fill="#333333">food, the tick, the logs</text>
+<rect x="320" y="110" width="150" height="80" rx="10" fill="#eef7ee" stroke="#3d8b40" stroke-width="2"/>
+<text x="395" y="136" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">Link</text>
+<text x="395" y="158" text-anchor="middle" font-size="13" fill="#333333">the wire</text>
+<rect x="540" y="90" width="230" height="120" rx="10" fill="#fdf1e3" stroke="#c46f12" stroke-width="2"/>
+<text x="655" y="116" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">The Grid</text>
+<text x="655" y="138" text-anchor="middle" font-size="13" fill="#333333">renders each body&#x27;s senses</text>
+<text x="655" y="157" text-anchor="middle" font-size="13" fill="#333333">and applies its actions</text>
+<rect x="860" y="90" width="210" height="120" rx="10" fill="#f6ecfa" stroke="#8a3fa8" stroke-width="2"/>
+<text x="965" y="116" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">A Program</text>
+<text x="965" y="138" text-anchor="middle" font-size="13" fill="#333333">a creature&#x27;s brain,</text>
+<text x="965" y="157" text-anchor="middle" font-size="13" fill="#333333">e.g. the placeholder worm</text>
+<path d="M 250 150 L 318 150" fill="none" stroke="#444444" stroke-width="2" marker-start="url(#head)" marker-end="url(#head)"/>
+<path d="M 470 150 L 538 150" fill="none" stroke="#444444" stroke-width="2" marker-start="url(#head)" marker-end="url(#head)"/>
+<path d="M 770 125 L 858 125" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<text x="814" y="115" text-anchor="middle" font-size="13" font-style="italic" fill="#333333">senses</text>
+<path d="M 858 175 L 772 175" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<text x="814" y="198" text-anchor="middle" font-size="13" font-style="italic" fill="#333333">actions</text>
+<rect x="30" y="300" width="220" height="100" rx="10" fill="#e8f1fb" stroke="#2f6db3" stroke-width="2"/>
+<text x="140" y="326" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">Disk and log</text>
+<text x="140" y="348" text-anchor="middle" font-size="13" fill="#333333">a life, recorded</text>
+<path d="M 140 210 L 140 298" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<text x="172" y="260" text-anchor="middle" font-size="13" font-style="italic" fill="#333333">writes</text>
+<rect x="30" y="480" width="220" height="100" rx="10" fill="#e8f1fb" stroke="#2f6db3" stroke-width="2"/>
+<text x="140" y="506" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">Clu</text>
+<text x="140" y="528" text-anchor="middle" font-size="13" fill="#333333">replays a log and checks</text>
+<text x="140" y="547" text-anchor="middle" font-size="13" fill="#333333">it gives the same world</text>
+<path d="M 140 400 L 140 478" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<text x="170" y="444" text-anchor="middle" font-size="13" font-style="italic" fill="#333333">replay</text>
+<rect x="860" y="300" width="210" height="100" rx="10" fill="#eef0f2" stroke="#4d5a66" stroke-width="2"/>
+<text x="965" y="326" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">Real worms</text>
+<text x="965" y="348" text-anchor="middle" font-size="13" fill="#333333">recordings of C. elegans</text>
+<text x="965" y="367" text-anchor="middle" font-size="13" fill="#333333">(Zenodo, public)</text>
+<rect x="540" y="300" width="230" height="100" rx="10" fill="#fff8d9" stroke="#9a7b00" stroke-width="2"/>
+<text x="655" y="326" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">fetch, features</text>
+<text x="655" y="348" text-anchor="middle" font-size="13" fill="#333333">the lab&#x27;s Rust tools:</text>
+<text x="655" y="367" text-anchor="middle" font-size="13" fill="#333333">download, then measure</text>
+<path d="M 858 350 L 772 350" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<text x="814" y="340" text-anchor="middle" font-size="13" font-style="italic" fill="#333333">download</text>
+<path d="M 250 350 L 538 350" fill="none" stroke="#444444" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#head)"/>
+<text x="394" y="340" text-anchor="middle" font-size="13" font-style="italic" fill="#333333">read the Disk</text>
+<text x="394" y="372" text-anchor="middle" font-size="12" fill="#7a7a7a">(Disk reader planned)</text>
+<rect x="540" y="480" width="230" height="100" rx="10" fill="#fff8d9" stroke="#9a7b00" stroke-width="2"/>
+<text x="655" y="506" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">The benchmark</text>
+<text x="655" y="528" text-anchor="middle" font-size="13" fill="#333333">is the Grid worm&#x27;s behaviour</text>
+<text x="655" y="547" text-anchor="middle" font-size="13" fill="#333333">within the real worms&#x27;?</text>
+<path d="M 655 400 L 655 478" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
+<text x="740" y="444" text-anchor="middle" font-size="13" font-style="italic" fill="#333333">both sets of measures</text>
+</svg>
