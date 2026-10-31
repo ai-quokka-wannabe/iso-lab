@@ -84,8 +84,8 @@ found lives in the journal section it names; this list keeps only what is open.
    a keep-the-state rule for ties.
 6. **Plan an experiment for every one of Matej's 128 ideas and hunches** - the maintainer's request - in the format
    of [docs/hypotheses/experiments/README.md](docs/hypotheses/experiments/README.md), whose index shows which are
-   planned. Next, one task each, in this order: **D** (13, and answer A10's question whether nematodes show anything
-   like play), **E1-E10**, **E11-E20**, **F** (17), **G** (30, from the gr-fec sandbox;
+   planned. Next, one task each, in this order: **D7-D13** (D1-D6 are planned; answer A10's question whether nematodes
+   show anything like play), **E1-E10**, **E11-E20**, **F** (17), **G** (30, from the gr-fec sandbox;
    [docs/research/gr-fec.md](docs/research/gr-fec.md) has its numbers). The journal records the triage, and hunches
    that survive are promoted into numbered hypotheses or tasks here.
 7. **Audit H10's first test by A12's plan**
@@ -215,6 +215,8 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-10-31: plans for D1-D6 (chemistry and affect), each waiting on food and a sense of intake; two leads' claims
+  corrected from their abstracts (journal of 2026-10-31, § Plans for D1-D6).
 - 2026-10-30: the toolbox's definitions of state durations and rates, read at source for item 2(c) (journal of
   2026-10-30, § How the Toolbox Turns States Into Durations and Rates).
 - 2026-10-30: the night's coherence audit: fourteen points, most mended (journal of 2026-10-30, § A Coherence Audit,
