@@ -51,8 +51,8 @@ found lives in the journal section it names; this list keeps only what is open.
    latency; fitted time constants for tap habituation from primary papers; and the primary sources for lethargus and
    sleep-like quiescence (for satiety, You et al. 2008 is identified, its full text not yet reached). Figures are
    within reach: Europe PMC's supplementary-files service serves a paper's figure images (pace.md § Noxious Heat).
-2. **Build the feature-extraction tool** for the chosen dataset, in the lab's Rust workspace (`crates/`), and compute
-   the wild-type reference statistics. Split into runs:
+2. **Build the feature-extraction tool** for the chosen dataset, in the lab's Rust workspace (`crates/`), compute
+   the wild-type reference statistics, and build the benchmark's test on them. Split into runs:
    - (a) the workspace and the MD5 check, done;
    - (b) the eligible manifest, the seeded draw in blocks of 200 and `fetch-block`, done
      ([data/README.md § The Eligible Manifest](data/README.md#the-eligible-manifest),
@@ -68,7 +68,39 @@ found lives in the journal section it names; this list keeps only what is open.
      The durations and rates are written to the toolbox's definitions (`features::states::event_stats`;
      [behaviour-measures.md § How the Toolbox Turns States Into Durations and Rates](docs/research/behaviour-measures.md#how-the-toolbox-turns-states-into-durations-and-rates)).
      Next: reproduce the stored durations and frequencies from the published speed, then check the lab's speed against them;
-   - (d) the reference statistics.
+   - (d) the reference statistics, split into runs (the maintainer's request, 2026-10-31, to build the benchmark
+     next; journal of 2026-10-31, § The Benchmark, Split Into Runs):
+       - (d1) one row of measures per recording: `features::profile` and a binary that writes one tab-separated row
+         per recording of a block, in the units of FEATURES.md § Common Units. It first decides, with its reason in
+         the journal, how recordings of unequal length and frame rate enter (FEATURES.md § Open Questions Before
+         Freezing asks for that before any statistic), and states a rule for a recording too gappy to measure, with a
+         reason column rather than silent dropping. Its columns are the measures already built: the spread of each
+         of the eight mean-removed arc angles (the eigen-shapes are fitted in (d2), across all the real worms), the
+         midbody speed, the three locomotion states' fractions, durations and rates, and each recording's share of
+         frames without a skeleton. The durations and rates stand only once item 2(c)'s check passes, and are marked
+         provisional until then;
+       - (d2) the reference statistics over block 1: the eigen-shapes fitted on its real worms' eight angles, with the
+         share of variance they carry; each measure's median and spread across recordings, with a seeded bootstrap
+         interval; and how stable they are between the block's two halves;
+       - (d3) the gaps by cause, as FEATURES.md § Open Questions Before Freezing asks: how a recording's missing
+         frames split between dropped frames, stage movements and failed extraction, and per measure how much it
+         leans on frames likely to be lost;
+   - (e) the benchmark's test (PLAN.md Phase 0, step 5), split into runs:
+       - (e1) a crate `benchmark` with the classifier two-sample test PLAN.md names (Lopez-Paz and Oquab 2017): a
+         small classifier, deterministic given a seed, its cross-validated accuracy, and chance measured by a
+         permutation test - the spread of the accuracy under shuffled labels - in place of PLAN.md's "confidence
+         interval", for the reason in the journal; red-first tests on synthetic samples - one distribution must not
+         be told apart from itself beyond chance, a shifted one must be - with the settings fixed before any real data
+         is seen;
+       - (e2) the per-measure comparisons PLAN.md asks for beside the classifier ("say where they differ when they
+         do"): for each measure, the two samples' distributions compared by a statistic fixed beforehand;
+       - (e3) the test on real data alone: block 1's real worms against block 2's, recordings neither has seen, which
+         must come out indistinguishable; and a positive control - the same recordings deliberately altered by a
+         stated amount - which must be told apart;
+       - (e4) how large an alteration of each measure the test can see, from the positive control at several sizes;
+       - (e5) freezing the definition, which waits on
+         [FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing) -
+         food first - and on reading a Disk (*Blocked*).
 3. **Prove the arena**: build Master Control and the Grid from `external/` on Linux with lavapipe, write a placeholder
    Program, live one life and extract the same features from it. Done: (a) Master Control, (b) the Grid,
    (c) the placeholder (`crates/placeholder-worm`), (d1) one life, its Disk and log kept and replayed (journal of
