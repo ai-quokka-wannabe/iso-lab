@@ -100,7 +100,7 @@ proven (STATE.md item 3), so no plan gives absolute figures yet; each will when 
 - **Cost**: 20 lives per test point, 16 points - about 320 test lives for each of the three Programs (P-trained,
   Q-trained, untrained), 960 in all, plus the training lives of the two trained Programs, whose number H9 will fix.
 - **Waits on**: a Program that reads the Grid's chemical sense, which has carried food odour since Program ABI 11 (an
-  odour other than food's waits on the world; STATE.md *Needs From Other Repositories*), and a Program that learns
+  odour other than food's waits on the world, which the lab has not yet asked for), and a Program that learns
   (H9).
 - **Leads**: none named.
 
@@ -223,9 +223,8 @@ proven (STATE.md item 3), so no plan gives absolute figures yet; each will when 
 - **Seeds and repetitions**: 20 seeds per assay per world per brain.
 - **Cost**: the dish's own build; 20 dish lives and 20 Grid lives per assay per brain, three brains.
 - **Waits on**: A1's bands and the arena. A1's chemotaxis assays can be compared on the Grid only for odours
-  it carries - food's alone, since Program ABI 11 (STATE.md *Needs From Other Repositories*); the rest run in the dish
-  alone and the
-  dish-to-Grid comparison covers the rest. The dish's temperature gradient is built because the hunch names it, but A1
+  it carries - food's alone, since Program ABI 11 (STATE.md *Needs From Other Repositories*). Assays with any other
+  odour run in the dish alone, and the dish-to-Grid comparison covers the other measures. The dish's temperature gradient is built because the hunch names it, but A1
   has no thermotaxis assay, so nothing is compared on it until one is planned with its source; a sense of the
   substrate's temperature on the Grid is not asked for until then. The dish is a tool, so it is
   written in Rust (the rule *Rust first*); it never scores a brain - scoring stays on the Grid.
