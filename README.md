@@ -20,7 +20,7 @@ New to the lab? A short tour, in this order:
    second agent checking it before it lands.
 3. **Where things stand** - [STATE.md § Where We Are](STATE.md#where-we-are), then [the plan](docs/PLAN.md) and its
    picture of the benchmark that will judge a Grid worm against real ones.
-4. **What has been tried** - [the journal's index](docs/journal/README.md), a line a night;
+4. **What has been tried** - [the journal's index](docs/journal/README.md#the-nights), a line a night;
    [what the lab has found](docs/research/findings.md), failures beside successes; and the toy worm's results as a
    plot, under [H14](docs/hypotheses/README.md#h14-graded-slow-knobs-change-detecting-senses-and-individuality).
 5. **The ideas** - [the hypotheses](docs/hypotheses/README.md), with the path an idea takes from a hunch to a brain.
