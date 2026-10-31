@@ -13,6 +13,14 @@ are read from the world's sources at the commits `external/` pins, and were last
 `ee5332d`, master-control `53e5acb` and link `9b1b771` (journal of 2026-10-30, § A Coherence Audit, and What It
 Mended).
 
+![The benchmark's pipeline: recordings of real worms are downloaded by fetch-block, measured by features and
+summarised as reference statistics; a Program's lives on the Grid are recorded as Disks, to be measured the same way
+through a planned Disk reader; a frozen classifier test will ask whether the two can be told apart on all measures at
+once, and per-measure comparisons will say where they differ. Dashed boxes are not yet built.](../figures/diagram_benchmark.svg)
+
+*Where this comparison space sits in the benchmark's pipeline; a dashed box is not yet built. Drawn by
+[notebooks/figures.ipynb](../../notebooks/figures.ipynb).*
+
 ## The Two Bodies
 
 | | The real worm (the reference recordings) | The Grid's worm |

@@ -51,8 +51,8 @@ found lives in the journal section it names; this list keeps only what is open.
    latency; fitted time constants for tap habituation from primary papers; and the primary sources for lethargus and
    sleep-like quiescence (for satiety, You et al. 2008 is identified, its full text not yet reached). Figures are
    within reach: Europe PMC's supplementary-files service serves a paper's figure images (pace.md § Noxious Heat).
-2. **Build the feature-extraction tool** for the chosen dataset, in the lab's Rust workspace (`crates/`), and compute
-   the wild-type reference statistics. Split into runs:
+2. **Build the feature-extraction tool** for the chosen dataset, in the lab's Rust workspace (`crates/`), compute
+   the wild-type reference statistics, and build the benchmark's test on them. Split into runs:
    - (a) the workspace and the MD5 check, done;
    - (b) the eligible manifest, the seeded draw in blocks of 200 and `fetch-block`, done
      ([data/README.md § The Eligible Manifest](data/README.md#the-eligible-manifest),
@@ -68,7 +68,39 @@ found lives in the journal section it names; this list keeps only what is open.
      The durations and rates are written to the toolbox's definitions (`features::states::event_stats`;
      [behaviour-measures.md § How the Toolbox Turns States Into Durations and Rates](docs/research/behaviour-measures.md#how-the-toolbox-turns-states-into-durations-and-rates)).
      Next: reproduce the stored durations and frequencies from the published speed, then check the lab's speed against them;
-   - (d) the reference statistics.
+   - (d) the reference statistics, split into runs (the maintainer's request, 2026-10-31, to build the benchmark
+     next; journal of 2026-10-31, § The Benchmark, Split Into Runs):
+       - (d1) one row of measures per recording: `features::profile` and a binary that writes one tab-separated row
+         per recording of a block, in the units of FEATURES.md § Common Units. It first decides, with its reason in
+         the journal, how recordings of unequal length and frame rate enter (FEATURES.md § Open Questions Before
+         Freezing asks for that before any statistic), and states a rule for a recording too gappy to measure, with a
+         reason column rather than silent dropping. Its columns are the measures already built: the spread of each
+         of the eight mean-removed arc angles (the eigen-shapes are fitted in (d2), across all the real worms), the
+         midbody speed, the three locomotion states' fractions, durations and rates, and each recording's share of
+         frames without a skeleton. The durations and rates stand only once item 2(c)'s check passes, and are marked
+         provisional until then;
+       - (d2) the reference statistics over block 1: the eigen-shapes fitted on its real worms' eight angles, with the
+         share of variance they carry; each measure's median and spread across recordings, with a seeded bootstrap
+         interval; and how stable they are between the block's two halves;
+       - (d3) the gaps by cause, as FEATURES.md § Open Questions Before Freezing asks: how a recording's missing
+         frames split between dropped frames, stage movements and failed extraction, and per measure how much it
+         leans on frames likely to be lost;
+   - (e) the benchmark's test (PLAN.md Phase 0, step 5), split into runs:
+       - (e1) a crate `benchmark` with the classifier two-sample test PLAN.md names (Lopez-Paz and Oquab 2017): a
+         small classifier, deterministic given a seed, its cross-validated accuracy, and chance measured by a
+         permutation test - the spread of the accuracy under shuffled labels - in place of PLAN.md's "confidence
+         interval", for the reason in the journal; red-first tests on synthetic samples - one distribution must not
+         be told apart from itself beyond chance, a shifted one must be - with the settings fixed before any real data
+         is seen;
+       - (e2) the per-measure comparisons PLAN.md asks for beside the classifier ("say where they differ when they
+         do"): for each measure, the two samples' distributions compared by a statistic fixed beforehand;
+       - (e3) the test on real data alone: block 1's real worms against block 2's, recordings neither has seen, which
+         must come out indistinguishable; and a positive control - the same recordings deliberately altered by a
+         stated amount - which must be told apart;
+       - (e4) how large an alteration of each measure the test can see, from the positive control at several sizes;
+       - (e5) freezing the definition, which waits on
+         [FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing) -
+         food first - and on reading a Disk (*Blocked*).
 3. **Prove the arena**: build Master Control and the Grid from `external/` on Linux with lavapipe, write a placeholder
    Program, live one life and extract the same features from it. Done: (a) Master Control, (b) the Grid,
    (c) the placeholder (`crates/placeholder-worm`), (d1) one life, its Disk and log kept and replayed (journal of
@@ -127,23 +159,20 @@ found lives in the journal section it names; this list keeps only what is open.
       every new plot with matplotlib by the rules of *Figures are SVG*, and checks in its last cell, run locally, that
       drawing again changes no byte (a local check, not a CI job; H11's figures stay with their own notebooks); proved
       on the first diagram, how the pieces fit;
-    - (b) two diagrams: a night's cycle, and the benchmark's pipeline from recordings and lives to a verdict;
-    - (c) one more diagram, how hypotheses, hunches and plans relate, and one plot of the toy worm's graded-gain series
-      with their intervals, in two panels whose scope is stated on the figure: the warm-world contrasts on fresh
-      layouts (K1, K2, K3 and the K3 run's contrast with never steering, L1, L2, M1, M2, P1, P2, Q1, Q2), the leads
-      beside the results against never steering; and the rich-layout contrasts (K4, W1, Z1, F1, F2, H1).
-      Each number is read from the journal section that
-      [README.md § H14](docs/hypotheses/README.md#h14-graded-slow-knobs-change-detecting-senses-and-individuality)
-      cites for it, and cited to it in the notebook;
-    - (d) a "start here" tour in the README, built around the diagrams, which replaces or points to the README's
-      *Where Things Are* table rather than repeating it; its glossary defines only the lab's own words and links to
-      tron-grid-lite's README and `.claude/CLAUDE.md` § Writing for the organisation's;
-    - (e) a journal index in the existing `docs/journal/README.md`, one line per night; whether each night's write-up
-      step should add its line is the maintainer's call (see *To Revisit*);
+    - (b) done (journal of 2026-10-31, § Two Diagrams: a Night's Cycle and the Benchmark's Pipeline): two diagrams,
+      a night's cycle and the benchmark's pipeline;
+    - (c) done (journal of 2026-10-31, § An Idea's Path, and the Toy Worm's Graded Gain as a Plot): the ideas diagram,
+      in the README and the hypotheses' README, and the graded-gain series as a forest plot in two panels, under H14;
+    - (d) done (journal of 2026-10-31, § A "Start Here" Tour in the README): a six-stop tour at the README's head,
+      built around the diagrams and pointing to *Where Things Are*, and a short glossary of the lab's own words;
+    - (e) done (journal of 2026-10-31, § A Journal Index): a table in `docs/journal/README.md`, one line a night with
+      the section to start reading at; whether each night's write-up step should add its line is the maintainer's call
+      (see *To Revisit*);
     - (f) STATE.md cut back to what is current: *Done* to the latest night only, as its own header says; the *Last
       updated* paragraph; and the longest *Next* items (2 and 9) cut to their open steps, each removed line first
       checked, one by one, to be held by the journal it points to;
-    - (g) the hypotheses' README: a short section with (c)'s diagram, pointing to the experiments' index for the rest;
+    - (g) the hypotheses' README: (c)'s diagram is in it; what is left is a short section pointing to the experiments'
+      index for the rest;
     - (h) the audits (`check-coherence`, `check-style`, `check-spelling`) once more, to catch what is left.
 
 ## To Revisit
@@ -152,7 +181,7 @@ Experiments that failed or came out inconclusive, kept rather than discarded (th
 the idea for the next attempt.
 
 - **For the maintainer**: whether each night's write-up (step 8 of *Each run, in order*) should also add a line to
-  the journal index planned in item 10 (e); without that, the index goes stale.
+  the journal index in `docs/journal/README.md` (item 10 (e)); without that, the index goes stale.
 - **For the maintainer**: whether a decided item, such as the speed for the locomotion states, stays under
   [FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing) or moves to
   a section of decisions (journal of 2026-10-30, § A Coherence Audit, and What It Mended).
@@ -258,6 +287,15 @@ The latest night only, one line a task; earlier nights are in [the journal](docs
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
 - 2026-10-31: plans for E6-E10 (learning and memory) (journal of 2026-10-31, § Plans for E6-E10).
+- 2026-10-31: item 10 (d), a "start here" tour and a glossary of the lab's own words in the README (journal of
+  2026-10-31, § A "Start Here" Tour in the README).
+- 2026-10-31: item 10 (e), a journal index - one line a night, with the section to start at, in
+  `docs/journal/README.md` (journal of 2026-10-31, § A Journal Index).
+- 2026-10-31: item 10 (c), the ideas diagram and a forest plot of every contrast H14 records, both drawn by
+  `notebooks/figures.ipynb` (journal of 2026-10-31, § An Idea's Path, and the Toy Worm's Graded Gain as a Plot).
+- 2026-10-31: item 10 (b), two diagrams - a night's cycle, in the README and NIGHT_SHIFT.md, and the benchmark's
+  pipeline, in PLAN.md and FEATURES.md (journal of 2026-10-31, § Two Diagrams: a Night's Cycle and the Benchmark's
+  Pipeline).
 - 2026-10-31: item 10 (a), the figure tooling and the first diagram, how the pieces fit, in the README (journal of
   2026-10-31, § The Figure Tooling, and the First Diagram).
 - 2026-10-31: plans for E1-E3 and E5 (learning and memory), taken up again after parking and read whole by a fresh

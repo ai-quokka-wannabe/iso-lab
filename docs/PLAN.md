@@ -46,6 +46,14 @@ does not offer yet (smell, hence chemotaxis) are listed as not comparable and st
 5. Implement the test, check it on held-out real recordings (real against real must come out
    indistinguishable), and freeze the definition.
 
+![The benchmark's pipeline: recordings of real worms are downloaded by fetch-block, measured by features and
+summarised as reference statistics; a Program's lives on the Grid are recorded as Disks, to be measured the same way
+through a planned Disk reader; a frozen classifier test will ask whether the two can be told apart on all measures at
+once, and per-measure comparisons will say where they differ. Dashed boxes are not yet built.](figures/diagram_benchmark.svg)
+
+*The benchmark's pipeline; a dashed box is not yet built. Drawn by
+[notebooks/figures.ipynb](../notebooks/figures.ipynb).*
+
 ### Phase 1: The Arena
 
 Live headless lives in the cloud: Master Control (the world) and the Grid's creature host (rendering the
