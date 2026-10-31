@@ -1,7 +1,7 @@
 # State of the Lab
 
-**Last updated:** 2026-10-31 ([the journal of 2026-10-31](docs/journal/2026-10-31.md)): the toolbox's event
-statistics landed in Rust, and D1-D6 were planned. Before it, 2026-10-30
+**Last updated:** 2026-10-31 ([the journal of 2026-10-31](docs/journal/2026-10-31.md)): D1-D6 were planned, and the toolbox's
+event statistics (done 2026-10-30) were merged. Before it, 2026-10-30
 ([the journal of 2026-10-30](docs/journal/2026-10-30.md)): `external/` moved to latest
 `main` twice, the first time with the world unchanged, the second to Link protocol 12 with food eaten in the tick.
 The global rule without the margin was tested on the ten fresh banded layouts: the cold-band hunch is refuted for it
