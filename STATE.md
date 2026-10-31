@@ -206,9 +206,9 @@ points to the open ones and says what waits on each.
   The benchmark is not frozen until food is settled, by these issues or by comparing with foodless worms instead.
   Under way upstream, by the maintainer's comment on both issues (2026-10-29): the design is merged (tron-grid-lite
   #164, #166), then master-control#70 (the world's half, no wire) and link#49 (protocol v12), both merged, then the
-  wire and food in the tick (master-control#72 and #73, pinned since the journal of 2026-10-30); next the Grid
-  (Program ABI 11) and rc-worm. When Program ABI 11 lands, the lab's placeholder Program must be
-  rebuilt against it before the next bump merges.
+  wire and food in the tick (master-control#72 and #73, pinned since the journal of 2026-10-30); then the Grid's
+  Program ABI 11 (tron-grid-lite #172 and #173), which carries `intake` and `odour[2][8]` to Programs, pinned with the
+  placeholder rebuilt against it (journal of 2026-10-31, § The Grid Moves to Program ABI 11); next rc-worm.
 - **The worm's bends against the Grid's joint limit**
   ([tron-grid-lite#165](https://github.com/ai-quokka-wannabe/tron-grid-lite/issues/165), filed 2026-10-29). At the eight-arc
   resolution 9.8 to 68.6% (median 35.8%, 34 recordings) of the reference worms' skeletonised frames bend beyond the
@@ -223,6 +223,9 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-10-31: `external/` at the latest mains: tron-grid-lite to Program ABI 11, the placeholder rebuilt; build,
+  render and the placeholder's life unchanged at a matched join tick (journal of 2026-10-31, § The Grid Moves to
+  Program ABI 11).
 - 2026-10-31: plans for D7-D13, and A10's question answered: no report of play in a nematode found (journal of
   2026-10-31, § Plans for D7-D13).
 - 2026-10-31: plans for D1-D6 (chemistry and affect), each waiting on food and a sense of intake; the leads' bearing
