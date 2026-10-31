@@ -94,7 +94,7 @@ out of their sources when the experiment is prepared.
 | E1 | Habituation is ten properties, not one decrement | [planned](E1-E5.md#e1-habituation-is-ten-properties-not-one-decrement) |
 | E2 | Novelty as mismatch, proven by an omission | [planned](E1-E5.md#e2-novelty-as-mismatch-proven-by-an-omission) |
 | E3 | Three kinds of learning in three places | [planned](E1-E5.md#e3-three-kinds-of-learning-in-three-places) |
-| E4 | Hebbian learning needs a stabiliser and a "used together" rule | [planned](E1-E5.md#e4-hebbian-learning-needs-a-stabiliser-and-a-used-together-rule) |
+| E4 | Hebbian learning needs a stabiliser and a "used together" rule | [parked: plan failed verification](E1-E5.md#e4-hebbian-learning-needs-a-stabiliser-and-a-used-together-rule) |
 | E5 | Memories that bind what, where, when and how it felt | [planned](E1-E5.md#e5-memories-that-bind-what-where-when-and-how-it-felt) |
 | E6 | Separate, complete, consolidate, replay | to plan |
 | E7 | Promote after spaced recurrence; merge when predictions agree; never delete | to plan |

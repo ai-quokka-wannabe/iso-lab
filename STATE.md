@@ -87,7 +87,7 @@ found lives in the journal section it names; this list keeps only what is open.
    a keep-the-state rule for ties.
 6. **Plan an experiment for every one of Matej's 128 ideas and hunches** - the maintainer's request - in the format
    of [docs/hypotheses/experiments/README.md](docs/hypotheses/experiments/README.md), whose index shows which are
-   planned. Next, one task each, in this order: **E6-E10** (E1-E5 are planned), **E11-E20**, **F** (17), **G** (30, from the gr-fec sandbox;
+   planned. Next, one task each, in this order: **E6-E10** (E1-E3 and E5 are planned; E4 is parked, see *Blocked*), **E11-E20**, **F** (17), **G** (30, from the gr-fec sandbox;
    [docs/research/gr-fec.md](docs/research/gr-fec.md) has its numbers). The journal records the triage, and hunches
    that survive are promoted into numbered hypotheses or tasks here.
 7. **Audit H10's first test by A12's plan**
@@ -160,6 +160,15 @@ the idea for the next attempt.
 
 ## Blocked
 
+- **The plan for E4, Hebb's rule with a stabiliser and a "used together" rule**
+  ([#180](https://github.com/ai-quokka-wannabe/iso-lab/pull/180), merged with the plan marked as parked in
+  [E1-E5.md](docs/hypotheses/experiments/E1-E5.md#e4-hebbian-learning-needs-a-stabiliser-and-a-used-together-rule)).
+  A probe found that sign units ignore Oja's rescaling, so the stabiliser cannot act; Oja's update is not written as an
+  equation; and an unstated zero-input rule decides the hub condition. Next: pilot the network in a notebook before
+  writing the plan again - graded units, or a threshold, so a rescaling can matter; Oja's update as an equation with
+  its output named; a stated rule at zero input; overlap taken as absolute, so a cue that settles in the mirror of a
+  pattern counts; and a capacity check per seed. Write the plan only once the pilot shows Hebb's rule alone capturing
+  and a stabiliser able to change it.
 - **The plan for C18, spreading activation's cliff**
   ([#45](https://github.com/ai-quokka-wannabe/iso-lab/pull/45), merged as a record, with the plan marked as parked in
   [C13-C24.md](docs/hypotheses/experiments/C13-C24.md#c18-spreading-activation-has-a-cliff)). Its model as written
@@ -223,8 +232,8 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
-- 2026-10-31: plans for E1-E5 (learning and memory), taken up again after parking, E4 written out in full, and read whole
-  by a fresh verifier (journal of 2026-10-31, § The E1-E5 Plans, Taken Up Again).
+- 2026-10-31: plans for E1-E3 and E5 (learning and memory), taken up again after parking and read whole by a fresh
+  verifier; E4 parked again, its network needing a pilot (journal of 2026-10-31, § The E1-E5 Plans, Taken Up Again).
 - 2026-10-31: `external/` at the latest mains: tron-grid-lite to Program ABI 11, the placeholder rebuilt; build,
   render and the placeholder's life unchanged (a life with no refused intent is byte-identical at both pins) (journal of 2026-10-31, § The Grid Moves to
   Program ABI 11).
