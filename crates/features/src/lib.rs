@@ -21,8 +21,9 @@
 //! micrometres, with frames that could not be skeletonised filled with NaN, and the frame rate
 //! as the `fps` attribute of `/features_timeseries` (docs/journal of 2026-10-14, *Reading the
 //! Features Files*).
-//! The published per-frame feature table itself is not read: the lab computes its own measures
-//! from the skeletons (docs/journal of 2026-10-14, *Reading the Features Files*).
+//! The lab computes its own measures from the skeletons (docs/journal of 2026-10-14, *Reading the
+//! Features Files*); of the published per-frame feature table it reads only the `timestamp` and
+//! `skeleton_id` columns, to tell gaps apart by cause ([`gaps`]).
 
 pub mod eigenshapes;
 pub mod gaps;
