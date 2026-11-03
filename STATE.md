@@ -4,7 +4,7 @@
 latest mains, with the world, the render and the placeholder's life unchanged; C18's plan was run, and the hunch is
 refuted in its cures; the pace note's gaps had a fourth pass; E4 was planned again from a pilot, and its four
 assertions became tests in Rust; the reference statistics over block 1 were computed, their interval's level pinned by
-a test, block 1's gaps split by cause, and the eigen-shape amplitudes made measures on a frozen basis; and on fresh
+a test, block 1's gaps split by cause, and the eigen-shape amplitudes made measures on a frozen basis; associative memory surveyed for a worm-sized brain; and on fresh
 warm layouts the toy worm's steering harm did not reappear; and C18's two loose ends were run, the threshold sweep
 void by its control and the finer grid's 1.1 D share read. Before it,
 2026-10-31 ([the journal of 2026-10-31](docs/journal/2026-10-31.md)): C18 was unparked - its lead read in
@@ -113,31 +113,24 @@ found lives in the journal section it names; this list keeps only what is open.
    (c) the placeholder (`crates/placeholder-worm`), (d1) one life, its Disk and log kept and replayed (journal of
    2026-10-14, § The Arena, Fourth Step: One Life). Open: (d2) the same features extracted from the Disk, which needs a Disk
    reader in `features`, and the share of refused intents measured; waits on a ruling (see *Blocked*).
-4. **Survey associative memory for a worm-sized brain**, as `docs/research/associative-memory.md`: Hebbian
-   learning and Oja's rule, Hopfield networks classical and modern, Boltzmann machines, dense associative
-   memory - what each is, what it would cost a brain on the worm's scale to run, which of the worm's
-   behaviours it could carry, and how each would be ablated and tested ([H5, H6 and H9](docs/hypotheses/README.md)).
-   A notebook that tries them on toy problems is welcome. The maintainer points out that the 2024 Nobel Prize
-   in Physics went to this line of work (Hopfield and Hinton); cite the Nobel committee's own text, read at the
-   source.
-5. **Read the quantum-like Program's sources, then test it again**: read Noest 1988, Jankowski, Lozowski and
+4. **Read the quantum-like Program's sources, then test it again**: read Noest 1988, Jankowski, Lozowski and
    Zurada 1996 and Kobayashi 2017 at the source (H10 cites them unread), check the first test's attribution of its
    update rule, then run the next test under *To Revisit* with a finer grid, more cues, a symmetric success rule and
    a keep-the-state rule for ties.
-6. **Plan an experiment for every one of Matej's 128 ideas and hunches** - the maintainer's request - in the format
+5. **Plan an experiment for every one of Matej's 128 ideas and hunches** - the maintainer's request - in the format
    of [docs/hypotheses/experiments/README.md](docs/hypotheses/experiments/README.md), whose index shows which are
    planned. Next, one task each, in this order: **E11-E20** (E1-E10 are planned), **F** (17), **G** (30, from the gr-fec sandbox;
    [docs/research/gr-fec.md](docs/research/gr-fec.md) has its numbers). The journal records the triage, and hunches
    that survive are promoted into numbered hypotheses or tasks here.
-7. **Audit H10's first test by A12's plan**
+6. **Audit H10's first test by A12's plan**
    ([docs/hypotheses/experiments/A9-A15.md § A12](docs/hypotheses/experiments/A9-A15.md#a12-experiment-hygiene)):
    planted copies prepared by one agent and audited, blind, by another that has read neither that test's review nor
    the preparation.
-8. **Audit the Program interface field by field**, by
+7. **Audit the Program interface field by field**, by
    [docs/hypotheses/experiments/B.md § B1](docs/hypotheses/experiments/B.md#b1-a-nervous-system-not-a-game-client):
    every sense and action against what a worm can transduce and produce, with a blind planted-field control; the
    delay grades wait on item 1.
-9. **gr-fec's worm by equation** - the maintainer's aim (2026-10-26): understand [gr-fec's worm](docs/research/gr-fec.md)
+8. **gr-fec's worm by equation** - the maintainer's aim (2026-10-26): understand [gr-fec's worm](docs/research/gr-fec.md)
    well enough to design it for a chosen behaviour, with every decision auditable, instead of evolving it. What is
    known is in [gr-fec.md §§ 9-10](docs/research/gr-fec.md#9-what-the-lab-found-on-taking-it-up-2026-10-26) and
    [findings.md § Designing a Brain](docs/research/findings.md#designing-a-brain); each experiment's script and pull
@@ -161,7 +154,7 @@ found lives in the journal section it names; this list keeps only what is open.
    - (d) the composition law: a third lever that acts alone, and roaming's interaction as its own test.
 
    Once a calculation matters to anything the lab builds on, it moves into tested Rust.
-10. **Make the repository easy to enter** - the maintainer's request (2026-10-31): tidy the repository and make it
+9. **Make the repository easy to enter** - the maintainer's request (2026-10-31): tidy the repository and make it
     presentable so that new people are not lost, with more plots, diagrams and flowcharts, as SVG and never as
     binaries. The survey and the reasons are in the journal of 2026-10-31, § A Plan to Make the Lab Easy to Enter.
     One run each, in this order:
@@ -186,6 +179,14 @@ found lives in the journal section it names; this list keeps only what is open.
       index for the rest;
     - (h) the audits (`check-coherence`, `check-style`, `check-spelling`) once more, to catch what is left.
 
+10. **Try the associative memories on the worm's scale**, from
+    [docs/research/associative-memory.md](docs/research/associative-memory.md) § For the Lab: first read its gaps
+    (§ Gaps, to Be Read - Hopfield 1982 and Oja 1982 in full, Amit, Gutfreund and Sompolinsky's capacity), then, in a
+    notebook, a 302-unit classical network, a dense one and a Boltzmann machine at a load of two or three states,
+    each with its switch, measuring the sweeps a settling takes against the decision times in
+    [pace.md](docs/research/pace.md). Exploration only; a module that earns its place moves into Rust and waits, as
+    E4 does, on a Program and the frozen benchmark.
+
 ## To Revisit
 
 Experiments that failed or came out inconclusive, kept rather than discarded (the maintainer's ruling); each with
@@ -197,12 +198,12 @@ the idea for the next attempt.
   fresh draws account for part of it. Descriptively, D fell from 1.654 to 1.160 towards the graph's own 1.014 as the
   threshold fell. Next attempt: the same sweep with fresh seeds, with L0 set against the run's own grid of step 0.25.
 - **For the maintainer**: whether each night's write-up (step 8 of *Each run, in order*) should also add a line to
-  the journal index in `docs/journal/README.md` (item 10 (e)); without that, the index goes stale.
+  the journal index in `docs/journal/README.md` (item 9 (e)); without that, the index goes stale.
 - **For the maintainer**: whether a decided item, such as the speed for the locomotion states, stays under
   [FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing) or moves to
   a section of decisions (journal of 2026-10-30, § A Coherence Audit, and What It Mended).
 - **H10, phasor against real memory** ([the notebook](notebooks/h10_phasor_memory.ipynb), 2026-10-13): no better at
-  the same memory budget, at twice the compute. Next, after item 5's re-run of this test with fairer rules: test
+  the same memory budget, at twice the compute. Next, after item 4's re-run of this test with fairer rules: test
   phase where the hunch says it matters - the undulation phase of a rhythm generator, interference between two paths
   (F1), or more phase states.
 - **H11, a Hebbian Hopfield transformer** ([v1](notebooks/h11_hebbian_hopfield_transformer.ipynb),
@@ -333,3 +334,8 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
 - 2026-11-03: the basis-stop tests (*Next* item 11 that night): `check_basis` is fed a fit that satisfies the
   eigenvalue identity exactly with shapes turned by 1e-11 rad, and must be stopped, which pins the 1e-12 limit to
   within a decade; and its mirror, the frozen shapes with eigenvalues 1e-8 off, must be stopped by the 1e-9 identity (journal of 2026-11-03, § The Basis Stop, Tested).
+- 2026-11-03: item 4, associative memory surveyed in
+  [docs/research/associative-memory.md](docs/research/associative-memory.md): four families, each with its equation,
+  its cost at 302 neurons, its behaviours, its ablations and its ties to H5, H6, H9 and E4. The worm needs a
+  mechanism - settling, blending, sampling - not capacity; Hopfield 1982 was read in abstract only, Oja 1982 and Amit,
+  Gutfreund and Sompolinsky not at all (journal of 2026-11-03, § Associative Memory, Surveyed).
