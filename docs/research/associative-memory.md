@@ -15,7 +15,7 @@ behaviours it could carry; how it would be ablated and tested; and how it bears 
 |--------|------|
 | The Nobel Committee for Physics, [Scientific Background to the Nobel Prize in Physics 2024](https://www.nobelprize.org/uploads/2024/11/advanced-physicsprize2024-3.pdf), and the [press release](https://www.nobelprize.org/prizes/physics/2024/press-release/) | in full, at nobelprize.org |
 | [Krotov and Hopfield 2016](https://arxiv.org/abs/1606.01164), "Dense Associative Memory for Pattern Recognition" | in full, arXiv v2 |
-| [Ramsauer et al. 2020](https://arxiv.org/abs/2008.02217), "Hopfield Networks is All You Need" | the abstract and § 2 (the energy, the update and Theorems 1-3), arXiv v3; the appendix not read |
+| [Ramsauer et al. 2020](https://arxiv.org/abs/2008.02217), "Hopfield Networks is All You Need" | the abstract and § 2 up to Theorem 3 (the energy, the update, Theorems 1-3), arXiv v3; Theorem 4 only in its opening sentence and its bounds not read; Theorem 5 onwards and the appendix not read |
 | [Ackley, Hinton and Sejnowski 1985](https://doi.org/10.1207/s15516709cog0901_7), "A Learning Algorithm for Boltzmann Machines" | its sections on the decision rule and the learning rule, in a scan hosted on [Hinton's university page](https://www.cs.toronto.edu/~hinton/absps/cogscibm.pdf); the scan's text layer is damaged, so its equations are written below in the form the paper's prose describes, not copied |
 | [Hopfield 1982](https://doi.org/10.1073/pnas.79.8.2554), PNAS | **abstract only**, through Europe PMC (PMC346238); the full text could not be fetched from PubMed Central, Europe PMC or PNAS from the cloud machine. Its model is described below from the Nobel committee's account, which is cited for it |
 | [Oja 1982](https://doi.org/10.1007/BF00275687), *Journal of Mathematical Biology* 15, 267-273 | **not read**: its metadata only, through Crossref; the publisher's copy is closed |
@@ -80,11 +80,13 @@ the stabiliser off (Hebb alone), and the "used together" rule off. E4's pilot sh
 resting drive b, a loop ignites itself once its weight passes `w*` = 1 - 2b, and that Oja's rule bounds a weight at 1,
 above `w*`, so it does not prevent ignition
 ([E1-E5.md § E4](../hypotheses/experiments/E1-E5.md#e4-hebbian-learning-needs-a-stabiliser-and-a-used-together-rule);
-asserted in `crates/hebbian`). So for the worm, Oja's rule is a principal-component rule, not by itself a guard against
-runaway: the guard has to bound the loop gain below `w*`.
+asserted in `crates/hebbian`). E4 itself calls these "assertions, not tests", and what they leave "a design rule, not
+a finding": they hold for that one toy model class, with its chosen constants. In that class, Oja's bound of 1 lies
+above `w*`, which suggests that a guard against runaway has to bound the loop gain below ignition; whether that rule
+matters for a worm is untested, and waits on a Program and the frozen benchmark.
 
-**Ties.** H9 (Hebb's rule writes the memory; Oja keeps it bounded) and E4, whose pilot already tested what Oja does and
-does not bound. H6 only through the learning rate a modulator would set (H8).
+**Ties.** H9 (Hebb's rule writes the memory; Oja keeps it bounded) and E4, whose pilot asserts, in its toy model
+class, where Oja's bound lies against the ignition point; E4's test of the rule waits on a Program. H6 only through the learning rate a modulator would set (H8).
 
 ## 2. The Classical Hopfield Network and Its Capacity
 
@@ -150,8 +152,10 @@ E = - Σ_μ F(ξ^μ · σ),
 
 with F(x) = x^n, or a rectified polynomial; n = 2 is the classical network
 ([Krotov and Hopfield 2016](https://arxiv.org/abs/1606.01164), eqs. 2-3). Each memory's well becomes sharper, and the
-capacity grows as K_max = α_n N^(n-1) (eq. 5). Ramsauer et al. take F exponential and the state continuous, with
-energy
+capacity grows as K_max = α_n N^(n-1) (eq. 5). An exponential F was introduced by Demircigil et al.
+(2017), with a capacity of N = 2^(d/2) binary patterns - both as Ramsauer et al. report them (§ 2; Demircigil et al.
+not read). Ramsauer et al. make the state continuous and take the logarithm of that energy plus a quadratic term,
+with energy
 
 ```text
 E = - lse(β, Xᵀξ) + ½ ξᵀξ + β⁻¹ log N + ½ M²
@@ -164,7 +168,8 @@ and update
 ```
 
 where the columns of X are the stored patterns ([Ramsauer et al. 2020](https://arxiv.org/abs/2008.02217), eqs. 2-3;
-here N is the number of patterns and d their dimension). The network "can store exponentially (with the dimension of
+here N is the number of patterns and d their dimension). Their own capacity bound is their Theorem 3, for random patterns
+on a sphere. The network "can store exponentially (with the dimension of
 the associative space) many patterns, retrieves the pattern with one update", and its update "is equivalent to the
 attention mechanism used in transformers" (abstract). Besides fixed points for single patterns it has "metastable
 states averaging over a subset of patterns" and a global fixed point averaging all of them (abstract).
@@ -175,7 +180,7 @@ the network keeps each memory as a column of X: K memories of 302 numbers, and a
 exponentials a retrieval - 25 000 multiply-adds for 42 memories. Krotov and Hopfield's own duality reads the same
 thing as a network "with one hidden layer" (abstract): in the lab's reading, in effect one hidden unit per memory, so the memories are
 neurons too. The exponential capacity is a statement about the dimension of the patterns, not a saving on neurons, and
-a worm has no use for 2^(d/2) memories.
+a worm has no use for exponentially many memories.
 
 **What it could carry.** One-step retrieval and the metastable averages are the attractive parts: a single settling
 step, cheap enough for every tick, and a state that blends similar memories rather than choosing one. A candidate for
@@ -186,7 +191,7 @@ was refuted (journal of 2026-10-14), which counts against reaching for this fami
 memory matrix cleared after each life. The test is the same benchmark measure as the module's behaviour asks for,
 with the module's neurons counted in the brain's size by *Lean brains*: hidden units per memory are not free.
 
-**Ties.** H5 names Ramsauer et al. and Krotov and Hopfield; H9 calls dense associative memory "the line that leads to
+**Ties.** H5 names Hopfield 1982, Ramsauer et al. and Chen et al. 2018; Krotov and Hopfield are cited in H9, which calls dense associative memory "the line that leads to
 the modern Hopfield networks of H5". Neither has been tested on the worm.
 
 ## 4. Boltzmann Machines
@@ -211,7 +216,8 @@ statistics, so each weight changes as
 
 with p_ij the probability that units i and j are both on when the visible units are clamped by the environment, and
 p'_ij the same when the network runs freely (their eq. 10, written from their prose; the scan's equations are
-damaged). They note that the rule "uses only locally available information". The committee adds that "each step of
+damaged). In their own simulations they did not use eq. 10's proportional step: each weight was moved by a fixed
+weight-step according to the sign of p_ij - p'_ij. They note that the rule "uses only locally available information". The committee adds that "each step of
 the algorithm involves time-consuming equilibrium simulations for two different ensembles", and that the machine was
 "initially of limited use" until the restricted Boltzmann machine.
 
@@ -230,8 +236,8 @@ hunch). The test is whether the distribution matches, which is the benchmark's q
 variability); learning off (weights frozen). The determinism rule holds: the samples come from a seeded generator, so a
 life replays exactly.
 
-**Ties.** H9 names the Boltzmann machine as the candidate for "behaviour that varies rather than repeats"; H5 as the
-deterministic limit; E4's stabiliser question returns as a temperature question, untested.
+**Ties.** H9 names the Boltzmann machine as the candidate for "behaviour that varies rather than repeats"; H5 as its deterministic limit at T → 0, in the lab's
+reading; E4's stabiliser question returns as a temperature question, untested.
 
 ## For the Lab
 
@@ -243,8 +249,9 @@ The lab's reading, at the confidence of a judgement:
 - **What the families offer the worm is a mechanism, not storage**: settling (classical Hopfield), one-step blending
   (modern Hopfield), sampling (Boltzmann), and a local way to write any of them (Hebb and Oja). Each is a module with
   a switch, judged on the benchmark like any other.
-- **E4 is the first test already in hand**, and it narrows the field: a Hebbian loop needs its gain bounded below
-  ignition, which Oja's rule alone does not give.
+- **E4 gives a design rule, not a finding.** Its pilot asserts, in one toy model class with chosen constants, that
+  Oja's bound of 1 lies above the ignition point `w*` = 1 - 2b, which suggests that a Hebbian loop needs its gain
+  bounded below ignition by something more than Oja's rule. The rule is untested on a worm.
 - **Everything waits on a Program and a frozen benchmark**, as E4 does. Before then, the toy problems this note
   suggests are unit tests and notebooks, not results.
 
