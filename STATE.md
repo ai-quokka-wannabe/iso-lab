@@ -323,6 +323,6 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   alone +0.1233, +0.0421 to +0.2160), and by D's rule the cost goes with the layout, not warmth (journal of 2026-11-03, § Why
   Steering Trails Never Steering in Warm Layouts).
 - 2026-11-03: item 2 (d4), the eigen-shape amplitudes: block 1's first four shapes frozen in the code, each recording's
-  spread along them four new measures (medians 0.94, 0.80, 0.78 and 0.46 rad), the basis checked against its fit to
-  1e-15 by the law of total variance, and the halves agreeing on all 27 measures (journal of 2026-11-03, § The
-  Eigen-Shape Amplitudes of Block 1).
+  spread along them four new measures (medians 0.94, 0.80, 0.78 and 0.46 rad), the eigenvalues agreeing with their
+  within and between parts to 1e-15 and the basis matching the fit loading by loading, and the halves agreeing on all
+  27 measures (journal of 2026-11-03, § The Eigen-Shape Amplitudes of Block 1).
