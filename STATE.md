@@ -300,8 +300,8 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   laser's onset (the first author's thesis); the touch-to-reversal latency, a behavioural thermotaxis latency, tap
   habituation's time constants and satiety stay open (journal of 2026-11-03, § The Pace Note's Gaps, a Fourth Pass).
 - 2026-11-03: the pace note's gaps, a fifth pass: satiety quiescence narrowed - mean bout ≈ 95 s by Gallagher et al.
-  2013's model (Dataset S1, one step per frame assumed), about 40-50 s by stopwatch in Hyun et al. 2016 (read off a
-  figure), both in watched worms; tap habituation's half-life read by eye from Giles et al. 2015, roughly 50-100 s (low
+  2013's model (Dataset S1, one step per frame assumed, conditional on its prior), about 40-50 s by stopwatch in Hyun et al. 2016 (read off a
+  figure), both in watched worms; tap habituation's half-life read by eye from Giles et al. 2015, roughly 40-90 s (low
   confidence); Timbers et al. 2013 not open. No gap closed (journal of 2026-11-03, § The Pace Note's Gaps, a Fifth
   Pass).
 - 2026-11-03: item 2 (d2), the reference statistics over block 1's 179 measured recordings: four eigen-shapes carry
