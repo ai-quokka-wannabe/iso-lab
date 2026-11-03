@@ -188,6 +188,29 @@ pub fn eigen_shapes(matrix: &[[f64; ARCS]; ARCS]) -> EigenShapes {
     EigenShapes { values, shapes }
 }
 
+/// How many of block 1's eigen-shapes are measures: the fewest that carry 95% of the variance
+/// (docs/journal of 2026-11-03, *The Reference Statistics of Block 1*).
+pub const REFERENCE_COMPONENTS: usize = 4;
+
+/// The frozen basis both bodies are projected on: block 1's first [`REFERENCE_COMPONENTS`]
+/// eigen-shapes, head first, PLACEHOLDER.
+pub const REFERENCE_SHAPES: [[f64; ARCS]; REFERENCE_COMPONENTS] = [[0.0; ARCS]; REFERENCE_COMPONENTS];
+
+/// One frame's amplitudes on [`REFERENCE_SHAPES`]: its mean-removed angles projected on each shape.
+pub fn amplitudes(angles: &[f64; ARCS]) -> [f64; REFERENCE_COMPONENTS] {
+    REFERENCE_SHAPES.map(|shape| shape.iter().zip(angles).map(|(e, a)| e * a).sum())
+}
+
+/// The first [`REFERENCE_COMPONENTS`] shapes as the Rust source of [`REFERENCE_SHAPES`]'s value,
+/// each loading in Rust's shortest form that reads back as the same `f64`.
+pub fn basis_source(shapes: &EigenShapes) -> String {
+    let rows: Vec<String> = shapes.shapes[..REFERENCE_COMPONENTS]
+        .iter()
+        .map(|shape| format!("    [{}],", shape.iter().map(|x| format!("{x:?}")).collect::<Vec<_>>().join(", ")))
+        .collect();
+    format!("[\n{}\n]", rows.join("\n"))
+}
+
 /// The absolute cosine between two eigen-shapes: 1 when they are the same up to sign.
 pub fn alignment(a: &[f64; ARCS], b: &[f64; ARCS]) -> f64 {
     let dot: f64 = a.iter().zip(b).map(|(x, y)| x * y).sum();

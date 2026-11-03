@@ -13,7 +13,7 @@
     If not, see <https://www.gnu.org/licenses/>.
 */
 
-//! `reference-stats <block>`: the reference statistics of a block of the reference draw
+//! `reference-stats <block> [--basis]`: the reference statistics of a block of the reference draw
 //! (STATE.md item 2 (d2)), run from the repository's root after `fetch-block`. The plan they
 //! follow was written before they were computed (docs/journal of 2026-11-03, *The Reference
 //! Statistics: the Plan, Written Before the Statistics*).
@@ -29,13 +29,16 @@
 //!   recordings and over each half;
 //! - the halves compared, measure by measure (`benchmark::compare`) and by the classifier test.
 //!
+//! With `--basis`, it prints instead the first four eigen-shapes, fitted as above, as the Rust
+//! source of `features::eigenshapes::REFERENCE_SHAPES`, the basis frozen from block 1.
+//!
 //! The halves are the block's records in the first and second halves of its draw order. The seed
 //! and the number of resamples are fixed below, as the plan states them.
 
 use benchmark::compare::{CompareConfig, compare_measures, quantile};
 use benchmark::reference::{INTERVAL_TAILS, Summary, bootstrap_draws, summarise};
 use benchmark::{Config, two_sample_test};
-use features::eigenshapes::{EigenShapes, Moments, Weighting, alignment, covariance, eigen_shapes};
+use features::eigenshapes::{EigenShapes, Moments, Weighting, alignment, basis_source, covariance, eigen_shapes};
 use features::posture::{ARCS, eight_arcs};
 use features::profile::{mean_removed_angles, measure_names, profile, window_frames};
 use features::read_skeletons;
@@ -293,7 +296,7 @@ fn main() -> ExitCode {
     let block = match std::env::args().nth(1).map(|argument| argument.parse::<u32>()) {
         Some(Ok(block)) => block,
         _ => {
-            eprintln!("usage: reference-stats <block>");
+            eprintln!("usage: reference-stats <block> [--basis]");
             return ExitCode::FAILURE;
         }
     };
@@ -316,6 +319,20 @@ fn main() -> ExitCode {
     if records.is_empty() {
         eprintln!("block {block} has no records in {ORDER}");
         return ExitCode::FAILURE;
+    }
+    if std::env::args().nth(2).as_deref() == Some("--basis") {
+        let (measured, _) = measure_block(&records);
+        let all: Vec<&Measured> = measured.iter().collect();
+        return match fit(&all, Weighting::Recordings) {
+            Some(shapes) => {
+                println!("{}", basis_source(&shapes));
+                ExitCode::SUCCESS
+            }
+            None => {
+                eprintln!("no frame to fit the eigen-shapes on");
+                ExitCode::FAILURE
+            }
+        };
     }
     match report(block, &records) {
         Ok(text) => {
