@@ -304,6 +304,8 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   97.8% of the eight-arc posture's variance (four in all 9999 resamples), each measure's median has a bootstrap
   interval, and the block's halves agree on every measure (Holm, smallest raw p 0.264) and by the classifier test
   (p = 0.889) (journal of 2026-11-03, § The Reference Statistics of Block 1).
+- 2026-11-03: the reference statistics' interval level pinned by a test: the 95% bootstrap interval, which a 90% one no
+  longer passes for (journal of 2026-11-03, § The Interval's Level, Pinned).
 - 2026-11-03: E4 planned again, from a pilot of a rate network: there, a co-activated pair captures by igniting
   itself once its weight passes `w* = 1 - 2b`, Hebb's rule alone passes it, row normalisation and scaling stop it
   exactly when their bound or fixed point sits below `w*`, and Oja's rule and BCM (in the pilot's mix of trials)
