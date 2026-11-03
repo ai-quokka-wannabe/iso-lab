@@ -47,7 +47,8 @@ once, and per-measure comparisons will say where they differ. Dashed boxes are n
   removed, as
   Stephens et al. 2008 remove it from their 100 angles ("an overall rotation mode was removed"); the Grid's worm gives
   the same eight angles directly. Eigen-shapes are fitted on the real worms' eight angles and both bodies are
-  projected on them. How much of the worm's posture survives at eight samples is itself a measure the tool reports:
+  projected on them; block 1's first four are frozen as `features::eigenshapes::REFERENCE_SHAPES` (journal of 2026-11-03,
+  § The Eigen-Shape Amplitudes of Block 1). How much of the worm's posture survives at eight samples is itself a measure the tool reports:
   Stephens et al. find four eigenworms carry over 95% of the variance at full resolution, and Yemini et al. use six
   for 97%.
 - **Body parts by fraction of length.** Yemini et al. define the head as the first sixth of the skeleton (points 1 to

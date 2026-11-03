@@ -28,6 +28,8 @@
 //!
 //! - posture, the inputs of the eigen-shape amplitudes (*Comparable*): the standard deviation over
 //!   the window of each of the eight mean-removed arc angles, in radians;
+//! - the eigen-shape amplitudes (*Comparable*): the standard deviation over the window of each
+//!   frame's amplitude on the frozen basis [`crate::eigenshapes::REFERENCE_SHAPES`], in radians;
 //! - the midbody speed (*Comparable*), with the published choices
 //!   ([`crate::locomotion::published_choice_speeds`]), in body lengths per second: its mean and the
 //!   mean of its absolute value;
@@ -45,6 +47,7 @@
 //! differ between two machines' libms in its last bits, and is the same to the bit on one machine.
 
 use crate::Skeletons;
+use crate::eigenshapes::{REFERENCE_COMPONENTS, amplitudes};
 use crate::locomotion::published_choice_speeds;
 use crate::posture::{ARCS, EightArcs, eight_arcs};
 use crate::states::{MotionMode, event_stats, motion_events, motion_modes};
@@ -110,6 +113,9 @@ pub struct Measures {
     pub length: f64,
     /// The standard deviation of each mean-removed arc angle, head first, in radians.
     pub angle_spread: [f64; ARCS],
+    /// The standard deviation of each amplitude on the frozen eigen-shapes
+    /// ([`crate::eigenshapes::REFERENCE_SHAPES`]), in radians.
+    pub amplitude_spread: [f64; REFERENCE_COMPONENTS],
     /// The mean midbody speed in L per second, positive towards the head; `None` without a speed.
     pub speed_mean: Option<f64>,
     /// The mean absolute midbody speed in L per second; `None` without a speed.
@@ -128,6 +134,7 @@ pub const MODES: [&str; 3] = ["forward", "backward", "paused"];
 /// and rates' names begin `provisional_` (see the module's documentation).
 pub fn measure_names() -> Vec<String> {
     let mut names: Vec<String> = (1..=ARCS).map(|arc| format!("arc{arc}_angle_sd[rad]")).collect();
+    names.extend((1..=REFERENCE_COMPONENTS).map(|k| format!("eigen{k}_amplitude_sd[rad]")));
     names.extend(["midbody_speed_mean[L/s]", "midbody_speed_abs_mean[L/s]"].map(String::from));
     names.extend(MODES.iter().chain(&["no_state"]).map(|mode| format!("{mode}_share[1]")));
     for mode in MODES {
@@ -146,6 +153,7 @@ impl Measures {
     /// is not among them.
     pub fn values(&self) -> Vec<f64> {
         let mut values = self.angle_spread.to_vec();
+        values.extend(self.amplitude_spread);
         values.extend([self.speed_mean, self.speed_abs_mean].map(|value| value.unwrap_or(f64::NAN)));
         values.extend(self.state_shares);
         for mode in &self.modes {
@@ -231,6 +239,8 @@ fn measure(arcs: &[Option<EightArcs>], fps: f64) -> Measures {
     let length = median(present.iter().map(|arcs| arcs.length).collect());
     let angles: Vec<[f64; ARCS]> = present.iter().map(|arcs| mean_removed_angles(arcs)).collect();
     let angle_spread = std::array::from_fn(|k| standard_deviation(&angles.iter().map(|angles| angles[k]).collect::<Vec<_>>()));
+    let projected: Vec<[f64; REFERENCE_COMPONENTS]> = angles.iter().map(amplitudes).collect();
+    let amplitude_spread = std::array::from_fn(|k| standard_deviation(&projected.iter().map(|a| a[k]).collect::<Vec<_>>()));
 
     let speeds = published_choice_speeds(arcs, fps);
     let in_lengths: Vec<f64> = speeds.iter().flatten().map(|speed| speed / length).collect();
@@ -260,6 +270,7 @@ fn measure(arcs: &[Option<EightArcs>], fps: f64) -> Measures {
     Measures {
         length,
         angle_spread,
+        amplitude_spread,
         speed_mean,
         speed_abs_mean,
         state_shares,
@@ -361,6 +372,12 @@ mod tests {
         let skeletons = recording(10.0, (0..frames).map(|t| if t % 2 == 0 { straight(0.0) } else { arc(turn) }));
         let measures = profile(&skeletons).measures.unwrap();
         let scale = (frames as f64 / (frames - 1) as f64).sqrt();
+        // A straight frame has every amplitude 0, so each amplitude's spread is half the arc's.
+        let bent = amplitudes(&mean_removed_angles(&eight_arcs(&arc(turn)).unwrap()));
+        for (k, &spread) in measures.amplitude_spread.iter().enumerate() {
+            assert!(close(spread, bent[k].abs() / 2.0 * scale, 1e-9), "shape {k}: {spread} against {}", bent[k]);
+        }
+        assert!(bent.iter().any(|a| a.abs() > 0.1), "the arc must load on the basis: {bent:?}");
         for (k, &spread) in measures.angle_spread.iter().enumerate() {
             let swing = turn * ((k as f64 + 0.5) / ARCS as f64 - 0.5);
             assert!(close(spread, swing.abs() / 2.0 * scale, 1e-5), "arc {k}: {spread} against {swing}");

@@ -4,7 +4,7 @@
 latest mains - Master Control's faster floor, the Grid's clean end on BYE, Link's comments - with the world, the render
 and the placeholder's life unchanged; C18's plan was run, and the hunch is refuted in its cures; and the reference
 statistics over block 1 were computed - its eigen-shapes, each measure's median with a bootstrap interval, and its
-halves found to agree; and block 1's gaps were split by cause. Before it,
+halves found to agree; block 1's gaps were split by cause; and the eigen-shape amplitudes became measures on a frozen basis. Before it,
 2026-10-31 ([the journal of 2026-10-31](docs/journal/2026-10-31.md)): C18 was unparked - its lead read in
 full, its cliff defined, its test piloted on four controls, which it read as it must; section D was planned whole, and
 the toolbox's event statistics (done 2026-10-30) were merged. Before it, 2026-10-30
@@ -92,8 +92,9 @@ found lives in the journal section it names; this list keeps only what is open.
          since its control departed from 1; the skeletons files, if published, to split *no good skeleton*; and for
          (e5), whether the Grid's frames are masked to match, and the window counted from the video's first frame
          (recommended; it changes nothing in block 1);
-       - (d4) the eigen-shape amplitudes as measures, each recording's spread along block 1's first four shapes, so
-         that (e3) can project both bodies on them;
+       - (d4) the eigen-shape amplitudes as measures, done (journal of 2026-11-03, § The Eigen-Shape Amplitudes of
+         Block 1): block 1's first four shapes frozen as `features::eigenshapes::REFERENCE_SHAPES`, and each
+         recording's spread along them four new columns of `features::profile`; (e3) projects block 2 on the basis;
    - (e) the benchmark's test (PLAN.md Phase 0, step 5), split into runs:
        - (e1) done (journal of 2026-10-31, § The Benchmark's Test, Built Red-First): crate `benchmark`, a 21-nearest-
          neighbour classifier two-sample test with five folds and a 999-shuffle permutation p-value, its settings fixed
@@ -322,6 +323,10 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   good skeleton (median 2.1%) told apart through a reader of the per-frame table written around `hdf5-pure`'s shuffle;
   the stage share follows speed (rho 0.95), and frames beside a failed skeleton are 1.62 times as bent as frames far
   from gaps, a reading the planned control, which departed from 1, does not license (journal of 2026-11-03, § The Gaps by Cause in Block 1).
+- 2026-11-03: item 2 (d4), the eigen-shape amplitudes: block 1's first four shapes frozen in the code, each recording's
+  spread along them four new measures (medians 0.94, 0.80, 0.78 and 0.46 rad), the eigenvalues agreeing with their
+  within and between parts to 1e-15 and the basis matching the fit loading by loading, and the halves agreeing on all
+  27 measures (journal of 2026-11-03, § The Eigen-Shape Amplitudes of Block 1).
 - 2026-11-03: item 11, C18's two loose ends: (a) the threshold sweep at the budget's gain of 1.2 is void by its
   control (L0 missed by 0.001), though D fell from 1.654 to 1.160 towards the graph's 1.014 as the threshold fell
   (descriptive); (b) on a grid of step 0.02 the jump control clears its jump (share 0.907), and the pure network

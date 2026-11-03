@@ -13,7 +13,7 @@
     If not, see <https://www.gnu.org/licenses/>.
 */
 
-//! `reference-stats <block>`: the reference statistics of a block of the reference draw
+//! `reference-stats <block> [--basis]`: the reference statistics of a block of the reference draw
 //! (STATE.md item 2 (d2)), run from the repository's root after `fetch-block`. The plan they
 //! follow was written before they were computed (docs/journal of 2026-11-03, *The Reference
 //! Statistics: the Plan, Written Before the Statistics*).
@@ -27,7 +27,12 @@
 //!   variance shares; the same fit with frames pooled; and each half's fit;
 //! - each measure's median, quartiles and bootstrap interval for the median, over all measured
 //!   recordings and over each half;
+//! - the frozen basis checked against the fit by the law of total variance and loading by loading,
+//!   required only of the reference block;
 //! - the halves compared, measure by measure (`benchmark::compare`) and by the classifier test.
+//!
+//! With `--basis`, it prints instead the first four eigen-shapes, fitted as above, as the Rust
+//! source of `features::eigenshapes::REFERENCE_SHAPES`, the basis frozen from block 1.
 //!
 //! The halves are the block's records in the first and second halves of its draw order. The seed
 //! and the number of resamples are fixed below, as the plan states them.
@@ -35,7 +40,7 @@
 use benchmark::compare::{CompareConfig, compare_measures, quantile};
 use benchmark::reference::{INTERVAL_TAILS, Summary, bootstrap_draws, summarise};
 use benchmark::{Config, two_sample_test};
-use features::eigenshapes::{EigenShapes, Moments, Weighting, alignment, covariance, eigen_shapes};
+use features::eigenshapes::{EigenShapes, Moments, REFERENCE_BLOCK, REFERENCE_SHAPES, Weighting, alignment, basis_source, covariance, eigen_shapes};
 use features::posture::{ARCS, eight_arcs};
 use features::profile::{mean_removed_angles, measure_names, profile, window_frames};
 use features::read_skeletons;
@@ -178,6 +183,79 @@ fn measure_block(records: &[&str]) -> (Vec<Measured>, Vec<(String, usize)>) {
     (measured, reasons)
 }
 
+/// The largest absolute difference between a loading of [`REFERENCE_SHAPES`] and the same loading
+/// of `fitted`. Unlike the eigenvalues, which a small rotation within the basis changes only to
+/// second order, this sees any change of the shapes to first order.
+fn basis_mismatch(fitted: &EigenShapes) -> f64 {
+    REFERENCE_SHAPES
+        .iter()
+        .zip(&fitted.shapes)
+        .flat_map(|(frozen, fit)| frozen.iter().zip(fit).map(|(a, b)| (a - b).abs()))
+        .fold(0.0, f64::max)
+}
+
+/// The frozen basis checked against `fitted`, the block's own fit, by the law of total variance:
+/// each eigenvalue against the mean within-recording variance of its amplitude (from the measure)
+/// plus the variance of the recordings' mean amplitudes, and on [`REFERENCE_BLOCK`] each frozen
+/// loading against the fit's. Only the reference block must pass: for another block the table is a
+/// diagnostic, as its own fit need not match a basis fitted elsewhere. Returns the table, or an
+/// error when the reference block fails.
+fn check_basis(block: u32, fitted: &EigenShapes, all: &[&Measured]) -> Result<String, String> {
+    let mut out = String::new();
+    let _ = writeln!(
+        out,
+        "\n# the frozen basis checked by the law of total variance: each eigenvalue against the mean within-recording variance of its amplitude (divisor n, from the measure) plus the variance of the recordings' mean amplitudes"
+    );
+    let _ = writeln!(out, "component\teigenvalue\twithin\tbetween\twithin_plus_between\trelative_difference\twithin_share");
+    let mut worst = 0.0_f64;
+    for (k, shape) in REFERENCE_SHAPES.iter().enumerate() {
+        let n = all.len() as f64;
+        let within = all
+            .iter()
+            .map(|m| {
+                let frames = m.moments.frames as f64;
+                let sd = m.values[ARCS + k];
+                sd * sd * (frames - 1.0) / frames
+            })
+            .sum::<f64>()
+            / n;
+        let means: Vec<f64> = all
+            .iter()
+            .map(|m| shape.iter().zip(&m.moments.sum).map(|(e, s)| e * s).sum::<f64>() / m.moments.frames as f64)
+            .collect();
+        let grand = means.iter().sum::<f64>() / n;
+        let between = means.iter().map(|x| (x - grand) * (x - grand)).sum::<f64>() / n;
+        let eigenvalue = fitted.values[k];
+        let relative = ((within + between) - eigenvalue).abs() / eigenvalue;
+        worst = worst.max(relative);
+        let _ = writeln!(
+            out,
+            "{}\t{eigenvalue:.9}\t{within:.9}\t{between:.9}\t{:.9}\t{relative:.3e}\t{:.4}",
+            k + 1,
+            within + between,
+            within / (within + between)
+        );
+    }
+    if block != REFERENCE_BLOCK {
+        let _ = writeln!(
+            out,
+            "block {block} is not the reference block {REFERENCE_BLOCK}: the table above is a diagnostic, and nothing is required of it"
+        );
+        return Ok(out);
+    }
+    if worst > 1e-9 {
+        return Err(format!("the basis check fails: a relative difference of {worst:.3e} exceeds 1e-9"));
+    }
+    let largest = basis_mismatch(fitted);
+    let _ = writeln!(out, "largest difference between a frozen loading and the fit's: {largest:.3e}");
+    if largest >= 1e-12 {
+        return Err(format!(
+            "the basis check fails: a frozen loading differs from the fit by {largest:.3e}, not below 1e-12"
+        ));
+    }
+    Ok(out)
+}
+
 fn report(block: u32, records: &[&str]) -> Result<String, String> {
     let (measured, reasons) = measure_block(records);
     if let Some(gap) = measured.iter().find(|m| m.values.iter().any(|v| !v.is_finite())) {
@@ -237,6 +315,8 @@ fn report(block: u32, records: &[&str]) -> Result<String, String> {
         );
     }
 
+    out.push_str(&check_basis(block, &fitted, &all)?);
+
     let names = measure_names();
     let context_names = ["context_length_L[um]".to_string(), "context_missing_skeleton_share[1]".to_string()];
     let _ = writeln!(
@@ -293,7 +373,7 @@ fn main() -> ExitCode {
     let block = match std::env::args().nth(1).map(|argument| argument.parse::<u32>()) {
         Some(Ok(block)) => block,
         _ => {
-            eprintln!("usage: reference-stats <block>");
+            eprintln!("usage: reference-stats <block> [--basis]");
             return ExitCode::FAILURE;
         }
     };
@@ -316,6 +396,20 @@ fn main() -> ExitCode {
     if records.is_empty() {
         eprintln!("block {block} has no records in {ORDER}");
         return ExitCode::FAILURE;
+    }
+    if std::env::args().nth(2).as_deref() == Some("--basis") {
+        let (measured, _) = measure_block(&records);
+        let all: Vec<&Measured> = measured.iter().collect();
+        return match fit(&all, Weighting::Recordings) {
+            Some(shapes) => {
+                println!("{}", basis_source(&shapes));
+                ExitCode::SUCCESS
+            }
+            None => {
+                eprintln!("no frame to fit the eigen-shapes on");
+                ExitCode::FAILURE
+            }
+        };
     }
     match report(block, &records) {
         Ok(text) => {
@@ -347,5 +441,55 @@ mod tests {
             out.trim_end().split('\t').count(),
             "measure\tset\tn\tmedian\tq1\tq3\tiqr\tmedian_low\tmedian_high".split('\t').count()
         );
+    }
+
+    /// One measured recording whose frames all lie at `angles`, `frames` of them, with the given
+    /// amplitude spreads in its measures.
+    fn recording(angles: [f64; ARCS], frames: usize, spreads: [f64; 4]) -> Measured {
+        let mut moments = Moments::default();
+        for _ in 0..frames {
+            moments.add(&angles);
+        }
+        let mut values = vec![0.0; ARCS];
+        values.extend(spreads);
+        Measured {
+            record: "1".to_string(),
+            first_half: true,
+            values,
+            context: vec![],
+            moments,
+        }
+    }
+
+    #[test]
+    fn the_basis_check_stops_only_for_the_reference_block() {
+        // Two recordings that do not fit the frozen basis's eigenvalues at all.
+        let a = recording([0.0; ARCS], 10, [0.1; 4]);
+        let b = recording([0.0; ARCS], 10, [0.2; 4]);
+        let shapes = EigenShapes {
+            values: [1.0; ARCS],
+            shapes: [[0.0; ARCS]; ARCS],
+        };
+        assert!(check_basis(REFERENCE_BLOCK, &shapes, &[&a, &b]).is_err());
+        let diagnosis = check_basis(REFERENCE_BLOCK + 1, &shapes, &[&a, &b]).expect("another block is diagnosed, not stopped");
+        assert!(diagnosis.contains("diagnostic"), "{diagnosis}");
+    }
+
+    #[test]
+    fn a_small_rotation_of_the_basis_is_seen_component_by_component() {
+        let mut shapes = EigenShapes {
+            values: [1.0; ARCS],
+            shapes: [[0.0; ARCS]; ARCS],
+        };
+        shapes.shapes[..4].copy_from_slice(&REFERENCE_SHAPES);
+        assert_eq!(basis_mismatch(&shapes), 0.0);
+        // Shapes 1 and 2 turned by 3e-5 rad within their plane: the eigenvalues of a fit would move
+        // only by about 1e-9 of a gap's size, but the loadings move by up to 3e-5.
+        let (sin, cos) = 3e-5_f64.sin_cos();
+        let (one, two) = (REFERENCE_SHAPES[0], REFERENCE_SHAPES[1]);
+        shapes.shapes[0] = std::array::from_fn(|i| cos * one[i] + sin * two[i]);
+        shapes.shapes[1] = std::array::from_fn(|i| cos * two[i] - sin * one[i]);
+        let mismatch = basis_mismatch(&shapes);
+        assert!(mismatch > 1e-6 && mismatch < 3e-5, "{mismatch}");
     }
 }

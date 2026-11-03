@@ -86,6 +86,7 @@ fn row(record: &str, profile: &Profile) -> String {
     };
     let mut cells = vec![number(measures.length)];
     cells.extend(measures.angle_spread.iter().map(|&spread| number(spread)));
+    cells.extend(measures.amplitude_spread.iter().map(|&spread| number(spread)));
     cells.extend([optional(measures.speed_mean), optional(measures.speed_abs_mean)]);
     cells.extend(measures.state_shares.iter().map(|&share| number(share)));
     for mode in &measures.modes {
@@ -184,6 +185,7 @@ mod tests {
             measures: Ok(features::profile::Measures {
                 length: 1000.0,
                 angle_spread: [0.1; ARCS],
+                amplitude_spread: [0.1; 4],
                 speed_mean: Some(0.1),
                 speed_abs_mean: Some(0.1),
                 state_shares: [0.25; 4],
