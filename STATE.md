@@ -174,9 +174,11 @@ found lives in the journal section it names; this list keeps only what is open.
     the four controls first, then the pure network, the budget at both gains, the corrected fan-out penalty and
     inhibition, with fresh seeds; its expectations are pre-registered in the journal of 2026-10-31, § C18 Unparked: the
     Cliff Defined, the Test Piloted. Waits on nothing; minutes of compute.
-12. **Run E4's plan** ([E1-E5.md § E4](docs/hypotheses/experiments/E1-E5.md#e4-hebbian-learning-needs-a-stabiliser-and-a-used-together-rule)),
-    in tested Rust built from the pilot (`notebooks/e4_pilot.ipynb`), on 20 fresh seeds; five refuting tests at alpha
-    0.05/5, and Oja, row normalisation and BCM reported. Waits on nothing; seconds of compute.
+12. **E4's assertions, in tested Rust** ([E1-E5.md § E4](docs/hypotheses/experiments/E1-E5.md#e4-hebbian-learning-needs-a-stabiliser-and-a-used-together-rule)):
+    the pilot's network (`notebooks/e4_pilot.ipynb`) built in Rust with its four assertions as tests - Hebb's pair
+    weight passes ignition, the pair ignites exactly above w* = 1 - 2b, each stabiliser captures exactly when its bound
+    exceeds w*, and the "used together" rule keeps undriven units' weights at zero. E4's test proper waits on a Program
+    with a Hebbian module and the frozen benchmark. Seconds of compute.
 
 ## To Revisit
 
@@ -271,7 +273,7 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
-- 2026-11-03: E4 planned again, from a pilot of a rate network: Hebb's rule with the "used together" rule lets a
-  co-activated pair capture every unrelated cue, homeostatic scaling with it stops the capture across 90 settings, and
-  Oja, row normalisation and BCM saturate the pair's weight without stopping it (journal of 2026-11-03, § E4's Pilot,
-  and Its Plan Written Again).
+- 2026-11-03: E4 planned again, from a pilot of a rate network: there, a co-activated pair captures by igniting
+  itself once its weight passes w* = 1 - 2b, Hebb's rule alone passes it, and any stabiliser stops it exactly when its
+  bound sits below w*, so the network gives assertions, and the hunch's test waits on a Program (journal of 2026-11-03,
+  § E4's Pilot, and Its Plan Written Again, and its *After review*).
