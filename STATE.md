@@ -1,6 +1,8 @@
 # State of the Lab
 
-**Last updated:** 2026-10-31 ([the journal of 2026-10-31](docs/journal/2026-10-31.md)): C18 was unparked - its lead read in
+**Last updated:** 2026-11-03 ([the journal of 2026-11-03](docs/journal/2026-11-03.md)): `external/` moved to the
+latest mains - Master Control's faster floor, the Grid's clean end on BYE, Link's comments - with the world, the render
+and the placeholder's life unchanged. Before it, 2026-10-31 ([the journal of 2026-10-31](docs/journal/2026-10-31.md)): C18 was unparked - its lead read in
 full, its cliff defined, its test piloted on four controls, which it read as it must; section D was planned whole, and
 the toolbox's event statistics (done 2026-10-30) were merged. Before it, 2026-10-30
 ([the journal of 2026-10-30](docs/journal/2026-10-30.md)): `external/` moved to latest
@@ -176,8 +178,8 @@ found lives in the journal section it names; this list keeps only what is open.
     Cliff Defined, the Test Piloted. Waits on nothing; minutes of compute.
 12. **E4's assertions, in tested Rust** ([E1-E5.md § E4](docs/hypotheses/experiments/E1-E5.md#e4-hebbian-learning-needs-a-stabiliser-and-a-used-together-rule)):
     the pilot's network (`notebooks/e4_pilot.ipynb`) built in Rust with its four assertions as tests - Hebb's pair
-    weight passes ignition, the pair ignites exactly above w* = 1 - 2b, each stabiliser captures exactly when its bound
-    exceeds w*, and the "used together" rule keeps undriven units' weights at zero. E4's test proper waits on a Program
+    weight passes ignition, the pair ignites exactly above `w* = 1 - 2b`, each stabiliser captures exactly when its bound
+    exceeds `w*`, and the "used together" rule keeps undriven units' weights at zero. E4's test proper waits on a Program
     with a Hebbian module and the frozen benchmark. Seconds of compute.
 
 ## To Revisit
@@ -250,7 +252,8 @@ points to the open ones and says what waits on each.
   Smell is built with food (tron-grid-lite `docs/CHEMORECEPTION.md`); see the next line.
 - **Food, and a sense of taking it in** ([master-control#63](https://github.com/ai-quokka-wannabe/master-control/issues/63)
   for food on the floor and the rule for intake; [tron-grid-lite#153](https://github.com/ai-quokka-wannabe/tron-grid-lite/issues/153)
-  for the sense of the body's own intake). The reference worms are filmed on food, and the world has had food orbs since the pins of 2026-10-30, drawn by the
+  for the sense of the body's own intake). The reference worms are filmed on food, and the world has had food orbs since
+  the pins of 2026-10-29, eaten in the tick since 2026-10-30, drawn by the
   Grid since Program ABI 11
   ([docs/benchmark/FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing)).
   The benchmark is not frozen until food is settled, by these issues or by comparing with foodless worms instead.
@@ -273,7 +276,11 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-11-03: `external/` at the latest mains (tron-grid-lite `ba76cdd`, master-control `28bda1c`, link `5c63e87`):
+  D1-D3 hold - Master Control's suite 120 then 124 passed, `ctest` 22 of 22, the three device checks, the same render
+  digest - and the placeholder's life is the same at both pins once its join tick is taken out (journal of 2026-11-03,
+  § The World Moves to the Faster Floor, Measured Before and After).
 - 2026-11-03: E4 planned again, from a pilot of a rate network: there, a co-activated pair captures by igniting
-  itself once its weight passes w* = 1 - 2b, Hebb's rule alone passes it, and any stabiliser stops it exactly when its
-  bound sits below w*, so the network gives assertions, and the hunch's test waits on a Program (journal of 2026-11-03,
+  itself once its weight passes `w* = 1 - 2b`, Hebb's rule alone passes it, and any stabiliser stops it exactly when its
+  bound sits below `w*`, so the network gives assertions, and the hunch's test waits on a Program (journal of 2026-11-03,
   § E4's Pilot, and Its Plan Written Again, and its *After review*).
