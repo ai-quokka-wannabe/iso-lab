@@ -305,8 +305,8 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   interval, and the block's halves agree on every measure (Holm, smallest raw p 0.264) and by the classifier test
   (p = 0.889) (journal of 2026-11-03, § The Reference Statistics of Block 1).
 - 2026-11-03: the reference statistics' interval level written once, `INTERVAL_TAILS = (0.025, 0.975)`, and asserted;
-  the behavioural tests resolve it only to a band, since resampled medians tie (journal of 2026-11-03, § The
-  Interval's Level, Pinned).
+  a test on 1000 untied rows pins `summarise`'s interval to it exactly (journal of 2026-11-03, § The Interval's Level,
+  Pinned).
 - 2026-11-03: E4 planned again, from a pilot of a rate network: there, a co-activated pair captures by igniting
   itself once its weight passes `w* = 1 - 2b`, Hebb's rule alone passes it, row normalisation and scaling stop it
   exactly when their bound or fixed point sits below `w*`, and Oja's rule and BCM (in the pilot's mix of trials)

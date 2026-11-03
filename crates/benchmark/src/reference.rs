@@ -138,20 +138,26 @@ mod tests {
         // The level is what a reader takes from every interval. It is written once, so it is
         // asserted once - a typo such as 0.035 fails here, whatever the data.
         assert_eq!(INTERVAL_TAILS, (0.025, 0.975));
-        // And `summarise` reads it: the same seed's resampled medians, computed here, give the
-        // interval exactly at those quantiles and not at 90%'s. The behaviour alone cannot pin the
-        // level more finely - resampled medians of finitely many rows tie, so neighbouring levels
-        // can share one interval - which is why the constant carries the exact value.
-        let rows: Vec<Vec<f64>> = (0..31).map(|i| vec![f64::from((i * 13) % 31).powi(2)]).collect();
+        // And `summarise` reads it, which its behaviour pins: on 1000 distinct rows, 999 resamples
+        // and seed 5, the order statistics bracketing both ends do not tie, so the interval is the
+        // resampled medians' 2.5% and 97.5% quantiles and no nearby level's. (On a handful of rows
+        // they tie, and neighbouring levels share one interval.)
+        let rows: Vec<Vec<f64>> = (0..1000u32).map(|i| vec![f64::from((i * 37) % 1000) / 1000.0 + f64::from(i).sqrt() * 1e-7]).collect();
         let (resamples, seed) = (999, 5);
         let mut medians: Vec<f64> = bootstrap_draws(rows.len(), resamples, seed)
             .iter()
             .map(|draw| median(draw.iter().map(|&i| rows[i][0]).collect()))
             .collect();
         medians.sort_by(f64::total_cmp);
+        // Type 7 at 2.5% interpolates between order statistics 24 and 25 (h = 998 x 0.025 = 24.95),
+        // at 97.5% between 973 and 974.
+        assert!(medians[24] < medians[25] && medians[973] < medians[974]);
         let interval = summarise(&rows, resamples, seed).unwrap()[0].median_interval;
         assert_eq!(interval, (quantile(&medians, 0.025), quantile(&medians, 0.975)));
-        assert_ne!(interval, (quantile(&medians, 0.05), quantile(&medians, 0.95)));
+        for low in [0.02, 0.024, 0.0249, 0.0251, 0.026, 0.03, 0.035, 0.05] {
+            assert_ne!(interval.0, quantile(&medians, low), "lower end at {low}");
+            assert_ne!(interval.1, quantile(&medians, 1.0 - low), "upper end at {}", 1.0 - low);
+        }
     }
 
     #[test]
