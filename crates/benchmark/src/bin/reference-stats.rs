@@ -27,6 +27,7 @@
 //!   variance shares; the same fit with frames pooled; and each half's fit;
 //! - each measure's median, quartiles and bootstrap interval for the median, over all measured
 //!   recordings and over each half;
+//! - the frozen basis checked against the fit by the law of total variance;
 //! - the halves compared, measure by measure (`benchmark::compare`) and by the classifier test.
 //!
 //! With `--basis`, it prints instead the first four eigen-shapes, fitted as above, as the Rust
@@ -38,7 +39,7 @@
 use benchmark::compare::{CompareConfig, compare_measures, quantile};
 use benchmark::reference::{INTERVAL_TAILS, Summary, bootstrap_draws, summarise};
 use benchmark::{Config, two_sample_test};
-use features::eigenshapes::{EigenShapes, Moments, Weighting, alignment, basis_source, covariance, eigen_shapes};
+use features::eigenshapes::{EigenShapes, Moments, REFERENCE_SHAPES, Weighting, alignment, basis_source, covariance, eigen_shapes};
 use features::posture::{ARCS, eight_arcs};
 use features::profile::{mean_removed_angles, measure_names, profile, window_frames};
 use features::read_skeletons;
@@ -238,6 +239,44 @@ fn report(block: u32, records: &[&str]) -> Result<String, String> {
             alignment(&halves[0].shapes[k], &fitted.shapes[k]),
             alignment(&pooled.shapes[k], &fitted.shapes[k])
         );
+    }
+
+    let _ = writeln!(
+        out,
+        "\n# the frozen basis checked by the law of total variance: each eigenvalue against the mean within-recording variance of its amplitude (divisor n, from the measure) plus the variance of the recordings' mean amplitudes"
+    );
+    let _ = writeln!(out, "component\teigenvalue\twithin\tbetween\twithin_plus_between\trelative_difference\twithin_share");
+    let mut worst = 0.0_f64;
+    for (k, shape) in REFERENCE_SHAPES.iter().enumerate() {
+        let n = all.len() as f64;
+        let within = all
+            .iter()
+            .map(|m| {
+                let frames = m.moments.frames as f64;
+                let sd = m.values[ARCS + k];
+                sd * sd * (frames - 1.0) / frames
+            })
+            .sum::<f64>()
+            / n;
+        let means: Vec<f64> = all
+            .iter()
+            .map(|m| shape.iter().zip(&m.moments.sum).map(|(e, s)| e * s).sum::<f64>() / m.moments.frames as f64)
+            .collect();
+        let grand = means.iter().sum::<f64>() / n;
+        let between = means.iter().map(|x| (x - grand) * (x - grand)).sum::<f64>() / n;
+        let eigenvalue = fitted.values[k];
+        let relative = ((within + between) - eigenvalue).abs() / eigenvalue;
+        worst = worst.max(relative);
+        let _ = writeln!(
+            out,
+            "{}\t{eigenvalue:.9}\t{within:.9}\t{between:.9}\t{:.9}\t{relative:.3e}\t{:.4}",
+            k + 1,
+            within + between,
+            within / (within + between)
+        );
+    }
+    if worst > 1e-9 {
+        return Err(format!("the basis check fails: a relative difference of {worst:.3e} exceeds 1e-9"));
     }
 
     let names = measure_names();
