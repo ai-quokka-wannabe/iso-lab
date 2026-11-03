@@ -156,7 +156,7 @@ found lives in the journal section it names; this list keeps only what is open.
      seeds per layout, to tell a small cold-band gain from none; what the gate does in 23001's first day, where its harm starts; and the timing of a worm's
      meals against the turning of its map. Why steering trails never steering in warm layouts, tested on 2026-11-03
      (journal of 2026-11-03, § Why Steering Trails Never Steering in Warm Layouts): on five fresh warm layouts the
-     harm is not reproduced, and in their mirror images it goes with the layout, not with warmth. Kept alone,
+     harm is not reproduced, and in their mirror images, by D's rule, it goes with the layout, not with warmth. Kept alone,
      turns towards the band help and turns away harm, and the brain's decisions split about evenly between them
      (descriptive). Next: whether the greedy rule's direction, read off the map, is what fails, scored against the
      band per decision;
@@ -191,13 +191,6 @@ found lives in the journal section it names; this list keeps only what is open.
     next*): why the conserved budget at a gain of 1.2 locates its cliff at d = 1.53 rather than at the lead's 1 - sweep
     the activation threshold at that gain; and a 1.1 D reading that cannot fall a grid step before a jump, from a finer
     grid near D.
-12. **E4's assertions, in tested Rust** ([E1-E5.md § E4](docs/hypotheses/experiments/E1-E5.md#e4-hebbian-learning-needs-a-stabiliser-and-a-used-together-rule)):
-    the pilot's network (`notebooks/e4_pilot.ipynb`) built in Rust with its four assertions as tests - Hebb's pair
-    weight passes ignition, the pair ignites exactly above `w* = 1 - 2b`, row normalisation and homeostatic scaling
-    capture exactly when their bound or fixed point exceeds `w*`, Oja's rule (bounded at 1) captures once trained long
-    enough and BCM, in the pilot's mix of trials, grows until it captures, and the "used together" rule keeps undriven
-    units' weights at zero. E4's test proper waits on a Program with a Hebbian module and the frozen benchmark. Seconds
-    of compute.
 
 ## To Revisit
 
@@ -323,6 +316,8 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   uninformative; the immature-map and cold-ward hunches are not supported, overshoot is contradicted (warm-ward turns
   alone +0.1233, +0.0421 to +0.2160), and by D's rule the cost goes with the layout, not warmth (journal of 2026-11-03, § Why
   Steering Trails Never Steering in Warm Layouts).
+- 2026-11-03: item 12, E4's four assertions as tests of the pilot's network in Rust (`crates/hebbian`): all hold, and
+  each of seven deliberate breaks fails the assertion it guards (journal of 2026-11-03, § E4's Assertions, in Rust).
 - 2026-11-03: item 2 (d3), the gaps by cause in block 1: stage movements (median 3.3% of a window) and frames with no
   good skeleton (median 2.1%) told apart through a reader of the per-frame table written around `hdf5-pure`'s shuffle;
   the stage share follows speed (rho 0.95), and frames beside a failed skeleton are 1.62 times as bent as frames far
