@@ -179,9 +179,11 @@ found lives in the journal section it names; this list keeps only what is open.
     grid near D.
 12. **E4's assertions, in tested Rust** ([E1-E5.md § E4](docs/hypotheses/experiments/E1-E5.md#e4-hebbian-learning-needs-a-stabiliser-and-a-used-together-rule)):
     the pilot's network (`notebooks/e4_pilot.ipynb`) built in Rust with its four assertions as tests - Hebb's pair
-    weight passes ignition, the pair ignites exactly above `w* = 1 - 2b`, each stabiliser captures exactly when its bound
-    exceeds `w*`, and the "used together" rule keeps undriven units' weights at zero. E4's test proper waits on a Program
-    with a Hebbian module and the frozen benchmark. Seconds of compute.
+    weight passes ignition, the pair ignites exactly above `w* = 1 - 2b`, row normalisation and homeostatic scaling
+    capture exactly when their bound or fixed point exceeds `w*`, Oja's rule (bounded at 1) captures once trained long
+    enough and BCM, in the pilot's mix of trials, grows until it captures, and the "used together" rule keeps undriven
+    units' weights at zero. E4's test proper waits on a Program with a Hebbian module and the frozen benchmark. Seconds
+    of compute.
 
 ## To Revisit
 
@@ -286,6 +288,6 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   at a gain of 1.2 move it (to 4.75, 7.50 and 1.53) rather than remove it; the budget at a gain of 0.4 removes it by
   spreading nothing; two-hop priming is 0.40 of one-hop (journal of 2026-11-03, § C18's Plan, Run).
 - 2026-11-03: E4 planned again, from a pilot of a rate network: there, a co-activated pair captures by igniting
-  itself once its weight passes `w* = 1 - 2b`, Hebb's rule alone passes it, and any stabiliser stops it exactly when its
-  bound sits below `w*`, so the network gives assertions, and the hunch's test waits on a Program (journal of 2026-11-03,
+  itself once its weight passes `w* = 1 - 2b`, Hebb's rule alone passes it, row normalisation and scaling stop it exactly when
+  their bound or fixed point sits below `w*`, and Oja's rule and BCM only delay it, so the network gives assertions, and the hunch's test waits on a Program (journal of 2026-11-03,
   § E4's Pilot, and Its Plan Written Again, and its *After review*).
