@@ -118,11 +118,13 @@ pub struct Network {
     pub rest: Vec<f64>,
 }
 
-/// A trained network, W_01 after every trial, and which units any trial drove.
+/// A trained network, W_01 after every trial, whether each trial was a pair trial, and which units
+/// any trial drove.
 #[derive(Clone, Debug)]
 pub struct Trained {
     pub network: Network,
     pub w01: Vec<f64>,
+    pub pair_trial: Vec<bool>,
     pub driven: Vec<bool>,
 }
 
@@ -198,7 +200,7 @@ pub fn train(training: &Training, seed: u64) -> Trained {
     let mut theta = vec![0.1; N];
     let mut driven = vec![false; N];
     let mut w01 = Vec::with_capacity(order.len());
-    for pair_trial in order {
+    for &pair_trial in &order {
         let mut u = vec![0.0; N];
         if pair_trial {
             u[PAIR.0] = 1.0;
@@ -252,7 +254,12 @@ pub fn train(training: &Training, seed: u64) -> Trained {
         }
         w01.push(network.weight(PAIR.0, PAIR.1));
     }
-    Trained { network, w01, driven }
+    Trained {
+        network,
+        w01,
+        pair_trial: order,
+        driven,
+    }
 }
 
 /// SplitMix64 ([Steele, Lea and Flood 2014](https://doi.org/10.1145/2660193.2660195)): one integer
@@ -318,17 +325,17 @@ mod tests {
     fn assertion_1_hebb_grows_by_eta_per_pair_trial_and_passes_ignition() {
         let training = Training::pilot(Rule::Hebb);
         let trained = train(&training, 42);
+        assert_eq!(trained.pair_trial.iter().filter(|&&p| p).count(), training.pair_trials);
         let mut previous = 0.0;
-        let mut pair_trials = 0;
-        for &w in &trained.w01 {
+        for (&w, &pair_trial) in trained.w01.iter().zip(&trained.pair_trial) {
             let step = w - previous;
-            if step != 0.0 {
-                assert!((step - training.eta).abs() < 1e-9, "step {step}");
-                pair_trials += 1;
+            if pair_trial {
+                assert!((step - training.eta).abs() < 1e-9, "pair trial step {step}");
+            } else {
+                assert_eq!(step, 0.0, "background trial step");
             }
             previous = w;
         }
-        assert_eq!(pair_trials, training.pair_trials);
         assert!(*trained.w01.last().unwrap() > w_star());
         assert_eq!(trained.network.capture_share(CUES, 9), 1.0);
     }
@@ -401,21 +408,18 @@ mod tests {
             };
             let trained = train(&training, 42);
             assert!(trained.w01.iter().all(|&w| w <= 1.0), "scale {scale}");
-            let mut pair_trial = 0;
-            let mut previous = 0.0;
-            for &w in &trained.w01 {
-                if w != previous {
-                    pair_trial += 1;
-                    assert_eq!(w > w_star(), pair_trial >= crossing, "pair trial {pair_trial}: {w}");
-                }
-                previous = w;
+            let mut pairs_so_far = 0;
+            for (&w, &pair_trial) in trained.w01.iter().zip(&trained.pair_trial) {
+                pairs_so_far += usize::from(pair_trial);
+                assert_eq!(w > w_star(), pairs_so_far >= crossing, "after {pairs_so_far} pair trials: {w}");
             }
             assert_eq!(trained.network.capture_share(CUES, 9) == 1.0, captures, "scale {scale}");
         }
     }
 
-    /// Assertion 3, BCM, in the pilot's mix of two pair trials to one background trial: W_01 keeps
-    /// growing and the pair captures given enough trials - at eta 0.05 within the pilot's 300, at
+    /// Assertion 3, BCM, in the pilot's mix of two pair trials to one background trial: W_01 never
+    /// falls within a run, ends higher the longer the training, and the pair captures given enough
+    /// trials - at eta 0.05 within the pilot's 300, at
     /// eta 0.005 by four times as many. With the background held at 100 trials it grows more slowly
     /// and has not captured by 800 pair trials, which is why the assertion names its mix.
     #[test]
@@ -433,7 +437,12 @@ mod tests {
                 42,
             )
         };
-        let mixed: Vec<f64> = [1, 2, 4].iter().map(|&s| *slow(200 * s, 100 * s).w01.last().unwrap()).collect();
+        let runs: Vec<Trained> = [1, 2, 4].iter().map(|&s| slow(200 * s, 100 * s)).collect();
+        // Within each run W_01 never falls: the pair's threshold stays below its saturated rate.
+        for run in &runs {
+            assert!(run.w01.windows(2).all(|pair| pair[1] >= pair[0]));
+        }
+        let mixed: Vec<f64> = runs.iter().map(|run| *run.w01.last().unwrap()).collect();
         assert!(mixed[0] < mixed[1] && mixed[1] < mixed[2], "{mixed:?}");
         assert!(mixed[1] < w_star() && mixed[2] > w_star(), "{mixed:?}");
         assert_eq!(slow(800, 400).network.capture_share(CUES, 9), 1.0);
@@ -474,18 +483,23 @@ mod tests {
         }
     }
 
-    /// The control for assertion 4: without the "used together" rule, Hebb's rule does grow weights
-    /// between units that only rested - so the assertion has something to guard.
+    /// The control for assertion 4: the hub does rest high - its units settle at 0.6 with no input
+    /// and no weights - and without the "used together" rule, Hebb's rule grows a weight between two
+    /// hub units that only rested, by eta 0.6^2 on the first trial (a rest of 0.05 gives eta 0.05^2).
     #[test]
     fn without_used_together_resting_units_grow_weights() {
-        let training = Training {
+        let hub = Training {
             hub_rest: Some(0.6),
             pair_trials: 0,
             used_together: false,
             ..Training::pilot(Rule::Hebb)
         };
-        let trained = train(&training, 7);
-        assert!(trained.network.weight(HUB.start, HUB.start + 1) > 0.0);
+        let fresh = train(&Training { background_trials: 0, ..hub }, 7).network;
+        let (rate, converged) = fresh.settle(&[0.0; N]);
+        assert!(converged && rate[HUB].iter().all(|r| (r - 0.6).abs() < 1e-9), "{:?}", &rate[HUB]);
+        let first = train(&Training { background_trials: 1, ..hub }, 7).network;
+        assert!((first.weight(HUB.start, HUB.start + 1) - hub.eta * 0.36).abs() < 1e-9);
+        assert!(train(&hub, 7).network.weight(HUB.start, HUB.start + 1) > 0.0);
     }
 
     #[test]
