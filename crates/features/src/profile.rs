@@ -120,6 +120,41 @@ pub struct Measures {
     pub modes: [ModeEvents; 3],
 }
 
+/// The modes whose events are counted, in the order of [`Measures::modes`].
+pub const MODES: [&str; 3] = ["forward", "backward", "paused"];
+
+/// The names of the measures in the order [`Measures::values`] gives them, each with its unit in
+/// brackets: `[1]` for a share or a count, `[L/s]` for body lengths per second. The durations'
+/// and rates' names begin `provisional_` (see the module's documentation).
+pub fn measure_names() -> Vec<String> {
+    let mut names: Vec<String> = (1..=ARCS).map(|arc| format!("arc{arc}_angle_sd[rad]")).collect();
+    names.extend(["midbody_speed_mean[L/s]", "midbody_speed_abs_mean[L/s]"].map(String::from));
+    names.extend(MODES.iter().chain(&["no_state"]).map(|mode| format!("{mode}_share[1]")));
+    for mode in MODES {
+        names.extend([
+            format!("provisional_{mode}_events[1]"),
+            format!("provisional_{mode}_mean_duration[s]"),
+            format!("provisional_{mode}_frequency[1/s]"),
+        ]);
+    }
+    names
+}
+
+impl Measures {
+    /// The measures as numbers, in the order of [`measure_names`]; a measure with no value (no
+    /// speed, or a mode with no event) is `NaN`. The body length is context, not a measure, and
+    /// is not among them.
+    pub fn values(&self) -> Vec<f64> {
+        let mut values = self.angle_spread.to_vec();
+        values.extend([self.speed_mean, self.speed_abs_mean].map(|value| value.unwrap_or(f64::NAN)));
+        values.extend(self.state_shares);
+        for mode in &self.modes {
+            values.extend([mode.events as f64, mode.mean_duration.unwrap_or(f64::NAN), mode.frequency.unwrap_or(f64::NAN)]);
+        }
+        values
+    }
+}
+
 /// One recording's row: its context, and its measures or why it has none.
 #[derive(Clone, PartialEq, Debug)]
 pub struct Profile {
@@ -359,6 +394,20 @@ mod tests {
         let a = mean_removed_angles(&eight_arcs(&arc(1.0)).unwrap());
         let b = mean_removed_angles(&eight_arcs(&turned).unwrap());
         assert!(a.iter().zip(b).all(|(a, b)| close(*a, b, 1e-5)), "{a:?} against {b:?}");
+    }
+
+    #[test]
+    fn every_measure_has_a_name() {
+        let measures = profile(&sliding(10.0, 900.0, 200.0)).measures.unwrap();
+        let values = measures.values();
+        assert_eq!(values.len(), measure_names().len());
+        // Forward throughout: the forward share, then one forward event of 900 s.
+        let at = |name: &str| values[measure_names().iter().position(|n| n == name).unwrap()];
+        assert_eq!(at("forward_share[1]"), 1.0);
+        assert_eq!(at("provisional_forward_events[1]"), 1.0);
+        assert!(close(at("provisional_forward_mean_duration[s]"), 900.0, 1e-9));
+        assert!(at("provisional_backward_mean_duration[s]").is_nan());
+        assert!(close(at("midbody_speed_mean[L/s]"), 0.2, 1e-6));
     }
 
     #[test]

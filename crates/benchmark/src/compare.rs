@@ -165,7 +165,7 @@ fn anderson_t(score: u128, count_a: usize, count_b: usize) -> f64 {
 
 /// The value below which a share `q` of the sorted values lie, by linear interpolation between
 /// order statistics (the usual "type 7" rule).
-fn quantile(sorted: &[f64], q: f64) -> f64 {
+pub fn quantile(sorted: &[f64], q: f64) -> f64 {
     let position = q * (sorted.len() - 1) as f64;
     let below = position.floor() as usize;
     let above = position.ceil() as usize;

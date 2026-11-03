@@ -2,7 +2,9 @@
 
 **Last updated:** 2026-11-03 ([the journal of 2026-11-03](docs/journal/2026-11-03.md)): `external/` moved to the
 latest mains - Master Control's faster floor, the Grid's clean end on BYE, Link's comments - with the world, the render
-and the placeholder's life unchanged; and C18's plan was run, and the hunch is refuted in its cures. Before it,
+and the placeholder's life unchanged; C18's plan was run, and the hunch is refuted in its cures; and the reference
+statistics over block 1 were computed - its eigen-shapes, each measure's median with a bootstrap interval, and its
+halves found to agree. Before it,
 2026-10-31 ([the journal of 2026-10-31](docs/journal/2026-10-31.md)): C18 was unparked - its lead read in
 full, its cliff defined, its test piloted on four controls, which it read as it must; section D was planned whole, and
 the toolbox's event statistics (done 2026-10-30) were merged. Before it, 2026-10-30
@@ -78,14 +80,18 @@ found lives in the journal section it names; this list keeps only what is open.
      next; journal of 2026-10-31, § The Benchmark, Split Into Runs):
        - (d1) one row of measures per recording, done (journal of 2026-10-31, § One Row of Measures per Recording:
          Built, and Run on Block 1): `features::profile` and `profiles <block>`, its durations and rates provisional
-         until (c)'s check passes. Block 1 has 17 short recordings with ids 1031915 to 1033195 (16 of five minutes, one of 52.7 s);
-         what they are is to be read from their metadata before (d2);
-       - (d2) the reference statistics over block 1: the eigen-shapes fitted on its real worms' eight angles, with the
-         share of variance they carry; each measure's median and spread across recordings, with a seeded bootstrap
-         interval; and how stable they are between the block's two halves;
+         until (c)'s check passes;
+       - (d2) the reference statistics over block 1, done (journal of 2026-11-03, § The Reference Statistics of Block
+         1): `features::eigenshapes`, `benchmark::reference` and `reference-stats <block>`; the 17 short recordings
+         are recordings of the same protocol, 16 of them of five minutes from the summer of 2009, and the rule stands (§ The
+         Short Recordings of Block 1, Read From Their Metadata);
        - (d3) the gaps by cause, as FEATURES.md § Open Questions Before Freezing asks: how a recording's missing
          frames split between dropped frames, stage movements and failed extraction, and per measure how much it
-         leans on frames likely to be lost;
+         leans on frames likely to be lost; with them, the ten files of block 1 that start 1 to 820 frames into their
+         video (journal of 2026-11-03), and whether the window counts from the video's first frame or the file's.
+         Block 1's files are kept in `data/raw/owmd-n2/` for it;
+       - (d4) the eigen-shape amplitudes as measures, each recording's spread along block 1's first four shapes, so
+         that (e3) can project both bodies on them;
    - (e) the benchmark's test (PLAN.md Phase 0, step 5), split into runs:
        - (e1) done (journal of 2026-10-31, § The Benchmark's Test, Built Red-First): crate `benchmark`, a 21-nearest-
          neighbour classifier two-sample test with five folds and a 999-shuffle permutation p-value, its settings fixed
@@ -294,8 +300,12 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   touch neurons to acceleration (Porto et al. 2019), and Mohammadi et al.'s reaction times read as counted from the
   laser's onset (the first author's thesis); the touch-to-reversal latency, a behavioural thermotaxis latency, tap
   habituation's time constants and satiety stay open (journal of 2026-11-03, § The Pace Note's Gaps, a Fourth Pass).
+- 2026-11-03: item 2 (d2), the reference statistics over block 1's 179 measured recordings: four eigen-shapes carry
+  97.8% of the eight-arc posture's variance (four in all 9999 resamples), each measure's median has a bootstrap
+  interval, and the block's halves agree on every measure (Holm, smallest raw p 0.264) and by the classifier test
+  (p = 0.889) (journal of 2026-11-03, § The Reference Statistics of Block 1).
 - 2026-11-03: E4 planned again, from a pilot of a rate network: there, a co-activated pair captures by igniting
   itself once its weight passes `w* = 1 - 2b`, Hebb's rule alone passes it, row normalisation and scaling stop it
-  exactly when their bound or fixed point sits below `w*`, and Oja's rule and BCM only delay it, so the network gives
-  assertions, and the hunch's test waits on a Program (journal of 2026-11-03, § E4's Pilot, and Its Plan Written
-  Again, and its *After review*).
+  exactly when their bound or fixed point sits below `w*`, and Oja's rule and BCM (in the pilot's mix of trials)
+  only delay it, so the network gives assertions, and the hunch's test waits on a Program (journal of 2026-11-03,
+  § E4's Pilot, and Its Plan Written Again, and its *After review*).
