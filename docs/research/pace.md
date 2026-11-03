@@ -84,11 +84,16 @@ worms to plate taps and to optogenetic stimulation of the six gentle-touch neuro
   ([Rankin and Broster 1992](https://doi.org/10.1037/0735-7044.106.2.239), abstract only). A later open paper fits
   exponentials to tap habituation, 30 taps at 10 s intervals, and calls "the habituation rate (the half-life of the
   exponential curve)" a measure, but reports it in figures only ([Giles et al.
-  2015](https://doi.org/10.1534/g3.115.021410), PMC4683646). The one fitted value stated in text is for light, not
-  taps: Porto et al. 2019 (above) needed an exponential decay of the response magnitude across their continuous
-  light sequence and found that "a decay rate of 50 s provided the best predictions", chosen from a range of values
-  tested (their Figure S14, not read), without an uncertainty. A recovery bound and a model's decay, not a
-  fitted time constant of tap habituation.
+  2015](https://doi.org/10.1534/g3.115.021410), PMC4683646). The one fitted value stated in text comes from
+  optogenetic activation of the touch receptor neurons, not taps: Porto et al. 2019 (above) needed an exponential decay
+  of the response magnitude across their continuous stimulus sequence and found that "a decay rate of 50 s provided
+  the best predictions", chosen from a range of values tested (their Figure S14, not read), without an uncertainty.
+  Their methods write the decay as exp(-λt) with "λ is 50 s", so the 50 s is a time constant, whatever the word
+  *rate* says. They add that it "is consistent with previous findings from investigations of habituation to
+  stimulation of TRNs, with both tapping and optogenetic stimuli", citing [Timbers et al.
+  2013](https://doi.org/10.1016/j.neurobiolaging.2012.03.016) (not open to this session), the lead for a tap value.
+  So far: a recovery bound and a model's time constant, said by its authors to agree with tap habituation, not yet
+  a fitted time constant of tap habituation read by the lab.
 
 ### Noxious Heat
 
@@ -127,10 +132,11 @@ pulse of 133 ms.
   from the laser's onset; neither text says so in words, so this is the lab's reading, and it reads the end point
   as the first frame flagged in a new state, which the thesis does not tie to Figure 2c either. How sure: moderate for
   the onset, lower for the end point. The thesis's ~250 ms agrees with the strongest stimulus's 0.25 s read off the
-  figure. A later paper from the same laboratory, with the same kind of pulse (0.1 s) filmed at 60 Hz, left the
-  first "about 10 frames (0.16 s) after the laser stimulation" in its model "since worms do not respond to the
-  stimulus so quickly" ([Leung et al. 2016](https://doi.org/10.1371/journal.pcbi.1005262), PMC5189946): an
-  assumption of the authors, not a measurement, but consistent with the rest.
+  figure. A later paper from the same laboratory, with the same kind of pulse (0.1 s) filmed at 60 Hz, considered
+  removing the first "about 10 frames (0.16 s) after the laser stimulation since worms do not respond to the
+  stimulus so quickly"; removing them "had a negligible effect on the model performance", and they were kept
+  ([Leung et al. 2016](https://doi.org/10.1371/journal.pcbi.1005262), PMC5189946). The authors' assumption that
+  nothing happens within 0.16 s is not a measurement, but it is consistent with the rest.
 
 [Wittenburg and Baumeister 1999](https://doi.org/10.1073/pnas.96.18.10477) (PMC17914), only the abstract read: "[t]he
 escape reflex can be observed in 98% of the adult animals". The full text could not be fetched as text; it is to be
@@ -230,7 +236,7 @@ food (STATE.md *Needs From Other Repositories*), so it has no repellent to time 
 | Settling after transfer to a new plate | Speed and crawling frequency decay with τ = 19 minutes, midbody amplitude with τ = 48 minutes; the fit is good for speed (R² = 0.96) and weaker for frequency (0.71) and amplitude (0.59) | [Yemini et al. 2013](https://doi.org/10.1038/nmeth.2560) |
 | After-effect of light | Locomotion returns to its basal rate over about 140 s, a duration, not a fitted τ | Edwards et al. 2008 |
 | Feeding, on meeting food | Pumping "rose slowly, on the time scale of 100 s of seconds", in worms food-deprived for 1-2 h and then offered food in a microfluidic chip that holds the worm at its midsection by a vacuum clamp, "leaving the head ... and tail free to move" | [Katzen et al. 2023](https://doi.org/10.7554/eLife.69779) (PMC10231927) |
-| Lethargus, the quiescence between larval stages | Measured (2026-11-03 pass), in wild-type (N2) cohorts each worm observed for about a minute "at regular 1 h intervals" and scored lethargic when "neither pharyngeal pumps nor sinusoidal locomotion were observed": the L4 lethargus lasted 2.2 ± 0.4 h (mean ± sd, N = 16), 2.0 ± 0.0 h (N = 17) and 2.0 ± 0.0 h (N = 12) in three cohorts, the L3 1.6 ± 0.5 h (N = 17) and 1.4 ± 0.5 h (N = 13), the L2 1.3 ± 0.5 h (N = 18) (Supplementary file 1). Hourly sampling resolves the durations only to the hour; the methods say strains were grown at 25 °C unless otherwise specified, and the lab did not find another temperature stated for these assays. Within L4 lethargus, the posture-based measurements of Biron's and Raizen's laboratories show "alternating bouts of quiescence and motion of durations of 1–100 sec", with "most quiescent bout durations" shorter than 20 s. The primary source usually cited, Singh and Sulston 1978, is still not open, and it is cited two ways: "1-2 h" by Faerberg et al. 2024, a "2–3 hr period" by [Nagy et al. 2013](https://doi.org/10.7554/eLife.00782) (PMC3699835) | [Patel et al. 2022](https://doi.org/10.7554/eLife.80010) (PMC9377799); [Nagy, Raizen and Biron 2014](https://doi.org/10.1016/j.ymeth.2014.03.009) (PMC4112141, a methods paper, the author manuscript); [Faerberg et al. 2024](https://doi.org/10.1242/dev.202961) (PMC11266794) |
+| Lethargus, the quiescence between larval stages | Measured (2026-11-03 pass), in wild-type cohorts each worm observed "at regular 1 h intervals" (for "5–60 s" by the methods, about a minute by the results) and scored lethargic when "neither pharyngeal pumps nor sinusoidal locomotion were observed": the L4 lethargus lasted 2.2 ± 0.4 h (mean ± sd, N = 16), 2.0 ± 0.0 h (N = 17) and 2.0 ± 0.0 h (N = 12) in three N2 cohorts and 2.2 ± 0.6 h (N = 20) in a wild-type GR1395 cohort, the L3 1.6 ± 0.5 h (N = 17) and 1.4 ± 0.5 h (N = 13), the L2 1.3 ± 0.5 h (N = 18) (Supplementary file 1). The worms were singled on NGM-RNAi plates, so these wild-type rows may be control-RNAi conditions; the lab did not check which. Hourly sampling resolves the durations only to the hour; the methods say strains were grown at 25 °C unless otherwise specified, and the lab did not find another temperature stated for these assays. Within L4 lethargus, the posture-based measurements of Biron's and Raizen's laboratories show "alternating bouts of quiescence and motion of durations of 1–100 sec", with "most quiescent bout durations" shorter than 20 s. The primary source usually cited, Singh and Sulston 1978, is still not open, and it is cited two ways: "1-2 h" by Faerberg et al. 2024, a "2–3 hr period" by [Nagy et al. 2013](https://doi.org/10.7554/eLife.00782) (PMC3699835) and "the 2–3 hour period of L4leth" by Nagy, Raizen and Biron 2014 | [Patel et al. 2022](https://doi.org/10.7554/eLife.80010) (PMC9377799); [Nagy, Raizen and Biron 2014](https://doi.org/10.1016/j.ymeth.2014.03.009) (PMC4112141, a methods paper, the author manuscript); [Faerberg et al. 2024](https://doi.org/10.1242/dev.202961) (PMC11266794) |
 | Sleep-like quiescence after stress, in adults | Duration: after a 30 min heat shock at 35 °C, "both pharyngeal pumping and locomotion remain suppressed for up to an hour after exposure". Latency: after cold stress (30 min at −15 °C), "a peak of ALA-dependent locomotor quiescence at 20 minutes" - the time of a peak, not a bout's length. For contrast, not quiescence: after "a brief (<1 min) heat exposure" animals "recover normal activity within minutes", recovery from the acute response, which the paper cites to its Table S1, not read. The time courses themselves are in figures not read | [Hill et al. 2014](https://doi.org/10.1016/j.cub.2014.08.040) (PMC4254280, the author manuscript), the passages quoted read, not the whole paper |
 
 ## For the Lab
@@ -275,13 +281,20 @@ was tried).
   behavioural papers are identified but not open to this session (above).
 - Fitted time constants for tap habituation and its recovery: the primary papers (Rankin et al. 1990 and later) are
   not open in full text; their abstracts give a recovery bound only, and Giles et al. 2015 report their fitted
-  half-lives in figures only, a figure read for a later pass.
+  half-lives in figures only, a figure read for a later pass. Porto et al.'s 50 s time constant (above) is said by
+  its authors to agree with tap habituation, citing Timbers et al. 2013
+  ([doi:10.1016/j.neurobiolaging.2012.03.016](https://doi.org/10.1016/j.neurobiolaging.2012.03.016), not open): the
+  source behind that agreement, still to be read.
 - The primary source for lethargus as usually cited, Singh and Sulston 1978 (not open); measured durations are now in
   the table, from Patel et al. 2022.
 - The timing of sleep-like quiescence outside lethargus: stress-induced quiescence has timings from Hill et al.
   2014's text (above), its figures' time courses still to read. Satiety quiescence has none yet: its source, You et
   al. 2008 ([doi:10.1016/j.cmet.2008.01.005](https://doi.org/10.1016/j.cmet.2008.01.005), PMC3786678), is still not
   served (Europe PMC: HTTP 500; NCBI's BioC: not in the open-access subset; the publisher's pages refused the request),
-  and the open papers read on it give only the assay's protocol: worms "were fasted for 12 hrs and refed for 3 or 6
-  hrs to examine satiety quiescence" ([Hyun et al. 2016](https://doi.org/10.1038/srep24841), PMC4838937), a protocol's
-  timescale, not a bout's.
+  and the open papers read on it state no bout timing in their text: [Hyun et al.
+  2016](https://doi.org/10.1038/srep24841) (PMC4838937) fasted worms "for 12 hrs and refed for 3 or 6 hrs to examine
+  satiety quiescence" and measured quiescence durations for ten worms, shown in figures, not stated. A lead not yet
+  followed: [Gallagher et al. 2013](https://doi.org/10.1371/journal.pone.0059865) (PMC3610905, open), a state model of
+  feeding behaviour from the same field, which also warns that "it has not been possible to watch satiety-induced
+  quiescence for more than about a minute", because quiescent worms wake under continuous observation; a quick scan
+  of its text found no dwell time stated, and its figures are unread.

@@ -53,8 +53,9 @@ found lives in the journal section it names; this list keeps only what is open.
    latency from a mechanical touch, timed to the reversal's start (the nearest is a 0.2 s filter peak after
    optogenetic activation of the touch neurons); the end point of Mohammadi et al. 2013's reaction times, in words; a
    thermotaxis latency in behaviour (its papers are identified but not open to the cloud machine); fitted time
-   constants for tap habituation (Giles et al. 2015's half-lives, in figures, are the next lead); and satiety
-   quiescence, whose source, You et al. 2008, is still not served. Figures are within reach through Europe PMC's
+   constants for tap habituation (Giles et al. 2015's half-lives, in figures, and Timbers et al. 2013, the source
+   Porto et al. 2019 cite for their 50 s time constant agreeing with tap habituation, are the next leads); and satiety
+   quiescence, whose source, You et al. 2008, is still not served (Gallagher et al. 2013 is an open lead). Figures are within reach through Europe PMC's
    supplementary-files service (pace.md § Noxious Heat).
 2. **Build the feature-extraction tool** for the chosen dataset, in the lab's Rust workspace (`crates/`), compute
    the wild-type reference statistics, and build the benchmark's test on them. Split into runs:
