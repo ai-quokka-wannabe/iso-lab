@@ -505,8 +505,9 @@ mod tests {
 
     /// The stop at 1e-12 is the check's only first-order guard, so it is tested on its own: a fit
     /// whose eigenvalues satisfy the law of total variance exactly, with shapes 1 and 2 turned by
-    /// 1e-6 rad, passes the eigenvalue check and must still be stopped; with the frozen shapes
-    /// themselves, it passes.
+    /// 1e-11 rad, passes the eigenvalue check and must still be stopped; with the frozen shapes
+    /// themselves, it passes. The turn moves loadings of order 0.3 by a few 1e-12, so the limit is
+    /// pinned to within a decade: at 1e-11 the test fails.
     #[test]
     fn the_basis_check_stops_a_fit_whose_loadings_differ_beyond_1e_12() {
         let mut angles_a = [0.0; ARCS];
@@ -528,11 +529,35 @@ mod tests {
         }
         fitted.shapes[..4].copy_from_slice(&REFERENCE_SHAPES);
         assert!(check_basis(REFERENCE_BLOCK, &fitted, &all).is_ok());
-        let (sin, cos) = 1e-6_f64.sin_cos();
+        let (sin, cos) = 1e-11_f64.sin_cos();
         let (one, two) = (REFERENCE_SHAPES[0], REFERENCE_SHAPES[1]);
         fitted.shapes[0] = std::array::from_fn(|i| cos * one[i] + sin * two[i]);
         fitted.shapes[1] = std::array::from_fn(|i| cos * two[i] - sin * one[i]);
         let error = check_basis(REFERENCE_BLOCK, &fitted, &all).expect_err("a turned basis must be stopped");
         assert!(error.contains("frozen loading"), "{error}");
+    }
+
+    /// Its mirror: the frozen shapes exactly, with each eigenvalue 1e-8 relative off the law of
+    /// total variance, must be stopped by the 1e-9 identity, not by the loading comparison.
+    #[test]
+    fn the_basis_check_stops_eigenvalues_off_the_identity_beyond_1e_9() {
+        let mut angles = [0.0; ARCS];
+        for i in 0..ARCS {
+            angles[i] = 0.3 * REFERENCE_SHAPES[0][i] - 0.1 * REFERENCE_SHAPES[3][i];
+        }
+        let a = recording(angles, 10, [0.4, 0.3, 0.2, 0.1]);
+        let b = recording([0.0; ARCS], 12, [0.5, 0.35, 0.25, 0.15]);
+        let all = [&a, &b];
+        let mut fitted = EigenShapes {
+            values: [1.0; ARCS],
+            shapes: [[0.0; ARCS]; ARCS],
+        };
+        fitted.shapes[..4].copy_from_slice(&REFERENCE_SHAPES);
+        for k in 0..REFERENCE_SHAPES.len() {
+            let (within, between) = within_and_between(k, &all);
+            fitted.values[k] = (within + between) * (1.0 + 1e-8);
+        }
+        let error = check_basis(REFERENCE_BLOCK, &fitted, &all).expect_err("eigenvalues off the identity must be stopped");
+        assert!(error.contains("relative difference"), "{error}");
     }
 }
