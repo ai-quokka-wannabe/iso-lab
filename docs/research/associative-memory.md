@@ -192,7 +192,7 @@ memory matrix cleared after each life. The test is the same benchmark measure as
 with the module's neurons counted in the brain's size by *Lean brains*: hidden units per memory are not free.
 
 **Ties.** H5 names Hopfield 1982, Ramsauer et al. and Chen et al. 2018; Krotov and Hopfield are cited in H9, which calls dense associative memory "the line that leads to
-the modern Hopfield networks of H5". Neither has been tested on the worm.
+the modern Hopfield networks of H5". None of these families has been tested on the worm.
 
 ## 4. Boltzmann Machines
 
@@ -236,7 +236,7 @@ hunch). The test is whether the distribution matches, which is the benchmark's q
 variability); learning off (weights frozen). The determinism rule holds: the samples come from a seeded generator, so a
 life replays exactly.
 
-**Ties.** H9 names the Boltzmann machine as the candidate for "behaviour that varies rather than repeats"; H5 as its deterministic limit at T → 0, in the lab's
+**Ties.** H9 names the Boltzmann machine as "a candidate" for "behaviour that varies rather than repeats"; H5 as its deterministic limit at T → 0, in the lab's
 reading; E4's stabiliser question returns as a temperature question, untested.
 
 ## For the Lab
