@@ -1,7 +1,9 @@
 # State of the Lab
 
-**Last updated:** 2026-11-03 ([the journal of 2026-11-03](docs/journal/2026-11-03.md)): C18's plan was run, and
-the hunch is refuted in its cures. Before it, 2026-10-31 ([the journal of 2026-10-31](docs/journal/2026-10-31.md)): C18 was unparked - its lead read in
+**Last updated:** 2026-11-03 ([the journal of 2026-11-03](docs/journal/2026-11-03.md)): `external/` moved to the
+latest mains - Master Control's faster floor, the Grid's clean end on BYE, Link's comments - with the world, the render
+and the placeholder's life unchanged; and C18's plan was run, and the hunch is refuted in its cures. Before it,
+2026-10-31 ([the journal of 2026-10-31](docs/journal/2026-10-31.md)): C18 was unparked - its lead read in
 full, its cliff defined, its test piloted on four controls, which it read as it must; section D was planned whole, and
 the toolbox's event statistics (done 2026-10-30) were merged. Before it, 2026-10-30
 ([the journal of 2026-10-30](docs/journal/2026-10-30.md)): `external/` moved to latest
@@ -255,7 +257,8 @@ points to the open ones and says what waits on each.
   Smell is built with food (tron-grid-lite `docs/CHEMORECEPTION.md`); see the next line.
 - **Food, and a sense of taking it in** ([master-control#63](https://github.com/ai-quokka-wannabe/master-control/issues/63)
   for food on the floor and the rule for intake; [tron-grid-lite#153](https://github.com/ai-quokka-wannabe/tron-grid-lite/issues/153)
-  for the sense of the body's own intake). The reference worms are filmed on food, and the world has had food orbs since the pins of 2026-10-30, drawn by the
+  for the sense of the body's own intake). The reference worms are filmed on food, and the world has had food orbs since
+  the pins of 2026-10-29, eaten in the tick since 2026-10-30, drawn by the
   Grid since Program ABI 11
   ([docs/benchmark/FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing)).
   The benchmark is not frozen until food is settled, by these issues or by comparing with foodless worms instead.
@@ -278,6 +281,10 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-11-03: `external/` at the latest mains (tron-grid-lite `ba76cdd`, master-control `28bda1c`, link `5c63e87`):
+  D1-D3 hold - Master Control's suite 120 then 124 passed, `ctest` 22 of 22, the three device checks, the same render
+  digest - and the placeholder's life is the same at both pins once its join tick is taken out (journal of 2026-11-03,
+  § The World Moves to the Faster Floor, Measured Before and After).
 - 2026-11-03: item 11, C18's plan run with fresh seeds, the four controls reading as they must: C18 is refuted by
   clauses (2), (4) and (5). The pure network has a cliff (D = 2.255), but inhibition, the fan-out penalty and the budget
   at a gain of 1.2 move it (to 4.75, 7.50 and 1.53) rather than remove it; the budget at a gain of 0.4 removes it by
