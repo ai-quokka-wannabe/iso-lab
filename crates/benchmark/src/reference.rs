@@ -27,6 +27,11 @@
 use crate::SplitMix64;
 use crate::compare::quantile;
 
+/// The quantiles of the resampled statistics that bound every reported interval: 2.5% and 97.5%, a
+/// 95% percentile interval. The one place the level is written; [`summarise`] and the
+/// `reference-stats` binary both read it.
+pub const INTERVAL_TAILS: (f64, f64) = (0.025, 0.975);
+
 /// One measure's statistics across the rows.
 #[derive(Clone, Debug, PartialEq)]
 pub struct Summary {
@@ -79,7 +84,7 @@ pub fn summarise(rows: &[Vec<f64>], resamples: usize, seed: u64) -> Option<Vec<S
                     rows: rows.len(),
                     median: quantile(&values, 0.5),
                     quartiles: (quantile(&values, 0.25), quantile(&values, 0.75)),
-                    median_interval: (quantile(&medians, 0.025), quantile(&medians, 0.975)),
+                    median_interval: (quantile(&medians, INTERVAL_TAILS.0), quantile(&medians, INTERVAL_TAILS.1)),
                 }
             })
             .collect(),
@@ -122,8 +127,37 @@ mod tests {
         let (narrow, wide) = (interval(400), interval(25));
         assert!(narrow < wide / 2.0, "400 rows: {narrow}, 25 rows: {wide}");
         // A uniform on [0, 1): the median's standard error is about 1 / (2 sqrt(n)), so the 95%
-        // interval spans about 3.92 / (2 sqrt(400)) = 0.098 at 400 rows.
-        assert!((0.06..0.14).contains(&narrow), "{narrow}");
+        // interval spans about 3.92 / (2 sqrt(400)) = 0.098 at 400 rows, and a 90% interval about
+        // 3.29 / 40 = 0.082 (normal-theory widths for a continuous uniform, so approximate), so the
+        // window admits the first and not the second.
+        assert!((0.088..0.11).contains(&narrow), "{narrow}");
+    }
+
+    #[test]
+    fn the_level_is_95_percent_and_the_interval_reads_it() {
+        // The level is what a reader takes from every interval. It is written once, so it is
+        // asserted once - a typo such as 0.035 fails here, whatever the data.
+        assert_eq!(INTERVAL_TAILS, (0.025, 0.975));
+        // And `summarise` reads it, which its behaviour pins: on 1000 distinct rows, 999 resamples
+        // and seed 5, the order statistics bracketing both ends do not tie, so the interval is the
+        // resampled medians' 2.5% and 97.5% quantiles and no nearby level's. (On a handful of rows
+        // they tie, and neighbouring levels share one interval.)
+        let rows: Vec<Vec<f64>> = (0..1000u32).map(|i| vec![f64::from((i * 37) % 1000) / 1000.0 + f64::from(i).sqrt() * 1e-7]).collect();
+        let (resamples, seed) = (999, 5);
+        let mut medians: Vec<f64> = bootstrap_draws(rows.len(), resamples, seed)
+            .iter()
+            .map(|draw| median(draw.iter().map(|&i| rows[i][0]).collect()))
+            .collect();
+        medians.sort_by(f64::total_cmp);
+        // Type 7 at 2.5% interpolates between order statistics 24 and 25 (h = 998 x 0.025 = 24.95),
+        // at 97.5% between 973 and 974.
+        assert!(medians[24] < medians[25] && medians[973] < medians[974]);
+        let interval = summarise(&rows, resamples, seed).unwrap()[0].median_interval;
+        assert_eq!(interval, (quantile(&medians, 0.025), quantile(&medians, 0.975)));
+        for low in [0.02, 0.024, 0.0249, 0.0251, 0.026, 0.03, 0.035, 0.05] {
+            assert_ne!(interval.0, quantile(&medians, low), "lower end at {low}");
+            assert_ne!(interval.1, quantile(&medians, 1.0 - low), "upper end at {}", 1.0 - low);
+        }
     }
 
     #[test]
