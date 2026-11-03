@@ -271,8 +271,8 @@ food (STATE.md *Needs From Other Repositories*), so it has no repellent to time 
 
 ## Gaps, to Be Read
 
-What is still open after the passes of 2026-11-03 (journal of 2026-11-03, § The Pace Note's Gaps, a Fourth Pass, and
-§ The Pace Note's Gaps, a Fifth Pass, have what was tried).
+What is still open after the passes of 2026-11-03 (journal of 2026-11-03, § The Pace Note's Gaps, a Fourth Pass, § The
+Pace Note's Gaps, a Fifth Pass, and § The Pace Note's Gaps, a Sixth Pass, have what was tried).
 
 - A touch-to-reversal latency, from a mechanical touch, timed to the reversal's start: none is stated in the text of
   the open papers searched. The nearest are Liu et al.'s figure (reversals clustering within about a second) and Porto
@@ -282,23 +282,33 @@ What is still open after the passes of 2026-11-03 (journal of 2026-11-03, § The
   ([doi:10.1038/s41539-017-0011-8](https://doi.org/10.1038/s41539-017-0011-8), PMC6161508), for "reversal latency";
   read in full, it measures latency to light-activation of ASH, with values in figures only. The next ways: Liu et
   al.'s or Porto et al.'s published data, if public, re-analysed for the reversal's onset; or a figure of a paper timing
-  touch at a high frame rate.
+  touch at a high frame rate. The sixth pass (2026-11-03) ran two more open-access queries and scanned the full texts
+  of the likeliest hits; none states a latency from touch to a reversal's start.
 - What Mohammadi et al. 2013's reaction times count, in words: the first author's thesis (above) fixes the detection
   method and implies, by its arithmetic, that they count from the laser's onset, but neither it nor the paper defines
   the end point, nor the figure's "VAR" marks. Their group's earlier paper, [Ghosh et al.
   2012](https://doi.org/10.1186/1741-7007-10-85) (PMC3520762), does not define a response latency either; its nearest
   measure is TMAX, the "mean time to reach MAXS" (the maximum speed after the laser pulse). The authors or their code
-  would settle it. And Wittenburg and Baumeister 1999 in full, still not served as text (BioC: not in the open-access
+  would settle it. The sixth pass found public code and data from the same authors' collaboration (Nemenman's group at Emory, with
+  Mohammadi and Ryu among Leung et al.'s authors), behind Leung et al. 2016
+  ([its repository](https://github.com/EmoryUniversityTheoreticalBiophysics/C.-elegans), commit `6f6a27a`): it models
+  the centroid's velocity and has no reaction-time code, and its licence file says the software "is prohibeted for
+  distribution outside of the Emory University Theoretical Biopphysics team" (their spelling), so the lab does not use
+  its data. And Wittenburg and Baumeister 1999 in full, still not served as text (BioC: not in the open-access
   subset; the publisher refused the request).
 - A thermotaxis reaction latency in behaviour: the receptor's latency is now read (Ramot et al. 2008, above); the
-  behavioural papers are identified but not open to this session (above).
+  behavioural papers are identified but not open to this session (above). One more open-access query in the sixth pass
+  found no behavioural latency to a temperature change in text.
 - Fitted time constants for tap habituation and its recovery: the primary papers (Rankin et al. 1990 and later) are
   not open in full text; their abstracts give a recovery bound only. Giles et al. 2015 print no half-life, even in
   their figures; the lab's reading of their wild-type curve by eye (above) is
   rough (roughly 40 to 90 s at 10 s intervals, one panel). Timbers et al. 2013, behind Porto et al.'s 50 s, is subscription only with no author manuscript in Europe PMC,
   and its abstract gives no time constant. Next: the Multi-Worm Tracker data of a tap habituation paper, if public,
   fitted by the lab.
-- The primary source for lethargus as usually cited, Singh and Sulston 1978 (not open); measured durations are now in
+- The primary source for lethargus as usually cited, Singh and Sulston 1978, "Some observations on molting in
+  Caenorhabditis elegans", *Nematologica* 24, 63-71, as Faerberg et al. 2024 give it
+  ([doi:10.1163/187529278X00074](https://doi.org/10.1163/187529278X00074)): not open, and not in Europe PMC by its
+  title or its DOI (sixth pass, queries in the journal). The DOI is the lead for a library route; measured durations are now in
   the table, from Patel et al. 2022.
 - The timing of sleep-like quiescence outside lethargus: stress-induced quiescence has timings from Hill et al.
   2014's text (above), its figures' time courses still to read. Satiety quiescence is now narrowed (fifth pass, table
