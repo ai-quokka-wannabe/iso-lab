@@ -1,6 +1,8 @@
 # State of the Lab
 
-**Last updated:** 2026-10-31 ([the journal of 2026-10-31](docs/journal/2026-10-31.md)): C18 was unparked - its lead read in
+**Last updated:** 2026-11-03 ([the journal of 2026-11-03](docs/journal/2026-11-03.md)): `external/` moved to the
+latest mains - Master Control's faster floor, the Grid's clean end on BYE, Link's comments - with the world, the render
+and the placeholder's life unchanged. Before it, 2026-10-31 ([the journal of 2026-10-31](docs/journal/2026-10-31.md)): C18 was unparked - its lead read in
 full, its cliff defined, its test piloted on four controls, which it read as it must; section D was planned whole, and
 the toolbox's event statistics (done 2026-10-30) were merged. Before it, 2026-10-30
 ([the journal of 2026-10-30](docs/journal/2026-10-30.md)): `external/` moved to latest
@@ -277,75 +279,7 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
-- 2026-10-31: item 2 (d1), one row of measures per recording (`features::profile`, `profiles`): block 1 gives 179
-  rows measured, 18 excluded as short and 3 as gappy (journal of 2026-10-31, § One Row of Measures per Recording:
-  Built, and Run on Block 1).
-- 2026-10-31: plans for E6-E10 (learning and memory) (journal of 2026-10-31, § Plans for E6-E10).
-- 2026-10-31: C18 unparked - Shrager, Hogg and Huberman 1987 read in full, the hunch's cliff settled as a threshold
-  between finite and extensive reach, and a two-stage test of it piloted on four controls, which it read as it must
-  (journal of 2026-10-31, § C18 Unparked: the Cliff Defined, the Test Piloted).
-- 2026-10-31: item 2 (e2), the per-measure comparisons - Cramér-von Mises per measure, permutation p-values and
-  Holm's correction, red-first (journal of 2026-10-31, § The Per-Measure Comparisons).
-- 2026-10-31: item 2 (e1), the benchmark's test - crate `benchmark`, a classifier two-sample test, red-first, with
-  its settings and power measured on synthetic samples (journal of 2026-10-31, § The Benchmark's Test, Built
-  Red-First).
-- 2026-10-31: item 10 (d), a "start here" tour and a glossary of the lab's own words in the README (journal of
-  2026-10-31, § A "Start Here" Tour in the README).
-- 2026-10-31: item 10 (e), a journal index - one line a night, with the section to start at, in
-  `docs/journal/README.md` (journal of 2026-10-31, § A Journal Index).
-- 2026-10-31: item 10 (c), the ideas diagram and a forest plot of every contrast H14 records, both drawn by
-  `notebooks/figures.ipynb` (journal of 2026-10-31, § An Idea's Path, and the Toy Worm's Graded Gain as a Plot).
-- 2026-10-31: item 10 (b), two diagrams - a night's cycle, in the README and NIGHT_SHIFT.md, and the benchmark's
-  pipeline, in PLAN.md and FEATURES.md (journal of 2026-10-31, § Two Diagrams: a Night's Cycle and the Benchmark's
-  Pipeline).
-- 2026-10-31: item 10 (a), the figure tooling and the first diagram, how the pieces fit, in the README (journal of
-  2026-10-31, § The Figure Tooling, and the First Diagram).
-- 2026-10-31: plans for E1-E3 and E5 (learning and memory), taken up again after parking and read whole by a fresh
-  verifier; E4 parked again, its network needing a pilot (journal of 2026-10-31, § The E1-E5 Plans, Taken Up Again).
-- 2026-10-31: four documents brought in step with the Grid's chemical sense at Program ABI 11 (journal of
-  2026-10-31, § Four Documents in Step With the Grid's Smell).
-- 2026-10-31: `external/` at the latest mains: tron-grid-lite to Program ABI 11, the placeholder rebuilt; build,
-  render and the placeholder's life unchanged - a life with no refused intent is the same at both pins in everything
-  but its wall-clock start (journal of 2026-10-31, § The Grid Moves to Program ABI 11).
-- 2026-10-31: plans for D7-D13, and A10's question answered: no report of play in a nematode found (journal of
-  2026-10-31, § Plans for D7-D13).
-- 2026-10-31: plans for D1-D6 (chemistry and affect), each waiting on food and a sense of intake; the leads' bearing
-  checked against their abstracts (journal of 2026-10-31, § Plans for D1-D6).
-- 2026-10-30: the toolbox's event statistics in Rust (`motion_events`, `event_stats`), tested red-first (journal of
-  2026-10-30, § The Toolbox's Event Statistics in Rust).
-- 2026-10-30: the toolbox's definitions of state durations and rates, read at source for item 2(c) (journal of
-  2026-10-30, § How the Toolbox Turns States Into Durations and Rates).
-- 2026-10-30: the night's coherence audit: fourteen points, most mended (journal of 2026-10-30, § A Coherence Audit,
-  and What It Mended).
-- 2026-10-30: one instrument for both bodies' locomotion states: the published rule applied to the lab's own speed,
-  decided in FEATURES.md, with its reason in the journal of 2026-10-30, § One Instrument for Both Bodies' Locomotion
-  States.
-- 2026-10-30: the constant floor on ten fresh rich layouts: H1 fails (+0.0021, −0.0014 to +0.0052); eight of ten lean its
-  way and one is clearly worse (descriptive).
-- 2026-10-30: a constant floor below 0.3, three seeds in the rich layouts: F1 and F2 fail; the graded gain's rich edge
-  over the matched step is not detected pooled (+0.0014, −0.0039 to +0.0061), but varies by layout (descriptive).
-- 2026-10-30: the graded gain without its steering below 0.3: Z1 fails (rich, +0.0025, −0.0012 to +0.0053); its edge
-  goes in 82201 and 82204 (descriptive); rich worms spend about 99% of their time below 0.3.
-- 2026-10-30: the matched step in the rich layouts: W1 holds in all five (lowest bound −0.0046); graded ends above it
-  in three (descriptive; sub-0.3 steering, grading and turn size not separated).
-- 2026-10-30: graded, matched and un-latched with three body seeds per layout: Q2 holds (+0.0471, +0.0281 to +0.0644;
-  new seeds alone +0.0458); Q1 fails (+0.0015, −0.0202 to +0.0216).
-- 2026-10-30: the same with the constant closer to matched (0.5572): P2 holds (+0.0496, +0.0198 to +0.0772); P1 fails (graded
-  minus matched −0.0056, −0.0365 to +0.0218).
-- 2026-10-30: grading or smaller turns, a scaled step: M2 holds (scaled minus un-latched +0.0423, +0.0116 to +0.0725);
-  M1 fails (graded minus scaled +0.0018, −0.0298 to +0.0362): smaller turns carry the lead, grading adds nothing detected.
-- 2026-10-30: graded or un-latched, an ablation: L1 holds (graded minus un-latched +0.0440, +0.0096 to +0.0768); L2
-  fails (un-latched minus latched gate −0.0063, −0.0275 to +0.0140): the gain carries the lead; no latch effect detected.
-- 2026-10-30: the graded hunger gain, a second body seed and the rich layouts: K3 holds (+0.0441, +0.0149 to +0.0737,
-  seeds pooled; new seed alone +0.0506, +0.0161 to +0.0892); K4 holds in all five rich layouts; still not shown better
-  than never steering (−0.0305, −0.0725 to +0.0111).
-- 2026-10-30: H14's graded hunger gain on ten fresh layouts: beats the on/off gate (K1 holds, +0.0377, +0.0046 to
-  +0.0678); not shown better than never steering (K2 −0.0279, −0.0723 to +0.0151).
-- 2026-10-30: H14 added to the hypotheses (graded slow knobs, change-detecting senses, a set point, individuality),
-  from a conversation the maintainer relayed; three new sources read at their abstracts.
-- 2026-10-30: the global rule without the margin on ten fresh layouts: N1 fails (cold +0.0179, −0.0321 to +0.0630); N2
-  holds only through harm in the warm band (−0.0623, wholly below zero); the margin limits that harm.
-- 2026-10-30: `external/` moved to latest `main` again: Link protocol 12 and food eaten in the tick (master-control
-  `53e5acb`, tron-grid-lite `ee5332d`); C1-C3 hold, the placeholder's life unchanged.
-- 2026-10-30: `external/` moved to latest `main` (the upstream re2js linter override; link `9b1b771`, master-control
-  `866b13c`, tron-grid-lite `91f38a0`); B1-B3 hold, the world unchanged.
+- 2026-11-03: `external/` at the latest mains (tron-grid-lite `ba76cdd`, master-control `28bda1c`, link `5c63e87`):
+  D1-D3 hold - Master Control's suite 120 then 124 passed, `ctest` 22 of 22, the three device checks, the same render
+  digest - and the placeholder's life is the same at both pins once its join tick is taken out (journal of 2026-11-03,
+  § The World Moves to the Faster Floor, Measured Before and After).

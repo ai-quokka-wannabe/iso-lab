@@ -10,8 +10,8 @@ The sources were read in full on PubMed Central on 2026-10-14, unless a line say
 ([doi:10.1016/j.cell.2013.08.001](https://doi.org/10.1016/j.cell.2013.08.001), PMC3942133). Stephens et al. 2008 and
 Brown et al. 2013 were read for [the behaviour-measures note](../research/behaviour-measures.md). The Grid's facts
 are read from the world's sources at the commits `external/` pins, and were last re-checked at tron-grid-lite
-`ee5332d`, master-control `53e5acb` and link `9b1b771` (journal of 2026-10-30, § A Coherence Audit, and What It
-Mended).
+`ba76cdd`, master-control `28bda1c` and link `5c63e87` (journal of 2026-11-03, § The World Moves to the Faster Floor,
+Measured Before and After).
 
 ![The benchmark's pipeline: recordings of real worms are downloaded by fetch-block, measured by features and
 summarised as reference statistics; a Program's lives on the Grid are recorded as Disks, to be measured the same way
@@ -31,7 +31,7 @@ once, and per-measure comparisons will say where they differ. Dashed boxes are n
 | Gaps | 46% of frames without a skeleton in record 1011832. Yemini et al. name three causes - a dropped frame, a stage movement, a failed extraction - and how the 46% splits among them is not yet known | None: every tick has every pose |
 | Bending | Unbounded by the recording; local bends can be large | Each servo bounded: the Grid's limit for the class is 0.9 rad, about 52 degrees (`roster.cpp` in tron-grid-lite), under the world's ceiling of pi/2 (`WORLD_MAX_JOINT_ANGLE` in master-control's `src/roster.rs`) |
 | Plane | Crawling on agar, two-dimensional | Three-dimensional poses; on the flat arena a trailing segment's pitch is zero, while the head "pitches as its own vertices meet the floor" (link's `SegmentPose` and `CreatureState`) |
-| Surroundings | On a bacterial lawn (OP50), after a 30-minute wait, tracked for 15 minutes | A flat, foodless arena |
+| Surroundings | On a bacterial lawn (OP50), after a 30-minute wait, tracked for 15 minutes | The world's floor, with food orbs since the pins of 2026-10-30, at Master Control's default density of 0.1 (`DEFAULT_DENSITY` in master-control's `src/food.rs`; a life's input log records it in its `food` row) |
 
 ## Common Units
 
