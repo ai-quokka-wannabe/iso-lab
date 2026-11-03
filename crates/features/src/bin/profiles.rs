@@ -25,8 +25,7 @@
 //! `provisional_` are the locomotion states' durations and rates, provisional until STATE.md item
 //! 2(c)'s check of the published durations passes.
 
-use features::posture::ARCS;
-use features::profile::{Profile, profile};
+use features::profile::{Profile, measure_names, profile};
 use features::read_skeletons;
 use std::fmt::Write as _;
 use std::io::Write;
@@ -35,7 +34,6 @@ use std::process::ExitCode;
 
 const ORDER: &str = "data/manifests/owmd-n2-order.tsv";
 const DIRECTORY: &str = "data/raw/owmd-n2";
-const MODES: [&str; 3] = ["forward", "backward", "paused"];
 
 fn header() -> String {
     let mut columns: Vec<String> = [
@@ -51,22 +49,13 @@ fn header() -> String {
     ]
     .map(String::from)
     .to_vec();
-    columns.extend((1..=ARCS).map(|arc| format!("arc{arc}_angle_sd[rad]")));
-    columns.extend(["midbody_speed_mean[L/s]", "midbody_speed_abs_mean[L/s]"].map(String::from));
-    columns.extend(MODES.iter().chain(&["no_state"]).map(|mode| format!("{mode}_share[1]")));
-    for mode in MODES {
-        columns.extend([
-            format!("provisional_{mode}_events[1]"),
-            format!("provisional_{mode}_mean_duration[s]"),
-            format!("provisional_{mode}_frequency[1/s]"),
-        ]);
-    }
+    columns.extend(measure_names());
     columns.join("\t")
 }
 
 /// How many measure columns follow the context ones.
 fn measure_columns() -> usize {
-    ARCS + 2 + 4 + 3 * MODES.len()
+    measure_names().len()
 }
 
 fn number(value: f64) -> String {
@@ -168,6 +157,7 @@ fn main() -> ExitCode {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use features::posture::ARCS;
 
     #[test]
     fn every_row_has_as_many_cells_as_the_header() {
