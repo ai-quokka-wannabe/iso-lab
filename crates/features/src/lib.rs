@@ -152,7 +152,7 @@ pub struct FrameIndex {
 /// The dataset's records are decoded here rather than by `hdf5-pure`, whose shuffle filter refuses
 /// a chunk whose length is not a whole number of records. These files' pipeline applies Fletcher-32
 /// before the shuffle, so each chunk the shuffle sees is its records plus a four-byte checksum;
-/// libhdf5's shuffle leaves such trailing bytes where they are, and so does [`decode_chunk`]. The
+/// libhdf5's shuffle leaves such trailing bytes where they are, and so does `decode_chunk`. The
 /// checksum itself is not verified: each whole file's MD5 was checked on download.
 pub fn read_frame_index(path: &Path) -> Result<FrameIndex, ReadError> {
     let hdf5 = |error: hdf5_pure::Error| ReadError::Hdf5(error.to_string());
