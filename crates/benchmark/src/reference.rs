@@ -91,6 +91,68 @@ pub fn summarise(rows: &[Vec<f64>], resamples: usize, seed: u64) -> Option<Vec<S
     )
 }
 
+/// The ranks of `values`, 1 for the smallest, tied values sharing the mean of their ranks.
+fn ranks(values: &[f64]) -> Vec<f64> {
+    let mut order: Vec<usize> = (0..values.len()).collect();
+    order.sort_by(|&a, &b| values[a].total_cmp(&values[b]).then(a.cmp(&b)));
+    let mut ranks = vec![0.0; values.len()];
+    let mut start = 0;
+    while start < order.len() {
+        let mut end = start + 1;
+        while end < order.len() && values[order[end]] == values[order[start]] {
+            end += 1;
+        }
+        // Positions start..end hold equal values: ranks start + 1 ..= end, whose mean is this.
+        let shared = (start + end + 1) as f64 / 2.0;
+        for &index in &order[start..end] {
+            ranks[index] = shared;
+        }
+        start = end;
+    }
+    ranks
+}
+
+/// Spearman's rank correlation of `x` and `y`: Pearson's correlation of their ranks, ties given
+/// mean ranks. `None` when the lengths differ, there are fewer than three pairs, a value is not
+/// finite, or either side's ranks do not vary.
+pub fn spearman(x: &[f64], y: &[f64]) -> Option<f64> {
+    if x.len() != y.len() || x.len() < 3 || x.iter().chain(y).any(|v| !v.is_finite()) {
+        return None;
+    }
+    let (rx, ry) = (ranks(x), ranks(y));
+    let n = x.len() as f64;
+    let (mx, my) = (rx.iter().sum::<f64>() / n, ry.iter().sum::<f64>() / n);
+    let (mut sxy, mut sxx, mut syy) = (0.0, 0.0, 0.0);
+    for (a, b) in rx.iter().zip(&ry) {
+        sxy += (a - mx) * (b - my);
+        sxx += (a - mx) * (a - mx);
+        syy += (b - my) * (b - my);
+    }
+    (sxx > 0.0 && syy > 0.0).then(|| sxy / (sxx * syy).sqrt())
+}
+
+/// Spearman's correlation of `x` and `y`, with its percentile bootstrap interval at
+/// [`INTERVAL_TAILS`] from `resamples` resamples of the pairs seeded by `seed`, and how many
+/// resamples gave no correlation (a side without variation) and were left out.
+pub fn spearman_interval(x: &[f64], y: &[f64], resamples: usize, seed: u64) -> Option<(f64, (f64, f64), usize)> {
+    let rho = spearman(x, y)?;
+    let mut values = Vec::with_capacity(resamples);
+    let mut undefined = 0;
+    for draw in bootstrap_draws(x.len(), resamples, seed) {
+        let xs: Vec<f64> = draw.iter().map(|&i| x[i]).collect();
+        let ys: Vec<f64> = draw.iter().map(|&i| y[i]).collect();
+        match spearman(&xs, &ys) {
+            Some(value) => values.push(value),
+            None => undefined += 1,
+        }
+    }
+    if values.is_empty() {
+        return None;
+    }
+    values.sort_by(f64::total_cmp);
+    Some((rho, (quantile(&values, INTERVAL_TAILS.0), quantile(&values, INTERVAL_TAILS.1)), undefined))
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -177,5 +239,34 @@ mod tests {
         assert_eq!(summarise(&[vec![1.0], vec![f64::NAN]], 9, 1), None);
         assert_eq!(summarise(&[vec![1.0]], 9, 1), None);
         assert_eq!(summarise(&[vec![1.0], vec![1.0, 2.0]], 9, 1), None);
+    }
+
+    #[test]
+    fn spearman_of_known_orders() {
+        let x = [1.0, 2.0, 3.0, 4.0, 5.0];
+        assert_eq!(spearman(&x, &[10.0, 20.0, 30.0, 40.0, 50.0]), Some(1.0));
+        assert_eq!(spearman(&x, &[5.0, 4.0, 3.0, 2.0, 1.0]), Some(-1.0));
+        // Monotone but not linear: still 1.
+        assert_eq!(spearman(&x, &[1.0, 8.0, 27.0, 64.0, 1000.0]), Some(1.0));
+        // A hand-worked case with a tie: ranks of y are 1, 2.5, 2.5, 4, 5 against 1-5, so
+        // rho = sum (rx - 3)(ry - 3) / sqrt(10 * 9.5) = 9.5 / sqrt(95).
+        let rho = spearman(&x, &[0.0, 1.0, 1.0, 2.0, 3.0]).unwrap();
+        assert!((rho - 9.5 / 95.0_f64.sqrt()).abs() < 1e-12, "{rho}");
+        assert_eq!(spearman(&x, &[1.0; 5]), None);
+        assert_eq!(spearman(&x[..2], &x[..2]), None);
+        assert_eq!(spearman(&x, &[1.0, 2.0, f64::NAN, 4.0, 5.0]), None);
+    }
+
+    #[test]
+    fn spearman_interval_brackets_the_estimate_and_excludes_zero_when_strong() {
+        // y follows x with a little scrambling: strongly positive.
+        let x: Vec<f64> = (0..200).map(f64::from).collect();
+        let y: Vec<f64> = (0..200).map(|i| f64::from(i) + f64::from((i * 37) % 23)).collect();
+        let (rho, (low, high), _) = spearman_interval(&x, &y, 999, 3).unwrap();
+        assert!(low <= rho && rho <= high && low > 0.9, "{rho} in {low}..{high}");
+        // y unrelated to x by a stride: the interval holds zero.
+        let z: Vec<f64> = (0..200).map(|i| f64::from((i * 73) % 200)).collect();
+        let (_, (low, high), _) = spearman_interval(&x, &z, 999, 3).unwrap();
+        assert!(low < 0.0 && high > 0.0, "{low}..{high}");
     }
 }
