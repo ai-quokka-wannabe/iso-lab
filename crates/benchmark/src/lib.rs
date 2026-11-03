@@ -51,6 +51,7 @@
 use std::fmt;
 
 pub mod compare;
+pub mod reference;
 
 /// The test's settings.
 #[derive(Clone, Copy, Debug, PartialEq)]
