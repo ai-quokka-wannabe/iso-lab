@@ -5,7 +5,8 @@ latest mains, with the world, the render and the placeholder's life unchanged; C
 refuted in its cures; the pace note's gaps had a fourth pass; E4 was planned again from a pilot, and its four
 assertions became tests in Rust; the reference statistics over block 1 were computed, their interval's level pinned by
 a test, block 1's gaps split by cause, and the eigen-shape amplitudes made measures on a frozen basis; and on fresh
-warm layouts the toy worm's steering harm did not reappear. Before it,
+warm layouts the toy worm's steering harm did not reappear; and C18's two loose ends were run, the threshold sweep
+void by its control and the finer grid's 1.1 D share read. Before it,
 2026-10-31 ([the journal of 2026-10-31](docs/journal/2026-10-31.md)): C18 was unparked - its lead read in
 full, its cliff defined, its test piloted on four controls, which it read as it must; section D was planned whole, and
 the toolbox's event statistics (done 2026-10-30) were merged. Before it, 2026-10-30
@@ -184,12 +185,8 @@ found lives in the journal section it names; this list keeps only what is open.
     - (g) the hypotheses' README: (c)'s diagram is in it; what is left is a short section pointing to the experiments'
       index for the rest;
     - (h) the audits (`check-coherence`, `check-style`, `check-spelling`) once more, to catch what is left.
-11. **C18's two loose ends**, optional and small, each one run (journal of 2026-11-03, § C18's Plan, Run, *What is
-    next*): why the conserved budget at a gain of 1.2 locates its cliff at d = 1.53 rather than at the lead's 1 - sweep
-    the activation threshold at that gain; and a 1.1 D reading that cannot fall a grid step before a jump, from a finer
-    grid near D.
-12. **A unit test for `reference-stats`' basis stop** (the number freed when E4's assertions, the earlier item 12,
-    landed), small: the 1e-12 limit inside `check_basis` is seen failing only
+11. **A unit test for `reference-stats`' basis stop** (first numbered 12, the number freed when E4's assertions
+    landed; 11 since C18's loose ends were done), small: the 1e-12 limit inside `check_basis` is seen failing only
     end to end; a test feeding it a fit that satisfies the eigenvalue identity with loadings about 1e-6 off would guard
     it ([#205](https://github.com/ai-quokka-wannabe/iso-lab/pull/205)'s second review).
 
@@ -198,6 +195,11 @@ found lives in the journal section it names; this list keeps only what is open.
 Experiments that failed or came out inconclusive, kept rather than discarded (the maintainer's ruling); each with
 the idea for the next attempt.
 
+- **C18's threshold hunch** (journal of 2026-11-03, § C18's Loose Ends, Run): the sweep of the activation threshold at
+  the budget's gain of 1.2 came out void by its control, L0, missed by 0.001. Read post hoc, the miss is largely the 1%
+  locator's dependence on the grid's step: re-located at the run's step it is 1.569, still 0.04 from 1.528, so the
+  fresh draws account for part of it. Descriptively, D fell from 1.654 to 1.160 towards the graph's own 1.014 as the
+  threshold fell. Next attempt: the same sweep with fresh seeds, with L0 set against the run's own grid of step 0.25.
 - **For the maintainer**: whether each night's write-up (step 8 of *Each run, in order*) should also add a line to
   the journal index in `docs/journal/README.md` (item 10 (e)); without that, the index goes stale.
 - **For the maintainer**: whether a decided item, such as the speed for the locomotion states, stays under
@@ -328,3 +330,7 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   spread along them four new measures (medians 0.94, 0.80, 0.78 and 0.46 rad), the eigenvalues agreeing with their
   within and between parts to 1e-15 and the basis matching the fit loading by loading, and the halves agreeing on all
   27 measures (journal of 2026-11-03, § The Eigen-Shape Amplitudes of Block 1).
+- 2026-11-03: item 11, C18's two loose ends: (a) the threshold sweep at the budget's gain of 1.2 is void by its
+  control (L0 missed by 0.001), though D fell from 1.654 to 1.160 towards the graph's 1.014 as the threshold fell
+  (descriptive); (b) on a grid of step 0.02 the jump control clears its jump (share 0.907), and the pure network
+  reads *neither*, 0.856 (journal of 2026-11-03, § C18's Loose Ends, Run).
