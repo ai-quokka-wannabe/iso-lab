@@ -31,7 +31,8 @@ recordings ([data/README.md § The Phase 0 Survey](data/README.md#the-phase-0-su
 literature note says how worm behaviour is measured. The comparison space is drafted
 ([docs/benchmark/FEATURES.md](docs/benchmark/FEATURES.md)): which measures carry over to the Grid's body, and what
 must be settled before the benchmark is frozen, food first. The Rust workspace reads the reference recordings and computes
-their measures - posture, speed, the locomotion states and the eigen-shape amplitudes - with the reference statistics
+their measures - posture, speed, the locomotion states and the eigen-shape amplitudes, the durations and rates from
+the lab's speed still provisional until item 2 (c)'s check - with the reference statistics
 over block 1 and their gaps by cause; the benchmark's test is built (item 2 (e1), (e2)) but not yet run on real data
 alone; and the arena is proven to a first life: a placeholder Program, which undulates only, lived fifteen minutes on the Grid and its world replays
 exactly. No creature has been scored.
@@ -187,7 +188,8 @@ found lives in the journal section it names; this list keeps only what is open.
     next*): why the conserved budget at a gain of 1.2 locates its cliff at d = 1.53 rather than at the lead's 1 - sweep
     the activation threshold at that gain; and a 1.1 D reading that cannot fall a grid step before a jump, from a finer
     grid near D.
-12. **A unit test for `reference-stats`' basis stop**, small: the 1e-12 limit inside `check_basis` is seen failing only
+12. **A unit test for `reference-stats`' basis stop** (the number freed when E4's assertions, the earlier item 12,
+    landed), small: the 1e-12 limit inside `check_basis` is seen failing only
     end to end; a test feeding it a fit that satisfies the eigenvalue identity with loadings about 1e-6 off would guard
     it ([#205](https://github.com/ai-quokka-wannabe/iso-lab/pull/205)'s second review).
 
