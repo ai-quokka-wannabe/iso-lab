@@ -289,7 +289,8 @@ Pace Note's Gaps, a Fifth Pass, and § The Pace Note's Gaps, a Sixth Pass, have 
   the end point, nor the figure's "VAR" marks. Their group's earlier paper, [Ghosh et al.
   2012](https://doi.org/10.1186/1741-7007-10-85) (PMC3520762), does not define a response latency either; its nearest
   measure is TMAX, the "mean time to reach MAXS" (the maximum speed after the laser pulse). The authors or their code
-  would settle it. The sixth pass found public code and data from the same laboratory, behind Leung et al. 2016
+  would settle it. The sixth pass found public code and data from the same authors' collaboration (Nemenman's group at Emory, with
+  Mohammadi and Ryu among Leung et al.'s authors), behind Leung et al. 2016
   ([its repository](https://github.com/EmoryUniversityTheoreticalBiophysics/C.-elegans), commit `6f6a27a`): it models
   the centroid's velocity and has no reaction-time code, and its licence file says the software "is prohibeted for
   distribution outside of the Emory University Theoretical Biopphysics team" (their spelling), so the lab does not use
@@ -304,8 +305,10 @@ Pace Note's Gaps, a Fifth Pass, and § The Pace Note's Gaps, a Sixth Pass, have 
   rough (roughly 40 to 90 s at 10 s intervals, one panel). Timbers et al. 2013, behind Porto et al.'s 50 s, is subscription only with no author manuscript in Europe PMC,
   and its abstract gives no time constant. Next: the Multi-Worm Tracker data of a tap habituation paper, if public,
   fitted by the lab.
-- The primary source for lethargus as usually cited, Singh and Sulston 1978 (not open; in the sixth pass Europe PMC
-  did not find it by its title or its authors); measured durations are now in
+- The primary source for lethargus as usually cited, Singh and Sulston 1978, "Some observations on molting in
+  Caenorhabditis elegans", *Nematologica* 24, 63-71, as Faerberg et al. 2024 give it
+  ([doi:10.1163/187529278X00074](https://doi.org/10.1163/187529278X00074)): not open, and not in Europe PMC by its
+  title or its DOI (sixth pass, queries in the journal). The DOI is the lead for a library route; measured durations are now in
   the table, from Patel et al. 2022.
 - The timing of sleep-like quiescence outside lethargus: stress-induced quiescence has timings from Hill et al.
   2014's text (above), its figures' time courses still to read. Satiety quiescence is now narrowed (fifth pass, table
