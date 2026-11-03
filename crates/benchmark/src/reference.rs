@@ -122,8 +122,26 @@ mod tests {
         let (narrow, wide) = (interval(400), interval(25));
         assert!(narrow < wide / 2.0, "400 rows: {narrow}, 25 rows: {wide}");
         // A uniform on [0, 1): the median's standard error is about 1 / (2 sqrt(n)), so the 95%
-        // interval spans about 3.92 / (2 sqrt(400)) = 0.098 at 400 rows.
-        assert!((0.06..0.14).contains(&narrow), "{narrow}");
+        // interval spans about 3.92 / (2 sqrt(400)) = 0.098 at 400 rows, and a 90% interval about
+        // 3.29 / 40 = 0.082, so the window admits the first and not the second.
+        assert!((0.088..0.11).contains(&narrow), "{narrow}");
+    }
+
+    #[test]
+    fn the_interval_is_the_resampled_medians_2_5_and_97_5_percent_quantiles() {
+        // The reported level is what a reader takes from every interval, so it is pinned directly:
+        // the same seed's draws, their medians computed here, and the type-7 quantiles at 2.5% and
+        // 97.5% must be the interval to the last bit - and a 90% interval must not be.
+        let rows: Vec<Vec<f64>> = (0..31).map(|i| vec![f64::from((i * 13) % 31).powi(2)]).collect();
+        let (resamples, seed) = (999, 5);
+        let mut medians: Vec<f64> = bootstrap_draws(rows.len(), resamples, seed)
+            .iter()
+            .map(|draw| median(draw.iter().map(|&i| rows[i][0]).collect()))
+            .collect();
+        medians.sort_by(f64::total_cmp);
+        let interval = summarise(&rows, resamples, seed).unwrap()[0].median_interval;
+        assert_eq!(interval, (quantile(&medians, 0.025), quantile(&medians, 0.975)));
+        assert_ne!(interval, (quantile(&medians, 0.05), quantile(&medians, 0.95)));
     }
 
     #[test]
