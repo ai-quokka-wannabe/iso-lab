@@ -194,6 +194,31 @@ fn basis_mismatch(fitted: &EigenShapes) -> f64 {
         .fold(0.0, f64::max)
 }
 
+/// For frozen shape `k`, the mean within-recording variance of its amplitude over `all` (divisor
+/// n, recovered from the measure's n - 1 spread) and the variance of the recordings' mean
+/// amplitudes: by the law of total variance their sum is the shape's eigenvalue in a fit weighting
+/// recordings equally.
+fn within_and_between(k: usize, all: &[&Measured]) -> (f64, f64) {
+    let shape = &REFERENCE_SHAPES[k];
+    let n = all.len() as f64;
+    let within = all
+        .iter()
+        .map(|m| {
+            let frames = m.moments.frames as f64;
+            let sd = m.values[ARCS + k];
+            sd * sd * (frames - 1.0) / frames
+        })
+        .sum::<f64>()
+        / n;
+    let means: Vec<f64> = all
+        .iter()
+        .map(|m| shape.iter().zip(&m.moments.sum).map(|(e, s)| e * s).sum::<f64>() / m.moments.frames as f64)
+        .collect();
+    let grand = means.iter().sum::<f64>() / n;
+    let between = means.iter().map(|x| (x - grand) * (x - grand)).sum::<f64>() / n;
+    (within, between)
+}
+
 /// The frozen basis checked against `fitted`, the block's own fit, by the law of total variance:
 /// each eigenvalue against the mean within-recording variance of its amplitude (from the measure)
 /// plus the variance of the recordings' mean amplitudes, and on [`REFERENCE_BLOCK`] each frozen
@@ -208,23 +233,8 @@ fn check_basis(block: u32, fitted: &EigenShapes, all: &[&Measured]) -> Result<St
     );
     let _ = writeln!(out, "component\teigenvalue\twithin\tbetween\twithin_plus_between\trelative_difference\twithin_share");
     let mut worst = 0.0_f64;
-    for (k, shape) in REFERENCE_SHAPES.iter().enumerate() {
-        let n = all.len() as f64;
-        let within = all
-            .iter()
-            .map(|m| {
-                let frames = m.moments.frames as f64;
-                let sd = m.values[ARCS + k];
-                sd * sd * (frames - 1.0) / frames
-            })
-            .sum::<f64>()
-            / n;
-        let means: Vec<f64> = all
-            .iter()
-            .map(|m| shape.iter().zip(&m.moments.sum).map(|(e, s)| e * s).sum::<f64>() / m.moments.frames as f64)
-            .collect();
-        let grand = means.iter().sum::<f64>() / n;
-        let between = means.iter().map(|x| (x - grand) * (x - grand)).sum::<f64>() / n;
+    for k in 0..REFERENCE_SHAPES.len() {
+        let (within, between) = within_and_between(k, all);
         let eigenvalue = fitted.values[k];
         let relative = ((within + between) - eigenvalue).abs() / eigenvalue;
         worst = worst.max(relative);
@@ -491,5 +501,63 @@ mod tests {
         shapes.shapes[1] = std::array::from_fn(|i| cos * two[i] - sin * one[i]);
         let mismatch = basis_mismatch(&shapes);
         assert!(mismatch > 1e-6 && mismatch < 3e-5, "{mismatch}");
+    }
+
+    /// The stop at 1e-12 is the check's only first-order guard, so it is tested on its own: a fit
+    /// whose eigenvalues satisfy the law of total variance exactly, with shapes 1 and 2 turned by
+    /// 1e-11 rad, passes the eigenvalue check and must still be stopped; with the frozen shapes
+    /// themselves, it passes. The turn moves loadings of order 0.3 by a few 1e-12, so the limit is
+    /// pinned to within a decade: at 1e-11 the test fails.
+    #[test]
+    fn the_basis_check_stops_a_fit_whose_loadings_differ_beyond_1e_12() {
+        let mut angles_a = [0.0; ARCS];
+        let mut angles_b = [0.0; ARCS];
+        for i in 0..ARCS {
+            angles_a[i] = 0.3 * REFERENCE_SHAPES[0][i] + 0.1 * REFERENCE_SHAPES[2][i];
+            angles_b[i] = -0.2 * REFERENCE_SHAPES[1][i] + 0.05 * REFERENCE_SHAPES[3][i];
+        }
+        let a = recording(angles_a, 10, [0.4, 0.3, 0.2, 0.1]);
+        let b = recording(angles_b, 12, [0.5, 0.35, 0.25, 0.15]);
+        let all = [&a, &b];
+        let mut fitted = EigenShapes {
+            values: [1.0; ARCS],
+            shapes: [[0.0; ARCS]; ARCS],
+        };
+        for k in 0..REFERENCE_SHAPES.len() {
+            let (within, between) = within_and_between(k, &all);
+            fitted.values[k] = within + between;
+        }
+        fitted.shapes[..4].copy_from_slice(&REFERENCE_SHAPES);
+        assert!(check_basis(REFERENCE_BLOCK, &fitted, &all).is_ok());
+        let (sin, cos) = 1e-11_f64.sin_cos();
+        let (one, two) = (REFERENCE_SHAPES[0], REFERENCE_SHAPES[1]);
+        fitted.shapes[0] = std::array::from_fn(|i| cos * one[i] + sin * two[i]);
+        fitted.shapes[1] = std::array::from_fn(|i| cos * two[i] - sin * one[i]);
+        let error = check_basis(REFERENCE_BLOCK, &fitted, &all).expect_err("a turned basis must be stopped");
+        assert!(error.contains("frozen loading"), "{error}");
+    }
+
+    /// Its mirror: the frozen shapes exactly, with each eigenvalue 1e-8 relative off the law of
+    /// total variance, must be stopped by the 1e-9 identity, not by the loading comparison.
+    #[test]
+    fn the_basis_check_stops_eigenvalues_off_the_identity_beyond_1e_9() {
+        let mut angles = [0.0; ARCS];
+        for i in 0..ARCS {
+            angles[i] = 0.3 * REFERENCE_SHAPES[0][i] - 0.1 * REFERENCE_SHAPES[3][i];
+        }
+        let a = recording(angles, 10, [0.4, 0.3, 0.2, 0.1]);
+        let b = recording([0.0; ARCS], 12, [0.5, 0.35, 0.25, 0.15]);
+        let all = [&a, &b];
+        let mut fitted = EigenShapes {
+            values: [1.0; ARCS],
+            shapes: [[0.0; ARCS]; ARCS],
+        };
+        fitted.shapes[..4].copy_from_slice(&REFERENCE_SHAPES);
+        for k in 0..REFERENCE_SHAPES.len() {
+            let (within, between) = within_and_between(k, &all);
+            fitted.values[k] = (within + between) * (1.0 + 1e-8);
+        }
+        let error = check_basis(REFERENCE_BLOCK, &fitted, &all).expect_err("eigenvalues off the identity must be stopped");
+        assert!(error.contains("relative difference"), "{error}");
     }
 }

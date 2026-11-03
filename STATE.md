@@ -185,10 +185,6 @@ found lives in the journal section it names; this list keeps only what is open.
     - (g) the hypotheses' README: (c)'s diagram is in it; what is left is a short section pointing to the experiments'
       index for the rest;
     - (h) the audits (`check-coherence`, `check-style`, `check-spelling`) once more, to catch what is left.
-11. **A unit test for `reference-stats`' basis stop** (first numbered 12, the number freed when E4's assertions
-    landed; 11 since C18's loose ends were done), small: the 1e-12 limit inside `check_basis` is seen failing only
-    end to end; a test feeding it a fit that satisfies the eigenvalue identity with loadings about 1e-6 off would guard
-    it ([#205](https://github.com/ai-quokka-wannabe/iso-lab/pull/205)'s second review).
 
 ## To Revisit
 
@@ -334,3 +330,6 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   control (L0 missed by 0.001), though D fell from 1.654 to 1.160 towards the graph's 1.014 as the threshold fell
   (descriptive); (b) on a grid of step 0.02 the jump control clears its jump (share 0.907), and the pure network
   reads *neither*, 0.856 (journal of 2026-11-03, § C18's Loose Ends, Run).
+- 2026-11-03: the basis-stop tests (*Next* item 11 that night): `check_basis` is fed a fit that satisfies the
+  eigenvalue identity exactly with shapes turned by 1e-11 rad, and must be stopped, which pins the 1e-12 limit to
+  within a decade; and its mirror, the frozen shapes with eigenvalues 1e-8 off, must be stopped by the 1e-9 identity (journal of 2026-11-03, § The Basis Stop, Tested).
