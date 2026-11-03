@@ -4,8 +4,8 @@
 latest mains, with the world, the render and the placeholder's life unchanged; C18's plan was run, and the hunch is
 refuted in its cures; the pace note's gaps had a fourth pass; E4 was planned again from a pilot, and its four
 assertions became tests in Rust; the reference statistics over block 1 were computed, their interval's level pinned by
-a test, block 1's gaps split by cause, and the eigen-shape amplitudes made measures on a frozen basis; associative memory surveyed for a worm-sized brain; and on fresh
-warm layouts the toy worm's steering harm did not reappear; and C18's two loose ends were run, the threshold sweep
+a test, block 1's gaps split by cause, and the eigen-shape amplitudes made measures on a frozen basis; associative memory surveyed for a worm-sized brain;
+the pace note's gaps had a fifth pass; and on fresh warm layouts the toy worm's steering harm did not reappear; and C18's two loose ends were run, the threshold sweep
 void by its control and the finer grid's 1.1 D share read. Before it,
 2026-10-31 ([the journal of 2026-10-31](docs/journal/2026-10-31.md)): C18 was unparked - its lead read in
 full, its cliff defined, its test piloted on four controls, which it read as it must; section D was planned whole, and
@@ -53,7 +53,7 @@ rather than search for one; what carries up the ladder is kept in [docs/research
 Top first. Each item is sized for one run; split it here before starting if it is bigger. What each finished step
 found lives in the journal section it names; this list keeps only what is open.
 
-1. **Fill the gaps in the pace note** that are left after the pass of 2026-11-03, as listed with their next leads in
+1. **Fill the gaps in the pace note** that are left after the passes of 2026-11-03, as listed with their next leads in
    [docs/research/pace.md § Gaps, to Be Read](docs/research/pace.md#gaps-to-be-read). Figures are within reach through
    Europe PMC's supplementary-files service (pace.md § Noxious Heat).
 2. **Build the feature-extraction tool** for the chosen dataset, in the lab's Rust workspace (`crates/`), compute
@@ -299,6 +299,11 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   touch neurons to acceleration (Porto et al. 2019), and Mohammadi et al.'s reaction times read as counted from the
   laser's onset (the first author's thesis); the touch-to-reversal latency, a behavioural thermotaxis latency, tap
   habituation's time constants and satiety stay open (journal of 2026-11-03, § The Pace Note's Gaps, a Fourth Pass).
+- 2026-11-03: the pace note's gaps, a fifth pass: satiety quiescence narrowed - mean bout ≈ 95 s by Gallagher et al.
+  2013's model (Dataset S1, one step per frame assumed), about 40-50 s by stopwatch in Hyun et al. 2016 (read off a
+  figure), both in watched worms; tap habituation's half-life read by eye from Giles et al. 2015, roughly 50-100 s (low
+  confidence); Timbers et al. 2013 not open. No gap closed (journal of 2026-11-03, § The Pace Note's Gaps, a Fifth
+  Pass).
 - 2026-11-03: item 2 (d2), the reference statistics over block 1's 179 measured recordings: four eigen-shapes carry
   97.8% of the eight-arc posture's variance (four in all 9999 resamples), each measure's median has a bootstrap
   interval, and the block's halves agree on every measure (Holm, smallest raw p 0.264) and by the classifier test
