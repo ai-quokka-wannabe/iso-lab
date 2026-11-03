@@ -126,7 +126,7 @@ found lives in the journal section it names; this list keeps only what is open.
    a keep-the-state rule for ties.
 6. **Plan an experiment for every one of Matej's 128 ideas and hunches** - the maintainer's request - in the format
    of [docs/hypotheses/experiments/README.md](docs/hypotheses/experiments/README.md), whose index shows which are
-   planned. Next, one task each, in this order: **E11-E20** (E1-E3, E5 and E6-E10 are planned; E4 is parked, see *Blocked*), **F** (17), **G** (30, from the gr-fec sandbox;
+   planned. Next, one task each, in this order: **E11-E20** (E1-E10 are planned), **F** (17), **G** (30, from the gr-fec sandbox;
    [docs/research/gr-fec.md](docs/research/gr-fec.md) has its numbers). The journal records the triage, and hunches
    that survive are promoted into numbered hypotheses or tasks here.
 7. **Audit H10's first test by A12's plan**
@@ -185,6 +185,13 @@ found lives in the journal section it names; this list keeps only what is open.
     next*): why the conserved budget at a gain of 1.2 locates its cliff at d = 1.53 rather than at the lead's 1 - sweep
     the activation threshold at that gain; and a 1.1 D reading that cannot fall a grid step before a jump, from a finer
     grid near D.
+12. **E4's assertions, in tested Rust** ([E1-E5.md § E4](docs/hypotheses/experiments/E1-E5.md#e4-hebbian-learning-needs-a-stabiliser-and-a-used-together-rule)):
+    the pilot's network (`notebooks/e4_pilot.ipynb`) built in Rust with its four assertions as tests - Hebb's pair
+    weight passes ignition, the pair ignites exactly above `w* = 1 - 2b`, row normalisation and homeostatic scaling
+    capture exactly when their bound or fixed point exceeds `w*`, Oja's rule (bounded at 1) captures once trained long
+    enough and BCM, in the pilot's mix of trials, grows until it captures, and the "used together" rule keeps undriven
+    units' weights at zero. E4's test proper waits on a Program with a Hebbian module and the frozen benchmark. Seconds
+    of compute.
 
 ## To Revisit
 
@@ -225,15 +232,6 @@ the idea for the next attempt.
 
 ## Blocked
 
-- **The plan for E4, Hebb's rule with a stabiliser and a "used together" rule**
-  ([#180](https://github.com/ai-quokka-wannabe/iso-lab/pull/180), merged with the plan marked as parked in
-  [E1-E5.md](docs/hypotheses/experiments/E1-E5.md#e4-hebbian-learning-needs-a-stabiliser-and-a-used-together-rule)).
-  A probe found that sign units ignore Oja's rescaling, so on the plain reading the stabiliser cannot act; Oja's update is not written as an
-  equation; and an unstated zero-input rule decides the hub condition. Next: pilot the network in a notebook before
-  writing the plan again - graded units, or a threshold, so a rescaling can matter; Oja's update as an equation with
-  its output named; a stated rule at zero input; overlap taken as absolute, so a cue that settles in the mirror of a
-  pattern counts; and a capacity check per seed. Write the plan only once the pilot shows Hebb's rule alone capturing
-  and a stabiliser able to change it.
 - **How the lab reads a Disk** (item 3(d2); waits on the maintainer's ruling). A Disk is Link's frames in a file,
   read back through Link's own library (`replay_open` and `poll` in `external/link/include/lnk/lnk_client.h`), which
   must lie beside the executable that loads it; the lab's rules make each route cost something. (1) Depend on
@@ -306,3 +304,8 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   97.8% of the eight-arc posture's variance (four in all 9999 resamples), each measure's median has a bootstrap
   interval, and the block's halves agree on every measure (Holm, smallest raw p 0.264) and by the classifier test
   (p = 0.889) (journal of 2026-11-03, § The Reference Statistics of Block 1).
+- 2026-11-03: E4 planned again, from a pilot of a rate network: there, a co-activated pair captures by igniting
+  itself once its weight passes `w* = 1 - 2b`, Hebb's rule alone passes it, row normalisation and scaling stop it
+  exactly when their bound or fixed point sits below `w*`, and Oja's rule and BCM (in the pilot's mix of trials)
+  only delay it, so the network gives assertions, and the hunch's test waits on a Program (journal of 2026-11-03,
+  § E4's Pilot, and Its Plan Written Again, and its *After review*).
