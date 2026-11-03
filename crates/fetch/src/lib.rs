@@ -17,7 +17,7 @@
 //!
 //! The Open Worm Movement Database publishes an MD5 for every file of every record
 //! (data/README.md, *The Phase 0 Survey*). A file is used only once its bytes hash to that
-//! value; this crate starts with that check, and the download itself comes next.
+//! value. This crate holds that check, the seeded draw of recordings and the download (`fetch-block`).
 
 pub mod draw;
 pub mod zenodo;

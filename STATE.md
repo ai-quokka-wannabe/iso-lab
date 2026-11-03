@@ -1,10 +1,11 @@
 # State of the Lab
 
 **Last updated:** 2026-11-03 ([the journal of 2026-11-03](docs/journal/2026-11-03.md)): `external/` moved to the
-latest mains - Master Control's faster floor, the Grid's clean end on BYE, Link's comments - with the world, the render
-and the placeholder's life unchanged; C18's plan was run, and the hunch is refuted in its cures; and the reference
-statistics over block 1 were computed - its eigen-shapes, each measure's median with a bootstrap interval, and its
-halves found to agree; block 1's gaps were split by cause; and the eigen-shape amplitudes became measures on a frozen basis. Before it,
+latest mains, with the world, the render and the placeholder's life unchanged; C18's plan was run, and the hunch is
+refuted in its cures; the pace note's gaps had a fourth pass; E4 was planned again from a pilot, and its four
+assertions became tests in Rust; the reference statistics over block 1 were computed, their interval's level pinned by
+a test, block 1's gaps split by cause, and the eigen-shape amplitudes made measures on a frozen basis; and on fresh
+warm layouts the toy worm's steering harm did not reappear. Before it,
 2026-10-31 ([the journal of 2026-10-31](docs/journal/2026-10-31.md)): C18 was unparked - its lead read in
 full, its cliff defined, its test piloted on four controls, which it read as it must; section D was planned whole, and
 the toolbox's event statistics (done 2026-10-30) were merged. Before it, 2026-10-30
@@ -29,10 +30,11 @@ Phase 0, the benchmark, is under way. The reference data is chosen - the Open Wo
 recordings ([data/README.md § The Phase 0 Survey](data/README.md#the-phase-0-survey)) - and the first
 literature note says how worm behaviour is measured. The comparison space is drafted
 ([docs/benchmark/FEATURES.md](docs/benchmark/FEATURES.md)): which measures carry over to the Grid's body, and what
-must be settled before the benchmark is frozen, food first. The Rust workspace reads the reference skeletons and computes
-the first measures - eight-arc posture and a midbody speed, the latter chosen as the benchmark's instrument but its durations and
-reversals not yet checked - and the arena is proven to a
-first life: a placeholder Program, which undulates only, lived fifteen minutes on the Grid and its world replays
+must be settled before the benchmark is frozen, food first. The Rust workspace reads the reference recordings and computes
+their measures - posture, speed, the locomotion states and the eigen-shape amplitudes, the durations and rates from
+the lab's speed still provisional until item 2 (c)'s check - with the reference statistics
+over block 1 and their gaps by cause; the benchmark's test is built (item 2 (e1), (e2)) but not yet run on real data
+alone; and the arena is proven to a first life: a placeholder Program, which undulates only, lived fifteen minutes on the Grid and its world replays
 exactly. No creature has been scored.
 [docs/PLAN.md](docs/PLAN.md) says what the phases are and why the benchmark comes before any brain. Beside the benchmark, the lab takes apart the
 maintainer's toy worm ([docs/research/gr-fec.md](docs/research/gr-fec.md) §§ 9-11) to learn how to design a brain
@@ -50,15 +52,9 @@ rather than search for one; what carries up the ladder is kept in [docs/research
 Top first. Each item is sized for one run; split it here before starting if it is bigger. What each finished step
 found lives in the journal section it names; this list keeps only what is open.
 
-1. **Fill the gaps in the pace note** ([docs/research/pace.md § Gaps, to Be
-   Read](docs/research/pace.md#gaps-to-be-read)), what is left after the pass of 2026-11-03: a touch-to-reversal
-   latency from a mechanical touch, timed to the reversal's start (the nearest is a 0.2 s filter peak after
-   optogenetic activation of the touch neurons); the end point of Mohammadi et al. 2013's reaction times, in words; a
-   thermotaxis latency in behaviour (its papers are identified but not open to the cloud machine); fitted time
-   constants for tap habituation (Giles et al. 2015's half-lives, in figures, and Timbers et al. 2013, the source
-   Porto et al. 2019 cite for their 50 s time constant agreeing with tap habituation, are the next leads); and satiety
-   quiescence, whose source, You et al. 2008, is still not served (Gallagher et al. 2013 is an open lead). Figures are within reach through Europe PMC's
-   supplementary-files service (pace.md § Noxious Heat).
+1. **Fill the gaps in the pace note** that are left after the pass of 2026-11-03, as listed with their next leads in
+   [docs/research/pace.md § Gaps, to Be Read](docs/research/pace.md#gaps-to-be-read). Figures are within reach through
+   Europe PMC's supplementary-files service (pace.md § Noxious Heat).
 2. **Build the feature-extraction tool** for the chosen dataset, in the lab's Rust workspace (`crates/`), compute
    the wild-type reference statistics, and build the benchmark's test on them. Split into runs:
    - (a) the workspace and the MD5 check, done;
@@ -192,6 +188,10 @@ found lives in the journal section it names; this list keeps only what is open.
     next*): why the conserved budget at a gain of 1.2 locates its cliff at d = 1.53 rather than at the lead's 1 - sweep
     the activation threshold at that gain; and a 1.1 D reading that cannot fall a grid step before a jump, from a finer
     grid near D.
+12. **A unit test for `reference-stats`' basis stop** (the number freed when E4's assertions, the earlier item 12,
+    landed), small: the 1e-12 limit inside `check_basis` is seen failing only
+    end to end; a test feeding it a fit that satisfies the eigenvalue identity with loadings about 1e-6 off would guard
+    it ([#205](https://github.com/ai-quokka-wannabe/iso-lab/pull/205)'s second review).
 
 ## To Revisit
 
@@ -317,8 +317,9 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   uninformative; the immature-map and cold-ward hunches are not supported, overshoot is contradicted (warm-ward turns
   alone +0.1233, +0.0421 to +0.2160), and by D's rule the cost goes with the layout, not warmth (journal of 2026-11-03, § Why
   Steering Trails Never Steering in Warm Layouts).
-- 2026-11-03: item 12, E4's four assertions as tests of the pilot's network in Rust (`crates/hebbian`): all hold, and
-  each of seven deliberate breaks fails the assertion it guards (journal of 2026-11-03, § E4's Assertions, in Rust).
+- 2026-11-03: item 12, E4's four assertions as tests of the pilot's network in Rust (`crates/hebbian`): all hold; ten
+  deliberate breaks each fail a test, and two variants of BCM's threshold pass, since the assertion constrains BCM
+  only qualitatively (journal of 2026-11-03, § E4's Assertions, in Rust).
 - 2026-11-03: item 2 (d3), the gaps by cause in block 1: stage movements (median 3.3% of a window) and frames with no
   good skeleton (median 2.1%) told apart through a reader of the per-frame table written around `hdf5-pure`'s shuffle;
   the stage share follows speed (rho 0.95), and frames beside a failed skeleton are 1.62 times as bent as frames far
