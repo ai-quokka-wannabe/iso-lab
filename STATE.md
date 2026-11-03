@@ -2,7 +2,8 @@
 
 **Last updated:** 2026-11-03 ([the journal of 2026-11-03](docs/journal/2026-11-03.md)): `external/` moved to the
 latest mains - Master Control's faster floor, the Grid's clean end on BYE, Link's comments - with the world, the render
-and the placeholder's life unchanged. Before it, 2026-10-31 ([the journal of 2026-10-31](docs/journal/2026-10-31.md)): C18 was unparked - its lead read in
+and the placeholder's life unchanged; and C18's plan was run, and the hunch is refuted in its cures. Before it,
+2026-10-31 ([the journal of 2026-10-31](docs/journal/2026-10-31.md)): C18 was unparked - its lead read in
 full, its cliff defined, its test piloted on four controls, which it read as it must; section D was planned whole, and
 the toolbox's event statistics (done 2026-10-30) were merged. Before it, 2026-10-30
 ([the journal of 2026-10-30](docs/journal/2026-10-30.md)): `external/` moved to latest
@@ -173,10 +174,10 @@ found lives in the journal section it names; this list keeps only what is open.
     - (g) the hypotheses' README: (c)'s diagram is in it; what is left is a short section pointing to the experiments'
       index for the rest;
     - (h) the audits (`check-coherence`, `check-style`, `check-spelling`) once more, to catch what is left.
-11. **Run C18's plan** ([C13-C24.md § C18](docs/hypotheses/experiments/C13-C24.md#c18-spreading-activation-has-a-cliff)):
-    the four controls first, then the pure network, the budget at both gains, the corrected fan-out penalty and
-    inhibition, with fresh seeds; its expectations are pre-registered in the journal of 2026-10-31, § C18 Unparked: the
-    Cliff Defined, the Test Piloted. Waits on nothing; minutes of compute.
+11. **C18's two loose ends**, optional and small, each one run (journal of 2026-11-03, § C18's Plan, Run, *What is
+    next*): why the conserved budget at a gain of 1.2 locates its cliff at d = 1.53 rather than at the lead's 1 - sweep
+    the activation threshold at that gain; and a 1.1 D reading that cannot fall a grid step before a jump, from a finer
+    grid near D.
 
 ## To Revisit
 
@@ -285,6 +286,10 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   D1-D3 hold - Master Control's suite 120 then 124 passed, `ctest` 22 of 22, the three device checks, the same render
   digest - and the placeholder's life is the same at both pins once its join tick is taken out (journal of 2026-11-03,
   § The World Moves to the Faster Floor, Measured Before and After).
+- 2026-11-03: item 11, C18's plan run with fresh seeds, the four controls reading as they must: C18 is refuted by
+  clauses (2), (4) and (5). The pure network has a cliff (D = 2.255), but inhibition, the fan-out penalty and the budget
+  at a gain of 1.2 move it (to 4.75, 7.50 and 1.53) rather than remove it; the budget at a gain of 0.4 removes it by
+  spreading nothing; two-hop priming is 0.40 of one-hop (journal of 2026-11-03, § C18's Plan, Run).
 - 2026-11-03: the pace note's gaps, a fourth pass: lethargus measured (L4 2.0-2.2 h, L3 1.4-1.6 h, L2 1.3 h, hourly
   sampling; Patel et al. 2022), the thermoreceptor's latency (about 100 ms; Ramot et al. 2008), a 0.2 s filter peak from
   touch neurons to acceleration (Porto et al. 2019), and Mohammadi et al.'s reaction times read as counted from the
