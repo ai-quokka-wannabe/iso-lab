@@ -192,6 +192,9 @@ pub fn eigen_shapes(matrix: &[[f64; ARCS]; ARCS]) -> EigenShapes {
 /// (docs/journal of 2026-11-03, *The Reference Statistics of Block 1*).
 pub const REFERENCE_COMPONENTS: usize = 4;
 
+/// The block of the reference draw [`REFERENCE_SHAPES`] was fitted on.
+pub const REFERENCE_BLOCK: u32 = 1;
+
 /// The frozen basis both bodies are projected on: block 1's first [`REFERENCE_COMPONENTS`]
 /// eigen-shapes, each a row of eight loadings, head first, fitted with each of its 179 measured
 /// recordings weighted equally. Printed by `reference-stats 1 --basis` at commit `15dfd09` under
