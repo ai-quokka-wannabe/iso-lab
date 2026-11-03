@@ -188,6 +188,42 @@ pub fn eigen_shapes(matrix: &[[f64; ARCS]; ARCS]) -> EigenShapes {
     EigenShapes { values, shapes }
 }
 
+/// How many of block 1's eigen-shapes are measures: the fewest that carry 95% of the variance
+/// (docs/journal of 2026-11-03, *The Reference Statistics of Block 1*).
+pub const REFERENCE_COMPONENTS: usize = 4;
+
+/// The block of the reference draw [`REFERENCE_SHAPES`] was fitted on.
+pub const REFERENCE_BLOCK: u32 = 1;
+
+/// The frozen basis both bodies are projected on: block 1's first [`REFERENCE_COMPONENTS`]
+/// eigen-shapes, each a row of eight loadings, head first, fitted with each of its 179 measured
+/// recordings weighted equally. Printed by `reference-stats 1 --basis` at commit `15dfd09` under
+/// rustc 1.99.1 (docs/journal of 2026-11-03, *The Eigen-Shape Amplitudes of Block 1*). It is
+/// never refitted: the fit's `atan2` may round differently on another machine, and another block
+/// would give other shapes. Changing it changes the benchmark.
+#[rustfmt::skip]
+pub const REFERENCE_SHAPES: [[f64; ARCS]; REFERENCE_COMPONENTS] = [
+    [0.6451042741839101, 0.48810950019478894, 0.09197108354725753, -0.16955496029175085, -0.18675369187087723, -0.18388519992001698, -0.29207239680596464, -0.3929186090373457],
+    [-0.22437392552396448, -0.05346223214546826, 0.40117890529626304, 0.6038131259602746, 0.2610200517401693, -0.26946767387005116, -0.46482510779154423, -0.25388314366567855],
+    [0.22065525184217086, -0.2411865423492245, -0.44223733898022355, 0.024253291110440608, 0.5601981980116026, 0.43465877397960845, -0.13768959385045407, -0.4186520397639207],
+    [0.4851717468763895, -0.339200075702275, -0.32458660683731483, 0.2133483990749435, 0.0645197220443396, -0.41868422744229206, -0.20648135762320277, 0.5259123996094139],
+];
+
+/// One frame's amplitudes on [`REFERENCE_SHAPES`]: its mean-removed angles projected on each shape.
+pub fn amplitudes(angles: &[f64; ARCS]) -> [f64; REFERENCE_COMPONENTS] {
+    REFERENCE_SHAPES.map(|shape| shape.iter().zip(angles).map(|(e, a)| e * a).sum())
+}
+
+/// The first [`REFERENCE_COMPONENTS`] shapes as the Rust source of [`REFERENCE_SHAPES`]'s value,
+/// each loading in Rust's shortest form that reads back as the same `f64`.
+pub fn basis_source(shapes: &EigenShapes) -> String {
+    let rows: Vec<String> = shapes.shapes[..REFERENCE_COMPONENTS]
+        .iter()
+        .map(|shape| format!("    [{}],", shape.iter().map(|x| format!("{x:?}")).collect::<Vec<_>>().join(", ")))
+        .collect();
+    format!("[\n{}\n]", rows.join("\n"))
+}
+
 /// The absolute cosine between two eigen-shapes: 1 when they are the same up to sign.
 pub fn alignment(a: &[f64; ARCS], b: &[f64; ARCS]) -> f64 {
     let dot: f64 = a.iter().zip(b).map(|(x, y)| x * y).sum();
@@ -291,5 +327,50 @@ mod tests {
     #[test]
     fn no_frames_give_no_covariance() {
         assert_eq!(covariance(&[&Moments::default()], Weighting::Recordings), None);
+    }
+
+    #[test]
+    fn the_reference_basis_is_orthonormal_and_mean_free() {
+        for (k, a) in REFERENCE_SHAPES.iter().enumerate() {
+            assert!(a.iter().sum::<f64>().abs() < 1e-12, "shape {k} does not sum to zero");
+            let largest = a.iter().fold(0.0_f64, |m, x| if x.abs() > m.abs() { *x } else { m });
+            assert!(largest > 0.0, "shape {k}'s largest component is negative");
+            for (j, b) in REFERENCE_SHAPES.iter().enumerate() {
+                let dot: f64 = a.iter().zip(b).map(|(x, y)| x * y).sum();
+                let expected = if j == k { 1.0 } else { 0.0 };
+                assert!((dot - expected).abs() < 1e-12, "shapes {k} and {j}: {dot}");
+            }
+        }
+    }
+
+    #[test]
+    fn amplitudes_are_projections_on_the_basis() {
+        // A frame equal to 0.3 times shape 2 plus 0.1 times shape 4 has those amplitudes.
+        let angles: [f64; ARCS] = std::array::from_fn(|i| 0.3 * REFERENCE_SHAPES[1][i] + 0.1 * REFERENCE_SHAPES[3][i]);
+        let a = amplitudes(&angles);
+        for (k, expected) in [0.0, 0.3, 0.0, 0.1].iter().enumerate() {
+            assert!(close(a[k], *expected, 1e-12), "{a:?}");
+        }
+    }
+
+    #[test]
+    fn the_basis_prints_as_rust_that_reads_back_exactly() {
+        let (first, second) = two_shapes();
+        let mut moments = Moments::default();
+        for a in [-3.0, 3.0] {
+            for b in [-1.0, 1.0] {
+                moments.add(&std::array::from_fn(|k| a * first[k] + b * second[k] + 1e-3 * (k as f64).sin()));
+            }
+        }
+        let shapes = eigen_shapes(&covariance(&[&moments], Weighting::Recordings).unwrap());
+        let source = basis_source(&shapes);
+        let numbers: Vec<f64> = source
+            .split(|c: char| c == '[' || c == ']' || c == ',' || c.is_whitespace())
+            .filter(|s| !s.is_empty())
+            .map(|s| s.parse().unwrap())
+            .collect();
+        let expected: Vec<f64> = shapes.shapes[..REFERENCE_COMPONENTS].iter().flatten().copied().collect();
+        assert_eq!(numbers.len(), REFERENCE_COMPONENTS * ARCS);
+        assert!(numbers.iter().zip(&expected).all(|(a, b)| a.to_bits() == b.to_bits()), "{source}");
     }
 }
