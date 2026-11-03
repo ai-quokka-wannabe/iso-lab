@@ -152,10 +152,14 @@ found lives in the journal section it names; this list keeps only what is open.
      H14's graded hunger gain and its ablations, tested on 2026-10-30: the results are in
      [H14](docs/hypotheses/README.md#h14-graded-slow-knobs-change-detecting-senses-and-individuality) § *Tested so
      far*. Next: the hunger-gain series rests here; reopening the floor would take a test over many more rich layouts, sized beforehand to resolve
-     an effect of about +0.002; why gated steering of any kind still
-     trails never steering in warm layouts; more body
+     an effect of about +0.002; more body
      seeds per layout, to tell a small cold-band gain from none; what the gate does in 23001's first day, where its harm starts; and the timing of a worm's
-     meals against the turning of its map;
+     meals against the turning of its map. Why steering trails never steering in warm layouts, tested on 2026-11-03
+     (journal of 2026-11-03, § Why Steering Trails Never Steering in Warm Layouts): on five fresh warm layouts the
+     harm is not reproduced, and in their mirror images it goes with the layout, not with warmth. Kept alone,
+     turns towards the band help and turns away harm, and the brain's decisions split about evenly between them
+     (descriptive). Next: whether the greedy rule's direction, read off the map, is what fails, scored against the
+     band per decision;
    - (d) the composition law: a third lever that acts alone, and roaming's interaction as its own test.
 
    Once a calculation matters to anything the lab builds on, it moves into tested Rust.
@@ -314,6 +318,11 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   exactly when their bound or fixed point sits below `w*`, and Oja's rule and BCM (in the pilot's mix of trials)
   only delay it, so the network gives assertions, and the hunch's test waits on a Program (journal of 2026-11-03,
   § E4's Pilot, and Its Plan Written Again, and its *After review*).
+- 2026-11-03: item 9 (b), why steering trails never steering in warm layouts, on five fresh warm layouts and their
+  mirror images: the harm is not reproduced (G − N −0.0442, −0.1284 to +0.0293), so the mechanism tests are
+  uninformative; the immature-map and cold-ward hunches are not supported, overshoot is contradicted (warm-ward turns
+  alone +0.1233, +0.0421 to +0.2160), and by D's rule the cost goes with the layout, not warmth (journal of 2026-11-03, § Why
+  Steering Trails Never Steering in Warm Layouts).
 - 2026-11-03: item 2 (d3), the gaps by cause in block 1: stage movements (median 3.3% of a window) and frames with no
   good skeleton (median 2.1%) told apart through a reader of the per-frame table written around `hdf5-pure`'s shuffle;
   the stage share follows speed (rho 0.95), and frames beside a failed skeleton are 1.62 times as bent as frames far
