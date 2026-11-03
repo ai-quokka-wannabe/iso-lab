@@ -5,8 +5,8 @@ and the rhythm of its decisions match the worm's, each from a cited source. This
 so far. Some latencies are given in the sources only as figures; those not yet read are listed as gaps rather than
 guessed.
 
-The papers were read on 2026-10-14 in full on PubMed Central, through NCBI's BioC service and Europe PMC, unless a
-line says otherwise. How sure the lab is: high for the quoted sentences and numbers, which are the papers' own;
+The papers were read on 2026-10-14, or on 2026-11-03 where a line names that pass, in full on PubMed Central, through
+NCBI's BioC service and Europe PMC, unless a line says otherwise. How sure the lab is: high for the quoted sentences and numbers, which are the papers' own;
 lower for the paragraphs headed *For the lab*, which are the lab's reasoning. Numbers are taken from a paper's text,
 except where a line says they are read off a figure: those carry the uncertainty of the reading, and the method is in
 the journal.
@@ -39,7 +39,21 @@ worms to plate taps and to optogenetic stimulation of the six gentle-touch neuro
   glia beside them, within a few milliseconds.
 - **Not found**: the latency from a touch to the start of a reversal, as a number in a paper's text. A scan of the
   first 15 open-access results of each of five Europe PMC queries on touch, tap and latency (45 papers; the queries
-  are in the journal) found none.
+  are in the journal) found none, and neither did five more queries on 2026-11-03 (journal of 2026-11-03, § The Pace
+  Note's Gaps, a Fourth Pass), nor the full texts of the force-clamped touch assay of [Mazzochette et al.
+  2018](https://doi.org/10.1039/c8ib00045j) (PMC6168290), the high-speed films of touch assays of [Nekimken et al.
+  2017](https://doi.org/10.1371/journal.pone.0178080) (PMC5438190) and the optogenetic tracker of [Leifer et al.
+  2011](https://doi.org/10.1038/nmeth.1554) (PMC3032981).
+- **The nearest, from activating the touch neurons with light** (2026-11-03 pass): [Porto et al.
+  2019](https://doi.org/10.1038/s41598-019-41349-0) (PMC6435754) drove channelrhodopsin in the touch receptor
+  neurons (promoter *mec-4*, in a *lite-1* background) of freely crawling worms with a pseudorandom light sequence
+  switching at 2 Hz, filmed at 13 Hz ("acquisition rate is 13 Hz", so frames about 77 ms apart), and computed by
+  reverse correlation the filter linking the anterior neurons' activation to the worm's acceleration: "the delay to
+  the peak (0.2 s) and the decay timescale of the filter (0.4 s)". For reversals and pauses they write only that
+  "this increased likelihood happens within the first second after a stimulus". This is a filter's peak, not the
+  start of a reversal, and it includes the light-gated channel's own kinetics and comes from light, not touch; but it is
+  frame-level timing, stated in text, and the lab's best number so far for how soon the touch neurons move the body.
+  How sure: high that the paper says it; moderate for its use as a touch latency.
 - **Read from Liu et al.'s Figure 2—figure supplement 2**, by pixel (method in the journal of 2026-10-14): the
   population's rate of classified transitions into their "Fast Reverse" state peaks about 0.25 s after a plate tap,
   and about 0.6 s after the onset of a 1 s light pulse. The light figure is not a touch latency: it comes from a
@@ -63,6 +77,23 @@ worms to plate taps and to optogenetic stimulation of the six gentle-touch neuro
   ([Bozorgmehr et al. 2013](https://doi.org/10.3389/fphys.2013.00088), PMC3750945). Longer memories follow training:
   after spaced training, memory was tested "24 h later", and after massed training "intermediate term memory lasts 16 but
   not 24 h". These are secondary statements and protocol timescales, not fitted time constants.
+- **Habituation, from primary sources** (2026-11-03 pass). The Rankin laboratory's primary papers of 1990 to 2001
+  are not open; their abstracts, read through Europe PMC, give one bound: at 4 and 7 days old, "worms had recovered
+  from habituation by 30 min after training" ([Beck and Rankin 1993](https://doi.org/10.1016/0376-6357%2893%2990088-9),
+  abstract only), and recovery "was more rapid, with short interstimulus intervals (ISIs) than with longer ISIs"
+  ([Rankin and Broster 1992](https://doi.org/10.1037/0735-7044.106.2.239), abstract only). A later open paper fits
+  exponentials to tap habituation, 30 taps at 10 s intervals, and calls "the habituation rate (the half-life of the
+  exponential curve)" a measure, but reports it in figures only ([Giles et al.
+  2015](https://doi.org/10.1534/g3.115.021410), PMC4683646). The one fitted value stated in text comes from
+  optogenetic activation of the touch receptor neurons, not taps: Porto et al. 2019 (above) needed an exponential decay
+  of the response magnitude across their continuous stimulus sequence and found that "a decay rate of 50 s provided
+  the best predictions", chosen from a range of values tested (their Figure S14, not read), without an uncertainty.
+  Their methods write the decay as exp(-λt) with "λ is 50 s", so the 50 s is a time constant, whatever the word
+  *rate* says. They add that it "is consistent with previous findings from investigations of habituation to
+  stimulation of TRNs, with both tapping and optogenetic stimuli", citing [Timbers et al.
+  2013](https://doi.org/10.1016/j.neurobiolaging.2012.03.016) (not open to this session), the lead for a tap value.
+  So far: a recovery bound and a model's time constant, said by its authors to agree with tap habituation, not yet
+  a fitted time constant of tap habituation read by the lab.
 
 ### Noxious Heat
 
@@ -88,6 +119,24 @@ pulse of 133 ms.
   does not say from which moment the reaction time is counted, nor how the reaction is detected; the videos were
   recorded "at 30 fps", so the times rest on frames 33 ms apart. How sure: moderate for the means as plotted, low for
   what exactly they measure and for their spread.
+- **What the reaction times count, from the first author's thesis** (2026-11-03 pass). [Mohammadi
+  2014](http://hdl.handle.net/1807/43669), the PhD thesis behind the paper, public in the University of Toronto's
+  repository and read in the text the repository extracted from its PDF, describes the method: each frame is reduced
+  to 41 points along the body; "[i]t was assumed that the worm was going forward at the moment the thermal stimulus is
+  applied"; a reversal's start is the frame at which the centroid's path, "sampled at every 2 frames", turns by more
+  than 120 degrees; a pause is a centroid speed below 0.4 pixels per frame, with the body at least three quarters extended, for three
+  consecutive frames; and every flag was then checked by eye in a viewer and corrected where wrong. On timing it states, of the 133 ms pulse and
+  the heat's decay to 1/e after about 150 ms, a "total time estimate for the thermal pulse" of about 300 ms, and that
+  "the average reaction time for a worm to withdraw from the noxious pulse is ~250ms", so that the worm moves "at its
+  withdrawal (accelerated) speed for ~50ms" of the pulse. That arithmetic, 300 - 250 = 50 ms, counts the reaction time
+  from the laser's onset; neither text says so in words, so this is the lab's reading, and it reads the end point
+  as the first frame flagged in a new state, which the thesis does not tie to Figure 2c either. How sure: moderate for
+  the onset, lower for the end point. The thesis's ~250 ms agrees with the strongest stimulus's 0.25 s read off the
+  figure. A later paper from the same laboratory, with the same kind of pulse (0.1 s) filmed at 60 Hz, considered
+  removing the first "about 10 frames (0.16 s) after the laser stimulation since worms do not respond to the
+  stimulus so quickly"; removing them "had a negligible effect on the model performance", and they were kept
+  ([Leung et al. 2016](https://doi.org/10.1371/journal.pcbi.1005262), PMC5189946). The authors' assumption that
+  nothing happens within 0.16 s is not a measurement, but it is consistent with the rest.
 
 [Wittenburg and Baumeister 1999](https://doi.org/10.1073/pnas.96.18.10477) (PMC17914), only the abstract read: "[t]he
 escape reflex can be observed in 98% of the adult animals". The full text could not be fetched as text; it is to be
@@ -111,7 +160,23 @@ light on worms.
 Thermotaxis, the response to temperatures the worm prefers, is a different behaviour from heat avoidance (Wittenburg
 and Baumeister 1999); its reaction latency is still to be read. One study of rapid cooling scores a reversal as a
 response if it starts "within 5 s of stimulation initiation" ([Lin et al. 2024](https://doi.org/10.1038/s41467-023-44638-5),
-PMC10770330): a scoring window, like Liu et al.'s, not a measured latency. Three slower timescales are on record:
+PMC10770330): a scoring window, like Liu et al.'s, not a measured latency. The papers that time the behaviour's
+response to defined temperature steps are identified - [Ryu and Samuel 2002](https://doi.org/10.1523/jneurosci.22-13-05727.2002)
+(PMC6758190), [Zariwala et al. 2003](https://doi.org/10.1523/jneurosci.23-10-04369.2003) (PMC6741103), [Clark et al.
+2007](https://doi.org/10.1523/jneurosci.1032-07.2007) (PMC6672141) and [Luo et al. 2014](https://doi.org/10.1073/pnas.1315205111)
+(PMC3932917) - but none was open to this session: they are free to read on PubMed Central, behind its CAPTCHA, but
+outside the open-access subset that Europe PMC's and NCBI's text services serve, and the publishers' pages refused
+the request (2026-11-03 pass; only the first two abstracts read, which state no latency).
+
+- **At the receptor** (2026-11-03 pass): in patch-clamp recordings from AFD in a slit-worm preparation, small rapid
+  temperature steps (0.26 ± 0.06 °C) changed the thermoreceptor current with "an average latency of 96 ± 5 ms (n =
+  3)" in three recordings, and 132 ms in a fourth made with a different pipette saline; "[t]he latency was the time
+  difference between the half maximum points of both traces", the temperature's and the current's ([Ramot et al.
+  2008](https://doi.org/10.1038/nn.2157), PMC2587641, the author manuscript, read through NCBI's BioC service). Like
+  the touch receptors' milliseconds, a receptor's latency in a dissected animal, not a behaviour's; it says
+  thermosensation starts about a tenth of a second after the change, some three ticks of the Grid.
+
+Three slower timescales are on record:
 
 - **Hours, for a remembered temperature without food.** Worms placed on a thermal gradient without food for one hour
   "accumulated at the temperature of previous cultivation"; "when left longer on the thermal gradient, animals started
@@ -171,15 +236,16 @@ food (STATE.md *Needs From Other Repositories*), so it has no repellent to time 
 | Settling after transfer to a new plate | Speed and crawling frequency decay with τ = 19 minutes, midbody amplitude with τ = 48 minutes; the fit is good for speed (R² = 0.96) and weaker for frequency (0.71) and amplitude (0.59) | [Yemini et al. 2013](https://doi.org/10.1038/nmeth.2560) |
 | After-effect of light | Locomotion returns to its basal rate over about 140 s, a duration, not a fitted τ | Edwards et al. 2008 |
 | Feeding, on meeting food | Pumping "rose slowly, on the time scale of 100 s of seconds", in worms food-deprived for 1-2 h and then offered food in a microfluidic chip that holds the worm at its midsection by a vacuum clamp, "leaving the head ... and tail free to move" | [Katzen et al. 2023](https://doi.org/10.7554/eLife.69779) (PMC10231927) |
-| Lethargus, the quiescence between larval stages | "typically last 1-2 h", as Faerberg et al. 2024 cite Singh and Sulston 1978; the primary source is not read | [Faerberg et al. 2024](https://doi.org/10.1242/dev.202961) (PMC11266794) |
+| Lethargus, the quiescence between larval stages | Measured (2026-11-03 pass), in wild-type cohorts each worm observed "at regular 1 h intervals" (for "5–60 s" by the methods, about a minute by the results) and scored lethargic when "neither pharyngeal pumps nor sinusoidal locomotion were observed": the L4 lethargus lasted 2.2 ± 0.4 h (mean ± sd, N = 16), 2.0 ± 0.0 h (N = 17) and 2.0 ± 0.0 h (N = 12) in three N2 cohorts and 2.2 ± 0.6 h (N = 20) in a wild-type GR1395 cohort, the L3 1.6 ± 0.5 h (N = 17) and 1.4 ± 0.5 h (N = 13), the L2 1.3 ± 0.5 h (N = 18) (Supplementary file 1). The worms were singled on NGM-RNAi plates, so these wild-type rows may be control-RNAi conditions; the lab did not check which. Hourly sampling resolves the durations only to the hour; the methods say strains were grown at 25 °C unless otherwise specified, and the lab did not find another temperature stated for these assays. Within L4 lethargus, the posture-based measurements of Biron's and Raizen's laboratories show "alternating bouts of quiescence and motion of durations of 1–100 sec", with "most quiescent bout durations" shorter than 20 s. The primary source usually cited, Singh and Sulston 1978, is still not open, and it is cited two ways: "1-2 h" by Faerberg et al. 2024, a "2–3 hr period" by [Nagy et al. 2013](https://doi.org/10.7554/eLife.00782) (PMC3699835) and "the 2–3 hour period of L4leth" by Nagy, Raizen and Biron 2014 | [Patel et al. 2022](https://doi.org/10.7554/eLife.80010) (PMC9377799); [Nagy, Raizen and Biron 2014](https://doi.org/10.1016/j.ymeth.2014.03.009) (PMC4112141, a methods paper, the author manuscript); [Faerberg et al. 2024](https://doi.org/10.1242/dev.202961) (PMC11266794) |
 | Sleep-like quiescence after stress, in adults | Duration: after a 30 min heat shock at 35 °C, "both pharyngeal pumping and locomotion remain suppressed for up to an hour after exposure". Latency: after cold stress (30 min at −15 °C), "a peak of ALA-dependent locomotor quiescence at 20 minutes" - the time of a peak, not a bout's length. For contrast, not quiescence: after "a brief (<1 min) heat exposure" animals "recover normal activity within minutes", recovery from the acute response, which the paper cites to its Table S1, not read. The time courses themselves are in figures not read | [Hill et al. 2014](https://doi.org/10.1016/j.cub.2014.08.040) (PMC4254280, the author manuscript), the passages quoted read, not the whole paper |
 
 ## For the Lab
 
 - **The Grid's tick is 31.25 ms** ([the comparison space](../benchmark/FEATURES.md#the-two-bodies) gives its source).
-  The behavioural timings above, 250 ms and longer, span eight ticks or more and are resolvable; the receptors'
-  adaptation over "a few tens of milliseconds" is a timescale, not a latency, and lasts about one tick, below what a
-  tick can resolve. A Program's reflexes must not be faster than the worm's merely because the tick allows it.
+  The behavioural timings above, 200 ms and longer (Porto et al.'s filter peak, 0.2 s, is the shortest), span six
+  ticks or more and are resolvable; the receptors' latencies, from about 1 ms for touch to about 100 ms for
+  temperature, are under one to about three ticks, and their adaptation over "a few tens of milliseconds" is a
+  timescale, not a latency, about one tick long, below what a tick can resolve. A Program's reflexes must not be faster than the worm's merely because the tick allows it.
 - **What the benchmark measures.** The latencies above come from stimuli the reference recordings do not contain: they
   are of spontaneous behaviour. So the benchmark can hold a Program to the time constants of its states and its rhythm
   from the recordings themselves, but to its reaction latencies only through stimulus assays, which wait on stimuli
@@ -192,27 +258,43 @@ food (STATE.md *Needs From Other Repositories*), so it has no repellent to time 
 
 ## Gaps, to Be Read
 
-- A touch-to-reversal latency measured with frame-level timing: none is stated in the text of 45 open papers searched,
-  and Liu et al.'s figure, now read, shows reversals clustering within about a second without resolving their onset.
-  The reference recordings contain no stimuli. Liu et al. 2018 cite Ardiel et al. 2017, "Habituation as an adaptive
+What is still open after the pass of 2026-11-03 (journal of 2026-11-03, § The Pace Note's Gaps, a Fourth Pass, has what
+was tried).
+
+- A touch-to-reversal latency, from a mechanical touch, timed to the reversal's start: none is stated in the text of
+  the open papers searched. The nearest are Liu et al.'s figure (reversals clustering within about a second) and Porto
+  et al.'s filter (a peak 0.2 s after optogenetic activation of the touch neurons), both above. The reference
+  recordings contain no stimuli. Liu et al. 2018 cite Ardiel et al. 2017, "Habituation as an adaptive
   shift in response strategy mediated by neuropeptides"
   ([doi:10.1038/s41539-017-0011-8](https://doi.org/10.1038/s41539-017-0011-8), PMC6161508), for "reversal latency";
-  read in full, it measures latency to light-activation of ASH, with values in figures only.
-- The definition behind Mohammadi et al. 2013's reaction times (from which moment, to which event), and their spread;
-  the paper cites its group's earlier work for the response time, [Ghosh et al.
-  2012](https://doi.org/10.1186/1741-7007-10-85) (PMC3520762), but its text does not define a response latency either.
-  Its nearest measure is TMAX, the "mean time to reach MAXS" (the maximum speed after the laser pulse), which its
-  results most likely call the "time to respond with an increase in speed" (Figure 3F; the identification is the lab's
-  reading). That its times count from the stimulus is implied, by its methods ("It is assumed that the worm is going
-  FORWARD at the moment the thermal stimulus is applied"), but not stated. It heats the whole worm with a 0.5 s pulse,
-  where Mohammadi et al. heat a spot for 133 ms, so even a definition would not carry over directly. Their code or the
-  authors would settle it. And Wittenburg and Baumeister 1999 in full.
-- A thermotaxis reaction latency (the slower timescales above are orders of magnitude only), and the primary source
-  for lethargus (Singh and Sulston 1978).
-- Fitted time constants for tap habituation and its recovery: the primary papers (Rankin et al. 1990 and later) were
-  not open in full text; only a review's summary is read.
-- The timing of sleep-like quiescence outside lethargus: stress-induced quiescence now has timings from Hill et al.
-  2014's text (above); satiety quiescence, and the figures' time courses, are still to read. For satiety the
-  source is You et al. 2008 ([doi:10.1016/j.cmet.2008.01.005](https://doi.org/10.1016/j.cmet.2008.01.005), PMC3786678):
-  its abstract, read through Europe PMC, states no timing; Europe PMC did not serve its full text (an HTTP 500), and PMC
-  answered with a CAPTCHA, which the lab does not get around.
+  read in full, it measures latency to light-activation of ASH, with values in figures only. The next ways: Liu et
+  al.'s or Porto et al.'s published data, if public, re-analysed for the reversal's onset; or a figure of a paper timing
+  touch at a high frame rate.
+- What Mohammadi et al. 2013's reaction times count, in words: the first author's thesis (above) fixes the detection
+  method and implies, by its arithmetic, that they count from the laser's onset, but neither it nor the paper defines
+  the end point, nor the figure's "VAR" marks. Their group's earlier paper, [Ghosh et al.
+  2012](https://doi.org/10.1186/1741-7007-10-85) (PMC3520762), does not define a response latency either; its nearest
+  measure is TMAX, the "mean time to reach MAXS" (the maximum speed after the laser pulse). The authors or their code
+  would settle it. And Wittenburg and Baumeister 1999 in full, still not served as text (BioC: not in the open-access
+  subset; the publisher refused the request).
+- A thermotaxis reaction latency in behaviour: the receptor's latency is now read (Ramot et al. 2008, above); the
+  behavioural papers are identified but not open to this session (above).
+- Fitted time constants for tap habituation and its recovery: the primary papers (Rankin et al. 1990 and later) are
+  not open in full text; their abstracts give a recovery bound only, and Giles et al. 2015 report their fitted
+  half-lives in figures only, a figure read for a later pass. Porto et al.'s 50 s time constant (above) is said by
+  its authors to agree with tap habituation, citing Timbers et al. 2013
+  ([doi:10.1016/j.neurobiolaging.2012.03.016](https://doi.org/10.1016/j.neurobiolaging.2012.03.016), not open): the
+  source behind that agreement, still to be read.
+- The primary source for lethargus as usually cited, Singh and Sulston 1978 (not open); measured durations are now in
+  the table, from Patel et al. 2022.
+- The timing of sleep-like quiescence outside lethargus: stress-induced quiescence has timings from Hill et al.
+  2014's text (above), its figures' time courses still to read. Satiety quiescence has none yet: its source, You et
+  al. 2008 ([doi:10.1016/j.cmet.2008.01.005](https://doi.org/10.1016/j.cmet.2008.01.005), PMC3786678), is still not
+  served (Europe PMC: HTTP 500; NCBI's BioC: not in the open-access subset; the publisher's pages refused the request),
+  and the open papers read on it state no bout timing in their text: [Hyun et al.
+  2016](https://doi.org/10.1038/srep24841) (PMC4838937) fasted worms "for 12 hrs and refed for 3 or 6 hrs to examine
+  satiety quiescence" and measured quiescence durations for ten worms, shown in figures, not stated. A lead not yet
+  followed: [Gallagher et al. 2013](https://doi.org/10.1371/journal.pone.0059865) (PMC3610905, open), a state model of
+  feeding behaviour from the same field, which also warns that "it has not been possible to watch satiety-induced
+  quiescence for more than about a minute", because quiescent worms wake under continuous observation; a quick scan
+  of its text found no dwell time stated, and its figures are unread.

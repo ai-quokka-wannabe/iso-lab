@@ -165,7 +165,10 @@ matched step, though the registered pooled test fails (§ The Graded Gain Withou
 body seeds per rich layout, that edge is not detected pooled over five layouts; it varies with the layout and repeats
 across seeds, and where it exists an ungraded constant floor below 0.3 carries it (descriptive; § A Constant Floor
 Below 0.3, With Three Body Seeds in the Rich Layouts). On ten fresh rich layouts that floor was not shown to beat the
-matched step (§ The Constant Floor on Ten Fresh Rich Layouts).
+matched step (§ The Constant Floor on Ten Fresh Rich Layouts). On five fresh warm layouts the graded gain was not shown
+to trail never steering, and in their mirror images the cost went with the layout rather than with warmth, by a rule set
+before the run. Kept alone, turns towards the band helped and turns away harmed, while the brain's own decisions split
+about evenly between the two (descriptive; journal 2026-11-03, § Why Steering Trails Never Steering in Warm Layouts).
 *For bigger brains*: test every world again after gating a module; a fix in one world is a new claim in all. A state
 used as a gate may mark *which* individuals are in it, not only *when* - split by individual before reading a gate,
 and test the split under the gate itself - with the same individuals in both arms (branch one life), never two

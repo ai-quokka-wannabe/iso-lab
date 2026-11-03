@@ -2,7 +2,9 @@
 
 **Last updated:** 2026-11-03 ([the journal of 2026-11-03](docs/journal/2026-11-03.md)): `external/` moved to the
 latest mains - Master Control's faster floor, the Grid's clean end on BYE, Link's comments - with the world, the render
-and the placeholder's life unchanged; and C18's plan was run, and the hunch is refuted in its cures. Before it,
+and the placeholder's life unchanged; C18's plan was run, and the hunch is refuted in its cures; and the reference
+statistics over block 1 were computed - its eigen-shapes, each measure's median with a bootstrap interval, and its
+halves found to agree. Before it,
 2026-10-31 ([the journal of 2026-10-31](docs/journal/2026-10-31.md)): C18 was unparked - its lead read in
 full, its cliff defined, its test piloted on four controls, which it read as it must; section D was planned whole, and
 the toolbox's event statistics (done 2026-10-30) were merged. Before it, 2026-10-30
@@ -49,12 +51,14 @@ Top first. Each item is sized for one run; split it here before starting if it i
 found lives in the journal section it names; this list keeps only what is open.
 
 1. **Fill the gaps in the pace note** ([docs/research/pace.md § Gaps, to Be
-   Read](docs/research/pace.md#gaps-to-be-read)): a touch-to-reversal latency with frame-level timing (none of the 45
-   open papers scanned states one in text, and Liu et al. 2018's figure shows reversals clustering within about a
-   second without resolving their onset); what Mohammadi et al. 2013's heat reaction times count from; a thermotaxis
-   latency; fitted time constants for tap habituation from primary papers; and the primary sources for lethargus and
-   sleep-like quiescence (for satiety, You et al. 2008 is identified, its full text not yet reached). Figures are
-   within reach: Europe PMC's supplementary-files service serves a paper's figure images (pace.md § Noxious Heat).
+   Read](docs/research/pace.md#gaps-to-be-read)), what is left after the pass of 2026-11-03: a touch-to-reversal
+   latency from a mechanical touch, timed to the reversal's start (the nearest is a 0.2 s filter peak after
+   optogenetic activation of the touch neurons); the end point of Mohammadi et al. 2013's reaction times, in words; a
+   thermotaxis latency in behaviour (its papers are identified but not open to the cloud machine); fitted time
+   constants for tap habituation (Giles et al. 2015's half-lives, in figures, and Timbers et al. 2013, the source
+   Porto et al. 2019 cite for their 50 s time constant agreeing with tap habituation, are the next leads); and satiety
+   quiescence, whose source, You et al. 2008, is still not served (Gallagher et al. 2013 is an open lead). Figures are within reach through Europe PMC's
+   supplementary-files service (pace.md § Noxious Heat).
 2. **Build the feature-extraction tool** for the chosen dataset, in the lab's Rust workspace (`crates/`), compute
    the wild-type reference statistics, and build the benchmark's test on them. Split into runs:
    - (a) the workspace and the MD5 check, done;
@@ -76,14 +80,18 @@ found lives in the journal section it names; this list keeps only what is open.
      next; journal of 2026-10-31, § The Benchmark, Split Into Runs):
        - (d1) one row of measures per recording, done (journal of 2026-10-31, § One Row of Measures per Recording:
          Built, and Run on Block 1): `features::profile` and `profiles <block>`, its durations and rates provisional
-         until (c)'s check passes. Block 1 has 17 short recordings with ids 1031915 to 1033195 (16 of five minutes, one of 52.7 s);
-         what they are is to be read from their metadata before (d2);
-       - (d2) the reference statistics over block 1: the eigen-shapes fitted on its real worms' eight angles, with the
-         share of variance they carry; each measure's median and spread across recordings, with a seeded bootstrap
-         interval; and how stable they are between the block's two halves;
+         until (c)'s check passes;
+       - (d2) the reference statistics over block 1, done (journal of 2026-11-03, § The Reference Statistics of Block
+         1): `features::eigenshapes`, `benchmark::reference` and `reference-stats <block>`; the 17 short recordings
+         are recordings of the same protocol, 16 of them of five minutes from the summer of 2009, and the rule stands (§ The
+         Short Recordings of Block 1, Read From Their Metadata);
        - (d3) the gaps by cause, as FEATURES.md § Open Questions Before Freezing asks: how a recording's missing
          frames split between dropped frames, stage movements and failed extraction, and per measure how much it
-         leans on frames likely to be lost;
+         leans on frames likely to be lost; with them, the ten files of block 1 that start 1 to 820 frames into their
+         video (journal of 2026-11-03), and whether the window counts from the video's first frame or the file's.
+         Block 1's files are kept in `data/raw/owmd-n2/` for it;
+       - (d4) the eigen-shape amplitudes as measures, each recording's spread along block 1's first four shapes, so
+         that (e3) can project both bodies on them;
    - (e) the benchmark's test (PLAN.md Phase 0, step 5), split into runs:
        - (e1) done (journal of 2026-10-31, § The Benchmark's Test, Built Red-First): crate `benchmark`, a 21-nearest-
          neighbour classifier two-sample test with five folds and a 999-shuffle permutation p-value, its settings fixed
@@ -118,7 +126,7 @@ found lives in the journal section it names; this list keeps only what is open.
    a keep-the-state rule for ties.
 6. **Plan an experiment for every one of Matej's 128 ideas and hunches** - the maintainer's request - in the format
    of [docs/hypotheses/experiments/README.md](docs/hypotheses/experiments/README.md), whose index shows which are
-   planned. Next, one task each, in this order: **E11-E20** (E1-E3, E5 and E6-E10 are planned; E4 is parked, see *Blocked*), **F** (17), **G** (30, from the gr-fec sandbox;
+   planned. Next, one task each, in this order: **E11-E20** (E1-E10 are planned), **F** (17), **G** (30, from the gr-fec sandbox;
    [docs/research/gr-fec.md](docs/research/gr-fec.md) has its numbers). The journal records the triage, and hunches
    that survive are promoted into numbered hypotheses or tasks here.
 7. **Audit H10's first test by A12's plan**
@@ -142,10 +150,14 @@ found lives in the journal section it names; this list keeps only what is open.
      H14's graded hunger gain and its ablations, tested on 2026-10-30: the results are in
      [H14](docs/hypotheses/README.md#h14-graded-slow-knobs-change-detecting-senses-and-individuality) § *Tested so
      far*. Next: the hunger-gain series rests here; reopening the floor would take a test over many more rich layouts, sized beforehand to resolve
-     an effect of about +0.002; why gated steering of any kind still
-     trails never steering in warm layouts; more body
+     an effect of about +0.002; more body
      seeds per layout, to tell a small cold-band gain from none; what the gate does in 23001's first day, where its harm starts; and the timing of a worm's
-     meals against the turning of its map;
+     meals against the turning of its map. Why steering trails never steering in warm layouts, tested on 2026-11-03
+     (journal of 2026-11-03, § Why Steering Trails Never Steering in Warm Layouts): on five fresh warm layouts the
+     harm is not reproduced, and in their mirror images it goes with the layout, not with warmth. Kept alone,
+     turns towards the band help and turns away harm, and the brain's decisions split about evenly between them
+     (descriptive). Next: whether the greedy rule's direction, read off the map, is what fails, scored against the
+     band per decision;
    - (d) the composition law: a third lever that acts alone, and roaming's interaction as its own test.
 
    Once a calculation matters to anything the lab builds on, it moves into tested Rust.
@@ -177,6 +189,13 @@ found lives in the journal section it names; this list keeps only what is open.
     next*): why the conserved budget at a gain of 1.2 locates its cliff at d = 1.53 rather than at the lead's 1 - sweep
     the activation threshold at that gain; and a 1.1 D reading that cannot fall a grid step before a jump, from a finer
     grid near D.
+12. **E4's assertions, in tested Rust** ([E1-E5.md § E4](docs/hypotheses/experiments/E1-E5.md#e4-hebbian-learning-needs-a-stabiliser-and-a-used-together-rule)):
+    the pilot's network (`notebooks/e4_pilot.ipynb`) built in Rust with its four assertions as tests - Hebb's pair
+    weight passes ignition, the pair ignites exactly above `w* = 1 - 2b`, row normalisation and homeostatic scaling
+    capture exactly when their bound or fixed point exceeds `w*`, Oja's rule (bounded at 1) captures once trained long
+    enough and BCM, in the pilot's mix of trials, grows until it captures, and the "used together" rule keeps undriven
+    units' weights at zero. E4's test proper waits on a Program with a Hebbian module and the frozen benchmark. Seconds
+    of compute.
 
 ## To Revisit
 
@@ -217,15 +236,6 @@ the idea for the next attempt.
 
 ## Blocked
 
-- **The plan for E4, Hebb's rule with a stabiliser and a "used together" rule**
-  ([#180](https://github.com/ai-quokka-wannabe/iso-lab/pull/180), merged with the plan marked as parked in
-  [E1-E5.md](docs/hypotheses/experiments/E1-E5.md#e4-hebbian-learning-needs-a-stabiliser-and-a-used-together-rule)).
-  A probe found that sign units ignore Oja's rescaling, so on the plain reading the stabiliser cannot act; Oja's update is not written as an
-  equation; and an unstated zero-input rule decides the hub condition. Next: pilot the network in a notebook before
-  writing the plan again - graded units, or a threshold, so a rescaling can matter; Oja's update as an equation with
-  its output named; a stated rule at zero input; overlap taken as absolute, so a cue that settles in the mirror of a
-  pattern counts; and a capacity check per seed. Write the plan only once the pilot shows Hebb's rule alone capturing
-  and a stabiliser able to change it.
 - **How the lab reads a Disk** (item 3(d2); waits on the maintainer's ruling). A Disk is Link's frames in a file,
   read back through Link's own library (`replay_open` and `poll` in `external/link/include/lnk/lnk_client.h`), which
   must lie beside the executable that loads it; the lab's rules make each route cost something. (1) Depend on
@@ -289,3 +299,25 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   clauses (2), (4) and (5). The pure network has a cliff (D = 2.255), but inhibition, the fan-out penalty and the budget
   at a gain of 1.2 move it (to 4.75, 7.50 and 1.53) rather than remove it; the budget at a gain of 0.4 removes it by
   spreading nothing; two-hop priming is 0.40 of one-hop (journal of 2026-11-03, § C18's Plan, Run).
+- 2026-11-03: the pace note's gaps, a fourth pass: lethargus measured (L4 2.0-2.2 h, L3 1.4-1.6 h, L2 1.3 h, hourly
+  sampling; Patel et al. 2022), the thermoreceptor's latency (about 100 ms; Ramot et al. 2008), a 0.2 s filter peak from
+  touch neurons to acceleration (Porto et al. 2019), and Mohammadi et al.'s reaction times read as counted from the
+  laser's onset (the first author's thesis); the touch-to-reversal latency, a behavioural thermotaxis latency, tap
+  habituation's time constants and satiety stay open (journal of 2026-11-03, § The Pace Note's Gaps, a Fourth Pass).
+- 2026-11-03: item 2 (d2), the reference statistics over block 1's 179 measured recordings: four eigen-shapes carry
+  97.8% of the eight-arc posture's variance (four in all 9999 resamples), each measure's median has a bootstrap
+  interval, and the block's halves agree on every measure (Holm, smallest raw p 0.264) and by the classifier test
+  (p = 0.889) (journal of 2026-11-03, § The Reference Statistics of Block 1).
+- 2026-11-03: the reference statistics' interval level written once, `INTERVAL_TAILS = (0.025, 0.975)`, and asserted;
+  a test on 1000 untied rows pins `summarise`'s interval to it exactly (journal of 2026-11-03, § The Interval's Level,
+  Pinned).
+- 2026-11-03: E4 planned again, from a pilot of a rate network: there, a co-activated pair captures by igniting
+  itself once its weight passes `w* = 1 - 2b`, Hebb's rule alone passes it, row normalisation and scaling stop it
+  exactly when their bound or fixed point sits below `w*`, and Oja's rule and BCM (in the pilot's mix of trials)
+  only delay it, so the network gives assertions, and the hunch's test waits on a Program (journal of 2026-11-03,
+  § E4's Pilot, and Its Plan Written Again, and its *After review*).
+- 2026-11-03: item 9 (b), why steering trails never steering in warm layouts, on five fresh warm layouts and their
+  mirror images: the harm is not reproduced (G − N −0.0442, −0.1284 to +0.0293), so the mechanism tests are
+  uninformative; the immature-map and cold-ward hunches are not supported, overshoot is contradicted (warm-ward turns
+  alone +0.1233, +0.0421 to +0.2160), and by D's rule the cost goes with the layout, not warmth (journal of 2026-11-03, § Why
+  Steering Trails Never Steering in Warm Layouts).
