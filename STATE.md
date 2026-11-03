@@ -4,7 +4,7 @@
 latest mains - Master Control's faster floor, the Grid's clean end on BYE, Link's comments - with the world, the render
 and the placeholder's life unchanged; C18's plan was run, and the hunch is refuted in its cures; and the reference
 statistics over block 1 were computed - its eigen-shapes, each measure's median with a bootstrap interval, and its
-halves found to agree. Before it,
+halves found to agree; and the eigen-shape amplitudes became measures on a frozen basis. Before it,
 2026-10-31 ([the journal of 2026-10-31](docs/journal/2026-10-31.md)): C18 was unparked - its lead read in
 full, its cliff defined, its test piloted on four controls, which it read as it must; section D was planned whole, and
 the toolbox's event statistics (done 2026-10-30) were merged. Before it, 2026-10-30
@@ -90,8 +90,9 @@ found lives in the journal section it names; this list keeps only what is open.
          leans on frames likely to be lost; with them, the ten files of block 1 that start 1 to 820 frames into their
          video (journal of 2026-11-03), and whether the window counts from the video's first frame or the file's.
          Block 1's files are kept in `data/raw/owmd-n2/` for it;
-       - (d4) the eigen-shape amplitudes as measures, each recording's spread along block 1's first four shapes, so
-         that (e3) can project both bodies on them;
+       - (d4) the eigen-shape amplitudes as measures, done (journal of 2026-11-03, § The Eigen-Shape Amplitudes of
+         Block 1): block 1's first four shapes frozen as `features::eigenshapes::REFERENCE_SHAPES`, and each
+         recording's spread along them four new columns of `features::profile`; (e3) projects block 2 on the basis;
    - (e) the benchmark's test (PLAN.md Phase 0, step 5), split into runs:
        - (e1) done (journal of 2026-10-31, § The Benchmark's Test, Built Red-First): crate `benchmark`, a 21-nearest-
          neighbour classifier two-sample test with five folds and a 999-shuffle permutation p-value, its settings fixed
@@ -321,3 +322,7 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   uninformative; the immature-map and cold-ward hunches are not supported, overshoot is contradicted (warm-ward turns
   alone +0.1233, +0.0421 to +0.2160), and by D's rule the cost goes with the layout, not warmth (journal of 2026-11-03, § Why
   Steering Trails Never Steering in Warm Layouts).
+- 2026-11-03: item 2 (d4), the eigen-shape amplitudes: block 1's first four shapes frozen in the code, each recording's
+  spread along them four new measures (medians 0.94, 0.80, 0.78 and 0.46 rad), the basis checked against its fit to
+  1e-15 by the law of total variance, and the halves agreeing on all 27 measures (journal of 2026-11-03, § The
+  Eigen-Shape Amplitudes of Block 1).
