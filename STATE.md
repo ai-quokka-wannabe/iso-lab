@@ -1,7 +1,10 @@
 # State of the Lab
 
-**Last updated:** 2026-11-03 ([the journal of 2026-11-03](docs/journal/2026-11-03.md)): the reference statistics over
-block 1 - its eigen-shapes, each measure's median with a bootstrap interval, and its halves found to agree. Before it,
+**Last updated:** 2026-11-03 ([the journal of 2026-11-03](docs/journal/2026-11-03.md)): `external/` moved to the
+latest mains - Master Control's faster floor, the Grid's clean end on BYE, Link's comments - with the world, the render
+and the placeholder's life unchanged; C18's plan was run, and the hunch is refuted in its cures; and the reference
+statistics over block 1 were computed - its eigen-shapes, each measure's median with a bootstrap interval, and its
+halves found to agree. Before it,
 2026-10-31 ([the journal of 2026-10-31](docs/journal/2026-10-31.md)): C18 was unparked - its lead read in
 full, its cliff defined, its test piloted on four controls, which it read as it must; section D was planned whole, and
 the toolbox's event statistics (done 2026-10-30) were merged. Before it, 2026-10-30
@@ -48,12 +51,14 @@ Top first. Each item is sized for one run; split it here before starting if it i
 found lives in the journal section it names; this list keeps only what is open.
 
 1. **Fill the gaps in the pace note** ([docs/research/pace.md § Gaps, to Be
-   Read](docs/research/pace.md#gaps-to-be-read)): a touch-to-reversal latency with frame-level timing (none of the 45
-   open papers scanned states one in text, and Liu et al. 2018's figure shows reversals clustering within about a
-   second without resolving their onset); what Mohammadi et al. 2013's heat reaction times count from; a thermotaxis
-   latency; fitted time constants for tap habituation from primary papers; and the primary sources for lethargus and
-   sleep-like quiescence (for satiety, You et al. 2008 is identified, its full text not yet reached). Figures are
-   within reach: Europe PMC's supplementary-files service serves a paper's figure images (pace.md § Noxious Heat).
+   Read](docs/research/pace.md#gaps-to-be-read)), what is left after the pass of 2026-11-03: a touch-to-reversal
+   latency from a mechanical touch, timed to the reversal's start (the nearest is a 0.2 s filter peak after
+   optogenetic activation of the touch neurons); the end point of Mohammadi et al. 2013's reaction times, in words; a
+   thermotaxis latency in behaviour (its papers are identified but not open to the cloud machine); fitted time
+   constants for tap habituation (Giles et al. 2015's half-lives, in figures, and Timbers et al. 2013, the source
+   Porto et al. 2019 cite for their 50 s time constant agreeing with tap habituation, are the next leads); and satiety
+   quiescence, whose source, You et al. 2008, is still not served (Gallagher et al. 2013 is an open lead). Figures are within reach through Europe PMC's
+   supplementary-files service (pace.md § Noxious Heat).
 2. **Build the feature-extraction tool** for the chosen dataset, in the lab's Rust workspace (`crates/`), compute
    the wild-type reference statistics, and build the benchmark's test on them. Split into runs:
    - (a) the workspace and the MD5 check, done;
@@ -78,7 +83,7 @@ found lives in the journal section it names; this list keeps only what is open.
          until (c)'s check passes;
        - (d2) the reference statistics over block 1, done (journal of 2026-11-03, § The Reference Statistics of Block
          1): `features::eigenshapes`, `benchmark::reference` and `reference-stats <block>`; the 17 short recordings
-         are five-minute recordings of the same protocol, most from the summer of 2009, and the rule stands (§ The
+         are recordings of the same protocol, 16 of them of five minutes from the summer of 2009, and the rule stands (§ The
          Short Recordings of Block 1, Read From Their Metadata);
        - (d3) the gaps by cause, as FEATURES.md § Open Questions Before Freezing asks: how a recording's missing
          frames split between dropped frames, stage movements and failed extraction, and per measure how much it
@@ -176,10 +181,10 @@ found lives in the journal section it names; this list keeps only what is open.
     - (g) the hypotheses' README: (c)'s diagram is in it; what is left is a short section pointing to the experiments'
       index for the rest;
     - (h) the audits (`check-coherence`, `check-style`, `check-spelling`) once more, to catch what is left.
-11. **Run C18's plan** ([C13-C24.md § C18](docs/hypotheses/experiments/C13-C24.md#c18-spreading-activation-has-a-cliff)):
-    the four controls first, then the pure network, the budget at both gains, the corrected fan-out penalty and
-    inhibition, with fresh seeds; its expectations are pre-registered in the journal of 2026-10-31, § C18 Unparked: the
-    Cliff Defined, the Test Piloted. Waits on nothing; minutes of compute.
+11. **C18's two loose ends**, optional and small, each one run (journal of 2026-11-03, § C18's Plan, Run, *What is
+    next*): why the conserved budget at a gain of 1.2 locates its cliff at d = 1.53 rather than at the lead's 1 - sweep
+    the activation threshold at that gain; and a 1.1 D reading that cannot fall a grid step before a jump, from a finer
+    grid near D.
 
 ## To Revisit
 
@@ -260,7 +265,8 @@ points to the open ones and says what waits on each.
   Smell is built with food (tron-grid-lite `docs/CHEMORECEPTION.md`); see the next line.
 - **Food, and a sense of taking it in** ([master-control#63](https://github.com/ai-quokka-wannabe/master-control/issues/63)
   for food on the floor and the rule for intake; [tron-grid-lite#153](https://github.com/ai-quokka-wannabe/tron-grid-lite/issues/153)
-  for the sense of the body's own intake). The reference worms are filmed on food, and the world has had food orbs since the pins of 2026-10-30, drawn by the
+  for the sense of the body's own intake). The reference worms are filmed on food, and the world has had food orbs since
+  the pins of 2026-10-29, eaten in the tick since 2026-10-30, drawn by the
   Grid since Program ABI 11
   ([docs/benchmark/FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing)).
   The benchmark is not frozen until food is settled, by these issues or by comparing with foodless worms instead.
@@ -283,6 +289,19 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-11-03: `external/` at the latest mains (tron-grid-lite `ba76cdd`, master-control `28bda1c`, link `5c63e87`):
+  D1-D3 hold - Master Control's suite 120 then 124 passed, `ctest` 22 of 22, the three device checks, the same render
+  digest - and the placeholder's life is the same at both pins once its join tick is taken out (journal of 2026-11-03,
+  § The World Moves to the Faster Floor, Measured Before and After).
+- 2026-11-03: item 11, C18's plan run with fresh seeds, the four controls reading as they must: C18 is refuted by
+  clauses (2), (4) and (5). The pure network has a cliff (D = 2.255), but inhibition, the fan-out penalty and the budget
+  at a gain of 1.2 move it (to 4.75, 7.50 and 1.53) rather than remove it; the budget at a gain of 0.4 removes it by
+  spreading nothing; two-hop priming is 0.40 of one-hop (journal of 2026-11-03, § C18's Plan, Run).
+- 2026-11-03: the pace note's gaps, a fourth pass: lethargus measured (L4 2.0-2.2 h, L3 1.4-1.6 h, L2 1.3 h, hourly
+  sampling; Patel et al. 2022), the thermoreceptor's latency (about 100 ms; Ramot et al. 2008), a 0.2 s filter peak from
+  touch neurons to acceleration (Porto et al. 2019), and Mohammadi et al.'s reaction times read as counted from the
+  laser's onset (the first author's thesis); the touch-to-reversal latency, a behavioural thermotaxis latency, tap
+  habituation's time constants and satiety stay open (journal of 2026-11-03, § The Pace Note's Gaps, a Fourth Pass).
 - 2026-11-03: item 2 (d2), the reference statistics over block 1's 179 measured recordings: four eigen-shapes carry
   97.8% of the eight-arc posture's variance (four in all 9999 resamples), each measure's median has a bootstrap
   interval, and the block's halves agree on every measure (Holm, smallest raw p 0.264) and by the classifier test
