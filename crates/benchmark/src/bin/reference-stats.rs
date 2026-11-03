@@ -33,7 +33,7 @@
 //! and the number of resamples are fixed below, as the plan states them.
 
 use benchmark::compare::{CompareConfig, compare_measures, quantile};
-use benchmark::reference::{Summary, bootstrap_draws, summarise};
+use benchmark::reference::{INTERVAL_TAILS, Summary, bootstrap_draws, summarise};
 use benchmark::{Config, two_sample_test};
 use features::eigenshapes::{EigenShapes, Moments, Weighting, alignment, covariance, eigen_shapes};
 use features::posture::{ARCS, eight_arcs};
@@ -123,7 +123,7 @@ fn share_intervals(recordings: &[&Measured]) -> (Vec<(f64, f64)>, [usize; ARCS +
         .into_iter()
         .map(|mut values| {
             values.sort_by(f64::total_cmp);
-            (quantile(&values, 0.025), quantile(&values, 0.975))
+            (quantile(&values, INTERVAL_TAILS.0), quantile(&values, INTERVAL_TAILS.1))
         })
         .collect();
     (intervals, carrying)
