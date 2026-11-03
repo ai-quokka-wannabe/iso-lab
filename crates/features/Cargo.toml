@@ -11,6 +11,9 @@ publish = false
 # A pure-Rust HDF5 reader, MIT OR Apache-2.0; it reads the reference skeletons exactly as
 # h5py and libhdf5 do (docs/journal of 2026-10-14, *Reading the Features Files*).
 hdf5-pure = "=0.47.0"
+# Inflates the per-frame table's chunks, which hdf5-pure's shuffle refuses (features::read_frame_index);
+# MIT OR Apache-2.0, the version hdf5-pure already builds with.
+flate2 = "=1.1.10"
 
 [lints]
 workspace = true
