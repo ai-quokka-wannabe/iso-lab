@@ -4,7 +4,7 @@
 latest mains - Master Control's faster floor, the Grid's clean end on BYE, Link's comments - with the world, the render
 and the placeholder's life unchanged; C18's plan was run, and the hunch is refuted in its cures; and the reference
 statistics over block 1 were computed - its eigen-shapes, each measure's median with a bootstrap interval, and its
-halves found to agree. Before it,
+halves found to agree; and block 1's gaps were split by cause. Before it,
 2026-10-31 ([the journal of 2026-10-31](docs/journal/2026-10-31.md)): C18 was unparked - its lead read in
 full, its cliff defined, its test piloted on four controls, which it read as it must; section D was planned whole, and
 the toolbox's event statistics (done 2026-10-30) were merged. Before it, 2026-10-30
@@ -85,11 +85,13 @@ found lives in the journal section it names; this list keeps only what is open.
          1): `features::eigenshapes`, `benchmark::reference` and `reference-stats <block>`; the 17 short recordings
          are recordings of the same protocol, 16 of them of five minutes from the summer of 2009, and the rule stands (§ The
          Short Recordings of Block 1, Read From Their Metadata);
-       - (d3) the gaps by cause, as FEATURES.md § Open Questions Before Freezing asks: how a recording's missing
-         frames split between dropped frames, stage movements and failed extraction, and per measure how much it
-         leans on frames likely to be lost; with them, the ten files of block 1 that start 1 to 820 frames into their
-         video (journal of 2026-11-03), and whether the window counts from the video's first frame or the file's.
-         Block 1's files are kept in `data/raw/owmd-n2/` for it;
+       - (d3) the gaps by cause, done (journal of 2026-11-03, § The Gaps by Cause in Block 1): `features::gaps`,
+         `features::read_frame_index` and `gap-causes <block>`. The files tell stage movements apart from frames with
+         no good skeleton, but not dropped frames from failed or rejected skeletons. Stage movements follow a moving
+         worm, so they remove moving frames. Next, from it: the edge test against a baseline matched for motion,
+         since its control departed from 1; the skeletons files, if published, to split *no good skeleton*; and for
+         (e5), whether the Grid's frames are masked to match, and the window counted from the video's first frame
+         (recommended; it changes nothing in block 1);
        - (d4) the eigen-shape amplitudes as measures, each recording's spread along block 1's first four shapes, so
          that (e3) can project both bodies on them;
    - (e) the benchmark's test (PLAN.md Phase 0, step 5), split into runs:
@@ -316,3 +318,7 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   Steering Trails Never Steering in Warm Layouts).
 - 2026-11-03: item 12, E4's four assertions as tests of the pilot's network in Rust (`crates/hebbian`): all hold, and
   each of seven deliberate breaks fails the assertion it guards (journal of 2026-11-03, § E4's Assertions, in Rust).
+- 2026-11-03: item 2 (d3), the gaps by cause in block 1: stage movements (median 3.3% of a window) and frames with no
+  good skeleton (median 2.1%) told apart through a reader of the per-frame table written around `hdf5-pure`'s shuffle;
+  the stage share follows speed (rho 0.95), and frames beside a failed skeleton are 1.62 times as bent as frames far
+  from gaps, a reading the planned control, which departed from 1, does not license (journal of 2026-11-03, § The Gaps by Cause in Block 1).

@@ -129,6 +129,7 @@ dependencies = [
 name = "features"
 version = "0.0.0"
 dependencies = [
+ "flate2",
  "hdf5-pure",
 ]
 
