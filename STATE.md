@@ -5,7 +5,8 @@ latest mains, with the world, the render and the placeholder's life unchanged; C
 refuted in its cures; the pace note's gaps had a fourth pass; E4 was planned again from a pilot, and its four
 assertions became tests in Rust; the reference statistics over block 1 were computed, their interval's level pinned by
 a test, block 1's gaps split by cause, and the eigen-shape amplitudes made measures on a frozen basis; associative memory surveyed for a worm-sized brain;
-the pace note's gaps had a fifth pass; and on fresh warm layouts the toy worm's steering harm did not reappear; and C18's two loose ends were run, the threshold sweep
+the pace note's gaps had a fifth and a sixth pass;
+and on fresh warm layouts the toy worm's steering harm did not reappear; and C18's two loose ends were run, the threshold sweep
 void by its control and the finer grid's 1.1 D share read. Before it,
 2026-10-31 ([the journal of 2026-10-31](docs/journal/2026-10-31.md)): C18 was unparked - its lead read in
 full, its cliff defined, its test piloted on four controls, which it read as it must; section D was planned whole, and
@@ -304,6 +305,9 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   figure), both in watched worms; tap habituation's half-life read by eye from Giles et al. 2015, roughly 40-90 s (low
   confidence); Timbers et al. 2013 not open. No gap closed (journal of 2026-11-03, § The Pace Note's Gaps, a Fifth
   Pass).
+- 2026-11-03: the pace note's gaps, a sixth pass, at the four the fifth left untried: no touch-to-reversal or
+  behavioural thermotaxis latency in text, Leung et al.'s public data declined on its licence, Singh and Sulston 1978
+  not found in Europe PMC. Nothing closed (journal of 2026-11-03, § The Pace Note's Gaps, a Sixth Pass).
 - 2026-11-03: item 2 (d2), the reference statistics over block 1's 179 measured recordings: four eigen-shapes carry
   97.8% of the eight-arc posture's variance (four in all 9999 resamples), each measure's median has a bootstrap
   interval, and the block's halves agree on every measure (Holm, smallest raw p 0.264) and by the classifier test
