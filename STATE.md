@@ -49,12 +49,14 @@ Top first. Each item is sized for one run; split it here before starting if it i
 found lives in the journal section it names; this list keeps only what is open.
 
 1. **Fill the gaps in the pace note** ([docs/research/pace.md § Gaps, to Be
-   Read](docs/research/pace.md#gaps-to-be-read)): a touch-to-reversal latency with frame-level timing (none of the 45
-   open papers scanned states one in text, and Liu et al. 2018's figure shows reversals clustering within about a
-   second without resolving their onset); what Mohammadi et al. 2013's heat reaction times count from; a thermotaxis
-   latency; fitted time constants for tap habituation from primary papers; and the primary sources for lethargus and
-   sleep-like quiescence (for satiety, You et al. 2008 is identified, its full text not yet reached). Figures are
-   within reach: Europe PMC's supplementary-files service serves a paper's figure images (pace.md § Noxious Heat).
+   Read](docs/research/pace.md#gaps-to-be-read)), what is left after the pass of 2026-11-03: a touch-to-reversal
+   latency from a mechanical touch, timed to the reversal's start (the nearest is a 0.2 s filter peak after
+   optogenetic activation of the touch neurons); the end point of Mohammadi et al. 2013's reaction times, in words; a
+   thermotaxis latency in behaviour (its papers are identified but not open to the cloud machine); fitted time
+   constants for tap habituation (Giles et al. 2015's half-lives, in figures, and Timbers et al. 2013, the source
+   Porto et al. 2019 cite for their 50 s time constant agreeing with tap habituation, are the next leads); and satiety
+   quiescence, whose source, You et al. 2008, is still not served (Gallagher et al. 2013 is an open lead). Figures are within reach through Europe PMC's
+   supplementary-files service (pace.md § Noxious Heat).
 2. **Build the feature-extraction tool** for the chosen dataset, in the lab's Rust workspace (`crates/`), compute
    the wild-type reference statistics, and build the benchmark's test on them. Split into runs:
    - (a) the workspace and the MD5 check, done;
@@ -289,3 +291,8 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   clauses (2), (4) and (5). The pure network has a cliff (D = 2.255), but inhibition, the fan-out penalty and the budget
   at a gain of 1.2 move it (to 4.75, 7.50 and 1.53) rather than remove it; the budget at a gain of 0.4 removes it by
   spreading nothing; two-hop priming is 0.40 of one-hop (journal of 2026-11-03, § C18's Plan, Run).
+- 2026-11-03: the pace note's gaps, a fourth pass: lethargus measured (L4 2.0-2.2 h, L3 1.4-1.6 h, L2 1.3 h, hourly
+  sampling; Patel et al. 2022), the thermoreceptor's latency (about 100 ms; Ramot et al. 2008), a 0.2 s filter peak from
+  touch neurons to acceleration (Porto et al. 2019), and Mohammadi et al.'s reaction times read as counted from the
+  laser's onset (the first author's thesis); the touch-to-reversal latency, a behavioural thermotaxis latency, tap
+  habituation's time constants and satiety stay open (journal of 2026-11-03, § The Pace Note's Gaps, a Fourth Pass).
