@@ -1,0 +1,11 @@
+[package]
+name = "hebbian"
+description = "A rate network with Hebbian learning, its stabilisers and the \"used together\" rule: E4's pilot, in Rust."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+publish = false
+
+[lints]
+workspace = true
