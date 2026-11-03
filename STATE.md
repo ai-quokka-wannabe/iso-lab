@@ -187,16 +187,16 @@ found lives in the journal section it names; this list keeps only what is open.
     - (g) the hypotheses' README: (c)'s diagram is in it; what is left is a short section pointing to the experiments'
       index for the rest;
     - (h) the audits (`check-coherence`, `check-style`, `check-spelling`) once more, to catch what is left.
-11. **C18's two loose ends**, optional and small, each one run (journal of 2026-11-03, § C18's Plan, Run, *What is
-    next*): why the conserved budget at a gain of 1.2 locates its cliff at d = 1.53 rather than at the lead's 1 - sweep
-    the activation threshold at that gain; and a 1.1 D reading that cannot fall a grid step before a jump, from a finer
-    grid near D.
 
 ## To Revisit
 
 Experiments that failed or came out inconclusive, kept rather than discarded (the maintainer's ruling); each with
 the idea for the next attempt.
 
+- **C18's threshold hunch** (journal of 2026-11-03, § C18's Loose Ends, Run): the sweep of the activation threshold at
+  the budget's gain of 1.2 came out void by its control, L0, missed by 0.001 because the 1% locator depends on the
+  grid's step. Descriptively, D fell from 1.654 to 1.160 towards the graph's own 1.014 as the threshold fell. Next
+  attempt: the same sweep with fresh seeds, with L0 set against the run's own grid of step 0.25.
 - **For the maintainer**: whether each night's write-up (step 8 of *Each run, in order*) should also add a line to
   the journal index in `docs/journal/README.md` (item 10 (e)); without that, the index goes stale.
 - **For the maintainer**: whether a decided item, such as the speed for the locomotion states, stays under
@@ -322,3 +322,7 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   good skeleton (median 2.1%) told apart through a reader of the per-frame table written around `hdf5-pure`'s shuffle;
   the stage share follows speed (rho 0.95), and frames beside a failed skeleton are 1.62 times as bent as frames far
   from gaps, a reading the planned control, which departed from 1, does not license (journal of 2026-11-03, § The Gaps by Cause in Block 1).
+- 2026-11-03: item 11, C18's two loose ends: (a) the threshold sweep at the budget's gain of 1.2 is void by its
+  control (L0 missed by 0.001), though D fell from 1.654 to 1.160 towards the graph's 1.014 as the threshold fell
+  (descriptive); (b) on a grid of step 0.02 the jump control clears its jump (share 0.907), and the pure network
+  reads *neither*, 0.856 (journal of 2026-11-03, § C18's Loose Ends, Run).
