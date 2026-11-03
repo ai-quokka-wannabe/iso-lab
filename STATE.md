@@ -326,4 +326,4 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
 - 2026-11-03: item 2 (d3), the gaps by cause in block 1: stage movements (median 3.3% of a window) and frames with no
   good skeleton (median 2.1%) told apart through a reader of the per-frame table written around `hdf5-pure`'s shuffle;
   the stage share follows speed (rho 0.95), and frames beside a failed skeleton are 1.62 times as bent as frames far
-  from gaps, a reading the motion-biased control does not license (journal of 2026-11-03, § The Gaps by Cause in Block 1).
+  from gaps, a reading the planned control, which departed from 1, does not license (journal of 2026-11-03, § The Gaps by Cause in Block 1).

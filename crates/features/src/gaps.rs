@@ -93,7 +93,8 @@ pub struct Edges {
     /// Rows with a skeleton within `border` rows before a run of the kind starts or after it ends.
     pub border: Vec<bool>,
     /// Rows with a skeleton at least `far` rows from every missing row; when the file starts after
-    /// the video does, the row before the first counts as missing.
+    /// the video does, the row before the first counts as missing. The file's end and the cut at
+    /// the window's end do not count as gaps.
     pub far: Vec<bool>,
 }
 

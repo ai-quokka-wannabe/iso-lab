@@ -13,7 +13,7 @@ publish = false
 hdf5-pure = "=0.47.0"
 # Inflates the per-frame table's chunks, which hdf5-pure's shuffle refuses (features::read_frame_index);
 # MIT OR Apache-2.0, the version hdf5-pure already builds with.
-flate2 = "=1.1.10"
+flate2 = { version = "=1.1.10", default-features = false, features = ["rust_backend"] }
 
 [lints]
 workspace = true
