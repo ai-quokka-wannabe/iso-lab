@@ -54,8 +54,11 @@ tracks or can be rebuilt for a Grid life without anything reaching the brain (th
   (§ 2.1), with its threshold ("The threshold for a turn (±50 degrees)", Figure 1's caption). Consecutive steps beyond
   50° belong to one turn, counted once, and to no run. A run is a maximal stretch of steps at or under 50° between two
   turns, so every run holds at least one step and none has zero length. A run that touches a track's start or end is
-  *censored*. A run's heading is the circular mean of its kept samples' θ, and its duration runs in time between its
-  first and last kept samples. Steps and runs here mean kept samples, the preprint's definition applied over a fixed
+  *censored*. A run's heading is the circular mean of its kept samples' θ, and its duration is the sum of its
+  samples' intervals. Each kept sample *m* owns the interval (*j*ₘ₋₁, *j*ₘ], of duration *t*(*j*ₘ) - *t*(*j*ₘ₋₁). A run of
+  kept samples *a* to *b* therefore lasts `t(j[b]) - t(j[a-1])`, from the end of the preceding turn's last sample
+  (or the track's start) to its own last sample. A run of a single kept sample has the positive duration of that
+  sample's interval. Steps and runs here mean kept samples, the preprint's definition applied over a fixed
   distance rather than over every 5/14 s step: the lab's variant, for the reason in Q7. The threshold is defined
   only together with ℓ, and both bodies are sampled alike by P2 and P5.
 - **Tracks** are kept by the authors' rule, applied to both bodies: removed if shorter than 3 minutes or if they "move
@@ -82,9 +85,13 @@ solute unit (Q5). M1 uses no concentration at all.
 
 *ρ* = log(*n*₋ / *T*₋) - log(*n*₊ / *T*₊), where:
 
-- *n*₊ and *T*₊ are the unit's turns and its time over steps with *g* · (*C*ₖ - *C*ₖ₋₁) > 0, moving towards the setpoint;
-- *n*₋ and *T*₋ are the same over steps where that product is < 0;
-- steps where it is 0 are left out.
+- the unit is taken interval by interval over P5's kept samples. The interval (*j*ₘ₋₁, *j*ₘ] carries the turn whose
+  onset is *m*, if there is one; its sign is that of *g* · (*C*(*j*ₘ) - *C*(*j*ₘ₋₁)), and its duration is
+  *t*(*j*ₘ) - *t*(*j*ₘ₋₁);
+- *n*₊ and *T*₊ are the turns and the summed durations of the intervals with a positive sign, moving towards the
+  setpoint;
+- *n*₋ and *T*₋ are the same over the intervals with a negative sign;
+- intervals whose sign is 0 are left out.
 
 A positive *ρ* means the worm turns more often when moving away from the setpoint.
 
@@ -247,10 +254,13 @@ Answered where the record allows. Q1 and Q3 go to the maintainer; Q7 is the lab'
       heading's resolution stays the same in space whatever the speed. This is Chen et al.'s curvature over a distance,
       applied to the heading itself.
     - *Why 0.25 L.* The reference's centroid noise has not been measured. Take an error of up to one pixel (32 µm) at each
-      kept sample, an assumption. At ℓ = 0.25 *L* = 281 µm, about 8.8 pixels with Q2's length, one heading can err by at
-      most atan(2 / 8.8) ≈ 12.8°. A heading change shares one sample with each of its two headings, so its error is at
-      most about 25.6°, half the 50° threshold: noise of that size alone cannot fire a turn. At 0.125 *L* the bound is
-      about 48.9°, at the threshold, so a quarter is the smallest round fraction that clears it. A quarter of *L* is also
+      kept sample, an assumption. A displacement of length *d* whose two ends each move by up to a pixel is turned by at
+      most arcsin(2 / *d*), the worst case. arctan(2 / *d*) is only the case where the error is perpendicular to the
+      displacement. At ℓ = 0.25 *L* = 281 µm, 8.773 pixels with Q2's length, one heading can err by at most 13.18°.
+      A heading change is the difference of two headings, so its error is at most 26.35°, about half the 50° threshold:
+      noise of that size alone cannot fire a turn. The perpendicular case gives 12.84° and 25.68°. At 0.125 *L*
+      (4.387 pixels) the bound is 27.12° per heading and 54.25° per change, beyond the threshold, so a quarter is the
+      smallest round fraction that clears it. A quarter of *L* is also
       two of the Grid worm's eight segments, so its heading is never taken within a single segment's length. The Grid's
       centroid has no noise, and the same ℓ in its own *L* gives it the same spatial resolution.
     - *What was known when choosing.* The salt tracks were not looked at for this choice. Two numbers already published
