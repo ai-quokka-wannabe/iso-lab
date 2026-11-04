@@ -31,6 +31,7 @@ pub mod locomotion;
 pub mod posture;
 pub mod profile;
 pub mod states;
+pub mod stored_events;
 
 use std::fmt;
 use std::path::Path;
@@ -149,43 +150,101 @@ pub struct FrameIndex {
 
 /// Reads the `timestamp` and `skeleton_id` columns of `/features_timeseries`, refusing a file whose
 /// timestamps do not start at a whole frame and step by exactly one.
-///
-/// The dataset's records are decoded here rather than by `hdf5-pure`, whose shuffle filter refuses
-/// a chunk whose length is not a whole number of records. These files' pipeline applies Fletcher-32
-/// before the shuffle, so each chunk the shuffle sees is its records plus a four-byte checksum;
-/// libhdf5's shuffle leaves such trailing bytes where they are, and so does `decode_chunk`. The
-/// checksum itself is not verified: each whole file's MD5 was checked on download.
 pub fn read_frame_index(path: &Path) -> Result<FrameIndex, ReadError> {
+    let (datatype, raw) = read_chunked(path, TIMESERIES)?;
+    if !matches!(datatype, hdf5_pure::Datatype::Compound { .. }) {
+        return Err(ReadError::Format(format!("{TIMESERIES} is not a compound dataset")));
+    }
+    frame_index(&datatype, &raw, "timestamp", "skeleton_id")
+}
+
+/// The published midbody speed and body length of a features file, as the toolbox stored them in
+/// `/features_timeseries` (32-bit floats, in micrometres per second and micrometres), with its
+/// frame rate: the input from which the published locomotion states are reproduced
+/// (docs/journal of 2026-10-15). `None` where a value is NaN or infinite.
+#[derive(Debug, Clone, PartialEq)]
+pub struct PublishedSpeed {
+    /// The frame rate, the `fps` attribute of `/features_timeseries`.
+    pub fps: f64,
+    /// Each row's `midbody_speed`.
+    pub speeds: Vec<Option<f64>>,
+    /// Each row's `length`.
+    pub lengths: Vec<Option<f64>>,
+}
+
+/// Reads the `midbody_speed` and `length` columns and the frame rate of a features file at `path`.
+pub fn read_published_speed(path: &Path) -> Result<PublishedSpeed, ReadError> {
+    let fps = read_skeletons(path)?.fps;
+    let (datatype, raw) = read_chunked(path, TIMESERIES)?;
+    published_speed(&datatype, &raw, fps, "midbody_speed", "length")
+}
+
+fn published_speed(datatype: &hdf5_pure::Datatype, raw: &[u8], fps: f64, speed: &str, length: &str) -> Result<PublishedSpeed, ReadError> {
+    let defined = |values: Vec<f32>| -> Vec<Option<f64>> { values.into_iter().map(|value| value.is_finite().then_some(f64::from(value))).collect() };
+    Ok(PublishedSpeed {
+        fps,
+        speeds: defined(f32_field(datatype, raw, speed)?),
+        lengths: defined(f32_field(datatype, raw, length)?),
+    })
+}
+
+/// Reads a one-dimensional dataset of little-endian 64-bit floats stored under Fletcher-32,
+/// shuffle and deflate, as the toolbox's `/features_events` arrays are, NaN included as read.
+pub fn read_f64_column(path: &Path, name: &str) -> Result<Vec<f64>, ReadError> {
+    let (datatype, raw) = read_chunked(path, name)?;
+    f64_values(&datatype, &raw, name)
+}
+
+fn f64_values(datatype: &hdf5_pure::Datatype, raw: &[u8], name: &str) -> Result<Vec<f64>, ReadError> {
+    match datatype {
+        hdf5_pure::Datatype::FloatingPoint {
+            size: 8,
+            byte_order: hdf5_pure::DatatypeByteOrder::LittleEndian,
+            ..
+        } => {}
+        other => return Err(ReadError::Format(format!("{name} is {other:?}, not little-endian 64-bit floats"))),
+    }
+    if !raw.len().is_multiple_of(8) {
+        return Err(ReadError::Format(format!("{name} has {} bytes, not a whole number of 64-bit floats", raw.len())));
+    }
+    Ok(raw.as_chunks::<8>().0.iter().map(|bytes| f64::from_le_bytes(*bytes)).collect())
+}
+
+/// The raw bytes of every element of a one-dimensional chunked dataset under Fletcher-32, shuffle
+/// and deflate, decoded here rather than by `hdf5-pure`, whose shuffle filter refuses a chunk whose
+/// length is not a whole number of elements. These files' pipeline applies Fletcher-32 before the
+/// shuffle, so each chunk the shuffle sees is its elements plus a four-byte checksum; libhdf5's
+/// shuffle leaves such trailing bytes where they are, and so does `decode_chunk`. The checksum
+/// itself is not verified: each whole file's MD5 was checked on download.
+fn read_chunked(path: &Path, name: &str) -> Result<(hdf5_pure::Datatype, Vec<u8>), ReadError> {
     let hdf5 = |error: hdf5_pure::Error| ReadError::Hdf5(error.to_string());
     let io = |error: std::io::Error| ReadError::Hdf5(error.to_string());
     let file = hdf5_pure::File::open(path).map_err(hdf5)?;
-    let dataset = file.dataset(TIMESERIES).map_err(hdf5)?;
+    let dataset = file.dataset(name).map_err(hdf5)?;
     let datatype = dataset.datatype().map_err(hdf5)?;
-    let hdf5_pure::Datatype::Compound { size, .. } = &datatype else {
-        return Err(ReadError::Format(format!("{TIMESERIES} is not a compound dataset")));
+    let size = match &datatype {
+        hdf5_pure::Datatype::Compound { size, .. } | hdf5_pure::Datatype::FloatingPoint { size, .. } => *size as usize,
+        other => return Err(ReadError::Format(format!("{name} is {other:?}, neither compound nor floating point"))),
     };
-    let size = *size as usize;
     let pipeline: Vec<u16> = dataset.filter_pipeline().iter().map(|filter| filter.id).collect();
     // Fletcher-32 (3), shuffle (2), deflate (1), in the order they were applied on writing.
     if pipeline != [3, 2, 1] {
-        return Err(ReadError::Format(format!(
-            "{TIMESERIES} has filters {pipeline:?}, not Fletcher-32, shuffle and deflate"
-        )));
+        return Err(ReadError::Format(format!("{name} has filters {pipeline:?}, not Fletcher-32, shuffle and deflate")));
     }
     let rows = match dataset.shape().map_err(hdf5)?[..] {
         [rows] => rows as usize,
-        ref shape => return Err(ReadError::Format(format!("{TIMESERIES} has shape {shape:?}"))),
+        ref shape => return Err(ReadError::Format(format!("{name} has shape {shape:?}"))),
     };
     let chunk_rows = match dataset.chunk_shape().map_err(hdf5)?.as_deref() {
         Some(&[chunk_rows]) if chunk_rows > 0 => chunk_rows as usize,
-        other => return Err(ReadError::Format(format!("{TIMESERIES} has chunks {other:?}"))),
+        other => return Err(ReadError::Format(format!("{name} has chunks {other:?}"))),
     };
     let mut raw = vec![0u8; rows * size];
     let mut covered = 0;
     let mut bytes = std::fs::File::open(path).map_err(io)?;
     for chunk in dataset.chunks().map_err(hdf5)? {
         if chunk.filter_mask != 0 {
-            return Err(ReadError::Format(format!("a chunk of {TIMESERIES} skips filters ({:#x})", chunk.filter_mask)));
+            return Err(ReadError::Format(format!("a chunk of {name} skips filters ({:#x})", chunk.filter_mask)));
         }
         let mut stored = vec![0u8; chunk.storage_size as usize];
         std::io::Seek::seek(&mut bytes, std::io::SeekFrom::Start(chunk.address)).map_err(io)?;
@@ -200,9 +259,9 @@ pub fn read_frame_index(path: &Path) -> Result<FrameIndex, ReadError> {
         covered += take;
     }
     if covered != raw.len() {
-        return Err(ReadError::Format(format!("{TIMESERIES}'s chunks cover {covered} of {} bytes", raw.len())));
+        return Err(ReadError::Format(format!("{name}'s chunks cover {covered} of {} bytes", raw.len())));
     }
-    frame_index(&datatype, &raw, "timestamp", "skeleton_id")
+    Ok((datatype, raw))
 }
 
 /// One stored chunk of `rows` records of `size` bytes, inflated and unshuffled; the four bytes of
@@ -410,5 +469,42 @@ mod tests {
         let mut encoder = flate2::write::ZlibEncoder::new(Vec::new(), flate2::Compression::default());
         std::io::Write::write_all(&mut encoder, &records).unwrap();
         assert!(matches!(decode_chunk(&encoder.finish().unwrap(), 3, 5), Err(ReadError::Format(_))));
+    }
+
+    #[test]
+    fn reads_the_published_speed_and_length_with_nan_as_undefined() {
+        let mut builder = FileBuilder::new();
+        builder
+            .create_dataset("features_timeseries")
+            .with_compound_values(&[(1.5_f32, 900.0_f32), (f32::NAN, 910.0), (-2.0, f32::INFINITY)])
+            .unwrap();
+        let file = File::from_bytes(builder.finish().unwrap()).unwrap();
+        let dataset = file.dataset(TIMESERIES).unwrap();
+        let published = published_speed(&dataset.datatype().unwrap(), &dataset.read_raw().unwrap(), 25.0, "0", "1").unwrap();
+        assert_eq!(published.fps, 25.0);
+        assert_eq!(published.speeds, vec![Some(1.5), None, Some(-2.0)]);
+        assert_eq!(published.lengths, vec![Some(900.0), Some(910.0), None]);
+        assert!(matches!(
+            published_speed(&dataset.datatype().unwrap(), &dataset.read_raw().unwrap(), 25.0, "1", "2"),
+            Err(ReadError::Format(_))
+        ));
+    }
+
+    #[test]
+    fn reads_64_bit_floats_and_refuses_other_types() {
+        let mut builder = FileBuilder::new();
+        builder.create_dataset("doubles").with_f64_data(&[15.3648, f64::NAN, -0.5]);
+        builder.create_dataset("singles").with_f32_data(&[1.0, 2.0]);
+        let file = File::from_bytes(builder.finish().unwrap()).unwrap();
+        let doubles = file.dataset("/doubles").unwrap();
+        let values = f64_values(&doubles.datatype().unwrap(), &doubles.read_raw().unwrap(), "doubles").unwrap();
+        assert_eq!((values[0], values[2]), (15.3648, -0.5));
+        assert!(values[1].is_nan());
+        let singles = file.dataset("/singles").unwrap();
+        assert!(matches!(
+            f64_values(&singles.datatype().unwrap(), &singles.read_raw().unwrap(), "singles"),
+            Err(ReadError::Format(_))
+        ));
+        assert!(matches!(f64_values(&doubles.datatype().unwrap(), &[0; 12], "doubles"), Err(ReadError::Format(_))));
     }
 }
