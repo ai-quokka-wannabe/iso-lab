@@ -60,7 +60,12 @@ found lives in the journal section it names; this list keeps only what is open.
      own speed, one instrument for both ([docs/benchmark/FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing)).
      The durations and rates are written to the toolbox's definitions (`features::states::event_stats`;
      [behaviour-measures.md § How the Toolbox Turns States Into Durations and Rates](docs/research/behaviour-measures.md#how-the-toolbox-turns-states-into-durations-and-rates)).
-     Next: reproduce the stored durations and frequencies from the published speed, then check the lab's speed against them;
+     From the published speed they reproduce the stored durations and frequencies exactly, in 600 of 600
+     recording-modes of block 1 (journal of 2026-11-04, § The Published Durations and Rates: Reproduced Exactly Over
+     Block 1; `stored-events <block>`). The lab's speed gives a median 0.97 of the stored forward events and 0.91 of the
+     paused, backward as many. Next: drop `provisional_` from `features::profile`'s columns; whether any recording-mode
+     exercises the lone-edge-event exception; an interval on the lab-against-published ratios, and whether they matter
+     for the benchmark;
    - (d) the reference statistics, split into runs (the maintainer's request, 2026-10-31, to build the benchmark
      next; journal of 2026-10-31, § The Benchmark, Split Into Runs):
        - (d1) one row of measures per recording, done (journal of 2026-10-31, § One Row of Measures per Recording:
@@ -332,6 +337,9 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-11-04: item 2 (c), the stored durations and frequencies recomputed from the published speed: 600 of 600
+  recording-modes of block 1 equal to the last bit; the lab's speed against them in a second table (journal of
+  2026-11-04, § The Published Durations and Rates: Reproduced Exactly Over Block 1).
 - 2026-11-04: item 2 (e3), real against unseen real: block 1 (179) and block 2 (189) are indistinguishable by both
   tests at seed 20261104, and the positive control (a 1 sd shift of one measure) is told apart by both; block 1's
   frozen eigen-shapes fit block 2 to a cosine of 0.997 or better (journal of 2026-11-04, § Real Against Unseen Real:
