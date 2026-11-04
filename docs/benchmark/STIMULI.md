@@ -27,7 +27,10 @@ Three facts about the world that every assay below depends on, from the same pin
   128 / 4.48 = 28.6 body lengths, or 2.86 cm of the real worm's world at the world's own scale of 44.8 m to the
   centimetre (`CENTIMETRE` in `src/heat.rs`). The fields' cells are 2 m, 0.45 of a body length.
 - **The floor is terraced** (`relief_terraces: 6`, `relief_amplitude: 5.0` in the same config), and every riser is a
-  wall to the air and to the solutes (`src/air.rs`, `src/solutes.rs`). An assay plate is flat agar.
+  wall to the air and to the solutes (`src/air.rs`, `src/solutes.rs`). An assay plate is flat agar. No launch setting
+  makes the floor flat (the flags in `src/main.rs`); every body is rezzed on the spawn pad, "a cell centre the tests
+  prove flat for a metre of opening walk" (`SPAWN_PAD_X`, `SPAWN_PAD_Z` in `src/roster.rs`), on one terrace. How large
+  that terrace is has not been measured.
 - **The fields are outside the state hash and not on the wire.** They are pure functions of the launch settings, the
   food and the ticks (the module comments of `src/heat.rs`, `src/odour.rs` and `src/solutes.rs`), and the input log's
   header records every launch setting (#93, `7c527d9`). The Disk carries no field. So an evaluation tool can rebuild
@@ -61,16 +64,18 @@ settable.
   "the curvature of its propulsive undulations in response to temperature changes measured at its head"
   ([Luo et al. 2006](https://doi.org/10.1242/jeb.02590), abstract). These are the measures that suit the benchmark: run
   durations and turn rates conditioned on the temperature change the head met, and the track's alignment to the
-  isotherm. Fairly sure of the measures; their exact definitions wait on the full texts, which
-  [pace.md § Temperature in the Physiological Range](../research/pace.md#temperature-in-the-physiological-range) found
-  closed to the lab's services.
+  isotherm. Fairly sure of the measures; their exact definitions wait on the full texts. Of these, [pace.md § Temperature
+  in the Physiological Range](../research/pace.md#temperature-in-the-physiological-range) found Ryu and Samuel 2002 and
+  Luo et al. 2014 closed to the lab's services (with Zariwala et al. 2003 and Clark et al. 2007); Luo et al. 2006 and Ito
+  et al. 2006 have not been tried.
 - *The pace.* AFD's current answers a step within about 96 ms (Ramot et al. 2008, in pace.md); a behavioural latency to a
   temperature step is still a gap there (pace.md § Gaps, to Be Read), and so are the slow time constants of the
   remembered temperature.
 
-**Reference data.** No public dataset of *C. elegans* thermotaxis tracks with a licence was found (one web search,
-2026-11-04, journal). The nearest hit was a parasitic nematode's heat-seeking data, another species. Missing, then: any
-trajectories at all. Next leads: the data statements of Luo et al. 2014 and Clark et al. 2007, and asking an author for
+**Reference data.** One web search did not find a public dataset of *C. elegans* thermotaxis tracks with a licence (its
+query and service are in the journal of 2026-11-04, § What the World's New Fields Open for the Benchmark: a Plan). One
+search is not a survey: the absence is unconfirmed. Its nearest hit was a parasitic nematode's heat-seeking data,
+another species. Missing, so far: any trajectories at all. Next leads: the data statements of Luo et al. 2014 and Clark et al. 2007, and asking an author for
 data.
 
 **What the benchmark would need.**
@@ -114,7 +119,7 @@ salt only, by contact (`docs/ORGANS.md` § 4). The only source of salt is food: 
 - *A remembered concentration*: worms prefer the salt concentration they were cultivated at
   ([Kunitomo et al. 2013](https://doi.org/10.1038/ncomms3210), abstract). Sure of the effect; its time course not read.
 
-**Reference data.** One candidate, not adopted: Chen, Pillow and Leifer's salt chemotaxis tracks, worms cultivated at
+**Reference data.** One candidate, not adopted: Chen, Leifer and Pillow's salt chemotaxis tracks, worms cultivated at
 50 mM tested in linear gradients of 0 to 50 or 50 to 100 mM, centroids at 14 Hz
 ([arXiv:2508.00191](https://arxiv.org/abs/2508.00191), a preprint, its methods and data statement read in the PDF on
 2026-11-04). The data are on Figshare at [doi:10.6084/m9.figshare.25996498](https://doi.org/10.6084/m9.figshare.25996498),
@@ -146,21 +151,25 @@ pattern over the eight types. Odours that are not food are deferred upstream "wh
 **Odour: the behaviour.** Chemotaxis to volatile odorants sensed by AWA and AWC
 ([Bargmann, Hartwieg and Horvitz 1993](https://doi.org/10.1016/0092-8674(93)80053-h), as tron-grid-lite's
 CHEMORECEPTION.md cites it; its assay not read here), by the same pirouette and weathervane strategies. Chen, Wu, Gershow
-and Leifer measured the butanone concentration each worm met with an array of gas sensors and report, beside the
-chemotaxis index, turn rate against bearing and heading change before turns
-([Chen et al. 2023](https://doi.org/10.7554/eLife.85910), PMC10425172, full text read on Europe PMC on 2026-11-04).
-Sure.
+and Leifer measured the butanone concentration each worm met with an array of gas sensors
+([Chen et al. 2023](https://doi.org/10.7554/eLife.85910), PMC10425172, full text read on Europe PMC on 2026-11-04). For
+*C. elegans* (their Figure 7) they report three measures against the bearing to the local gradient: the bearing's
+distribution, the "[p]robability of observing a sharp turn per time ... as a function of the absolute value of the
+bearing" (the biased random walk), and the trajectory's curvature "conditioned on bearing" (weathervaning). They compute
+no chemotaxis index: their analysis "provides information relevant to a chemotaxis index", which they call a "coarser
+readout". Turn rate and heading change against bearing (their Figure 10) are the fly larvae's, not the worm's. Sure.
 
 **Odour: reference data.** One candidate, not adopted: Chen et al. 2023's recordings of the odour flow control, the
 concentration measurements and the behavioural tracks, Figshare
 [doi:10.6084/m9.figshare.21737303](https://doi.org/10.6084/m9.figshare.21737303), CC BY 4.0, a raw archive of 1.29 GB
 (Figshare's API, 2026-11-04). Images at 14 frames per second and 32 µm a pixel (their methods). Two caveats: the
 landscape is made by patterned airflow in a flow chamber, not still air, and agar "greatly disrupts an applied butanone
-gradient" (their words); measures conditioned on the concentration the worm met may carry over to still air, an
-end-point index less so.
+gradient" (their words). Measures conditioned on the local gradient the worm met may carry over to still air; the paper
+offers no end-point index to compare, and one computed from its tracks would depend on the chamber's geometry.
 
-**Odour: what the benchmark would need.** The same measures as for salt, against the bound fraction's source
-concentration rebuilt for evaluation; upstream, **an odour source apart from food**, a placed source with a declared
+**Odour: what the benchmark would need.** Chen et al.'s three measures against bearing - its distribution, the sharp
+turns' rate and the curvature - against the local gradient of the source concentration, rebuilt for evaluation;
+upstream, **an odour source apart from food**, a placed source with a declared
 pattern over the receptor types, so the assay smells without feeding; and wind, only if the flow chamber's data are
 taken as they are. The pace note has one weak latency for odour avoidance (4 s, Sanders et al. 2013, pace.md § Smell).
 
@@ -179,19 +188,24 @@ The benchmark's spontaneous-behaviour definition (STATE.md item 2 (e5)) comes fi
 Stimulus assays are a second frozen part, added to it by a justification in the journal, with nothing scored across the
 change. Within them, in order:
 
-1. **Salt chemotaxis**, first, because it has the one public dataset of a gradient of a single stimulus with tracks and
+1. **Salt chemotaxis**, first, because it has the one public dataset found (one search) of a gradient of a single stimulus with tracks and
    a licence. One run each: (a) read the preprint's methods and those of its reference 22 (Luo, Wen, Ren et al.,
-   whose salt gradients it follows) and inventory the Figshare archive's file list without downloading it; (b) draft the measures and their
-   rules (pirouette, weathervaning, the bearing, the index) before any data; (c) fetch, checksum and register the data,
-   and compute the reference statistics in `features`. Blocked for any Grid life by the taste sense (ABI 13), a salt
-   source apart from food, and a calibration of the solute unit.
+   whose salt gradients it follows) and inventory the Figshare archive's file list without downloading it; (b) draft the
+   measures and their rules (pirouette, weathervaning, the bearing, an index only if the reference uses one) before any
+   data; (c), after (b), fetch, checksum and register the data, and compute the reference statistics in `features`. None
+   of (a) to (c) needs a Grid life, so none is blocked upstream. Any Grid life is blocked by the taste sense (ABI 13), a
+   salt source apart from food, and a calibration of the solute unit.
 2. **Odour chemotaxis**, second: the sense exists today, but the reference is made in moving air and the world has no
-   odour without food. One run to read Chen et al. 2023's methods and inventory its archive; then as for salt. Blocked
-   by an odour source apart from food.
-3. **Thermotaxis and isothermal tracking**, third: the world's field is the most complete, but no public tracks were
-   found. One run to search the data statements and, if nothing is public, to write the measures from the papers so the
-   benchmark is ready when data are. Blocked by the sense (ABI 13), a way to raise a Program at one temperature and then
-   test it, and the arena's size.
+   odour without food. One run to read Chen et al. 2023's methods and inventory its archive; then measures, data and
+   reference statistics as for salt, none of which needs a Grid life. A Grid life is blocked by an odour source apart
+   from food.
+3. **Thermotaxis and isothermal tracking**, third: the world's field is the most complete, but one search found no public
+   tracks. One run to search the data statements and, if nothing is public, to write the measures from the papers so the
+   benchmark is ready when data are. The papers that pace.md found closed may stay closed; the fallbacks are Luo et al.
+   2006 and Ito et al. 2006 (not yet tried), an author's manuscript in Europe PMC, and the data or a reprint asked of an
+   author through an issue the maintainer files; failing those, the step parks with what was tried.
+   A Grid life is blocked by the sense (ABI 13), a way to raise a Program at one temperature and then test it, and the
+   arena's size.
 4. **Aerotaxis**, last: blocked by the gases in the world.
 
 Shared by all four: the arena (a flat floor, and its size against a plate, already an open question in

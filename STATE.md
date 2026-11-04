@@ -180,15 +180,21 @@ found lives in the journal section it names; this list keeps only what is open.
     part of the benchmark, frozen on its own and never delaying item 2 (e5). One run each, in this order; no Grid life
     before the senses and sources below exist:
     - (a) salt: read the methods of [arXiv:2508.00191](https://arxiv.org/abs/2508.00191) and of its reference 22,
-      and list the files of its Figshare archive (5.48 GB, CC BY 4.0) without downloading it;
+      and list the files of its Figshare archive without downloading it (STIMULI.md § Taste has the record);
     - (b) salt: draft the measures and their rules - pirouettes against dC/dt at the head, weathervaning against
-      bearing, the index - before any data;
-    - (c) odour: read Chen et al. 2023's methods ([doi:10.7554/eLife.85910](https://doi.org/10.7554/eLife.85910)) and
-      list its archive's files (1.29 GB, CC BY 4.0), and say whether measures from a flow chamber can stand for still air;
-    - (d) heat: search the data statements of the thermotaxis papers for public tracks, and read the assays' plates,
-      gradients and indices in full (Ito et al. 2006, Ryu and Samuel 2002, Luo et al. 2006 and 2014);
-    - (e) the arena: the floor's 128 m (28.6 body lengths, 2.86 cm at the world's scale) against an assay plate, for
-      every assay, folded into FEATURES.md § Open Questions Before Freezing.
+      bearing, an index only if the reference uses one - before any data;
+    - (c) salt, after (b): fetch the archive, checksum and register it in data/README.md, and compute the reference
+      statistics in `features`; no Grid life, so not blocked upstream;
+    - (d) odour: read Chen et al. 2023's methods ([doi:10.7554/eLife.85910](https://doi.org/10.7554/eLife.85910)) and
+      list its archive's files (STIMULI.md § Air), and say whether its measures against bearing, made in a flow
+      chamber, can stand for still air;
+    - (e) heat: search the thermotaxis papers' data statements for public tracks, and read the assays' plates, gradients
+      and measures in full. Ryu and Samuel 2002 and Luo et al. 2014 were found closed (pace.md); try Luo et al. 2006 and
+      Ito et al. 2006 first, then an author's manuscript in Europe PMC, then data or a reprint asked of an author through
+      an issue the maintainer files; park with what was tried if none opens;
+    - (f) the arena: the floor's 128 m (28.6 body lengths, 2.86 cm at the world's scale) and its terraces against an
+      assay plate, for every assay, folded into FEATURES.md § Open Questions Before Freezing; first measure the spawn
+      pad's terrace (STIMULI.md § What a Program Senses Today).
 
 ## To Revisit
 
@@ -292,10 +298,14 @@ points to the open ones and says what waits on each.
   Program at one temperature and test it on a gradient - a scheduled change of the thermal map, or a radial gradient -
   which would also give temperature steps for a reaction latency; (5) the world's solute unit tied to a concentration,
   so a gradient in millimolar has a meaning; (6) oxygen and carbon dioxide as tenants of the air, for aerotaxis, last.
-  The arena's size and flatness against a plate is the lab's open question first (item 11 (e)).
+  The arena's size and flatness against a plate is the lab's open question first (item 11 (f)).
 - **Terrace edges** (master-control; the maintainer takes it up once the lab is set up - file nothing). A
-  chain can be thrown when a segment crosses a terrace edge; a fix is in progress. Until it lands, every life
-  in this lab is lived on a flat arena.
+  chain can be thrown when a segment crosses a terrace edge. At the pins of 2026-11-04 master-control's CHANGELOG
+  records a fix for one such throw ("A riser is solid only up to its top"); whether it closes this need is the
+  maintainer's call. The floor is terraced (`GRID_FLOOR_CONFIG` in master-control's `src/ground.rs`) and has no flat
+  setting, so the lab's lives are not on a flat arena, as this line used to say: they start on the spawn pad, a cell
+  proven flat for a metre (`src/roster.rs`), and the placeholder's 320-tick lives of 2026-11-04 ended 0.7 m from its
+  centre (journal of 2026-11-04, § What the World's New Fields Open for the Benchmark: a Plan).
 
 ## Done
 
@@ -314,7 +324,7 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
 - 2026-11-04: item 11, a plan for the stimulus assays the world's new fields open
   ([docs/benchmark/STIMULI.md](docs/benchmark/STIMULI.md)): at Program ABI 12 only odour is sensed, heat and salt exist
   unsensed until ABI 13, the gases not at all; two CC BY 4.0 datasets of tracks found (salt and odour, both from the
-  Leifer lab), none for thermotaxis; order salt, odour, heat, aerotaxis.
+  Leifer lab), none for thermotaxis in one search; order salt, odour, heat, aerotaxis.
 - 2026-11-04: item 8, a post-mortem of the toy-worm series from the record, why it stalled and what stands, with
   recommendations awaiting the maintainer
   ([gr-fec.md § 12](docs/research/gr-fec.md#12-why-the-demystification-stalled-a-post-mortem-2026-11-04)).
