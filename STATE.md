@@ -1,6 +1,8 @@
 # State of the Lab
 
-**Last updated:** 2026-11-03 ([the journal of 2026-11-03](docs/journal/2026-11-03.md)): `external/` moved to the
+**Last updated:** 2026-11-04 ([the journal of 2026-11-04](docs/journal/2026-11-04.md)): block 1's real worms and
+block 2's, unseen, are indistinguishable by the benchmark's two tests, and a positive control is told apart. Before it,
+2026-11-03 ([the journal of 2026-11-03](docs/journal/2026-11-03.md)): `external/` moved to the
 latest mains, with the world, the render and the placeholder's life unchanged; C18's plan was run, and the hunch is
 refuted in its cures; the pace note's gaps had a fourth pass; E4 was planned again from a pilot, and its four
 assertions became tests in Rust; the reference statistics over block 1 were computed, their interval's level pinned by
@@ -35,8 +37,9 @@ literature note says how worm behaviour is measured. The comparison space is dra
 must be settled before the benchmark is frozen, food first. The Rust workspace reads the reference recordings and computes
 their measures - posture, speed, the locomotion states and the eigen-shape amplitudes, the durations and rates from
 the lab's speed still provisional until item 2 (c)'s check - with the reference statistics
-over block 1 and their gaps by cause; the benchmark's test is built (item 2 (e1), (e2)) but not yet run on real data
-alone; and the arena is proven to a first life: a placeholder Program, which undulates only, lived fifteen minutes on the Grid and its world replays
+over block 1 and their gaps by cause; the benchmark's test is built (item 2 (e1), (e2)) and run on real data
+alone (e3): two blocks of real worms are not told apart, and a stated alteration is; and the arena is proven to a
+first life: a placeholder Program, which undulates only, lived fifteen minutes on the Grid and its world replays
 exactly. No creature has been scored.
 [docs/PLAN.md](docs/PLAN.md) says what the phases are and why the benchmark comes before any brain. Beside the benchmark, the lab takes apart the
 maintainer's toy worm ([docs/research/gr-fec.md](docs/research/gr-fec.md) §§ 9-11) to learn how to design a brain
@@ -102,10 +105,15 @@ found lives in the journal section it names; this list keeps only what is open.
          Cramér-von Mises statistic per measure with a 999-shuffle permutation p-value, Holm's correction across the
          measures, and each sample's median and interquartile range, the statistic computed exactly in integers; with 199
          shuffles it held its level (49 of 1000, 3.6-6.4%) and caught a doubled spread 73 times in 100 (63-81%);
-       - (e3) the test on real data alone: block 1's real worms against block 2's, recordings neither has seen, which
-         must come out indistinguishable; and a positive control - the same recordings deliberately altered by a
-         stated amount - which must be told apart;
-       - (e4) how large an alteration of each measure the test can see, from the positive control at several sizes;
+       - (e3) done (journal of 2026-11-04, § Real Against Unseen Real: the Results): `benchmark::holdout` and
+         `compare-blocks`; block 1's 179 against block 2's 189, 27 measures, seed 20261104: no measure differs and the
+         classifier does not tell them apart (p = 0.181); the control, one block-1 sd added to block 2's first
+         eigen-shape amplitude spread, is told apart by both, by that measure alone. Every posture median is slightly
+         higher in block 2, none flagged; noted, not claimed. On block 1's halves (about 90 a side) the classifier
+         missed the same control at 10 of 21 seeds;
+       - (e4) how large an alteration of each measure the test can see, from the positive control at several sizes,
+         and at the sample sizes a Grid comparison will have (the halves' run says the classifier's power falls
+         steeply below about 180 a side);
        - (e5) freezing the definition, which waits on
          [FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing) -
          food first - and on reading a Disk (*Blocked*).
@@ -287,6 +295,10 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-11-04: item 2 (e3), real against unseen real: block 1 (179) and block 2 (189) are indistinguishable by both
+  tests at seed 20261104, and the positive control (a 1 sd shift of one measure) is told apart by both; block 1's
+  frozen eigen-shapes fit block 2 to a cosine of 0.997 or better (journal of 2026-11-04, § Real Against Unseen Real:
+  the Results).
 - 2026-11-03: `external/` at the latest mains (tron-grid-lite `ba76cdd`, master-control `28bda1c`, link `5c63e87`):
   D1-D3 hold - Master Control's suite 120 then 124 passed, `ctest` 22 of 22, the three device checks, the same render
   digest - and the placeholder's life is the same at both pins once its join tick is taken out (journal of 2026-11-03,
