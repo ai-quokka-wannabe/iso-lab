@@ -4,7 +4,8 @@
 latest mains - Link protocol 14, Program ABI 12 without the speed over the ground, the world's reflection attenuation,
 its air, heat and floor solutes - with the placeholder rebuilt at ABI 12, the render moved by the attenuation alone, and
 the placeholder's life unchanged; and the toy worm's steering decisions, scored against the band, place its
-failure, by elimination, in the map's choice of direction. Before it, 2026-11-03 ([the journal of 2026-11-03](docs/journal/2026-11-03.md)): `external/` moved to the
+failure, by elimination, in the map's choice as the greedy rule reads it (its own registered test undecided). Before
+it, 2026-11-03 ([the journal of 2026-11-03](docs/journal/2026-11-03.md)): `external/` moved to the
 latest mains, with the world, the render and the placeholder's life unchanged; C18's plan was run, and the hunch is
 refuted in its cures; the pace note's gaps had a fourth pass; E4 was planned again from a pilot, and its four
 assertions became tests in Rust; the reference statistics over block 1 were computed, their interval's level pinned by
@@ -309,6 +310,6 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   the placeholder's life is the same at both pins once its join tick is taken out (journal of 2026-11-04, § The World
   Moves to Protocol 14 and Program ABI 12, Measured Before and After).
 - 2026-11-04: item 9 (b), each steering decision of the graded gain scored against the band on ten fresh warm layouts:
-  the lateral sense is right in 0.986 of decisions and temperature leads to the band in 0.945, so the direction's
-  failure lies in the map's choice, which points the band's way in 0.513 (0.424 to 0.619), undecided by its rule
+  the lateral sense is right in 0.986 of decisions and temperature leads to the band in 0.945, so by elimination the
+  direction's failure lies in the map's choice as the greedy rule reads it, which points the band's way in 0.513 (0.424 to 0.619), undecided by its rule
   (journal of 2026-11-04, § Does the Greedy Rule's Direction Fail? Each Steering Decision Scored).
