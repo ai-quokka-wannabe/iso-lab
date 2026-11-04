@@ -445,6 +445,7 @@ evaluation tools for a toy world, not code the lab builds on; anything that beco
 | `floor10/run.sh`, `floor10/f10stats.py` | The constant floor on ten fresh rich layouts (2026-10-30) | [#173](https://github.com/ai-quokka-wannabe/iso-lab/pull/173) |
 | `warm/warm.py`, `warm/warmstats.py`, `warm/run.sh` | Why steering trails never steering in warm layouts: ablations by direction and time, and mirrored layouts (2026-11-03) | [#202](https://github.com/ai-quokka-wannabe/iso-lab/pull/202) |
 | `dirn/dirn.py`, `dirn/dirnstats.py`, `dirn/run.sh` | Each steering decision scored against the band (2026-11-04) | [#213](https://github.com/ai-quokka-wannabe/iso-lab/pull/213) |
+| `postmortem/power.py` | The post-mortem's between-layout spreads and power calculation, from numbers in the journals (2026-11-04) | [#214](https://github.com/ai-quokka-wannabe/iso-lab/pull/214) |
 
 ## 12. Why the Demystification Stalled (a Post-Mortem, 2026-11-04)
 
@@ -458,11 +459,12 @@ are. The reading is the lab's own, and a reviewer may weigh it differently. Stil
 
 The cold-band hunch for the global-contrast fix was refuted on ten fresh banded layouts, with the greedy margin
 (J10-29 § The Cold-Band Hunch on Ten Fresh Layouts) and without it (J10-30 § The Global Rule Without the Margin on Ten
-Fresh Layouts). H14's graded hunger gain beat the on/off gate there, and its ablations traced the lead to smaller turns,
-not to grading; a constant floor below 0.3 was not shown to help on ten fresh rich layouts (journal of 2026-10-30,
-summarised in [H14](../hypotheses/README.md#h14-graded-slow-knobs-change-detecting-senses-and-individuality)
-§ *Tested so far*). On five fresh warm layouts the warm-band harm was not reproduced, and mirroring the layouts showed
-the cost goes with the layout, not with warmth (J11-03 § Why Steering Trails Never Steering in Warm Layouts). Scored
+Fresh Layouts). H14's graded hunger gain beat the on/off gate there; in its ablations the gain helps by making turns
+smaller, grading added nothing detectable, and the graded half of the hunch is not supported; a constant floor
+below 0.3 was not shown to help on ten fresh rich layouts (journal of 2026-10-30, summarised in [H14](../hypotheses/README.md#h14-graded-slow-knobs-change-detecting-senses-and-individuality)
+§ *Tested so far*). On five fresh warm layouts the warm-band harm was not reproduced, and in their mirror images the cost
+went with the layout, not with warmth, by D's rule - an interval that includes zero, consistent with a reading of the
+code that the world is mirror-symmetric (J11-03 § Why Steering Trails Never Steering in Warm Layouts). Scored
 decision by decision, the lateral sense and temperature as a guide to the band are sound, and the map's choice is
 undecided (J11-04 § Does the Greedy Rule's Direction Fail?).
 
@@ -477,17 +479,24 @@ undecided (J11-04 § Does the Greedy Rule's Direction Fail?).
       weights against the least-squares fit of reward on the worm's own features - was never tested. Composing the
       layers "to design a worm for a chosen behaviour in a world" was never registered as a test (J10-26, the turning
       rule's *Next*; no later journal holds either).
-    - From 2026-10-27 on, every registered test compared late energy between arms, or described one arm's behaviour
-      (where its decisions point, its map's shape). None predicted a quantity from the equations and checked it. With
-      no definition of "demystified", each result invited the next comparison rather than closing a question.
+    - From 2026-10-27 on, the registered tests compared late energy between arms, or described one arm's behaviour
+      (where its decisions point, its map's shape), with one exception. The composition law predicted, before each run,
+      the scores of untried pairs of gene values from each lever measured alone, and checked them: D1 and D2 (J10-27
+      § A First Design Rule), S1 to S3 in 82003 and 82104 (J10-28 § The Composition Law Where Both Levers Work) and R1
+      (J10-28 § Three Levers at Once). It is the one predict-then-check rule of the series after 2026-10-26, and it was
+      not carried further than one pair. Apart from it, no test predicted a quantity and checked it. With no definition
+      of "demystified", each result invited the next comparison rather than closing a question.
 2. **Designs too small for the variance between layouts.**
     - Where two body seeds were run, they agreed in sign in nine of ten layouts (J10-30 § The Constant Floor on Ten
       Fresh Rich Layouts), which fits a variance that lies between layouts rather than between seeds (descriptive).
     - The between-layout standard deviations of the steering contrasts run from about 0.04 to 0.06, computed from the
       per-layout tables of J10-29 and J10-30, to about 0.07 to 0.15, back-calculated from five-layout intervals in J10-30
       and J11-03 (approximate).
-    - Under a normal approximation, with a standard deviation of 0.05, the low end, and an effect of 0.03, five layouts
-      give a power of about 27%, and 80% power needs about 22 layouts. Most tests used five or ten.
+    - Take an effect of 0.03, about the size of the effects the series chased: the graded gain's lead over the gate
+      (K1, +0.0377) and the warm-band harm (−0.0442 to −0.0490). Under a normal approximation, at the low-end standard
+      deviation of 0.05, five layouts give a power of about 27%, and 80% power needs about 22 layouts (an exact t-test
+      at 22 gives 0.765). At 0.10, near G − N's back-calculated 0.101, it needs about 87; at 0.15, about 196. Most tests
+      used five or ten.
     - The warm-band harm shows it. Graded gain minus never steering was −0.0490 (−0.1087 to −0.0041) on 2026-10-30
       (J10-30 § H14's Graded Hunger Gain on Ten Fresh Layouts) and −0.0442 (−0.1284 to +0.0293) on fresh layouts on
       2026-11-03 (J11-03, P0). The point estimate barely moved; only the interval crossed zero. That is a failure of
@@ -504,12 +513,19 @@ undecided (J11-04 § Does the Greedy Rule's Direction Fail?).
       (−0.1946 to +0.0418), a cost not shown by its interval (J11-03, `Gw` and `Gc`). The brain's decisions split about
       evenly between them (descriptive).
     - So the H14 series beat a baseline, greedy gating, that was itself below never steering in eight of ten fresh
-      banded layouts (J10-29 § The Cold-Band Hunch). Over those layouts, no gated arm was shown to beat never steering
-      (K2: −0.0279, −0.0723 to +0.0151; J10-30 § H14's Graded Hunger Gain). Gated arms did beat it in single layouts,
-      for example steering only while fed in four Hardland layouts (J10-27 § Steering Only When Fed).
+      banded layouts (J10-29 § The Cold-Band Hunch). Over those layouts, no hunger-gated arm was shown to beat never
+      steering (K2: −0.0279, −0.0723 to +0.0151; J10-30 § H14's Graded Hunger Gain).
+    - One gate did beat never steering, and was dropped. Steering only while fed was above never steering in all four
+      Hardland layouts it was run in, two body seeds each, every interval above zero, with its test F1 registered
+      beforehand (J10-27 § Steering Only When Fed). It was never taken to fresh layouts; the series followed the hunger
+      gate instead.
 4. **Forking paths.** Each test was designed on the previous result, often in one or two layouts (75000, 23001), and
-   no panel of layouts was set aside before the series began; fresh layouts were drawn one test at a time. The
-   global-contrast fix, designed on 75000, did not generalise to fresh layouts (J10-30 § The Global Rule Without the
+   no panel of layouts was set aside before the series began. The ten banded layouts of 2026-10-26 (82000 to 82104)
+   then served as the "fresh" panel for at least eight tests in a row, each designed on the one before: the margin
+   rule (F, J10-29), the no-margin rule (N), the graded gain and its second body seed (K1, K3), and the un-latched,
+   scaled, matched and three-seed ablations (L, M, P, Q; all J10-30). Two of them, 82003 and 82104, had already been
+   in the composition sweeps (J10-28). A panel re-used across a sequence of tests is no longer held out. The
+   global-contrast fix, designed on 75000, did not generalise to that panel (J10-30 § The Global Rule Without the
    Margin on Ten Fresh Layouts).
 5. **The latest run bears this out.** The lateral sense is right in 0.986 of scored decisions, and a turn towards the
    band's temperature also turns towards the nearest patch in 0.945. But the map's choice, as the greedy rule reads it,
@@ -521,8 +537,14 @@ undecided (J11-04 § Does the Greedy Rule's Direction Fail?).
 - **Robust**: the exact audits; the closed-form turning theory, and its inversion; the two-gene repair, above e45 in 15
   of 15 new layouts (J10-26 § The Hand-Built Worm on Fifteen New Layouts); greedy steering's gain in cold 23000 and
   75000, and the hunger gate's harm in 75000 (J10-27); smaller steps, about 0.56 to 0.65 of the full step, beating it
-  (H14 § *Tested so far*); a bumpy map (J10-28); a mirror-symmetric world (J11-03).
-- **Suggestive only**: the composition law; the graded gain; the latch and floor effects; any effect of warmth.
+  (H14 § *Tested so far*); a bumpy map (J10-28 § Does the Hungry Map Point Home?).
+- **Supported, not shown**: a mirror-symmetric world, a reading of the code supported by D's rule, whose interval
+  includes zero (J11-03).
+- **A pilot**: the composition law held by its registered rules for one pair of levers (`eta` and `g_odour`) in three
+  worlds, 75000, 82003 and 82104, with errors 0.011 to 0.019, and beat adding gains there ([findings.md
+  § D3](findings.md#d3-multiplying-remaining-failures-predicts-a-pair-of-levers---pilot)). It is not shown for any
+  other pair, and with a third lever that barely acts alone it could not be told from ignoring that lever.
+- **Suggestive only**: the graded gain; the latch and floor effects; any effect of warmth.
 
 ### 12.4 Recommendations, for the maintainer to decide
 
@@ -537,8 +559,10 @@ None of these is taken; they wait on the maintainer's decision.
 3. **Define "demystified"** as one pre-registered test: from the equations alone, choose the genes for a stated target,
    and hit it within ±10% on held-out layouts, with no search.
 4. **If behaviour is tested again:**
-    - draw a development panel and a held-out panel in advance, each of about 40 mirror-paired layouts, sized
-      beforehand: with a standard deviation of 0.05, 40 layouts detect about 0.022 at 80% power;
+    - draw a development panel and a held-out panel in advance, of mirror-paired layouts, each sized beforehand from
+      a stated effect and standard deviation. About 40 layouts holds only at the low end: at a standard deviation of
+      0.05 they detect about 0.022 at 80% power, at 0.10 only about 0.044, and an effect of 0.03 would need about 87
+      layouts at 0.10 or about 196 at 0.15;
     - make the layout the unit of analysis;
     - add a score that does not saturate. Late energy tops out near 0.90 (the highest in J10-26 § The Hand-Built Worm
       is 0.9028), which squeezes every rich-layout contrast into a few thousandths.

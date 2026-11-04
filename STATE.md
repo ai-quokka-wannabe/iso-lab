@@ -130,21 +130,14 @@ found lives in the journal section it names; this list keeps only what is open.
      2026-10-29 and 2026-10-30).
      H14's graded hunger gain and its ablations, tested on 2026-10-30: the results are in
      [H14](docs/hypotheses/README.md#h14-graded-slow-knobs-change-detecting-senses-and-individuality) § *Tested so
-     far*. Next: the hunger-gain series rests here; reopening the floor would take a test over many more rich layouts, sized beforehand to resolve
-     an effect of about +0.002; more body
-     seeds per layout, to tell a small cold-band gain from none; what the gate does in 23001's first day, where its harm starts; and the timing of a worm's
-     meals against the turning of its map. Why steering trails never steering in warm layouts, tested on 2026-11-03
-     (journal of 2026-11-03, § Why Steering Trails Never Steering in Warm Layouts): on five fresh warm layouts the
-     harm is not reproduced, and in their mirror images, by D's rule, it goes with the layout, not with warmth. Kept alone,
-     turns towards the band help and turns away harm, and the brain's decisions split about evenly between them
-     (descriptive). Each decision scored against the band on 2026-11-04 (journal of 2026-11-04, § Does the Greedy
-     Rule's Direction Fail?): the lateral sense (0.986) and temperature as a guide to the band (0.945) are shown
-     sound, and the map's choice points the band's way in 0.513 (0.424 to 0.619) of decisions, undecided by its rule
-     and from 0.27 to 0.90 by layout. Next, **awaiting the maintainer's decision** on gr-fec.md § 12.4's
-     recommendations: pause this series and the hunger-gain series, return to the equations (a steering term in the
-     turning theory, validated on a fixed map the evaluator imposes, then the never-run fixed-point test), define
-     "demystified" as one pre-registered design-to-target test on held-out layouts, and size any further behavioural
-     test in advance on panels of mirror-paired layouts. Until then, nothing in (b) is started;
+     far*. Why steering trails never steering in warm layouts, tested on 2026-11-03, and each decision scored against
+     the band on 2026-11-04: the journals of those nights, read together in gr-fec.md § 12. **Held, awaiting the
+     maintainer's decision** on [gr-fec.md § 12.4](docs/research/gr-fec.md#124-recommendations-for-the-maintainer-to-decide),
+     which recommends pausing this series and returning to the equations. Held with it, the series' earlier open
+     steps: reopening the floor (a test over many more rich layouts, sized beforehand to resolve about +0.002); more
+     body seeds per layout, to tell a small cold-band gain from none; what the gate does in 23001's first day; the
+     timing of a worm's meals against the turning of its map; and what makes the map point away in layouts such as
+     82606. Nothing in (b) is started until the maintainer decides;
    - (d) the composition law: a third lever that acts alone, and roaming's interaction as its own test.
 
    Once a calculation matters to anything the lab builds on, it moves into tested Rust.
@@ -167,8 +160,9 @@ found lives in the journal section it names; this list keeps only what is open.
       the section to start reading at; whether each night's write-up step should add its line is the maintainer's call
       (see *To Revisit*);
     - (f) STATE.md cut back to what is current: *Done* to the latest night only, as its own header says; the *Last
-      updated* paragraph; and the longest *Next* items (2 and 9) cut to their open steps, each removed line first
-      checked, one by one, to be held by the journal it points to;
+      updated* paragraph (done in [#214](https://github.com/ai-quokka-wannabe/iso-lab/pull/214), cut to the latest
+      night with a pointer to the journal index); and the longest *Next* items (2 and 8) cut to their open steps, each
+      removed line first checked, one by one, to be held by the journal it points to;
     - (g) the hypotheses' README: (c)'s diagram is in it; what is left is a short section pointing to the experiments'
       index for the rest;
     - (h) the audits (`check-coherence`, `check-style`, `check-spelling`) once more, to catch what is left.
