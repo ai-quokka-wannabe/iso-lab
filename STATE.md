@@ -3,33 +3,12 @@
 **Last updated:** 2026-11-04 ([the journal of 2026-11-04](docs/journal/2026-11-04.md)): `external/` moved to the
 latest mains - Link protocol 14, Program ABI 12 without the speed over the ground, the world's reflection attenuation,
 its air, heat and floor solutes - with the placeholder rebuilt at ABI 12, the render moved by the attenuation alone, and
-the placeholder's life unchanged; and the toy worm's steering decisions, scored against the band, place its
-failure, by elimination, in the map's choice as the greedy rule reads it (its own registered test undecided). Before
-it, 2026-11-03 ([the journal of 2026-11-03](docs/journal/2026-11-03.md)): `external/` moved to the
-latest mains, with the world, the render and the placeholder's life unchanged; C18's plan was run, and the hunch is
-refuted in its cures; the pace note's gaps had a fourth pass; E4 was planned again from a pilot, and its four
-assertions became tests in Rust; the reference statistics over block 1 were computed, their interval's level pinned by
-a test, block 1's gaps split by cause, and the eigen-shape amplitudes made measures on a frozen basis; associative memory surveyed for a worm-sized brain;
-the pace note's gaps had a fifth and a sixth pass;
-and on fresh warm layouts the toy worm's steering harm did not reappear; and C18's two loose ends were run, the threshold sweep
-void by its control and the finer grid's 1.1 D share read. Before it,
-2026-10-31 ([the journal of 2026-10-31](docs/journal/2026-10-31.md)): C18 was unparked - its lead read in
-full, its cliff defined, its test piloted on four controls, which it read as it must; section D was planned whole, and
-the toolbox's event statistics (done 2026-10-30) were merged. Before it, 2026-10-30
-([the journal of 2026-10-30](docs/journal/2026-10-30.md)): `external/` moved to latest
-`main` twice, the first time with the world unchanged, the second to Link protocol 12 with food eaten in the tick.
-The global rule without the margin was tested on the ten fresh banded layouts: the cold-band hunch is refuted for it
-too. H14 was added, and its toy-worm prediction held: a graded hunger gain beat the on/off gate, and ablations trace
-that lead to smaller turns, with neither the missing latch nor grading detected to contribute; the series rests
-there. H15 and a standing watch for a recurring core were added, and the benchmark's choice of speed for the
-locomotion states was decided: one instrument for both bodies. Before it,
-2026-10-29 ([the journal](docs/journal/2026-10-29.md)): mostly housekeeping - the
-linter's and the fetch tool's dependencies patched, the night's audits, this file cut to pointers, and `external/`
-moved twice, the second time to the food world, where Master Control's new physics shifts the placeholder's life in
-the sixth decimal - and one toy-worm test: the cold-band hunch, refuted narrowly on ten fresh layouts. The night
-before is [2026-10-28](docs/journal/2026-10-28.md), summarised in
-[gr-fec.md § 10.2](docs/research/gr-fec.md#102-2026-10-28). The next step for Phase 0 is the locomotion
-states' durations and reversal rates (item 2(c)).
+the placeholder's life unchanged; the toy worm's steering decisions, scored against the band, place its failure, by
+elimination, in the map's choice as the greedy rule reads it (its own registered test undecided); and a post-mortem
+of the toy-worm series, read from the record, with recommendations awaiting the maintainer
+([gr-fec.md § 12](docs/research/gr-fec.md#12-why-the-demystification-stalled-a-post-mortem-2026-11-04)). Earlier
+nights are in [the journal's index](docs/journal/README.md). The next step for Phase 0 is the locomotion states'
+durations and reversal rates (item 2(c)).
 
 ## Where We Are
 
@@ -44,7 +23,7 @@ over block 1 and their gaps by cause; the benchmark's test is built (item 2 (e1)
 alone; and the arena is proven to a first life: a placeholder Program, which undulates only, lived fifteen minutes on the Grid and its world replays
 exactly. No creature has been scored.
 [docs/PLAN.md](docs/PLAN.md) says what the phases are and why the benchmark comes before any brain. Beside the benchmark, the lab takes apart the
-maintainer's toy worm ([docs/research/gr-fec.md](docs/research/gr-fec.md) §§ 9-11) to learn how to design a brain
+maintainer's toy worm ([docs/research/gr-fec.md](docs/research/gr-fec.md) §§ 9-12) to learn how to design a brain
 rather than search for one; what carries up the ladder is kept in [docs/research/findings.md](docs/research/findings.md).
 
 ## Standing Watch
@@ -138,7 +117,9 @@ found lives in the journal section it names; this list keeps only what is open.
    delay grades wait on item 1. B1 names the interface at an older pin; the audit lists the fields at the pin it runs
    on (Program ABI 12 since 2026-11-04, which removed the speed over the ground, one field B1 would have had to grade).
 8. **gr-fec's worm by equation** - the maintainer's aim (2026-10-26): understand [gr-fec's worm](docs/research/gr-fec.md)
-   well enough to design it for a chosen behaviour, with every decision auditable, instead of evolving it. What is
+   well enough to design it for a chosen behaviour, with every decision auditable, instead of evolving it. Why the
+   series stalled, and what to do instead, is in
+   [gr-fec.md § 12](docs/research/gr-fec.md#12-why-the-demystification-stalled-a-post-mortem-2026-11-04). What is
    known is in [gr-fec.md §§ 9-10](docs/research/gr-fec.md#9-what-the-lab-found-on-taking-it-up-2026-10-26) and
    [findings.md § Designing a Brain](docs/research/findings.md#designing-a-brain); each experiment's script and pull
    request are in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are). Open, one run each:
@@ -149,17 +130,14 @@ found lives in the journal section it names; this list keeps only what is open.
      2026-10-29 and 2026-10-30).
      H14's graded hunger gain and its ablations, tested on 2026-10-30: the results are in
      [H14](docs/hypotheses/README.md#h14-graded-slow-knobs-change-detecting-senses-and-individuality) § *Tested so
-     far*. Next: the hunger-gain series rests here; reopening the floor would take a test over many more rich layouts, sized beforehand to resolve
-     an effect of about +0.002; more body
-     seeds per layout, to tell a small cold-band gain from none; what the gate does in 23001's first day, where its harm starts; and the timing of a worm's
-     meals against the turning of its map. Why steering trails never steering in warm layouts, tested on 2026-11-03
-     (journal of 2026-11-03, § Why Steering Trails Never Steering in Warm Layouts): on five fresh warm layouts the
-     harm is not reproduced, and in their mirror images, by D's rule, it goes with the layout, not with warmth. Kept alone,
-     turns towards the band help and turns away harm, and the brain's decisions split about evenly between them
-     (descriptive). Each decision scored against the band on 2026-11-04 (journal of 2026-11-04, § Does the Greedy
-     Rule's Direction Fail?): the lateral sense (0.986) and temperature as a guide to the band (0.945) are shown
-     sound, and the map's choice points the band's way in 0.513 (0.424 to 0.619) of decisions, undecided by its rule
-     and from 0.27 to 0.90 by layout. Next: what makes the map point away in some layouts, such as 82606;
+     far*. Why steering trails never steering in warm layouts, tested on 2026-11-03, and each decision scored against
+     the band on 2026-11-04: the journals of those nights, read together in gr-fec.md § 12. **Held, awaiting the
+     maintainer's decision** on [gr-fec.md § 12.4](docs/research/gr-fec.md#124-recommendations-for-the-maintainer-to-decide),
+     which recommends pausing this series and returning to the equations. Held with it, the series' earlier open
+     steps: reopening the floor (a test over many more rich layouts, sized beforehand to resolve about +0.002); more
+     body seeds per layout, to tell a small cold-band gain from none; what the gate does in 23001's first day; the
+     timing of a worm's meals against the turning of its map; and what makes the map point away in layouts such as
+     82606. Nothing in (b) is started until the maintainer decides;
    - (d) the composition law: a third lever that acts alone, and roaming's interaction as its own test.
 
    Once a calculation matters to anything the lab builds on, it moves into tested Rust.
@@ -182,8 +160,9 @@ found lives in the journal section it names; this list keeps only what is open.
       the section to start reading at; whether each night's write-up step should add its line is the maintainer's call
       (see *To Revisit*);
     - (f) STATE.md cut back to what is current: *Done* to the latest night only, as its own header says; the *Last
-      updated* paragraph; and the longest *Next* items (2 and 9) cut to their open steps, each removed line first
-      checked, one by one, to be held by the journal it points to;
+      updated* paragraph (done in [#214](https://github.com/ai-quokka-wannabe/iso-lab/pull/214), cut to the latest
+      night with a pointer to the journal index); and the longest *Next* items (2 and 8) cut to their open steps, each
+      removed line first checked, one by one, to be held by the journal it points to;
     - (g) the hypotheses' README: (c)'s diagram is in it; what is left is a short section pointing to the experiments'
       index for the rest;
     - (h) the audits (`check-coherence`, `check-style`, `check-spelling`) once more, to catch what is left.
@@ -309,7 +288,10 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   three device checks; the digest moved to `6A94D9A1…464F` and a build at an attenuation of 1 gives the old one - and
   the placeholder's life is the same at both pins once its join tick is taken out (journal of 2026-11-04, § The World
   Moves to Protocol 14 and Program ABI 12, Measured Before and After).
-- 2026-11-04: item 9 (b), each steering decision of the graded gain scored against the band on ten fresh warm layouts:
+- 2026-11-04: item 8 (b), each steering decision of the graded gain scored against the band on ten fresh warm layouts:
   the lateral sense is right in 0.986 of decisions and temperature leads to the band in 0.945, so by elimination the
   direction's failure lies in the map's choice as the greedy rule reads it, which points the band's way in 0.513 (0.424 to 0.619), undecided by its rule
   (journal of 2026-11-04, § Does the Greedy Rule's Direction Fail? Each Steering Decision Scored).
+- 2026-11-04: item 8, a post-mortem of the toy-worm series from the record, why it stalled and what stands, with
+  recommendations awaiting the maintainer
+  ([gr-fec.md § 12](docs/research/gr-fec.md#12-why-the-demystification-stalled-a-post-mortem-2026-11-04)).
