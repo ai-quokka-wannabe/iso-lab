@@ -1,32 +1,16 @@
 # State of the Lab
 
-**Last updated:** 2026-11-04 ([the journal of 2026-11-04](docs/journal/2026-11-04.md)): block 1's real worms and
-block 2's, unseen, are indistinguishable by the benchmark's two tests, and a positive control is told apart. Before it,
-2026-11-03 ([the journal of 2026-11-03](docs/journal/2026-11-03.md)): `external/` moved to the
-latest mains, with the world, the render and the placeholder's life unchanged; C18's plan was run, and the hunch is
-refuted in its cures; the pace note's gaps had a fourth pass; E4 was planned again from a pilot, and its four
-assertions became tests in Rust; the reference statistics over block 1 were computed, their interval's level pinned by
-a test, block 1's gaps split by cause, and the eigen-shape amplitudes made measures on a frozen basis; associative memory surveyed for a worm-sized brain;
-the pace note's gaps had a fifth and a sixth pass;
-and on fresh warm layouts the toy worm's steering harm did not reappear; and C18's two loose ends were run, the threshold sweep
-void by its control and the finer grid's 1.1 D share read. Before it,
-2026-10-31 ([the journal of 2026-10-31](docs/journal/2026-10-31.md)): C18 was unparked - its lead read in
-full, its cliff defined, its test piloted on four controls, which it read as it must; section D was planned whole, and
-the toolbox's event statistics (done 2026-10-30) were merged. Before it, 2026-10-30
-([the journal of 2026-10-30](docs/journal/2026-10-30.md)): `external/` moved to latest
-`main` twice, the first time with the world unchanged, the second to Link protocol 12 with food eaten in the tick.
-The global rule without the margin was tested on the ten fresh banded layouts: the cold-band hunch is refuted for it
-too. H14 was added, and its toy-worm prediction held: a graded hunger gain beat the on/off gate, and ablations trace
-that lead to smaller turns, with neither the missing latch nor grading detected to contribute; the series rests
-there. H15 and a standing watch for a recurring core were added, and the benchmark's choice of speed for the
-locomotion states was decided: one instrument for both bodies. Before it,
-2026-10-29 ([the journal](docs/journal/2026-10-29.md)): mostly housekeeping - the
-linter's and the fetch tool's dependencies patched, the night's audits, this file cut to pointers, and `external/`
-moved twice, the second time to the food world, where Master Control's new physics shifts the placeholder's life in
-the sixth decimal - and one toy-worm test: the cold-band hunch, refuted narrowly on ten fresh layouts. The night
-before is [2026-10-28](docs/journal/2026-10-28.md), summarised in
-[gr-fec.md § 10.2](docs/research/gr-fec.md#102-2026-10-28). The next step for Phase 0 is the locomotion
-states' durations and reversal rates (item 2(c)).
+**Last updated:** 2026-11-04 ([the journal of 2026-11-04](docs/journal/2026-11-04.md)): `external/` moved to the
+latest mains - Link protocol 14, Program ABI 12 without the speed over the ground, the world's reflection attenuation,
+its air, heat and floor solutes - with the placeholder rebuilt at ABI 12, the render moved by the attenuation alone, and
+the placeholder's life unchanged; the toy worm's steering decisions, scored against the band, place its failure, by
+elimination, in the map's choice as the greedy rule reads it (its own registered test undecided); and a post-mortem
+of the toy-worm series, read from the record, with recommendations awaiting the maintainer
+([gr-fec.md § 12](docs/research/gr-fec.md#12-why-the-demystification-stalled-a-post-mortem-2026-11-04)); and a plan for the stimulus assays the world's new fields open
+([docs/benchmark/STIMULI.md](docs/benchmark/STIMULI.md)); and block 1's real worms and block 2's, unseen, were found
+indistinguishable by the benchmark's two tests, with a positive control told apart. Earlier
+nights are in [the journal's index](docs/journal/README.md). The next step for Phase 0 is the locomotion states'
+durations and reversal rates (item 2(c)).
 
 ## Where We Are
 
@@ -42,7 +26,7 @@ alone (e3): two blocks of real worms are not told apart, and a stated alteration
 first life: a placeholder Program, which undulates only, lived fifteen minutes on the Grid and its world replays
 exactly. No creature has been scored.
 [docs/PLAN.md](docs/PLAN.md) says what the phases are and why the benchmark comes before any brain. Beside the benchmark, the lab takes apart the
-maintainer's toy worm ([docs/research/gr-fec.md](docs/research/gr-fec.md) §§ 9-11) to learn how to design a brain
+maintainer's toy worm ([docs/research/gr-fec.md](docs/research/gr-fec.md) §§ 9-12) to learn how to design a brain
 rather than search for one; what carries up the ladder is kept in [docs/research/findings.md](docs/research/findings.md).
 
 ## Standing Watch
@@ -138,9 +122,12 @@ found lives in the journal section it names; this list keeps only what is open.
 7. **Audit the Program interface field by field**, by
    [docs/hypotheses/experiments/B.md § B1](docs/hypotheses/experiments/B.md#b1-a-nervous-system-not-a-game-client):
    every sense and action against what a worm can transduce and produce, with a blind planted-field control; the
-   delay grades wait on item 1.
+   delay grades wait on item 1. B1 names the interface at an older pin; the audit lists the fields at the pin it runs
+   on (Program ABI 12 since 2026-11-04, which removed the speed over the ground, one field B1 would have had to grade).
 8. **gr-fec's worm by equation** - the maintainer's aim (2026-10-26): understand [gr-fec's worm](docs/research/gr-fec.md)
-   well enough to design it for a chosen behaviour, with every decision auditable, instead of evolving it. What is
+   well enough to design it for a chosen behaviour, with every decision auditable, instead of evolving it. Why the
+   series stalled, and what to do instead, is in
+   [gr-fec.md § 12](docs/research/gr-fec.md#12-why-the-demystification-stalled-a-post-mortem-2026-11-04). What is
    known is in [gr-fec.md §§ 9-10](docs/research/gr-fec.md#9-what-the-lab-found-on-taking-it-up-2026-10-26) and
    [findings.md § Designing a Brain](docs/research/findings.md#designing-a-brain); each experiment's script and pull
    request are in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are). Open, one run each:
@@ -151,15 +138,14 @@ found lives in the journal section it names; this list keeps only what is open.
      2026-10-29 and 2026-10-30).
      H14's graded hunger gain and its ablations, tested on 2026-10-30: the results are in
      [H14](docs/hypotheses/README.md#h14-graded-slow-knobs-change-detecting-senses-and-individuality) § *Tested so
-     far*. Next: the hunger-gain series rests here; reopening the floor would take a test over many more rich layouts, sized beforehand to resolve
-     an effect of about +0.002; more body
-     seeds per layout, to tell a small cold-band gain from none; what the gate does in 23001's first day, where its harm starts; and the timing of a worm's
-     meals against the turning of its map. Why steering trails never steering in warm layouts, tested on 2026-11-03
-     (journal of 2026-11-03, § Why Steering Trails Never Steering in Warm Layouts): on five fresh warm layouts the
-     harm is not reproduced, and in their mirror images, by D's rule, it goes with the layout, not with warmth. Kept alone,
-     turns towards the band help and turns away harm, and the brain's decisions split about evenly between them
-     (descriptive). Next: whether the greedy rule's direction, read off the map, is what fails, scored against the
-     band per decision;
+     far*. Why steering trails never steering in warm layouts, tested on 2026-11-03, and each decision scored against
+     the band on 2026-11-04: the journals of those nights, read together in gr-fec.md § 12. **Held, awaiting the
+     maintainer's decision** on [gr-fec.md § 12.4](docs/research/gr-fec.md#124-recommendations-for-the-maintainer-to-decide),
+     which recommends pausing this series and returning to the equations. Held with it, the series' earlier open
+     steps: reopening the floor (a test over many more rich layouts, sized beforehand to resolve about +0.002); more
+     body seeds per layout, to tell a small cold-band gain from none; what the gate does in 23001's first day; the
+     timing of a worm's meals against the turning of its map; and what makes the map point away in layouts such as
+     82606. Nothing in (b) is started until the maintainer decides;
    - (d) the composition law: a third lever that acts alone, and roaming's interaction as its own test.
 
    Once a calculation matters to anything the lab builds on, it moves into tested Rust.
@@ -182,8 +168,9 @@ found lives in the journal section it names; this list keeps only what is open.
       the section to start reading at; whether each night's write-up step should add its line is the maintainer's call
       (see *To Revisit*);
     - (f) STATE.md cut back to what is current: *Done* to the latest night only, as its own header says; the *Last
-      updated* paragraph; and the longest *Next* items (2 and 9) cut to their open steps, each removed line first
-      checked, one by one, to be held by the journal it points to;
+      updated* paragraph (done in [#214](https://github.com/ai-quokka-wannabe/iso-lab/pull/214), cut to the latest
+      night with a pointer to the journal index); and the longest *Next* items (2 and 8) cut to their open steps, each
+      removed line first checked, one by one, to be held by the journal it points to;
     - (g) the hypotheses' README: (c)'s diagram is in it; what is left is a short section pointing to the experiments'
       index for the rest;
     - (h) the audits (`check-coherence`, `check-style`, `check-spelling`) once more, to catch what is left.
@@ -195,6 +182,38 @@ found lives in the journal section it names; this list keeps only what is open.
     each with its switch, measuring the sweeps a settling takes against the decision times in
     [pace.md](docs/research/pace.md). Exploration only; a module that earns its place moves into Rust and waits, as
     E4 does, on a Program and the frozen benchmark.
+11. **The stimulus assays**, from [docs/benchmark/STIMULI.md](docs/benchmark/STIMULI.md) § Order, Effort and What
+    Blocks Each (journal of 2026-11-04, § What the World's New Fields Open for the Benchmark: a Plan). They are a second
+    part of the benchmark, frozen on its own and never delaying item 2 (e5). One run each, in this order; no Grid life
+    before the senses and sources below exist:
+    - (a) done (journal of 2026-11-04, § The Salt Dataset: Its Methods and What the Archive Holds): the methods read,
+      and the archive listed by range requests. Its salt tracks are centroids at 5/14 s, with no posture and no
+      worm or plate identity (STIMULI.md § Taste);
+    - (b) partly done (journal of 2026-11-04, § The Salt Measures, Drafted): six measures drafted in
+      [docs/benchmark/SALT_MEASURES.md](docs/benchmark/SALT_MEASURES.md), with the gradient's direction fitted from
+      the data and the centroid chosen for both bodies. Open there: Q1, the unit of the test, which has 7–11 plates per
+      condition and no plate in the files; Q3, the authors' smoothing, both for the maintainer (a lead: Chen et al. 2023's
+      0.5 s polynomial, unconfirmed). Q7, the heading's noise at low speed, is decided (journal of 2026-11-04, § Q7:
+      Headings Over a Quarter of a Body Length): a heading only over a displacement of at least 0.25 L;
+    - (b2) for the maintainer: a letter to the preprint's authors (SALT_MEASURES.md § The Open Questions, Q1 (a)) for
+      each track's plate, their smoothing, the start positions, `Data_salt0_0.mat` and `mask`; or the authors' code
+      repository attached to a session, for the smoothing. Then Q1's choice of route and of the Grid's plate;
+    - (c) salt, which may start now, with Q1 and Q3 open: fetch the archive, checksum and register it in data/README.md,
+      fit the gradient's direction
+      by SALT_MEASURES.md's rule (P4), and compute M1-M6 per track as description in `features`, in tested Rust, each
+      test seen failing first, with Q7's registered check at ℓ = 0.125 L and 0.5 L reported beside the primary 0.25 L. No
+      Grid life is needed, so it is not blocked upstream. The measures that use heading
+      change (M2-M4, M6) stay provisional until Q3 is answered, and the reference statistics wait on Q1;
+    - (d) odour: read Chen et al. 2023's methods ([doi:10.7554/eLife.85910](https://doi.org/10.7554/eLife.85910)) and
+      list its archive's files (STIMULI.md § Air), and say whether its measures against bearing, made in a flow
+      chamber, can stand for still air;
+    - (e) heat: search the thermotaxis papers' data statements for public tracks, and read the assays' plates, gradients
+      and measures in full. Ryu and Samuel 2002 and Luo et al. 2014 were found closed (pace.md); try Luo et al. 2006 and
+      Ito et al. 2006 first, then an author's manuscript in Europe PMC, then data or a reprint asked of an author through
+      an issue the maintainer files; park with what was tried if none opens;
+    - (f) the arena: the floor's 128 m (28.6 body lengths, 2.86 cm at the world's scale) and its terraces against an
+      assay plate, for every assay, folded into FEATURES.md § Open Questions Before Freezing; first measure the spawn
+      pad's terrace (STIMULI.md § What a Program Senses Today).
 
 ## To Revisit
 
@@ -262,9 +281,11 @@ Each need is an issue in the repository that would meet it, triaged there by its
 points to the open ones and says what waits on each.
 
 - **A sense of smell** (tron-grid-lite, master-control; the maintainer takes it up once the lab is set up -
-  file nothing). The Grid at the pinned commit carries a chemical sense to Programs: Program ABI 11's
-  `TglSenses.odour[2][8]`, the bound fraction of eight receptor types at each of two amphids, smelt from the food orbs
-  (journal of 2026-10-31, § The Grid Moves to Program ABI 11). Chemotaxis stays listed as not comparable until a
+  file nothing). The Grid at the pinned commit carries a chemical sense to Programs: `TglSenses.odour[2][8]`, since
+  Program ABI 11 and at 12, the bound fraction of eight receptor types at each of two amphids, smelt from the food orbs
+  (journal of 2026-10-31, § The Grid Moves to Program ABI 11); since the pins of 2026-11-04 the odour spreads on Master
+  Control's air grid and each type is a population over five decades of affinity (journal of 2026-11-04). The organs
+  bump, ruled upstream and not yet built, replaces `odour` with declared organs (tron-grid-lite `docs/ORGANS.md`). Chemotaxis stays listed as not comparable until a
   Program reads it and the benchmark measures it - never quietly dropped. B2 of
   [the B plans](docs/hypotheses/experiments/B.md#b2-smell-as-an-unlabelled-fingerprint) lists the properties a
   hunch asks of it (intensity, its change over time, a left-right difference, blending mixtures, blurring traces).
@@ -286,9 +307,25 @@ points to the open ones and says what waits on each.
   resolution 9.8 to 68.6% (median 35.8%, 34 recordings) of the reference worms' skeletonised frames bend beyond the
   chain's 0.9 rad at some joint, against 0.15% beyond Master Control's pi/2. The issue asks to raise the limit to
   pi/2, with the caveats (journal of 2026-10-15, *The Joint-Limit Issue, Drafted*).
+- **Senses and sources for the stimulus assays** (tron-grid-lite, master-control; written here, not filed, per this
+  task's brief; [docs/benchmark/STIMULI.md](docs/benchmark/STIMULI.md) has the evidence). At the pins of 2026-11-04 no
+  Program senses heat or taste, and the gases are not in the world. Needed, for the benchmark's stimulus assays and
+  for nothing a brain is tuned by: (1) the organs bump (tron-grid-lite `docs/ORGANS.md`, ruled), for heat and salt;
+  (2) a salt source apart from food, a placed solute gradient or spot, since every salt assay is salt alone and the
+  world's only salt leaches from orbs that also smell and feed; (3) an odour source apart from food, with a declared
+  pattern over the receptor types (deferred upstream "when a world has a second kind of source"); (4) a way to raise a
+  Program at one temperature and test it on a gradient - a scheduled change of the thermal map, or a radial gradient -
+  which would also give temperature steps for a reaction latency, and likewise a Program raised at one salt
+  concentration before a salt gradient (SALT_MEASURES.md, Q6); (5) the world's solute unit tied to a concentration,
+  so a gradient in millimolar has a meaning; (6) oxygen and carbon dioxide as tenants of the air, for aerotaxis, last.
+  The arena's size and flatness against a plate is the lab's open question first (item 11 (f)).
 - **Terrace edges** (master-control; the maintainer takes it up once the lab is set up - file nothing). A
-  chain can be thrown when a segment crosses a terrace edge; a fix is in progress. Until it lands, every life
-  in this lab is lived on a flat arena.
+  chain can be thrown when a segment crosses a terrace edge. At the pins of 2026-11-04 master-control's CHANGELOG
+  records a fix for one such throw ("A riser is solid only up to its top"); whether it closes this need is the
+  maintainer's call. The floor is terraced (`GRID_FLOOR_CONFIG` in master-control's `src/ground.rs`) and has no flat
+  setting, so the lab's lives are not on a flat arena, as this line used to say: they start on the spawn pad, a cell
+  proven flat for a metre (`src/roster.rs`), and the placeholder's 320-tick lives of 2026-11-04 ended 0.7 m from its
+  centre (journal of 2026-11-04, § What the World's New Fields Open for the Benchmark: a Plan).
 
 ## Done
 
@@ -299,64 +336,28 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   tests at seed 20261104, and the positive control (a 1 sd shift of one measure) is told apart by both; block 1's
   frozen eigen-shapes fit block 2 to a cosine of 0.997 or better (journal of 2026-11-04, § Real Against Unseen Real:
   the Results).
-- 2026-11-03: `external/` at the latest mains (tron-grid-lite `ba76cdd`, master-control `28bda1c`, link `5c63e87`):
-  D1-D3 hold - Master Control's suite 120 then 124 passed, `ctest` 22 of 22, the three device checks, the same render
-  digest - and the placeholder's life is the same at both pins once its join tick is taken out (journal of 2026-11-03,
-  § The World Moves to the Faster Floor, Measured Before and After).
-- 2026-11-03: item 11, C18's plan run with fresh seeds, the four controls reading as they must: C18 is refuted by
-  clauses (2), (4) and (5). The pure network has a cliff (D = 2.255), but inhibition, the fan-out penalty and the budget
-  at a gain of 1.2 move it (to 4.75, 7.50 and 1.53) rather than remove it; the budget at a gain of 0.4 removes it by
-  spreading nothing; two-hop priming is 0.40 of one-hop (journal of 2026-11-03, § C18's Plan, Run).
-- 2026-11-03: the pace note's gaps, a fourth pass: lethargus measured (L4 2.0-2.2 h, L3 1.4-1.6 h, L2 1.3 h, hourly
-  sampling; Patel et al. 2022), the thermoreceptor's latency (about 100 ms; Ramot et al. 2008), a 0.2 s filter peak from
-  touch neurons to acceleration (Porto et al. 2019), and Mohammadi et al.'s reaction times read as counted from the
-  laser's onset (the first author's thesis); the touch-to-reversal latency, a behavioural thermotaxis latency, tap
-  habituation's time constants and satiety stay open (journal of 2026-11-03, § The Pace Note's Gaps, a Fourth Pass).
-- 2026-11-03: the pace note's gaps, a fifth pass: satiety quiescence narrowed - mean bout ≈ 95 s by Gallagher et al.
-  2013's model (Dataset S1, one step per frame assumed, conditional on its prior), about 40-50 s by stopwatch in Hyun et al. 2016 (read off a
-  figure), both in watched worms; tap habituation's half-life read by eye from Giles et al. 2015, roughly 40-90 s (low
-  confidence); Timbers et al. 2013 not open. No gap closed (journal of 2026-11-03, § The Pace Note's Gaps, a Fifth
-  Pass).
-- 2026-11-03: the pace note's gaps, a sixth pass, at the four the fifth left untried: no touch-to-reversal or
-  behavioural thermotaxis latency in text, Leung et al.'s public data declined on its licence, Singh and Sulston 1978
-  not found in Europe PMC. Nothing closed (journal of 2026-11-03, § The Pace Note's Gaps, a Sixth Pass).
-- 2026-11-03: item 2 (d2), the reference statistics over block 1's 179 measured recordings: four eigen-shapes carry
-  97.8% of the eight-arc posture's variance (four in all 9999 resamples), each measure's median has a bootstrap
-  interval, and the block's halves agree on every measure (Holm, smallest raw p 0.264) and by the classifier test
-  (p = 0.889) (journal of 2026-11-03, § The Reference Statistics of Block 1).
-- 2026-11-03: the reference statistics' interval level written once, `INTERVAL_TAILS = (0.025, 0.975)`, and asserted;
-  a test on 1000 untied rows pins `summarise`'s interval to it exactly (journal of 2026-11-03, § The Interval's Level,
-  Pinned).
-- 2026-11-03: E4 planned again, from a pilot of a rate network: there, a co-activated pair captures by igniting
-  itself once its weight passes `w* = 1 - 2b`, Hebb's rule alone passes it, row normalisation and scaling stop it
-  exactly when their bound or fixed point sits below `w*`, and Oja's rule and BCM (in the pilot's mix of trials)
-  only delay it, so the network gives assertions, and the hunch's test waits on a Program (journal of 2026-11-03,
-  § E4's Pilot, and Its Plan Written Again, and its *After review*).
-- 2026-11-03: item 9 (b), why steering trails never steering in warm layouts, on five fresh warm layouts and their
-  mirror images: the harm is not reproduced (G − N −0.0442, −0.1284 to +0.0293), so the mechanism tests are
-  uninformative; the immature-map and cold-ward hunches are not supported, overshoot is contradicted (warm-ward turns
-  alone +0.1233, +0.0421 to +0.2160), and by D's rule the cost goes with the layout, not warmth (journal of 2026-11-03, § Why
-  Steering Trails Never Steering in Warm Layouts).
-- 2026-11-03: item 12, E4's four assertions as tests of the pilot's network in Rust (`crates/hebbian`): all hold; ten
-  deliberate breaks each fail a test, and two variants of BCM's threshold pass, since the assertion constrains BCM
-  only qualitatively (journal of 2026-11-03, § E4's Assertions, in Rust).
-- 2026-11-03: item 2 (d3), the gaps by cause in block 1: stage movements (median 3.3% of a window) and frames with no
-  good skeleton (median 2.1%) told apart through a reader of the per-frame table written around `hdf5-pure`'s shuffle;
-  the stage share follows speed (rho 0.95), and frames beside a failed skeleton are 1.62 times as bent as frames far
-  from gaps, a reading the planned control, which departed from 1, does not license (journal of 2026-11-03, § The Gaps by Cause in Block 1).
-- 2026-11-03: item 2 (d4), the eigen-shape amplitudes: block 1's first four shapes frozen in the code, each recording's
-  spread along them four new measures (medians 0.94, 0.80, 0.78 and 0.46 rad), the eigenvalues agreeing with their
-  within and between parts to 1e-15 and the basis matching the fit loading by loading, and the halves agreeing on all
-  27 measures (journal of 2026-11-03, § The Eigen-Shape Amplitudes of Block 1).
-- 2026-11-03: item 11, C18's two loose ends: (a) the threshold sweep at the budget's gain of 1.2 is void by its
-  control (L0 missed by 0.001), though D fell from 1.654 to 1.160 towards the graph's 1.014 as the threshold fell
-  (descriptive); (b) on a grid of step 0.02 the jump control clears its jump (share 0.907), and the pure network
-  reads *neither*, 0.856 (journal of 2026-11-03, § C18's Loose Ends, Run).
-- 2026-11-03: the basis-stop tests (*Next* item 11 that night): `check_basis` is fed a fit that satisfies the
-  eigenvalue identity exactly with shapes turned by 1e-11 rad, and must be stopped, which pins the 1e-12 limit to
-  within a decade; and its mirror, the frozen shapes with eigenvalues 1e-8 off, must be stopped by the 1e-9 identity (journal of 2026-11-03, § The Basis Stop, Tested).
-- 2026-11-03: item 4, associative memory surveyed in
-  [docs/research/associative-memory.md](docs/research/associative-memory.md): four families, each with its equation,
-  its cost at 302 neurons, its behaviours, its ablations and its ties to H5, H6, H9 and E4. The worm needs a
-  mechanism - settling, blending, sampling - not capacity; Hopfield 1982 was read in abstract only, Oja 1982 and Amit,
-  Gutfreund and Sompolinsky not at all (journal of 2026-11-03, § Associative Memory, Surveyed).
+- 2026-11-04: `external/` at the latest mains (tron-grid-lite `067fb7e`, master-control `7c527d9`, link `0304788`),
+  the placeholder at Program ABI 12: D1-D3 hold - Master Control's suite 124 then 158 passed, `ctest` 22 of 22, the
+  three device checks; the digest moved to `6A94D9A1…464F` and a build at an attenuation of 1 gives the old one - and
+  the placeholder's life is the same at both pins once its join tick is taken out (journal of 2026-11-04, § The World
+  Moves to Protocol 14 and Program ABI 12, Measured Before and After).
+- 2026-11-04: item 8 (b), each steering decision of the graded gain scored against the band on ten fresh warm layouts:
+  the lateral sense is right in 0.986 of decisions and temperature leads to the band in 0.945, so by elimination the
+  direction's failure lies in the map's choice as the greedy rule reads it, which points the band's way in 0.513 (0.424 to 0.619), undecided by its rule
+  (journal of 2026-11-04, § Does the Greedy Rule's Direction Fail? Each Steering Decision Scored).
+- 2026-11-04: item 11 (b), Q7 decided before any data: a heading is taken only once the centroid has moved 0.25 L,
+  so that one pixel of tracking noise cannot alone fire a 50° turn; a sensitivity check at 0.125 L and 0.5 L registered
+  ([docs/benchmark/SALT_MEASURES.md](docs/benchmark/SALT_MEASURES.md) § The Open Questions).
+- 2026-11-04: item 11 (b), partly: six salt measures drafted, signed by the setpoint and using no salt concentration
+  in mM; the centroid for both bodies, and the gradient fitted from the data; the unit of the test and the authors'
+  smoothing left for the maintainer ([docs/benchmark/SALT_MEASURES.md](docs/benchmark/SALT_MEASURES.md)).
+- 2026-11-04: item 11 (a), the salt dataset's methods and its archive listed without downloading it: centroids every
+  5/14 s, 297 and 277 tracks in the 0-50 and 100-50 mM gradients, no posture, and neither worm nor plate kept; not adopted
+  (journal of 2026-11-04, § The Salt Dataset: Its Methods and What the Archive Holds).
+- 2026-11-04: item 11, a plan for the stimulus assays the world's new fields open
+  ([docs/benchmark/STIMULI.md](docs/benchmark/STIMULI.md)): at Program ABI 12 only odour is sensed, heat and salt exist
+  unsensed until ABI 13, the gases not at all; two CC BY 4.0 datasets of tracks found (salt and odour, both from the
+  Leifer lab), none for thermotaxis in one search; order salt, odour, heat, aerotaxis.
+- 2026-11-04: item 8, a post-mortem of the toy-worm series from the record, why it stalled and what stands, with
+  recommendations awaiting the maintainer
+  ([gr-fec.md § 12](docs/research/gr-fec.md#12-why-the-demystification-stalled-a-post-mortem-2026-11-04)).
