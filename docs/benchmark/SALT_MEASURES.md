@@ -35,14 +35,27 @@ tracks or can be rebuilt for a Grid life without anything reaching the brain (th
   preprint does not state the slope. If the gradient spans the 9 cm lid it is about 50 / 9 = 5.6 mM/cm, but this is
   not stated, and the fit is what decides it. A file whose R² is below 0.9 is not used until the shortfall is
   understood. The 0.9 is this draft's choice, not a sourced value. The authors' own `dcp`, read as the perpendicular
-  difference, is compared with the fit as a check, not used.
+  difference, is compared with the fit as a check, not used. On the Grid side the fit presumes a linear salt gradient
+  laid by the world, which does not exist yet: the world's only salt today is around food. It waits on STATE.md's upstream
+  need (2), a salt source apart from food (*Needs From Other Repositories*).
 - **P5.** θ*ₖ* = atan2 of *r*ₖ - *r*ₖ₋₁, and Δθₖ = θₖ - θₖ₋₁ wrapped to (-180°, 180°]. Both are recomputed from *r*
-  for both bodies; the file's `theta` and `dth` are compared with them as a check, not used.
+  for both bodies; the file's `theta` and `dth` are compared with them as a check, not used. **Not closed (Q7)**: the
+  heading comes from one step's displacement with no floor on the step's length. During pauses and slow crawling a step
+  of a few pixels points wherever the reference's tracking noise sends it, and a |Δθ| beyond 50° then fires on noise,
+  while the Grid's centroid has none. The two bodies would then differ in turns by instrument, not behaviour. Smoothing
+  both alike does not make their noise alike. This is the reference's tracking noise, which
+  [FEATURES.md § Open Questions Before Freezing](FEATURES.md#open-questions-before-freezing) already lists as not
+  closed by the one-instrument decision. The candidates, none chosen: a minimum step length below which no heading is
+  taken, fixed before any data are seen and applied to both bodies; or turns counted only while the centroid moves
+  faster than a floor. Either is written down before item 11 (c) computes a turn.
 - **The bearing** βₖ is the angle from *g û* to the heading θₖ, counter-clockwise, in (-180°, 180°]. 0° is heading
   towards the setpoint. This is Luo et al.'s "preferred direction", the side the worm prefers, which is up the gradient
   for 0-50 and down it for 100-50.
-- **P7.** A turn is a step with |Δθₖ| > 50°, the preprint's threshold ("The threshold for a turn (±50 degrees)", its
-  Figure 1's caption). A run is the stretch of steps between two turns. A run that touches a track's start or end is
+- **P7.** A turn is counted at its onset: a step *k* with |Δθₖ| > 50° whose predecessor has |Δθₖ₋₁| ≤ 50°. This is the
+  preprint's definition, "a turn is defined as instantaneous events when the heading change first exceeds a threshold"
+  (§ 2.1), with its threshold ("The threshold for a turn (±50 degrees)", Figure 1's caption). Consecutive steps beyond
+  50° belong to one turn, counted once, and to no run. A run is a maximal stretch of steps at or under 50° between two
+  turns, so every run holds at least one step and none has zero length. A run that touches a track's start or end is
   *censored*. A run's heading is the circular mean of its steps' θ. The threshold is defined only together with Δt:
   50° per 5/14 s is not 50° per tick, which is why P2 samples both bodies alike.
 - **Tracks** are kept by the authors' rule, applied to both bodies: removed if shorter than 3 minutes or if they "move
@@ -81,11 +94,12 @@ A positive *ρ* means the worm turns more often when moving away from the setpoi
   abstract). The preprint fits a kernel of turning on the concentration's history instead (§ 4.3). This measure is the
   simplest summary of both, with no model.
 - *Comparable because*: only the sign of the concentration's change enters, so the solute unit does not.
-- *Depends on*: Q1, Q3, Q6. A version in fixed bins of dC/dt, which would show the curve and not only its sign, needs Q5.
+- *Depends on*: Q1, Q3, Q6, Q7. A version in fixed bins of dC/dt, which would show the curve and not only its sign, needs Q5.
 
 ### M3. Curvature Against Bearing (Weathervaning)
 
-*w* = the mean of -sign(βₖ) · κₖ over the unit's run steps with 45° < |βₖ| < 135°, where κₖ = Δθₖ / (|*r*ₖ - *r*ₖ₋₁| / *L*)
+*w* = the mean of -sign(βₖ) · κₖ over the unit's run steps with 45° < |βₖ| < 135° (the window is this draft's choice,
+the two quadrants across the gradient, after Chen et al.'s quadrants below), where κₖ = Δθₖ / (|*r*ₖ - *r*ₖ₋₁| / *L*)
 is in degrees per body length and is positive counter-clockwise. A positive *w* means the worm veers towards the setpoint
 when it is heading across the gradient.
 
@@ -99,7 +113,7 @@ when it is heading across the gradient.
       worms gradually veer towards the preferred and non-preferred directions by similar amounts".
     - The reference is expected to settle which holds in its own tracks, and the Grid's worm to match it either way.
 - *Comparable because*: the same bearing and the same steps, with curvature per body length.
-- *Depends on*: Q1, Q2, Q3, Q4, Q6.
+- *Depends on*: Q1, Q2, Q3, Q4, Q6, Q7.
 
 ### M4. Run Duration by Heading
 
@@ -109,19 +123,23 @@ mean headings between −22.5° and +22.5°. Runs down: runs with mean headings 
 legend), with the preferred direction in place of up. The share of runs left out as censored is reported beside *d*.
 
 - *Inputs*: P1, P2, P4-P7.
-- *The reference's own*: Luo et al. 2014's runs end at "reorientation movements (sharp turns or reversal-turns)". These are
-  detected with shape analysis, by a method in their supplement, which has not been read. From a centroid at 5/14 s the
+- *The reference's own*: Luo et al. 2014's runs end at "reorientation movements (sharp turns or reversal-turns)". Their main text
+  says only that the data were analysed with "particle-tracking and shape analysis algorithms" and refers to the
+  supplement, which has not been read; that reorientations are detected by shape is the lab's inference. From a centroid at 5/14 s the
   lab's runs end at turns of P7 instead. So the reference statistic is the lab's measure on the authors' tracks, not
   Luo et al.'s published values, which are kept only as context.
 - *Comparable because*: the same turn rule and the same censoring on both sides.
-- *Depends on*: Q1, Q3, Q6. Excluding censored runs shortens both bodies' long runs alike, but it biases *d* if runs
+- *Depends on*: Q1, Q3, Q6, Q7. Excluding censored runs shortens both bodies' long runs alike, but it biases *d* if runs
   towards the setpoint are the long ones, which is what is measured. A censored-data estimate (Kaplan and Meier's) is the
   alternative, chosen or rejected before 11 (c) computes anything.
 
 ### M5. Chemotactic Index
 
-CI = ⟨*v*_g⟩ / ⟨*s*⟩ over the unit's steps, where *v*_g,k = (*r*ₖ - *r*ₖ₋₁) · *g û* / Δt and *s*ₖ = |*r*ₖ - *r*ₖ₋₁| / Δt.
-This is Luo et al. 2014's index, "the mean velocity of the trajectories along the gradient direction, 〈vg〉, divided by
+For each track, CIₜ = ⟨*v*_g⟩ / ⟨*s*⟩ over the track's steps, where *v*_g,k = (*r*ₖ - *r*ₖ₋₁) · *g û* / Δt and
+*s*ₖ = |*r*ₖ - *r*ₖ₋₁| / Δt; the unit's value is the mean of its tracks' CIₜ. Luo et al. 2014 compute the ratio for
+each trajectory and report the mean over trajectories ("the ratio between the velocity of each trajectory in the
+horizontal direction divided by the crawling speed along each trajectory", "Each data point represents mean ± SEM",
+their Figure 1D's legend). This is their index, "the mean velocity of the trajectories along the gradient direction, 〈vg〉, divided by
 the mean crawling speed along the trajectory, 〈s〉". Here *g* signs it towards the setpoint rather than up the gradient,
 and it lies in [-1, 1].
 
@@ -145,7 +163,7 @@ heads within 90° of the setpoint, minus 0.5.
       directions".
     - A centroid cannot tell a sharp turn from a reversal-turn, so *p* pools the two, and is expected to be weaker than
       Luo et al.'s sharp-turn figure.
-- *Depends on*: Q1, Q3, Q6.
+- *Depends on*: Q1, Q3, Q6, Q7.
 
 ## The Open Questions of Item 11 (b)
 
@@ -172,7 +190,8 @@ Answered where the record allows; the rest are for the maintainer.
     - Those worms come from another laboratory's protocol, and their age is not checked against the salt worms'
       "day-1 adult". Using 1123 µm is an assumption, to be said so beside every M1 and M3 figure, unless the authors
       give a length.
-- **Q3, how a Grid life is sampled to match. Answered except for one step.** P2 resamples the Grid's 32 Hz centroid to the
+- **Q3, how a Grid life is sampled to match. Open.** The smoothing is the step the match depends on, and it is unknown.
+  P2 resamples the Grid's 32 Hz centroid to the
   reference's 14 Hz, applies the authors' smoothing, and keeps every fifth sample, so both bodies reach 5/14 s by one
   path.
     - The smoothing is not stated in the preprint ("The trajectories were smoothed and down-sampled", § 4.2). The authors'
@@ -190,6 +209,8 @@ Answered where the record allows; the rest are for the maintainer.
       when the Disk reader exists, on lives with known poses, before anything is frozen.
 - **The gradient's direction. Answered** by P4: fitted from the data, never assumed, for both bodies, with its acceptance
   rule written above before any data are fetched.
+- **Q7, the heading's noise at low speed. Open**, as P5 says: a rule for a minimum step length or speed, chosen before
+  any data, or another; and the reference's tracking noise against the Grid's none (FEATURES.md).
 - **Q5, the world's solute unit.** STIMULI.md's calibration need is unchanged, but this draft does not depend on it: no
   measure uses the size of *C*.
 - **Q6, raising a Program at a setpoint.** Every measure is signed by the setpoint (P6). The reference worms were raised

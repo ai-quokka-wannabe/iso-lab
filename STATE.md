@@ -185,14 +185,15 @@ found lives in the journal section it names; this list keeps only what is open.
     - (b) partly done (journal of 2026-11-04, § The Salt Measures, Drafted): six measures drafted in
       [docs/benchmark/SALT_MEASURES.md](docs/benchmark/SALT_MEASURES.md), with the gradient's direction fitted from
       the data and the centroid chosen for both bodies. Open there: Q1, the unit of the test, which has 7–11 plates per
-      condition and no plate in the files; and Q3, the authors' smoothing. Both go to the maintainer;
+      condition and no plate in the files; Q3, the authors' smoothing, both for the maintainer; and Q7, the heading's
+      noise at low speed, a rule the lab writes itself before (c) counts a turn;
     - (b2) for the maintainer: a letter to the preprint's authors (SALT_MEASURES.md § The Open Questions, Q1 (a)) for
       each track's plate, their smoothing, the start positions, `Data_salt0_0.mat` and `mask`; or the authors' code
       repository attached to a session, for the smoothing. Then Q1's choice of route and of the Grid's plate;
-    - (c) salt, after (b): fetch the archive, checksum and register it in data/README.md, fit the gradient's direction
+    - (c) salt, which may start while Q1 and Q3 are open, once Q7's rule is written: fetch the archive, checksum and register it in data/README.md, fit the gradient's direction
       by SALT_MEASURES.md's rule (P4), and compute M1-M6 per track as description in `features`, in tested Rust, each
-      test seen failing first. No Grid life is needed, so it is not blocked upstream. The reference statistics wait on
-      Q1;
+      test seen failing first. No Grid life is needed, so it is not blocked upstream. The measures that use heading
+      change (M2-M4, M6) stay provisional until Q3 is answered, and the reference statistics wait on Q1;
     - (d) odour: read Chen et al. 2023's methods ([doi:10.7554/eLife.85910](https://doi.org/10.7554/eLife.85910)) and
       list its archive's files (STIMULI.md § Air), and say whether its measures against bearing, made in a flow
       chamber, can stand for still air;
