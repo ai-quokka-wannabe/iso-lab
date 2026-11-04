@@ -182,13 +182,17 @@ found lives in the journal section it names; this list keeps only what is open.
     - (a) done (journal of 2026-11-04, § The Salt Dataset: Its Methods and What the Archive Holds): the methods read,
       and the archive listed by range requests. Its salt tracks are centroids at 5/14 s, with no posture and no
       worm or plate identity (STIMULI.md § Taste);
-    - (b) salt: draft the measures and their rules before any statistic: turns against dC/dt, curvature against bearing,
-      run durations by heading and Luo et al. 2014's index; the unit of the test, given that tracks are neither worms
-      nor independent, with 7–11 plates per condition the independent units; the concentration at the centroid, as the
-      reference reads it, or at the head; how a Grid life is sampled and smoothed to match; and whether to ask the authors for the plates
-      and for what `Data_salt0_0.mat` and `mask` are;
-    - (c) salt, after (b): fetch the archive, checksum and register it in data/README.md, and compute the reference
-      statistics in `features`; no Grid life, so not blocked upstream;
+    - (b) partly done (journal of 2026-11-04, § The Salt Measures, Drafted): six measures drafted in
+      [docs/benchmark/SALT_MEASURES.md](docs/benchmark/SALT_MEASURES.md), with the gradient's direction fitted from
+      the data and the centroid chosen for both bodies. Open there: Q1, the unit of the test, which has 7–11 plates per
+      condition and no plate in the files; and Q3, the authors' smoothing. Both go to the maintainer;
+    - (b2) for the maintainer: a letter to the preprint's authors (SALT_MEASURES.md § The Open Questions, Q1 (a)) for
+      each track's plate, their smoothing, the start positions, `Data_salt0_0.mat` and `mask`; or the authors' code
+      repository attached to a session, for the smoothing. Then Q1's choice of route and of the Grid's plate;
+    - (c) salt, after (b): fetch the archive, checksum and register it in data/README.md, fit the gradient's direction
+      by SALT_MEASURES.md's rule (P4), and compute M1-M6 per track as description in `features`, in tested Rust, each
+      test seen failing first. No Grid life is needed, so it is not blocked upstream. The reference statistics wait on
+      Q1;
     - (d) odour: read Chen et al. 2023's methods ([doi:10.7554/eLife.85910](https://doi.org/10.7554/eLife.85910)) and
       list its archive's files (STIMULI.md § Air), and say whether its measures against bearing, made in a flow
       chamber, can stand for still air;
@@ -300,7 +304,8 @@ points to the open ones and says what waits on each.
   world's only salt leaches from orbs that also smell and feed; (3) an odour source apart from food, with a declared
   pattern over the receptor types (deferred upstream "when a world has a second kind of source"); (4) a way to raise a
   Program at one temperature and test it on a gradient - a scheduled change of the thermal map, or a radial gradient -
-  which would also give temperature steps for a reaction latency; (5) the world's solute unit tied to a concentration,
+  which would also give temperature steps for a reaction latency, and likewise a Program raised at one salt
+  concentration before a salt gradient (SALT_MEASURES.md, Q6); (5) the world's solute unit tied to a concentration,
   so a gradient in millimolar has a meaning; (6) oxygen and carbon dioxide as tenants of the air, for aerotaxis, last.
   The arena's size and flatness against a plate is the lab's open question first (item 11 (f)).
 - **Terrace edges** (master-control; the maintainer takes it up once the lab is set up - file nothing). A
@@ -325,6 +330,9 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   the lateral sense is right in 0.986 of decisions and temperature leads to the band in 0.945, so by elimination the
   direction's failure lies in the map's choice as the greedy rule reads it, which points the band's way in 0.513 (0.424 to 0.619), undecided by its rule
   (journal of 2026-11-04, § Does the Greedy Rule's Direction Fail? Each Steering Decision Scored).
+- 2026-11-04: item 11 (b), partly: six salt measures drafted, signed by the setpoint and using no salt concentration
+  in mM; the centroid for both bodies, and the gradient fitted from the data; the unit of the test and the authors'
+  smoothing left for the maintainer ([docs/benchmark/SALT_MEASURES.md](docs/benchmark/SALT_MEASURES.md)).
 - 2026-11-04: item 11 (a), the salt dataset's methods and its archive listed without downloading it: centroids every
   5/14 s, 297 and 277 tracks in the 0-50 and 100-50 mM gradients, no posture, and neither worm nor plate kept; not adopted
   (journal of 2026-11-04, § The Salt Dataset: Its Methods and What the Archive Holds).
