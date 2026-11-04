@@ -185,14 +185,17 @@ found lives in the journal section it names; this list keeps only what is open.
     - (b) partly done (journal of 2026-11-04, § The Salt Measures, Drafted): six measures drafted in
       [docs/benchmark/SALT_MEASURES.md](docs/benchmark/SALT_MEASURES.md), with the gradient's direction fitted from
       the data and the centroid chosen for both bodies. Open there: Q1, the unit of the test, which has 7–11 plates per
-      condition and no plate in the files; Q3, the authors' smoothing, both for the maintainer; and Q7, the heading's
-      noise at low speed, a rule the lab writes itself before (c) counts a turn;
+      condition and no plate in the files; Q3, the authors' smoothing, both for the maintainer (a lead: Chen et al. 2023's
+      0.5 s polynomial, unconfirmed). Q7, the heading's noise at low speed, is decided (journal of 2026-11-04, § Q7:
+      Headings Over a Quarter of a Body Length): a heading only over a displacement of at least 0.25 L;
     - (b2) for the maintainer: a letter to the preprint's authors (SALT_MEASURES.md § The Open Questions, Q1 (a)) for
       each track's plate, their smoothing, the start positions, `Data_salt0_0.mat` and `mask`; or the authors' code
       repository attached to a session, for the smoothing. Then Q1's choice of route and of the Grid's plate;
-    - (c) salt, which may start while Q1 and Q3 are open, once Q7's rule is written: fetch the archive, checksum and register it in data/README.md, fit the gradient's direction
+    - (c) salt, which may start now, with Q1 and Q3 open: fetch the archive, checksum and register it in data/README.md,
+      fit the gradient's direction
       by SALT_MEASURES.md's rule (P4), and compute M1-M6 per track as description in `features`, in tested Rust, each
-      test seen failing first. No Grid life is needed, so it is not blocked upstream. The measures that use heading
+      test seen failing first, with Q7's registered check at ℓ = 0.125 L and 0.5 L reported beside the primary 0.25 L. No
+      Grid life is needed, so it is not blocked upstream. The measures that use heading
       change (M2-M4, M6) stay provisional until Q3 is answered, and the reference statistics wait on Q1;
     - (d) odour: read Chen et al. 2023's methods ([doi:10.7554/eLife.85910](https://doi.org/10.7554/eLife.85910)) and
       list its archive's files (STIMULI.md § Air), and say whether its measures against bearing, made in a flow
@@ -331,6 +334,9 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   the lateral sense is right in 0.986 of decisions and temperature leads to the band in 0.945, so by elimination the
   direction's failure lies in the map's choice as the greedy rule reads it, which points the band's way in 0.513 (0.424 to 0.619), undecided by its rule
   (journal of 2026-11-04, § Does the Greedy Rule's Direction Fail? Each Steering Decision Scored).
+- 2026-11-04: item 11 (b), Q7 decided before any data: a heading is taken only once the centroid has moved 0.25 L,
+  so that one pixel of tracking noise cannot alone fire a 50° turn; a sensitivity check at 0.125 L and 0.5 L registered
+  ([docs/benchmark/SALT_MEASURES.md](docs/benchmark/SALT_MEASURES.md) § The Open Questions).
 - 2026-11-04: item 11 (b), partly: six salt measures drafted, signed by the setpoint and using no salt concentration
   in mM; the centroid for both bodies, and the gradient fitted from the data; the unit of the test and the authors'
   smoothing left for the maintainer ([docs/benchmark/SALT_MEASURES.md](docs/benchmark/SALT_MEASURES.md)).

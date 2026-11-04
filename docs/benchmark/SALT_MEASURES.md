@@ -38,26 +38,26 @@ tracks or can be rebuilt for a Grid life without anything reaching the brain (th
   difference, is compared with the fit as a check, not used. On the Grid side the fit presumes a linear salt gradient
   laid by the world, which does not exist yet: the world's only salt today is around food. It waits on STATE.md's upstream
   need (2), a salt source apart from food (*Needs From Other Repositories*).
-- **P5.** θ*ₖ* = atan2 of *r*ₖ - *r*ₖ₋₁, and Δθₖ = θₖ - θₖ₋₁ wrapped to (-180°, 180°]. Both are recomputed from *r*
-  for both bodies; the file's `theta` and `dth` are compared with them as a check, not used. **Not closed (Q7)**: the
-  heading comes from one step's displacement with no floor on the step's length. During pauses and slow crawling a step
-  of a few pixels points wherever the reference's tracking noise sends it, and a |Δθ| beyond 50° then fires on noise,
-  while the Grid's centroid has none. The two bodies would then differ in turns by instrument, not behaviour. Smoothing
-  both alike does not make their noise alike. This is the reference's tracking noise, which
-  [FEATURES.md § Open Questions Before Freezing](FEATURES.md#open-questions-before-freezing) already lists as not
-  closed by the one-instrument decision. The candidates, none chosen: a minimum step length below which no heading is
-  taken, fixed before any data are seen and applied to both bodies; or turns counted only while the centroid moves
-  faster than a floor. Either is written down before item 11 (c) computes a turn.
+- **P5, the heading, taken over a fixed distance (Q7, decided below).** From a track's positions at the common steps of
+  P2, keep the samples *j*₀ = 0 and then, each in turn, the first step *k* whose centroid lies at least ℓ = 0.25 *L* in a
+  straight line from the last kept sample. The heading θₘ is the direction of *r*(*j*ₘ) - *r*(*j*ₘ₋₁), at the time of
+  step *j*ₘ. Δθₘ = θₘ - θₘ₋₁ is wrapped to (-180°, 180°]. While the centroid stays within ℓ of the last kept sample,
+  during a pause or jitter, no heading is taken and no turn can fire; the time still counts. Both bodies use the same
+  rule with their own *L* (Q2 for the reference, the chain's length for the Grid's worm). The file's `theta` and `dth`
+  are compared with these as a check, not used.
 - **The bearing** βₖ is the angle from *g û* to the heading θₖ, counter-clockwise, in (-180°, 180°]. 0° is heading
   towards the setpoint. This is Luo et al.'s "preferred direction", the side the worm prefers, which is up the gradient
   for 0-50 and down it for 100-50.
-- **P7.** A turn is counted at its onset: a step *k* with |Δθₖ| > 50° whose predecessor has |Δθₖ₋₁| ≤ 50°. This is the
+- **P7.** P7 runs on P5's kept samples. A turn is counted at its onset: a kept sample *m* with |Δθₘ| > 50° whose
+  predecessor has |Δθₘ₋₁| ≤ 50°. This is the
   preprint's definition, "a turn is defined as instantaneous events when the heading change first exceeds a threshold"
   (§ 2.1), with its threshold ("The threshold for a turn (±50 degrees)", Figure 1's caption). Consecutive steps beyond
   50° belong to one turn, counted once, and to no run. A run is a maximal stretch of steps at or under 50° between two
   turns, so every run holds at least one step and none has zero length. A run that touches a track's start or end is
-  *censored*. A run's heading is the circular mean of its steps' θ. The threshold is defined only together with Δt:
-  50° per 5/14 s is not 50° per tick, which is why P2 samples both bodies alike.
+  *censored*. A run's heading is the circular mean of its kept samples' θ, and its duration runs in time between its
+  first and last kept samples. Steps and runs here mean kept samples, the preprint's definition applied over a fixed
+  distance rather than over every 5/14 s step: the lab's variant, for the reason in Q7. The threshold is defined
+  only together with ℓ, and both bodies are sampled alike by P2 and P5.
 - **Tracks** are kept by the authors' rule, applied to both bodies: removed if shorter than 3 minutes or if they "move
   less than 1cm2" (§ 4.2, as extracted from the PDF; read as 1 cm²). On the Grid side, 1 cm² is scaled to body lengths squared, with the reference body length
   of Q2. The phrase is read as the area the track covers, which is the lab's reading.
@@ -98,9 +98,9 @@ A positive *ρ* means the worm turns more often when moving away from the setpoi
 
 ### M3. Curvature Against Bearing (Weathervaning)
 
-*w* = the mean of -sign(βₖ) · κₖ over the unit's run steps with 45° < |βₖ| < 135° (the window is this draft's choice,
-the two quadrants across the gradient, after Chen et al.'s quadrants below), where κₖ = Δθₖ / (|*r*ₖ - *r*ₖ₋₁| / *L*)
-is in degrees per body length and is positive counter-clockwise. A positive *w* means the worm veers towards the setpoint
+*w* = the mean of -sign(βₘ) · κₘ over the unit's run samples with 45° < |βₘ| < 135° (the window is this draft's choice,
+the two quadrants across the gradient, after Chen et al.'s quadrants below), where κₘ = Δθₘ / (|*r*(*j*ₘ) - *r*(*j*ₘ₋₁)| / *L*),
+over P5's kept samples, is in degrees per body length and is positive counter-clockwise. A positive *w* means the worm veers towards the setpoint
 when it is heading across the gradient.
 
 - *Inputs*: P1, P2, P4-P7.
@@ -167,7 +167,7 @@ heads within 90° of the setpoint, minus 0.5.
 
 ## The Open Questions of Item 11 (b)
 
-Answered where the record allows; the rest are for the maintainer.
+Answered where the record allows. Q1 and Q3 go to the maintainer; Q7 is the lab's own, decided here.
 
 - **Q1, the unit of the test. Not answerable from the record; for the maintainer.**
     - The preprint reports 7-11 plates per condition (§ 2.1), so the reference has about 7-11 independent units per
@@ -198,6 +198,10 @@ Answered where the record allows; the rest are for the maintainer.
       code (Kevin-Sean-Chen/Chemotaxis_function on GitHub) could not be opened from the lab's sessions so far.
     - Until it is read, the reference is smoothed once by an unknown filter and the Grid's track is not, which breaks the
       one-instrument rule for every measure that uses Δθ.
+    - A lead, found while answering Q7: the preprint's pipeline is "modified from" Chen et al. 2023 (§ 4.2), which smooths
+      positions "with a third-order polynomial in a 0.5 s time window to remove tracking noise". The preprint's smoothing
+      is *probably* the same, but this is not confirmed, so Q3 stays open. If it is confirmed, P2 applies that filter to
+      the Grid's track at 14 Hz.
     - Next: the maintainer attaches that repository to a session, or asks for it in the letter of Q1 (a).
 - **Q4, centroid against head. Answered: the centroid, for both bodies.** The reference has only the centroid (P1), so the
   one-instrument rule (FEATURES.md, decided 2026-10-30 for the locomotion states) puts both bodies' measures at the
@@ -209,11 +213,53 @@ Answered where the record allows; the rest are for the maintainer.
       when the Disk reader exists, on lives with known poses, before anything is frozen.
 - **The gradient's direction. Answered** by P4: fitted from the data, never assumed, for both bodies, with its acceptance
   rule written above before any data are fetched.
-- **Q7, the heading's noise at low speed. Open**, as P5 says: a rule for a minimum step length or speed, chosen before
-  any data, or another; and the reference's tracking noise against the Grid's none (FEATURES.md).
 - **Q5, the world's solute unit.** STIMULI.md's calibration need is unchanged, but this draft does not depend on it: no
   measure uses the size of *C*.
 - **Q6, raising a Program at a setpoint.** Every measure is signed by the setpoint (P6). The reference worms were raised
   at 50 mM (the preprint, § 2.3), and a Grid life would need the same: a stretch at one concentration before the
   gradient. This is the same need the heat assay has (STATE.md *Needs From Other Repositories*, item (4)), and it is
   added there for salt.
+- **Q7, the heading's noise at low speed. Decided (2026-11-04): a heading only over a displacement of at least a quarter
+  of a body length, ℓ = 0.25 *L* (P5).** Fixed now, before any salt track is fetched or computed.
+    - *The problem.* A heading taken from one 5/14 s step, with no floor on the step's length, points wherever the
+      reference's tracking noise sends it while the worm pauses. A |Δθ| beyond 50° then fires on noise, while the Grid's
+      centroid has none. This is the reference's tracking noise, which [FEATURES.md § Open Questions Before
+      Freezing](FEATURES.md#open-questions-before-freezing) lists as not closed by the one-instrument decision. Smoothing
+      both bodies alike does not make their noise alike.
+    - *The literature.* The same group's earlier pipeline, which the preprint's is "modified from" (§ 4.2, its reference
+      45, Chen et al. 2023, [doi:10.7554/eLife.85910](https://doi.org/10.7554/eLife.85910), PMC10425172, methods read in
+      full), does three things. It smooths positions "with a third-order polynomial in a 0.5 s time window to remove
+      tracking noise". Then, "[t]o avoid double counting turns when the animal turns slowly, and to mitigate effects of
+      small displacements from tracking noise", it measures "the angle change between displacement vectors over 1 s
+      time window" with a 60° threshold. And for curvature it measures "the angle between displacement vectors over 1 mm
+      displacement in space". So the group itself treats small displacements as a source of false turns, and measures
+      curvature over a distance, not a time. The preprint's own turn rule, a single step's 50° (§ 2.1), says nothing of
+      pauses. Luo et al. 2014's run rules are in a supplement the lab has not read, and Pierce-Shimomura et al. 1999's
+      methods are not open to the lab.
+    - *Why not a speed floor.* The lab's pause threshold, Yemini et al.'s 2.5% of the body length per second
+      ([behaviour-measures.md § Locomotion States](../research/behaviour-measures.md#locomotion-states); `features::states`),
+      is 0.0089 *L* in one 5/14 s step: 10 µm at Q2's 1123 µm, a third of the reference's 32 µm pixel (*inferred*,
+      STIMULI.md). A floor that low protects no heading from pixel noise. A floor high enough to protect one would be
+      0.25 *L* per step, 0.7 *L*/s, and it would throw away the headings of all slow crawling. Accruing displacement keeps
+      them: a slow worm still yields a heading once it has moved ℓ.
+    - *Why not one step with a minimum length.* That is the first candidate, and the rule above is that candidate
+      generalised: a short step is not discarded, it is joined to the next until the displacement reaches ℓ, so the
+      heading's resolution stays the same in space whatever the speed. This is Chen et al.'s curvature over a distance,
+      applied to the heading itself.
+    - *Why 0.25 L.* The reference's centroid noise has not been measured. Take an error of up to one pixel (32 µm) at each
+      kept sample, an assumption. At ℓ = 0.25 *L* = 281 µm, about 8.8 pixels with Q2's length, one heading can err by at
+      most atan(2 / 8.8) ≈ 12.8°. A heading change shares one sample with each of its two headings, so its error is at
+      most about 25.6°, half the 50° threshold: noise of that size alone cannot fire a turn. At 0.125 *L* the bound is
+      about 48.9°, at the threshold, so a quarter is the smallest round fraction that clears it. A quarter of *L* is also
+      two of the Grid worm's eight segments, so its heading is never taken within a single segment's length. The Grid's
+      centroid has no noise, and the same ℓ in its own *L* gives it the same spatial resolution.
+    - *What was known when choosing.* The salt tracks were not looked at for this choice. Two numbers already published
+      in [STIMULI.md § Taste](STIMULI.md#taste-salt-chemotaxis) from #216 were known: the files' median steps of 3.64 to
+      5.11 pixels, about 0.10 to 0.15 *L* at Q2's length. So the rule will often join two or three steps during ordinary
+      crawling. The value was set by the noise bound above, not fitted to that median.
+    - *Registered check, fixed now.* Item 11 (c) also reports M2, M3, M4 and M6 at ℓ = 0.125 *L* and ℓ = 0.5 *L*, beside the
+      primary ℓ = 0.25 *L*. These are a sensitivity check only: the primary value does not change with what they show,
+      and a large dependence on ℓ is reported as a finding.
+    - *What stays open.* The noise bound rests on Q2's body length and on the 32 µm pixel, both inferred, and on the
+      one-pixel error, assumed. If the authors give a length or a pixel size (Q1's letter), ℓ stays 0.25 *L* and only its
+      pixel equivalent moves.
