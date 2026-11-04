@@ -6,7 +6,8 @@ its air, heat and floor solutes - with the placeholder rebuilt at ABI 12, the re
 the placeholder's life unchanged; the toy worm's steering decisions, scored against the band, place its failure, by
 elimination, in the map's choice as the greedy rule reads it (its own registered test undecided); and a post-mortem
 of the toy-worm series, read from the record, with recommendations awaiting the maintainer
-([gr-fec.md § 12](docs/research/gr-fec.md#12-why-the-demystification-stalled-a-post-mortem-2026-11-04)). Earlier
+([gr-fec.md § 12](docs/research/gr-fec.md#12-why-the-demystification-stalled-a-post-mortem-2026-11-04)); and a plan for the stimulus assays the world's new fields open
+([docs/benchmark/STIMULI.md](docs/benchmark/STIMULI.md)). Earlier
 nights are in [the journal's index](docs/journal/README.md). The next step for Phase 0 is the locomotion states'
 durations and reversal rates (item 2(c)).
 
@@ -174,13 +175,26 @@ found lives in the journal section it names; this list keeps only what is open.
     each with its switch, measuring the sweeps a settling takes against the decision times in
     [pace.md](docs/research/pace.md). Exploration only; a module that earns its place moves into Rust and waits, as
     E4 does, on a Program and the frozen benchmark.
-11. **Plan what the world's new fields open for the benchmark** (from the journal of 2026-11-04): since the pins of
-    2026-11-04 Master Control holds a temperature field (20 °C by default, with a floor gradient that can be set to the
-    thermotaxis assay's 0.5 °C/cm) and the floor's solutes, and the odour spreads on an air grid with walls. No Program
-    sense reads heat or taste until the organs bump (tron-grid-lite `docs/ORGANS.md`, ruled, not built). Plan, before
-    any data: which reference assays (thermotaxis, chemotaxis, taste) the benchmark could take up, the public datasets
-    and their licences, and the world settings each needs; FEATURES.md's *Responses* row keeps them not comparable
-    until then. Planning only, waiting on the organs bump for any run.
+11. **The stimulus assays**, from [docs/benchmark/STIMULI.md](docs/benchmark/STIMULI.md) § Order, Effort and What
+    Blocks Each (journal of 2026-11-04, § What the World's New Fields Open for the Benchmark: a Plan). They are a second
+    part of the benchmark, frozen on its own and never delaying item 2 (e5). One run each, in this order; no Grid life
+    before the senses and sources below exist:
+    - (a) salt: read the methods of [arXiv:2508.00191](https://arxiv.org/abs/2508.00191) and of its reference 22,
+      and list the files of its Figshare archive without downloading it (STIMULI.md § Taste has the record);
+    - (b) salt: draft the measures and their rules - pirouettes against dC/dt at the head, weathervaning against
+      bearing, an index only if the reference uses one - before any data;
+    - (c) salt, after (b): fetch the archive, checksum and register it in data/README.md, and compute the reference
+      statistics in `features`; no Grid life, so not blocked upstream;
+    - (d) odour: read Chen et al. 2023's methods ([doi:10.7554/eLife.85910](https://doi.org/10.7554/eLife.85910)) and
+      list its archive's files (STIMULI.md § Air), and say whether its measures against bearing, made in a flow
+      chamber, can stand for still air;
+    - (e) heat: search the thermotaxis papers' data statements for public tracks, and read the assays' plates, gradients
+      and measures in full. Ryu and Samuel 2002 and Luo et al. 2014 were found closed (pace.md); try Luo et al. 2006 and
+      Ito et al. 2006 first, then an author's manuscript in Europe PMC, then data or a reprint asked of an author through
+      an issue the maintainer files; park with what was tried if none opens;
+    - (f) the arena: the floor's 128 m (28.6 body lengths, 2.86 cm at the world's scale) and its terraces against an
+      assay plate, for every assay, folded into FEATURES.md § Open Questions Before Freezing; first measure the spawn
+      pad's terrace (STIMULI.md § What a Program Senses Today).
 
 ## To Revisit
 
@@ -274,9 +288,24 @@ points to the open ones and says what waits on each.
   resolution 9.8 to 68.6% (median 35.8%, 34 recordings) of the reference worms' skeletonised frames bend beyond the
   chain's 0.9 rad at some joint, against 0.15% beyond Master Control's pi/2. The issue asks to raise the limit to
   pi/2, with the caveats (journal of 2026-10-15, *The Joint-Limit Issue, Drafted*).
+- **Senses and sources for the stimulus assays** (tron-grid-lite, master-control; written here, not filed, per this
+  task's brief; [docs/benchmark/STIMULI.md](docs/benchmark/STIMULI.md) has the evidence). At the pins of 2026-11-04 no
+  Program senses heat or taste, and the gases are not in the world. Needed, for the benchmark's stimulus assays and
+  for nothing a brain is tuned by: (1) the organs bump (tron-grid-lite `docs/ORGANS.md`, ruled), for heat and salt;
+  (2) a salt source apart from food, a placed solute gradient or spot, since every salt assay is salt alone and the
+  world's only salt leaches from orbs that also smell and feed; (3) an odour source apart from food, with a declared
+  pattern over the receptor types (deferred upstream "when a world has a second kind of source"); (4) a way to raise a
+  Program at one temperature and test it on a gradient - a scheduled change of the thermal map, or a radial gradient -
+  which would also give temperature steps for a reaction latency; (5) the world's solute unit tied to a concentration,
+  so a gradient in millimolar has a meaning; (6) oxygen and carbon dioxide as tenants of the air, for aerotaxis, last.
+  The arena's size and flatness against a plate is the lab's open question first (item 11 (f)).
 - **Terrace edges** (master-control; the maintainer takes it up once the lab is set up - file nothing). A
-  chain can be thrown when a segment crosses a terrace edge; a fix is in progress. Until it lands, every life
-  in this lab is lived on a flat arena.
+  chain can be thrown when a segment crosses a terrace edge. At the pins of 2026-11-04 master-control's CHANGELOG
+  records a fix for one such throw ("A riser is solid only up to its top"); whether it closes this need is the
+  maintainer's call. The floor is terraced (`GRID_FLOOR_CONFIG` in master-control's `src/ground.rs`) and has no flat
+  setting, so the lab's lives are not on a flat arena, as this line used to say: they start on the spawn pad, a cell
+  proven flat for a metre (`src/roster.rs`), and the placeholder's 320-tick lives of 2026-11-04 ended 0.7 m from its
+  centre (journal of 2026-11-04, § What the World's New Fields Open for the Benchmark: a Plan).
 
 ## Done
 
@@ -292,6 +321,10 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   the lateral sense is right in 0.986 of decisions and temperature leads to the band in 0.945, so by elimination the
   direction's failure lies in the map's choice as the greedy rule reads it, which points the band's way in 0.513 (0.424 to 0.619), undecided by its rule
   (journal of 2026-11-04, § Does the Greedy Rule's Direction Fail? Each Steering Decision Scored).
+- 2026-11-04: item 11, a plan for the stimulus assays the world's new fields open
+  ([docs/benchmark/STIMULI.md](docs/benchmark/STIMULI.md)): at Program ABI 12 only odour is sensed, heat and salt exist
+  unsensed until ABI 13, the gases not at all; two CC BY 4.0 datasets of tracks found (salt and odour, both from the
+  Leifer lab), none for thermotaxis in one search; order salt, odour, heat, aerotaxis.
 - 2026-11-04: item 8, a post-mortem of the toy-worm series from the record, why it stalled and what stands, with
   recommendations awaiting the maintainer
   ([gr-fec.md § 12](docs/research/gr-fec.md#12-why-the-demystification-stalled-a-post-mortem-2026-11-04)).
