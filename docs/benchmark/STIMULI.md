@@ -195,7 +195,8 @@ Archive Holds).** Nothing here adopts it.
 - *The Grid's half*: a life would be sampled at the same 5/14 s and its centroid smoothed alike, by a rule written in
   (b), so that both bodies are measured by one instrument, as the locomotion states already are.
 
-**What the benchmark would need.**
+**What the benchmark would need.** The measures are drafted in [SALT_MEASURES.md](SALT_MEASURES.md) (STATE.md item
+11 (b)), which supersedes the first bullet below where the two differ.
 
 - *Measures*: turn or pirouette rate against dC/dt, weathervaning as heading change against bearing, and a chemotaxis
   index if the reference uses one; the concentration rebuilt from the input log by an evaluation tool. The reference
