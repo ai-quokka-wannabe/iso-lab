@@ -105,8 +105,11 @@ A reference recording lasts 15 minutes, 900 s, by the protocol (most do; see *Un
 ## Open Questions Before Freezing
 
 - **Food.** The reference worms are on food after a 30-minute wait (Yemini et al. 2013), and the world has had food since
-  the pins of 2026-10-30: orbs on the floor, eaten in bites, which the Grid has drawn and carried to Programs as
-  `intake` and `odour` since Program ABI 11 (STATE.md *Needs From Other Repositories*). Whether orbs at the default
+  the pins of 2026-10-29: orbs on the floor, eaten in bites since the pins of 2026-10-30, which the Grid has drawn and
+  carried to Programs as `intake` and `odour` since Program ABI 11 (STATE.md *Needs From Other Repositories*). Since the
+  pins of 2026-11-04 the odour spreads on Master Control's air grid, with the terraces' risers as walls, and the world
+  also holds a temperature field and the floor's solutes, which no Program sense reads yet (journal of 2026-11-04,
+  § The World Moves to Protocol 14 and Program ABI 12, Measured Before and After). Whether orbs at the default
   density resemble a bacterial lawn is not yet checked. Roaming and dwelling are defined as foraging states on food, and Flavell et al. 2013's introduction,
   summarising earlier work, says "the proportion of time spent roaming increases when food is limited or low in
   quality" and that serotonin and dopamine "promote food-related behaviors such as eating, egg-laying and slow
