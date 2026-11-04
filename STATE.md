@@ -179,10 +179,14 @@ found lives in the journal section it names; this list keeps only what is open.
     Blocks Each (journal of 2026-11-04, § What the World's New Fields Open for the Benchmark: a Plan). They are a second
     part of the benchmark, frozen on its own and never delaying item 2 (e5). One run each, in this order; no Grid life
     before the senses and sources below exist:
-    - (a) salt: read the methods of [arXiv:2508.00191](https://arxiv.org/abs/2508.00191) and of its reference 22,
-      and list the files of its Figshare archive without downloading it (STIMULI.md § Taste has the record);
-    - (b) salt: draft the measures and their rules - pirouettes against dC/dt at the head, weathervaning against
-      bearing, an index only if the reference uses one - before any data;
+    - (a) done (journal of 2026-11-04, § The Salt Dataset: Its Methods and What the Archive Holds): the methods read,
+      and the archive listed by range requests. Its salt tracks are centroids at 5/14 s, with no posture and no
+      worm or plate identity (STIMULI.md § Taste);
+    - (b) salt: draft the measures and their rules before any statistic: turns against dC/dt, curvature against bearing,
+      run durations by heading and Luo et al. 2014's index; the unit of the test, given that tracks are neither worms
+      nor independent, with 7–11 plates per condition the independent units; the concentration at the centroid, as the
+      reference reads it, or at the head; how a Grid life is sampled and smoothed to match; and whether to ask the authors for the plates
+      and for what `Data_salt0_0.mat` and `mask` are;
     - (c) salt, after (b): fetch the archive, checksum and register it in data/README.md, and compute the reference
       statistics in `features`; no Grid life, so not blocked upstream;
     - (d) odour: read Chen et al. 2023's methods ([doi:10.7554/eLife.85910](https://doi.org/10.7554/eLife.85910)) and
@@ -321,6 +325,9 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   the lateral sense is right in 0.986 of decisions and temperature leads to the band in 0.945, so by elimination the
   direction's failure lies in the map's choice as the greedy rule reads it, which points the band's way in 0.513 (0.424 to 0.619), undecided by its rule
   (journal of 2026-11-04, § Does the Greedy Rule's Direction Fail? Each Steering Decision Scored).
+- 2026-11-04: item 11 (a), the salt dataset's methods and its archive listed without downloading it: centroids every
+  5/14 s, 297 and 277 tracks in the 0-50 and 100-50 mM gradients, no posture, and neither worm nor plate kept; not adopted
+  (journal of 2026-11-04, § The Salt Dataset: Its Methods and What the Archive Holds).
 - 2026-11-04: item 11, a plan for the stimulus assays the world's new fields open
   ([docs/benchmark/STIMULI.md](docs/benchmark/STIMULI.md)): at Program ABI 12 only odour is sensed, heat and salt exist
   unsensed until ABI 13, the gases not at all; two CC BY 4.0 datasets of tracks found (salt and odour, both from the
