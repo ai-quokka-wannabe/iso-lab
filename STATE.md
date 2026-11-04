@@ -184,7 +184,8 @@ found lives in the journal section it names; this list keeps only what is open.
       worm or plate identity (STIMULI.md § Taste);
     - (b) salt: draft the measures and their rules before any statistic: turns against dC/dt, curvature against bearing,
       run durations by heading and Luo et al. 2014's index; the unit of the test, given that tracks are neither worms
-      nor independent; how a Grid life is sampled and smoothed to match; and whether to ask the authors for the plates
+      nor independent, with 7–11 plates per condition the independent units; the concentration at the centroid, as the
+      reference reads it, or at the head; how a Grid life is sampled and smoothed to match; and whether to ask the authors for the plates
       and for what `Data_salt0_0.mat` and `mask` are;
     - (c) salt, after (b): fetch the archive, checksum and register it in data/README.md, and compute the reference
       statistics in `features`; no Grid life, so not blocked upstream;
@@ -325,7 +326,7 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   direction's failure lies in the map's choice as the greedy rule reads it, which points the band's way in 0.513 (0.424 to 0.619), undecided by its rule
   (journal of 2026-11-04, § Does the Greedy Rule's Direction Fail? Each Steering Decision Scored).
 - 2026-11-04: item 11 (a), the salt dataset's methods and its archive listed without downloading it: centroids every
-  5/14 s, 277 and 297 tracks in the two gradients, no posture, and neither worm nor plate kept; not adopted
+  5/14 s, 297 and 277 tracks in the 0-50 and 100-50 mM gradients, no posture, and neither worm nor plate kept; not adopted
   (journal of 2026-11-04, § The Salt Dataset: Its Methods and What the Archive Holds).
 - 2026-11-04: item 11, a plan for the stimulus assays the world's new fields open
   ([docs/benchmark/STIMULI.md](docs/benchmark/STIMULI.md)): at Program ABI 12 only odour is sensed, heat and salt exist

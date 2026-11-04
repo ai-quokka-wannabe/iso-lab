@@ -119,7 +119,8 @@ salt only, by contact (`docs/ORGANS.md` § 4). The only source of salt is food: 
 - *A remembered concentration*: worms prefer the salt concentration they were cultivated at
   ([Kunitomo et al. 2013](https://doi.org/10.1038/ncomms3210), abstract). Sure of the effect; its time course not read.
 
-**Reference data.** One candidate, not adopted: Chen, Leifer and Pillow's salt chemotaxis tracks, worms cultivated at
+**Reference data.** One candidate, not adopted: Chen, Leifer and Pillow's salt chemotaxis tracks (that order is arXiv's
+metadata; the PDF's byline and Figshare give Chen, Pillow and Leifer), worms cultivated at
 50 mM tested in linear gradients of 0 to 50 or 50 to 100 mM, centroids at 14 Hz
 ([arXiv:2508.00191](https://arxiv.org/abs/2508.00191), a preprint, its methods and data statement read in the PDF on
 2026-11-04). The data are on Figshare at [doi:10.6084/m9.figshare.25996498](https://doi.org/10.6084/m9.figshare.25996498),
@@ -135,8 +136,9 @@ Archive Holds).** Nothing here adopts it.
   adults; linear gradients made by the method of its reference 22, in a 9 cm square lid, in the odour work's chamber
   without airflow; the centre of mass tracked at 14 Hz, "smoothed and down-sampled to a data point every 5/14 second";
   tracks moving less than 1 cm² or shorter than 3 minutes removed. The strain for the salt runs is not named in the
-  methods; a supplementary figure labels the wild type "N2 naive". *Probably N2*, then, not confirmed for the salt
-  files.
+  methods. The only "N2" read is Supplementary Figure 6's labels "N2 naive" and "N2 aversive", which refer to butanone
+  training, not to the salt runs; so it is weak evidence. *Probably N2*, not confirmed for the salt files.
+- *Its turns*: a turn is a heading change beyond ±50° ("The threshold for a turn (±50 degrees)", Figure 1's caption).
 - *Its reference 22*, [Luo, Wen, Ren et al. 2014](https://doi.org/10.1016/j.neuron.2014.05.010) (PMC4082684, the author
   manuscript read in full through NCBI's BioC service): N2 grown at 50 mM NaCl crawl up a 2 mM/cm gradient from 25 mM
   and down it from 75 mM, on 25 cm × 25 cm plates, filmed for 15 min at 2 frames per second. Its measures are a
@@ -144,7 +146,7 @@ Archive Holds).** Nothing here adopts it.
   crawling speed along the trajectory, 〈s〉", and run durations by heading (runs up, down and orthogonal, in 45° bins).
   Sure: the full text.
 - *The archive*, listed without downloading it: its central directory read by HTTP Range requests through Python's
-  `zipfile` over a ranged reader, 5,972 bytes fetched. It holds 50 entries under `data4plot/`: 42 MATLAB files in six
+  `zipfile` over a ranged reader, 5,972 bytes fetched. It holds 50 entries under `data4plot/`: seven directory records, 42 MATLAB files in six
   folders (salt and odour chemotaxis, mutants, optogenetics, bearing data and simulations) and a note mapping figures
   to files. No raw video and no skeletons. The salt folder has twelve files. Five are the model's cross-validation
   results (`*_cv_staPWA.mat`) and two its fitted variables (`*_staPAW*.mat`, 0.39-0.42 GB). The other five are tracks:
@@ -169,7 +171,10 @@ Archive Holds).** Nothing here adopts it.
   | `Data_salt100_50.mat` | 277 | 180, 280, 1,194 | 27.2 h | 1,800 | 3.64 |
   | `Data_salt0_0.mat` | 265 | 150, 226, 992 | 19.1 h | 1,200 | 5.11 |
 
-  The sums exceed the preprint's "∼15-20 animal hour of recordings per navigation condition"; why is not known. A record
+  The preprint states the amount of data three ways that do not agree with each other: "∼15-20 animal hour of
+  recordings per navigation condition" (its methods), "7–11 plates per condition, resulting in 127–226 animal-hours
+  across both new and previously published measurements" (§ 2.1), and "∼ 20 animal-hours" (Figure 1's caption). The
+  files' sums, 29.6 h and 27.2 h, match none of them; why is not known. A record
   is a track, not a worm: the files keep neither the worm's identity across lost tracks nor the plate.
 
 **How it would map onto the lab's measures.** It maps onto the stimulus measures, and onto none of the spontaneous ones.
@@ -179,21 +184,25 @@ Archive Holds).** Nothing here adopts it.
   the reference recordings' 25-33 frames per second.
 - *Computable*: centroid speed (about 0.33 mm/s median, if a pixel is 32 µm); turns as heading changes above a threshold
   at 2.8 Hz, as the preprint defines them; the bearing to the gradient; the rate of turns against dC/dt; curvature against
-  bearing; run durations by heading, as Luo et al. 2014; and their chemotactic index 〈vg〉/〈s〉. The gradient's direction
+  bearing; run durations by heading, and the probability of reorienting up or down the gradient after orthogonal runs
+  (their Figure 2C and 2E), as Luo et al. 2014; and their chemotactic index 〈vg〉/〈s〉. The gradient's direction
   must be recovered from `dc` against `xy`, not assumed.
 - *The unit of the test*: the lab's tests compare one row per recording. Here the rows would be tracks, several per worm
-  and many per plate, with neither recorded, so they are not independent. Either rows are pooled per file and the
-  test's level is checked against that dependence, or the plates are asked of the authors. Decided in item 11 (b), before
+  and many per plate, with neither recorded, so they are not independent. With 7–11 plates per condition (§ 2.1), the
+  independent units are about 7–11 per condition, not 277–297. Either rows are pooled per file and the test's level is
+  checked against that dependence, or the plates are asked of the authors. Decided in item 11 (b), before
   any statistic.
 - *The Grid's half*: a life would be sampled at the same 5/14 s and its centroid smoothed alike, by a rule written in
   (b), so that both bodies are measured by one instrument, as the locomotion states already are.
 
 **What the benchmark would need.**
 
-- *Measures*: pirouette rate against dC/dt at the head, weathervaning as heading change against bearing, and a
-  chemotaxis index if the reference uses one; the concentration at the head rebuilt from the input log by an
-  evaluation tool. A pirouette needs a definition from the turning rate (Pierce-Shimomura et al. 1999) that the lab's
-  states can carry; to be read in full first.
+- *Measures*: turn or pirouette rate against dC/dt, weathervaning as heading change against bearing, and a chemotaxis
+  index if the reference uses one; the concentration rebuilt from the input log by an evaluation tool. The reference
+  reads the concentration at the centroid, not at the head, so by one instrument the Grid's would be read at the chain's
+  centroid too; whether to do so, or to keep the head and name the difference, is a question for item 11 (b).
+  A pirouette needs a definition from the turning rate (Pierce-Shimomura et al. 1999) that the lab's states can carry;
+  to be read in full first.
 - *Upstream*: the taste sense (ABI 13); and **a salt source apart from food** - a placed solute gradient or spot as a
   world setting - since every reference assay is a gradient of salt alone, and the Grid's only salt sits around orbs
   that also smell and feed. The plate is 9 cm square in the preprint (its methods), about 400 m at the world's scale,
