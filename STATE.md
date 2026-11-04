@@ -7,7 +7,8 @@ the placeholder's life unchanged; the toy worm's steering decisions, scored agai
 elimination, in the map's choice as the greedy rule reads it (its own registered test undecided); and a post-mortem
 of the toy-worm series, read from the record, with recommendations awaiting the maintainer
 ([gr-fec.md § 12](docs/research/gr-fec.md#12-why-the-demystification-stalled-a-post-mortem-2026-11-04)); and a plan for the stimulus assays the world's new fields open
-([docs/benchmark/STIMULI.md](docs/benchmark/STIMULI.md)). Earlier
+([docs/benchmark/STIMULI.md](docs/benchmark/STIMULI.md)); and block 1's real worms and block 2's, unseen, were found
+indistinguishable by the benchmark's two tests, with a positive control told apart. Earlier
 nights are in [the journal's index](docs/journal/README.md). The next step for Phase 0 is the locomotion states'
 durations and reversal rates (item 2(c)).
 
@@ -20,8 +21,9 @@ literature note says how worm behaviour is measured. The comparison space is dra
 must be settled before the benchmark is frozen, food first. The Rust workspace reads the reference recordings and computes
 their measures - posture, speed, the locomotion states and the eigen-shape amplitudes, the durations and rates from
 the lab's speed still provisional until item 2 (c)'s check - with the reference statistics
-over block 1 and their gaps by cause; the benchmark's test is built (item 2 (e1), (e2)) but not yet run on real data
-alone; and the arena is proven to a first life: a placeholder Program, which undulates only, lived fifteen minutes on the Grid and its world replays
+over block 1 and their gaps by cause; the benchmark's test is built (item 2 (e1), (e2)) and run on real data
+alone (e3): two blocks of real worms are not told apart, and a stated alteration is; and the arena is proven to a
+first life: a placeholder Program, which undulates only, lived fifteen minutes on the Grid and its world replays
 exactly. No creature has been scored.
 [docs/PLAN.md](docs/PLAN.md) says what the phases are and why the benchmark comes before any brain. Beside the benchmark, the lab takes apart the
 maintainer's toy worm ([docs/research/gr-fec.md](docs/research/gr-fec.md) §§ 9-12) to learn how to design a brain
@@ -58,12 +60,12 @@ found lives in the journal section it names; this list keeps only what is open.
      own speed, one instrument for both ([docs/benchmark/FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing)).
      The durations and rates are written to the toolbox's definitions (`features::states::event_stats`;
      [behaviour-measures.md § How the Toolbox Turns States Into Durations and Rates](docs/research/behaviour-measures.md#how-the-toolbox-turns-states-into-durations-and-rates)).
-     From the published speed they reproduce the stored durations and frequencies exactly, in 546 of 546
-     recording-modes of 182 of block 1's 200 recordings (journal of 2026-11-04, § The Published Durations and Rates:
-     Reproduced Exactly Over 182 Recordings of Block 1; `stored-events <block>`). The lab's speed gives a median 0.97 of
-     the stored forward events and 0.91 of the paused, backward as many. Next: the other 18 recordings
-     (`stored-events 1` after `fetch-block 1`); then drop `provisional_` from `features::profile`'s columns; then an
-     interval on the lab-against-published ratios, and whether they matter for the benchmark;
+     From the published speed they reproduce the stored durations and frequencies exactly, in 600 of 600
+     recording-modes of block 1 (journal of 2026-11-04, § The Published Durations and Rates: Reproduced Exactly Over
+     Block 1; `stored-events <block>`). The lab's speed gives a median 0.97 of the stored forward events and 0.91 of the
+     paused, backward as many. Next: drop `provisional_` from `features::profile`'s columns; whether any recording-mode
+     exercises the lone-edge-event exception; an interval on the lab-against-published ratios, and whether they matter
+     for the benchmark;
    - (d) the reference statistics, split into runs (the maintainer's request, 2026-10-31, to build the benchmark
      next; journal of 2026-10-31, § The Benchmark, Split Into Runs):
        - (d1) one row of measures per recording, done (journal of 2026-10-31, § One Row of Measures per Recording:
@@ -92,10 +94,15 @@ found lives in the journal section it names; this list keeps only what is open.
          Cramér-von Mises statistic per measure with a 999-shuffle permutation p-value, Holm's correction across the
          measures, and each sample's median and interquartile range, the statistic computed exactly in integers; with 199
          shuffles it held its level (49 of 1000, 3.6-6.4%) and caught a doubled spread 73 times in 100 (63-81%);
-       - (e3) the test on real data alone: block 1's real worms against block 2's, recordings neither has seen, which
-         must come out indistinguishable; and a positive control - the same recordings deliberately altered by a
-         stated amount - which must be told apart;
-       - (e4) how large an alteration of each measure the test can see, from the positive control at several sizes;
+       - (e3) done (journal of 2026-11-04, § Real Against Unseen Real: the Results): `benchmark::holdout` and
+         `compare-blocks`; block 1's 179 against block 2's 189, 27 measures, seed 20261104: no measure differs and the
+         classifier does not tell them apart (p = 0.181); the control, one block-1 sd added to block 2's first
+         eigen-shape amplitude spread, is told apart by both, by that measure alone. Every posture median is slightly
+         higher in block 2, none flagged; noted, not claimed, and the upward control sat on it, so was effectively
+         about 1.2 sd;
+       - (e4) how large an alteration of each measure the test can see, from the positive control at several sizes,
+         in both directions, and at the sample sizes a Grid comparison will have (journal of 2026-11-04, § Real
+         Against Unseen Real: the Results, *The control*);
        - (e5) freezing the definition, which waits on
          [FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing) -
          food first - and on reading a Disk (*Blocked*).
@@ -330,10 +337,13 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
-- 2026-11-04: item 2 (c), the stored durations and frequencies recomputed from the published speed: 546 of 546
-  recording-modes over 182 of block 1's recordings equal to the last bit, the other 18 not fetched by the deadline;
-  the lab's speed against them in a second table (journal of 2026-11-04, § The Published Durations and Rates:
-  Reproduced Exactly Over 182 Recordings of Block 1).
+- 2026-11-04: item 2 (c), the stored durations and frequencies recomputed from the published speed: 600 of 600
+  recording-modes of block 1 equal to the last bit; the lab's speed against them in a second table (journal of
+  2026-11-04, § The Published Durations and Rates: Reproduced Exactly Over Block 1).
+- 2026-11-04: item 2 (e3), real against unseen real: block 1 (179) and block 2 (189) are indistinguishable by both
+  tests at seed 20261104, and the positive control (a 1 sd shift of one measure) is told apart by both; block 1's
+  frozen eigen-shapes fit block 2 to a cosine of 0.997 or better (journal of 2026-11-04, § Real Against Unseen Real:
+  the Results).
 - 2026-11-04: `external/` at the latest mains (tron-grid-lite `067fb7e`, master-control `7c527d9`, link `0304788`),
   the placeholder at Program ABI 12: D1-D3 hold - Master Control's suite 124 then 158 passed, `ctest` 22 of 22, the
   three device checks; the digest moved to `6A94D9A1…464F` and a build at an attenuation of 1 gives the old one - and
