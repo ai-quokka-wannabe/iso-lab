@@ -168,7 +168,10 @@ Below 0.3, With Three Body Seeds in the Rich Layouts). On ten fresh rich layouts
 matched step (§ The Constant Floor on Ten Fresh Rich Layouts). On five fresh warm layouts the graded gain was not shown
 to trail never steering, and in their mirror images the cost went with the layout rather than with warmth, by a rule set
 before the run. Kept alone, turns towards the band helped and turns away harmed, while the brain's own decisions split
-about evenly between the two (descriptive; journal 2026-11-03, § Why Steering Trails Never Steering in Warm Layouts).
+about evenly between the two (descriptive; journal 2026-11-03, § Why Steering Trails Never Steering in Warm Layouts). Scored decision by decision
+on ten more warm layouts, the lateral sense and temperature as a guide to the band were sound, so the failure lies in
+the map's choice, which pointed the band's way about half the time, from 0.27 to 0.90 by layout (journal 2026-11-04,
+§ Does the Greedy Rule's Direction Fail? Each Steering Decision Scored).
 *For bigger brains*: test every world again after gating a module; a fix in one world is a new claim in all. A state
 used as a gate may mark *which* individuals are in it, not only *when* - split by individual before reading a gate,
 and test the split under the gate itself - with the same individuals in both arms (branch one life), never two

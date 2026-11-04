@@ -150,8 +150,10 @@ found lives in the journal section it names; this list keeps only what is open.
      (journal of 2026-11-03, § Why Steering Trails Never Steering in Warm Layouts): on five fresh warm layouts the
      harm is not reproduced, and in their mirror images, by D's rule, it goes with the layout, not with warmth. Kept alone,
      turns towards the band help and turns away harm, and the brain's decisions split about evenly between them
-     (descriptive). Next: whether the greedy rule's direction, read off the map, is what fails, scored against the
-     band per decision;
+     (descriptive). Each decision scored against the band on 2026-11-04 (journal of 2026-11-04, § Does the Greedy
+     Rule's Direction Fail?): the lateral sense (0.986) and temperature as a guide to the band (0.945) are shown
+     sound, and the map's choice points the band's way in 0.513 (0.424 to 0.619) of decisions, undecided by its rule
+     and from 0.27 to 0.90 by layout. Next: what makes the map point away in some layouts, such as 82606;
    - (d) the composition law: a third lever that acts alone, and roaming's interaction as its own test.
 
    Once a calculation matters to anything the lab builds on, it moves into tested Rust.
@@ -348,3 +350,7 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   its cost at 302 neurons, its behaviours, its ablations and its ties to H5, H6, H9 and E4. The worm needs a
   mechanism - settling, blending, sampling - not capacity; Hopfield 1982 was read in abstract only, Oja 1982 and Amit,
   Gutfreund and Sompolinsky not at all (journal of 2026-11-03, § Associative Memory, Surveyed).
+- 2026-11-04: item 9 (b), each steering decision of the graded gain scored against the band on ten fresh warm layouts:
+  the lateral sense is right in 0.986 of decisions and temperature leads to the band in 0.945, so the direction's
+  failure lies in the map's choice, which points the band's way in 0.513 (0.424 to 0.619), undecided by its rule
+  (journal of 2026-11-04, § Does the Greedy Rule's Direction Fail? Each Steering Decision Scored).
