@@ -128,6 +128,66 @@ whether it can sit beside GPL-3.0 code or must stay an external download with a 
 by the rule *Licences*. Centroids, not skeletons: posture measures cannot be compared on it. Not recorded in
 [data/README.md](../../data/README.md), since nothing is adopted.
 
+**The salt archive, read (STATE.md item 11 (a); journal of 2026-11-04, § The Salt Dataset: Its Methods and What the
+Archive Holds).** Nothing here adopts it.
+
+- *Its methods*, read in the preprint's PDF: worms grown on NGM with OP50 at 20 °C, synchronised and tested as day-1
+  adults; linear gradients made by the method of its reference 22, in a 9 cm square lid, in the odour work's chamber
+  without airflow; the centre of mass tracked at 14 Hz, "smoothed and down-sampled to a data point every 5/14 second";
+  tracks moving less than 1 cm² or shorter than 3 minutes removed. The strain for the salt runs is not named in the
+  methods; a supplementary figure labels the wild type "N2 naive". *Probably N2*, then, not confirmed for the salt
+  files.
+- *Its reference 22*, [Luo, Wen, Ren et al. 2014](https://doi.org/10.1016/j.neuron.2014.05.010) (PMC4082684, the author
+  manuscript read in full through NCBI's BioC service): N2 grown at 50 mM NaCl crawl up a 2 mM/cm gradient from 25 mM
+  and down it from 75 mM, on 25 cm × 25 cm plates, filmed for 15 min at 2 frames per second. Its measures are a
+  chemotactic index, "the mean velocity of the trajectories along the gradient direction, 〈vg〉, divided by the mean
+  crawling speed along the trajectory, 〈s〉", and run durations by heading (runs up, down and orthogonal, in 45° bins).
+  Sure: the full text.
+- *The archive*, listed without downloading it: its central directory read by HTTP Range requests through Python's
+  `zipfile` over a ranged reader, 5,972 bytes fetched. It holds 50 entries under `data4plot/`: 42 MATLAB files in six
+  folders (salt and odour chemotaxis, mutants, optogenetics, bearing data and simulations) and a note mapping figures
+  to files. No raw video and no skeletons. The salt folder has twelve files. Five are the model's cross-validation
+  results (`*_cv_staPWA.mat`) and two its fitted variables (`*_staPAW*.mat`, 0.39-0.42 GB). The other five are tracks:
+  `Data_salt0_50.mat` and `Data_salt100_50.mat` (the two gradients, the first used for Figures 1, 3 and 4),
+  `Data_salt0_0.mat`, and two dated variants (`Data_salt100_50_0511.mat`, `Data_salt0_50_0513.mat`). The figure note names no figure for `Data_salt0_0`,
+  and the text read does not describe it.
+- *What the tracks hold*, from three files fetched by range from the same archive (36 MB of files, 67 MB fetched, the reader's
+  buffer reading ahead), CRC-32 checked and deleted
+  after reading. Each file is a MATLAB v5 array of track records with fields `xy`, `time`, `dc`, `dcp`, `theta`, `dth`,
+  `dis`, `mask`, `opto`, `Basis` and `lambda`.
+    - The time step is 5/14 s (0.357 s, 2.8 Hz) throughout.
+    - `xy` runs over about 0-3,000 by 0-2,500. Read as pixels at the imaging system's 32 µm (Chen et al. 2023), that
+      is about 9.6 cm by 8 cm, consistent with a 9 cm lid. The unit is not stated in the file.
+    - `dc` spans 0.7-49.7 in the 0-50 file and 50.2-99.8 in the 100-50 file, so it reads as the concentration at the
+      worm in mM (*inferred*). `dcp` is the perpendicular difference and `dth` the heading change in degrees, named as
+      in the preprint's model (*inferred*).
+    - `opto` is zero throughout; `mask` is 1 or NaN, NaN in 5-7% of frames, its meaning not stated.
+
+  | File | Tracks | Track length, s (min, median, max) | Sum of track durations | Last time, s | Median step, px |
+  |---|---:|---|---:|---:|---:|
+  | `Data_salt0_50.mat` | 297 | 179, 289, 1,799 | 29.6 h | 1,800 | 3.74 |
+  | `Data_salt100_50.mat` | 277 | 180, 280, 1,194 | 27.2 h | 1,800 | 3.64 |
+  | `Data_salt0_0.mat` | 265 | 150, 226, 992 | 19.1 h | 1,200 | 5.11 |
+
+  The sums exceed the preprint's "∼15-20 animal hour of recordings per navigation condition"; why is not known. A record
+  is a track, not a worm: the files keep neither the worm's identity across lost tracks nor the plate.
+
+**How it would map onto the lab's measures.** It maps onto the stimulus measures, and onto none of the spontaneous ones.
+
+- *Not computable*: posture of any kind; forward, backward and paused states, since a centroid has no head and the
+  states' thresholds are in body lengths per second, with no body length in the files; reversals; and any measure at
+  the reference recordings' 25-33 frames per second.
+- *Computable*: centroid speed (about 0.33 mm/s median, if a pixel is 32 µm); turns as heading changes above a threshold
+  at 2.8 Hz, as the preprint defines them; the bearing to the gradient; the rate of turns against dC/dt; curvature against
+  bearing; run durations by heading, as Luo et al. 2014; and their chemotactic index 〈vg〉/〈s〉. The gradient's direction
+  must be recovered from `dc` against `xy`, not assumed.
+- *The unit of the test*: the lab's tests compare one row per recording. Here the rows would be tracks, several per worm
+  and many per plate, with neither recorded, so they are not independent. Either rows are pooled per file and the
+  test's level is checked against that dependence, or the plates are asked of the authors. Decided in item 11 (b), before
+  any statistic.
+- *The Grid's half*: a life would be sampled at the same 5/14 s and its centroid smoothed alike, by a rule written in
+  (b), so that both bodies are measured by one instrument, as the locomotion states already are.
+
 **What the benchmark would need.**
 
 - *Measures*: pirouette rate against dC/dt at the head, weathervaning as heading change against bearing, and a
