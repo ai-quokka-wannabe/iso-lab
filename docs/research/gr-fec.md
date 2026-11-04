@@ -444,7 +444,7 @@ evaluation tools for a toy world, not code the lab builds on; anything that beco
 | `floor/floor.py`, `floor/fstats.py`, `floor/run.sh`; `floor/perseed.py` in [#175](https://github.com/ai-quokka-wannabe/iso-lab/pull/175) | A constant floor below 0.3, with three seeds in the rich layouts (2026-10-30) | [#171](https://github.com/ai-quokka-wannabe/iso-lab/pull/171) |
 | `floor10/run.sh`, `floor10/f10stats.py` | The constant floor on ten fresh rich layouts (2026-10-30) | [#173](https://github.com/ai-quokka-wannabe/iso-lab/pull/173) |
 | `warm/warm.py`, `warm/warmstats.py`, `warm/run.sh` | Why steering trails never steering in warm layouts: ablations by direction and time, and mirrored layouts (2026-11-03) | [#202](https://github.com/ai-quokka-wannabe/iso-lab/pull/202) |
-| `dirn/dirn.py`, `dirn/dirnstats.py`, `dirn/run.sh` | Each steering decision scored against the band (2026-11-04) | [#PR](https://github.com/ai-quokka-wannabe/iso-lab/pull/PR) |
+| `dirn/dirn.py`, `dirn/dirnstats.py`, `dirn/run.sh` | Each steering decision scored against the band (2026-11-04) | [#213](https://github.com/ai-quokka-wannabe/iso-lab/pull/213) |
 
 ## Leads Named by gr-fec (Unverified)
 
