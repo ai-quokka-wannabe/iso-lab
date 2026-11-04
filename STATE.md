@@ -292,7 +292,6 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   the lateral sense is right in 0.986 of decisions and temperature leads to the band in 0.945, so by elimination the
   direction's failure lies in the map's choice as the greedy rule reads it, which points the band's way in 0.513 (0.424 to 0.619), undecided by its rule
   (journal of 2026-11-04, § Does the Greedy Rule's Direction Fail? Each Steering Decision Scored).
-- 2026-11-04: item 8, a post-mortem of the toy-worm series from the record: no success criterion after the first
-  night's equations, designs too small for the variance between layouts (about 22 layouts for 80% power at 0.03), questions
-  ill-posed in a mirror-symmetric world, and forking paths; recommendations await the maintainer
+- 2026-11-04: item 8, a post-mortem of the toy-worm series from the record, why it stalled and what stands, with
+  recommendations awaiting the maintainer
   ([gr-fec.md § 12](docs/research/gr-fec.md#12-why-the-demystification-stalled-a-post-mortem-2026-11-04)).

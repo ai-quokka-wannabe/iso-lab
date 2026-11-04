@@ -515,10 +515,11 @@ undecided (J11-04 § Does the Greedy Rule's Direction Fail?).
     - So the H14 series beat a baseline, greedy gating, that was itself below never steering in eight of ten fresh
       banded layouts (J10-29 § The Cold-Band Hunch). Over those layouts, no hunger-gated arm was shown to beat never
       steering (K2: −0.0279, −0.0723 to +0.0151; J10-30 § H14's Graded Hunger Gain).
-    - One gate did beat never steering, and was dropped. Steering only while fed was above never steering in all four
+    - One gate did beat never steering in Hardland, and was dropped. Steering only while fed was above never steering in all four
       Hardland layouts it was run in, two body seeds each, every interval above zero, with its test F1 registered
-      beforehand (J10-27 § Steering Only When Fed). It was never taken to fresh layouts; the series followed the hunger
-      gate instead.
+      beforehand (J10-27 § Steering Only When Fed). It was a trade, not a clean win: in both rich layouts it cost,
+      −0.020 and −0.057 against never steering, both intervals below zero, more than either hunger gate cost there.
+      It was never taken to fresh layouts; the series followed the hunger gate instead.
 4. **Forking paths.** Each test was designed on the previous result, often in one or two layouts (75000, 23001), and
    no panel of layouts was set aside before the series began. The ten banded layouts of 2026-10-26 (82000 to 82104)
    then served as the "fresh" panel for at least eight tests in a row, each designed on the one before: the margin
