@@ -172,7 +172,8 @@ about evenly between the two (descriptive; journal 2026-11-03, § Why Steering T
 on ten more warm layouts, the lateral sense and temperature as a guide to the band were sound, so by elimination the
 failure lies in the map's choice as the greedy rule reads it (its own registered test undecided); that choice pointed
 the band's way about half the time, from 0.27 to 0.90 by layout (journal 2026-11-04,
-§ Does the Greedy Rule's Direction Fail? Each Steering Decision Scored).
+§ Does the Greedy Rule's Direction Fail? Each Steering Decision Scored). Why the series as a whole stalled, read from
+the record, is in [gr-fec.md § 12](gr-fec.md#12-why-the-demystification-stalled-a-post-mortem-2026-11-04).
 *For bigger brains*: test every world again after gating a module; a fix in one world is a new claim in all. A state
 used as a gate may mark *which* individuals are in it, not only *when* - split by individual before reading a gate,
 and test the split under the gate itself - with the same individuals in both arms (branch one life), never two
