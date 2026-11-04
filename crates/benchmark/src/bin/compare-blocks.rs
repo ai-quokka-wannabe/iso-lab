@@ -112,6 +112,8 @@ fn report(path_a: &str, path_b: &str) -> Result<String, String> {
         "control told apart by both: {}; the control's measure flagged, and no other: {only}",
         control.classifier.told_apart && control.flagged().contains(&column)
     );
+    let unchanged = null.measures.iter().zip(&control.measures).all(|(n, c)| n.column == column || n.p_value == c.p_value);
+    let _ = writeln!(out, "every other measure's raw p equal to the null's: {unchanged}");
 
     let _ = writeln!(
         out,

@@ -200,7 +200,7 @@ mod tests {
     }
 
     #[test]
-    fn a_shifted_column_is_flagged_and_identical_samples_are_not() {
+    fn a_shifted_column_is_flagged_and_samples_of_one_distribution_are_not() {
         let mut rng = SplitMix64(4);
         let a = sample(&mut rng, 80, 3, 0.0, 1.0);
         let b = sample(&mut rng, 80, 3, 0.0, 1.0);

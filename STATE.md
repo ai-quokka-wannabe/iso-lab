@@ -93,11 +93,11 @@ found lives in the journal section it names; this list keeps only what is open.
          `compare-blocks`; block 1's 179 against block 2's 189, 27 measures, seed 20261104: no measure differs and the
          classifier does not tell them apart (p = 0.181); the control, one block-1 sd added to block 2's first
          eigen-shape amplitude spread, is told apart by both, by that measure alone. Every posture median is slightly
-         higher in block 2, none flagged; noted, not claimed. On block 1's halves (about 90 a side) the classifier
-         missed the same control at 10 of 21 seeds;
+         higher in block 2, none flagged; noted, not claimed, and the upward control sat on it, so was effectively
+         about 1.2 sd;
        - (e4) how large an alteration of each measure the test can see, from the positive control at several sizes,
-         and at the sample sizes a Grid comparison will have (the halves' run says the classifier's power falls
-         steeply below about 180 a side);
+         in both directions, and at the sample sizes a Grid comparison will have (journal of 2026-11-04, § Real
+         Against Unseen Real: the Results, *The control*);
        - (e5) freezing the definition, which waits on
          [FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing) -
          food first - and on reading a Disk (*Blocked*).
