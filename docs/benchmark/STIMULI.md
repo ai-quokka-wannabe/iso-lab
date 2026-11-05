@@ -312,7 +312,9 @@ change. Within them, in order:
    arena's size.
 4. **Aerotaxis**, last: blocked by the gases in the world.
 
-Shared by all four: the arena (a flat floor, and its size against a plate, already an open question in
+Shared by all four: the arena (a terraced floor, with lives starting on the flat spawn pad and terrace effects measured,
+not avoided, by the maintainer's ruling in the session of 2026-11-05, [PLAN.md § Phase 1](../PLAN.md#phase-1-the-arena);
+and its size against a plate, already an open question in
 [FEATURES.md § Open Questions Before Freezing](FEATURES.md#open-questions-before-freezing)); an evaluation tool that
 rebuilds a field along a track from the input log's settings, which waits on reading a Disk (STATE.md item 3 (d2)); and the
 pace of each response, measured like any other behaviour.
