@@ -101,16 +101,16 @@ out of their sources when the experiment is prepared.
 | E8 | Two strengths: forgetting loses influence, not the trace | [planned](E6-E10.md#e8-two-strengths-forgetting-loses-influence-not-the-trace) |
 | E9 | Attention as a conserved economy | [planned](E6-E10.md#e9-attention-as-a-conserved-economy) |
 | E10 | The input reshapes the attractor landscape | [planned](E6-E10.md#e10-the-input-reshapes-the-attractor-landscape) |
-| E11 | Completion, with gates | to plan |
-| E12 | Drives retrieve what could satisfy them | to plan |
-| E13 | Curiosity as expected information gain | to plan |
-| E14 | Sleep as a bounded replay pass, driven by pressure | to plan |
-| E15 | Lessons about attractor memories | to plan |
-| E16 | The spectrum as a health check | to plan |
-| E17 | Maps at several scales | to plan |
-| E18 | Innate core systems, and the smallest consistent hypothesis | to plan |
-| E19 | Development by stage | to plan |
-| E20 | Identity is the persisted pattern | to plan |
+| E11 | Completion, with gates | [planned](E11-E15.md#e11-completion-with-gates) |
+| E12 | Drives retrieve what could satisfy them | [planned](E11-E15.md#e12-drives-retrieve-what-could-satisfy-them) |
+| E13 | Curiosity as expected information gain | [planned](E11-E15.md#e13-curiosity-as-expected-information-gain) |
+| E14 | Sleep as a bounded replay pass, driven by pressure | [planned](E11-E15.md#e14-sleep-as-a-bounded-replay-pass-driven-by-pressure) |
+| E15 | Lessons about attractor memories | [planned](E11-E15.md#e15-lessons-about-attractor-memories) |
+| E16 | The spectrum as a health check | [planned](E16-E20.md#e16-the-spectrum-as-a-health-check) |
+| E17 | Maps at several scales | [planned](E16-E20.md#e17-maps-at-several-scales) |
+| E18 | Innate core systems, and the smallest consistent hypothesis | [planned](E16-E20.md#e18-innate-core-systems-and-the-smallest-consistent-hypothesis) |
+| E19 | Development by stage | [planned](E16-E20.md#e19-development-by-stage) |
+| E20 | Identity is the persisted pattern | [planned](E16-E20.md#e20-identity-is-the-persisted-pattern) |
 | F1 | Phase is the missing ingredient: complex amplitudes | to plan |
 | F2 | Cognition on the tree-like side of the numbers | to plan |
 | F3 | Memories as codewords of an error-correcting code | to plan |
