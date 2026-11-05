@@ -125,7 +125,7 @@ out of their sources when the experiment is prepared.
 | F12 | Predict the consequence, then refine | [planned](F10-F17.md#f12-predict-the-consequence-then-refine) |
 | F13 | A memory that renormalises time, shaped like MERA | [planned](F10-F17.md#f13-a-memory-that-renormalises-time-shaped-like-mera) |
 | F14 | Thinking in loops: automata, their groups, graphs and knots | [planned](F10-F17.md#f14-thinking-in-loops-automata-their-groups-graphs-and-knots) |
-| F15 | Rhythm and direction twisted together, as in the Hopf fibration | [planned](F10-F17.md#f15-rhythm-and-direction-twisted-together-as-in-the-hopf-fibration) |
+| F15 | Rhythm and direction twisted together, as in the Hopf fibration | [planned (worm test suspended)](F10-F17.md#f15-rhythm-and-direction-twisted-together-as-in-the-hopf-fibration) |
 | F16 | Harmonic analysis, and the Kakeya needle in a worm's turn | [planned](F10-F17.md#f16-harmonic-analysis-and-the-kakeya-needle-in-a-worms-turn) |
 | F17 | Metaphysics, kept for its testable parts | [planned](F10-F17.md#f17-metaphysics-kept-for-its-testable-parts) |
 | G1 | Think by predicting value over a grown concept graph; turn when the prediction falls | to plan |
