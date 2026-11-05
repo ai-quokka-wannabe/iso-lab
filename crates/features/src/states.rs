@@ -126,6 +126,14 @@ pub fn event_stats(events: &[(usize, usize)], frames: usize, fps: f64) -> EventS
     }
 }
 
+/// Whether `events` are a lone event touching an edge of a recording of `frames` frames - one event,
+/// starting at frame 0 or ending at the last frame - the one case where [`event_stats`]'s frequency
+/// counts an event under way at an edge, as the toolbox's `num_events_for_stats` does, and where the
+/// edge rule without that exception would count none.
+pub fn lone_edge_event(events: &[(usize, usize)], frames: usize) -> bool {
+    matches!(events, [(first, last)] if *first == 0 || *last + 1 == frames)
+}
+
 /// A per-frame bound on the speed: `Above(b)` admits a speed of at least `b`, `Below(b)` of at
 /// least `-b` as a lower bound or at most `-b` as an upper one, as the toolbox's signed thresholds
 /// do; an undefined bound admits nothing.
@@ -448,6 +456,20 @@ mod tests {
         assert_eq!(event_stats(&[(0, 9)], 100, FPS).frequency, Some(0.1));
         // Two events, both partial: none counted.
         assert_eq!(event_stats(&[(0, 9), (90, 99)], 100, FPS).frequency, Some(0.0));
+    }
+
+    #[test]
+    fn a_lone_edge_event_is_one_event_touching_either_edge() {
+        assert!(lone_edge_event(&[(0, 9)], 100));
+        assert!(lone_edge_event(&[(90, 99)], 100));
+        assert!(lone_edge_event(&[(0, 99)], 100));
+        // One event inside the recording, two events at the edges, or none: not the exception's case.
+        assert!(!lone_edge_event(&[(10, 19)], 100));
+        assert!(!lone_edge_event(&[(0, 9), (90, 99)], 100));
+        assert!(!lone_edge_event(&[(0, 9), (40, 49)], 100));
+        assert!(!lone_edge_event(&[], 100));
+        // Where it holds, the frequency counts the event; where two touch the edges, it counts none.
+        assert_eq!(event_stats(&[(90, 99)], 100, FPS).frequency, Some(0.1));
     }
 
     #[test]

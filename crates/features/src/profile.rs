@@ -35,9 +35,12 @@
 //!   mean of its absolute value;
 //! - the forward, backward and paused states (*Comparable*): the share of the window's frames in
 //!   each and in none ([`crate::states::motion_modes`]);
-//! - their durations and rates (*Comparable* by grade, but **provisional** until STATE.md item
-//!   2(c)'s check of the published durations passes): per mode, the number of events, their mean
-//!   duration and their frequency ([`crate::states::event_stats`]).
+//! - their durations and rates (*Comparable*): per mode, the number of events, their mean duration
+//!   and their frequency ([`crate::states::event_stats`]), the toolbox's computation, which
+//!   reproduces the stored values exactly from the published speed (docs/journal of 2026-11-04,
+//!   *The Published Durations and Rates: Reproduced Exactly Over Block 1*); over whole recordings,
+//!   the lab's speed moves the median recording's values by less than a quarter of block 1's
+//!   interquartile range (docs/journal of 2026-11-05, *Item 2 (c)'s Follow-Ups: the Results*).
 //!
 //! Beside them stand context columns that are not measures: the share of frames without a
 //! skeleton, the share with eight arcs, and the median eight-arc length that defines the body
@@ -130,19 +133,14 @@ pub struct Measures {
 pub const MODES: [&str; 3] = ["forward", "backward", "paused"];
 
 /// The names of the measures in the order [`Measures::values`] gives them, each with its unit in
-/// brackets: `[1]` for a share or a count, `[L/s]` for body lengths per second. The durations'
-/// and rates' names begin `provisional_` (see the module's documentation).
+/// brackets: `[1]` for a share or a count, `[L/s]` for body lengths per second.
 pub fn measure_names() -> Vec<String> {
     let mut names: Vec<String> = (1..=ARCS).map(|arc| format!("arc{arc}_angle_sd[rad]")).collect();
     names.extend((1..=REFERENCE_COMPONENTS).map(|k| format!("eigen{k}_amplitude_sd[rad]")));
     names.extend(["midbody_speed_mean[L/s]", "midbody_speed_abs_mean[L/s]"].map(String::from));
     names.extend(MODES.iter().chain(&["no_state"]).map(|mode| format!("{mode}_share[1]")));
     for mode in MODES {
-        names.extend([
-            format!("provisional_{mode}_events[1]"),
-            format!("provisional_{mode}_mean_duration[s]"),
-            format!("provisional_{mode}_frequency[1/s]"),
-        ]);
+        names.extend([format!("{mode}_events[1]"), format!("{mode}_mean_duration[s]"), format!("{mode}_frequency[1/s]")]);
     }
     names
 }
@@ -421,9 +419,9 @@ mod tests {
         // Forward throughout: the forward share, then one forward event of 900 s.
         let at = |name: &str| values[measure_names().iter().position(|n| n == name).unwrap()];
         assert_eq!(at("forward_share[1]"), 1.0);
-        assert_eq!(at("provisional_forward_events[1]"), 1.0);
-        assert!(close(at("provisional_forward_mean_duration[s]"), 900.0, 1e-9));
-        assert!(at("provisional_backward_mean_duration[s]").is_nan());
+        assert_eq!(at("forward_events[1]"), 1.0);
+        assert!(close(at("forward_mean_duration[s]"), 900.0, 1e-9));
+        assert!(at("backward_mean_duration[s]").is_nan());
         assert!(close(at("midbody_speed_mean[L/s]"), 0.2, 1e-6));
     }
 

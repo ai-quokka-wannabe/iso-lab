@@ -128,16 +128,16 @@ out of their sources when the experiment is prepared.
 | F15 | Rhythm and direction twisted together, as in the Hopf fibration | [planned (worm test suspended)](F10-F17.md#f15-rhythm-and-direction-twisted-together-as-in-the-hopf-fibration) |
 | F16 | Harmonic analysis, and the Kakeya needle in a worm's turn | [planned](F10-F17.md#f16-harmonic-analysis-and-the-kakeya-needle-in-a-worms-turn) |
 | F17 | Metaphysics, kept for its testable parts | [planned](F10-F17.md#f17-metaphysics-kept-for-its-testable-parts) |
-| G1 | Think by predicting value over a grown concept graph; turn when the prediction falls | to plan |
-| G2 | Walls come from events, not silence | to plan |
-| G3 | Two kinds of concept node: intensity and tuned | to plan |
-| G4 | Concepts grown by a novelty gate | to plan |
-| G5 | Instinct and learning as separate pathways | to plan |
-| G6 | Learned trust in instinct | to plan |
-| G7 | Inner senses gate; they do not predict | to plan |
-| G8 | Honest senses are noisy, so integrate before deciding | to plan |
-| G9 | Noise below the decision threshold is blur; above it, search | to plan |
-| G10 | Learning pays only when instinct is not enough | to plan |
+| G1 | Think by predicting value over a grown concept graph; turn when the prediction falls | [planned](G1-G10.md#g1-think-by-predicting-value-over-a-grown-concept-graph-turn-when-the-prediction-falls) |
+| G2 | Walls come from events, not silence | [planned](G1-G10.md#g2-walls-come-from-events-not-silence) |
+| G3 | Two kinds of concept node: intensity and tuned | [planned](G1-G10.md#g3-two-kinds-of-concept-node-intensity-and-tuned) |
+| G4 | Concepts grown by a novelty gate | [planned](G1-G10.md#g4-concepts-grown-by-a-novelty-gate) |
+| G5 | Instinct and learning as separate pathways | [planned](G1-G10.md#g5-instinct-and-learning-as-separate-pathways) |
+| G6 | Learned trust in instinct | [planned](G1-G10.md#g6-learned-trust-in-instinct) |
+| G7 | Inner senses gate; they do not predict | [planned](G1-G10.md#g7-inner-senses-gate-they-do-not-predict) |
+| G8 | Honest senses are noisy, so integrate before deciding | [planned](G1-G10.md#g8-honest-senses-are-noisy-so-integrate-before-deciding) |
+| G9 | Noise below the decision threshold is blur; above it, search | [planned](G1-G10.md#g9-noise-below-the-decision-threshold-is-blur-above-it-search) |
+| G10 | Learning pays only when instinct is not enough | [planned](G1-G10.md#g10-learning-pays-only-when-instinct-is-not-enough) |
 | G11 | Judge a design by its worst life | to plan |
 | G12 | Designed learning structure with evolved numbers | to plan |
 | G13 | Every new tool given to evolution is first used to cheat | to plan |

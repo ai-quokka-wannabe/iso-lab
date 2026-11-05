@@ -9,9 +9,8 @@ of the toy-worm series, read from the record, with recommendations for the maint
 ([gr-fec.md § 12](docs/research/gr-fec.md#12-why-the-demystification-stalled-a-post-mortem-2026-11-04)); and a plan for the stimulus assays the world's new fields open
 ([docs/benchmark/STIMULI.md](docs/benchmark/STIMULI.md)); and block 1's real worms and block 2's, unseen, were found
 indistinguishable by the benchmark's two tests, with a positive control told apart. Earlier
-nights are in [the journal's index](docs/journal/README.md). The next steps for Phase 0 are item 2 (c)'s follow-ups
-(`provisional_` dropped from the profile's columns, the lone-edge-event exception, an interval on the lab-against-published
-ratios) and (e4), how large an alteration the test can see.
+nights are in [the journal's index](docs/journal/README.md). The next step for Phase 0 is (e4), how large an alteration the
+test can see.
 
 ## Where We Are
 
@@ -20,8 +19,7 @@ recordings ([data/README.md § The Phase 0 Survey](data/README.md#the-phase-0-su
 literature note says how worm behaviour is measured. The comparison space is drafted
 ([docs/benchmark/FEATURES.md](docs/benchmark/FEATURES.md)): which measures carry over to the Grid's body, and what
 must be settled before the benchmark is frozen, food first. The Rust workspace reads the reference recordings and computes
-their measures - posture, speed, the locomotion states and the eigen-shape amplitudes, the durations and rates from
-the lab's speed still provisional until item 2 (c)'s check - with the reference statistics
+their measures - posture, speed, the locomotion states and the eigen-shape amplitudes, the durations and rates - with the reference statistics
 over block 1 and their gaps by cause; the benchmark's test is built (item 2 (e1), (e2)) and run on real data
 alone (e3): two blocks of real worms are not told apart, and a stated alteration is; and the arena is proven to a
 first life: a placeholder Program, which undulates only, lived fifteen minutes on the Grid and its world replays
@@ -63,15 +61,18 @@ found lives in the journal section it names; this list keeps only what is open.
      [behaviour-measures.md § How the Toolbox Turns States Into Durations and Rates](docs/research/behaviour-measures.md#how-the-toolbox-turns-states-into-durations-and-rates)).
      From the published speed they reproduce the stored durations and frequencies exactly, in 600 of 600
      recording-modes of block 1 (journal of 2026-11-04, § The Published Durations and Rates: Reproduced Exactly Over
-     Block 1; `stored-events <block>`). The lab's speed gives a median 0.97 of the stored forward events and 0.91 of the
-     paused, backward as many. Next: drop `provisional_` from `features::profile`'s columns; whether any recording-mode
-     exercises the lone-edge-event exception; an interval on the lab-against-published ratios, and whether they matter
-     for the benchmark;
+     Block 1; `stored-events <block>`). The follow-ups are done (journal of 2026-11-05, § Item 2 (c)'s Follow-Ups: the
+     Results): no recording-mode of block 1 exercises the lone-edge-event exception, so block 1 cannot tell the Python
+     toolbox from its MATLAB original that way; the lab's speed gives fewer forward and paused events, and shorter events in every mode, than the published
+     (median forward count 0.970, 95% bootstrap interval 0.959-0.979; paused 0.909, 0.897-0.927), but every shift lies
+     within ±0.25 of block 1's interquartile range, *negligible* by the registered threshold, which (e4) is to replace
+     (`event-ratios`); and `provisional_` is dropped from `features::profile`'s columns, values unchanged, not a
+     definition change since nothing is frozen or scored. Open from it: whether the lab's speed reads a Grid worm's
+     events as it reads the stored skeletons, in item 3 (d2c);
    - (d) the reference statistics, split into runs (the maintainer's request, 2026-10-31, to build the benchmark
      next; journal of 2026-10-31, § The Benchmark, Split Into Runs):
        - (d1) one row of measures per recording, done (journal of 2026-10-31, § One Row of Measures per Recording:
-         Built, and Run on Block 1): `features::profile` and `profiles <block>`, its durations and rates provisional
-         until (c)'s check passes;
+         Built, and Run on Block 1): `features::profile` and `profiles <block>`;
        - (d2) the reference statistics over block 1, done (journal of 2026-11-03, § The Reference Statistics of Block
          1): `features::eigenshapes`, `benchmark::reference` and `reference-stats <block>`; the 17 short recordings
          are recordings of the same protocol, 16 of them of five minutes from the summer of 2009, and the rule stands (§ The
@@ -121,20 +122,23 @@ found lives in the journal section it names; this list keeps only what is open.
      recursively in both workflows; and one test, seen failing first, that opens a Disk through `replay_open`;
    - (d2b) the Disk reader in `features`: a life's frames polled from a Disk into the creature's poses per tick, in
      tested Rust;
-   - (d2c) the same features extracted from the placeholder's Disk, and the share of refused intents measured.
+   - (d2c) the same features extracted from the placeholder's Disk, and the share of refused intents measured; and
+     whether the lab's speed reads a Grid body's events as it reads the stored skeletons, whose uneven spacing makes it
+     find fewer forward and paused events (item 2 (c)).
 4. **Read the quantum-like Program's sources, then test it again**: read Noest 1988, Jankowski, Lozowski and
    Zurada 1996 and Kobayashi 2017 at the source (H10 cites them unread), check the first test's attribution of its
    update rule, then run the next test under *To Revisit* with a finer grid, more cues, a symmetric success rule and
    a keep-the-state rule for ties.
 5. **Plan an experiment for every one of Matej's 128 ideas and hunches** - the maintainer's request - in the format
    of [docs/hypotheses/experiments/README.md](docs/hypotheses/experiments/README.md), whose index shows which are
-   planned. Next: **G** (30, from the gr-fec sandbox; [docs/research/gr-fec.md](docs/research/gr-fec.md) has its numbers;
-   A to F are planned). The journal records the triage, and hunches that survive are promoted into numbered hypotheses or
+   planned. Next: **G11-G30** (from the gr-fec sandbox; [docs/research/gr-fec.md](docs/research/gr-fec.md) has its
+   numbers; A to F and G1-G10 are planned). The journal records the triage, and hunches that survive are promoted into numbered hypotheses or
    tasks here; E15, E11, E16 and E20 are the candidates from E11-E20 (journal of 2026-11-05, § E11-E20 Planned, and a
    Triage); from F1-F9, F6 and F4, with F7 needing a redesign (§ F1-F9 Planned, and a Triage), F3 having been run and refuted
    (§ F3 Run: Memories as Golay Codewords); from F10-F17, F14's
    automata lens, and F13 once its revised design is verified, with F15's worm test needing a redesign (§ F10-F17
-   Planned, and a Triage).
+   Planned, and a Triage); from G1-G10, G3, G8 and G9 as extensions of item 8 (e), G2 and G5 beside (g), and G5, G6 and G10 as
+   toy-world tests under gr-fec.md § 12.4's recommendation 4 (§ G1-G10 Planned, and a Triage).
 6. **Audit H10's first test by A12's plan**
    ([docs/hypotheses/experiments/A9-A15.md § A12](docs/hypotheses/experiments/A9-A15.md#a12-experiment-hygiene)):
    planted copies prepared by one agent and audited, blind, by another that has read neither that test's review nor
@@ -171,7 +175,7 @@ found lives in the journal section it names; this list keeps only what is open.
      pointing home, the lateral sense's noise and the turn's size (gr-fec.md § 12.4, recommendation 2);
    - (f) its validation on a fixed map imposed by the evaluator, so the map's share is known, not learned;
    - (g) the fixed-point test, done on 2026-11-05 (journal of 2026-11-05, § gr-fec's Worm by Equation: The Learning
-     Layer's Fixed Point): refuted in both arms. What it opened, one run each, neither registered yet: (g2) whether the
+     Layer's Fixed Point): refuted in both arms. What it opened, one run each, none registered yet: (g2) whether the
      fit is well determined in the rarely excited directions, by fitting one half of the window and scoring on the
      other; (g3) whether slow learners reach the fit everywhere given a longer life, with the length sized beforehand
      from η·λ; (g4) whether the feature map's own drift - node births and prototype moves inside the window, measured by
@@ -275,7 +279,9 @@ found lives in the journal section it names; this list keeps only what is open.
     latencies and time constants from [pace.md](docs/research/pace.md), every part with a switch that pins it at baseline.
     Cheap and fully auditable, and the baseline any richer brain must beat. Split before starting: (a) its design and
     pre-registration: the family, the optimiser's budget per seed, the number of lives, the threshold of flagged
-    measures that refutes R3, and the model registered for R1b and R2; (b) the Program in `crates/`; (c) its lives,
+    measures that refutes R3, and the model registered for R1b and R2, with a word that H16's map sentence does not
+    override the first step of its classing order: a cited adaptation of at most 3 s in a sense pathway stays wiring
+    even in a bank indexed by heading (review 5791110537 on #228); (b) the Program in `crates/`; (c) its lives,
     read through the Disk reader (item 3 (d2)), fitted on block 1 and compared per measure with a block of the draw not
     used before; R3's pass side waits on item 2 (e4), R1 and R2 on (e5).
 
@@ -314,6 +320,10 @@ the idea for the next attempt.
   goes to the literature first, by the maintainer's ruling in the session of 2026-11-05 (item 12). For the benchmark: its comparison space should hold
   state-conditioned rates, bout lengths and whole distributions, not only means.
 
+- **C18's located cliff, the last 0.12** (journal of 2026-11-05, § C18's Threshold Hunch, Run Again): D at threshold
+  0.001 is 1.128, still 0.12 above the out-component's 1.010. Open: whether D closes that gap at a threshold below
+  0.001, or under a stricter settling rule than no unit moving by more than 1e-10, which may leave units far from the
+  seed unreached. C18's verdict does not rest on it (review 5790675207 on #230).
 - **For the maintainer**, from H17 (journal of 2026-11-05, § H17: Consciousness Science's Measures on a Sleeping
   Worm): whether perturbing a Program by writing into its internal state, rather than through its senses, sits within
   *No cheating*. For: real brains are perturbed directly in the lab's own sources (optogenetics; TMS in humans), and a
@@ -383,6 +393,12 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-11-05: the verifiers' non-blocking points on tonight's merged pull requests landed, among them H17's window
+  budget amended before any data, to cap each animal's contrast, with a floor of five windows, rather than exclude it (journal of 2026-11-05,
+  § Verifiers' Nits from Tonight's Merged Pull Requests).
+- 2026-11-05: item 2 (c)'s follow-ups (journal of 2026-11-05, § Item 2 (c)'s Follow-Ups: the Results): the lone-edge
+  exception unexercised in block 1; the lab-against-published ratios given intervals, all shifts within ±0.25 IQR;
+  `provisional_` dropped from the profile's columns, values unchanged.
 - 2026-11-05: the maintainer's eleven rulings of that day's session recorded where each question lives (journal of
   2026-11-05, § The Maintainer's Rulings of 2026-11-05): the toy-worm series paused for the equations (item 8 (e)-(h)),
   the Disk read through Master Control's crate (item 3 (d2a)-(d2c)), the salt and odour units, the odour reference,
@@ -405,7 +421,7 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
 - 2026-11-05: item 9 (h), the three audits: no spelling violation, Rust and notebooks clean; fixed the stale
   benchmark status in README.md and both diagrams (redrawn by `notebooks/figures.ipynb`), PLAN.md's copied list of
   senses, FEATURES.md's gaps and plane rows, CONTRIBUTING.md's second table of documents, four inline comments in
-  `cleanup_caches.yml`, and two journal references by dated notes; three questions for the maintainer (*To Revisit*) (since ruled on, 2026-11-05).
+  `cleanup_caches.yml`, and two journal references by dated notes; three questions for the maintainer (*To Revisit*; since ruled on, 2026-11-05).
 - 2026-11-05: item 11 (d2), partly: four odour measures drafted (speed, turn rate by bearing, curvature against
   bearing, the bearing's distribution), none using a concentration's size; the authors' script read and found to
   differ from their paper in six rules ([docs/benchmark/ODOUR_MEASURES.md](docs/benchmark/ODOUR_MEASURES.md)).
@@ -424,6 +440,10 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   F16, F17's single objective) and restated; F14's automata lens ready to become a task, F13 after verification,
   F15's worm test to be redesigned (journal of 2026-11-05, § F10-F17
   Planned, and a Triage).
+- 2026-11-05: item 5, hunches G1-G10 planned ([G1-G10.md](docs/hypotheses/experiments/G1-G10.md)); what the toy
+  worm already tested cited (the turning theory, #231's refuted fixed point and drifting feature map), none resuming the
+  paused steering series; G2's overshadowing reduced to a least-squares split of weight and G5's harm to an exact LMS identity, G9's Grid sweep restated
+  to keep the senses untuned (journal of 2026-11-05, § G1-G10 Planned, and a Triage).
 - 2026-11-05: H16 written, *a hunch* brought by the maintainer from another Claude session: a reflex stack
   with no learned model gets through the benchmark; refuting outcomes R1-R3 with their pass sides, controls, cost and
   pace rule; Brooks 1986, Kato et al. 2015 and the book's catalogue record checked at the source; item 14 added.

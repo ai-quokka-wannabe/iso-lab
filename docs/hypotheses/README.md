@@ -637,7 +637,8 @@ a life, on recorded activity, outside the brain:
    tested for non-elemental learning and found without it. UAL is a trait, not a state: it does not enter the sleep test.
 
 *Pre-registered, the sleep test* (measures 1–3, on recordings that do not yet exist in the lab; written before any is
-fetched, and revised twice, before any data, after the second agent's reviews of 2026-11-05 on pull request 229):
+fetched, and revised twice, before any data, after the second agent's reviews of 2026-11-05 on pull request 229;
+the window budget amended once more, before any data, on 2026-11-05, as marked below):
 
 - *Datasets and segments*: each dataset is analysed on its own and never pooled. Lethargus imaging (as in Nichols et
   al. 2017) compares quiescent bouts with active bouts of the same lethargus; starvation imaging (as in Skora, Mende
@@ -648,20 +649,46 @@ fetched, and revised twice, before any data, after the second agent's reviews of
     - The measures are computed on windows of one fixed length W: the median sleep-bout length of the dataset, rounded
       down to whole frames and at least 10 s, set from the behavioural labels alone.
     - Each bout is cut into non-overlapping windows; bouts shorter than W are left out and counted.
-    - In each animal, the wake windows are split by a fixed seed into three disjoint sets: the *contrast set*, as many
-      windows as the animal has in sleep; and two *reference sets*, A and B, of the same size each.
-    - **The window budget.** An animal therefore needs at least three times as many usable wake windows as sleep
-      windows. One that cannot supply them gets no verdict and is counted. A and B are never shrunk, since smaller
-      reference sets would inflate r, and so τ, and push a real fall towards *refuted*. This budget is a feasibility
-      risk: in lethargus, bouts of quiescence and of motion alternate, each lasting 1–100 s
-      ([pace.md](../research/pace.md), lethargus), and active bouts shorter than W
-      are dropped, so it may leave fewer than six animals.
-    - **Trials.** Stimulus trials are assigned the same way. In each animal, wake trials are split by a fixed seed into
-      a contrast set, as many as the animal's sleep trials, and two reference sets of the same size each, under the
-      same threefold budget.
+    - **The window budget, capped** (amended 2026-11-05, before any data). In an animal with S usable sleep windows
+      and U usable wake windows, the contrast uses n = min(S, ⌊U / 3⌋) windows of *each* state. If n < S, the n sleep
+      windows are drawn from the S by a fixed seed, and the rest are not used anywhere. The wake windows are split by
+      a fixed seed into three disjoint sets of n each: the *contrast set*, and two *reference sets*, A and B. A and B
+      are never shrunk below the contrast set's size, since smaller reference sets would inflate r, and so τ, and push
+      a real fall towards *refuted*.
+    - **The floor, n ≥ 5** (added the same day, before any data, after the second agent's review 5791293740 on pull
+      request 232). An animal with n < 5 is left out and counted, with its quiescent fraction reported. Without a
+      floor, one animal with n of 1 or 2 would carry an A-B difference over one or two windows a set, far noisier than
+      the rest, and since r is the maximum over animals when there are fewer than twenty (below), it alone could set
+      τ for every animal. The candidates weighed: n ≥ 1, the smallest n at which an A-B difference is defined for every
+      measure, which is exactly the case that inflates τ, and is rejected; and n ≥ 3 or n ≥ 5. If windows were
+      independent (an assumption, not checked), a set mean's standard error would fall as 1/√n, so against an animal
+      with n = 20 an animal at the floor would be noisier by √(20/3) ≈ 2.6 at n ≥ 3 and by √(20/5) = 2 at n ≥ 5
+      (hand arithmetic). n ≥ 5 is chosen: a choice of the hunch's own size, not derived from a source. It narrows the
+      cap's gain in the deepest sleepers, and their quiescent fractions show by how much.
+    - **The quiescent fraction.** Each animal's quiescent fraction by usable windows, S / (S + U), is reported beside
+      the verdict, and so is that of any animal left out, so that a verdict shows which sleepers it speaks for. Beside
+      it, the fraction of labelled time in sleep is reported too, since the two differ where short bouts are dropped,
+      which is where the cap bites.
+    - **The cap is still a feasibility risk**: in lethargus, bouts of quiescence and of motion alternate, each lasting
+      1–100 s ([pace.md](../research/pace.md), lethargus), and active bouts shorter than W are dropped, so n may be
+      small in the deepest sleepers, and too few animals may be left.
+    - **Trials.** Stimulus trials are assigned the same way, with their own count: in each animal,
+      q = min(sleep trials, ⌊wake trials / 3⌋) trials of each state, the sleep trials drawn by a fixed seed when q is
+      smaller than their number, and the wake trials split by a fixed seed into a contrast set and two reference sets of
+      q each. The same floor holds: an animal with q < 5 is left out of the perturbation measures and counted, and the
+      perturbation measures' m, r and ignition threshold are taken only over the animals with q ≥ 5.
+    - *The text before the amendment*, kept visible: "In each animal, the wake windows are split by a fixed seed into
+      three disjoint sets: the *contrast set*, as many windows as the animal has in sleep; and two *reference sets*, A
+      and B, of the same size each. **The window budget.** An animal therefore needs at least three times as many
+      usable wake windows as sleep windows. One that cannot supply them gets no verdict and is counted. A and B are
+      never shrunk [...]"; and for trials, "a contrast set, as many as the animal's sleep trials, and two reference
+      sets of the same size each, under the same threefold budget". Why it changed: that exclusion kept only the
+      animals that sleep least, so a *refuted* could have meant "refuted in the lightest sleepers" (the second agent's
+      review 5791110656 on pull request 229; journal of 2026-11-05, § Verifiers' Nits from Tonight's Merged Pull
+      Requests).
     - **What each choice uses.** The contrast uses only the contrast sets. The units' wake-SNR floor, the thresholds, K
       and τ use only A and B, as do the controls.
-    - **The exceptions.** Three things use the contrast's own sleep windows, since every sleep window is in the
+    - **The exceptions.** Three things use the contrast's own sleep windows, since every sleep window used is in the
       contrast: the sleep-SNR floor that decides which units are kept, the matching target (each unit's sleep SNR) and
       the source of the empirical noise. The matching target and the noise source are inherent to noise matching. The
       floor is a selection on sleep's values, and it keeps units with more variance in the sleep windows being
@@ -725,8 +752,14 @@ fetched, and revised twice, before any data, after the second agent's reviews of
     - **Φ\***. Each unit is z-scored per window. The covariance and lag-one covariance are computed within each window,
       never across the join of two windows, and pooled over an animal's windows in a state, because a single window may
       hold only a few tens of samples, too few to support them.
-    - **The units Φ\* uses.** Its K units are those with the highest wake SNR on set A, with K at most a tenth of the
-      pooled samples per state. If that leaves fewer than four units, Φ\* has *no verdict until longer recordings*.
+    - **The units Φ\* uses.** Its K units are those with the highest wake SNR on set A. K is chosen once per dataset,
+      over the animals at or above the floor: K = ⌊P / 10⌋, with P the smallest, over those animals and both states, of
+      an animal's pooled samples in a state. Every animal at or above the floor then has at least 10K samples a state,
+      so none is left out of Φ\* (a K set from the median, as first written here, would have left out about half).
+      At the floor an animal pools at least 5 windows of W ≥ 10 s a state, so at least 50 · f samples at a frame rate
+      of f per second, and K ≥ 4 holds whenever f ≥ 0.8 Hz (⌊50 · 0.8 / 10⌋ = 4; hand arithmetic). The frame rate is
+      not known until a dataset is registered; if K is below four, Φ\* has *no verdict until longer recordings*, and
+      K is not raised by leaving animals out.
     - **Φ\*'s surrogates** are a check that they come out near zero.
 - *Perturbations* (PCI-like and ignition, alike):
     - the stimulus is one the dataset applies, named with its modality, strength and duration when the dataset is
@@ -737,7 +770,7 @@ fetched, and revised twice, before any data, after the second agent's reviews of
       state; a single 10 s baseline is too short, its 99th percentile nearly its maximum. This is also PCI-like's
       binarisation, against the pre-stimulus baseline as in Casali et al. 2013;
     - ignition's threshold, the share of active units, is set on the noise-matched wake trials of the reference sets
-      alone;
+      alone, of the animals with q ≥ 5;
     - a trial is *behaviourally unchanged* if the behavioural label does not change during R. In sleep, this means the
       bout is unbroken;
     - because the worm's brain-wide state carries its motor command ([Kato et al. 2015](https://doi.org/10.1016/j.cell.2015.09.034),
@@ -756,7 +789,8 @@ fetched, and revised twice, before any data, after the second agent's reviews of
     - τ = max(0.1 · m, r). Here m is the median over animals of the noise-matched wake value on set A, so the first
       term is a fall of a tenth. And r is the nearest-rank 95th percentile over animals of |Δ| between noise-matched sets
       A and B. With fewer than twenty
-      animals, r is the maximum, which is conservative.
+      animals, r is the maximum, which is conservative. Both m and r are taken only over the animals at or above the
+      floor (n ≥ 5, above), which are also the only ones given a Δ.
     - A fall smaller than the measure's own repeatability is not called a state.
     - The sensitivity runs replace 0.1 by 0.05 and by 0.2 and keep the max with r, so where r dominates they equal the
       primary run, and the report says so.
