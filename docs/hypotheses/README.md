@@ -637,7 +637,8 @@ a life, on recorded activity, outside the brain:
    tested for non-elemental learning and found without it. UAL is a trait, not a state: it does not enter the sleep test.
 
 *Pre-registered, the sleep test* (measures 1–3, on recordings that do not yet exist in the lab; written before any is
-fetched, and revised twice, before any data, after the second agent's reviews of 2026-11-05 on pull request 229):
+fetched, and revised twice, before any data, after the second agent's reviews of 2026-11-05 on pull request 229;
+the window budget amended once more, before any data, on 2026-11-05, as marked below):
 
 - *Datasets and segments*: each dataset is analysed on its own and never pooled. Lethargus imaging (as in Nichols et
   al. 2017) compares quiescent bouts with active bouts of the same lethargus; starvation imaging (as in Skora, Mende
@@ -648,20 +649,33 @@ fetched, and revised twice, before any data, after the second agent's reviews of
     - The measures are computed on windows of one fixed length W: the median sleep-bout length of the dataset, rounded
       down to whole frames and at least 10 s, set from the behavioural labels alone.
     - Each bout is cut into non-overlapping windows; bouts shorter than W are left out and counted.
-    - In each animal, the wake windows are split by a fixed seed into three disjoint sets: the *contrast set*, as many
-      windows as the animal has in sleep; and two *reference sets*, A and B, of the same size each.
-    - **The window budget.** An animal therefore needs at least three times as many usable wake windows as sleep
-      windows. One that cannot supply them gets no verdict and is counted. A and B are never shrunk, since smaller
-      reference sets would inflate r, and so τ, and push a real fall towards *refuted*. This budget is a feasibility
-      risk: in lethargus, bouts of quiescence and of motion alternate, each lasting 1–100 s
-      ([pace.md](../research/pace.md), lethargus), and active bouts shorter than W
-      are dropped, so it may leave fewer than six animals.
-    - **Trials.** Stimulus trials are assigned the same way. In each animal, wake trials are split by a fixed seed into
-      a contrast set, as many as the animal's sleep trials, and two reference sets of the same size each, under the
-      same threefold budget.
+    - **The window budget, capped** (amended 2026-11-05, before any data). In an animal with S usable sleep windows
+      and U usable wake windows, the contrast uses n = min(S, ⌊U / 3⌋) windows of *each* state. If n < S, the n sleep
+      windows are drawn from the S by a fixed seed, and the rest are not used anywhere. The wake windows are split by
+      a fixed seed into three disjoint sets of n each: the *contrast set*, and two *reference sets*, A and B. A and B
+      are never shrunk below the contrast set's size, since smaller reference sets would inflate r, and so τ, and push
+      a real fall towards *refuted*. Only an animal with n = 0 is left out, and it is counted.
+    - **The quiescent fraction.** Each animal's quiescent fraction, S / (S + U) from the behavioural labels, is
+      reported beside the verdict, and so is that of any animal left out, so that a verdict shows which sleepers it
+      speaks for.
+    - **The cap is still a feasibility risk**: in lethargus, bouts of quiescence and of motion alternate, each lasting
+      1–100 s ([pace.md](../research/pace.md), lethargus), and active bouts shorter than W are dropped, so n may be
+      small in the deepest sleepers, and too few animals may be left.
+    - **Trials.** Stimulus trials are assigned the same way: in each animal, n = min(sleep trials, ⌊wake trials / 3⌋)
+      trials of each state, the sleep trials drawn by a fixed seed when n is smaller than their number, and the wake
+      trials split by a fixed seed into a contrast set and two reference sets of n each.
+    - *The text before the amendment*, kept visible: "In each animal, the wake windows are split by a fixed seed into
+      three disjoint sets: the *contrast set*, as many windows as the animal has in sleep; and two *reference sets*, A
+      and B, of the same size each. **The window budget.** An animal therefore needs at least three times as many
+      usable wake windows as sleep windows. One that cannot supply them gets no verdict and is counted. A and B are
+      never shrunk [...]"; and for trials, "a contrast set, as many as the animal's sleep trials, and two reference
+      sets of the same size each, under the same threefold budget". Why it changed: that exclusion kept only the
+      animals that sleep least, so a *refuted* could have meant "refuted in the lightest sleepers" (the second agent's
+      review 5791110656 on pull request 229; journal of 2026-11-05, § Verifiers' Nits from Tonight's Merged Pull
+      Requests).
     - **What each choice uses.** The contrast uses only the contrast sets. The units' wake-SNR floor, the thresholds, K
       and τ use only A and B, as do the controls.
-    - **The exceptions.** Three things use the contrast's own sleep windows, since every sleep window is in the
+    - **The exceptions.** Three things use the contrast's own sleep windows, since every sleep window used is in the
       contrast: the sleep-SNR floor that decides which units are kept, the matching target (each unit's sleep SNR) and
       the source of the empirical noise. The matching target and the noise source are inherent to noise matching. The
       floor is a selection on sleep's values, and it keeps units with more variance in the sleep windows being
