@@ -263,6 +263,15 @@ found lives in the journal section it names; this list keeps only what is open.
     if none opens; (b) then, in a notebook, H17's noise check, noise-only and positive controls on the reference windows, and
     only if they pass, LZc (not PCI) against noise-matched wake on one recording, by H17's pre-registered rules,
     exploration only.
+14. **A reflex stack as the first scored creature**, a candidate, from
+    [H16](docs/hypotheses/README.md#h16-a-reflex-stack-layered-wirings-no-learned-model): a Program of fixed
+    sensor-to-motor wirings with suppression between layers, a few slow knobs and a few remembered numbers, its
+    latencies and time constants from [pace.md](docs/research/pace.md), every part with a switch that pins it at baseline.
+    Cheap and fully auditable, and the baseline any richer brain must beat. Split before starting: (a) its design and
+    pre-registration: the family, the optimiser's budget per seed, the number of lives, the threshold of flagged
+    measures that refutes R3, and the model registered for R1b and R2; (b) the Program in `crates/`; (c) its lives,
+    read through the Disk reader (item 3 (d2)), fitted on block 1 and compared per measure with a block of the draw not
+    used before; R3's pass side waits on item 2 (e4), R1 and R2 on (e5).
 
 ## To Revisit
 
@@ -403,6 +412,9 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   F16, F17's single objective) and restated; F14's automata lens ready to become a task, F13 after verification,
   F15's worm test to be redesigned (journal of 2026-11-05, § F10-F17
   Planned, and a Triage).
+- 2026-11-05: H16 written, *a hunch* brought by the maintainer from another Claude session: a reflex stack
+  with no learned model gets through the benchmark; refuting outcomes R1-R3 with their pass sides, controls, cost and
+  pace rule; Brooks 1986, Kato et al. 2015 and the book's catalogue record checked at the source; item 14 added.
 - 2026-11-04: item 2 (c), the stored durations and frequencies recomputed from the published speed: 600 of 600
   recording-modes of block 1 equal to the last bit; the lab's speed against them in a second table (journal of
   2026-11-04, § The Published Durations and Rates: Reproduced Exactly Over Block 1).

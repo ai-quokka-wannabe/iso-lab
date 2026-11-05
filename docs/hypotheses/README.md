@@ -387,6 +387,167 @@ one to three body seeds per layout and no benchmark; each is stated no more stro
   −0.0014 to +0.0052); eight of ten lean its way and one, 82300, is clearly worse (descriptive). § The Constant Floor on Ten Fresh Rich
   Layouts.
 
+### H16. A Reflex Stack: Layered Wirings, No Learned Model
+
+*A hunch*, brought by the maintainer from another Claude session, 2026-11-05. It arrives with that source's track
+record: the same source's earlier hunch of graded slow knobs was not supported on the toy worm in its graded half
+(H14, *Tested so far*).
+
+- **The claim.** The worm's brain is roughly a layered control system of the kind Brooks described for a mobile robot,
+  mixed with the direct sensor-to-motor wirings of Braitenberg's vehicles: a few wirings from senses to muscles give
+  approach and avoidance; higher layers suppress lower ones; the world serves as its own model, so no map or learned
+  model of the world is kept; and a few slow, hunger-like knobs and a few remembered numbers complete it. A Program
+  built that way, and nothing more, gets through the worm's benchmark.
+- **What counts as what**, fixed here before any design so that the line cannot move after a result.
+    - A *wiring* is a fixed mapping from senses to actions, its parameters set before a life and never changed in it.
+      Adaptation inside a sense pathway counts as part of its wiring only if its time constant is cited and is at most
+      3 s. The bound is the longest sensory timescale in [pace.md](../research/pace.md) § Touch: Liu et al.'s suggestion
+      that the animal integrates "over approximately 3 s" before reversing - an integration window, not an adaptation
+      constant, used here only as a ceiling - beside the receptor currents' adaptation over "a few tens of
+      milliseconds"; it lies far below the shortest fitted time constant of an internal state there, 75 s for
+      roaming. Adaptation states are reported in a count of their own.
+    - A *slow knob* or *remembered number* is a scalar written by the creature's experience, with a named counterpart in
+      a cited source and an update rule taken from that source (a preferred temperature, adapting over "several hours"
+      by [Hedgecock and Russell 1975](https://doi.org/10.1073/pnas.72.10.4061); a hunger state). Any experience-written
+      state slower than the 3 s bound is one of these, never adaptation. A stack may hold at most N = 8 of them in all.
+    - A *learned model of the world* is any other experience-written state that is indexed by place or heading, or is
+      updated to reduce the error of predicting a future sense value, or takes the experience-written state past
+      K = 8 numbers. K counts every experience-written number except the adaptation states: the N knobs and remembered
+      numbers included, so a stack at K holds nothing else written by experience.
+    - The order in which a state is classed, each step applying only to what the steps before left: *first*, a cited
+      adaptation of at most 3 s inside a sense pathway is wiring; *then*, a scalar with a named, cited counterpart and
+      an update rule taken from that source is a remembered number, whatever its rule minimises; *then*, any other
+      experience-written state that is indexed by place or heading, or is updated to reduce a prediction error, or
+      takes the total past K, is a model. Indexing by place or heading makes a state a model even when each of its
+      scalars is cited: a map of cited numbers is still a map. An experience-written state that none of these steps classes - uncited, not
+      indexed, not predictive and within K - is not allowed in a stack: the claim is these parts "and nothing more".
+    - K, N and the 3 s bound are chosen now, as bounds of the hunch's own size, not derived from a source.
+- **What the sources say, and what they do not.** Brooks's abstract describes "[l]ayers of control system" built "to
+  let the robot operate at increasing levels of competence", made of "asynchronous modules that communicate over
+  low-bandwidth channels", in which "Higher-level layers can subsume the roles of lower levels by suppressing their
+  outputs" while "lower levels continue to function as higher levels are added"
+  ([Brooks 1986](https://doi.org/10.1109/JRA.1986.1087032), *IEEE Journal on Robotics and Automation* 2(1):14-23;
+  the abstract as Semantic Scholar serves it). The full text is openly reachable as MIT AI Memo 864
+  ([MIT DSpace](https://dspace.mit.edu/bitstream/1721.1/6432/2/AIM-864.pdf), CC BY-NC by Semantic Scholar's record),
+  the memo rather than the journal version; it was not read. The same abstract foresees the robot "building maps of
+  its surroundings". The phrase "the world is its own best model" is commonly traced to a later paper,
+  [Brooks 1990](https://doi.org/10.1016/S0921-8890(05)80025-9), *Elephants don't play chess*, *Robotics and Autonomous
+  Systems* 6(1-2):3-15: a lead: its Crossref record was checked, the phrase itself not, so the lab is not sure of the
+  attribution. Of Braitenberg's book ([Braitenberg 1984](https://openlibrary.org/isbn/0262022087),
+  *Vehicles: Experiments in Synthetic Psychology*, MIT Press, Cambridge, Mass., x + 152 pages, ISBN 0-262-02208-7) only
+  the catalogue record was read; that its vehicles are direct sensor-to-motor wirings giving approach and avoidance is
+  how the book is commonly described, not checked here. That the worm's brain is built this way has no source; it is
+  the hunch.
+- **Why it might hold.** Only a lead, from a toy world, and none of it evidence about *C. elegans* (the journal of
+  2026-11-04 says so of its own results). On the toy worm the lateral sense named the warmer side in 0.986 of scored
+  decisions, and a turn towards the band's temperature also turned towards the nearest patch in 0.945; descriptively,
+  the turn's correctness followed the map's choice, which pointed the band's way in 0.513 (0.424 to 0.619). Whether the
+  map is what fails was registered as H-map and is *undecided* by its own rule, its interval reaching past 0.6
+  (journal of 2026-11-04, § Does the Greedy Rule's Direction Fail? Each Steering Decision Scored;
+  [gr-fec.md § 12](../research/gr-fec.md#12-why-the-demystification-stalled-a-post-mortem-2026-11-04)). So the senses
+  and the geometry did not fail there; the map is not shown to have failed, and nothing shows that a worm without a map
+  would succeed, which is this hunch's claim and untested.
+- **How it differs from its neighbours.** H1 is one such wiring and H2 the switching between a few states; H12 keeps a
+  small memory written while the creature lives, and H14 a remembered set point. H16 claims the sufficiency of the
+  plainest of these: wirings, suppression between layers, slow knobs and a few numbers, with no learned model of the
+  world at all.
+- **Two neighbours, recorded and not part of the claim.** The same conversation likened the worm's switching between a
+  few command states to the decide step of a sense-decide-act cycle such as Soar's
+  ([Laird, Newell and Rosenbloom 1987](https://doi.org/10.1016/0004-3702(87)90050-6); only the Crossref record read).
+  In the worm, brain-wide calcium imaging found a brain state that "evolves on a cycle" whose segments map "to the
+  animals' major motor commands", assembling them into "a string of run-and-turn action sequence cycles"
+  ([Kato et al. 2015](https://doi.org/10.1016/j.cell.2015.09.034), *Cell* 163(3):656-669; abstract, Europe PMC). One
+  brain-wide, coordinated cycle sits uneasily beside independent layers that suppress one another: if that is how the
+  worm selects its commands, a stack of layers may at best describe it coarsely, a point against the hunch's literal
+  form. The conversation judged a joint-embedding predictive architecture
+  ([Assran et al. 2023](https://arxiv.org/abs/2301.08243), arXiv record read) more likely to fit the fly or rat rung
+  than the worm's.
+
+*Predicts*: a reflex stack - wirings, suppression between layers, and at most N slow knobs and remembered numbers, as
+defined above - reproduces the reference statistics at the worm's pace, and adding a learned model of the world to it
+gains nothing the benchmark can detect.
+
+*The search, fixed before any run.* "A better stack exists" must not dodge a result, so the stack is one family, the
+architecture registered in STATE.md item 14 (a) before any life, fitted by one optimiser over five optimiser seeds with
+a budget of evaluations per seed stated in item 14 (a) before the first fit, the same for every arm below; the
+reported stack is the best of the five on the development data. A refutation holds for that family and budget, and a
+new family is a new test, registered as such.
+
+*Refuted*, each with its pass side:
+
+- **R1a, sufficiency, on the frozen benchmark** (STATE.md item 2 (e5)). Refuting: the stack, so searched, fails the
+  benchmark by its frozen pass rule - whatever any other Program does. Pass side: it passes.
+- **R1b, whether a model is what is missing**, read only when R1a refutes. A Program of no more than ten times the
+  stack's size, the stack with a registered learned model added (as R2), searched with the same budget, passes:
+  evidence that the model is what the stack lacked. If none passes, R1b is undecided and R1a's refutation stands; if
+  only a model-carrying Program of more than ten times the size passes, R1b is undecided too, and that is recorded
+  beside the sizes, the lean rule preferring neither until a leaner one passes.
+- **R2, adding a model.** The model is chosen and registered before the run: its kind (a map of places, or a predictor
+  of a sense), its size and its update rule. Its *positive control*: it must be shown to work on its own terms - a
+  map's accuracy computed by an evaluation tool from the world's ground truth, which never reaches the brain, above a
+  chance baseline registered with it; a predictor's error below a no-change prediction's, with the interval of the
+  difference excluding zero. If the control fails, R2 is undecided, never a pass. Refuting: with the control passed,
+  the stack plus model scores better than the stack alone on the frozen benchmark beyond the score's interval. Pass
+  side: the model's addition is not detected to help, with the size of help the interval excludes stated. "Score"
+  means the frozen benchmark's score, which does not exist before (e5); before then R2 can be run only in R3's partial
+  form, as a description, never as a verdict.
+- **R3, a partial test before the freeze.** Until (e5) the benchmark has no pass rule, so nothing here can pass it.
+  What can be run is the per-measure comparison (`benchmark::compare`, Cramér-von Mises per measure with Holm's
+  correction) and the classifier test (`benchmark` (e1)) between Grid lives and real worms. The stack's free parameters
+  are fitted against block 1's reference statistics, with the search above, and judged against a block of the seeded
+  draw neither fitted on nor used before - not block 1, and not block 2, already used in item 2 (e3). Blocks 1 and 2
+  were not told apart (e3), so a held-out block guards against fitting a block's sampling noise, not against fitting
+  the population. The number of free parameters fitted is reported beside the 27 measures. Refuting, provisionally:
+  more measures flagged than a threshold fixed in the journal before the run (item 14 (a)), after the full search,
+  whatever any other Program does; a model-carrying Program given the same search is read as in R1b, provisionally. Pass side, provisionally: with at least a number
+  of lives fixed in item 14 (a), no measure flagged and the classifier not telling the lives from the held-out block,
+  reported with the alteration of each measure the test can detect at that number of lives. That alteration comes from
+  item 2 (e4), still open, so until (e4) lands the pass side cannot be read: a non-detection with an unknown power is
+  not a pass. Even read, it is a partial pass, not a benchmark pass, since the definition may still change. Reaction
+  latencies are not in these recordings, which are of spontaneous behaviour, so they wait on stimulus assays
+  ([pace.md § For the Lab](../research/pace.md#for-the-lab)).
+
+*Baselines and controls*:
+
+- the placeholder Program (`crates/placeholder-worm`, which undulates only), the floor;
+- the stack with each wiring, layer, knob and remembered number pinned at baseline in turn, by the lab's ablation rule,
+  a part being kept only if its removal costs the stack on a measure;
+- the *sense-blind control*: the stack with each sense channel replaced by a surrogate signal that matches that
+  channel's distribution of values and its autocorrelation over the stack's own lives, with no relation to the world:
+  an amplitude-adjusted Fourier-transform surrogate of the recorded channel, after
+  [Theiler et al. 1992](https://doi.org/10.1016/0167-2789(92)90102-S) (*Physica D* 58:77-94; the Crossref record
+  checked, the paper not read). It is "near the floor" if its count of
+  flagged measures under R3 is at least halfway from the stack's count to the placeholder's. If it does not fall, the
+  measures of these spontaneous recordings carry little that the senses drive, and a partial pass under R3 then says
+  little about the wirings: it would test the rhythm and the switching of states, with the wirings left to the stimulus
+  assays (item 11). That reading is written here, before any run;
+- the stack plus a registered learned model, for R1b and R2;
+- the real-against-real result of item 2 (e3), block 1 against block 2 not told apart, as the test's own control that
+  two samples of real worms pass.
+
+*Lean-brain cost*: an estimate, not yet a measurement - tens to hundreds of numbers and of the order of a hundred
+arithmetic operations a tick, far inside H12's bound of about 100 000 numbers. Its size, and its compute and memory
+per simulated second, are reported beside every score.
+
+*The pace rule*: every wiring's latency and every knob's time constant is taken from a cited value in
+[pace.md](../research/pace.md) (§ Reaction Latencies, § Time Constants of Internal States) and counted in the Grid's
+31.25 ms ticks, rounded up to a whole tick, so that no wiring acts sooner than the worm: a latency under one tick takes
+one tick, and every other is less than one tick slower than its source. Each latency is built from the source's
+central value, rounded up to whole ticks, with any spread the source reports. Where an assay measures the creature's
+latencies, two checks follow: its central value and its 10th percentile are each no faster than the source's (the
+10th percentile only where the source reports a distribution); and its central value is no slower than the source's by
+more than one tick plus the source's stated uncertainty. A wiring whose latency pace.md does not yet source
+takes, provisionally, the latency of the sourced pathway it is named after in item 14 (a)'s design, is marked
+unsourced, and is not scored on its latency until pace.md sources it.
+
+*Why it is a strong candidate for the lab's first scored creature*: it is cheap, every decision can be traced to the
+one wiring or layer that made it, and it is the natural baseline any richer brain must beat on the benchmark.
+
+*Waits on*: a Program that runs on the Grid with such a stack; the Disk reader, to extract the same features from its
+lives, now on STATE.md's *Next* as item 3 (d2) by the maintainer's ruling of 2026-11-05 ("Reuse Master Control"); item
+2 (e4), for R3's pass side; and, for R1 and R2, the frozen benchmark, item 2 (e5).
+*Tested so far*: nothing.
+
 ### H17. Consciousness Science's Measures, Applied to a Sleeping Worm
 
 *A hunch*, the maintainer's (2026-11-05): "why not try to measure consciousness directly? let's go bold and not be afraid
