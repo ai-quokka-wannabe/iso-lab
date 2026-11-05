@@ -157,8 +157,8 @@ A reference recording lasts 15 minutes, 900 s, by the protocol (most do; see *Un
 
 ## Decisions
 
-Questions of the comparison space that are settled, moved here from *Open Questions Before Freezing* by the
-maintainer's ruling in the session of 2026-11-05.
+Questions of the comparison space that are settled. The maintainer approved this section in the session of
+2026-11-05; the lab chose which items to move here from *Open Questions Before Freezing*.
 
 - **Which speed the locomotion states are computed from: decided (journal of 2026-10-30, § One Instrument for Both
   Bodies' Locomotion States).** Both bodies' forward, backward and paused states are computed by the lab's one

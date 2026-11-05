@@ -550,7 +550,7 @@ undecided (J11-04 § Does the Greedy Rule's Direction Fail?).
 ### 12.4 Recommendations, for the maintainer to decide
 
 Decided by the maintainer's ruling in the session of 2026-11-05: "Pause + equations". Recommendations 1-3 are adopted,
-and the steps they set are STATE.md item 8 (e)-(g); recommendation 4 was not part of the choice.
+and the steps they set are STATE.md item 8 (e)-(h); recommendation 4 was not part of the choice.
 
 1. **Pause** the steering-gate and hunger-gain series.
 2. **Return to the equations.**

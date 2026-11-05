@@ -169,7 +169,9 @@ found lives in the journal section it names; this list keeps only what is open.
    - (e) the steering term in the turning theory, as a notebook first: drift predicted from the share of decisions
      pointing home, the lateral sense's noise and the turn's size (gr-fec.md § 12.4, recommendation 2);
    - (f) its validation on a fixed map imposed by the evaluator, so the map's share is known, not learned;
-   - (g) the pre-registered test of "demystified" (recommendation 3): from the equations alone, with no search, choose
+   - (g) the fixed-point test that was never run (recommendation 2): the learning layer's learned weights against the
+     least-squares fit of reward on the worm's own features (gr-fec.md § 12.2);
+   - (h) the pre-registered test of "demystified" (recommendation 3): from the equations alone, with no search, choose
      the genes for a stated target and hit it within ±10% on held-out layouts.
 
    Once a calculation matters to anything the lab builds on, it moves into tested Rust.
@@ -357,14 +359,14 @@ The latest night only, one line a task; earlier nights are in [the journal](docs
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
 - 2026-11-05: the maintainer's eleven rulings of that day's session recorded where each question lives (journal of
-  2026-11-05, § The Maintainer's Rulings of 2026-11-05): the toy-worm series paused for the equations (item 8 (e)-(g)),
+  2026-11-05, § The Maintainer's Rulings of 2026-11-05): the toy-worm series paused for the equations (item 8 (e)-(h)),
   the Disk read through Master Control's crate (item 3 (d2a)-(d2c)), the salt and odour units, the odour reference,
   the terraced floor, the journal index, the spelling pointer, the version comments, FEATURES.md § Decisions, the salt
   letter to draft (item 11 (b2)) and the tap interval to the literature (item 12).
 - 2026-11-05: item 9 (h), the three audits: no spelling violation, Rust and notebooks clean; fixed the stale
   benchmark status in README.md and both diagrams (redrawn by `notebooks/figures.ipynb`), PLAN.md's copied list of
   senses, FEATURES.md's gaps and plane rows, CONTRIBUTING.md's second table of documents, four inline comments in
-  `cleanup_caches.yml`, and two journal references by dated notes; three questions for the maintainer (*To Revisit*).
+  `cleanup_caches.yml`, and two journal references by dated notes; three questions for the maintainer (*To Revisit*) (since ruled on, 2026-11-05).
 - 2026-11-05: item 11 (d2), partly: four odour measures drafted (speed, turn rate by bearing, curvature against
   bearing, the bearing's distribution), none using a concentration's size; the authors' script read and found to
   differ from their paper in six rules ([docs/benchmark/ODOUR_MEASURES.md](docs/benchmark/ODOUR_MEASURES.md)).
@@ -413,5 +415,5 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   unsensed until ABI 13, the gases not at all; two CC BY 4.0 datasets of tracks found (salt and odour, both from the
   Leifer lab), none for thermotaxis in one search; order salt, odour, heat, aerotaxis.
 - 2026-11-04: item 8, a post-mortem of the toy-worm series from the record, why it stalled and what stands, with
-  recommendations awaiting the maintainer
+  recommendations awaiting the maintainer (since ruled on, item 8)
   ([gr-fec.md § 12](docs/research/gr-fec.md#12-why-the-demystification-stalled-a-post-mortem-2026-11-04)).
