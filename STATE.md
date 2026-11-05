@@ -9,9 +9,8 @@ of the toy-worm series, read from the record, with recommendations for the maint
 ([gr-fec.md § 12](docs/research/gr-fec.md#12-why-the-demystification-stalled-a-post-mortem-2026-11-04)); and a plan for the stimulus assays the world's new fields open
 ([docs/benchmark/STIMULI.md](docs/benchmark/STIMULI.md)); and block 1's real worms and block 2's, unseen, were found
 indistinguishable by the benchmark's two tests, with a positive control told apart. Earlier
-nights are in [the journal's index](docs/journal/README.md). The next steps for Phase 0 are item 2 (c)'s follow-ups
-(`provisional_` dropped from the profile's columns, the lone-edge-event exception, an interval on the lab-against-published
-ratios) and (e4), how large an alteration the test can see.
+nights are in [the journal's index](docs/journal/README.md). The next step for Phase 0 is (e4), how large an alteration the
+test can see.
 
 ## Where We Are
 
@@ -20,8 +19,7 @@ recordings ([data/README.md § The Phase 0 Survey](data/README.md#the-phase-0-su
 literature note says how worm behaviour is measured. The comparison space is drafted
 ([docs/benchmark/FEATURES.md](docs/benchmark/FEATURES.md)): which measures carry over to the Grid's body, and what
 must be settled before the benchmark is frozen, food first. The Rust workspace reads the reference recordings and computes
-their measures - posture, speed, the locomotion states and the eigen-shape amplitudes, the durations and rates from
-the lab's speed still provisional until item 2 (c)'s check - with the reference statistics
+their measures - posture, speed, the locomotion states and the eigen-shape amplitudes, the durations and rates - with the reference statistics
 over block 1 and their gaps by cause; the benchmark's test is built (item 2 (e1), (e2)) and run on real data
 alone (e3): two blocks of real worms are not told apart, and a stated alteration is; and the arena is proven to a
 first life: a placeholder Program, which undulates only, lived fifteen minutes on the Grid and its world replays
@@ -63,15 +61,18 @@ found lives in the journal section it names; this list keeps only what is open.
      [behaviour-measures.md § How the Toolbox Turns States Into Durations and Rates](docs/research/behaviour-measures.md#how-the-toolbox-turns-states-into-durations-and-rates)).
      From the published speed they reproduce the stored durations and frequencies exactly, in 600 of 600
      recording-modes of block 1 (journal of 2026-11-04, § The Published Durations and Rates: Reproduced Exactly Over
-     Block 1; `stored-events <block>`). The lab's speed gives a median 0.97 of the stored forward events and 0.91 of the
-     paused, backward as many. Next: drop `provisional_` from `features::profile`'s columns; whether any recording-mode
-     exercises the lone-edge-event exception; an interval on the lab-against-published ratios, and whether they matter
-     for the benchmark;
+     Block 1; `stored-events <block>`). The follow-ups are done (journal of 2026-11-05, § Item 2 (c)'s Follow-Ups: the
+     Results): no recording-mode of block 1 exercises the lone-edge-event exception, so block 1 cannot tell the Python
+     toolbox from its MATLAB original that way; the lab's speed gives fewer forward and paused events, and shorter events in every mode, than the published
+     (median forward count 0.970, 95% bootstrap interval 0.959-0.979; paused 0.909, 0.897-0.927), but every shift lies
+     within ±0.25 of block 1's interquartile range, *negligible* by the registered threshold, which (e4) is to replace
+     (`event-ratios`); and `provisional_` is dropped from `features::profile`'s columns, values unchanged, not a
+     definition change since nothing is frozen or scored. Open from it: whether the lab's speed reads a Grid worm's
+     events as it reads the stored skeletons, in item 3 (d2c);
    - (d) the reference statistics, split into runs (the maintainer's request, 2026-10-31, to build the benchmark
      next; journal of 2026-10-31, § The Benchmark, Split Into Runs):
        - (d1) one row of measures per recording, done (journal of 2026-10-31, § One Row of Measures per Recording:
-         Built, and Run on Block 1): `features::profile` and `profiles <block>`, its durations and rates provisional
-         until (c)'s check passes;
+         Built, and Run on Block 1): `features::profile` and `profiles <block>`;
        - (d2) the reference statistics over block 1, done (journal of 2026-11-03, § The Reference Statistics of Block
          1): `features::eigenshapes`, `benchmark::reference` and `reference-stats <block>`; the 17 short recordings
          are recordings of the same protocol, 16 of them of five minutes from the summer of 2009, and the rule stands (§ The
@@ -121,7 +122,9 @@ found lives in the journal section it names; this list keeps only what is open.
      recursively in both workflows; and one test, seen failing first, that opens a Disk through `replay_open`;
    - (d2b) the Disk reader in `features`: a life's frames polled from a Disk into the creature's poses per tick, in
      tested Rust;
-   - (d2c) the same features extracted from the placeholder's Disk, and the share of refused intents measured.
+   - (d2c) the same features extracted from the placeholder's Disk, and the share of refused intents measured; and
+     whether the lab's speed reads a Grid body's events as it reads the stored skeletons, whose uneven spacing makes it
+     find fewer forward and paused events (item 2 (c)).
 4. **Read the quantum-like Program's sources, then test it again**: read Noest 1988, Jankowski, Lozowski and
    Zurada 1996 and Kobayashi 2017 at the source (H10 cites them unread), check the first test's attribution of its
    update rule, then run the next test under *To Revisit* with a finer grid, more cues, a symmetric success rule and
@@ -391,6 +394,9 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
 - 2026-11-05: the verifiers' non-blocking points on tonight's merged pull requests landed, among them H17's window
   budget amended before any data, to cap each animal's contrast, with a floor of five windows, rather than exclude it (journal of 2026-11-05,
   § Verifiers' Nits from Tonight's Merged Pull Requests).
+- 2026-11-05: item 2 (c)'s follow-ups (journal of 2026-11-05, § Item 2 (c)'s Follow-Ups: the Results): the lone-edge
+  exception unexercised in block 1; the lab-against-published ratios given intervals, all shifts within ±0.25 IQR;
+  `provisional_` dropped from the profile's columns, values unchanged.
 - 2026-11-05: the maintainer's eleven rulings of that day's session recorded where each question lives (journal of
   2026-11-05, § The Maintainer's Rulings of 2026-11-05): the toy-worm series paused for the equations (item 8 (e)-(h)),
   the Disk read through Master Control's crate (item 3 (d2a)-(d2c)), the salt and odour units, the odour reference,
