@@ -8,12 +8,14 @@ name: Cleanup GitHub Actions Caches
 # lingered until GitHub's own eviction (seven days unused, or the 10 GB per-repository limit).
 on:
     workflow_run:
-        workflows: ["CI - Main Branch"] # Prune only after a main build has refreshed the live set.
+        # Prune only after a main build has refreshed the live set.
+        workflows: ["CI - Main Branch"]
         types: [completed]
         branches: [main]
 
     pull_request:
-        types: [closed] # Reclaim the caches scoped to a pull request once it is done.
+        # Reclaim the caches scoped to a pull request once it is done.
+        types: [closed]
 
     workflow_dispatch:
         inputs:
@@ -38,7 +40,8 @@ jobs:
             cancel-in-progress: false
 
         permissions:
-            actions: write # Required to delete caches.
+            # Required to delete caches.
+            actions: write
             contents: read
 
         steps:
@@ -61,7 +64,8 @@ jobs:
         timeout-minutes: 5
 
         permissions:
-            actions: write # Required to delete caches.
+            # Required to delete caches.
+            actions: write
             contents: read
 
         steps:
