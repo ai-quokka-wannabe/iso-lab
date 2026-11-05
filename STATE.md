@@ -118,9 +118,10 @@ found lives in the journal section it names; this list keeps only what is open.
    a keep-the-state rule for ties.
 5. **Plan an experiment for every one of Matej's 128 ideas and hunches** - the maintainer's request - in the format
    of [docs/hypotheses/experiments/README.md](docs/hypotheses/experiments/README.md), whose index shows which are
-   planned. Next, one task each, in this order: **E11-E20** (E1-E10 are planned), **F** (17), **G** (30, from the gr-fec sandbox;
+   planned. Next, one task each, in this order: **F** (17; A to E are planned), then **G** (30, from the gr-fec sandbox;
    [docs/research/gr-fec.md](docs/research/gr-fec.md) has its numbers). The journal records the triage, and hunches
-   that survive are promoted into numbered hypotheses or tasks here.
+   that survive are promoted into numbered hypotheses or tasks here; E15, E11, E16 and E20 are the candidates from E11-E20
+   (journal of 2026-11-05, § E11-E20 Planned, and a Triage).
 6. **Audit H10's first test by A12's plan**
    ([docs/hypotheses/experiments/A9-A15.md § A12](docs/hypotheses/experiments/A9-A15.md#a12-experiment-hygiene)):
    planted copies prepared by one agent and audited, blind, by another that has read neither that test's review nor
@@ -358,6 +359,9 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   worm's tracks 1.04 GB of 1.29 GB, centroids from about six experiments; its measures against bearing probably stand for
   still air, its concentrations do not; not adopted (journal of 2026-11-05, § The Odour Dataset: Its Methods and What
   the Archive Holds).
+- 2026-11-05: item 5, hunches E11-E20 planned ([E11-E15.md](docs/hypotheses/experiments/E11-E15.md),
+  [E16-E20.md](docs/hypotheses/experiments/E16-E20.md)); E15, E11, E16 and E20 ready to become tasks, the rest wait on a
+  Program, senses the Grid lacks or worm sources (journal of 2026-11-05, § E11-E20 Planned, and a Triage).
 - 2026-11-04: item 2 (c), the stored durations and frequencies recomputed from the published speed: 600 of 600
   recording-modes of block 1 equal to the last bit; the lab's speed against them in a second table (journal of
   2026-11-04, § The Published Durations and Rates: Reproduced Exactly Over Block 1).
