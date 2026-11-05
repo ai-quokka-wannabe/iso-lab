@@ -488,11 +488,24 @@ fetched, and revised twice, before any data, after the second agent's reviews of
       down to whole frames and at least 10 s, set from the behavioural labels alone.
     - Each bout is cut into non-overlapping windows; bouts shorter than W are left out and counted.
     - In each animal, the wake windows are split by a fixed seed into three disjoint sets: the *contrast set*, as many
-      windows as the animal has in sleep; and two equal *reference sets*, A and B, from what is left.
-    - The contrast uses only the contrast set. Every choice made from data - units kept, thresholds, τ - uses only A
-      and B, so no choice can select on the values being compared.
-    - An animal without enough wake windows for A and B is left out and counted. With fewer than six animals left, the
-      dataset is described and given no verdict.
+      windows as the animal has in sleep; and two *reference sets*, A and B, of the same size each.
+    - **The window budget.** An animal therefore needs at least three times as many usable wake windows as sleep
+      windows. One that cannot supply them gets no verdict and is counted. A and B are never shrunk, since smaller
+      reference sets would inflate r, and so τ, and push a real fall towards *refuted*. This budget is a feasibility
+      risk: in lethargus, bouts of quiescence and of motion alternate, each lasting 1–100 s
+      ([pace.md](../research/pace.md), lethargus), and active bouts shorter than W
+      are dropped, so it may leave fewer than six animals.
+    - **Trials.** Stimulus trials are assigned the same way. In each animal, wake trials are split by a fixed seed into
+      a contrast set, as many as the animal's sleep trials, and two reference sets of the same size each, under the
+      same threefold budget.
+    - **What each choice uses.** The contrast uses only the contrast sets. The units' wake-SNR floor, the thresholds, K
+      and τ use only A and B, as do the controls.
+    - **The exceptions.** Three things use the contrast's own sleep windows, since every sleep window is in the
+      contrast: the sleep-SNR floor that decides which units are kept, the matching target (each unit's sleep SNR) and
+      the source of the empirical noise. The matching target and the noise source are inherent to noise matching. The
+      floor is a selection on sleep's values, and it keeps units with more variance in the sleep windows being
+      compared. It favours sleep's values, so it can only work against *tracks the state*.
+    - With fewer than six animals left, the dataset is described and given no verdict.
 - *Why noise matters.* Sleep lowers activity (Nichols et al. 2017). In calcium traces, lower activity at the same
   indicator noise means a lower signal-to-noise ratio (SNR), and that alone can move every measure. Independent noise
   tends to pull Φ\* towards zero, and binarised noise looks complex. Z-scoring and surrogates do not remove this.
@@ -537,6 +550,10 @@ fetched, and revised twice, before any data, after the second agent's reviews of
       *tracks the state*. It cannot catch a bias smaller than τ.
     - So the mean Δ over the replicates is also taken as the pipeline's bias, b. The real verdict then needs a fall
       beyond −τ + min(0, b): a negative bias raises the bar by its own size.
+    - b is one-sided. A positive bias, towards rises, is ignored, which leans the verdicts towards *refuted*; that is
+      the side a hunch under test should err on.
+    - b carries no uncertainty of its own into the interval. Its replicates differ only in noise draws on B's animals,
+      so it estimates the pipeline's bias for those animals, not for a population. This is a stated limitation.
 - *Two positive controls*, on B: synthetic sleep at the matched SNR, (i) with the structure across units destroyed (each
   unit phase-randomised on its own), where Φ\* must fall; and (ii) with every unit driven by one shared slow trace,
   where LZc must fall. If a positive control does not show its fall, the measure has no verdict.
@@ -544,8 +561,9 @@ fetched, and revised twice, before any data, after the second agent's reviews of
     - **LZc.** Each unit's noise-matched trace is binarised at its own median within the window. The complexity is
       divided by its mean over twenty surrogates, each unit phase-randomised independently from the same noise-matched
       trace, so that noise's spectrum is in both the measure and its denominator.
-    - **Φ\***. Each unit is z-scored per window. The covariance and lag-one covariance are pooled over an animal's
-      windows in a state, because a single window may hold only a few tens of samples, too few to support them.
+    - **Φ\***. Each unit is z-scored per window. The covariance and lag-one covariance are computed within each window,
+      never across the join of two windows, and pooled over an animal's windows in a state, because a single window may
+      hold only a few tens of samples, too few to support them.
     - **The units Φ\* uses.** Its K units are those with the highest wake SNR on set A, with K at most a tenth of the
       pooled samples per state. If that leaves fewer than four units, Φ\* has *no verdict until longer recordings*.
     - **Φ\*'s surrogates** are a check that they come out near zero.
