@@ -254,6 +254,15 @@ found lives in the journal section it names; this list keeps only what is open.
     2026-11-05, on whether a 2 s tap interval is right for the benchmark's assay (*To Revisit*, H13): read the
     tap-habituation papers at their source and propose an interval, each figure cited, for the maintainer to rule on.
     Leads: [pace.md](docs/research/pace.md)'s tap-habituation entries.
+13. **H17's first run, the worm's sleep through consciousness science's measures** (the maintainer's hunch,
+    [H17](docs/hypotheses/README.md#h17-consciousness-sciences-measures-applied-to-a-sleeping-worm)): (a) find whole-brain
+    imaging of *C. elegans* across sleep and wake that the lab may use - Nichols et al. 2017's data statement (the paper
+    is closed: try an author's manuscript, the supplement, the Zimmer laboratory's deposits), then Skora, Mende and
+    Zimmer 2018 and Chang et al. 2023 and 2025, and as a lead Luppi et al. 2025's compiled nematode wake and anaesthesia
+    recordings (not sleep) - and register one with its licence and checksum in data/README.md; park with what was tried
+    if none opens; (b) then, in a notebook, H17's noise check, noise-only and positive controls on the reference windows, and
+    only if they pass, LZc (not PCI) against noise-matched wake on one recording, by H17's pre-registered rules,
+    exploration only.
 
 ## To Revisit
 
@@ -289,6 +298,12 @@ the idea for the next attempt.
   see whether the gain arrives as sampling noise falls. Whether a 2 s tap interval is right for the benchmark's assay
   goes to the literature first, by the maintainer's ruling in the session of 2026-11-05 (item 12). For the benchmark: its comparison space should hold
   state-conditioned rates, bout lengths and whole distributions, not only means.
+
+- **For the maintainer**, from H17 (journal of 2026-11-05, § H17: Consciousness Science's Measures on a Sleeping
+  Worm): whether perturbing a Program by writing into its internal state, rather than through its senses, sits within
+  *No cheating*. For: real brains are perturbed directly in the lab's own sources (optogenetics; TMS in humans), and a
+  kick carries no world information. Against: it writes into a brain from outside. H17 uses only a sensory pulse until
+  this is ruled.
 
 ## Blocked
 
@@ -362,6 +377,10 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   of step 0.25: L0 held (1.539 against 1.528, tolerance 0.0583), and the hunch is supported by its registered rule: D
   fell from 1.639 to 1.128 as the threshold fell from 0.1 to 0.001 (Δ 0.511, 0.99 interval [0.427, 0.568]), within
   0.25 of the graph's own 1.010; C18's verdict unchanged (journal of 2026-11-05, § C18's Threshold Hunch, Run Again).
+- 2026-11-05: the maintainer's hunch written up as [H17](docs/hypotheses/README.md#h17-consciousness-sciences-measures-applied-to-a-sleeping-worm):
+  PCI, Φ\*, ignition and UAL, each checked at its source's abstract or passages, with a pre-registered
+  sleep-against-wake test, its noise control and its controls; no data yet, the next run is item 13 (journal of 2026-11-05, § H17: Consciousness Science's Measures on a
+  Sleeping Worm).
 - 2026-11-05: item 9 (h), the three audits: no spelling violation, Rust and notebooks clean; fixed the stale
   benchmark status in README.md and both diagrams (redrawn by `notebooks/figures.ipynb`), PLAN.md's copied list of
   senses, FEATURES.md's gaps and plane rows, CONTRIBUTING.md's second table of documents, four inline comments in
