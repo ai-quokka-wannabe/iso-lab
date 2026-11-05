@@ -52,6 +52,7 @@ use std::fmt;
 
 pub mod compare;
 pub mod holdout;
+pub mod ratios;
 pub mod reference;
 
 /// The test's settings.
