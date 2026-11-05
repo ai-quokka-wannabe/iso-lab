@@ -128,18 +128,6 @@ A reference recording lasts 15 minutes, 900 s, by the protocol (most do; see *Un
   half is asked for by issue: food on the floor in
   [master-control#63](https://github.com/ai-quokka-wannabe/master-control/issues/63), a sense of the body's own intake
   in [tron-grid-lite#153](https://github.com/ai-quokka-wannabe/tron-grid-lite/issues/153).
-- **Which speed the locomotion states are computed from: decided (journal of 2026-10-30, § One Instrument for Both
-  Bodies' Locomotion States).** Both bodies' forward, backward and paused states are computed by the lab's one
-  pipeline. Yemini et al.'s rule and thresholds are applied unchanged (`features::states`) to the lab's eight-arc
-  midbody speed and length with the published choices (`locomotion-states --published-choices`), on the reference
-  skeletons, and it will be applied to the Grid's poses alike once a path reads them. The published `motion_modes` are not the reference states.
-    - *Why, and the options weighed*: in the journal entry above. In short, mixing instruments would score a
-      measurement bias as behaviour, and the other single-instrument options would add parameters with no source.
-    - *What it costs*: the reference statistics differ from Yemini et al.'s published states, with more frames in no
-      state and every state's share lower, paused most; the difference is reported beside them.
-    - *What it does not close*: the reference skeletons' tracking noise and gaps (§ The Two Bodies).
-    - *What would reopen it*: the check of durations and reversal rates (STATE.md item 2(c)), if the lab's speed misses
-      the published states there for a cause other than the spacing.
 - **The habituation window.** Yemini et al. tracked 25 wild-type worms for two hours without the usual wait and found
   speed decaying with τ = 19 minutes, midbody amplitude with τ = 48 minutes and crawling frequency with τ = 19
   minutes. The reference recordings start 30 minutes after the worm is moved, so a Grid life must be compared over the
@@ -157,9 +145,6 @@ A reference recording lasts 15 minutes, 900 s, by the protocol (most do; see *Un
   benchmark. A first measurement is in the bend-angle row of *The Measures* above.
 - **The arena.** Path measures depend on the arena's size in body lengths; a plate and the Grid's arena must be
   matched, or path measures restricted to those that do not reach the edge.
-- **Which recordings.** The N2 subset and how it is drawn are fixed by the tool's task (STATE.md item 2), before any
-  statistic is computed: block 1 of the seeded draw ([data/README.md § The Reference
-  Draw](../../data/README.md#the-reference-draw)).
 - **Unequal lengths and frame rates.** The recordings are not all 15 minutes long, nor filmed at one frame rate: 5 and
   120 minutes are among those read so far ([the journal of 2026-10-14 § How Long the Reference Recordings
   Are](../journal/2026-10-14.md#how-long-the-reference-recordings-are)), and frame rates from 25.4 ([§ Reading the
@@ -169,3 +154,24 @@ A reference recording lasts 15 minutes, 900 s, by the protocol (most do; see *Un
   minutes, or otherwise, before any statistic is computed. *Decided* for the reference statistics (journal of
   2026-10-31, § One Row of Measures per Recording: the Rules, Written Before the Data): each recording's first 900 s,
   one whose window is shorter than 855 s excluded, and the frame rate not resampled (`features::profile`).
+
+## Decisions
+
+Questions of the comparison space that are settled, moved here from *Open Questions Before Freezing* by the
+maintainer's ruling in the session of 2026-11-05.
+
+- **Which speed the locomotion states are computed from: decided (journal of 2026-10-30, § One Instrument for Both
+  Bodies' Locomotion States).** Both bodies' forward, backward and paused states are computed by the lab's one
+  pipeline. Yemini et al.'s rule and thresholds are applied unchanged (`features::states`) to the lab's eight-arc
+  midbody speed and length with the published choices (`locomotion-states --published-choices`), on the reference
+  skeletons, and it will be applied to the Grid's poses alike once a path reads them. The published `motion_modes` are not the reference states.
+    - *Why, and the options weighed*: in the journal entry above. In short, mixing instruments would score a
+      measurement bias as behaviour, and the other single-instrument options would add parameters with no source.
+    - *What it costs*: the reference statistics differ from Yemini et al.'s published states, with more frames in no
+      state and every state's share lower, paused most; the difference is reported beside them.
+    - *What it does not close*: the reference skeletons' tracking noise and gaps (§ The Two Bodies).
+    - *What would reopen it*: the check of durations and reversal rates (STATE.md item 2(c)), if the lab's speed misses
+      the published states there for a cause other than the spacing.
+- **Which recordings.** The N2 subset and how it is drawn are fixed by the tool's task (STATE.md item 2), before any
+  statistic is computed: block 1 of the seeded draw ([data/README.md § The Reference
+  Draw](../../data/README.md#the-reference-draw)).

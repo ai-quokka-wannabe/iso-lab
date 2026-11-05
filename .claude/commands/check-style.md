@@ -29,7 +29,8 @@ lint configuration):
 - 4-space structure indentation
 - 2-space continuation from list items
 - Blank lines between top-level keys and between jobs
-- No inline comments
+- No inline comments, except the `# vX.Y.Z` version comment after a SHA-pinned `uses:` line, which Dependabot keeps up
+  to date (the maintainer's ruling in the session of 2026-11-05)
 - GitHub-owned actions only, pinned by full commit SHA
 
 ## JSON

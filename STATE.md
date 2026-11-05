@@ -5,7 +5,7 @@ latest mains - Link protocol 14, Program ABI 12 without the speed over the groun
 its air, heat and floor solutes - with the placeholder rebuilt at ABI 12, the render moved by the attenuation alone, and
 the placeholder's life unchanged; the toy worm's steering decisions, scored against the band, place its failure, by
 elimination, in the map's choice as the greedy rule reads it (its own registered test undecided); and a post-mortem
-of the toy-worm series, read from the record, with recommendations awaiting the maintainer
+of the toy-worm series, read from the record, with recommendations for the maintainer, since ruled on (item 8)
 ([gr-fec.md § 12](docs/research/gr-fec.md#12-why-the-demystification-stalled-a-post-mortem-2026-11-04)); and a plan for the stimulus assays the world's new fields open
 ([docs/benchmark/STIMULI.md](docs/benchmark/STIMULI.md)); and block 1's real worms and block 2's, unseen, were found
 indistinguishable by the benchmark's two tests, with a positive control told apart. Earlier
@@ -58,7 +58,7 @@ found lives in the journal section it names; this list keeps only what is open.
      state than the published one, and the chain of tests that traced why, from 2026-10-14 to 2026-10-15, ends at
      the stored skeletons' uneven spacing, which accounts for most of it (a median 92%) (journal of 2026-10-15, § Do the Undefined Frames Follow From the Spacing?,
      and the sections before it). Decided: both bodies' states come from the published rule applied to the lab's
-     own speed, one instrument for both ([docs/benchmark/FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing)).
+     own speed, one instrument for both ([docs/benchmark/FEATURES.md § Decisions](docs/benchmark/FEATURES.md#decisions)).
      The durations and rates are written to the toolbox's definitions (`features::states::event_stats`;
      [behaviour-measures.md § How the Toolbox Turns States Into Durations and Rates](docs/research/behaviour-measures.md#how-the-toolbox-turns-states-into-durations-and-rates)).
      From the published speed they reproduce the stored durations and frequencies exactly, in 600 of 600
@@ -106,12 +106,22 @@ found lives in the journal section it names; this list keeps only what is open.
          Against Unseen Real: the Results, *The control*);
        - (e5) freezing the definition, which waits on
          [FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing) -
-         food first - and on reading a Disk (*Blocked*).
+         food first - and on reading a Disk (item 3 (d2)).
 3. **Prove the arena**: build Master Control and the Grid from `external/` on Linux with lavapipe, write a placeholder
    Program, live one life and extract the same features from it. Done: (a) Master Control, (b) the Grid,
    (c) the placeholder (`crates/placeholder-worm`), (d1) one life, its Disk and log kept and replayed (journal of
    2026-10-14, § The Arena, Fourth Step: One Life). Open: (d2) the same features extracted from the Disk, which needs a Disk
-   reader in `features`, and the share of refused intents measured; waits on a ruling (see *Blocked*).
+   reader in `features`, and the share of refused intents measured. The route is decided, "Reuse Master Control", by
+   the maintainer's ruling in the session of 2026-11-05 (journal of 2026-11-05, § The Maintainer's Rulings of
+   2026-11-05): depend on `external/master-control` as a crate and reuse its `link_dll` mirror and `replay_open`, which
+   its Clu module uses; CI must then check out the submodules recursively. Route (2), copying the mirror, and route (3),
+   a second decoder, are not taken. One run each:
+   - (d2a) **first**: `external/master-control` as a path dependency of the lab's Rust, its `build.rs` building Link
+     and placing the library beside the lab's binaries and tests; CI's Rust jobs checking out the submodules
+     recursively in both workflows; and one test, seen failing first, that opens a Disk through `replay_open`;
+   - (d2b) the Disk reader in `features`: a life's frames polled from a Disk into the creature's poses per tick, in
+     tested Rust;
+   - (d2c) the same features extracted from the placeholder's Disk, and the share of refused intents measured.
 4. **Read the quantum-like Program's sources, then test it again**: read Noest 1988, Jankowski, Lozowski and
    Zurada 1996 and Kobayashi 2017 at the source (H10 cites them unread), check the first test's attribution of its
    update rule, then run the next test under *To Revisit* with a finer grid, more cues, a symmetric success rule and
@@ -148,14 +158,19 @@ found lives in the journal section it names; this list keeps only what is open.
      H14's graded hunger gain and its ablations, tested on 2026-10-30: the results are in
      [H14](docs/hypotheses/README.md#h14-graded-slow-knobs-change-detecting-senses-and-individuality) § *Tested so
      far*. Why steering trails never steering in warm layouts, tested on 2026-11-03, and each decision scored against
-     the band on 2026-11-04: the journals of those nights, read together in gr-fec.md § 12. **Held, awaiting the
-     maintainer's decision** on [gr-fec.md § 12.4](docs/research/gr-fec.md#124-recommendations-for-the-maintainer-to-decide),
-     which recommends pausing this series and returning to the equations. Held with it, the series' earlier open
-     steps: reopening the floor (a test over many more rich layouts, sized beforehand to resolve about +0.002); more
-     body seeds per layout, to tell a small cold-band gain from none; what the gate does in 23001's first day; the
-     timing of a worm's meals against the turning of its map; and what makes the map point away in layouts such as
-     82606. Nothing in (b) is started until the maintainer decides;
-   - (d) the composition law: a third lever that acts alone, and roaming's interaction as its own test.
+     the band on 2026-11-04: the journals of those nights, read together in gr-fec.md § 12. **Paused, by the
+     maintainer's ruling in the session of 2026-11-05**, "Pause + equations": recommendations 1-3 of
+     [gr-fec.md § 12.4](docs/research/gr-fec.md#124-recommendations-for-the-maintainer-to-decide) are adopted. Paused
+     with it, the series' earlier open steps: reopening the floor (a test over many more rich layouts, sized beforehand
+     to resolve about +0.002); more body seeds per layout, to tell a small cold-band gain from none; what the gate does
+     in 23001's first day; the timing of a worm's meals against the turning of its map; and what makes the map point
+     away in layouts such as 82606;
+   - (d) the composition law: a third lever that acts alone, and roaming's interaction as its own test;
+   - (e) the steering term in the turning theory, as a notebook first: drift predicted from the share of decisions
+     pointing home, the lateral sense's noise and the turn's size (gr-fec.md § 12.4, recommendation 2);
+   - (f) its validation on a fixed map imposed by the evaluator, so the map's share is known, not learned;
+   - (g) the pre-registered test of "demystified" (recommendation 3): from the equations alone, with no search, choose
+     the genes for a stated target and hit it within ±10% on held-out layouts.
 
    Once a calculation matters to anything the lab builds on, it moves into tested Rust.
 9. **Make the repository easy to enter** - the maintainer's request (2026-10-31): tidy the repository and make it
@@ -174,8 +189,8 @@ found lives in the journal section it names; this list keeps only what is open.
     - (d) done (journal of 2026-10-31, § A "Start Here" Tour in the README): a six-stop tour at the README's head,
       built around the diagrams and pointing to *Where Things Are*, and a short glossary of the lab's own words;
     - (e) done (journal of 2026-10-31, § A Journal Index): a table in `docs/journal/README.md`, one line a night with
-      the section to start reading at; whether each night's write-up step should add its line is the maintainer's call
-      (see *To Revisit*);
+      the section to start reading at; each night's write-up adds its line, by the maintainer's ruling in the session of
+      2026-11-05 (see *To Revisit*);
     - (f) STATE.md cut back to what is current: *Done* to the latest night only, as its own header says; the *Last
       updated* paragraph (done in [#214](https://github.com/ai-quokka-wannabe/iso-lab/pull/214), cut to the latest
       night with a pointer to the journal index); and the longest *Next* items (2 and 8) cut to their open steps, each
@@ -200,19 +215,21 @@ found lives in the journal section it names; this list keeps only what is open.
       worm or plate identity (STIMULI.md § Taste);
     - (b) partly done (journal of 2026-11-04, § The Salt Measures, Drafted): six measures drafted in
       [docs/benchmark/SALT_MEASURES.md](docs/benchmark/SALT_MEASURES.md), with the gradient's direction fitted from
-      the data and the centroid chosen for both bodies. Open there: Q1, the unit of the test, which has 7–11 plates per
-      condition and no plate in the files; Q3, the authors' smoothing, both for the maintainer (a lead: Chen et al. 2023's
+      the data and the centroid chosen for both bodies. Q1, the unit of the test, is decided, "Plate/experiment", by the
+      maintainer's ruling in the session of 2026-11-05, so each track's plate must be known, and the files keep none.
+      Open there: Q3, the authors' smoothing, for the maintainer (a lead: Chen et al. 2023's
       0.5 s polynomial, unconfirmed). Q7, the heading's noise at low speed, is decided (journal of 2026-11-04, § Q7:
       Headings Over a Quarter of a Body Length): a heading only over a displacement of at least 0.25 L;
-    - (b2) for the maintainer: a letter to the preprint's authors (SALT_MEASURES.md § The Open Questions, Q1 (a)) for
-      each track's plate, their smoothing, the start positions, `Data_salt0_0.mat` and `mask`; or the authors' code
-      repository attached to a session, for the smoothing. Then Q1's choice of route and of the Grid's plate;
-    - (c) salt, which may start now, with Q1 and Q3 open: fetch the archive, checksum and register it in data/README.md,
+    - (b2) draft a letter to the preprint's authors (SALT_MEASURES.md § The Open Questions, Q1 (a)) asking for each
+      track's plate, their smoothing, the start positions, `Data_salt0_0.mat` and `mask`; the maintainer decides whether
+      to send it ("Draft it for me", the maintainer's ruling in the session of 2026-11-05). The authors' code repository
+      attached to a session would still answer the smoothing. Then the Grid's plate (Q1);
+    - (c) salt, which may start now, with each track's plate unknown and Q3 open: fetch the archive, checksum and register it in data/README.md,
       fit the gradient's direction
       by SALT_MEASURES.md's rule (P4), and compute M1-M6 per track as description in `features`, in tested Rust, each
       test seen failing first, with Q7's registered check at ℓ = 0.125 L and 0.5 L reported beside the primary 0.25 L. No
       Grid life is needed, so it is not blocked upstream. The measures that use heading
-      change (M2-M4, M6) stay provisional until Q3 is answered, and the reference statistics wait on Q1;
+      change (M2-M4, M6) stay provisional until Q3 is answered, and the reference statistics wait on each track's plate (Q1);
     - (d) done (journal of 2026-11-05, § The Odour Dataset: Its Methods and What the Archive Holds): methods read and
       archive listed by range requests; CC BY 4.0; the tracks are centroids, 1.04 GB of the 1.29 GB archive, from about
       six experiments. Its measures against bearing probably stand for still air, its concentrations do not
@@ -220,8 +237,9 @@ found lives in the journal section it names; this list keeps only what is open.
     - (d2) partly done (journal of 2026-11-05, § The Odour Measures, Drafted): four measures drafted in
       [docs/benchmark/ODOUR_MEASURES.md](docs/benchmark/ODOUR_MEASURES.md) from the paper and the archive's
       `odor_flow_worm.m`, which confirms the 0.5 s Savitzky-Golay smoothing for odour but differs from the paper in
-      six rules (turns over 120° not 60°, curvature over 1 s not 1 mm and conditioned on steepness, the three track filters). Open there: Q1, the unit
-      (about six experiments), and Q2, paper or script, for the maintainer; Q4, tracking noise in a 1 s heading, the
+      six rules (turns over 120° not 60°, curvature over 1 s not 1 mm and conditioned on steepness, the three track filters). Decided
+      there by the maintainer's ruling in the session of 2026-11-05: Q1, the unit is the experiment (about six), so each
+      track's experiment must be known; Q2, the paper's text is the reference and the script's rules a registered check. Open: Q4, tracking noise in a 1 s heading, the
       lab's to decide next, before any track is fetched. No Grid life before an odour source apart from food, held steady;
     - (e) heat: search the thermotaxis papers' data statements for public tracks, and read the assays' plates, gradients
       and measures in full. Ryu and Samuel 2002 and Luo et al. 2014 were found closed (pace.md); try Luo et al. 2006 and
@@ -230,6 +248,10 @@ found lives in the journal section it names; this list keeps only what is open.
     - (f) the arena: the floor's 128 m (28.6 body lengths, 2.86 cm at the world's scale) and its terraces against an
       assay plate, for every assay, folded into FEATURES.md § Open Questions Before Freezing; first measure the spawn
       pad's terrace (STIMULI.md § What a Program Senses Today).
+12. **The tap interval, from the literature** - "Check literature first", the maintainer's ruling in the session of
+    2026-11-05, on whether a 2 s tap interval is right for the benchmark's assay (*To Revisit*, H13): read the
+    tap-habituation papers at their source and propose an interval, each figure cited, for the maintainer to rule on.
+    Leads: [pace.md](docs/research/pace.md)'s tap-habituation entries.
 
 ## To Revisit
 
@@ -241,11 +263,9 @@ the idea for the next attempt.
   locator's dependence on the grid's step: re-located at the run's step it is 1.569, still 0.04 from 1.528, so the
   fresh draws account for part of it. Descriptively, D fell from 1.654 to 1.160 towards the graph's own 1.014 as the
   threshold fell. Next attempt: the same sweep with fresh seeds, with L0 set against the run's own grid of step 0.25.
-- **For the maintainer**: whether each night's write-up (step 8 of *Each run, in order*) should also add a line to
-  the journal index in `docs/journal/README.md` (item 9 (e)); without that, the index goes stale.
-- **For the maintainer**: whether a decided item, such as the speed for the locomotion states, stays under
-  [FEATURES.md § Open Questions Before Freezing](docs/benchmark/FEATURES.md#open-questions-before-freezing) or moves to
-  a section of decisions (journal of 2026-10-30, § A Coherence Audit, and What It Mended).
+- **For the maintainer**: each night's write-up now also adds its line to the journal index in
+  `docs/journal/README.md`, by the maintainer's ruling in the session of 2026-11-05; the maintainer may wish to add
+  that step to step 8 of *Each run, in order* in `.claude/CLAUDE.md` himself, which the lab does not edit.
 - **H10, phasor against real memory** ([the notebook](notebooks/h10_phasor_memory.ipynb), 2026-10-13): no better at
   the same memory budget, at twice the compute. Next, after item 4's re-run of this test with fairer rules: test
   phase where the hunch says it matters - the undulation phase of a rhythm generator, interference between two paths
@@ -269,34 +289,13 @@ the idea for the next attempt.
   combination of them far more clearly than the two apart. A short-interval tap train separates them on a near noise-free target but did not carry to the whole
   loop on five fresh 30-worm populations (journal of 2026-10-22, § H13: The Whole Loop on Fresh Populations, under
   the Short-Interval Train). Next: the same loop under that protocol on fresh populations of 60 or more to fit, to
-  see whether the gain arrives as sampling noise falls. For the maintainer: whether a 2 s tap interval is right for
-  the benchmark's assay (not yet checked against the literature). For the benchmark: its comparison space should hold
+  see whether the gain arrives as sampling noise falls. Whether a 2 s tap interval is right for the benchmark's assay
+  goes to the literature first, by the maintainer's ruling in the session of 2026-11-05 (item 12). For the benchmark: its comparison space should hold
   state-conditioned rates, bout lengths and whole distributions, not only means.
-
-- **For the maintainer**, from the audits of 2026-11-05 (journal of that night, § The Night's Audits): (1) PLAN.md
-  § Phase 1 (line 64) says "A flat arena first", but the floor is terraced and has no flat setting (*Terrace edges*
-  below): does the aim stand, or should the plan say what replaces it? (2) CONTRIBUTING.md § British Spelling (lines
-  161-178) keeps a short copy of `.claude/commands/check-spelling.md`'s table: replace it with a pointer, or keep it
-  as the organisation's template? (3) Does the style rule "No inline comments" (`check-style.md` § YAML) cover the
-  version comment after each SHA-pinned `uses:` (`# v7.0.1`), which Dependabot keeps up to date?
 
 ## Blocked
 
-- **How the lab reads a Disk** (item 3(d2); waits on the maintainer's ruling). A Disk is Link's frames in a file,
-  read back through Link's own library (`replay_open` and `poll` in `external/link/include/lnk/lnk_client.h`), which
-  must lie beside the executable that loads it; the lab's rules make each route cost something. (1) Depend on
-  `external/master-control` as a crate and reuse its `link_dll` mirror and `replay_open`, which its Clu module
-  uses: one implementation, its `unsafe` kept inside Master Control's crate, and its `build.rs` builds Link and
-  copies the library beside the lab's binaries and tests - but every lab build, CI's included, then needs the
-  submodules checked out recursively. (2) Copy the parts of that mirror the reader needs into `features` (most of
-  its structs, since the message view's union and the vtable hold every message type and call): a third copy of the
-  layout, guarded against the library only by the vtable's size and ABI version; `unsafe` code in a workspace that
-  denies it, allowed locally as in `placeholder-worm` - a second such place in the lab's Rust, which that crate calls
-  the one; and the reader's tests still
-  need Link built and placed beside them, from `external/master-control/external/link`, so CI is no lighter unless
-  the reader goes untested, which the lab's rules do not allow. (3) Decode the frames in Rust: a second decoder,
-  against the organisation's "one implementation" doctrine - not recommended. The lab's rule that `external/link` is
-  not what gets built rules out depending on it directly. Recommended: (1).
+Nothing at present: how the lab reads a Disk is decided and is item 3 (d2).
 
 ## Needs From Other Repositories
 
@@ -348,13 +347,20 @@ points to the open ones and says what waits on each.
   maintainer's call. The floor is terraced (`GRID_FLOOR_CONFIG` in master-control's `src/ground.rs`) and has no flat
   setting, so the lab's lives are not on a flat arena, as this line used to say: they start on the spawn pad, a cell
   proven flat for a metre (`src/roster.rs`), and the placeholder's 320-tick lives of 2026-11-04 ended 0.7 m from its
-  centre (journal of 2026-11-04, § What the World's New Fields Open for the Benchmark: a Plan).
+  centre (journal of 2026-11-04, § What the World's New Fields Open for the Benchmark: a Plan). Lives run on the floor
+  as it is and terrace effects are measured, not avoided (PLAN.md § Phase 1, by the maintainer's ruling in the session
+  of 2026-11-05).
 
 ## Done
 
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-11-05: the maintainer's eleven rulings of that day's session recorded where each question lives (journal of
+  2026-11-05, § The Maintainer's Rulings of 2026-11-05): the toy-worm series paused for the equations (item 8 (e)-(g)),
+  the Disk read through Master Control's crate (item 3 (d2a)-(d2c)), the salt and odour units, the odour reference,
+  the terraced floor, the journal index, the spelling pointer, the version comments, FEATURES.md § Decisions, the salt
+  letter to draft (item 11 (b2)) and the tap interval to the literature (item 12).
 - 2026-11-05: item 9 (h), the three audits: no spelling violation, Rust and notebooks clean; fixed the stale
   benchmark status in README.md and both diagrams (redrawn by `notebooks/figures.ipynb`), PLAN.md's copied list of
   senses, FEATURES.md's gaps and plane rows, CONTRIBUTING.md's second table of documents, four inline comments in

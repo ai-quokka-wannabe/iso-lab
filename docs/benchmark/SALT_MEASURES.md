@@ -11,7 +11,7 @@ What the reference tracks hold, and the sources for them, is in
 ([doi:10.1016/j.neuron.2014.05.010](https://doi.org/10.1016/j.neuron.2014.05.010)) and the archive's fields. This note
 does not repeat it. The lab's common units and the one-instrument rule are in
 [FEATURES.md § Common Units](FEATURES.md#common-units) and
-[§ Open Questions Before Freezing](FEATURES.md#open-questions-before-freezing). The rule is that both bodies are
+[§ Decisions](FEATURES.md#decisions). The rule is that both bodies are
 measured by the lab's one pipeline, so that a difference of instrument is never scored as a difference of behaviour.
 
 ## The Shared Steps
@@ -174,9 +174,13 @@ heads within 90° of the setpoint, minus 0.5.
 
 ## The Open Questions of Item 11 (b)
 
-Answered where the record allows. Q1 and Q3 go to the maintainer; Q7 is the lab's own, decided here.
+Answered where the record allows. Q1 is decided by the maintainer's ruling in the session of 2026-11-05; Q3 goes to the
+maintainer; Q7 is the lab's own, decided here.
 
-- **Q1, the unit of the test. Not answerable from the record; for the maintainer.**
+- **Q1, the unit of the test. Decided by the maintainer's ruling in the session of 2026-11-05: "Plate/experiment".**
+    - The unit is the plate. It follows that each track's plate must be known, which the files do not say, so route (a)
+      below is the way to it (STATE.md item 11 (b2)); route (b) does not give a plate. The Grid's plate, below, is not
+      part of the ruling and stays open.
     - The preprint reports 7-11 plates per condition (§ 2.1), so the reference has about 7-11 independent units per
       condition, not 277-297 tracks (STIMULI.md).
     - The files keep neither plate nor worm. A test on tracks would treat dependent rows as independent and claim a
@@ -230,8 +234,8 @@ Answered where the record allows. Q1 and Q3 go to the maintainer; Q7 is the lab'
   of a body length, ℓ = 0.25 *L* (P5).** Fixed now, before any salt track is fetched or computed.
     - *The problem.* A heading taken from one 5/14 s step, with no floor on the step's length, points wherever the
       reference's tracking noise sends it while the worm pauses. A |Δθ| beyond 50° then fires on noise, while the Grid's
-      centroid has none. This is the reference's tracking noise, which [FEATURES.md § Open Questions Before
-      Freezing](FEATURES.md#open-questions-before-freezing) lists as not closed by the one-instrument decision. Smoothing
+      centroid has none. This is the reference's tracking noise, which [FEATURES.md
+      § Decisions](FEATURES.md#decisions) lists as not closed by the one-instrument decision. Smoothing
       both bodies alike does not make their noise alike.
     - *The literature.* The same group's earlier pipeline, which the preprint's is "modified from" (§ 4.2, its reference
       45, Chen et al. 2023, [doi:10.7554/eLife.85910](https://doi.org/10.7554/eLife.85910), PMC10425172, methods read in
