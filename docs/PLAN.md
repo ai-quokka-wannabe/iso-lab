@@ -31,8 +31,9 @@ The working definition, to be refined in Phase 0 and then frozen:
 A real worm is a millimetre-long, soft-bodied animal crawling on agar with 95 body-wall muscles. The Grid's
 worm is a chain of eight rigid segments joined by seven servos, metres long, walking a neon floor. So the
 comparison is made in the body's own units - body lengths, undulation periods - and posture is compared
-through eigen-shapes fitted to the joint angles the Grid worm has. Behaviours that depend on a sense the Grid
-does not offer yet (smell, hence chemotaxis) are listed as not comparable and stay on the list.
+through eigen-shapes fitted to the joint angles the Grid worm has. Behaviours the benchmark cannot yet compare -
+chemotaxis among them, whose sense of smell the Grid carries but no Program reads
+([FEATURES.md § The Measures](benchmark/FEATURES.md#the-measures)) - are listed as not comparable and stay on the list.
 
 ## Phases
 
@@ -61,10 +62,10 @@ senses through Mesa's software Vulkan, lavapipe), built from the commits `extern
 brain) written in this lab. [rc-worm](https://github.com/ai-quokka-wannabe/rc-worm), the organisation's
 human-steered worm, is the example of how a Program is shaped; the lab writes its own. The Disk each life
 leaves is the recording; the Phase 0 tool reads features from it. A flat arena first. The senses a Program
-has today, from
-[PROGRAM_INTERFACE.md](https://github.com/ai-quokka-wannabe/tron-grid-lite/blob/main/docs/PROGRAM_INTERFACE.md):
-eyes as sample lists (the `elegans` preset is two body-referenced light receptors), hearing, touch,
-vestibular sense, warmth, and proprioception (joint angles and the servos' loads).
+has today are listed in tron-grid-lite's
+[PROGRAM_INTERFACE.md § The senses at a glance](https://github.com/ai-quokka-wannabe/tron-grid-lite/blob/main/docs/PROGRAM_INTERFACE.md#the-senses-at-a-glance),
+and those the stimulus assays need in [STIMULI.md § What a Program Senses Today, and What Only
+Exists](benchmark/STIMULI.md#what-a-program-senses-today-and-what-only-exists).
 
 ### Phase 2: A First Brain
 
