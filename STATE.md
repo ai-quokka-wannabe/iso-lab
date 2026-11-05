@@ -216,10 +216,12 @@ found lives in the journal section it names; this list keeps only what is open.
       archive listed by range requests; CC BY 4.0; the tracks are centroids, 1.04 GB of the 1.29 GB archive, from about
       six experiments. Its measures against bearing probably stand for still air, its concentrations do not
       (STIMULI.md § Air);
-    - (d2) odour measures: draft them as SALT_MEASURES.md did for salt (bearing to the local gradient, turns over 60° in
-      1 s against bearing, curvature over 1 mm against bearing, the experiment as the unit), first reading
-      `demo_code/odor_flow_worm.m` (18,570 bytes, one member by range request) for the exact rules. No Grid life before
-      an odour source apart from food, held steady;
+    - (d2) partly done (journal of 2026-11-05, § The Odour Measures, Drafted): four measures drafted in
+      [docs/benchmark/ODOUR_MEASURES.md](docs/benchmark/ODOUR_MEASURES.md) from the paper and the archive's
+      `odor_flow_worm.m`, which confirms the 0.5 s Savitzky-Golay smoothing for odour but differs from the paper in
+      six rules (turns over 120° not 60°, curvature over 1 s not 1 mm and conditioned on steepness, the three track filters). Open there: Q1, the unit
+      (about six experiments), and Q2, paper or script, for the maintainer; Q4, tracking noise in a 1 s heading, the
+      lab's to decide next, before any track is fetched. No Grid life before an odour source apart from food, held steady;
     - (e) heat: search the thermotaxis papers' data statements for public tracks, and read the assays' plates, gradients
       and measures in full. Ryu and Samuel 2002 and Luo et al. 2014 were found closed (pace.md); try Luo et al. 2006 and
       Ito et al. 2006 first, then an author's manuscript in Europe PMC, then data or a reprint asked of an author through
@@ -356,6 +358,9 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   benchmark status in README.md and both diagrams (redrawn by `notebooks/figures.ipynb`), PLAN.md's copied list of
   senses, FEATURES.md's gaps and plane rows, CONTRIBUTING.md's second table of documents, four inline comments in
   `cleanup_caches.yml`, and two journal references by dated notes; three questions for the maintainer (*To Revisit*).
+- 2026-11-05: item 11 (d2), partly: four odour measures drafted (speed, turn rate by bearing, curvature against
+  bearing, the bearing's distribution), none using a concentration's size; the authors' script read and found to
+  differ from their paper in six rules ([docs/benchmark/ODOUR_MEASURES.md](docs/benchmark/ODOUR_MEASURES.md)).
 - 2026-11-05: item 11 (d), the odour dataset's methods and archive listed without downloading it: CC BY 4.0, the
   worm's tracks 1.04 GB of 1.29 GB, centroids from about six experiments; its measures against bearing probably stand for
   still air, its concentrations do not; not adopted (journal of 2026-11-05, § The Odour Dataset: Its Methods and What
