@@ -26,7 +26,7 @@ are listed before any measure is defined.
 | Rule | The paper (methods) | The script | Read as |
 |---|---|---|---|
 | Smoothing | "a third-order polynomial in a 0.5 s time window" | Savitzky-Golay, `smooth(..., filt,'sgolay',poly_degree)` with `poly_degree = 3`, `filt = 7` frames at `fr = 1/14` s (`.m:50-52`, `.m:74-75`) | The same rule: 7 frames at 14 Hz is 0.5 s. Confirmed for odour |
-| Smoothing for curvature | not stated | `filt = 14*2`, a 2 s window, applied within each run (`.m:315`, `.m:338-339`) | A second, wider filter |
+| Smoothing for curvature | not stated | `filt = 14*2`, a nominal 2 s window (an even span, which MATLAB's `smooth` may adjust; not checked), applied within each run (`.m:315`, `.m:338-339`) | A second, wider filter |
 | Turn sampling | turns from "the angle change between displacement vectors over 1 s time window" | positions every `delta_t + 1` = 15 frames, 15/14 = 1.07 s, from the *unsmoothed* `Path` (`.m:239`, `.m:253`, `.m:261-265`) | Near the paper; unsmoothed in the script |
 | Turn threshold | "angle changes larger than 60°" | `thre_pr = 120` (`.m:289`); 60 is `thre_grad`, the bearing's bin edge (`.m:290`) | **Differs**: 60° in the text, 120° in the script |
 | Turn rate | "Probability of observing a sharp turn per time" (Figure 7e) | turns over samples in each bin, labelled "turn probability per second" (`.m:292-305`) | Per 1.07 s sample, not per second |
@@ -145,10 +145,16 @@ description (Figure 7d, "Peak around zero is consistent with chemotaxis").
 - **Q3, the authors' `angles`.** Its sign and range are unknown, and only the checks against Figures 7e and 7f need it.
   It is in the authors' `Chemotaxis_function` repository, the same one salt's Q3 waits on; one session with it
   attached closes both.
-- **Q4, tracking noise over 1 s. Open; the lab's to decide before any track is fetched.** At the worms' "∼0.1 mm/s"
-  (the paper's discussion), one second is 0.1 mm, 3.15 pixels at 31.7 µm. By salt Q7's bound, one pixel of error at
-  each end can turn such a displacement by up to arcsin(2 / 3.15) = 39.4°, and a heading change by up to 78.8°,
-  beyond the 60° threshold. The smoothing lowers the noise by an amount not yet measured. Salt solved this with a
+- **Q4, tracking noise over 1 s. Open; the lab's to decide before any track is fetched.** The authors give the 1 s
+  window as meant "to mitigate effects of small displacements from tracking noise"; this question is whether it does so at the
+  worms' run velocity, which the authors give as "∼0.1 mm/s" (the last sentence of the paper's Results, beside
+  the larvae's ∼3 mm/s). One second at that speed is 0.1 mm, 3.15 pixels at 31.7 µm. Take three collinear samples
+  3.15 pixels apart, the middle one shared by both displacement vectors, with an error of up to one pixel at each, an
+  assumption as in salt's Q7. Noise alone can then turn the heading change by up to 70.4° if the pixel is a radius, or
+  92.5° if it is one pixel on each axis (the journal of 2026-11-05, § The Odour Measures, Drafted, has the command).
+  Both are beyond the 60° threshold. Doubling salt Q7's single-vector bound, 2 arcsin(2 / 3.15) = 78.8°, gives a looser
+  figure that cannot be reached, because the shared middle sample cannot turn both vectors to their worst at once.
+  The smoothing lowers the noise by an amount not yet measured. Salt solved this with a
   heading over a distance (salt P5, ℓ = 0.25 *L*); taking that here would leave the paper's rule. The candidates are the
   paper's 1 s rule, salt's distance rule, or the 1 s rule with samples dropped while the displacement is under ℓ.
   The choice is made in a later run, from the bound and the literature, not from the tracks.
