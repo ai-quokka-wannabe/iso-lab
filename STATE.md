@@ -384,7 +384,7 @@ The latest night only, one line a task; earlier nights are in [the journal](docs
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
 - 2026-11-05: the verifiers' non-blocking points on tonight's merged pull requests landed, among them H17's window
-  budget amended before any data, to cap each animal's contrast rather than exclude it (journal of 2026-11-05,
+  budget amended before any data, to cap each animal's contrast, with a floor of five windows, rather than exclude it (journal of 2026-11-05,
   § Verifiers' Nits from Tonight's Merged Pull Requests).
 - 2026-11-05: the maintainer's eleven rulings of that day's session recorded where each question lives (journal of
   2026-11-05, § The Maintainer's Rulings of 2026-11-05): the toy-worm series paused for the equations (item 8 (e)-(h)),

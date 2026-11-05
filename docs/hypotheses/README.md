@@ -654,16 +654,28 @@ the window budget amended once more, before any data, on 2026-11-05, as marked b
       windows are drawn from the S by a fixed seed, and the rest are not used anywhere. The wake windows are split by
       a fixed seed into three disjoint sets of n each: the *contrast set*, and two *reference sets*, A and B. A and B
       are never shrunk below the contrast set's size, since smaller reference sets would inflate r, and so τ, and push
-      a real fall towards *refuted*. Only an animal with n = 0 is left out, and it is counted.
-    - **The quiescent fraction.** Each animal's quiescent fraction, S / (S + U) from the behavioural labels, is
-      reported beside the verdict, and so is that of any animal left out, so that a verdict shows which sleepers it
-      speaks for.
+      a real fall towards *refuted*.
+    - **The floor, n ≥ 5** (added the same day, before any data, after the second agent's review 5791293740 on pull
+      request 232). An animal with n < 5 is left out and counted, with its quiescent fraction reported. Without a
+      floor, one animal with n of 1 or 2 would carry an A-B difference over one or two windows a set, far noisier than
+      the rest, and since r is the maximum over animals when there are fewer than twenty (below), it alone could set
+      τ for every animal. The candidates weighed: n ≥ 1, the smallest n at which an A-B difference is defined for every
+      measure, which is exactly the case that inflates τ, and is rejected; and n ≥ 3 or n ≥ 5. If windows were
+      independent (an assumption, not checked), a set mean's standard error would fall as 1/√n, so against an animal
+      with n = 20 an animal at the floor would be noisier by √(20/3) ≈ 2.6 at n ≥ 3 and by √(20/5) = 2 at n ≥ 5
+      (hand arithmetic). n ≥ 5 is chosen: a choice of the hunch's own size, not derived from a source. It narrows the
+      cap's gain in the deepest sleepers, and their quiescent fractions show by how much.
+    - **The quiescent fraction.** Each animal's quiescent fraction by usable windows, S / (S + U), is reported beside
+      the verdict, and so is that of any animal left out, so that a verdict shows which sleepers it speaks for. Beside
+      it, the fraction of labelled time in sleep is reported too, since the two differ where short bouts are dropped,
+      which is where the cap bites.
     - **The cap is still a feasibility risk**: in lethargus, bouts of quiescence and of motion alternate, each lasting
       1–100 s ([pace.md](../research/pace.md), lethargus), and active bouts shorter than W are dropped, so n may be
       small in the deepest sleepers, and too few animals may be left.
-    - **Trials.** Stimulus trials are assigned the same way: in each animal, n = min(sleep trials, ⌊wake trials / 3⌋)
-      trials of each state, the sleep trials drawn by a fixed seed when n is smaller than their number, and the wake
-      trials split by a fixed seed into a contrast set and two reference sets of n each.
+    - **Trials.** Stimulus trials are assigned the same way, with their own count: in each animal,
+      q = min(sleep trials, ⌊wake trials / 3⌋) trials of each state, the sleep trials drawn by a fixed seed when q is
+      smaller than their number, and the wake trials split by a fixed seed into a contrast set and two reference sets of
+      q each. The same floor holds: an animal with q < 5 is left out of the perturbation measures and counted.
     - *The text before the amendment*, kept visible: "In each animal, the wake windows are split by a fixed seed into
       three disjoint sets: the *contrast set*, as many windows as the animal has in sleep; and two *reference sets*, A
       and B, of the same size each. **The window budget.** An animal therefore needs at least three times as many
@@ -739,8 +751,11 @@ the window budget amended once more, before any data, on 2026-11-05, as marked b
     - **Φ\***. Each unit is z-scored per window. The covariance and lag-one covariance are computed within each window,
       never across the join of two windows, and pooled over an animal's windows in a state, because a single window may
       hold only a few tens of samples, too few to support them.
-    - **The units Φ\* uses.** Its K units are those with the highest wake SNR on set A, with K at most a tenth of the
-      pooled samples per state. If that leaves fewer than four units, Φ\* has *no verdict until longer recordings*.
+    - **The units Φ\* uses.** Its K units are those with the highest wake SNR on set A. K is chosen once per dataset,
+      over the animals at or above the floor: a tenth of the median, over those animals, of their pooled samples per
+      state (the smaller state's). An animal with fewer than 10K pooled samples in a state is left out of Φ\* and
+      counted, with its quiescent fraction, rather than shrinking K for all. If K is below four, Φ\* has *no verdict
+      until longer recordings*; if fewer than six animals are left for Φ\*, it has no verdict either.
     - **Φ\*'s surrogates** are a check that they come out near zero.
 - *Perturbations* (PCI-like and ignition, alike):
     - the stimulus is one the dataset applies, named with its modality, strength and duration when the dataset is
@@ -770,7 +785,8 @@ the window budget amended once more, before any data, on 2026-11-05, as marked b
     - τ = max(0.1 · m, r). Here m is the median over animals of the noise-matched wake value on set A, so the first
       term is a fall of a tenth. And r is the nearest-rank 95th percentile over animals of |Δ| between noise-matched sets
       A and B. With fewer than twenty
-      animals, r is the maximum, which is conservative.
+      animals, r is the maximum, which is conservative. Both m and r are taken only over the animals at or above the
+      floor (n ≥ 5, above), which are also the only ones given a Δ.
     - A fall smaller than the measure's own repeatability is not called a state.
     - The sensitivity runs replace 0.1 by 0.05 and by 0.2 and keep the max with r, so where r dominates they equal the
       primary run, and the report says so.
