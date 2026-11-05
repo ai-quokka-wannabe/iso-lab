@@ -120,14 +120,14 @@ out of their sources when the experiment is prepared.
 | F7 | Concepts consolidate only when local and global agree | [planned](F1-F9.md#f7-concepts-consolidate-only-when-local-and-global-agree) |
 | F8 | Three legs: fixed primitives, critical dynamics, learned geometry | [planned](F1-F9.md#f8-three-legs-fixed-primitives-critical-dynamics-learned-geometry) |
 | F9 | Analogies from mathematics, kept for their testable parts | [planned](F1-F9.md#f9-analogies-from-mathematics-kept-for-their-testable-parts) |
-| F10 | Watch for a self-model | to plan |
-| F11 | A scan for latent pathology | to plan |
-| F12 | Predict the consequence, then refine | to plan |
-| F13 | A memory that renormalises time, shaped like MERA | to plan |
-| F14 | Thinking in loops: automata, their groups, graphs and knots | to plan |
-| F15 | Rhythm and direction twisted together, as in the Hopf fibration | to plan |
-| F16 | Harmonic analysis, and the Kakeya needle in a worm's turn | to plan |
-| F17 | Metaphysics, kept for its testable parts | to plan |
+| F10 | Watch for a self-model | [planned](F10-F17.md#f10-watch-for-a-self-model) |
+| F11 | A scan for latent pathology | [planned](F10-F17.md#f11-a-scan-for-latent-pathology) |
+| F12 | Predict the consequence, then refine | [planned](F10-F17.md#f12-predict-the-consequence-then-refine) |
+| F13 | A memory that renormalises time, shaped like MERA | [planned](F10-F17.md#f13-a-memory-that-renormalises-time-shaped-like-mera) |
+| F14 | Thinking in loops: automata, their groups, graphs and knots | [planned](F10-F17.md#f14-thinking-in-loops-automata-their-groups-graphs-and-knots) |
+| F15 | Rhythm and direction twisted together, as in the Hopf fibration | [planned (worm test suspended)](F10-F17.md#f15-rhythm-and-direction-twisted-together-as-in-the-hopf-fibration) |
+| F16 | Harmonic analysis, and the Kakeya needle in a worm's turn | [planned](F10-F17.md#f16-harmonic-analysis-and-the-kakeya-needle-in-a-worms-turn) |
+| F17 | Metaphysics, kept for its testable parts | [planned](F10-F17.md#f17-metaphysics-kept-for-its-testable-parts) |
 | G1 | Think by predicting value over a grown concept graph; turn when the prediction falls | to plan |
 | G2 | Walls come from events, not silence | to plan |
 | G3 | Two kinds of concept node: intensity and tuned | to plan |
