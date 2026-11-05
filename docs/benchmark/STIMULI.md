@@ -237,7 +237,8 @@ journal of 2026-11-05, § The Odour Dataset: Its Methods and What the Archive Ho
 the sizes). In short:
 
 - The worm's tracks are one folder of the 1.29 GB archive, eight MATLAB files of 1.04 GB, named by the published
-  figures (`track_fig7a`, `track_fig7b`, `track_fig7def_9`, `track_fig7SI`, `track_fig_8AIB`) beside two landscapes.
+  figures (`track_fig7a`, `track_fig7b`, `track_fig7def_9`, `track_fig7SI`, `track_fig_8AIB`) beside two landscapes and a
+  980-byte `OdorFx_low.mat`.
   Their insides were not read; that `track_fig7SI` is the no-odour control and `Landscape_low` and
   `Landscape_cone_110mM` the two landscapes are inferred from the names and the captions, not confirmed.
 - The tracks are centroids: the posture was estimated, "but in this work only the position and velocity was used"
@@ -271,10 +272,9 @@ experiment compares the two airs.
 turns' rate and the curvature - against the local gradient of the source concentration, rebuilt for evaluation by
 their rules above, with the experiment as the unit; the bearing's distribution compared only between like landscapes.
 Upstream, **an odour source apart from food**, a placed source with a declared pattern over the receptor types, held
-steady, so the assay smells without feeding. Wind is not needed: the case above takes the chamber's data for still air
-without it. Adopting the tracks would cost about 1.04 GB of download (eight members by range requests, not the 1.29 GB
-archive) and 1.04 GB on disk while read. The pace note has one weak latency for odour avoidance (4 s, Sanders et al.
-2013, pace.md § Smell).
+steady, so the assay smells without feeding. Wind is not needed if the case above holds. Adopting the tracks would cost
+about 1.04 GB of download (eight members by range requests, not the 1.29 GB archive) and 1.04 GB on disk while read. The pace
+note has one weak latency for odour avoidance (4 s, Sanders et al. 2013, pace.md § Smell).
 
 **Aerotaxis: what exists.** Nothing measurable: oxygen and carbon dioxide are not in the world, and ABI 13 stages their
 sensors at the open air's values. The behaviour is clear in the literature: a "strong behavioural preference for 5-12%
