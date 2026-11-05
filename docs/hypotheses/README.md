@@ -675,7 +675,8 @@ the window budget amended once more, before any data, on 2026-11-05, as marked b
     - **Trials.** Stimulus trials are assigned the same way, with their own count: in each animal,
       q = min(sleep trials, ⌊wake trials / 3⌋) trials of each state, the sleep trials drawn by a fixed seed when q is
       smaller than their number, and the wake trials split by a fixed seed into a contrast set and two reference sets of
-      q each. The same floor holds: an animal with q < 5 is left out of the perturbation measures and counted.
+      q each. The same floor holds: an animal with q < 5 is left out of the perturbation measures and counted, and the
+      perturbation measures' m, r and ignition threshold are taken only over the animals with q ≥ 5.
     - *The text before the amendment*, kept visible: "In each animal, the wake windows are split by a fixed seed into
       three disjoint sets: the *contrast set*, as many windows as the animal has in sleep; and two *reference sets*, A
       and B, of the same size each. **The window budget.** An animal therefore needs at least three times as many
@@ -752,10 +753,13 @@ the window budget amended once more, before any data, on 2026-11-05, as marked b
       never across the join of two windows, and pooled over an animal's windows in a state, because a single window may
       hold only a few tens of samples, too few to support them.
     - **The units Φ\* uses.** Its K units are those with the highest wake SNR on set A. K is chosen once per dataset,
-      over the animals at or above the floor: a tenth of the median, over those animals, of their pooled samples per
-      state (the smaller state's). An animal with fewer than 10K pooled samples in a state is left out of Φ\* and
-      counted, with its quiescent fraction, rather than shrinking K for all. If K is below four, Φ\* has *no verdict
-      until longer recordings*; if fewer than six animals are left for Φ\*, it has no verdict either.
+      over the animals at or above the floor: K = ⌊P / 10⌋, with P the smallest, over those animals and both states, of
+      an animal's pooled samples in a state. Every animal at or above the floor then has at least 10K samples a state,
+      so none is left out of Φ\* (a K set from the median, as first written here, would have left out about half).
+      At the floor an animal pools at least 5 windows of W ≥ 10 s a state, so at least 50 · f samples at a frame rate
+      of f per second, and K ≥ 4 holds whenever f ≥ 0.8 Hz (⌊50 · 0.8 / 10⌋ = 4; hand arithmetic). The frame rate is
+      not known until a dataset is registered; if K is below four, Φ\* has *no verdict until longer recordings*, and
+      K is not raised by leaving animals out.
     - **Φ\*'s surrogates** are a check that they come out near zero.
 - *Perturbations* (PCI-like and ignition, alike):
     - the stimulus is one the dataset applies, named with its modality, strength and duration when the dataset is
@@ -766,7 +770,7 @@ the window budget amended once more, before any data, on 2026-11-05, as marked b
       state; a single 10 s baseline is too short, its 99th percentile nearly its maximum. This is also PCI-like's
       binarisation, against the pre-stimulus baseline as in Casali et al. 2013;
     - ignition's threshold, the share of active units, is set on the noise-matched wake trials of the reference sets
-      alone;
+      alone, of the animals with q ≥ 5;
     - a trial is *behaviourally unchanged* if the behavioural label does not change during R. In sleep, this means the
       bout is unbroken;
     - because the worm's brain-wide state carries its motor command ([Kato et al. 2015](https://doi.org/10.1016/j.cell.2015.09.034),
