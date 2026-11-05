@@ -432,7 +432,7 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   Planned, and a Triage).
 - 2026-11-05: item 5, hunches G1-G10 planned ([G1-G10.md](docs/hypotheses/experiments/G1-G10.md)); what the toy
   worm already tested cited (the turning theory, #231's refuted fixed point and drifting feature map), none resuming the
-  paused steering series; G2's overshadowing and G5's harm reduced to exact LMS identities, G9's Grid sweep restated
+  paused steering series; G2's overshadowing reduced to a least-squares split of weight and G5's harm to an exact LMS identity, G9's Grid sweep restated
   to keep the senses untuned (journal of 2026-11-05, § G1-G10 Planned, and a Triage).
 - 2026-11-05: H16 written, *a hunch* brought by the maintainer from another Claude session: a reflex stack
   with no learned model gets through the benchmark; refuting outcomes R1-R3 with their pass sides, controls, cost and
