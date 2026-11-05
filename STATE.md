@@ -269,11 +269,6 @@ found lives in the journal section it names; this list keeps only what is open.
 Experiments that failed or came out inconclusive, kept rather than discarded (the maintainer's ruling); each with
 the idea for the next attempt.
 
-- **C18's threshold hunch** (journal of 2026-11-03, § C18's Loose Ends, Run): the sweep of the activation threshold at
-  the budget's gain of 1.2 came out void by its control, L0, missed by 0.001. Read post hoc, the miss is largely the 1%
-  locator's dependence on the grid's step: re-located at the run's step it is 1.569, still 0.04 from 1.528, so the
-  fresh draws account for part of it. Descriptively, D fell from 1.654 to 1.160 towards the graph's own 1.014 as the
-  threshold fell. Next attempt: the same sweep with fresh seeds, with L0 set against the run's own grid of step 0.25.
 - **For the maintainer**: each night's write-up now also adds its line to the journal index in
   `docs/journal/README.md`, by the maintainer's ruling in the session of 2026-11-05; the maintainer may wish to add
   that step to step 8 of *Each run, in order* in `.claude/CLAUDE.md` himself, which the lab does not edit.
@@ -378,6 +373,10 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   the Disk read through Master Control's crate (item 3 (d2a)-(d2c)), the salt and odour units, the odour reference,
   the terraced floor, the journal index, the spelling pointer, the version comments, FEATURES.md § Decisions, the salt
   letter to draft (item 11 (b2)) and the tap interval to the literature (item 12).
+- 2026-11-05: C18's threshold hunch (from *To Revisit*), run again with fresh seeds and L0 set on the run's own grid
+  of step 0.25: L0 held (1.539 against 1.528, tolerance 0.0583), and the hunch is supported by its registered rule: D
+  fell from 1.639 to 1.128 as the threshold fell from 0.1 to 0.001 (Δ 0.511, 0.99 interval [0.427, 0.568]), within
+  0.25 of the graph's own 1.010; C18's verdict unchanged (journal of 2026-11-05, § C18's Threshold Hunch, Run Again).
 - 2026-11-05: the maintainer's hunch written up as [H17](docs/hypotheses/README.md#h17-consciousness-sciences-measures-applied-to-a-sleeping-worm):
   PCI, Φ\*, ignition and UAL, each checked at its source's abstract or passages, with a pre-registered
   sleep-against-wake test, its noise control and its controls; no data yet, the next run is item 13 (journal of 2026-11-05, § H17: Consciousness Science's Measures on a
