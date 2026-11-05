@@ -131,12 +131,13 @@ found lives in the journal section it names; this list keeps only what is open.
    a keep-the-state rule for ties.
 5. **Plan an experiment for every one of Matej's 128 ideas and hunches** - the maintainer's request - in the format
    of [docs/hypotheses/experiments/README.md](docs/hypotheses/experiments/README.md), whose index shows which are
-   planned. Next: **G** (30, from the gr-fec sandbox; [docs/research/gr-fec.md](docs/research/gr-fec.md) has its numbers;
-   A to F are planned). The journal records the triage, and hunches that survive are promoted into numbered hypotheses or
+   planned. Next: **G11-G30** (from the gr-fec sandbox; [docs/research/gr-fec.md](docs/research/gr-fec.md) has its
+   numbers; A to F and G1-G10 are planned). The journal records the triage, and hunches that survive are promoted into numbered hypotheses or
    tasks here; E15, E11, E16 and E20 are the candidates from E11-E20 (journal of 2026-11-05, § E11-E20 Planned, and a
    Triage); from F1-F9, F6, F3 and F4, with F7 needing a redesign (§ F1-F9 Planned, and a Triage); from F10-F17, F14's
    automata lens, and F13 once its revised design is verified, with F15's worm test needing a redesign (§ F10-F17
-   Planned, and a Triage).
+   Planned, and a Triage); from G1-G10, G3, G8 and G9 as extensions of item 8 (e), G2 and G5 beside (g), and G5, G6 and G10 as
+   toy-world tests under gr-fec.md § 12.4's recommendation 4 (§ G1-G10 Planned, and a Triage).
 6. **Audit H10's first test by A12's plan**
    ([docs/hypotheses/experiments/A9-A15.md § A12](docs/hypotheses/experiments/A9-A15.md#a12-experiment-hygiene)):
    planted copies prepared by one agent and audited, blind, by another that has read neither that test's review nor
@@ -435,6 +436,10 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   F16, F17's single objective) and restated; F14's automata lens ready to become a task, F13 after verification,
   F15's worm test to be redesigned (journal of 2026-11-05, § F10-F17
   Planned, and a Triage).
+- 2026-11-05: item 5, hunches G1-G10 planned ([G1-G10.md](docs/hypotheses/experiments/G1-G10.md)); what the toy
+  worm already tested cited (the turning theory, #231's refuted fixed point and drifting feature map), none resuming the
+  paused steering series; G2's overshadowing reduced to a least-squares split of weight and G5's harm to an exact LMS identity, G9's Grid sweep restated
+  to keep the senses untuned (journal of 2026-11-05, § G1-G10 Planned, and a Triage).
 - 2026-11-05: H16 written, *a hunch* brought by the maintainer from another Claude session: a reflex stack
   with no learned model gets through the benchmark; refuting outcomes R1-R3 with their pass sides, controls, cost and
   pace rule; Brooks 1986, Kato et al. 2015 and the book's catalogue record checked at the source; item 14 added.
