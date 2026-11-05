@@ -171,7 +171,10 @@ Questions of the comparison space that are settled. The maintainer approved this
       state and every state's share lower, paused most; the difference is reported beside them.
     - *What it does not close*: the reference skeletons' tracking noise and gaps (§ The Two Bodies).
     - *What would reopen it*: the check of durations and reversal rates (STATE.md item 2(c)), if the lab's speed misses
-      the published states there for a cause other than the spacing.
+      the published states there for a cause other than the spacing. That check ran on block 1 (journal of 2026-11-05,
+      [§ Item 2 (c)'s Follow-Ups: the Results](../journal/2026-11-05.md#item-2-cs-follow-ups-the-results)): every shift
+      of a duration or rate lies within ±0.25 of block 1's interquartile range; its cause is not yet measured, so the
+      decision is not reopened, and waits on item 3 (d2c).
 - **Which recordings.** The N2 subset and how it is drawn are fixed by the tool's task (STATE.md item 2), before any
   statistic is computed: block 1 of the seeded draw ([data/README.md § The Reference
   Draw](../../data/README.md#the-reference-draw)).

@@ -63,7 +63,7 @@ found lives in the journal section it names; this list keeps only what is open.
      recording-modes of block 1 (journal of 2026-11-04, § The Published Durations and Rates: Reproduced Exactly Over
      Block 1; `stored-events <block>`). The follow-ups are done (journal of 2026-11-05, § Item 2 (c)'s Follow-Ups: the
      Results): no recording-mode of block 1 exercises the lone-edge-event exception, so block 1 cannot tell the Python
-     toolbox from its MATLAB original that way; the lab's speed gives fewer and shorter events than the published
+     toolbox from its MATLAB original that way; the lab's speed gives fewer forward and paused events, and shorter events in every mode, than the published
      (median forward count 0.970, 95% bootstrap interval 0.959-0.979; paused 0.909, 0.897-0.927), but every shift lies
      within ±0.25 of block 1's interquartile range, *negligible* by the registered threshold, which (e4) is to replace
      (`event-ratios`); and `provisional_` is dropped from `features::profile`'s columns, values unchanged, not a
