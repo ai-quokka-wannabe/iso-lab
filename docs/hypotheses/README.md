@@ -398,15 +398,24 @@ record: the same source's earlier hunch of graded slow knobs was not supported o
   approach and avoidance; higher layers suppress lower ones; the world serves as its own model, so no map or learned
   model of the world is kept; and a few slow, hunger-like knobs and a few remembered numbers complete it. A Program
   built that way, and nothing more, gets through the worm's benchmark.
-- **What counts as what**, fixed here before any design so that the line cannot move after a result. A *wiring* is a
-  fixed mapping from senses to actions, its parameters set before a life and never changed in it; adaptation inside a
-  sense pathway with a fixed, cited time constant is part of its wiring. A *slow knob* or *remembered number* is a
-  scalar written by the creature's experience, by a fixed update rule, with a named counterpart in a cited source (a
-  preferred temperature, after [Hedgecock and Russell 1975](https://doi.org/10.1073/pnas.72.10.4061); a hunger state);
-  a stack may hold at most N = 8 of them in all. A *learned model of the world* is any state written by experience that
-  is indexed by place or heading, or is updated to reduce the error of predicting a future sense value, or takes the
-  experience-written state past K = 8 numbers. K and N are chosen now, as a bound of the hunch's own size, not derived
-  from a source.
+- **What counts as what**, fixed here before any design so that the line cannot move after a result.
+    - A *wiring* is a fixed mapping from senses to actions, its parameters set before a life and never changed in it.
+      Adaptation inside a sense pathway counts as part of its wiring only if its time constant is cited and is at most
+      3 s. The bound is the longest sensory timescale in [pace.md](../research/pace.md) § Touch: Liu et al.'s suggestion
+      that the animal integrates "over approximately 3 s" before reversing, beside the receptor currents' adaptation over
+      "a few tens of milliseconds"; it lies far below the shortest internal state's time constant there, 75 s for
+      roaming. Adaptation states are reported in a count of their own.
+    - A *slow knob* or *remembered number* is a scalar written by the creature's experience, with a named counterpart in
+      a cited source and an update rule taken from that source (a preferred temperature, adapting over "several hours"
+      by [Hedgecock and Russell 1975](https://doi.org/10.1073/pnas.72.10.4061); a hunger state). Any experience-written
+      state slower than the 3 s bound is one of these, never adaptation. A stack may hold at most N = 8 of them in all.
+    - A *learned model of the world* is any other experience-written state that is indexed by place or heading, or is
+      updated to reduce the error of predicting a future sense value, or takes the experience-written state past
+      K = 8 numbers. K counts every experience-written number except the adaptation states: the N knobs and remembered
+      numbers included, so a stack at K holds nothing else written by experience.
+    - Precedence: a scalar with a named, cited counterpart and an update rule taken from that source is a remembered
+      number, whatever its rule minimises; any other state updated to reduce a prediction error is a model.
+    - K, N and the 3 s bound are chosen now, as bounds of the hunch's own size, not derived from a source.
 - **What the sources say, and what they do not.** Brooks's abstract describes "[l]ayers of control system" built "to
   let the robot operate at increasing levels of competence", made of "asynchronous modules that communicate over
   low-bandwidth channels", in which "Higher-level layers can subsume the roles of lower levels by suppressing their
@@ -498,8 +507,10 @@ new family is a new test, registered as such.
 - the stack with each wiring, layer, knob and remembered number pinned at baseline in turn, by the lab's ablation rule,
   a part being kept only if its removal costs the stack on a measure;
 - the *sense-blind control*: the stack with each sense channel replaced by a surrogate signal that matches that
-  channel's distribution of values and its autocorrelation over the stack's own lives (a phase-randomised surrogate of
-  the recorded channel, amplitude-adjusted), with no relation to the world. It is "near the floor" if its count of
+  channel's distribution of values and its autocorrelation over the stack's own lives, with no relation to the world:
+  an amplitude-adjusted Fourier-transform surrogate of the recorded channel, after
+  [Theiler et al. 1992](https://doi.org/10.1016/0167-2789(92)90102-S) (*Physica D* 58:77-94; the Crossref record
+  checked, the paper not read). It is "near the floor" if its count of
   flagged measures under R3 is at least halfway from the stack's count to the placeholder's. If it does not fall, the
   measures of these spontaneous recordings carry little that the senses drive, and a partial pass under R3 then says
   little about the wirings: it would test the rhythm and the switching of states, with the wirings left to the stimulus
@@ -515,7 +526,11 @@ per simulated second, are reported beside every score.
 *The pace rule*: every wiring's latency and every knob's time constant is taken from a cited value in
 [pace.md](../research/pace.md) (§ Reaction Latencies, § Time Constants of Internal States) and counted in the Grid's
 31.25 ms ticks, rounded up to a whole tick, so that no wiring acts sooner than the worm: a latency under one tick takes
-one tick, and every other is less than one tick slower than its source. A wiring whose latency pace.md does not yet source
+one tick, and every other is less than one tick slower than its source. The value rounded up is the source's shortest
+reported statistic for that pathway - its lower bound or fastest quantile where it gives one, else its central value -
+and the creature's own latencies, where an assay measures them, must not be faster than the source's at its 10th
+percentile where the source reports a distribution, else at its central value, so that a fast tail cannot beat the
+worm. A wiring whose latency pace.md does not yet source
 takes, provisionally, the latency of the sourced pathway it is named after in item 13 (a)'s design, is marked
 unsourced, and is not scored on its latency until pace.md sources it.
 
