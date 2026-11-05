@@ -236,11 +236,6 @@ found lives in the journal section it names; this list keeps only what is open.
 Experiments that failed or came out inconclusive, kept rather than discarded (the maintainer's ruling); each with
 the idea for the next attempt.
 
-- **C18's threshold hunch** (journal of 2026-11-03, § C18's Loose Ends, Run): the sweep of the activation threshold at
-  the budget's gain of 1.2 came out void by its control, L0, missed by 0.001. Read post hoc, the miss is largely the 1%
-  locator's dependence on the grid's step: re-located at the run's step it is 1.569, still 0.04 from 1.528, so the
-  fresh draws account for part of it. Descriptively, D fell from 1.654 to 1.160 towards the graph's own 1.014 as the
-  threshold fell. Next attempt: the same sweep with fresh seeds, with L0 set against the run's own grid of step 0.25.
 - **For the maintainer**: whether each night's write-up (step 8 of *Each run, in order*) should also add a line to
   the journal index in `docs/journal/README.md` (item 9 (e)); without that, the index goes stale.
 - **For the maintainer**: whether a decided item, such as the speed for the locomotion states, stays under
@@ -355,6 +350,10 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-11-05: C18's threshold hunch (from *To Revisit*), run again with fresh seeds and L0 set on the run's own grid
+  of step 0.25: L0 held (1.539 against 1.528, tolerance 0.0583), and the hunch is supported by its registered rule: D
+  fell from 1.639 to 1.128 as the threshold fell from 0.1 to 0.001 (Δ 0.511, 0.99 interval [0.427, 0.568]), within
+  0.25 of the graph's own 1.010; C18's verdict unchanged (journal of 2026-11-05, § C18's Threshold Hunch, Run Again).
 - 2026-11-05: item 9 (h), the three audits: no spelling violation, Rust and notebooks clean; fixed the stale
   benchmark status in README.md and both diagrams (redrawn by `notebooks/figures.ipynb`), PLAN.md's copied list of
   senses, FEATURES.md's gaps and plane rows, CONTRIBUTING.md's second table of documents, four inline comments in
