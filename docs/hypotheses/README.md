@@ -387,6 +387,91 @@ one to three body seeds per layout and no benchmark; each is stated no more stro
   −0.0014 to +0.0052); eight of ten lean its way and one, 82300, is clearly worse (descriptive). § The Constant Floor on Ten Fresh Rich
   Layouts.
 
+### H16. A Reflex Stack: Layered Wirings, No Learned Model
+
+*A hunch*, brought by the maintainer from another Claude session, 2026-11-05. It arrives with that source's track
+record: the same source's earlier hunch of graded slow knobs was not supported on the toy worm in its graded half
+(H14, *Tested so far*).
+
+- **The claim.** The worm's brain is roughly a layered control system of the kind Brooks described for a mobile robot,
+  mixed with the direct sensor-to-motor wirings of Braitenberg's vehicles: a few wirings from senses to muscles give
+  approach and avoidance; higher layers suppress lower ones; the world serves as its own model, so no map or learned
+  model of the world is kept; and a few slow, hunger-like knobs and a few remembered numbers complete it. A Program
+  built that way, and nothing more, gets through the worm's benchmark.
+- **What the sources say, and what they do not.** Brooks's abstract describes "layers of control system" built "to
+  let the robot operate at increasing levels of competence", made of "asynchronous modules that communicate over
+  low-bandwidth channels", in which "Higher-level layers can subsume the roles of lower levels by suppressing their
+  outputs" while "lower levels continue to function as higher levels are added"
+  ([Brooks 1986](https://doi.org/10.1109/JRA.1986.1087032), *IEEE Journal on Robotics and Automation* 2(1):14-23;
+  the abstract as Semantic Scholar serves it, the full text not read). The same abstract foresees the robot "building
+  maps of its surroundings": "the world as its own model" is not in it, and is not cited here to any source. Of
+  Braitenberg's book ([Braitenberg 1984](https://openlibrary.org/isbn/0262022087), *Vehicles: Experiments in Synthetic
+  Psychology*, MIT Press, Cambridge, Mass., x + 152 pages, ISBN 0-262-02208-7) only the catalogue record was read; that
+  its vehicles are direct sensor-to-motor wirings giving approach and avoidance is how the book is commonly described,
+  not checked here. That the worm's brain is built this way has no source; it is the hunch.
+- **Why it might hold.** On the toy worm, the senses worked and the learned map was where the failure sat: the
+  lateral sense named the warmer side in 0.986 of scored decisions, while the map's choice pointed the band's way in
+  0.513 (0.424 to 0.619), its registered test undecided (journal of 2026-11-04, § Does the Greedy Rule's Direction
+  Fail? Each Steering Decision Scored; [gr-fec.md § 12](../research/gr-fec.md#12-why-the-demystification-stalled-a-post-mortem-2026-11-04)).
+  That places the toy worm's failure in its map; it does not show that a worm without a map would succeed, which is
+  this hunch's claim and untested.
+- **How it differs from its neighbours.** H1 is one such wiring and H2 the switching between a few states; H12 keeps a
+  small memory written while the creature lives, and H14 a remembered set point. H16 claims the sufficiency of the
+  plainest of these: wirings, suppression between layers, slow knobs and a few numbers, with no learned model of the
+  world at all.
+- **Two neighbours, recorded and not part of the claim.** The same conversation likened the worm's switching between a
+  few command states to the decide step of a sense-decide-act cycle such as Soar's
+  ([Laird, Newell and Rosenbloom 1987](https://doi.org/10.1016/0004-3702(87)90050-6); only the Crossref record read).
+  In the worm, brain-wide calcium imaging found a brain state that "evolves on a cycle" whose segments map "to the
+  animals' major motor commands", assembling them into "a string of run-and-turn action sequence cycles"
+  ([Kato et al. 2015](https://doi.org/10.1016/j.cell.2015.09.034), *Cell* 163(3):656-669; abstract, Europe PMC). It
+  judged a joint-embedding predictive architecture ([Assran et al. 2023](https://arxiv.org/abs/2301.08243), arXiv
+  record read) more likely to fit the fly or rat rung than the worm's.
+
+*Predicts*: a reflex stack - each layer a fixed wiring from the Program interface's senses to its actions, with
+suppression between layers, a few slow knobs and a few remembered numbers - reproduces the reference statistics at the
+worm's pace, and adding a learned model of the world to it gains nothing the benchmark can detect.
+*Refuted*, each with its pass side:
+
+- **R1, on the frozen benchmark** (STATE.md item 2 (e5)). Refuting: the best reflex stack fails the benchmark by its
+  frozen pass rule, where a Program of no more than ten times its size, with a learned model of the world, passes.
+  Pass side: a reflex stack passes. If neither passes, R1 is undecided.
+- **R2, adding a model.** Refuting: on the frozen benchmark, the stack with a learned model of the world added (a map of
+  places, or a predictor of its senses) scores better than the stack alone beyond the score's interval. Pass side:
+  the model's addition is not detected to help, with the size of help the interval excludes stated.
+- **R3, partial tests before the freeze.** Until (e5) the benchmark has no pass rule, so nothing here can pass it. What
+  can be run is the per-measure comparison (`benchmark::compare`, Cramér-von Mises per measure with Holm's
+  correction) and the classifier test (`benchmark` (e1)) between Grid lives and real worms; the stack's free
+  parameters are fitted against block 1's reference statistics and judged against a block of the draw it was not
+  fitted on. Refuting, provisionally: a share of measures flagged, fixed in the journal before the run, that tuning the
+  stack's own parameters cannot bring down, while R2's model-carrying Program does. Pass side, provisionally: no
+  measure flagged and the classifier not telling the lives from the held-out block; a partial pass, not a benchmark
+  pass, since the definition may still change. Reaction latencies are not in these recordings, which are of spontaneous
+  behaviour, so they wait on stimulus assays ([pace.md § For the Lab](../research/pace.md#for-the-lab)).
+
+*Baselines and controls*: the placeholder Program (`crates/placeholder-worm`, which undulates only) as the floor; the
+stack with each layer, knob and remembered number pinned at baseline in turn, by the lab's ablation rule, a part being
+kept only if its removal costs the stack on a measure; the stack with its senses replaced by a signal of matched
+statistics but no relation to the world, which should fall to near the floor if the wirings, not their rhythm, carry the
+behaviour; and the stack plus a learned model, for R1 and R2. The real-against-real result of item 2 (e3), block 1
+against block 2 not told apart, is the test's own control that two samples of real worms pass.
+
+*Lean-brain cost*: an estimate, not yet a measurement - tens to hundreds of numbers and of the order of a hundred
+arithmetic operations a tick, far inside H12's bound of about 100 000 numbers. Its size, and its compute and memory
+per simulated second, are reported beside every score.
+
+*The pace rule*: every wiring's latency and every knob's time constant is set from a cited value in
+[pace.md](../research/pace.md) (§ Reaction Latencies, § Time Constants of Internal States), counted in the Grid's
+31.25 ms ticks; no layer reacts faster than the worm because the tick allows it. A wiring whose latency pace.md does not
+yet source is marked so and is not scored on that latency.
+
+*Why it is a strong candidate for the lab's first scored creature*: it is cheap, every decision can be traced to the
+one wiring or layer that made it, and it is the natural baseline any richer brain must beat on the benchmark.
+
+*Waits on*: a Program that runs on the Grid with such a stack; the Disk reader, item 3 (d2), to extract the same
+features from its lives; and, for R1 and R2, the frozen benchmark, item 2 (e5).
+*Tested so far*: nothing.
+
 ## Adding a Hypothesis
 
 A pool of candidates waits in [Matej's ideas and hunches](matej-hunches.md): unverified, to be triaged and

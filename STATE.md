@@ -231,6 +231,15 @@ found lives in the journal section it names; this list keeps only what is open.
       assay plate, for every assay, folded into FEATURES.md § Open Questions Before Freezing; first measure the spawn
       pad's terrace (STIMULI.md § What a Program Senses Today).
 
+12. **A reflex stack as the first scored creature**, a candidate, from
+    [H16](docs/hypotheses/README.md#h16-a-reflex-stack-layered-wirings-no-learned-model): a Program of fixed
+    sensor-to-motor wirings with suppression between layers, a few slow knobs and a few remembered numbers, its
+    latencies and time constants from [pace.md](docs/research/pace.md), every part with a switch that pins it at baseline.
+    Cheap and fully auditable, and the baseline any richer brain must beat. Split before starting: (a) its design and
+    pre-registration (H16's R3, with the share of flagged measures that refutes fixed in the journal); (b) the Program
+    in `crates/`; (c) its lives, read through the Disk reader (item 3 (d2)) and compared per measure with block 1;
+    R1 and R2 wait on item 2 (e5).
+
 ## To Revisit
 
 Experiments that failed or came out inconclusive, kept rather than discarded (the maintainer's ruling); each with
@@ -377,6 +386,9 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   F16, F17's single objective) and restated; F14's automata lens ready to become a task, F13 after verification,
   F15's worm test to be redesigned (journal of 2026-11-05, § F10-F17
   Planned, and a Triage).
+- 2026-11-05: H16 written, *a hunch* brought by the maintainer from another Claude session: a reflex stack
+  with no learned model gets through the benchmark; refuting outcomes R1-R3 with their pass sides, controls, cost and
+  pace rule; Brooks 1986, Kato et al. 2015 and the book's catalogue record checked at the source; item 12 added.
 - 2026-11-04: item 2 (c), the stored durations and frequencies recomputed from the published speed: 600 of 600
   recording-modes of block 1 equal to the last bit; the lab's speed against them in a second table (journal of
   2026-11-04, § The Published Durations and Rates: Reproduced Exactly Over Block 1).
