@@ -169,8 +169,11 @@ found lives in the journal section it names; this list keeps only what is open.
    - (e) the steering term in the turning theory, as a notebook first: drift predicted from the share of decisions
      pointing home, the lateral sense's noise and the turn's size (gr-fec.md § 12.4, recommendation 2);
    - (f) its validation on a fixed map imposed by the evaluator, so the map's share is known, not learned;
-   - (g) the fixed-point test that was never run (recommendation 2): the learning layer's learned weights against the
-     least-squares fit of reward on the worm's own features (gr-fec.md § 12.2);
+   - (g) the fixed-point test, done on 2026-11-05 (journal of 2026-11-05, § gr-fec's Worm by Equation: The Learning
+     Layer's Fixed Point): refuted in both arms. What it opened, one run each, neither registered yet: (g2) whether the
+     fit is well determined in the rarely excited directions, by fitting one half of the window and scoring on the
+     other; (g3) whether slow learners reach the fit everywhere given a longer life, with the length sized beforehand
+     from η·λ;
    - (h) the pre-registered test of "demystified" (recommendation 3): from the equations alone, with no search, choose
      the genes for a stated target and hit it within ±10% on held-out layouts.
 
@@ -363,6 +366,9 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   the Disk read through Master Control's crate (item 3 (d2a)-(d2c)), the salt and odour units, the odour reference,
   the terraced floor, the journal index, the spelling pointer, the version comments, FEATURES.md § Decisions, the salt
   letter to draft (item 11 (b2)) and the tap interval to the literature (item 12).
+- 2026-11-05: item 8 (g), the fixed-point test of gr-fec's learning layer (exact LMS): refuted by its registered bar
+  in both arms on four fresh layouts (median gap 0.34 to 0.47 against 0.20); evolved learners track rather than settle,
+  slowed ones match the fit only in often-excited directions (post hoc).
 - 2026-11-05: item 9 (h), the three audits: no spelling violation, Rust and notebooks clean; fixed the stale
   benchmark status in README.md and both diagrams (redrawn by `notebooks/figures.ipynb`), PLAN.md's copied list of
   senses, FEATURES.md's gaps and plane rows, CONTRIBUTING.md's second table of documents, four inline comments in
