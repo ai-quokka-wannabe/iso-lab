@@ -468,8 +468,8 @@ yet source is marked so and is not scored on that latency.
 *Why it is a strong candidate for the lab's first scored creature*: it is cheap, every decision can be traced to the
 one wiring or layer that made it, and it is the natural baseline any richer brain must beat on the benchmark.
 
-*Waits on*: a Program that runs on the Grid with such a stack; the Disk reader, item 3 (d2), to extract the same
-features from its lives; and, for R1 and R2, the frozen benchmark, item 2 (e5).
+*Waits on*: a Program that runs on the Grid with such a stack; the Disk reader, to extract the same features from its
+lives, now on STATE.md's *Next* as item 3 (d2) by the maintainer's ruling of 2026-11-05 ("Reuse Master Control"); and, for R1 and R2, the frozen benchmark, item 2 (e5).
 *Tested so far*: nothing.
 
 ## Adding a Hypothesis
