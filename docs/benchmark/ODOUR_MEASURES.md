@@ -62,12 +62,12 @@ The same pipeline for both bodies, as for salt. Where a step is salt's rule unch
   concentration; nothing else about *C* enters any measure below. The field is read for evaluation only; it never
   reaches a brain (the rule *No cheating*). The box filter's 3.2 mm is 2.83 *L* at the lab's reference body length of
   1123 µm (SALT_MEASURES.md, Q2), an assumption carried into every figure here.
-- **Track filters** are applied to both bodies by one rule, the paper's (Q2 below decides): kept if longer than 1 min
+- **Track filters** are applied to both bodies by one rule, the paper's (Q2 below, decided): kept if longer than 1 min
   of simulated time and displaced more than 3 mm (2.67 *L* at 1123 µm); removed if they start where *C* exceeds 70%
   of the field's maximum. That last is a ratio of two concentrations, so it needs no unit either. "Displacement" is
   ambiguous in the paper; the draft reads it as the largest distance from the start, which is the lab's reading.
 - **The Grid's side** needs an odour source apart from food, placed and held steady (STATE.md *Needs From Other
-  Repositories*, item (3)), and a Disk reader (STATE.md *Blocked*). The world's odour fades in about ten seconds
+  Repositories*, item (3)), and a Disk reader (STATE.md item 3 (d2)). The world's odour fades in about ten seconds
   after a meal (STIMULI.md § Air), so no measure here can be taken around a food orb.
 
 ## The Candidate Measures
@@ -131,13 +131,15 @@ description (Figure 7d, "Peak around zero is consistent with chemotaxis").
 
 ## The Open Questions of Item 11 (d2)
 
-- **Q1, the unit of the test. For the maintainer.** Figure 7 rests on "six experiments, ∼100 worms per experiment".
-  The unit is the experiment, about six per landscape, not the tracks. Whether the track files keep an experiment per
+- **Q1, the unit of the test. Decided by the maintainer's ruling in the session of 2026-11-05: "Plate/experiment".**
+  Figure 7 rests on "six experiments, ∼100 worms per experiment". The unit is the experiment, about six per landscape,
+  not the tracks, so each track's experiment must be known. Whether the track files keep an experiment per
   track is not known: their insides were not read. If they do, the unit is set by the data; if not, the route is salt's
   Q1 (a), a letter to the authors (SALT_MEASURES.md § The Open Questions). Six units give a wide interval at best; that
   limit is stated beside any odour result. On the Grid, an experiment would be one world holding several worms, the
   same choice as salt's plate.
-- **Q2, paper or script. For the maintainer, or the authors.** Six rules differ (the table above, marked **Differs**). This draft takes
+- **Q2, paper or script. Decided by the maintainer's ruling in the session of 2026-11-05: "Paper primary".** The paper's
+  text is the reference; the script's rules are a registered check. Six rules differ (the table above, marked **Differs**). This draft takes
   the paper's text as primary, because it is what the authors published and reviewers read, and the script as a check
   that the lab's pipeline reproduces their figure. If the script turns out to be the code behind Figure 7, the
   reference statistics computed by the paper's rules are the lab's, not the authors' published values, and are

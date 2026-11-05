@@ -61,7 +61,10 @@ Live headless lives in the cloud: Master Control (the world) and the Grid's crea
 senses through Mesa's software Vulkan, lavapipe), built from the commits `external/` pins, and a Program (the
 brain) written in this lab. [rc-worm](https://github.com/ai-quokka-wannabe/rc-worm), the organisation's
 human-steered worm, is the example of how a Program is shaped; the lab writes its own. The Disk each life
-leaves is the recording; the Phase 0 tool reads features from it. A flat arena first. The senses a Program
+leaves is the recording; the Phase 0 tool reads features from it. The floor is terraced and has no flat setting:
+lives run on the floor as it is, starting on the flat spawn pad, and the terraces' effects are measured, not avoided
+(the maintainer's ruling in the session of 2026-11-05, "Terraced is fine", which replaced "A flat arena first"; the
+journal of 2026-11-05, § The Maintainer's Rulings of 2026-11-05). The senses a Program
 has today are listed in tron-grid-lite's
 [PROGRAM_INTERFACE.md § The senses at a glance](https://github.com/ai-quokka-wannabe/tron-grid-lite/blob/main/docs/PROGRAM_INTERFACE.md#the-senses-at-a-glance),
 and those the stimulus assays need in [STIMULI.md § What a Program Senses Today, and What Only
