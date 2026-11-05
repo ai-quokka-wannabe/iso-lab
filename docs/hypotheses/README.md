@@ -387,6 +387,139 @@ one to three body seeds per layout and no benchmark; each is stated no more stro
   −0.0014 to +0.0052); eight of ten lean its way and one, 82300, is clearly worse (descriptive). § The Constant Floor on Ten Fresh Rich
   Layouts.
 
+### H17. Consciousness Science's Measures, Applied to a Sleeping Worm
+
+*A hunch*, the maintainer's (2026-11-05): "why not try to measure consciousness directly? let's go bold and not be afraid
+to look foolish! if we don't test crazy ideas we miss a lot!" The lab takes it up in the one form it can test: apply the
+measures that the science of consciousness actually uses to the worm and to the lab's Programs, and see whether they
+behave on a worm as their theories predict.
+
+- **What this cannot show.** No measure here can show that anything is felt, by a worm or by a Program. A measure
+  that falls in sleep tracks a *brain state*; whether that state is accompanied by experience is the question
+  Chalmers called the hard problem ([Chalmers 1996](https://doi.org/10.7551/mitpress/6860.003.0003); the chapter's
+  record checked at Crossref, its text not read tonight), and nothing in this hypothesis touches it. The theories behind
+  the measures hold that their quantities track consciousness; the lab tests only whether the quantities behave as
+  the theories predict on an animal they were not built on. If the measures disagree with one another on the worm,
+  that is a finding about the theories, and it is reported as one.
+- **The sharpest test: the worm sleeps.** In lethargus, whole-brain imaging at single-cell resolution shows the
+  *C. elegans* brain "predisposed to global quiescence, characterized by systemic down-regulation of neuronal
+  activity", with "only a few specific neurons" exempt, and with "efficient spontaneous and sensory-evoked exits"
+  ([Nichols et al. 2017](https://doi.org/10.1126/science.aam6851), the abstract read; the paper is behind a
+  subscription). Adults starved for long show a like state: "during starvation-induced sleep, brain dynamics are
+  systemically downregulated" ([Skora, Mende and Zimmer 2018](https://doi.org/10.1016/j.celrep.2017.12.091), open,
+  CC BY-NC-ND; the abstract read). Stress-induced sleep and lethargus's timings are in
+  [pace.md](../research/pace.md) (Hill et al. 2014; Patel et al. 2022). In humans, PCI falls in non-REM sleep (measure
+  1 below); whether Φ\* and ignition do was not checked at a source tonight. If the measures track something real, they
+  should fall in the worm's sleep too.
+- **Prior work on the worm, found tonight** (Europe PMC; not a systematic search). Entropy-based measures told the
+  awake worm from the worm under isoflurane, while mutual information and transfer entropy "did not differentiate
+  well" ([Chang et al. 2023](https://doi.org/10.1097/ALN.0000000000004579), the abstract read). The worm's
+  isoflurane immobility is not produced by the circuit of its sleep-like quiescence
+  ([Chang et al. 2025](https://doi.org/10.1371/journal.pone.0324323), the abstract read), so anaesthesia and sleep are
+  not interchangeable in the worm. A preprint profiles anaesthetised brain dynamics from human to nematode and reports
+  a shared profile of "shorter intrinsic timescales of neural activity and dampened interregional synchrony"
+  ([Luppi et al. 2025](https://doi.org/10.1101/2025.03.22.644729), not peer-reviewed; the abstract read). The lab
+  found no study computing the perturbational complexity index, Φ* or ignition on worm sleep; that is the gap, if the
+  search was wide enough, which it may not have been.
+
+*The measures*, each with what it is, what it is not, and what it costs. Every one is an evaluation tool computed after
+a life, on recorded activity, outside the brain:
+
+1. **The perturbational complexity index (PCI).** Perturb the cortex with transcranial magnetic stimulation, then
+   compress the spatiotemporal pattern of the response to measure its algorithmic complexity; it "reliably
+   discriminated the level of consciousness in single individuals during wakefulness, sleep, and anesthesia"
+   ([Casali et al. 2013](https://doi.org/10.1126/scitranslmed.3006294), the abstract read). Its root is the finding
+   that in non-REM sleep a cortical response "was rapidly extinguished and did not propagate beyond the stimulation
+   site" ([Massimini et al. 2005](https://doi.org/10.1126/science.1117256), the abstract read). The compression is
+   Lempel and Ziv's ([1976](https://doi.org/10.1109/TIT.1976.1055501), the record checked, not read); a faster and
+   more general estimate is proposed by [Comolatti et al. 2019](https://doi.org/10.1016/j.brs.2019.05.013) (the title
+   read only). *On the worm*: PCI needs a perturbation. A sensory stimulus during imaging is one, but in
+   lethargus it may end the quiescent bout, and a response that wakes the worm is not a response *in* sleep; only
+   perturbations that leave the bout unbroken, judged by behaviour, count. Without a perturbation, the complexity of
+   spontaneous activity (here *LZc*) is a weaker cousin of PCI and is reported under its own name, never as PCI. *On a
+   Program*: a sensory pulse through the Grid (a touch, say) is the perturbation the worm can also receive, and is
+   preferred. A direct kick to a Program's internal state carries no information about the world, but it writes into a
+   brain from outside; it is not used until the maintainer has said whether it sits within the rules. *Cost*: one
+   compression of a binarised units × samples matrix per response; the notebook measures its time and memory rather
+   than this text claiming them.
+2. **Integrated information (IIT).** IIT 3.0 defines Φ over a system's cause–effect structure
+   ([Oizumi, Albantakis and Tononi 2014](https://doi.org/10.1371/journal.pcbi.1003588), the record checked, not read),
+   and holds that it is the quantity of consciousness: that identity is the theory's claim, not something a
+   computation can test. PyPhi computes it for systems of binary elements ([Mayner et al. 2018](https://doi.org/10.1371/journal.pcbi.1006343),
+   GPL-3.0; the abstract read); an exhaustive search over the system's partitions "grows exponentially with system
+   size" ([Kitazono, Kanai and Oizumi 2018](https://doi.org/10.3390/e20030173), the abstract read), so exact Φ at 302
+   units is out of reach. The often-quoted ceiling of about a dozen units was not checked at a source tonight and is
+   not relied on. What is feasible is **Φ\***, an observational measure from data with an analytic form under a
+   Gaussian assumption ([Oizumi et al. 2016](https://doi.org/10.1371/journal.pcbi.1004654), the abstract read), with
+   the partition found by a polynomial search that the same group found "nearly perfect" even where its guarantee does
+   not hold (Kitazono, Kanai and Oizumi 2018). Φ\* is *not* IIT 3.0's Φ: it is computed from observed activity, not
+   from the system's causal structure under every state, and a Gaussian fit to calcium traces is an assumption to
+   check, not a given. *Cost*: covariance and lagged covariance of K recorded units (K² memory) and the partition
+   search; K and the choice of units are fixed before any data is seen; time measured, not claimed.
+3. **Global-workspace ignition.** A network model of conscious access predicts "an unique property of nonlinear
+   transition from nonconscious processing to subjective perception", an all-or-none entry into a global brain state
+   ([Dehaene, Sergent and Changeux 2003](https://doi.org/10.1073/pnas.1332574100), the abstract read; the later review,
+   [Dehaene and Changeux 2011](https://doi.org/10.1016/j.neuron.2011.03.018), the record checked, not read). *On the
+   worm*: across stimuli of graded strength, the share of units active above their own baseline, and whether it rises
+   as a step (a bimodal share, a steep fitted sigmoid) or in proportion. The worm's brain-wide dynamics are already
+   global in wake ([Kato et al. 2015](https://doi.org/10.1016/j.cell.2015.09.034), the record checked, not read),
+   so the first question is whether a stimulus-locked jump exists at all, before any sleep contrast. *Cost*: counting
+   over units and samples.
+4. **A behavioural marker: unlimited associative learning (UAL).** Proposed as "the marker of the *evolutionary
+   transition to minimal consciousness*" ([Bronfman, Ginsburg and Jablonka 2016](https://doi.org/10.3389/fpsyg.2016.01954),
+   CC BY; the abstract and the passages on nematodes read; at length in [Ginsburg and Jablonka 2019](https://doi.org/10.7551/mitpress/11006.001.0001),
+   the record checked, not read). The same paper says that *C. elegans* "does not fulfill the conditions for UAL: it has
+   never been shown to be able to learn in a non-elemental manner". So the marker's prediction for the worm is
+   *absent*, and a Program indistinguishable from the worm should lack it too; a Program that showed UAL would be less
+   worm-like, not more. UAL is a trait, not a state: it does not enter the sleep test.
+
+*Pre-registered, the sleep test* (measures 1–3, on recordings that do not yet exist in the lab; written before any is
+fetched):
+
+- *Segments*: wake and sleep by the recording's own behavioural labels (quiescence of movement and pumping), never by
+  the measures under test, which would make the test circular.
+- *The control for a trivial drop*: sleep lowers activity (Nichols et al. 2017), and less activity may lower a
+  measure by itself. Each measure is guarded in its own way, and only the guarded (*normalised*) measure can support
+  the hypothesis; the raw measure is reported beside it. For LZc and PCI-like, each unit is binarised against its own
+  distribution within its segment, and the complexity is divided by its mean over twenty surrogates in which each
+  unit's trace is phase-randomised independently (its own power spectrum kept, the structure across units destroyed),
+  seeds fixed in the notebook. For Φ\*, each unit's trace is z-scored within its segment, so that a smaller amplitude
+  alone cannot move it; the same surrogates are computed as a check that they give a Φ\* near zero, and are *not* used
+  as a denominator, since a mean near zero would make the ratio unstable. For ignition, a unit is active against its
+  own pre-stimulus baseline in the same segment.
+- *Unit, statistic, interval*: the animal; the relative change of the normalised measure, (sleep − wake) / wake, per
+  animal; its mean over animals, with a 95% percentile bootstrap interval over animals (10 000 resamples, seed fixed in
+  the notebook).
+- *Predicted direction*: LZc, PCI-like and Φ\* lower in sleep; the probability that a fixed stimulus ignites (a share
+  of active units above a threshold fixed on wake data alone) lower in sleep, the least certain of the four, since an
+  arousing stimulus ends the bout.
+- *Verdict per measure*, three outcomes that cannot overlap: **tracks the state** if the interval lies wholly below
+  −0.10 (a fall of at least a tenth); **refuted** if it lies wholly above −0.10, which includes every rise in sleep;
+  **undecided** otherwise, reported with the change the interval excludes. The tenth is a choice made before the
+  data, not a derived threshold.
+- *Across measures*: if one measure tracks the state and another is refuted on the same recordings, the theories'
+  measures disagree on the worm; that is reported as a result about them, not averaged away.
+
+*On Programs*: the same measures, the same rules, on a Program's internal state between its quiescent bouts and its
+active ones, once a Program has quiescence. A Program that sleeps only by stilling its body, its internal dynamics
+unchanged, should show no fall; the worm's brain falls (Nichols et al. 2017). So the sleep–wake change of each
+measure is a candidate for a *state-of-brain* comparison in the benchmark, telling a Program that stops moving from
+one whose brain enters a global state. It joins the benchmark only through the benchmark's own freeze, never scored
+before.
+
+*Predicts*: on worm recordings, the normalised measures fall in sleep; the measures agree with one another; the worm
+shows no UAL.
+*Refuted*: per measure, by the verdict rule above; the hunch as a whole, if every measure with a test is refuted on the
+worm. *Undecided* is not refuted, and is reported as undecided.
+*No cheating*: the measures read a brain's recorded state, as evaluation tools do; nothing from them reaches a brain,
+and no Program reads its own measure.
+*Lean*: the measures cost the brain nothing, being computed after the life; their own cost is reported beside each
+result.
+*Waits on*: worm data whose licence lets the lab use it (Nichols et al. 2017's data statement is unread, the paper being
+closed; Skora, Mende and Zimmer 2018's open text was searched for a deposit, a request or a repository and none was
+found); a Program with quiescence (none yet; the placeholder only undulates); the Disk reader, for a Program's state
+(STATE.md § Blocked). *Tested so far*: not yet; the next run is in STATE.md § Next.
+
 ## Adding a Hypothesis
 
 A pool of candidates waits in [Matej's ideas and hunches](matej-hunches.md): unverified, to be triaged and

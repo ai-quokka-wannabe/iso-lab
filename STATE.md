@@ -230,6 +230,13 @@ found lives in the journal section it names; this list keeps only what is open.
     - (f) the arena: the floor's 128 m (28.6 body lengths, 2.86 cm at the world's scale) and its terraces against an
       assay plate, for every assay, folded into FEATURES.md § Open Questions Before Freezing; first measure the spawn
       pad's terrace (STIMULI.md § What a Program Senses Today).
+12. **H17's first run, the worm's sleep through consciousness science's measures** (the maintainer's hunch,
+    [H17](docs/hypotheses/README.md#h17-consciousness-sciences-measures-applied-to-a-sleeping-worm)): (a) find whole-brain
+    imaging of *C. elegans* across sleep and wake that the lab may use - Nichols et al. 2017's data statement (the paper
+    is closed: try an author's manuscript, the supplement, the Zimmer laboratory's deposits), then Skora, Mende and
+    Zimmer 2018 and Chang et al. 2023 and 2025 - and register one with its licence and checksum in data/README.md; park
+    with what was tried if none opens; (b) then, in a notebook, LZc (not PCI) with its surrogate normalisation on one
+    recording's wake and sleep segments, by H17's pre-registered rules, exploration only.
 
 ## To Revisit
 
@@ -279,6 +286,10 @@ the idea for the next attempt.
   161-178) keeps a short copy of `.claude/commands/check-spelling.md`'s table: replace it with a pointer, or keep it
   as the organisation's template? (3) Does the style rule "No inline comments" (`check-style.md` § YAML) cover the
   version comment after each SHA-pinned `uses:` (`# v7.0.1`), which Dependabot keeps up to date?
+
+- **For the maintainer**, from H17 (journal of 2026-11-05, § H17: Consciousness Science's Measures on a Sleeping
+  Worm): whether perturbing a Program by writing into its internal state, rather than through its senses, sits within
+  *No cheating*; H17 uses only a sensory pulse until this is ruled.
 
 ## Blocked
 
@@ -355,6 +366,10 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-11-05: the maintainer's hunch written up as [H17](docs/hypotheses/README.md#h17-consciousness-sciences-measures-applied-to-a-sleeping-worm):
+  PCI, Φ\*, ignition and UAL, each checked at its source, with a pre-registered sleep-against-wake test and its
+  controls; no data yet, the next run is item 12 (journal of 2026-11-05, § H17: Consciousness Science's Measures on a
+  Sleeping Worm).
 - 2026-11-05: item 9 (h), the three audits: no spelling violation, Rust and notebooks clean; fixed the stale
   benchmark status in README.md and both diagrams (redrawn by `notebooks/figures.ipynb`), PLAN.md's copied list of
   senses, FEATURES.md's gaps and plane rows, CONTRIBUTING.md's second table of documents, four inline comments in
