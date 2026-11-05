@@ -402,8 +402,9 @@ record: the same source's earlier hunch of graded slow knobs was not supported o
     - A *wiring* is a fixed mapping from senses to actions, its parameters set before a life and never changed in it.
       Adaptation inside a sense pathway counts as part of its wiring only if its time constant is cited and is at most
       3 s. The bound is the longest sensory timescale in [pace.md](../research/pace.md) § Touch: Liu et al.'s suggestion
-      that the animal integrates "over approximately 3 s" before reversing, beside the receptor currents' adaptation over
-      "a few tens of milliseconds"; it lies far below the shortest internal state's time constant there, 75 s for
+      that the animal integrates "over approximately 3 s" before reversing - an integration window, not an adaptation
+      constant, used here only as a ceiling - beside the receptor currents' adaptation over "a few tens of
+      milliseconds"; it lies far below the shortest fitted time constant of an internal state there, 75 s for
       roaming. Adaptation states are reported in a count of their own.
     - A *slow knob* or *remembered number* is a scalar written by the creature's experience, with a named counterpart in
       a cited source and an update rule taken from that source (a preferred temperature, adapting over "several hours"
@@ -413,8 +414,12 @@ record: the same source's earlier hunch of graded slow knobs was not supported o
       updated to reduce the error of predicting a future sense value, or takes the experience-written state past
       K = 8 numbers. K counts every experience-written number except the adaptation states: the N knobs and remembered
       numbers included, so a stack at K holds nothing else written by experience.
-    - Precedence: a scalar with a named, cited counterpart and an update rule taken from that source is a remembered
-      number, whatever its rule minimises; any other state updated to reduce a prediction error is a model.
+    - The order in which a state is classed, each step applying only to what the steps before left: *first*, a cited
+      adaptation of at most 3 s inside a sense pathway is wiring; *then*, a scalar with a named, cited counterpart and
+      an update rule taken from that source is a remembered number, whatever its rule minimises; *then*, any other
+      experience-written state that is indexed by place or heading, or is updated to reduce a prediction error, or
+      takes the total past K, is a model. Indexing by place or heading makes a state a model even when each of its
+      scalars is cited: a map of cited numbers is still a map.
     - K, N and the 3 s bound are chosen now, as bounds of the hunch's own size, not derived from a source.
 - **What the sources say, and what they do not.** Brooks's abstract describes "[l]ayers of control system" built "to
   let the robot operate at increasing levels of competence", made of "asynchronous modules that communicate over
@@ -526,11 +531,11 @@ per simulated second, are reported beside every score.
 *The pace rule*: every wiring's latency and every knob's time constant is taken from a cited value in
 [pace.md](../research/pace.md) (§ Reaction Latencies, § Time Constants of Internal States) and counted in the Grid's
 31.25 ms ticks, rounded up to a whole tick, so that no wiring acts sooner than the worm: a latency under one tick takes
-one tick, and every other is less than one tick slower than its source. The value rounded up is the source's shortest
-reported statistic for that pathway - its lower bound or fastest quantile where it gives one, else its central value -
-and the creature's own latencies, where an assay measures them, must not be faster than the source's at its 10th
-percentile where the source reports a distribution, else at its central value, so that a fast tail cannot beat the
-worm. A wiring whose latency pace.md does not yet source
+one tick, and every other is less than one tick slower than its source. Each latency is built from the source's
+central value, rounded up to whole ticks, with any spread the source reports. Where an assay measures the creature's
+latencies, two checks follow: its central value and its 10th percentile are each no faster than the source's (the
+10th percentile only where the source reports a distribution); and its central value is no slower than the source's by
+more than one tick plus the source's stated uncertainty. A wiring whose latency pace.md does not yet source
 takes, provisionally, the latency of the sourced pathway it is named after in item 13 (a)'s design, is marked
 unsourced, and is not scored on its latency until pace.md sources it.
 
