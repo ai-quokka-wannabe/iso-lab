@@ -113,7 +113,7 @@ out of their sources when the experiment is prepared.
 | E20 | Identity is the persisted pattern | [planned](E16-E20.md#e20-identity-is-the-persisted-pattern) |
 | F1 | Phase is the missing ingredient: complex amplitudes | [planned](F1-F9.md#f1-phase-is-the-missing-ingredient-complex-amplitudes) |
 | F2 | Cognition on the tree-like side of the numbers | [planned](F1-F9.md#f2-cognition-on-the-tree-like-side-of-the-numbers) |
-| F3 | Memories as codewords of an error-correcting code | [planned](F1-F9.md#f3-memories-as-codewords-of-an-error-correcting-code) |
+| F3 | Memories as codewords of an error-correcting code | [planned; run 2026-11-05, refuted](F1-F9.md#f3-memories-as-codewords-of-an-error-correcting-code) |
 | F4 | Stable thoughts as idempotents of an exceptional algebra | [planned](F1-F9.md#f4-stable-thoughts-as-idempotents-of-an-exceptional-algebra) |
 | F5 | Self-similar groups as the symmetry of concept hierarchies | [planned](F1-F9.md#f5-self-similar-groups-as-the-symmetry-of-concept-hierarchies) |
 | F6 | Critical brains as optimal expanders | [planned](F1-F9.md#f6-critical-brains-as-optimal-expanders) |
