@@ -121,8 +121,8 @@ found lives in the journal section it names; this list keeps only what is open.
    planned. Next: **G** (30, from the gr-fec sandbox; [docs/research/gr-fec.md](docs/research/gr-fec.md) has its numbers;
    A to E and F10-F17 are planned, F1-F9 in [#225](https://github.com/ai-quokka-wannabe/iso-lab/pull/225)). The journal
    records the triage, and hunches that survive are promoted into numbered hypotheses or tasks here; E15, E11, E16 and E20
-   are the candidates from E11-E20 (journal of 2026-11-05, § E11-E20 Planned, and a Triage); F13, F14's automata lens and
-   F15's worm test from F10-F17 (§ F10-F17 Planned, and a Triage).
+   are the candidates from E11-E20 (journal of 2026-11-05, § E11-E20 Planned, and a Triage); F14's automata lens from F10-F17,
+   and F13 once its revised design is verified; F15's worm test needs a redesign (§ F10-F17 Planned, and a Triage).
 6. **Audit H10's first test by A12's plan**
    ([docs/hypotheses/experiments/A9-A15.md § A12](docs/hypotheses/experiments/A9-A15.md#a12-experiment-hygiene)):
    planted copies prepared by one agent and audited, blind, by another that has read neither that test's review nor
@@ -367,7 +367,8 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   the Archive Holds).
 - 2026-11-05: item 5, hunches F10-F17 planned ([F10-F17.md](docs/hypotheses/experiments/F10-F17.md)); four of the
   hunches' tests found to lack content or a mechanism as written (F14's Krohn-Rhodes clause, F15's heading-only holonomy,
-  F16, F17's single objective) and restated; F13, F14 and F15 ready to become tasks (journal of 2026-11-05, § F10-F17
+  F16, F17's single objective) and restated; F14's automata lens ready to become a task, F13 after verification,
+  F15's worm test to be redesigned (journal of 2026-11-05, § F10-F17
   Planned, and a Triage).
 - 2026-11-05: item 5, hunches E11-E20 planned ([E11-E15.md](docs/hypotheses/experiments/E11-E15.md),
   [E16-E20.md](docs/hypotheses/experiments/E16-E20.md)); E15, E11, E16 and E20 ready to become tasks, the rest wait on a
