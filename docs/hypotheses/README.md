@@ -476,78 +476,120 @@ a life, on recorded activity, outside the brain:
    tested for non-elemental learning and found without it. UAL is a trait, not a state: it does not enter the sleep test.
 
 *Pre-registered, the sleep test* (measures 1–3, on recordings that do not yet exist in the lab; written before any is
-fetched, and revised once, before any data, after the second agent's review of 2026-11-05):
+fetched, and revised twice, before any data, after the second agent's reviews of 2026-11-05 on pull request 229):
 
 - *Datasets and segments*: each dataset is analysed on its own and never pooled. Lethargus imaging (as in Nichols et
   al. 2017) compares quiescent bouts with active bouts of the same lethargus; starvation imaging (as in Skora, Mende
   and Zimmer 2018) compares sleep bouts with awake bouts of the same starved adults; wake outside lethargus, where a
   recording has it, is a separate secondary contrast. Wake and sleep come from the recording's own behavioural labels,
   never from the measures under test, which would make the test circular.
-- *Windows and lengths*: the measures are computed on windows of one fixed length W, the median sleep-bout length of
-  the dataset rounded down to whole frames and at least 10 s, set from the behavioural labels alone. Each bout is cut into
-  non-overlapping windows; bouts shorter than W are left out and counted. Within each animal, the state with fewer windows sets the count, and that many
-  windows of the other state are drawn with a fixed seed, so the two states have equal lengths. An animal's value in a
-  state is the mean over its windows. With fewer than six animals that keep windows in both states, the dataset is
-  described and given no verdict.
-- *The noise control.* Sleep lowers activity (Nichols et al. 2017). In calcium traces, lower activity at the same
-  indicator noise means a lower signal-to-noise ratio, and that alone can move every measure: independent noise tends to pull
-  Φ\* towards zero, and noise binarised looks maximally complex. Z-scoring and surrogates do not remove this. So the
-  wake segment is matched to sleep's noise before any contrast:
-    - per unit and window, the noise variance is estimated from first differences, σ²ₙ = (1.4826 · MAD(Δx))² / 2. This
-      assumes white noise and a signal slow at the frame rate, and a check of that assumption (the first differences'
-      autocorrelation at lag 1) is reported;
-    - the signal variance is the trace's variance minus σ²ₙ, floored at zero. A unit whose wake signal-to-noise ratio
-      is below 1 is left out of both states, and the units left out are counted;
-    - each wake trace gets independent Gaussian noise, seeds fixed, enough to bring its signal-to-noise ratio down to
-      that unit's ratio in the animal's sleep windows. Nothing is added where sleep's ratio is the higher. The contrast,
-      for windows and for trials alike, is sleep against this *noise-matched wake*; the unmatched contrast is reported beside it.
-- *What a noise-only change gives, and the controls that show it.* If sleep differed from wake only by a lower
-  signal-to-noise ratio, noise-matched wake would be statistically the same as sleep, and every measure's expected
-  change would be zero. Such a change therefore cannot give *tracks the state*, which needs a fall. With enough animals
-  it gives *refuted*, the right reading for a measure that saw no change of brain state beyond the ratio. Before any
-  real contrast, the notebook checks this on the dataset's own wake windows:
-    - a *noise-only control*: synthetic sleep made from wake by scaling each unit's signal down to its sleep ratio, then
-      run through the whole pipeline. Twenty replicates are run, each with as many animals as the real data. The
-      control passes if at most two of the twenty 95% intervals exclude zero; three or more happen by chance 7.5% of
-      the time when the pipeline is sound (binomial, p = 0.05);
-    - two *positive controls*: synthetic sleep at the matched ratio with the structure across units destroyed (each unit
-      phase-randomised on its own), where Φ\* must fall; and with every unit driven by one shared slow trace, where LZc
-      must fall.
-
-  If a control fails, no verdict is issued for that measure, and the failure is reported.
+- *Windows and three disjoint sets.*
+    - The measures are computed on windows of one fixed length W: the median sleep-bout length of the dataset, rounded
+      down to whole frames and at least 10 s, set from the behavioural labels alone.
+    - Each bout is cut into non-overlapping windows; bouts shorter than W are left out and counted.
+    - In each animal, the wake windows are split by a fixed seed into three disjoint sets: the *contrast set*, as many
+      windows as the animal has in sleep; and two equal *reference sets*, A and B, from what is left.
+    - The contrast uses only the contrast set. Every choice made from data - units kept, thresholds, τ - uses only A
+      and B, so no choice can select on the values being compared.
+    - An animal without enough wake windows for A and B is left out and counted. With fewer than six animals left, the
+      dataset is described and given no verdict.
+- *Why noise matters.* Sleep lowers activity (Nichols et al. 2017). In calcium traces, lower activity at the same
+  indicator noise means a lower signal-to-noise ratio (SNR), and that alone can move every measure. Independent noise
+  tends to pull Φ\* towards zero, and binarised noise looks complex. Z-scoring and surrogates do not remove this.
+- *The noise estimate, and its check.*
+    - Per unit and window, the noise variance is estimated from first differences, σ²ₙ = (1.4826 · MAD(Δx))² / 2. This
+      is right for white noise and a signal slow at the frame rate; for noise correlated across frames, as after
+      smoothing or deconvolution, it underestimates σ²ₙ.
+    - The *check*: for white noise, the lag-1 autocorrelation of Δx is −0.5. It is computed on sleep windows of units
+      whose estimated sleep SNR is below 0.5, where the signal contributes least. If the median over those units lies
+      in [−0.6, −0.4], the estimate is used as it is.
+    - Outside that range, every verdict is computed three times, with σ²ₙ scaled by 0.5, 1 and 2. A measure gets a
+      verdict only if all three agree. Otherwise it is *no verdict until the indicator noise is measured* (from a
+      GFP-only or fixed-tissue recording).
+    - The signal variance is the trace's variance minus σ²ₙ, floored at zero.
+- *The noise matching.*
+    - **Units kept.** A unit is kept if its SNR, estimated on reference set A, is at least 1 in wake. It must also be at
+      least 0.1 in the animal's sleep windows, since below that the noise to add is unbounded. The units left out are
+      counted, and their share is reported.
+    - **The price of the floor.** It keeps the contrast on units that still carry signal in sleep, so it cannot see a
+      fall carried by units that fall silent. That loss is the price of not letting noise decide, and the result says
+      so.
+    - **The added noise.** Each contrast-set wake trace gets noise that brings its SNR down to that unit's sleep SNR.
+      Nothing is added where sleep's ratio is the higher.
+    - **Where the noise comes from.** It is empirical, not white: segments of sleep traces from the same animal's units
+      whose sleep SNR is below 0.1 (the ones excluded above, nearly pure noise), demeaned, rescaled to the variance needed, and drawn by a
+      fixed seed. This gives the added noise sleep's own spectrum. With fewer than five such units, white Gaussian noise
+      is used instead, and the verdict is flagged as resting on the white-noise model.
+    - **The contrast.** It is sleep against this *noise-matched wake*, for windows and trials alike. The unmatched
+      contrast is reported beside it.
+- *The noise-only control.* It is built on reference set B, which the contrast never uses.
+    - Each kept unit's trace x becomes a·x + e. With σ²ₛ for a unit's signal variance, the factor is
+      a = √(σ²ₛ,sleep / σ²ₛ,wake), so it brings the signal to sleep's variance, and it scales wake's own noise by the
+      same factor.
+    - The term e is empirical sleep noise, drawn as above, with variance max(0, σ²ₙ,sleep − a²σ²ₙ,wake). The synthetic
+      trace then has sleep's signal variance, sleep's noise and so sleep's SNR, with wake's structure unchanged. Where
+      the max takes zero, the synthetic noise is below sleep's, and the units concerned are counted.
+    - This synthetic sleep goes through the whole pipeline: the matching, the guards and the statistic against B's own
+      wake.
+    - Twenty replicates differ only in their noise draws. They share the animals, so they are not independent, and no
+      binomial rate is claimed for them.
+    - The control *fails* if any replicate's interval lies wholly below −τ, the one direction that would make a false
+      *tracks the state*. It cannot catch a bias smaller than τ.
+    - So the mean Δ over the replicates is also taken as the pipeline's bias, b. The real verdict then needs a fall
+      beyond −τ + min(0, b): a negative bias raises the bar by its own size.
+- *Two positive controls*, on B: synthetic sleep at the matched SNR, (i) with the structure across units destroyed (each
+  unit phase-randomised on its own), where Φ\* must fall; and (ii) with every unit driven by one shared slow trace,
+  where LZc must fall. If a positive control does not show its fall, the measure has no verdict.
+- *The guarded measures.*
+    - **LZc.** Each unit's noise-matched trace is binarised at its own median within the window. The complexity is
+      divided by its mean over twenty surrogates, each unit phase-randomised independently from the same noise-matched
+      trace, so that noise's spectrum is in both the measure and its denominator.
+    - **Φ\***. Each unit is z-scored per window. The covariance and lag-one covariance are pooled over an animal's
+      windows in a state, because a single window may hold only a few tens of samples, too few to support them.
+    - **The units Φ\* uses.** Its K units are those with the highest wake SNR on set A, with K at most a tenth of the
+      pooled samples per state. If that leaves fewer than four units, Φ\* has *no verdict until longer recordings*.
+    - **Φ\*'s surrogates** are a check that they come out near zero.
 - *Perturbations* (PCI-like and ignition, alike):
     - the stimulus is one the dataset applies, named with its modality, strength and duration when the dataset is
       registered and before any measure is computed. If there are several, it is the one with the most trials in sleep.
       A dataset without stimulus trials gets no PCI-like or ignition test;
     - for each trial, the baseline is 10 s before onset and the response window R is the 10 s after it. A unit-sample
-      is *active* if it exceeds the 99th percentile of that unit's own baseline, which is also PCI-like's binarisation,
-      against the pre-stimulus baseline as in Casali et al. 2013;
+      is *active* if it exceeds the 99th percentile of that unit's baseline samples pooled over the trials of the same
+      state; a single 10 s baseline is too short, its 99th percentile nearly its maximum. This is also PCI-like's
+      binarisation, against the pre-stimulus baseline as in Casali et al. 2013;
+    - ignition's threshold, the share of active units, is set on the noise-matched wake trials of the reference sets
+      alone;
     - a trial is *behaviourally unchanged* if the behavioural label does not change during R. In sleep, this means the
       bout is unbroken;
     - because the worm's brain-wide state carries its motor command ([Kato et al. 2015](https://doi.org/10.1016/j.cell.2015.09.034),
       the title's claim, the paper not read), keeping only unchanged sleep trials would select responses that did not
-      spread. The *primary* analysis therefore uses all trials in both states. A response that wakes the worm then raises sleep's value, against the predicted
-      direction, so this choice is conservative. A *secondary* analysis keeps only behaviourally unchanged trials in
-      both states. The fraction of trials that changed behaviour, the woken fraction in sleep, is reported for each
-      state.
-- *Statistic*: per animal, the log ratio Δ = ln(sleep / noise-matched wake) of the guarded measure. For LZc, the measure
-  is divided by its mean over twenty surrogates in which each unit is phase-randomised independently. For Φ\*, each unit
-  is z-scored per window. Φ\*'s surrogates are a check that they come out near zero, not a denominator; an animal whose
-  wake Φ\* does not exceed the 95th percentile of its own surrogates' is left out and counted. The interval is a 95% t
-  interval over animals; a 95% percentile bootstrap (10 000 resamples, seed fixed) is reported beside it.
+      spread. The *primary* analysis therefore uses all trials in both states. A response that wakes the worm then raises
+      sleep's value, against the predicted direction, so this choice is conservative. A *secondary* analysis keeps only
+      behaviourally unchanged trials in both states. The fraction of trials that changed behaviour, the woken fraction
+      in sleep, is reported for each state.
+- *Statistic*: per animal, the difference Δ = sleep − noise-matched wake of the guarded measure, in the measure's own
+  units (bits for Φ\*). A difference, unlike a ratio, stays bounded when a state's value nears zero, so no animal is
+  floored or excluded on its value. The interval is a 95% t interval over animals; a 95% percentile bootstrap (10 000
+  resamples, seed fixed) is reported beside it.
 - *Predicted direction*: LZc, PCI-like and Φ\* lower in sleep. Ignition, the probability that the share of active
-  units crosses a threshold set on wake trials alone, is also lower in sleep, the least certain of the four.
-- *The threshold τ.* Before the sleep contrast, each measure's Δ is computed between two disjoint, equal-length sets
-  of wake windows from the same animals. τ is the larger of ln 0.9 (a fall of a tenth) and the 95th percentile of
-  |Δ| over animals, wake against wake. A fall smaller than the measure's own repeatability is not called a state.
-- *Verdict per measure*, three outcomes that cannot overlap:
-    - **tracks the state** if the interval lies wholly below −τ;
-    - **refuted** if it lies wholly above −τ. This includes every rise in sleep, and also a real fall smaller than τ;
-      the latter is written as "refuted: a fall smaller than τ", never as "no fall";
+  units crosses its threshold, is also lower in sleep, the least certain of the four.
+- *The threshold τ*, positive, in the measure's units, from the reference sets alone.
+    - τ = max(0.1 · m, r). Here m is the median over animals of the noise-matched wake value on set A, so the first
+      term is a fall of a tenth. And r is the nearest-rank 95th percentile over animals of |Δ| between noise-matched sets
+      A and B. With fewer than twenty
+      animals, r is the maximum, which is conservative.
+    - A fall smaller than the measure's own repeatability is not called a state.
+    - The sensitivity runs replace 0.1 by 0.05 and by 0.2 and keep the max with r, so where r dominates they equal the
+      primary run, and the report says so.
+- *Verdict per measure*, three outcomes that cannot overlap. With b the control's bias from above, and U and L the
+  upper and lower ends of the interval for Δ:
+    - **tracks the state** if U < −τ + min(0, b);
+    - **refuted** if L > −τ + min(0, b). This includes every rise in sleep, and also a real fall smaller than τ; the
+      latter is written as "refuted: a fall smaller than τ", never as "no fall";
     - **undecided** otherwise, reported with the change the interval excludes.
 
-  The same verdicts at ln 0.95 and ln 0.8 are reported beside the primary one as a sensitivity check, and do not
-  replace it.
+  The sensitivity verdicts are reported beside the primary one and do not replace it. A failed control, a failed noise
+  check or too few animals gives *no verdict*, with the reason, instead of any of the three.
 - *Across measures*: if one measure tracks the state and another is refuted on the same recordings, the theories'
   measures disagree on the worm. That is reported as a result about them, not averaged away.
 
@@ -558,10 +600,10 @@ measure is a candidate for a *state-of-brain* comparison in the benchmark, telli
 one whose brain enters a global state. It joins the benchmark only through the benchmark's own freeze, never scored
 before.
 
-*Predicts*: on worm recordings, the guarded measures fall in sleep, against noise-matched wake; the measures agree with one another; the worm
-shows no UAL.
+*Predicts*: on worm recordings, the guarded measures fall in sleep, against noise-matched wake; the measures agree
+with one another; the worm shows no UAL, as Bronfman, Ginsburg and Jablonka read the evidence.
 *Refuted*: per measure, by the verdict rule above; the hunch as a whole, if every measure with a test is refuted on the
-worm. *Undecided* is not refuted, and is reported as undecided.
+worm. *Undecided* and *no verdict* are not refuted, and are reported as what they are.
 *No cheating*: the measures read a brain's recorded state, as evaluation tools do; nothing from them reaches a brain,
 and no Program reads its own measure.
 *Lean*: the measures cost the brain nothing, being computed after the life; their own cost is reported beside each

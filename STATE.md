@@ -260,7 +260,7 @@ found lives in the journal section it names; this list keeps only what is open.
     is closed: try an author's manuscript, the supplement, the Zimmer laboratory's deposits), then Skora, Mende and
     Zimmer 2018 and Chang et al. 2023 and 2025, and as a lead Luppi et al. 2025's compiled nematode wake and anaesthesia
     recordings (not sleep) - and register one with its licence and checksum in data/README.md; park with what was tried
-    if none opens; (b) then, in a notebook, H17's noise-only and positive controls on the dataset's wake windows, and
+    if none opens; (b) then, in a notebook, H17's noise check, noise-only and positive controls on the reference windows, and
     only if they pass, LZc (not PCI) against noise-matched wake on one recording, by H17's pre-registered rules,
     exploration only.
 
