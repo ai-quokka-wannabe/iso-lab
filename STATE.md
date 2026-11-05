@@ -209,9 +209,14 @@ found lives in the journal section it names; this list keeps only what is open.
       test seen failing first, with Q7's registered check at ℓ = 0.125 L and 0.5 L reported beside the primary 0.25 L. No
       Grid life is needed, so it is not blocked upstream. The measures that use heading
       change (M2-M4, M6) stay provisional until Q3 is answered, and the reference statistics wait on Q1;
-    - (d) odour: read Chen et al. 2023's methods ([doi:10.7554/eLife.85910](https://doi.org/10.7554/eLife.85910)) and
-      list its archive's files (STIMULI.md § Air), and say whether its measures against bearing, made in a flow
-      chamber, can stand for still air;
+    - (d) done (journal of 2026-11-05, § The Odour Dataset: Its Methods and What the Archive Holds): methods read and
+      archive listed by range requests; CC BY 4.0; the tracks are centroids, 1.04 GB of the 1.29 GB archive, from about
+      six experiments. Its measures against bearing probably stand for still air, its concentrations do not
+      (STIMULI.md § Air);
+    - (d2) odour measures: draft them as SALT_MEASURES.md did for salt (bearing to the local gradient, turns over 60° in
+      1 s against bearing, curvature over 1 mm against bearing, the experiment as the unit), first reading
+      `demo_code/odor_flow_worm.m` (18,570 bytes, one member by range request) for the exact rules. No Grid life before
+      an odour source apart from food, held steady;
     - (e) heat: search the thermotaxis papers' data statements for public tracks, and read the assays' plates, gradients
       and measures in full. Ryu and Samuel 2002 and Luo et al. 2014 were found closed (pace.md); try Luo et al. 2006 and
       Ito et al. 2006 first, then an author's manuscript in Europe PMC, then data or a reprint asked of an author through
@@ -337,6 +342,10 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-11-05: item 11 (d), the odour dataset's methods and archive listed without downloading it: CC BY 4.0, the
+  worm's tracks 1.04 GB of 1.29 GB, centroids from about six experiments; its measures against bearing probably stand for
+  still air, its concentrations do not; not adopted (journal of 2026-11-05, § The Odour Dataset: Its Methods and What
+  the Archive Holds).
 - 2026-11-04: item 2 (c), the stored durations and frequencies recomputed from the published speed: 600 of 600
   recording-modes of block 1 equal to the last bit; the lab's speed against them in a second table (journal of
   2026-11-04, § The Published Durations and Rates: Reproduced Exactly Over Block 1).

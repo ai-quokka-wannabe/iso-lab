@@ -231,17 +231,50 @@ readout". Turn rate and heading change against bearing (their Figure 10) are the
 
 **Odour: reference data.** One candidate, not adopted: Chen et al. 2023's recordings of the odour flow control, the
 concentration measurements and the behavioural tracks, Figshare
-[doi:10.6084/m9.figshare.21737303](https://doi.org/10.6084/m9.figshare.21737303), CC BY 4.0, a raw archive of 1.29 GB
-(Figshare's API, 2026-11-04). Images at 14 frames per second and 32 µm a pixel (their methods). Two caveats: the
-landscape is made by patterned airflow in a flow chamber, not still air, and agar "greatly disrupts an applied butanone
-gradient" (their words). Measures conditioned on the local gradient the worm met may carry over to still air; the paper
-offers no end-point index to compare, and one computed from its tracks would depend on the chamber's geometry.
+[doi:10.6084/m9.figshare.21737303](https://doi.org/10.6084/m9.figshare.21737303) (version 9), CC BY 4.0 like the paper
+itself. Its methods were read and its archive listed by range requests on 2026-11-05, without downloading it (the
+journal of 2026-11-05, § The Odour Dataset: Its Methods and What the Archive Holds, has the commands, the folders and
+the sizes). In short:
+
+- The worm's tracks are one folder of the 1.29 GB archive, eight MATLAB files of 1.04 GB, named by the published
+  figures (`track_fig7a`, `track_fig7b`, `track_fig7def_9`, `track_fig7SI`, `track_fig_8AIB`) beside two landscapes.
+  Their insides were not read; that `track_fig7SI` is the no-odour control and `Landscape_low` and
+  `Landscape_cone_110mM` the two landscapes are inferred from the names and the captions, not confirmed.
+- The tracks are centroids: the posture was estimated, "but in this work only the position and velocity was used"
+  (their methods), at 14 frames per second, smoothed "with a third-order polynomial in a 0.5 s time window", tracks under
+  1 min or 3 mm left out, and those starting above 70% of the peak concentration removed. A turn is a heading change of
+  over 60° in 1 s; curvature is the angle between displacements 1 mm apart. Strain N2, young adults, on 1.6% agar.
+- Figure 7 rests on "six experiments, ∼100 worms per experiment" in two landscapes. The unit of a test is the
+  experiment, about six, not the tracks, as for salt (SALT_MEASURES.md § The Open Questions, Q1).
+
+**Odour: can a flow chamber stand for still air?** For the three measures against the bearing, probably yes; for
+anything carrying the concentration's size or the chamber's shape, no. Moderately sure, and only by argument: no
+experiment compares the two airs.
+
+- *For*: the measures are conditioned on the local gradient the worm met, not on how the gradient was made; the
+  landscape is held stationary - "stable over the timescale of 30 min behavioral experiments" when measured without agar,
+  and with agar brought to quasi-equilibrium first and watched at the boundary - so what a worm samples is set by the
+  field's shape and its own movement, as in a settled still-air field; and at the chamber's "∼5 mm/s" the
+  authors "observed no evidence of anemotaxis", the biased random walk and weathervaning both "absent in control
+  experiments with flow but not odor" (two experiments, Figure 7, figure supplement 1).
+- *Against*: the flow is laminar convection along one axis, so the cone's gradient keeps one orientation to the wind
+  that a radial still-air field does not have; the agar absorbs butanone and is held at quasi-equilibrium, and how much
+  the worm senses through the agar rather than the air "is unclear" (their discussion); a cone and a radial field differ in
+  shape, so the bearing's distribution reflects each landscape's geometry, and only the rates and curvatures
+  conditioned on bearing can compare; and the drift velocity against the gradient's steepness (their Figure 9) is in
+  the chamber's butanone units, to which the Grid's bound fractions have no calibration.
+- *What the Grid has*: Master Control's air is diffusion with a loss and no wind, the floor a wall rather than a
+  reservoir (`src/air.rs`, `src/odour.rs` at the pin), settling in about ten seconds; a still-air test must therefore
+  use a source held steady, never one fading after a meal.
 
 **Odour: what the benchmark would need.** Chen et al.'s three measures against bearing - its distribution, the sharp
-turns' rate and the curvature - against the local gradient of the source concentration, rebuilt for evaluation;
-upstream, **an odour source apart from food**, a placed source with a declared
-pattern over the receptor types, so the assay smells without feeding; and wind, only if the flow chamber's data are
-taken as they are. The pace note has one weak latency for odour avoidance (4 s, Sanders et al. 2013, pace.md § Smell).
+turns' rate and the curvature - against the local gradient of the source concentration, rebuilt for evaluation by
+their rules above, with the experiment as the unit; the bearing's distribution compared only between like landscapes.
+Upstream, **an odour source apart from food**, a placed source with a declared pattern over the receptor types, held
+steady, so the assay smells without feeding. Wind is not needed: the case above takes the chamber's data for still air
+without it. Adopting the tracks would cost about 1.04 GB of download (eight members by range requests, not the 1.29 GB
+archive) and 1.04 GB on disk while read. The pace note has one weak latency for odour avoidance (4 s, Sanders et al.
+2013, pace.md § Smell).
 
 **Aerotaxis: what exists.** Nothing measurable: oxygen and carbon dioxide are not in the world, and ABI 13 stages their
 sensors at the open air's values. The behaviour is clear in the literature: a "strong behavioural preference for 5-12%
