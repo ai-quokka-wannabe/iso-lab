@@ -171,7 +171,7 @@ found lives in the journal section it names; this list keeps only what is open.
      pointing home, the lateral sense's noise and the turn's size (gr-fec.md § 12.4, recommendation 2);
    - (f) its validation on a fixed map imposed by the evaluator, so the map's share is known, not learned;
    - (g) the fixed-point test, done on 2026-11-05 (journal of 2026-11-05, § gr-fec's Worm by Equation: The Learning
-     Layer's Fixed Point): refuted in both arms. What it opened, one run each, neither registered yet: (g2) whether the
+     Layer's Fixed Point): refuted in both arms. What it opened, one run each, none registered yet: (g2) whether the
      fit is well determined in the rarely excited directions, by fitting one half of the window and scoring on the
      other; (g3) whether slow learners reach the fit everywhere given a longer life, with the length sized beforehand
      from η·λ; (g4) whether the feature map's own drift - node births and prototype moves inside the window, measured by
@@ -275,7 +275,9 @@ found lives in the journal section it names; this list keeps only what is open.
     latencies and time constants from [pace.md](docs/research/pace.md), every part with a switch that pins it at baseline.
     Cheap and fully auditable, and the baseline any richer brain must beat. Split before starting: (a) its design and
     pre-registration: the family, the optimiser's budget per seed, the number of lives, the threshold of flagged
-    measures that refutes R3, and the model registered for R1b and R2; (b) the Program in `crates/`; (c) its lives,
+    measures that refutes R3, and the model registered for R1b and R2, with a word that H16's map sentence does not
+    override the first step of its classing order: a cited adaptation of at most 3 s in a sense pathway stays wiring
+    even in a bank indexed by heading (review 5791110537 on #228); (b) the Program in `crates/`; (c) its lives,
     read through the Disk reader (item 3 (d2)), fitted on block 1 and compared per measure with a block of the draw not
     used before; R3's pass side waits on item 2 (e4), R1 and R2 on (e5).
 
@@ -314,6 +316,10 @@ the idea for the next attempt.
   goes to the literature first, by the maintainer's ruling in the session of 2026-11-05 (item 12). For the benchmark: its comparison space should hold
   state-conditioned rates, bout lengths and whole distributions, not only means.
 
+- **C18's located cliff, the last 0.12** (journal of 2026-11-05, § C18's Threshold Hunch, Run Again): D at threshold
+  0.001 is 1.128, still 0.12 above the out-component's 1.010. Open: whether D closes that gap at a threshold below
+  0.001, or under a stricter settling rule than no unit moving by more than 1e-10, which may leave units far from the
+  seed unreached. C18's verdict does not rest on it (review 5790675207 on #230).
 - **For the maintainer**, from H17 (journal of 2026-11-05, § H17: Consciousness Science's Measures on a Sleeping
   Worm): whether perturbing a Program by writing into its internal state, rather than through its senses, sits within
   *No cheating*. For: real brains are perturbed directly in the lab's own sources (optogenetics; TMS in humans), and a
@@ -383,6 +389,9 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-11-05: the verifiers' non-blocking points on tonight's merged pull requests landed, among them H17's window
+  budget amended before any data, to cap each animal's contrast, with a floor of five windows, rather than exclude it (journal of 2026-11-05,
+  § Verifiers' Nits from Tonight's Merged Pull Requests).
 - 2026-11-05: the maintainer's eleven rulings of that day's session recorded where each question lives (journal of
   2026-11-05, § The Maintainer's Rulings of 2026-11-05): the toy-worm series paused for the equations (item 8 (e)-(h)),
   the Disk read through Master Control's crate (item 3 (d2a)-(d2c)), the salt and odour units, the odour reference,
@@ -402,7 +411,7 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
 - 2026-11-05: item 9 (h), the three audits: no spelling violation, Rust and notebooks clean; fixed the stale
   benchmark status in README.md and both diagrams (redrawn by `notebooks/figures.ipynb`), PLAN.md's copied list of
   senses, FEATURES.md's gaps and plane rows, CONTRIBUTING.md's second table of documents, four inline comments in
-  `cleanup_caches.yml`, and two journal references by dated notes; three questions for the maintainer (*To Revisit*) (since ruled on, 2026-11-05).
+  `cleanup_caches.yml`, and two journal references by dated notes; three questions for the maintainer (*To Revisit*; since ruled on, 2026-11-05).
 - 2026-11-05: item 11 (d2), partly: four odour measures drafted (speed, turn rate by bearing, curvature against
   bearing, the bearing's distribution), none using a concentration's size; the authors' script read and found to
   differ from their paper in six rules ([docs/benchmark/ODOUR_MEASURES.md](docs/benchmark/ODOUR_MEASURES.md)).
