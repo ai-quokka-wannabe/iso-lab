@@ -169,8 +169,13 @@ found lives in the journal section it names; this list keeps only what is open.
    - (e) the steering term in the turning theory, as a notebook first: drift predicted from the share of decisions
      pointing home, the lateral sense's noise and the turn's size (gr-fec.md § 12.4, recommendation 2);
    - (f) its validation on a fixed map imposed by the evaluator, so the map's share is known, not learned;
-   - (g) the fixed-point test that was never run (recommendation 2): the learning layer's learned weights against the
-     least-squares fit of reward on the worm's own features (gr-fec.md § 12.2);
+   - (g) the fixed-point test, done on 2026-11-05 (journal of 2026-11-05, § gr-fec's Worm by Equation: The Learning
+     Layer's Fixed Point): refuted in both arms. What it opened, one run each, neither registered yet: (g2) whether the
+     fit is well determined in the rarely excited directions, by fitting one half of the window and scoring on the
+     other; (g3) whether slow learners reach the fit everywhere given a longer life, with the length sized beforehand
+     from η·λ; (g4) whether the feature map's own drift - node births and prototype moves inside the window, measured by
+     #231's verifier - explains the gap, by freezing `proto` and `cnt` at h24 in an evaluation-only copy of the
+     features, or restricting D to the nodes that existed at h24;
    - (h) the pre-registered test of "demystified" (recommendation 3): from the equations alone, with no search, choose
      the genes for a stated target and hit it within ±10% on held-out layouts.
 
@@ -390,6 +395,9 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   PCI, Φ\*, ignition and UAL, each checked at its source's abstract or passages, with a pre-registered
   sleep-against-wake test, its noise control and its controls; no data yet, the next run is item 13 (journal of 2026-11-05, § H17: Consciousness Science's Measures on a
   Sleeping Worm).
+- 2026-11-05: item 8 (g), the fixed-point test of gr-fec's learning layer (exact LMS): refuted by its registered bar
+  in both arms on four fresh layouts (median gap 0.34 to 0.47 against 0.20), so the learner does not settle at the fit
+  on this time scale; the feature map's own drift is a reading not yet separated (g4).
 - 2026-11-05: item 9 (h), the three audits: no spelling violation, Rust and notebooks clean; fixed the stale
   benchmark status in README.md and both diagrams (redrawn by `notebooks/figures.ipynb`), PLAN.md's copied list of
   senses, FEATURES.md's gaps and plane rows, CONTRIBUTING.md's second table of documents, four inline comments in
