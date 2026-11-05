@@ -160,20 +160,8 @@ which also records why *Program* and *programme* are both correct here and neith
 
 ### British Spelling
 
-Use British spelling in all documentation and user-facing text:
-
-| American | British |
-|----------|---------|
-| color | colour |
-| behavior | behaviour |
-| organization | organisation |
-| center | centre |
-| license (noun) | licence |
-| analyze | analyse |
-| initialize | initialise |
-| optimize | optimise |
-| meter | metre |
-| synchronize | synchronise |
+Use British spelling in all documentation and user-facing text. The table of spellings lives in one place,
+[.claude/commands/check-spelling.md](.claude/commands/check-spelling.md) § Common Violations to Check.
 
 **Note:** Code identifiers may use American spelling where it matches library/API conventions (e.g., Rust standard library names).
 

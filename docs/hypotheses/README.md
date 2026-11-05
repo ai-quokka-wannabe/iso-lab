@@ -518,7 +518,7 @@ result.
 *Waits on*: worm data whose licence lets the lab use it (Nichols et al. 2017's data statement is unread, the paper being
 closed; Skora, Mende and Zimmer 2018's open text was searched for a deposit, a request or a repository and none was
 found); a Program with quiescence (none yet; the placeholder only undulates); the Disk reader, for a Program's state
-(STATE.md § Blocked). *Tested so far*: not yet; the next run is in STATE.md § Next.
+(STATE.md item 3 (d2)). *Tested so far*: not yet; the next run is in STATE.md § Next.
 
 ## Adding a Hypothesis
 
