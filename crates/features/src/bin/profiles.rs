@@ -21,9 +21,7 @@
 //! Every record of the block gets a row. `status` is `measured` or `excluded`, and `reason` says
 //! why: `short` or `gappy` by the rules of `features::profile`, `unreadable` when the file cannot
 //! be read, `not_fetched` when it is not in `data/raw/owmd-n2/`. An excluded row carries `NaN` in
-//! every measure, and its context columns where they are known. The columns whose names begin
-//! `provisional_` are the locomotion states' durations and rates, provisional until STATE.md item
-//! 2(c)'s check of the published durations passes.
+//! every measure, and its context columns where they are known.
 
 use features::profile::{Profile, measure_names, profile};
 use features::read_skeletons;
