@@ -254,15 +254,15 @@ found lives in the journal section it names; this list keeps only what is open.
     2026-11-05, on whether a 2 s tap interval is right for the benchmark's assay (*To Revisit*, H13): read the
     tap-habituation papers at their source and propose an interval, each figure cited, for the maintainer to rule on.
     Leads: [pace.md](docs/research/pace.md)'s tap-habituation entries.
-
 13. **A reflex stack as the first scored creature**, a candidate, from
     [H16](docs/hypotheses/README.md#h16-a-reflex-stack-layered-wirings-no-learned-model): a Program of fixed
     sensor-to-motor wirings with suppression between layers, a few slow knobs and a few remembered numbers, its
     latencies and time constants from [pace.md](docs/research/pace.md), every part with a switch that pins it at baseline.
     Cheap and fully auditable, and the baseline any richer brain must beat. Split before starting: (a) its design and
-    pre-registration (H16's R3, with the share of flagged measures that refutes fixed in the journal); (b) the Program
-    in `crates/`; (c) its lives, read through the Disk reader (item 3 (d2)) and compared per measure with block 1;
-    R1 and R2 wait on item 2 (e5).
+    pre-registration: the family, the optimiser's budget per seed, the number of lives, the threshold of flagged
+    measures that refutes R3, and the model registered for R1b and R2; (b) the Program in `crates/`; (c) its lives,
+    read through the Disk reader (item 3 (d2)), fitted on block 1 and compared per measure with a block of the draw not
+    used before; R3's pass side waits on item 2 (e4), R1 and R2 on (e5).
 
 ## To Revisit
 
