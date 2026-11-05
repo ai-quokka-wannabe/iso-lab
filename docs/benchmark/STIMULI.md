@@ -268,7 +268,8 @@ experiment compares the two airs.
   reservoir (`src/air.rs`, `src/odour.rs` at the pin), settling in about ten seconds; a still-air test must therefore
   use a source held steady, never one fading after a meal.
 
-**Odour: what the benchmark would need.** Chen et al.'s three measures against bearing - its distribution, the sharp
+**Odour: what the benchmark would need.** Drafted, not frozen, in [ODOUR_MEASURES.md](ODOUR_MEASURES.md), with the
+analysis script's rules beside the paper's and where they differ. In short: Chen et al.'s three measures against bearing - its distribution, the sharp
 turns' rate and the curvature - against the local gradient of the source concentration, rebuilt for evaluation by
 their rules above, with the experiment as the unit; the bearing's distribution compared only between like landscapes.
 Upstream, **an odour source apart from food**, a placed source with a declared pattern over the receptor types, held
