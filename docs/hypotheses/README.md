@@ -387,6 +387,412 @@ one to three body seeds per layout and no benchmark; each is stated no more stro
   −0.0014 to +0.0052); eight of ten lean its way and one, 82300, is clearly worse (descriptive). § The Constant Floor on Ten Fresh Rich
   Layouts.
 
+### H16. A Reflex Stack: Layered Wirings, No Learned Model
+
+*A hunch*, brought by the maintainer from another Claude session, 2026-11-05. It arrives with that source's track
+record: the same source's earlier hunch of graded slow knobs was not supported on the toy worm in its graded half
+(H14, *Tested so far*).
+
+- **The claim.** The worm's brain is roughly a layered control system of the kind Brooks described for a mobile robot,
+  mixed with the direct sensor-to-motor wirings of Braitenberg's vehicles: a few wirings from senses to muscles give
+  approach and avoidance; higher layers suppress lower ones; the world serves as its own model, so no map or learned
+  model of the world is kept; and a few slow, hunger-like knobs and a few remembered numbers complete it. A Program
+  built that way, and nothing more, gets through the worm's benchmark.
+- **What counts as what**, fixed here before any design so that the line cannot move after a result.
+    - A *wiring* is a fixed mapping from senses to actions, its parameters set before a life and never changed in it.
+      Adaptation inside a sense pathway counts as part of its wiring only if its time constant is cited and is at most
+      3 s. The bound is the longest sensory timescale in [pace.md](../research/pace.md) § Touch: Liu et al.'s suggestion
+      that the animal integrates "over approximately 3 s" before reversing - an integration window, not an adaptation
+      constant, used here only as a ceiling - beside the receptor currents' adaptation over "a few tens of
+      milliseconds"; it lies far below the shortest fitted time constant of an internal state there, 75 s for
+      roaming. Adaptation states are reported in a count of their own.
+    - A *slow knob* or *remembered number* is a scalar written by the creature's experience, with a named counterpart in
+      a cited source and an update rule taken from that source (a preferred temperature, adapting over "several hours"
+      by [Hedgecock and Russell 1975](https://doi.org/10.1073/pnas.72.10.4061); a hunger state). Any experience-written
+      state slower than the 3 s bound is one of these, never adaptation. A stack may hold at most N = 8 of them in all.
+    - A *learned model of the world* is any other experience-written state that is indexed by place or heading, or is
+      updated to reduce the error of predicting a future sense value, or takes the experience-written state past
+      K = 8 numbers. K counts every experience-written number except the adaptation states: the N knobs and remembered
+      numbers included, so a stack at K holds nothing else written by experience.
+    - The order in which a state is classed, each step applying only to what the steps before left: *first*, a cited
+      adaptation of at most 3 s inside a sense pathway is wiring; *then*, a scalar with a named, cited counterpart and
+      an update rule taken from that source is a remembered number, whatever its rule minimises; *then*, any other
+      experience-written state that is indexed by place or heading, or is updated to reduce a prediction error, or
+      takes the total past K, is a model. Indexing by place or heading makes a state a model even when each of its
+      scalars is cited: a map of cited numbers is still a map. An experience-written state that none of these steps classes - uncited, not
+      indexed, not predictive and within K - is not allowed in a stack: the claim is these parts "and nothing more".
+    - K, N and the 3 s bound are chosen now, as bounds of the hunch's own size, not derived from a source.
+- **What the sources say, and what they do not.** Brooks's abstract describes "[l]ayers of control system" built "to
+  let the robot operate at increasing levels of competence", made of "asynchronous modules that communicate over
+  low-bandwidth channels", in which "Higher-level layers can subsume the roles of lower levels by suppressing their
+  outputs" while "lower levels continue to function as higher levels are added"
+  ([Brooks 1986](https://doi.org/10.1109/JRA.1986.1087032), *IEEE Journal on Robotics and Automation* 2(1):14-23;
+  the abstract as Semantic Scholar serves it). The full text is openly reachable as MIT AI Memo 864
+  ([MIT DSpace](https://dspace.mit.edu/bitstream/1721.1/6432/2/AIM-864.pdf), CC BY-NC by Semantic Scholar's record),
+  the memo rather than the journal version; it was not read. The same abstract foresees the robot "building maps of
+  its surroundings". The phrase "the world is its own best model" is commonly traced to a later paper,
+  [Brooks 1990](https://doi.org/10.1016/S0921-8890(05)80025-9), *Elephants don't play chess*, *Robotics and Autonomous
+  Systems* 6(1-2):3-15: a lead: its Crossref record was checked, the phrase itself not, so the lab is not sure of the
+  attribution. Of Braitenberg's book ([Braitenberg 1984](https://openlibrary.org/isbn/0262022087),
+  *Vehicles: Experiments in Synthetic Psychology*, MIT Press, Cambridge, Mass., x + 152 pages, ISBN 0-262-02208-7) only
+  the catalogue record was read; that its vehicles are direct sensor-to-motor wirings giving approach and avoidance is
+  how the book is commonly described, not checked here. That the worm's brain is built this way has no source; it is
+  the hunch.
+- **Why it might hold.** Only a lead, from a toy world, and none of it evidence about *C. elegans* (the journal of
+  2026-11-04 says so of its own results). On the toy worm the lateral sense named the warmer side in 0.986 of scored
+  decisions, and a turn towards the band's temperature also turned towards the nearest patch in 0.945; descriptively,
+  the turn's correctness followed the map's choice, which pointed the band's way in 0.513 (0.424 to 0.619). Whether the
+  map is what fails was registered as H-map and is *undecided* by its own rule, its interval reaching past 0.6
+  (journal of 2026-11-04, § Does the Greedy Rule's Direction Fail? Each Steering Decision Scored;
+  [gr-fec.md § 12](../research/gr-fec.md#12-why-the-demystification-stalled-a-post-mortem-2026-11-04)). So the senses
+  and the geometry did not fail there; the map is not shown to have failed, and nothing shows that a worm without a map
+  would succeed, which is this hunch's claim and untested.
+- **How it differs from its neighbours.** H1 is one such wiring and H2 the switching between a few states; H12 keeps a
+  small memory written while the creature lives, and H14 a remembered set point. H16 claims the sufficiency of the
+  plainest of these: wirings, suppression between layers, slow knobs and a few numbers, with no learned model of the
+  world at all.
+- **Two neighbours, recorded and not part of the claim.** The same conversation likened the worm's switching between a
+  few command states to the decide step of a sense-decide-act cycle such as Soar's
+  ([Laird, Newell and Rosenbloom 1987](https://doi.org/10.1016/0004-3702(87)90050-6); only the Crossref record read).
+  In the worm, brain-wide calcium imaging found a brain state that "evolves on a cycle" whose segments map "to the
+  animals' major motor commands", assembling them into "a string of run-and-turn action sequence cycles"
+  ([Kato et al. 2015](https://doi.org/10.1016/j.cell.2015.09.034), *Cell* 163(3):656-669; abstract, Europe PMC). One
+  brain-wide, coordinated cycle sits uneasily beside independent layers that suppress one another: if that is how the
+  worm selects its commands, a stack of layers may at best describe it coarsely, a point against the hunch's literal
+  form. The conversation judged a joint-embedding predictive architecture
+  ([Assran et al. 2023](https://arxiv.org/abs/2301.08243), arXiv record read) more likely to fit the fly or rat rung
+  than the worm's.
+
+*Predicts*: a reflex stack - wirings, suppression between layers, and at most N slow knobs and remembered numbers, as
+defined above - reproduces the reference statistics at the worm's pace, and adding a learned model of the world to it
+gains nothing the benchmark can detect.
+
+*The search, fixed before any run.* "A better stack exists" must not dodge a result, so the stack is one family, the
+architecture registered in STATE.md item 14 (a) before any life, fitted by one optimiser over five optimiser seeds with
+a budget of evaluations per seed stated in item 14 (a) before the first fit, the same for every arm below; the
+reported stack is the best of the five on the development data. A refutation holds for that family and budget, and a
+new family is a new test, registered as such.
+
+*Refuted*, each with its pass side:
+
+- **R1a, sufficiency, on the frozen benchmark** (STATE.md item 2 (e5)). Refuting: the stack, so searched, fails the
+  benchmark by its frozen pass rule - whatever any other Program does. Pass side: it passes.
+- **R1b, whether a model is what is missing**, read only when R1a refutes. A Program of no more than ten times the
+  stack's size, the stack with a registered learned model added (as R2), searched with the same budget, passes:
+  evidence that the model is what the stack lacked. If none passes, R1b is undecided and R1a's refutation stands; if
+  only a model-carrying Program of more than ten times the size passes, R1b is undecided too, and that is recorded
+  beside the sizes, the lean rule preferring neither until a leaner one passes.
+- **R2, adding a model.** The model is chosen and registered before the run: its kind (a map of places, or a predictor
+  of a sense), its size and its update rule. Its *positive control*: it must be shown to work on its own terms - a
+  map's accuracy computed by an evaluation tool from the world's ground truth, which never reaches the brain, above a
+  chance baseline registered with it; a predictor's error below a no-change prediction's, with the interval of the
+  difference excluding zero. If the control fails, R2 is undecided, never a pass. Refuting: with the control passed,
+  the stack plus model scores better than the stack alone on the frozen benchmark beyond the score's interval. Pass
+  side: the model's addition is not detected to help, with the size of help the interval excludes stated. "Score"
+  means the frozen benchmark's score, which does not exist before (e5); before then R2 can be run only in R3's partial
+  form, as a description, never as a verdict.
+- **R3, a partial test before the freeze.** Until (e5) the benchmark has no pass rule, so nothing here can pass it.
+  What can be run is the per-measure comparison (`benchmark::compare`, Cramér-von Mises per measure with Holm's
+  correction) and the classifier test (`benchmark` (e1)) between Grid lives and real worms. The stack's free parameters
+  are fitted against block 1's reference statistics, with the search above, and judged against a block of the seeded
+  draw neither fitted on nor used before - not block 1, and not block 2, already used in item 2 (e3). Blocks 1 and 2
+  were not told apart (e3), so a held-out block guards against fitting a block's sampling noise, not against fitting
+  the population. The number of free parameters fitted is reported beside the 27 measures. Refuting, provisionally:
+  more measures flagged than a threshold fixed in the journal before the run (item 14 (a)), after the full search,
+  whatever any other Program does; a model-carrying Program given the same search is read as in R1b, provisionally. Pass side, provisionally: with at least a number
+  of lives fixed in item 14 (a), no measure flagged and the classifier not telling the lives from the held-out block,
+  reported with the alteration of each measure the test can detect at that number of lives. That alteration comes from
+  item 2 (e4), still open, so until (e4) lands the pass side cannot be read: a non-detection with an unknown power is
+  not a pass. Even read, it is a partial pass, not a benchmark pass, since the definition may still change. Reaction
+  latencies are not in these recordings, which are of spontaneous behaviour, so they wait on stimulus assays
+  ([pace.md § For the Lab](../research/pace.md#for-the-lab)).
+
+*Baselines and controls*:
+
+- the placeholder Program (`crates/placeholder-worm`, which undulates only), the floor;
+- the stack with each wiring, layer, knob and remembered number pinned at baseline in turn, by the lab's ablation rule,
+  a part being kept only if its removal costs the stack on a measure;
+- the *sense-blind control*: the stack with each sense channel replaced by a surrogate signal that matches that
+  channel's distribution of values and its autocorrelation over the stack's own lives, with no relation to the world:
+  an amplitude-adjusted Fourier-transform surrogate of the recorded channel, after
+  [Theiler et al. 1992](https://doi.org/10.1016/0167-2789(92)90102-S) (*Physica D* 58:77-94; the Crossref record
+  checked, the paper not read). It is "near the floor" if its count of
+  flagged measures under R3 is at least halfway from the stack's count to the placeholder's. If it does not fall, the
+  measures of these spontaneous recordings carry little that the senses drive, and a partial pass under R3 then says
+  little about the wirings: it would test the rhythm and the switching of states, with the wirings left to the stimulus
+  assays (item 11). That reading is written here, before any run;
+- the stack plus a registered learned model, for R1b and R2;
+- the real-against-real result of item 2 (e3), block 1 against block 2 not told apart, as the test's own control that
+  two samples of real worms pass.
+
+*Lean-brain cost*: an estimate, not yet a measurement - tens to hundreds of numbers and of the order of a hundred
+arithmetic operations a tick, far inside H12's bound of about 100 000 numbers. Its size, and its compute and memory
+per simulated second, are reported beside every score.
+
+*The pace rule*: every wiring's latency and every knob's time constant is taken from a cited value in
+[pace.md](../research/pace.md) (§ Reaction Latencies, § Time Constants of Internal States) and counted in the Grid's
+31.25 ms ticks, rounded up to a whole tick, so that no wiring acts sooner than the worm: a latency under one tick takes
+one tick, and every other is less than one tick slower than its source. Each latency is built from the source's
+central value, rounded up to whole ticks, with any spread the source reports. Where an assay measures the creature's
+latencies, two checks follow: its central value and its 10th percentile are each no faster than the source's (the
+10th percentile only where the source reports a distribution); and its central value is no slower than the source's by
+more than one tick plus the source's stated uncertainty. A wiring whose latency pace.md does not yet source
+takes, provisionally, the latency of the sourced pathway it is named after in item 14 (a)'s design, is marked
+unsourced, and is not scored on its latency until pace.md sources it.
+
+*Why it is a strong candidate for the lab's first scored creature*: it is cheap, every decision can be traced to the
+one wiring or layer that made it, and it is the natural baseline any richer brain must beat on the benchmark.
+
+*Waits on*: a Program that runs on the Grid with such a stack; the Disk reader, to extract the same features from its
+lives, now on STATE.md's *Next* as item 3 (d2) by the maintainer's ruling of 2026-11-05 ("Reuse Master Control"); item
+2 (e4), for R3's pass side; and, for R1 and R2, the frozen benchmark, item 2 (e5).
+*Tested so far*: nothing.
+
+### H17. Consciousness Science's Measures, Applied to a Sleeping Worm
+
+*A hunch*, the maintainer's (2026-11-05): "why not try to measure consciousness directly? let's go bold and not be afraid
+to look foolish! if we don't test crazy ideas we miss a lot!" The lab takes it up in the one form it can test: apply the
+measures that the science of consciousness actually uses to the worm and to the lab's Programs, and see whether they
+behave on a worm as their theories predict.
+
+- **What this cannot show.** No measure here can show that anything is felt, by a worm or by a Program. A measure
+  that falls in sleep tracks a *brain state*; whether that state is accompanied by experience is the question
+  Chalmers called the hard problem ([Chalmers 1996](https://doi.org/10.7551/mitpress/6860.003.0003); the chapter's
+  record checked at Crossref, its text not read tonight), and nothing in this hypothesis touches it. The theories behind
+  the measures hold that their quantities track consciousness; the lab tests only whether the quantities behave as
+  the theories predict on an animal they were not built on. If the measures disagree with one another on the worm,
+  that is a finding about the theories, and it is reported as one.
+- **The sharpest test: the worm sleeps.** In lethargus, whole-brain imaging at single-cell resolution shows the
+  *C. elegans* brain "predisposed to global quiescence, characterized by systemic down-regulation of neuronal
+  activity", with "only a few specific neurons" exempt, and with "efficient spontaneous and sensory-evoked exits"
+  ([Nichols et al. 2017](https://doi.org/10.1126/science.aam6851), the abstract read; the paper is behind a
+  subscription). Adults starved for long show a like state: "during starvation-induced sleep, brain dynamics are
+  systemically downregulated" ([Skora, Mende and Zimmer 2018](https://doi.org/10.1016/j.celrep.2017.12.091), open,
+  CC BY-NC-ND; the abstract read). Stress-induced sleep and lethargus's timings are in
+  [pace.md](../research/pace.md) (Hill et al. 2014; Patel et al. 2022). In humans, PCI falls in non-REM sleep (measure
+  1 below); whether Φ\* and ignition do was not checked at a source tonight. If the measures track something real, they
+  should fall in the worm's sleep too.
+- **Prior work on the worm, found tonight** (Europe PMC; not a systematic search). Entropy-based measures told the
+  awake worm from the worm under isoflurane - three new, empirically derived ones - while the established ones,
+  mutual information and transfer entropy, "did not differentiate well" ([Chang et al. 2023](https://doi.org/10.1097/ALN.0000000000004579), the abstract read). The worm's
+  isoflurane immobility is not produced by the circuit of its sleep-like quiescence
+  ([Chang et al. 2025](https://doi.org/10.1371/journal.pone.0324323), the abstract read), so anaesthesia and sleep are
+  not interchangeable in the worm. A preprint profiles anaesthetised brain dynamics from human to nematode and reports
+  a shared profile of "shorter intrinsic timescales of neural activity and dampened interregional synchrony"
+  ([Luppi et al. 2025](https://doi.org/10.1101/2025.03.22.644729), not peer-reviewed; the abstract read). The lab
+  found no study computing the perturbational complexity index, Φ* or ignition on worm sleep; that is the gap, if the
+  search was wide enough, which it may not have been.
+
+*The measures*, each with what it is, what it is not, and what it costs. Every one is an evaluation tool computed after
+a life, on recorded activity, outside the brain:
+
+1. **The perturbational complexity index (PCI).** Perturb the cortex with transcranial magnetic stimulation, then
+   compress the spatiotemporal pattern of the response to measure its algorithmic complexity; it "reliably
+   discriminated the level of consciousness in single individuals during wakefulness, sleep, and anesthesia"
+   ([Casali et al. 2013](https://doi.org/10.1126/scitranslmed.3006294), the abstract read). Its root is the finding
+   that in non-REM sleep a cortical response "was rapidly extinguished and did not propagate beyond the stimulation
+   site" ([Massimini et al. 2005](https://doi.org/10.1126/science.1117256), the abstract read). The compression is
+   Lempel and Ziv's ([1976](https://doi.org/10.1109/TIT.1976.1055501), the record checked, not read); a faster and
+   more general estimate is proposed by [Comolatti et al. 2019](https://doi.org/10.1016/j.brs.2019.05.013) (the title
+   read only). *On the worm*: PCI needs a perturbation. A sensory stimulus during imaging is one, but in
+   lethargus it may end the quiescent bout, and a response that wakes the worm is not a response *in* sleep; only
+   perturbations that leave the bout unbroken, judged by behaviour, count. Without a perturbation, the complexity of
+   spontaneous activity (here *LZc*) is a weaker cousin of PCI and is reported under its own name, never as PCI. *On a
+   Program*: a sensory pulse through the Grid (a touch, say) is the perturbation the worm can also receive, and is
+   preferred. A direct kick to a Program's internal state carries no information about the world, but it writes into a
+   brain from outside; it is not used until the maintainer has said whether it sits within the rules (STATE.md
+   § To Revisit). *Cost*: one
+   compression of a binarised units × samples matrix per response; the notebook measures its time and memory rather
+   than this text claiming them.
+2. **Integrated information (IIT).** IIT 3.0 defines Φ over a system's cause–effect structure
+   ([Oizumi, Albantakis and Tononi 2014](https://doi.org/10.1371/journal.pcbi.1003588), the record checked, not read),
+   and holds that it is the quantity of consciousness: that identity is the theory's claim, not something a
+   computation can test. PyPhi computes it for systems of binary elements ([Mayner et al. 2018](https://doi.org/10.1371/journal.pcbi.1006343),
+   GPL-3.0; the abstract read); an exhaustive search over the system's partitions "grows exponentially with system
+   size" ([Kitazono, Kanai and Oizumi 2018](https://doi.org/10.3390/e20030173), the abstract read), so exact Φ at 302
+   units is out of reach. The often-quoted ceiling of about a dozen units was not checked at a source tonight and is
+   not relied on. What is feasible is **Φ\***, an observational measure from data with an analytic form under a
+   Gaussian assumption ([Oizumi et al. 2016](https://doi.org/10.1371/journal.pcbi.1004654), the abstract read), with
+   the partition found by a polynomial search that the same group found "nearly perfect" even where its guarantee does
+   not hold (Kitazono, Kanai and Oizumi 2018). Φ\* is *not* IIT 3.0's Φ: it is computed from observed activity, not
+   from the system's transition probabilities under intervention, for its current state, and a Gaussian fit to calcium traces is an assumption to
+   check, not a given. *Cost*: covariance and lagged covariance of K recorded units (K² memory) and the partition
+   search; K and the choice of units are fixed before any data is seen; time measured, not claimed.
+3. **Global-workspace ignition.** A network model of conscious access predicts "an unique property of nonlinear
+   transition from nonconscious processing to subjective perception", an all-or-none entry into a global brain state
+   ([Dehaene, Sergent and Changeux 2003](https://doi.org/10.1073/pnas.1332574100), the abstract read; the later review,
+   [Dehaene and Changeux 2011](https://doi.org/10.1016/j.neuron.2011.03.018), the record checked, not read). *On the
+   worm*: across stimuli of graded strength, the share of units active above their own baseline, and whether it rises
+   as a step (a bimodal share, a steep fitted sigmoid) or in proportion. The worm's brain-wide dynamics are already
+   global in wake ([Kato et al. 2015](https://doi.org/10.1016/j.cell.2015.09.034), the record checked, not read),
+   so the first question is whether a stimulus-locked jump exists at all, before any sleep contrast. *Cost*: counting
+   over units and samples.
+4. **A behavioural marker: unlimited associative learning (UAL).** Proposed as "the marker of the *evolutionary
+   transition to minimal consciousness*" ([Bronfman, Ginsburg and Jablonka 2016](https://doi.org/10.3389/fpsyg.2016.01954),
+   CC BY; the abstract and the passages on nematodes read; at length in [Ginsburg and Jablonka 2019](https://doi.org/10.7551/mitpress/11006.001.0001),
+   the record checked, not read). The same paper says that *C. elegans* "does not fulfill the conditions for UAL: it has
+   never been shown to be able to learn in a non-elemental manner". That is an absence of evidence, and reading it as
+   *absent* is the authors' reading, which the lab takes on for now. On it, a Program indistinguishable from the worm
+   should lack UAL; but a Program that showed it would not be judged less worm-like until the worm itself has been
+   tested for non-elemental learning and found without it. UAL is a trait, not a state: it does not enter the sleep test.
+
+*Pre-registered, the sleep test* (measures 1–3, on recordings that do not yet exist in the lab; written before any is
+fetched, and revised twice, before any data, after the second agent's reviews of 2026-11-05 on pull request 229):
+
+- *Datasets and segments*: each dataset is analysed on its own and never pooled. Lethargus imaging (as in Nichols et
+  al. 2017) compares quiescent bouts with active bouts of the same lethargus; starvation imaging (as in Skora, Mende
+  and Zimmer 2018) compares sleep bouts with awake bouts of the same starved adults; wake outside lethargus, where a
+  recording has it, is a separate secondary contrast. Wake and sleep come from the recording's own behavioural labels,
+  never from the measures under test, which would make the test circular.
+- *Windows and three disjoint sets.*
+    - The measures are computed on windows of one fixed length W: the median sleep-bout length of the dataset, rounded
+      down to whole frames and at least 10 s, set from the behavioural labels alone.
+    - Each bout is cut into non-overlapping windows; bouts shorter than W are left out and counted.
+    - In each animal, the wake windows are split by a fixed seed into three disjoint sets: the *contrast set*, as many
+      windows as the animal has in sleep; and two *reference sets*, A and B, of the same size each.
+    - **The window budget.** An animal therefore needs at least three times as many usable wake windows as sleep
+      windows. One that cannot supply them gets no verdict and is counted. A and B are never shrunk, since smaller
+      reference sets would inflate r, and so τ, and push a real fall towards *refuted*. This budget is a feasibility
+      risk: in lethargus, bouts of quiescence and of motion alternate, each lasting 1–100 s
+      ([pace.md](../research/pace.md), lethargus), and active bouts shorter than W
+      are dropped, so it may leave fewer than six animals.
+    - **Trials.** Stimulus trials are assigned the same way. In each animal, wake trials are split by a fixed seed into
+      a contrast set, as many as the animal's sleep trials, and two reference sets of the same size each, under the
+      same threefold budget.
+    - **What each choice uses.** The contrast uses only the contrast sets. The units' wake-SNR floor, the thresholds, K
+      and τ use only A and B, as do the controls.
+    - **The exceptions.** Three things use the contrast's own sleep windows, since every sleep window is in the
+      contrast: the sleep-SNR floor that decides which units are kept, the matching target (each unit's sleep SNR) and
+      the source of the empirical noise. The matching target and the noise source are inherent to noise matching. The
+      floor is a selection on sleep's values, and it keeps units with more variance in the sleep windows being
+      compared. It favours sleep's values, so it can only work against *tracks the state*.
+    - With fewer than six animals left, the dataset is described and given no verdict.
+- *Why noise matters.* Sleep lowers activity (Nichols et al. 2017). In calcium traces, lower activity at the same
+  indicator noise means a lower signal-to-noise ratio (SNR), and that alone can move every measure. Independent noise
+  tends to pull Φ\* towards zero, and binarised noise looks complex. Z-scoring and surrogates do not remove this.
+- *The noise estimate, and its check.*
+    - Per unit and window, the noise variance is estimated from first differences, σ²ₙ = (1.4826 · MAD(Δx))² / 2. This
+      is right for white noise and a signal slow at the frame rate; for noise correlated across frames, as after
+      smoothing or deconvolution, it underestimates σ²ₙ.
+    - The *check*: for white noise, the lag-1 autocorrelation of Δx is −0.5. It is computed on sleep windows of units
+      whose estimated sleep SNR is below 0.5, where the signal contributes least. If the median over those units lies
+      in [−0.6, −0.4], the estimate is used as it is.
+    - Outside that range, every verdict is computed three times, with σ²ₙ scaled by 0.5, 1 and 2. A measure gets a
+      verdict only if all three agree. Otherwise it is *no verdict until the indicator noise is measured* (from a
+      GFP-only or fixed-tissue recording).
+    - The signal variance is the trace's variance minus σ²ₙ, floored at zero.
+- *The noise matching.*
+    - **Units kept.** A unit is kept if its SNR, estimated on reference set A, is at least 1 in wake. It must also be at
+      least 0.1 in the animal's sleep windows, since below that the noise to add is unbounded. The units left out are
+      counted, and their share is reported.
+    - **The price of the floor.** It keeps the contrast on units that still carry signal in sleep, so it cannot see a
+      fall carried by units that fall silent. That loss is the price of not letting noise decide, and the result says
+      so.
+    - **The added noise.** Each contrast-set wake trace gets noise that brings its SNR down to that unit's sleep SNR.
+      Nothing is added where sleep's ratio is the higher.
+    - **Where the noise comes from.** It is empirical, not white: segments of sleep traces from the same animal's units
+      whose sleep SNR is below 0.1 (the ones excluded above, nearly pure noise), demeaned, rescaled to the variance needed, and drawn by a
+      fixed seed. This gives the added noise sleep's own spectrum. With fewer than five such units, white Gaussian noise
+      is used instead, and the verdict is flagged as resting on the white-noise model.
+    - **The contrast.** It is sleep against this *noise-matched wake*, for windows and trials alike. The unmatched
+      contrast is reported beside it.
+- *The noise-only control.* It is built on reference set B, which the contrast never uses.
+    - Each kept unit's trace x becomes a·x + e. With σ²ₛ for a unit's signal variance, the factor is
+      a = √(σ²ₛ,sleep / σ²ₛ,wake), so it brings the signal to sleep's variance, and it scales wake's own noise by the
+      same factor.
+    - The term e is empirical sleep noise, drawn as above, with variance max(0, σ²ₙ,sleep − a²σ²ₙ,wake). The synthetic
+      trace then has sleep's signal variance, sleep's noise and so sleep's SNR, with wake's structure unchanged. Where
+      the max takes zero, the synthetic noise is below sleep's, and the units concerned are counted.
+    - This synthetic sleep goes through the whole pipeline: the matching, the guards and the statistic against B's own
+      wake.
+    - Twenty replicates differ only in their noise draws. They share the animals, so they are not independent, and no
+      binomial rate is claimed for them.
+    - The control *fails* if any replicate's interval lies wholly below −τ, the one direction that would make a false
+      *tracks the state*. It cannot catch a bias smaller than τ.
+    - So the mean Δ over the replicates is also taken as the pipeline's bias, b. The real verdict then needs a fall
+      beyond −τ + min(0, b): a negative bias raises the bar by its own size.
+    - b is one-sided. A positive bias, towards rises, is ignored, which leans the verdicts towards *refuted*; that is
+      the side a hunch under test should err on.
+    - b carries no uncertainty of its own into the interval. Its replicates differ only in noise draws on B's animals,
+      so it estimates the pipeline's bias for those animals, not for a population. This is a stated limitation.
+- *Two positive controls*, on B: synthetic sleep at the matched SNR, (i) with the structure across units destroyed (each
+  unit phase-randomised on its own), where Φ\* must fall; and (ii) with every unit driven by one shared slow trace,
+  where LZc must fall. If a positive control does not show its fall, the measure has no verdict.
+- *The guarded measures.*
+    - **LZc.** Each unit's noise-matched trace is binarised at its own median within the window. The complexity is
+      divided by its mean over twenty surrogates, each unit phase-randomised independently from the same noise-matched
+      trace, so that noise's spectrum is in both the measure and its denominator.
+    - **Φ\***. Each unit is z-scored per window. The covariance and lag-one covariance are computed within each window,
+      never across the join of two windows, and pooled over an animal's windows in a state, because a single window may
+      hold only a few tens of samples, too few to support them.
+    - **The units Φ\* uses.** Its K units are those with the highest wake SNR on set A, with K at most a tenth of the
+      pooled samples per state. If that leaves fewer than four units, Φ\* has *no verdict until longer recordings*.
+    - **Φ\*'s surrogates** are a check that they come out near zero.
+- *Perturbations* (PCI-like and ignition, alike):
+    - the stimulus is one the dataset applies, named with its modality, strength and duration when the dataset is
+      registered and before any measure is computed. If there are several, it is the one with the most trials in sleep.
+      A dataset without stimulus trials gets no PCI-like or ignition test;
+    - for each trial, the baseline is 10 s before onset and the response window R is the 10 s after it. A unit-sample
+      is *active* if it exceeds the 99th percentile of that unit's baseline samples pooled over the trials of the same
+      state; a single 10 s baseline is too short, its 99th percentile nearly its maximum. This is also PCI-like's
+      binarisation, against the pre-stimulus baseline as in Casali et al. 2013;
+    - ignition's threshold, the share of active units, is set on the noise-matched wake trials of the reference sets
+      alone;
+    - a trial is *behaviourally unchanged* if the behavioural label does not change during R. In sleep, this means the
+      bout is unbroken;
+    - because the worm's brain-wide state carries its motor command ([Kato et al. 2015](https://doi.org/10.1016/j.cell.2015.09.034),
+      the title's claim, the paper not read), keeping only unchanged sleep trials would select responses that did not
+      spread. The *primary* analysis therefore uses all trials in both states. A response that wakes the worm then raises
+      sleep's value, against the predicted direction, so this choice is conservative. A *secondary* analysis keeps only
+      behaviourally unchanged trials in both states. The fraction of trials that changed behaviour, the woken fraction
+      in sleep, is reported for each state.
+- *Statistic*: per animal, the difference Δ = sleep − noise-matched wake of the guarded measure, in the measure's own
+  units (bits for Φ\*). A difference, unlike a ratio, stays bounded when a state's value nears zero, so no animal is
+  floored or excluded on its value. The interval is a 95% t interval over animals; a 95% percentile bootstrap (10 000
+  resamples, seed fixed) is reported beside it.
+- *Predicted direction*: LZc, PCI-like and Φ\* lower in sleep. Ignition, the probability that the share of active
+  units crosses its threshold, is also lower in sleep, the least certain of the four.
+- *The threshold τ*, positive, in the measure's units, from the reference sets alone.
+    - τ = max(0.1 · m, r). Here m is the median over animals of the noise-matched wake value on set A, so the first
+      term is a fall of a tenth. And r is the nearest-rank 95th percentile over animals of |Δ| between noise-matched sets
+      A and B. With fewer than twenty
+      animals, r is the maximum, which is conservative.
+    - A fall smaller than the measure's own repeatability is not called a state.
+    - The sensitivity runs replace 0.1 by 0.05 and by 0.2 and keep the max with r, so where r dominates they equal the
+      primary run, and the report says so.
+- *Verdict per measure*, three outcomes that cannot overlap. With b the control's bias from above, and U and L the
+  upper and lower ends of the interval for Δ:
+    - **tracks the state** if U < −τ + min(0, b);
+    - **refuted** if L > −τ + min(0, b). This includes every rise in sleep, and also a real fall smaller than τ; the
+      latter is written as "refuted: a fall smaller than τ", never as "no fall";
+    - **undecided** otherwise, reported with the change the interval excludes.
+
+  The sensitivity verdicts are reported beside the primary one and do not replace it. A failed control, a failed noise
+  check or too few animals gives *no verdict*, with the reason, instead of any of the three.
+- *Across measures*: if one measure tracks the state and another is refuted on the same recordings, the theories'
+  measures disagree on the worm. That is reported as a result about them, not averaged away.
+
+*On Programs*: the same measures, the same rules, on a Program's internal state between its quiescent bouts and its
+active ones, once a Program has quiescence. A Program that sleeps only by stilling its body, its internal dynamics
+unchanged, should show no fall; the worm's brain falls (Nichols et al. 2017). So the sleep–wake change of each
+measure is a candidate for a *state-of-brain* comparison in the benchmark, telling a Program that stops moving from
+one whose brain enters a global state. It joins the benchmark only through the benchmark's own freeze, never scored
+before.
+
+*Predicts*: on worm recordings, the guarded measures fall in sleep, against noise-matched wake; the measures agree
+with one another; the worm shows no UAL, as Bronfman, Ginsburg and Jablonka read the evidence.
+*Refuted*: per measure, by the verdict rule above; the hunch as a whole, if every measure with a test is refuted on the
+worm. *Undecided* and *no verdict* are not refuted, and are reported as what they are.
+*No cheating*: the measures read a brain's recorded state, as evaluation tools do; nothing from them reaches a brain,
+and no Program reads its own measure.
+*Lean*: the measures cost the brain nothing, being computed after the life; their own cost is reported beside each
+result.
+*Waits on*: worm data whose licence lets the lab use it (Nichols et al. 2017's data statement is unread, the paper being
+closed; Skora, Mende and Zimmer 2018's open text was searched for a deposit, a request or a repository and none was
+found); a Program with quiescence (none yet; the placeholder only undulates); and a way to record a Program's internal
+state. A Disk records the world, not a Program's internals. So the lab's own Program must log its state through an
+evaluation-only path that no brain reads; none exists yet. *Tested so far*: not yet; the next run is in STATE.md § Next.
+
 ## Adding a Hypothesis
 
 A pool of candidates waits in [Matej's ideas and hunches](matej-hunches.md): unverified, to be triaged and

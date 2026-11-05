@@ -563,10 +563,14 @@ and the steps they set are STATE.md item 8 (e)-(h); recommendation 4 was not par
       ([journal of 2026-11-05](../journal/2026-11-05.md#gr-fecs-worm-by-equation-the-learning-layers-fixed-point-predicted-before-it-runs)):
       the rule is exact LMS, so its weights should settle at the least-squares fit of reward on the worm's own
       features. Refuted by its registered measure in both arms, η as evolved and η × 0.1, on four fresh layouts:
-      the learned predictions sit 0.34 to 0.47 of the fit's RMS prediction away from it, against a bar of 0.20. The
-      evolved learners track their experience rather than settle (they beat every fixed fit); the slowed ones match
-      the fit's direction where their experience excites them often (median cosine 0.99 or more) and miss it in directions
-      excited rarely, which carry about a third of what the fit predicts (post hoc).
+      the learned predictions sit 0.34 to 0.47 of the fit's RMS prediction away from it, against a bar of 0.20. As
+      registered, the learner does not settle at the least-squares fit on this time scale, and the reading of a
+      learned weight as "the fit" goes; the ledgers stay exact. Descriptively, not by the registered test of it (which
+      failed), the evolved learners track their experience: they beat every fixed fit. Post hoc, the slowed ones
+      match the fit where their experience excites them often (median cosine 0.99 or more) and miss it in directions
+      excited rarely, which carry about a third of what the fit predicts. The sandbox's feature map itself drifts
+      inside the window (new nodes, moving prototypes), which the derivation assumed fixed; that reading is not yet
+      separated (STATE.md item 8 (g4)).
 3. **Define "demystified"** as one pre-registered test: from the equations alone, choose the genes for a stated target,
    and hit it within ±10% on held-out layouts, with no search.
 4. **If behaviour is tested again:**

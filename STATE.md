@@ -173,7 +173,9 @@ found lives in the journal section it names; this list keeps only what is open.
      Layer's Fixed Point): refuted in both arms. What it opened, one run each, neither registered yet: (g2) whether the
      fit is well determined in the rarely excited directions, by fitting one half of the window and scoring on the
      other; (g3) whether slow learners reach the fit everywhere given a longer life, with the length sized beforehand
-     from η·λ;
+     from η·λ; (g4) whether the feature map's own drift - node births and prototype moves inside the window, measured by
+     #231's verifier - explains the gap, by freezing `proto` and `cnt` at h24 in an evaluation-only copy of the
+     features, or restricting D to the nodes that existed at h24;
    - (h) the pre-registered test of "demystified" (recommendation 3): from the equations alone, with no search, choose
      the genes for a stated target and hit it within ±10% on held-out layouts.
 
@@ -257,6 +259,24 @@ found lives in the journal section it names; this list keeps only what is open.
     2026-11-05, on whether a 2 s tap interval is right for the benchmark's assay (*To Revisit*, H13): read the
     tap-habituation papers at their source and propose an interval, each figure cited, for the maintainer to rule on.
     Leads: [pace.md](docs/research/pace.md)'s tap-habituation entries.
+13. **H17's first run, the worm's sleep through consciousness science's measures** (the maintainer's hunch,
+    [H17](docs/hypotheses/README.md#h17-consciousness-sciences-measures-applied-to-a-sleeping-worm)): (a) find whole-brain
+    imaging of *C. elegans* across sleep and wake that the lab may use - Nichols et al. 2017's data statement (the paper
+    is closed: try an author's manuscript, the supplement, the Zimmer laboratory's deposits), then Skora, Mende and
+    Zimmer 2018 and Chang et al. 2023 and 2025, and as a lead Luppi et al. 2025's compiled nematode wake and anaesthesia
+    recordings (not sleep) - and register one with its licence and checksum in data/README.md; park with what was tried
+    if none opens; (b) then, in a notebook, H17's noise check, noise-only and positive controls on the reference windows, and
+    only if they pass, LZc (not PCI) against noise-matched wake on one recording, by H17's pre-registered rules,
+    exploration only.
+14. **A reflex stack as the first scored creature**, a candidate, from
+    [H16](docs/hypotheses/README.md#h16-a-reflex-stack-layered-wirings-no-learned-model): a Program of fixed
+    sensor-to-motor wirings with suppression between layers, a few slow knobs and a few remembered numbers, its
+    latencies and time constants from [pace.md](docs/research/pace.md), every part with a switch that pins it at baseline.
+    Cheap and fully auditable, and the baseline any richer brain must beat. Split before starting: (a) its design and
+    pre-registration: the family, the optimiser's budget per seed, the number of lives, the threshold of flagged
+    measures that refutes R3, and the model registered for R1b and R2; (b) the Program in `crates/`; (c) its lives,
+    read through the Disk reader (item 3 (d2)), fitted on block 1 and compared per measure with a block of the draw not
+    used before; R3's pass side waits on item 2 (e4), R1 and R2 on (e5).
 
 ## To Revisit
 
@@ -292,6 +312,12 @@ the idea for the next attempt.
   see whether the gain arrives as sampling noise falls. Whether a 2 s tap interval is right for the benchmark's assay
   goes to the literature first, by the maintainer's ruling in the session of 2026-11-05 (item 12). For the benchmark: its comparison space should hold
   state-conditioned rates, bout lengths and whole distributions, not only means.
+
+- **For the maintainer**, from H17 (journal of 2026-11-05, § H17: Consciousness Science's Measures on a Sleeping
+  Worm): whether perturbing a Program by writing into its internal state, rather than through its senses, sits within
+  *No cheating*. For: real brains are perturbed directly in the lab's own sources (optogenetics; TMS in humans), and a
+  kick carries no world information. Against: it writes into a brain from outside. H17 uses only a sensory pulse until
+  this is ruled.
 
 ## Blocked
 
@@ -365,9 +391,13 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   of step 0.25: L0 held (1.539 against 1.528, tolerance 0.0583), and the hunch is supported by its registered rule: D
   fell from 1.639 to 1.128 as the threshold fell from 0.1 to 0.001 (Δ 0.511, 0.99 interval [0.427, 0.568]), within
   0.25 of the graph's own 1.010; C18's verdict unchanged (journal of 2026-11-05, § C18's Threshold Hunch, Run Again).
+- 2026-11-05: the maintainer's hunch written up as [H17](docs/hypotheses/README.md#h17-consciousness-sciences-measures-applied-to-a-sleeping-worm):
+  PCI, Φ\*, ignition and UAL, each checked at its source's abstract or passages, with a pre-registered
+  sleep-against-wake test, its noise control and its controls; no data yet, the next run is item 13 (journal of 2026-11-05, § H17: Consciousness Science's Measures on a
+  Sleeping Worm).
 - 2026-11-05: item 8 (g), the fixed-point test of gr-fec's learning layer (exact LMS): refuted by its registered bar
-  in both arms on four fresh layouts (median gap 0.34 to 0.47 against 0.20); evolved learners track rather than settle,
-  slowed ones match the fit only in often-excited directions (post hoc).
+  in both arms on four fresh layouts (median gap 0.34 to 0.47 against 0.20), so the learner does not settle at the fit
+  on this time scale; the feature map's own drift is a reading not yet separated (g4).
 - 2026-11-05: item 9 (h), the three audits: no spelling violation, Rust and notebooks clean; fixed the stale
   benchmark status in README.md and both diagrams (redrawn by `notebooks/figures.ipynb`), PLAN.md's copied list of
   senses, FEATURES.md's gaps and plane rows, CONTRIBUTING.md's second table of documents, four inline comments in
@@ -390,6 +420,9 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   F16, F17's single objective) and restated; F14's automata lens ready to become a task, F13 after verification,
   F15's worm test to be redesigned (journal of 2026-11-05, § F10-F17
   Planned, and a Triage).
+- 2026-11-05: H16 written, *a hunch* brought by the maintainer from another Claude session: a reflex stack
+  with no learned model gets through the benchmark; refuting outcomes R1-R3 with their pass sides, controls, cost and
+  pace rule; Brooks 1986, Kato et al. 2015 and the book's catalogue record checked at the source; item 14 added.
 - 2026-11-04: item 2 (c), the stored durations and frequencies recomputed from the published speed: 600 of 600
   recording-modes of block 1 equal to the last bit; the lab's speed against them in a second table (journal of
   2026-11-04, § The Published Durations and Rates: Reproduced Exactly Over Block 1).
