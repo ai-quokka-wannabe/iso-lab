@@ -15,14 +15,14 @@
 <rect x="610" y="90" width="250" height="90" rx="10" fill="#fff8d9" stroke="#9a7b00" stroke-width="2"/>
 <text x="735" y="116" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">features</text>
 <text x="735" y="138" text-anchor="middle" font-size="13" fill="#333333">speed and states, checked;</text>
-<text x="735" y="157" text-anchor="middle" font-size="13" fill="#333333">durations and rates, not yet</text>
-<rect x="900" y="90" width="250" height="90" rx="10" fill="#fff8d9" stroke="#9a7b00" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="735" y="157" text-anchor="middle" font-size="13" fill="#333333">durations and rates provisional</text>
+<rect x="900" y="90" width="250" height="90" rx="10" fill="#fff8d9" stroke="#9a7b00" stroke-width="2"/>
 <text x="1025" y="116" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">Real worms&#x27; measures</text>
 <text x="1025" y="138" text-anchor="middle" font-size="13" fill="#333333">the reference set</text>
 <text x="1025" y="157" text-anchor="middle" font-size="13" fill="#333333">(STATE.md item 2 (d))</text>
 <path d="M 280 135 L 318 135" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
 <path d="M 570 135 L 608 135" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
-<path d="M 860 135 L 898 135" fill="none" stroke="#444444" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#head)"/>
+<path d="M 860 135 L 898 135" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
 <rect x="30" y="280" width="250" height="90" rx="10" fill="#f6ecfa" stroke="#8a3fa8" stroke-width="2"/>
 <text x="155" y="306" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">A Program&#x27;s lives</text>
 <text x="155" y="328" text-anchor="middle" font-size="13" fill="#333333">on the Grid; so far one</text>
@@ -42,11 +42,11 @@
 <path d="M 280 325 L 318 325" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
 <path d="M 570 325 L 608 325" fill="none" stroke="#444444" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#head)"/>
 <path d="M 860 325 L 898 325" fill="none" stroke="#444444" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#head)"/>
-<rect x="900" y="430" width="250" height="100" rx="10" fill="#fff8d9" stroke="#9a7b00" stroke-width="2" stroke-dasharray="6 4"/>
+<rect x="900" y="430" width="250" height="100" rx="10" fill="#fff8d9" stroke="#9a7b00" stroke-width="2"/>
 <text x="1025" y="456" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d1d1d">The test</text>
 <text x="1025" y="478" text-anchor="middle" font-size="13" fill="#333333">can a classifier tell them apart,</text>
 <text x="1025" y="497" text-anchor="middle" font-size="13" fill="#333333">on all measures at once?</text>
-<path d="M 1150 135 L 1170 135 L 1170 480 L 1152 480" fill="none" stroke="#444444" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#head)"/>
+<path d="M 1150 135 L 1170 135 L 1170 480 L 1152 480" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#head)"/>
 <path d="M 1025 370 L 1025 428" fill="none" stroke="#444444" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#head)"/>
 <text x="870" y="462" text-anchor="end" font-size="13" fill="#333333">frozen before any brain is scored;</text>
 <text x="870" y="482" text-anchor="end" font-size="13" fill="#333333">per-measure comparisons then</text>

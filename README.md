@@ -32,7 +32,7 @@ Every other file is in [Where Things Are](#where-things-are). The lab's own word
 ![How the pieces fit: Master Control, the world server, talks over Link to the Grid, which renders a creature's
 senses for its brain, a Program, and applies the Program's actions. Master Control records each life as a Disk and a
 log, which Clu replays. The lab's Rust tools download recordings of real worms and measure them, and will measure the
-Grid worm's Disk too; the benchmark, not yet built, will compare the two.](docs/figures/diagram_pieces.svg)
+Grid worm's Disk too; the benchmark, built but not yet frozen, will compare the two.](docs/figures/diagram_pieces.svg)
 
 *How the pieces fit. A dashed box or arrow is planned, not built. Drawn by
 [notebooks/figures.ipynb](notebooks/figures.ipynb).*
@@ -89,7 +89,7 @@ told in [the organisation's vision](docs/VISION.md#the-long-arc), and the lab's 
 | [STATE.md](STATE.md) | Where the work stands and what is next; every run reads it first |
 | [docs/PLAN.md](docs/PLAN.md) | The research plan, phase by phase |
 | [docs/hypotheses/](docs/hypotheses/) | Ideas about the brain, each with the behaviour that would confirm or refute it |
-| [docs/benchmark/](docs/benchmark/FEATURES.md) | The benchmark's comparison space, drafted before any brain is scored |
+| [docs/benchmark/](docs/benchmark/FEATURES.md) | The benchmark's comparison space and the stimulus assays' plan, drafted before any brain is scored |
 | [docs/journal/](docs/journal/) | One entry per night: what was tried, what came out, what failed |
 | [docs/research/](docs/research/) | Literature notes: how we know what the plan rests on; and [what the lab has found](docs/research/findings.md), for the brains up the ladder |
 | [docs/NIGHT_SHIFT.md](docs/NIGHT_SHIFT.md) | How a night starts, and the agents' prompt, word for word |
@@ -157,7 +157,7 @@ and [.claude/CLAUDE.md § Writing](.claude/CLAUDE.md#writing), which is where *D
 - **Ablation** - switching one part of a brain off, pinned at its baseline, to see what it was worth.
 - **The reference worms** - recordings of real wild-type worms from the Open Worm Movement Database
   ([data/README.md](data/README.md)).
-- **The benchmark** - the test, not yet built or frozen, of whether a Grid worm can be told apart from the reference
+- **The benchmark** - the test, built but not yet frozen, of whether a Grid worm can be told apart from the reference
   worms ([docs/PLAN.md](docs/PLAN.md)).
 - **The arena** - Master Control, the Grid and a Program run together by the lab, where a creature lives a life
   ([docs/PLAN.md § Phase 1](docs/PLAN.md#phase-1-the-arena)).

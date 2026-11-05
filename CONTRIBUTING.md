@@ -231,18 +231,7 @@ chore: update pinned actions
 
 ### Types of Documentation
 
-| Location | Purpose |
-|----------|---------|
-| `README.md` | Overview: what the lab is and how it works |
-| `CONTRIBUTING.md` | This file - contributor guidelines |
-| `SECURITY.md` | Security policy and vulnerability reporting |
-| `STATE.md` | Where the work stands, what is next, what is blocked |
-| `docs/PLAN.md` | The research plan, phase by phase |
-| `docs/VISION.md` | The organisation's shared vision, and the lab's part in it |
-| `docs/hypotheses/` | Ideas about the brain, each testable |
-| `docs/research/` | Literature notes and the citations the plan rests on |
-| `docs/journal/` | One entry per night: what was tried and what came out |
-| `data/README.md` | The dataset registry |
+Where each document lives, and what it is for, is in [README.md § Where Things Are](README.md#where-things-are).
 
 ### Updating Documentation
 

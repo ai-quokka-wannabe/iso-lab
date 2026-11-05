@@ -9,8 +9,9 @@ of the toy-worm series, read from the record, with recommendations awaiting the 
 ([gr-fec.md § 12](docs/research/gr-fec.md#12-why-the-demystification-stalled-a-post-mortem-2026-11-04)); and a plan for the stimulus assays the world's new fields open
 ([docs/benchmark/STIMULI.md](docs/benchmark/STIMULI.md)); and block 1's real worms and block 2's, unseen, were found
 indistinguishable by the benchmark's two tests, with a positive control told apart. Earlier
-nights are in [the journal's index](docs/journal/README.md). The next step for Phase 0 is the locomotion states'
-durations and reversal rates (item 2(c)).
+nights are in [the journal's index](docs/journal/README.md). The next steps for Phase 0 are item 2 (c)'s follow-ups
+(`provisional_` dropped from the profile's columns, the lone-edge-event exception, an interval on the lab-against-published
+ratios) and (e4), how large an alteration the test can see.
 
 ## Where We Are
 
@@ -178,7 +179,7 @@ found lives in the journal section it names; this list keeps only what is open.
       removed line first checked, one by one, to be held by the journal it points to;
     - (g) the hypotheses' README: (c)'s diagram is in it; what is left is a short section pointing to the experiments'
       index for the rest;
-    - (h) the audits (`check-coherence`, `check-style`, `check-spelling`) once more, to catch what is left.
+    - (h) done (journal of 2026-11-05, § The Night's Audits: Coherence, Spelling and Style).
 
 10. **Try the associative memories on the worm's scale**, from
     [docs/research/associative-memory.md](docs/research/associative-memory.md) § For the Lab: first read its gaps
@@ -267,6 +268,13 @@ the idea for the next attempt.
   the benchmark's assay (not yet checked against the literature). For the benchmark: its comparison space should hold
   state-conditioned rates, bout lengths and whole distributions, not only means.
 
+- **For the maintainer**, from the audits of 2026-11-05 (journal of that night, § The Night's Audits): (1) PLAN.md
+  § Phase 1 (line 64) says "A flat arena first", but the floor is terraced and has no flat setting (*Terrace edges*
+  below): does the aim stand, or should the plan say what replaces it? (2) CONTRIBUTING.md § British Spelling (lines
+  161-178) keeps a short copy of `.claude/commands/check-spelling.md`'s table: replace it with a pointer, or keep it
+  as the organisation's template? (3) Does the style rule "No inline comments" (`check-style.md` § YAML) cover the
+  version comment after each SHA-pinned `uses:` (`# v7.0.1`), which Dependabot keeps up to date?
+
 ## Blocked
 
 - **How the lab reads a Disk** (item 3(d2); waits on the maintainer's ruling). A Disk is Link's frames in a file,
@@ -342,6 +350,10 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-11-05: item 9 (h), the three audits: no spelling violation, Rust and notebooks clean; fixed the stale
+  benchmark status in README.md and both diagrams (redrawn by `notebooks/figures.ipynb`), PLAN.md's copied list of
+  senses, FEATURES.md's gaps and plane rows, CONTRIBUTING.md's second table of documents, four inline comments in
+  `cleanup_caches.yml`, and two journal references by dated notes; three questions for the maintainer (*To Revisit*).
 - 2026-11-05: item 11 (d), the odour dataset's methods and archive listed without downloading it: CC BY 4.0, the
   worm's tracks 1.04 GB of 1.29 GB, centroids from about six experiments; its measures against bearing probably stand for
   still air, its concentrations do not; not adopted (journal of 2026-11-05, § The Odour Dataset: Its Methods and What
