@@ -2,7 +2,8 @@
 
 **Last updated:** 2026-11-08 ([the journal of 2026-11-08](docs/journal/2026-11-08.md)): the Disk reader's first step,
 Master Control's crate as a dependency of `features` with Link built beside the lab's tests, and a Disk written and
-replayed through it bit for bit (item 3 (d2a)); and the night's audits. Before that, 2026-11-05
+replayed through it bit for bit (item 3 (d2a)); the night's audits; and the steering term of gr-fec's turning
+theory, predicted before the run and matched in 45 of 45 conditions, median error 0.2% (item 8 (e)). Before that, 2026-11-05
 ([the journal of 2026-11-05](docs/journal/2026-11-05.md)): the maintainer's eleven
 rulings of that day recorded where each question lives, among them the toy-worm series paused for the equations, the
 Disk read through Master Control's crate and a terraced arena; the odour dataset read and four odour measures drafted,
