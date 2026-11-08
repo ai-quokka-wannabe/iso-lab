@@ -1,6 +1,8 @@
 # State of the Lab
 
-**Last updated:** 2026-11-04 ([the journal of 2026-11-04](docs/journal/2026-11-04.md)): `external/` moved to the
+**Last updated:** 2026-11-08 ([the journal of 2026-11-08](docs/journal/2026-11-08.md)): the Disk reader's first step,
+Master Control's crate as a dependency of `features` with Link built beside the lab's tests, and a Disk written and
+replayed through it bit for bit (item 3 (d2a)). Before that, 2026-11-04 ([the journal of 2026-11-04](docs/journal/2026-11-04.md)): `external/` moved to the
 latest mains - Link protocol 14, Program ABI 12 without the speed over the ground, the world's reflection attenuation,
 its air, heat and floor solutes - with the placeholder rebuilt at ABI 12, the render moved by the attenuation alone, and
 the placeholder's life unchanged; the toy worm's steering decisions, scored against the band, place its failure, by
@@ -117,11 +119,15 @@ found lives in the journal section it names; this list keeps only what is open.
    2026-11-05): depend on `external/master-control` as a crate and reuse its `link_dll` mirror and `replay_open`, which
    its Clu module uses; CI must then check out the submodules recursively. Route (2), copying the mirror, and route (3),
    a second decoder, are not taken. One run each:
-   - (d2a) **first**: `external/master-control` as a path dependency of the lab's Rust, its `build.rs` building Link
-     and placing the library beside the lab's binaries and tests; CI's Rust jobs checking out the submodules
-     recursively in both workflows; and one test, seen failing first, that opens a Disk through `replay_open`;
+   - (d2a) done (journal of 2026-11-08, § The Disk Reader's First Step: Master Control's Crate as a Dependency):
+     `features` depends on `external/master-control`, whose `build.rs` builds Link and places `liblink.so` beside the
+     lab's binaries and tests; both workflows' Rust jobs check the submodules out recursively; and
+     `crates/features/tests/disk_replays.rs`, seen failing three ways first, writes a tiny Disk through `record_open`
+     and reads it back through `replay_open`, bit for bit. The toolchain pins agree (both 1.99.1);
    - (d2b) the Disk reader in `features`: a life's frames polled from a Disk into the creature's poses per tick, in
-     tested Rust;
+     tested Rust, through `master_control::link_dll::LinkDll::replay_open` and `Connection::poll` as the test of
+     (d2a) does; the Disk's TICK_STATE rows carry the head's position, yaw and pitch and each trailing segment's, so
+     the poses need no decoding of the lab's own;
    - (d2c) the same features extracted from the placeholder's Disk, and the share of refused intents measured; and
      whether the lab's speed reads a Grid body's events as it reads the stored skeletons, whose uneven spacing makes it
      find fewer forward and paused events (item 2 (c)).
@@ -392,6 +398,12 @@ points to the open ones and says what waits on each.
 
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
+
+- 2026-11-08: item 3 (d2a), the Disk reader's first step: `external/master-control` a path dependency of `features`,
+  its build script building Link and placing `liblink.so` beside the lab's binaries and tests; both workflows' Rust jobs
+  check the submodules out recursively; one test, seen failing three ways first, writes a Disk through `record_open`
+  and replays it through `replay_open` bit for bit (journal of 2026-11-08, § The Disk Reader's First Step: Master
+  Control's Crate as a Dependency).
 
 - 2026-11-05: the verifiers' non-blocking points on tonight's merged pull requests landed, among them H17's window
   budget amended before any data, to cap each animal's contrast, with a floor of five windows, rather than exclude it (journal of 2026-11-05,
