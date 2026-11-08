@@ -2,7 +2,8 @@
 
 **Last updated:** 2026-11-08 ([the journal of 2026-11-08](docs/journal/2026-11-08.md)): the Disk reader's first step,
 Master Control's crate as a dependency of `features` with Link built beside the lab's tests, and a Disk written and
-replayed through it bit for bit (item 3 (d2a)); and the night's audits. Before that, 2026-11-05
+replayed through it bit for bit (item 3 (d2a)); the night's audits; and the tap interval read from the literature,
+10 s and 60 s proposed over 2 s (item 12). Before that, 2026-11-05
 ([the journal of 2026-11-05](docs/journal/2026-11-05.md)): the maintainer's eleven
 rulings of that day recorded where each question lives, among them the toy-worm series paused for the equations, the
 Disk read through Master Control's crate and a terraced arena; the odour dataset read and four odour measures drafted,
@@ -271,9 +272,11 @@ found lives in the journal section it names; this list keeps only what is open.
       assay plate, for every assay, folded into FEATURES.md § Open Questions Before Freezing; first measure the spawn
       pad's terrace (STIMULI.md § What a Program Senses Today).
 12. **The tap interval, from the literature** - "Check literature first", the maintainer's ruling in the session of
-    2026-11-05, on whether a 2 s tap interval is right for the benchmark's assay (*To Revisit*, H13): read the
-    tap-habituation papers at their source and propose an interval, each figure cited, for the maintainer to rule on.
-    Leads: [pace.md](docs/research/pace.md)'s tap-habituation entries.
+    2026-11-05, on whether a 2 s tap interval is right for the benchmark's assay (*To Revisit*, H13). Read and
+    proposed on 2026-11-08 ([docs/research/tap-interval.md](docs/research/tap-interval.md)): the field's interval is
+    10 s with 60 s as the comparison, and the proposal is that pair, not 2 s; it waits on the maintainer's ruling.
+    What remains, when a service answers or a library opens them: the full texts that hold wild-type curves by
+    interval ([tap-interval.md § What Remains](docs/research/tap-interval.md#what-remains)).
 13. **H17's first run, the worm's sleep through consciousness science's measures** (the maintainer's hunch,
     [H17](docs/hypotheses/README.md#h17-consciousness-sciences-measures-applied-to-a-sleeping-worm)): (a) find whole-brain
     imaging of *C. elegans* across sleep and wake that the lab may use - Nichols et al. 2017's data statement (the paper
@@ -327,13 +330,17 @@ the idea for the next attempt.
   loop on five fresh 30-worm populations (journal of 2026-10-22, § H13: The Whole Loop on Fresh Populations, under
   the Short-Interval Train). Next: the same loop under that protocol on fresh populations of 60 or more to fit, to
   see whether the gain arrives as sampling noise falls. Whether a 2 s tap interval is right for the benchmark's assay
-  goes to the literature first, by the maintainer's ruling in the session of 2026-11-05 (item 12). For the benchmark: its comparison space should hold
+  went to the literature first, by the maintainer's ruling in the session of 2026-11-05 (item 12): the papers use 10 s
+  and 60 s, and 2 s is proposed for the toy's fitting only ([tap-interval.md](docs/research/tap-interval.md)). For the benchmark: its comparison space should hold
   state-conditioned rates, bout lengths and whole distributions, not only means.
 
 - **C18's located cliff, the last 0.12** (journal of 2026-11-05, § C18's Threshold Hunch, Run Again): D at threshold
   0.001 is 1.128, still 0.12 above the out-component's 1.010. Open: whether D closes that gap at a threshold below
   0.001, or under a stricter settling rule than no unit moving by more than 1e-10, which may leave units far from the
   seed unreached. C18's verdict does not rest on it (review 5790675207 on #230).
+- **For the maintainer**, from item 12 ([tap-interval.md § The Proposal](docs/research/tap-interval.md#the-proposal-for-the-maintainer-to-rule-on)):
+  whether the benchmark's tap-habituation assay takes the proposed pair of intervals, 10 s and 60 s, each a train of
+  30 taps with a recovery probe at 5 min, and leaves the 2 s train to the toy worm's fitting.
 - **For the maintainer**, from H17 (journal of 2026-11-05, § H17: Consciousness Science's Measures on a Sleeping
   Worm): whether perturbing a Program by writing into its internal state, rather than through its senses, sits within
   *No cheating*. For: real brains are perturbed directly in the lab's own sources (optogenetics; TMS in humans), and a
@@ -408,6 +415,12 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   check the submodules out recursively; one test, seen failing three ways first, writes a Disk through `record_open`
   and replays it through `replay_open` bit for bit (journal of 2026-11-08, § The Disk Reader's First Step: Master
   Control's Crate as a Dependency).
+- 2026-11-08: item 12, the tap interval from the literature (journal of 2026-11-08, § The Tap Interval, from the
+  Literature): 26 papers read (25 in the table and a review), 9 in full, the Rankin laboratory's primary ISI papers as abstracts only; the
+  field's protocol is 30 taps 10 s apart with 60 s as the comparison interval, habituation faster and deeper and
+  recovery faster at the shorter interval in every abstract that compares them, and no wild-type curve at 2 s read;
+  a pair of intervals, 10 s and 60 s, proposed for the maintainer to rule on, and no level, rate or recovery number
+  found stated in any text by interval ([docs/research/tap-interval.md](docs/research/tap-interval.md)).
 - 2026-11-08: the night's first-task housekeeping (journal of 2026-11-08, § The Night's Audits: Coherence, Spelling and
   Style): no open idea issue; no spelling violation, Rust and notebooks clean; fixed H17's "K and the units fixed before
   any data" to the rules being fixed and the values following, this file's *Last updated* and its *Done* list (item 9 (f),
