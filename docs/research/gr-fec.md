@@ -563,7 +563,7 @@ and the steps they set are STATE.md item 8 (e)-(h); recommendation 4 was not par
       `notebooks/steering_term_8e.ipynb`): the term, k (2p − 1) [Φ((m − a)/σ) − Φ((−m − a)/σ)] per step with the drift
       from a Markov chain over the decision cycle, matched gr-fec's code under an imposed share in 45 of 45
       pre-registered conditions, median relative error 0.0022, with no bias; a theory that ignores the noise misses
-      by 15% at ten times the sandbox's noise. Tested with a coin for the map, zero drive and no wall; the fixed map
+      by 11% to 18% at ten times the sandbox's noise and by 74% to 155% at thirty. Tested with a coin for the map, zero drive and no wall; the fixed map
       is step (f).
     - Validate it on a fixed map imposed by the evaluator, so the map's share is known, not learned.
     - Then run the fixed-point test that was never run. *Run on 2026-11-05, by the maintainer's ruling of that day*

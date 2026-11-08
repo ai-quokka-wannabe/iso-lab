@@ -420,5 +420,5 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
 - 2026-11-08: item 8 (e), the steering term of gr-fec's turning theory: drift predicted from the share of decisions
   pointing home, the lateral sense's noise and the turn's size, derived in `notebooks/steering_term_8e.ipynb` and
   matched by gr-fec's own code under an imposed share in 45 of 45 pre-registered conditions (median relative error
-  0.0022; a theory ignoring the noise misses by 15% at ten times the sandbox's noise); next is (f), a fixed map
+  0.0022; a theory ignoring the noise misses by 11% to 18% at ten times the sandbox's noise); next is (f), a fixed map
   (journal of 2026-11-08, § gr-fec's Worm by Equation: The Steering Term, Predicted Before It Runs).
