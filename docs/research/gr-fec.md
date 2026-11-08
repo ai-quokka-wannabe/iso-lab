@@ -447,7 +447,7 @@ evaluation tools for a toy world, not code the lab builds on; anything that beco
 | `dirn/dirn.py`, `dirn/dirnstats.py`, `dirn/run.sh` | Each steering decision scored against the band (2026-11-04) | [#213](https://github.com/ai-quokka-wannabe/iso-lab/pull/213) |
 | `postmortem/power.py` | The post-mortem's between-layout spreads and power calculation, from numbers in the journals (2026-11-04) | [#214](https://github.com/ai-quokka-wannabe/iso-lab/pull/214) |
 | `fp/fp.py`, `fp/fpstats.py`, `fp/run.sh`, `fp/fpblock.py`, `fp/fpsplit.py` | The learning layer's fixed point: learned weights against the least-squares fit of reward on the worm's own features (2026-11-05) | [#231](https://github.com/ai-quokka-wannabe/iso-lab/pull/231) |
-| `steer8e/steer_sim.py`, `steer8e/run.sh` (theory: `notebooks/steering_term_8e.ipynb`) | The steering term of the turning theory, checked under an imposed share of decisions pointing home (2026-11-08) | [#PR8E](https://github.com/ai-quokka-wannabe/iso-lab/pull/PR8E) |
+| `steer8e/steer_sim.py`, `steer8e/run.sh` (theory: `notebooks/steering_term_8e.ipynb`) | The steering term of the turning theory, checked under an imposed share of decisions pointing home (2026-11-08) | [#241](https://github.com/ai-quokka-wannabe/iso-lab/pull/241) |
 
 ## 12. Why the Demystification Stalled (a Post-Mortem, 2026-11-04)
 
