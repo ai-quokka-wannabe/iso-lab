@@ -1,6 +1,9 @@
 # State of the Lab
 
-**Last updated:** 2026-11-05 ([the journal of 2026-11-05](docs/journal/2026-11-05.md)): the maintainer's eleven
+**Last updated:** 2026-11-08 ([the journal of 2026-11-08](docs/journal/2026-11-08.md)): the Disk reader's first step,
+Master Control's crate as a dependency of `features` with Link built beside the lab's tests, and a Disk written and
+replayed through it bit for bit (item 3 (d2a)); and the night's audits. Before that, 2026-11-05
+([the journal of 2026-11-05](docs/journal/2026-11-05.md)): the maintainer's eleven
 rulings of that day recorded where each question lives, among them the toy-worm series paused for the equations, the
 Disk read through Master Control's crate and a terraced arena; the odour dataset read and four odour measures drafted,
 the authors' script differing from their paper in six rules
@@ -119,11 +122,15 @@ found lives in the journal section it names; this list keeps only what is open.
    2026-11-05): depend on `external/master-control` as a crate and reuse its `link_dll` mirror and `replay_open`, which
    its Clu module uses; CI must then check out the submodules recursively. Route (2), copying the mirror, and route (3),
    a second decoder, are not taken. One run each:
-   - (d2a) **first**: `external/master-control` as a path dependency of the lab's Rust, its `build.rs` building Link
-     and placing the library beside the lab's binaries and tests; CI's Rust jobs checking out the submodules
-     recursively in both workflows; and one test, seen failing first, that opens a Disk through `replay_open`;
+   - (d2a) done (journal of 2026-11-08, § The Disk Reader's First Step: Master Control's Crate as a Dependency):
+     `features` depends on `external/master-control`, whose `build.rs` builds Link and places `liblink.so` beside the
+     lab's binaries and tests; both workflows' Rust jobs check the submodules out recursively; and
+     `crates/features/tests/disk_replays.rs`, seen failing three ways first, writes a tiny Disk through `record_open`
+     and reads it back through `replay_open`, bit for bit. The toolchain pins agree (both 1.99.1);
    - (d2b) the Disk reader in `features`: a life's frames polled from a Disk into the creature's poses per tick, in
-     tested Rust;
+     tested Rust, through `master_control::link_dll::LinkDll::replay_open` and `Connection::poll` as the test of
+     (d2a) does; the Disk's TICK_STATE rows carry the head's position, yaw and pitch and each trailing segment's, so
+     the poses need no decoding of the lab's own;
    - (d2c) the same features extracted from the placeholder's Disk, and the share of refused intents measured; and
      whether the lab's speed reads a Grid body's events as it reads the stored skeletons, whose uneven spacing makes it
      find fewer forward and paused events (item 2 (c)).
@@ -396,62 +403,13 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-11-08: item 3 (d2a), the Disk reader's first step: `external/master-control` a path dependency of `features`,
+  its build script building Link and placing `liblink.so` beside the lab's binaries and tests; both workflows' Rust jobs
+  check the submodules out recursively; one test, seen failing three ways first, writes a Disk through `record_open`
+  and replays it through `replay_open` bit for bit (journal of 2026-11-08, § The Disk Reader's First Step: Master
+  Control's Crate as a Dependency).
 - 2026-11-08: the night's first-task housekeeping (journal of 2026-11-08, § The Night's Audits: Coherence, Spelling and
   Style): no open idea issue; no spelling violation, Rust and notebooks clean; fixed H17's "K and the units fixed before
   any data" to the rules being fixed and the values following, this file's *Last updated* and its *Done* list (item 9 (f),
   first half), and seven notebook commands given through a local path, by dated notes in three journals; H15's November
   review found not written.
-- 2026-11-05: the verifiers' non-blocking points on tonight's merged pull requests landed, among them H17's window
-  budget amended before any data, to cap each animal's contrast, with a floor of five windows, rather than exclude it (journal of 2026-11-05,
-  § Verifiers' Nits from Tonight's Merged Pull Requests).
-- 2026-11-05: item 2 (c)'s follow-ups (journal of 2026-11-05, § Item 2 (c)'s Follow-Ups: the Results): the lone-edge
-  exception unexercised in block 1; the lab-against-published ratios given intervals, all shifts within ±0.25 IQR;
-  `provisional_` dropped from the profile's columns, values unchanged.
-- 2026-11-05: the maintainer's eleven rulings of that day's session recorded where each question lives (journal of
-  2026-11-05, § The Maintainer's Rulings of 2026-11-05): the toy-worm series paused for the equations (item 8 (e)-(h)),
-  the Disk read through Master Control's crate (item 3 (d2a)-(d2c)), the salt and odour units, the odour reference,
-  the terraced floor, the journal index, the spelling pointer, the version comments, FEATURES.md § Decisions, the salt
-  letter to draft (item 11 (b2)) and the tap interval to the literature (item 12).
-- 2026-11-05: C18's threshold hunch (from *To Revisit*), run again with fresh seeds and L0 set on the run's own grid
-  of step 0.25: L0 held (1.539 against 1.528, tolerance 0.0583), and the hunch is supported by its registered rule: D
-  fell from 1.639 to 1.128 as the threshold fell from 0.1 to 0.001 (Δ 0.511, 0.99 interval [0.427, 0.568]), within
-  0.25 of the graph's own 1.010; C18's verdict unchanged (journal of 2026-11-05, § C18's Threshold Hunch, Run Again).
-- 2026-11-05: the maintainer's hunch written up as [H17](docs/hypotheses/README.md#h17-consciousness-sciences-measures-applied-to-a-sleeping-worm):
-  PCI, Φ\*, ignition and UAL, each checked at its source's abstract or passages, with a pre-registered
-  sleep-against-wake test, its noise control and its controls; no data yet, the next run is item 13 (journal of 2026-11-05, § H17: Consciousness Science's Measures on a
-  Sleeping Worm).
-- 2026-11-05: item 8 (g), the fixed-point test of gr-fec's learning layer (exact LMS): refuted by its registered bar
-  in both arms on four fresh layouts (median gap 0.34 to 0.47 against 0.20), so the learner does not settle at the fit
-  on this time scale; the feature map's own drift is a reading not yet separated (g4).
-- 2026-11-05: plan F3 run (`notebooks/f3_golay_memory.ipynb`, 20 seeds, β = 0.4): refuted by clause (b) - at four
-  flipped features 64 Golay codewords recall worse than random words 8 apart (0.960 against 0.990), from their pairs at
-  distance 8; clause (a), Golay against unstructured at three, passed (journal of 2026-11-05, § F3 Run).
-- 2026-11-05: item 9 (h), the three audits: no spelling violation, Rust and notebooks clean; fixed the stale
-  benchmark status in README.md and both diagrams (redrawn by `notebooks/figures.ipynb`), PLAN.md's copied list of
-  senses, FEATURES.md's gaps and plane rows, CONTRIBUTING.md's second table of documents, four inline comments in
-  `cleanup_caches.yml`, and two journal references by dated notes; three questions for the maintainer (*To Revisit*; since ruled on, 2026-11-05).
-- 2026-11-05: item 11 (d2), partly: four odour measures drafted (speed, turn rate by bearing, curvature against
-  bearing, the bearing's distribution), none using a concentration's size; the authors' script read and found to
-  differ from their paper in six rules ([docs/benchmark/ODOUR_MEASURES.md](docs/benchmark/ODOUR_MEASURES.md)).
-- 2026-11-05: item 11 (d), the odour dataset's methods and archive listed without downloading it: CC BY 4.0, the
-  worm's tracks 1.04 GB of 1.29 GB, centroids from about six experiments; its measures against bearing probably stand for
-  still air, its concentrations do not; not adopted (journal of 2026-11-05, § The Odour Dataset: Its Methods and What
-  the Archive Holds).
-- 2026-11-05: item 5, hunches E11-E20 planned ([E11-E15.md](docs/hypotheses/experiments/E11-E15.md),
-  [E16-E20.md](docs/hypotheses/experiments/E16-E20.md)); E15, E11, E16 and E20 ready to become tasks, the rest wait on a
-  Program, senses the Grid lacks or worm sources (journal of 2026-11-05, § E11-E20 Planned, and a Triage).
-- 2026-11-05: item 5, hunches F1-F9 planned ([F1-F9.md](docs/hypotheses/experiments/F1-F9.md)); six of the hunches'
-  mathematical statements corrected before any run; F6, F3 and F4 ready to become tasks, F7 needing a redesign, the rest wait on a
-  Program or worm sources (journal of 2026-11-05, § F1-F9 Planned, and a Triage).
-- 2026-11-05: item 5, hunches F10-F17 planned ([F10-F17.md](docs/hypotheses/experiments/F10-F17.md)); four of the
-  hunches' tests found to lack content or a mechanism as written (F14's Krohn-Rhodes clause, F15's heading-only holonomy,
-  F16, F17's single objective) and restated; F14's automata lens ready to become a task, F13 after verification,
-  F15's worm test to be redesigned (journal of 2026-11-05, § F10-F17
-  Planned, and a Triage).
-- 2026-11-05: item 5, hunches G1-G10 planned ([G1-G10.md](docs/hypotheses/experiments/G1-G10.md)); what the toy
-  worm already tested cited (the turning theory, #231's refuted fixed point and drifting feature map), none resuming the
-  paused steering series; G2's overshadowing reduced to a least-squares split of weight and G5's harm to an exact LMS identity, G9's Grid sweep restated
-  to keep the senses untuned (journal of 2026-11-05, § G1-G10 Planned, and a Triage).
-- 2026-11-05: H16 written, *a hunch* brought by the maintainer from another Claude session: a reflex stack
-  with no learned model gets through the benchmark; refuting outcomes R1-R3 with their pass sides, controls, cost and
-  pace rule; Brooks 1986, Kato et al. 2015 and the book's catalogue record checked at the source; item 14 added.
