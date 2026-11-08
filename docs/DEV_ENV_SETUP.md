@@ -31,7 +31,9 @@ is the long version.
 | Python | 3.10 or newer, with Jupyter, only for notebooks | <https://www.python.org/downloads/> |
 
 The world's repositories are submodules under `external/`. Clone with `--recurse-submodules`, or initialise
-them afterwards with `git submodule update --init --recursive`.
+them afterwards with `git submodule update --init --recursive`. The Rust workspace needs them: `features`
+depends on `external/master-control`, whose build script builds Link from the submodule it carries and places
+`liblink.so` beside the workspace's binaries and tests, so every cargo command refuses until they are there.
 
 ---
 
@@ -104,9 +106,10 @@ through Mesa's software Vulkan, lavapipe (`mesa-vulkan-drivers` on Ubuntu).
 
 ## Troubleshooting
 
-### `external/` is empty
+### `external/` is empty, or cargo says "external/link is empty - initialise submodules first"
 
-The submodules were not initialised: `git submodule update --init --recursive`.
+The submodules were not initialised: `git submodule update --init --recursive`. The second message is
+Master Control's build script, which builds Link from `external/master-control/external/link`.
 
 ### The linter reports files under `external/` or `node_modules/`
 
