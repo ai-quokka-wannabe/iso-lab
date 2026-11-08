@@ -2,17 +2,17 @@
 
 **Last updated:** 2026-11-08 ([the journal of 2026-11-08](docs/journal/2026-11-08.md)): the Disk reader's first step,
 Master Control's crate as a dependency of `features` with Link built beside the lab's tests, and a Disk written and
-replayed through it bit for bit (item 3 (d2a)). Before that, 2026-11-04 ([the journal of 2026-11-04](docs/journal/2026-11-04.md)): `external/` moved to the
-latest mains - Link protocol 14, Program ABI 12 without the speed over the ground, the world's reflection attenuation,
-its air, heat and floor solutes - with the placeholder rebuilt at ABI 12, the render moved by the attenuation alone, and
-the placeholder's life unchanged; the toy worm's steering decisions, scored against the band, place its failure, by
-elimination, in the map's choice as the greedy rule reads it (its own registered test undecided); and a post-mortem
-of the toy-worm series, read from the record, with recommendations for the maintainer, since ruled on (item 8)
-([gr-fec.md § 12](docs/research/gr-fec.md#12-why-the-demystification-stalled-a-post-mortem-2026-11-04)); and a plan for the stimulus assays the world's new fields open
-([docs/benchmark/STIMULI.md](docs/benchmark/STIMULI.md)); and block 1's real worms and block 2's, unseen, were found
-indistinguishable by the benchmark's two tests, with a positive control told apart. Earlier
-nights are in [the journal's index](docs/journal/README.md). The next step for Phase 0 is (e4), how large an alteration the
-test can see.
+replayed through it bit for bit (item 3 (d2a)); and the night's audits. Before that, 2026-11-05
+([the journal of 2026-11-05](docs/journal/2026-11-05.md)): the maintainer's eleven
+rulings of that day recorded where each question lives, among them the toy-worm series paused for the equations, the
+Disk read through Master Control's crate and a terraced arena; the odour dataset read and four odour measures drafted,
+the authors' script differing from their paper in six rules
+([docs/benchmark/ODOUR_MEASURES.md](docs/benchmark/ODOUR_MEASURES.md)); hunches E11-E20, F1-F17 and G1-G10 planned
+and triaged, and F3 run and refuted; C18's threshold hunch run again and supported, C18's verdict unchanged; H16 and
+H17 written as hunches, H17's sleep test pre-registered before any data; the toy worm's learning layer tested against
+its predicted fixed point and refuted in both arms; and item 2 (c)'s follow-ups, every shift of a duration or rate
+within ±0.25 of block 1's interquartile range. Earlier nights are in [the journal's index](docs/journal/README.md).
+The next step for Phase 0 is (e4), how large an alteration the test can see.
 
 ## Where We Are
 
@@ -36,6 +36,9 @@ rather than search for one; what carries up the ladder is kept in [docs/research
   lab runs. Once a month, the first run of the month reads the journal's registered ablations since the last review,
   adds each mechanism that survived or failed to H15's ledger, and writes in the journal whether any candidate is
   recurring. A watch, not a task: it never leaves this list, and it claims nothing the ledger does not show.
+  **November's review is outstanding**: the month's first run (2026-11-03) wrote none, and no November journal names
+  H15 or its ledger (found by the audits of 2026-11-08); the next run that can read the ablations since 2026-10-30
+  writes it.
 
 ## Next
 
@@ -209,10 +212,11 @@ found lives in the journal section it names; this list keeps only what is open.
     - (e) done (journal of 2026-10-31, § A Journal Index): a table in `docs/journal/README.md`, one line a night with
       the section to start reading at; each night's write-up adds its line, by the maintainer's ruling in the session of
       2026-11-05 (see *To Revisit*);
-    - (f) STATE.md cut back to what is current: *Done* to the latest night only, as its own header says; the *Last
-      updated* paragraph (done in [#214](https://github.com/ai-quokka-wannabe/iso-lab/pull/214), cut to the latest
-      night with a pointer to the journal index); and the longest *Next* items (2 and 8) cut to their open steps, each
-      removed line first checked, one by one, to be held by the journal it points to;
+    - (f) STATE.md cut back to what is current: *Done* to the latest night only, as its own header says (done, the
+      audits of 2026-11-08; each night's write-up keeps it so); the *Last updated* paragraph (done in
+      [#214](https://github.com/ai-quokka-wannabe/iso-lab/pull/214), cut to the latest night with a pointer to the
+      journal index); and, still open, the longest *Next* items (2 and 8) cut to their open steps, each removed line
+      first checked, one by one, to be held by the journal it points to;
     - (g) the hypotheses' README: (c)'s diagram is in it; what is left is a short section pointing to the experiments'
       index for the rest;
     - (h) done (journal of 2026-11-05, § The Night's Audits: Coherence, Spelling and Style).
@@ -404,90 +408,8 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   check the submodules out recursively; one test, seen failing three ways first, writes a Disk through `record_open`
   and replays it through `replay_open` bit for bit (journal of 2026-11-08, § The Disk Reader's First Step: Master
   Control's Crate as a Dependency).
-
-- 2026-11-05: the verifiers' non-blocking points on tonight's merged pull requests landed, among them H17's window
-  budget amended before any data, to cap each animal's contrast, with a floor of five windows, rather than exclude it (journal of 2026-11-05,
-  § Verifiers' Nits from Tonight's Merged Pull Requests).
-- 2026-11-05: item 2 (c)'s follow-ups (journal of 2026-11-05, § Item 2 (c)'s Follow-Ups: the Results): the lone-edge
-  exception unexercised in block 1; the lab-against-published ratios given intervals, all shifts within ±0.25 IQR;
-  `provisional_` dropped from the profile's columns, values unchanged.
-- 2026-11-05: the maintainer's eleven rulings of that day's session recorded where each question lives (journal of
-  2026-11-05, § The Maintainer's Rulings of 2026-11-05): the toy-worm series paused for the equations (item 8 (e)-(h)),
-  the Disk read through Master Control's crate (item 3 (d2a)-(d2c)), the salt and odour units, the odour reference,
-  the terraced floor, the journal index, the spelling pointer, the version comments, FEATURES.md § Decisions, the salt
-  letter to draft (item 11 (b2)) and the tap interval to the literature (item 12).
-- 2026-11-05: C18's threshold hunch (from *To Revisit*), run again with fresh seeds and L0 set on the run's own grid
-  of step 0.25: L0 held (1.539 against 1.528, tolerance 0.0583), and the hunch is supported by its registered rule: D
-  fell from 1.639 to 1.128 as the threshold fell from 0.1 to 0.001 (Δ 0.511, 0.99 interval [0.427, 0.568]), within
-  0.25 of the graph's own 1.010; C18's verdict unchanged (journal of 2026-11-05, § C18's Threshold Hunch, Run Again).
-- 2026-11-05: the maintainer's hunch written up as [H17](docs/hypotheses/README.md#h17-consciousness-sciences-measures-applied-to-a-sleeping-worm):
-  PCI, Φ\*, ignition and UAL, each checked at its source's abstract or passages, with a pre-registered
-  sleep-against-wake test, its noise control and its controls; no data yet, the next run is item 13 (journal of 2026-11-05, § H17: Consciousness Science's Measures on a
-  Sleeping Worm).
-- 2026-11-05: item 8 (g), the fixed-point test of gr-fec's learning layer (exact LMS): refuted by its registered bar
-  in both arms on four fresh layouts (median gap 0.34 to 0.47 against 0.20), so the learner does not settle at the fit
-  on this time scale; the feature map's own drift is a reading not yet separated (g4).
-- 2026-11-05: plan F3 run (`notebooks/f3_golay_memory.ipynb`, 20 seeds, β = 0.4): refuted by clause (b) - at four
-  flipped features 64 Golay codewords recall worse than random words 8 apart (0.960 against 0.990), from their pairs at
-  distance 8; clause (a), Golay against unstructured at three, passed (journal of 2026-11-05, § F3 Run).
-- 2026-11-05: item 9 (h), the three audits: no spelling violation, Rust and notebooks clean; fixed the stale
-  benchmark status in README.md and both diagrams (redrawn by `notebooks/figures.ipynb`), PLAN.md's copied list of
-  senses, FEATURES.md's gaps and plane rows, CONTRIBUTING.md's second table of documents, four inline comments in
-  `cleanup_caches.yml`, and two journal references by dated notes; three questions for the maintainer (*To Revisit*; since ruled on, 2026-11-05).
-- 2026-11-05: item 11 (d2), partly: four odour measures drafted (speed, turn rate by bearing, curvature against
-  bearing, the bearing's distribution), none using a concentration's size; the authors' script read and found to
-  differ from their paper in six rules ([docs/benchmark/ODOUR_MEASURES.md](docs/benchmark/ODOUR_MEASURES.md)).
-- 2026-11-05: item 11 (d), the odour dataset's methods and archive listed without downloading it: CC BY 4.0, the
-  worm's tracks 1.04 GB of 1.29 GB, centroids from about six experiments; its measures against bearing probably stand for
-  still air, its concentrations do not; not adopted (journal of 2026-11-05, § The Odour Dataset: Its Methods and What
-  the Archive Holds).
-- 2026-11-05: item 5, hunches E11-E20 planned ([E11-E15.md](docs/hypotheses/experiments/E11-E15.md),
-  [E16-E20.md](docs/hypotheses/experiments/E16-E20.md)); E15, E11, E16 and E20 ready to become tasks, the rest wait on a
-  Program, senses the Grid lacks or worm sources (journal of 2026-11-05, § E11-E20 Planned, and a Triage).
-- 2026-11-05: item 5, hunches F1-F9 planned ([F1-F9.md](docs/hypotheses/experiments/F1-F9.md)); six of the hunches'
-  mathematical statements corrected before any run; F6, F3 and F4 ready to become tasks, F7 needing a redesign, the rest wait on a
-  Program or worm sources (journal of 2026-11-05, § F1-F9 Planned, and a Triage).
-- 2026-11-05: item 5, hunches F10-F17 planned ([F10-F17.md](docs/hypotheses/experiments/F10-F17.md)); four of the
-  hunches' tests found to lack content or a mechanism as written (F14's Krohn-Rhodes clause, F15's heading-only holonomy,
-  F16, F17's single objective) and restated; F14's automata lens ready to become a task, F13 after verification,
-  F15's worm test to be redesigned (journal of 2026-11-05, § F10-F17
-  Planned, and a Triage).
-- 2026-11-05: item 5, hunches G1-G10 planned ([G1-G10.md](docs/hypotheses/experiments/G1-G10.md)); what the toy
-  worm already tested cited (the turning theory, #231's refuted fixed point and drifting feature map), none resuming the
-  paused steering series; G2's overshadowing reduced to a least-squares split of weight and G5's harm to an exact LMS identity, G9's Grid sweep restated
-  to keep the senses untuned (journal of 2026-11-05, § G1-G10 Planned, and a Triage).
-- 2026-11-05: H16 written, *a hunch* brought by the maintainer from another Claude session: a reflex stack
-  with no learned model gets through the benchmark; refuting outcomes R1-R3 with their pass sides, controls, cost and
-  pace rule; Brooks 1986, Kato et al. 2015 and the book's catalogue record checked at the source; item 14 added.
-- 2026-11-04: item 2 (c), the stored durations and frequencies recomputed from the published speed: 600 of 600
-  recording-modes of block 1 equal to the last bit; the lab's speed against them in a second table (journal of
-  2026-11-04, § The Published Durations and Rates: Reproduced Exactly Over Block 1).
-- 2026-11-04: item 2 (e3), real against unseen real: block 1 (179) and block 2 (189) are indistinguishable by both
-  tests at seed 20261104, and the positive control (a 1 sd shift of one measure) is told apart by both; block 1's
-  frozen eigen-shapes fit block 2 to a cosine of 0.997 or better (journal of 2026-11-04, § Real Against Unseen Real:
-  the Results).
-- 2026-11-04: `external/` at the latest mains (tron-grid-lite `067fb7e`, master-control `7c527d9`, link `0304788`),
-  the placeholder at Program ABI 12: D1-D3 hold - Master Control's suite 124 then 158 passed, `ctest` 22 of 22, the
-  three device checks; the digest moved to `6A94D9A1…464F` and a build at an attenuation of 1 gives the old one - and
-  the placeholder's life is the same at both pins once its join tick is taken out (journal of 2026-11-04, § The World
-  Moves to Protocol 14 and Program ABI 12, Measured Before and After).
-- 2026-11-04: item 8 (b), each steering decision of the graded gain scored against the band on ten fresh warm layouts:
-  the lateral sense is right in 0.986 of decisions and temperature leads to the band in 0.945, so by elimination the
-  direction's failure lies in the map's choice as the greedy rule reads it, which points the band's way in 0.513 (0.424 to 0.619), undecided by its rule
-  (journal of 2026-11-04, § Does the Greedy Rule's Direction Fail? Each Steering Decision Scored).
-- 2026-11-04: item 11 (b), Q7 decided before any data: a heading is taken only once the centroid has moved 0.25 L,
-  so that one pixel of tracking noise cannot alone fire a 50° turn; a sensitivity check at 0.125 L and 0.5 L registered
-  ([docs/benchmark/SALT_MEASURES.md](docs/benchmark/SALT_MEASURES.md) § The Open Questions).
-- 2026-11-04: item 11 (b), partly: six salt measures drafted, signed by the setpoint and using no salt concentration
-  in mM; the centroid for both bodies, and the gradient fitted from the data; the unit of the test and the authors'
-  smoothing left for the maintainer ([docs/benchmark/SALT_MEASURES.md](docs/benchmark/SALT_MEASURES.md)).
-- 2026-11-04: item 11 (a), the salt dataset's methods and its archive listed without downloading it: centroids every
-  5/14 s, 297 and 277 tracks in the 0-50 and 100-50 mM gradients, no posture, and neither worm nor plate kept; not adopted
-  (journal of 2026-11-04, § The Salt Dataset: Its Methods and What the Archive Holds).
-- 2026-11-04: item 11, a plan for the stimulus assays the world's new fields open
-  ([docs/benchmark/STIMULI.md](docs/benchmark/STIMULI.md)): at Program ABI 12 only odour is sensed, heat and salt exist
-  unsensed until ABI 13, the gases not at all; two CC BY 4.0 datasets of tracks found (salt and odour, both from the
-  Leifer lab), none for thermotaxis in one search; order salt, odour, heat, aerotaxis.
-- 2026-11-04: item 8, a post-mortem of the toy-worm series from the record, why it stalled and what stands, with
-  recommendations awaiting the maintainer (since ruled on, item 8)
-  ([gr-fec.md § 12](docs/research/gr-fec.md#12-why-the-demystification-stalled-a-post-mortem-2026-11-04)).
+- 2026-11-08: the night's first-task housekeeping (journal of 2026-11-08, § The Night's Audits: Coherence, Spelling and
+  Style): no open idea issue; no spelling violation, Rust and notebooks clean; fixed H17's "K and the units fixed before
+  any data" to the rules being fixed and the values following, this file's *Last updated* and its *Done* list (item 9 (f),
+  first half), and seven notebook commands given through a local path, by dated notes in three journals; H15's November
+  review found not written.
