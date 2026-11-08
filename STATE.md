@@ -171,9 +171,13 @@ found lives in the journal section it names; this list keeps only what is open.
      in 23001's first day; the timing of a worm's meals against the turning of its map; and what makes the map point
      away in layouts such as 82606;
    - (d) the composition law: a third lever that acts alone, and roaming's interaction as its own test;
-   - (e) the steering term in the turning theory, as a notebook first: drift predicted from the share of decisions
-     pointing home, the lateral sense's noise and the turn's size (gr-fec.md § 12.4, recommendation 2);
-   - (f) its validation on a fixed map imposed by the evaluator, so the map's share is known, not learned;
+   - (e) done (journal of 2026-11-08, § gr-fec's Worm by Equation: The Steering Term): the steering term derived in
+     [`notebooks/steering_term_8e.ipynb`](notebooks/steering_term_8e.ipynb) and matched by simulation under an
+     imposed share in 45 of 45 conditions, median relative error 0.0022;
+   - (f) its validation on a fixed map imposed by the evaluator, so the map's share is known, not learned: in place
+     of (e)'s coin, a fixed value table over temperature concepts whose greedy reading has a known share, the drift
+     predicted by (e)'s term from that share and checked by (e)'s rules; then the term composed with the driven turning
+     rule (λ depending on the heading through the odour gradient), which (e) assumed away (its A4);
    - (g) the fixed-point test, done on 2026-11-05 (journal of 2026-11-05, § gr-fec's Worm by Equation: The Learning
      Layer's Fixed Point): refuted in both arms. What it opened, one run each, none registered yet: (g2) whether the
      fit is well determined in the rarely excited directions, by fitting one half of the window and scoring on the
@@ -393,6 +397,11 @@ points to the open ones and says what waits on each.
 The latest night only, one line a task; earlier nights are in [the journal](docs/journal/), and each toy-worm
 experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-where-the-labs-toy-worm-scripts-are).
 
+- 2026-11-08: item 8 (e), the steering term of gr-fec's turning theory: drift predicted from the share of decisions
+  pointing home, the lateral sense's noise and the turn's size, derived in `notebooks/steering_term_8e.ipynb` and
+  matched by gr-fec's own code under an imposed share in 45 of 45 pre-registered conditions (median relative error
+  0.0022; a theory ignoring the noise misses by 15% at ten times the sandbox's noise); next is (f), a fixed map
+  (journal of 2026-11-08, § gr-fec's Worm by Equation: The Steering Term, Predicted Before It Runs).
 - 2026-11-05: the verifiers' non-blocking points on tonight's merged pull requests landed, among them H17's window
   budget amended before any data, to cap each animal's contrast, with a floor of five windows, rather than exclude it (journal of 2026-11-05,
   § Verifiers' Nits from Tonight's Merged Pull Requests).
