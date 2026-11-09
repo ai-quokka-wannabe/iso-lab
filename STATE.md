@@ -2,7 +2,8 @@
 
 **Last updated:** 2026-11-08 ([the journal of 2026-11-08](docs/journal/2026-11-08.md)): the Disk reader's first step,
 Master Control's crate as a dependency of `features` with Link built beside the lab's tests, and a Disk written and
-replayed through it bit for bit (item 3 (d2a)); and the night's audits. Before that, 2026-11-05
+replayed through it bit for bit (item 3 (d2a)); the night's audits; and the steering term of gr-fec's turning
+theory, predicted before the run and matched in 45 of 45 conditions, median error 0.2% (item 8 (e)). Before that, 2026-11-05
 ([the journal of 2026-11-05](docs/journal/2026-11-05.md)): the maintainer's eleven
 rulings of that day recorded where each question lives, among them the toy-worm series paused for the equations, the
 Disk read through Master Control's crate and a terraced arena; the odour dataset read and four odour measures drafted,
@@ -180,9 +181,13 @@ found lives in the journal section it names; this list keeps only what is open.
      in 23001's first day; the timing of a worm's meals against the turning of its map; and what makes the map point
      away in layouts such as 82606;
    - (d) the composition law: a third lever that acts alone, and roaming's interaction as its own test;
-   - (e) the steering term in the turning theory, as a notebook first: drift predicted from the share of decisions
-     pointing home, the lateral sense's noise and the turn's size (gr-fec.md § 12.4, recommendation 2);
-   - (f) its validation on a fixed map imposed by the evaluator, so the map's share is known, not learned;
+   - (e) done (journal of 2026-11-08, § gr-fec's Worm by Equation: The Steering Term): the steering term derived in
+     [`notebooks/steering_term_8e.ipynb`](notebooks/steering_term_8e.ipynb) and matched by simulation under an
+     imposed share in 45 of 45 conditions, median relative error 0.0022;
+   - (f) its validation on a fixed map imposed by the evaluator, so the map's share is known, not learned: in place
+     of (e)'s coin, a fixed value table over temperature concepts whose greedy reading has a known share, the drift
+     predicted by (e)'s term from that share and checked by (e)'s rules; then the term composed with the driven turning
+     rule (λ depending on the heading through the odour gradient), which (e) assumed away (its A4);
    - (g) the fixed-point test, done on 2026-11-05 (journal of 2026-11-05, § gr-fec's Worm by Equation: The Learning
      Layer's Fixed Point): refuted in both arms. What it opened, one run each, none registered yet: (g2) whether the
      fit is well determined in the rarely excited directions, by fitting one half of the window and scoring on the
@@ -413,3 +418,8 @@ experiment's pull request is in [gr-fec.md § 11](docs/research/gr-fec.md#11-whe
   any data" to the rules being fixed and the values following, this file's *Last updated* and its *Done* list (item 9 (f),
   first half), and seven notebook commands given through a local path, by dated notes in three journals; H15's November
   review found not written.
+- 2026-11-08: item 8 (e), the steering term of gr-fec's turning theory: drift predicted from the share of decisions
+  pointing home, the lateral sense's noise and the turn's size, derived in `notebooks/steering_term_8e.ipynb` and
+  matched by gr-fec's own code under an imposed share in 45 of 45 pre-registered conditions (median relative error
+  0.0022; a theory ignoring the noise misses by 11% to 18% at ten times the sandbox's noise); next is (f), a fixed map
+  (journal of 2026-11-08, § gr-fec's Worm by Equation: The Steering Term, Predicted Before It Runs).

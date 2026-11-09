@@ -447,6 +447,7 @@ evaluation tools for a toy world, not code the lab builds on; anything that beco
 | `dirn/dirn.py`, `dirn/dirnstats.py`, `dirn/run.sh` | Each steering decision scored against the band (2026-11-04) | [#213](https://github.com/ai-quokka-wannabe/iso-lab/pull/213) |
 | `postmortem/power.py` | The post-mortem's between-layout spreads and power calculation, from numbers in the journals (2026-11-04) | [#214](https://github.com/ai-quokka-wannabe/iso-lab/pull/214) |
 | `fp/fp.py`, `fp/fpstats.py`, `fp/run.sh`, `fp/fpblock.py`, `fp/fpsplit.py` | The learning layer's fixed point: learned weights against the least-squares fit of reward on the worm's own features (2026-11-05) | [#231](https://github.com/ai-quokka-wannabe/iso-lab/pull/231) |
+| `steer8e/steer_sim.py`, `steer8e/run.sh` (theory: `notebooks/steering_term_8e.ipynb`) | The steering term of the turning theory, checked under an imposed share of decisions pointing home (2026-11-08) | [#241](https://github.com/ai-quokka-wannabe/iso-lab/pull/241) |
 
 ## 12. Why the Demystification Stalled (a Post-Mortem, 2026-11-04)
 
@@ -557,7 +558,13 @@ and the steps they set are STATE.md item 8 (e)-(h); recommendation 4 was not par
 1. **Pause** the steering-gate and hunger-gain series.
 2. **Return to the equations.**
     - Add a steering term to the turning theory: predict drift from the share of decisions pointing home, the lateral
-      sense's noise and the turn's size.
+      sense's noise and the turn's size. *Done on 2026-11-08*
+      ([journal of 2026-11-08](../journal/2026-11-08.md#gr-fecs-worm-by-equation-the-steering-term-predicted-before-it-runs),
+      `notebooks/steering_term_8e.ipynb`): the term, k (2p − 1) [Φ((m − a)/σ) − Φ((−m − a)/σ)] per step with the drift
+      from a Markov chain over the decision cycle, matched gr-fec's code under an imposed share in 45 of 45
+      pre-registered conditions, median relative error 0.0022, with no bias; a theory that ignores the noise misses
+      by 11% to 18% at ten times the sandbox's noise and by 74% to 155% at thirty. Tested with a coin for the map, zero drive and no wall; the fixed map
+      is step (f).
     - Validate it on a fixed map imposed by the evaluator, so the map's share is known, not learned.
     - Then run the fixed-point test that was never run. *Run on 2026-11-05, by the maintainer's ruling of that day*
       ([journal of 2026-11-05](../journal/2026-11-05.md#gr-fecs-worm-by-equation-the-learning-layers-fixed-point-predicted-before-it-runs)):
