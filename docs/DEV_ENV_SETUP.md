@@ -28,7 +28,7 @@ is the long version.
 | Node.js | an LTS release, only for the markdown linter (`npm ci`) | <https://nodejs.org/> |
 | lychee | v0.24.2, the version CI pins, for the link check | <https://github.com/lycheeverse/lychee/releases> |
 | rustup | any recent; the toolchain is pinned to an exact version by `rust-toolchain.toml`, and rustup installs exactly that on first use | <https://rustup.rs/> |
-| Python | 3.10 or newer, with Jupyter, only for notebooks | <https://www.python.org/downloads/> |
+| Python | 3.11 or newer (PyTorch 2.15's floor; see § Notebooks), with Jupyter, only for notebooks | <https://www.python.org/downloads/> |
 
 The world's repositories are submodules under `external/`. Clone with `--recurse-submodules`, or initialise
 them afterwards with `git submodule update --init --recursive`.
@@ -76,7 +76,10 @@ python -m venv .venv
 ```
 
 The extra index gives PyTorch's CPU build on Linux, where PyPI's build brings the CUDA libraries with it; no notebook
-needs a GPU.
+needs a GPU. PyTorch 2.15.0 requires Python 3.11 or newer (`Requires-Python: >=3.11` in
+[its PyPI metadata](https://pypi.org/project/torch/2.15.0/), where 2.14.1 said `>=3.10`; the release's own commit
+d0f2af8, "Raise the minimum Python to 3.11 in the package metadata", is listed in
+[its release notes](https://github.com/pytorch/pytorch/releases/tag/v2.15.0)), which is where the floor above comes from.
 
 Before committing one, check that it runs top to bottom from a fresh kernel:
 
