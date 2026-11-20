@@ -106,6 +106,9 @@ worms to plate taps and to optogenetic stimulation of the six gentle-touch neuro
   Timbers et al. 2013, the source Porto et al. cite, is still not open: Europe PMC lists it as subscription only, with
   no author manuscript, and its abstract gives no time constant, only that with age "response probability habituation
   increases (at both 10- and 60-second interstimulus intervals)".
+- **The tap interval itself** - which interstimulus intervals the tap-habituation papers use, what each reports at
+  them, and the interval proposed for the benchmark's assay - is in [tap-interval.md](tap-interval.md) (2026-11-08),
+  not repeated here.
 
 ### Noxious Heat
 
@@ -304,7 +307,8 @@ Pace Note's Gaps, a Fifth Pass, and § The Pace Note's Gaps, a Sixth Pass, have 
   their figures; the lab's reading of their wild-type curve by eye (above) is
   rough (roughly 40 to 90 s at 10 s intervals, one panel). Timbers et al. 2013, behind Porto et al.'s 50 s, is subscription only with no author manuscript in Europe PMC,
   and its abstract gives no time constant. Next: the Multi-Worm Tracker data of a tap habituation paper, if public,
-  fitted by the lab.
+  fitted by the lab. The intervals the papers use, and the full texts still to read for curves by interval, are in
+  [tap-interval.md § What Remains](tap-interval.md#what-remains).
 - The primary source for lethargus as usually cited, Singh and Sulston 1978, "Some observations on molting in
   Caenorhabditis elegans", *Nematologica* 24, 63-71, as Faerberg et al. 2024 give it
   ([doi:10.1163/187529278X00074](https://doi.org/10.1163/187529278X00074)): not open, and not in Europe PMC by its

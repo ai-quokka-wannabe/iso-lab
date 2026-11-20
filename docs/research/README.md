@@ -15,6 +15,7 @@ down here says how we know, and is where a reader goes when they want to check t
 |----------|----------|
 | [behaviour-measures.md](behaviour-measures.md) | How worm behaviour is measured: posture, the feature database, motifs, locomotion states, roaming and dwelling |
 | [pace.md](pace.md) | The worm's pace: reaction latencies to touch, heat and light, the body's rhythm, and the time constants of its states, with the gaps still to read |
+| [tap-interval.md](tap-interval.md) | The tap interval: which interstimulus intervals the tap-habituation papers use, what each reports for level, rate and recovery, and the pair of intervals proposed for the benchmark's assay |
 | [associative-memory.md](associative-memory.md) | Associative memory for a worm-sized brain: Hebb and Oja, Hopfield networks classical and modern, dense associative memory and Boltzmann machines - each one's equation, cost at 302 neurons, ablations and ties to H5, H6, H9 and E4 |
 | [findings.md](findings.md) | What the lab has tested and found, failures beside successes, for the brains up the ladder |
 | [gr-fec.md](gr-fec.md) | What the maintainer's gr-fec sandbox learned about a worm-level mind: its embodied worm, twenty pre-registered experiments, its principles and its failures - leads to reproduce, not evidence |
