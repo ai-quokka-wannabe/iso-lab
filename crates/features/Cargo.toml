@@ -14,6 +14,12 @@ hdf5-pure = "=0.47.0"
 # Inflates the per-frame table's chunks, which hdf5-pure's shuffle refuses (features::read_frame_index);
 # MIT OR Apache-2.0, the version hdf5-pure already builds with.
 flate2 = { version = "=1.1.10", default-features = false, features = ["rust_backend"] }
+# Master Control's own crate, from the pinned submodule, for its `link_dll` mirror of the wire and `replay_open`:
+# a Disk is read through the one implementation of the wire, as Clu reads it (STATE.md item 3 (d2); the
+# maintainer's ruling of 2026-11-05, "Reuse Master Control"). Its build script builds Link from
+# external/master-control/external/link and places the library beside this workspace's binaries and tests, where
+# the residence rule looks for it. GPL-3.0-or-later, like this workspace. The `unsafe` at the wire stays inside it.
+master-control = { path = "../../external/master-control" }
 
 [lints]
 workspace = true

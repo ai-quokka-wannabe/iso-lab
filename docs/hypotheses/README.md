@@ -617,7 +617,8 @@ a life, on recorded activity, outside the brain:
    not hold (Kitazono, Kanai and Oizumi 2018). Φ\* is *not* IIT 3.0's Φ: it is computed from observed activity, not
    from the system's transition probabilities under intervention, for its current state, and a Gaussian fit to calcium traces is an assumption to
    check, not a given. *Cost*: covariance and lagged covariance of K recorded units (K² memory) and the partition
-   search; K and the choice of units are fixed before any data is seen; time measured, not claimed.
+   search; the rules that set K and choose the units are fixed before any data is seen (*The units Φ\* uses*, below),
+   and their values follow from the data by those rules; time measured, not claimed.
 3. **Global-workspace ignition.** A network model of conscious access predicts "an unique property of nonlinear
    transition from nonconscious processing to subjective perception", an all-or-none entry into a global brain state
    ([Dehaene, Sergent and Changeux 2003](https://doi.org/10.1073/pnas.1332574100), the abstract read; the later review,

@@ -90,7 +90,8 @@ jobs:
               run: bash .github/scripts/check-toolchain-pin.sh
 
     # The lab's Rust workspace, checked as master-control checks its own: on Linux alone, the lab's platform
-    # (the maintainer's ruling), without the submodules, which no crate builds against yet.
+    # (the maintainer's ruling). The workspace depends on external/master-control, whose build script builds Link
+    # from the submodule it carries, so the checkout here is recursive.
     rust:
         name: Rust
         needs: quick-checks
@@ -98,8 +99,10 @@ jobs:
         timeout-minutes: 20
 
         steps:
-            - name: Checkout repository
+            - name: Checkout repository, with the world's repositories under external/
               uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+              with:
+                submodules: recursive
 
             # The runners ship a Rust toolchain, but the build is pinned to one exact version in
             # rust-toolchain.toml, locally and here alike, so a new rustc or clippy never turns a
