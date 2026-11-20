@@ -179,7 +179,7 @@ fn median_and_iqr(rows: &[Vec<f64>], column: usize) -> (f64, f64) {
 }
 
 /// Holm's step-down adjustment of a family of p-values, returned in their original order.
-fn holm(p_values: &[f64]) -> Vec<f64> {
+pub(crate) fn holm(p_values: &[f64]) -> Vec<f64> {
     let m = p_values.len();
     let mut order: Vec<usize> = (0..m).collect();
     order.sort_by(|&x, &y| p_values[x].total_cmp(&p_values[y]).then(x.cmp(&y)));
@@ -200,25 +200,64 @@ pub fn compare_measures(a: &[Vec<f64>], b: &[Vec<f64>], config: &CompareConfig, 
 }
 
 fn compare_measures_with(a: &[Vec<f64>], b: &[Vec<f64>], config: &CompareConfig, seed: u64, which: Statistic) -> Result<Vec<MeasureComparison>, TestError> {
+    Ok(compare_recording_states(a, b, config, seed, which)?.0)
+}
+
+/// [`compare_measures`], returning beside the comparisons the generator's state at the start of
+/// each column's shuffles. A shuffle depends only on the rows' count and the state, never on the
+/// values, so a column's p-value can be recomputed alone, from its state, by
+/// [`column_p_from_state`], after its values have changed: the other columns' p-values stay as they
+/// are. `benchmark::power` uses this to alter one measure at a time without recomputing the rest.
+pub(crate) fn compare_measures_recording_states(
+    a: &[Vec<f64>],
+    b: &[Vec<f64>],
+    config: &CompareConfig,
+    seed: u64,
+) -> Result<(Vec<MeasureComparison>, Vec<u64>), TestError> {
+    compare_recording_states(a, b, config, seed, Statistic::CramerVonMises)
+}
+
+/// One column's statistic and raw p-value, its shuffles drawn from a generator in `state`.
+fn column_p(values: &[f64], count_a: usize, count_b: usize, permutations: usize, rng: &mut SplitMix64, which: Statistic) -> (f64, f64) {
+    let runs = runs_of_equal_values(values);
+    let mut in_b: Vec<bool> = std::iter::repeat_n(false, count_a).chain(std::iter::repeat_n(true, count_b)).collect();
+    let observed = score(&runs, &in_b, count_b, which);
+    let mut as_large = 0;
+    for _ in 0..permutations {
+        rng.shuffle(&mut in_b);
+        if score(&runs, &in_b, in_b.len() - count_a, which) >= observed {
+            as_large += 1;
+        }
+    }
+    (anderson_t(observed, count_a, count_b), (1 + as_large) as f64 / (1 + permutations) as f64)
+}
+
+/// One column's Cramér-von Mises statistic and raw p-value, as [`compare_measures`] would give
+/// them for the column whose shuffles start from `state` (the pooled `values` are the first
+/// sample's `count_a` rows, then the second's).
+pub(crate) fn column_p_from_state(values: &[f64], count_a: usize, permutations: usize, state: u64) -> (f64, f64) {
+    let mut rng = SplitMix64(state);
+    column_p(values, count_a, values.len() - count_a, permutations, &mut rng, Statistic::CramerVonMises)
+}
+
+fn compare_recording_states(
+    a: &[Vec<f64>],
+    b: &[Vec<f64>],
+    config: &CompareConfig,
+    seed: u64,
+    which: Statistic,
+) -> Result<(Vec<MeasureComparison>, Vec<u64>), TestError> {
     let width = check(config, a, b)?;
     let mut rng = SplitMix64(seed);
     let mut raw = Vec::with_capacity(width);
+    let mut states = Vec::with_capacity(width);
     for column in 0..width {
         let values: Vec<f64> = a.iter().chain(b).map(|r| r[column]).collect();
-        let runs = runs_of_equal_values(&values);
-        let mut in_b: Vec<bool> = std::iter::repeat_n(false, a.len()).chain(std::iter::repeat_n(true, b.len())).collect();
-        let observed = score(&runs, &in_b, b.len(), which);
-        let mut as_large = 0;
-        for _ in 0..config.permutations {
-            rng.shuffle(&mut in_b);
-            if score(&runs, &in_b, b.len(), which) >= observed {
-                as_large += 1;
-            }
-        }
-        raw.push((anderson_t(observed, a.len(), b.len()), (1 + as_large) as f64 / (1 + config.permutations) as f64));
+        states.push(rng.0);
+        raw.push(column_p(&values, a.len(), b.len(), config.permutations, &mut rng, which));
     }
     let adjusted = holm(&raw.iter().map(|r| r.1).collect::<Vec<_>>());
-    Ok((0..width)
+    let comparisons = (0..width)
         .map(|column| {
             let (median_a, iqr_a) = median_and_iqr(a, column);
             let (median_b, iqr_b) = median_and_iqr(b, column);
@@ -234,13 +273,15 @@ fn compare_measures_with(a: &[Vec<f64>], b: &[Vec<f64>], config: &CompareConfig,
                 iqr_b,
             }
         })
-        .collect())
+        .collect();
+    Ok((comparisons, states))
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::test_support::{clopper_pearson, sample};
+    use crate::clopper_pearson;
+    use crate::test_support::sample;
 
     fn quick() -> CompareConfig {
         CompareConfig {

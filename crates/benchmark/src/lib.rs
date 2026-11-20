@@ -52,6 +52,7 @@ use std::fmt;
 
 pub mod compare;
 pub mod holdout;
+pub mod power;
 pub mod ratios;
 pub mod reference;
 
@@ -289,7 +290,36 @@ pub fn two_sample_test(a: &[Vec<f64>], b: &[Vec<f64>], config: &Config, seed: u6
     })
 }
 
-/// Helpers shared by the crate's tests: synthetic samples and an exact binomial interval.
+/// The exact (Clopper-Pearson) 95% interval of a binomial share, `successes` of `trials`, by
+/// bisection on the binomial distribution function
+/// ([Clopper and Pearson 1934](https://doi.org/10.1093/biomet/26.4.404)): the lower end is the
+/// share at which so many or more successes have probability 0.025, the upper end the share at
+/// which so many or fewer do. Zero successes give a lower end of 0, and all successes an upper end of 1.
+pub fn clopper_pearson(successes: usize, trials: usize) -> (f64, f64) {
+    assert!(successes <= trials && trials > 0, "{successes} of {trials}");
+    let cdf = |k: usize, p: f64| -> f64 {
+        let mut term = (1.0 - p).powi(trials as i32);
+        let mut total = term;
+        for i in 0..k {
+            term *= (trials - i) as f64 / (i + 1) as f64 * p / (1.0 - p);
+            total += term;
+        }
+        total
+    };
+    let solve = |above: &dyn Fn(f64) -> bool| -> f64 {
+        let (mut lo, mut hi) = (0.0, 1.0);
+        for _ in 0..60 {
+            let mid = 0.5 * (lo + hi);
+            if above(mid) { hi = mid } else { lo = mid }
+        }
+        0.5 * (lo + hi)
+    };
+    let lower = if successes == 0 { 0.0 } else { solve(&|p| 1.0 - cdf(successes - 1, p) >= 0.025) };
+    let upper = if successes == trials { 1.0 } else { solve(&|p| cdf(successes, p) <= 0.025) };
+    (lower, upper)
+}
+
+/// Helpers shared by the crate's tests: synthetic samples.
 #[cfg(test)]
 mod test_support {
     use super::SplitMix64;
@@ -307,37 +337,12 @@ mod test_support {
             .map(|_| (0..width).map(|c| if c == 0 { normal(rng) * spread + shift } else { normal(rng) }).collect())
             .collect()
     }
-
-    /// The exact (Clopper-Pearson) 95% interval of a binomial share, by bisection on the
-    /// binomial distribution function.
-    pub(crate) fn clopper_pearson(successes: usize, trials: usize) -> (f64, f64) {
-        let cdf = |k: usize, p: f64| -> f64 {
-            let mut term = (1.0 - p).powi(trials as i32);
-            let mut total = term;
-            for i in 0..k {
-                term *= (trials - i) as f64 / (i + 1) as f64 * p / (1.0 - p);
-                total += term;
-            }
-            total
-        };
-        let solve = |above: &dyn Fn(f64) -> bool| -> f64 {
-            let (mut lo, mut hi) = (0.0, 1.0);
-            for _ in 0..60 {
-                let mid = 0.5 * (lo + hi);
-                if above(mid) { hi = mid } else { lo = mid }
-            }
-            0.5 * (lo + hi)
-        };
-        let lower = if successes == 0 { 0.0 } else { solve(&|p| 1.0 - cdf(successes - 1, p) >= 0.025) };
-        let upper = if successes == trials { 1.0 } else { solve(&|p| cdf(successes, p) <= 0.025) };
-        (lower, upper)
-    }
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::test_support::{clopper_pearson, sample};
+    use crate::test_support::sample;
 
     /// Fewer shuffles than the lab's runs, so the suite stays fast in a debug build.
     fn quick() -> Config {
@@ -357,6 +362,21 @@ mod tests {
                 two_sample_test(&a, &b, config, seed).unwrap().told_apart
             })
             .count()
+    }
+
+    #[test]
+    fn the_exact_interval_matches_its_closed_forms() {
+        // No successes: the upper end is 1 - 0.025^(1/n); all successes: the lower end is
+        // 0.025^(1/n); five of ten: 0.1871 to 0.8129 (symmetric, from the binomial tables).
+        let (lower, upper) = clopper_pearson(0, 10);
+        assert_eq!(lower, 0.0);
+        assert!((upper - (1.0 - 0.025f64.powf(0.1))).abs() < 1e-9, "{upper}");
+        let (lower, upper) = clopper_pearson(10, 10);
+        assert!((lower - 0.025f64.powf(0.1)).abs() < 1e-9, "{lower}");
+        assert_eq!(upper, 1.0);
+        let (lower, upper) = clopper_pearson(5, 10);
+        assert!((lower - 0.1871).abs() < 5e-4 && (upper - 0.8129).abs() < 5e-4, "{lower} {upper}");
+        assert!((lower + upper - 1.0).abs() < 1e-9);
     }
 
     #[test]
