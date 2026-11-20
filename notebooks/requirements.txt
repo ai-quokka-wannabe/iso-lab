@@ -1,7 +1,7 @@
 # Pinned for the notebooks under notebooks/; Dependabot proposes bumps.
 # PyTorch from PyPI brings CUDA on Linux; the notebooks need only its CPU build, which is
 # pip install -r notebooks/requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
-numpy==2.5.4
+numpy==2.5.5
 nbconvert==7.17.2
 nbformat==5.11.1
 ipykernel==7.4.0
